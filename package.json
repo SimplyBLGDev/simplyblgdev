@@ -11,6 +11,7 @@
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
     "core-js": "^3.6.5",
+    "image-map-resizer": "^1.0.10",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },

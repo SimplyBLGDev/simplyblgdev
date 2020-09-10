@@ -41,6 +41,8 @@ const router = new VueRouter({
   routes: routes // short for `routes: routes`
 })
 
+Vue.component('Pokemon', Pokemon)
+
 new Vue({
   el: '#app',
   render: h => h(Layout),
