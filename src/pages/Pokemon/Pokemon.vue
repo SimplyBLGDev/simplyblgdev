@@ -3,14 +3,14 @@
     <div class="gameMapContainer">
       <img src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
       <map id="GameMap" name="Kanto">
-        <area shape="rect" coords="10, 10, 100, 100" title="Bruh">
+        <area v-for="area in mapData.maps" v-bind:key="area.id" shape="rect" :coords=processedDimensions(area.dimensions) :title=area.name @mouseover="setArea(area.name)">
       </map>
     </div>
     <div class="regionInfo">
       <div class="container-fluid">
         <div class="row">
           <div class="col">
-            <h5>Pallet Town</h5>
+            <h5>{{ selectedArea }}</h5>
           </div>
         </div>
         <div class="row">
@@ -40,9 +40,12 @@
 <script src="./Pokemon.js"></script>
 <script>
 import imageMapResize from 'image-map-resizer'
+import mapJSON from '../../assets/Pokemon/Maps/KantoMaps.json'
 export default {
   name: 'Pokemon',
   data: () => ({
+    selectedArea: "default",
+    mapData: mapJSON,
     encounters: [
       {
         id: 0,
@@ -66,6 +69,19 @@ export default {
   }),
   mounted() {
     imageMapResize(document.getElementById('GameMap'));
+  },
+  methods: {
+    processedDimensions: function (dimensions) {
+      var x = dimensions[0];
+      var y = dimensions[1];
+      var x2 = x + dimensions[2];
+      var y2 = y + dimensions[3];
+
+      return [x, y, x2, y2].join(',');
+    },
+    setArea: function (newArea) {
+      this.selectedArea = newArea;
+    }
   }
 }
 </script>
