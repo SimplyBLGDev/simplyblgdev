@@ -41,6 +41,8 @@ function ProcessLocation(apiJSON, games) {
 }
 
 function ProcessEncounterDetails(encounterDetails) {
+    if (encounterDetails.length == 0)
+        return [];
     var methods = [];
     var currentMethod = encounterDetails[0].method.name;
     var minLevel = 999;
