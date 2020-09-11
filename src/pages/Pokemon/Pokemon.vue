@@ -38,41 +38,25 @@
   </div>
 </template>
 
-<script src="./Pokemon.js"></script>
 <script>
 import $ from 'jquery'
 import imageMapResize from 'image-map-resizer'
-import maphilight from 'maphilight'
+import 'maphilight'
+import { Pokedex } from 'pokeapi-js-wrapper'
+import { ProcessLocation, GetEncountersForLocation } from './PokemonParser'
 import mapJSON from '../../assets/Pokemon/Maps/KantoMaps.json'
+
 export default {
   name: 'Pokemon',
   data: () => ({
     selectedArea: "default",
     mapData: mapJSON,
     encounters: [
-      {
-        id: 0,
-        number: "001",
-        pokemon: "Bulbasaur",
-        games: "RBY",
-        location: "Grass",
-        levels: "2-12",
-        probability: "5%"
-      },
-      {
-        id: 1,
-        number: "005",
-        pokemon: "Charmander",
-        games: "RBY",
-        location: "Grass",
-        levels: "2-12",
-        probability: "5%"
-      }
+
     ]
   }),
   mounted() {
     imageMapResize(document.getElementById('GameMap'));
-    $('img[usemap]').maphilight()
     $.fn.maphilight.defaults = {
       fill: true,
       fillColor: '000000',
@@ -80,7 +64,7 @@ export default {
       stroke: true,
       strokeColor: '0011ee',
       strokeOpacity: 1,
-      strokeWidth: 3,
+      strokeWidth: 2,
       fade: true,
       alwaysOn: false,
       neverOn: false,
@@ -95,6 +79,7 @@ export default {
       shadowPosition: 'outside',
       shadowFrom: false
     }
+    $('img[usemap]').maphilight();
   },
   methods: {
     processedDimensions: function (dimensions) {
@@ -107,6 +92,15 @@ export default {
     },
     setArea: function (newArea) {
       this.selectedArea = newArea;
+      this.fetchEncounters();
+    },
+    fetchEncounters: function() {
+      const P = new Pokedex();
+      GetEncountersForLocation();
+
+      P.getLocationAreaByName("295").then(function(response) {
+        console.log(ProcessLocation(response, ["red", "blue", "yellow"]));
+      });
     }
   }
 }
