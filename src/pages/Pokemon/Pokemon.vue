@@ -3,7 +3,8 @@
     <div class="gameMapContainer">
       <img src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
       <map id="GameMap" name="Kanto">
-        <area v-for="area in mapData.maps" v-bind:key="area.id" shape="rect" :coords=processedDimensions(area.dimensions) :title=area.name @mouseover="setArea(area.name)">
+        <area v-for="area in mapData.maps" v-bind:key="area.id" shape="rect" :coords=processedDimensions(area.dimensions)
+          :title=area.name @mouseover="setArea(area.name)">
       </map>
     </div>
     <div class="regionInfo">
@@ -39,7 +40,9 @@
 
 <script src="./Pokemon.js"></script>
 <script>
+import $ from 'jquery'
 import imageMapResize from 'image-map-resizer'
+import maphilight from 'maphilight'
 import mapJSON from '../../assets/Pokemon/Maps/KantoMaps.json'
 export default {
   name: 'Pokemon',
@@ -69,6 +72,29 @@ export default {
   }),
   mounted() {
     imageMapResize(document.getElementById('GameMap'));
+    $('img[usemap]').maphilight()
+    $.fn.maphilight.defaults = {
+      fill: true,
+      fillColor: '000000',
+      fillOpacity: 0.1,
+      stroke: true,
+      strokeColor: '0011ee',
+      strokeOpacity: 1,
+      strokeWidth: 3,
+      fade: true,
+      alwaysOn: false,
+      neverOn: false,
+      groupBy: false,
+      wrapClass: true,
+      shadow: false,
+      shadowX: 0,
+      shadowY: 0,
+      shadowRadius: 6,
+      shadowColor: '000000',
+      shadowOpacity: 0.8,
+      shadowPosition: 'outside',
+      shadowFrom: false
+    }
   },
   methods: {
     processedDimensions: function (dimensions) {
@@ -97,13 +123,16 @@ export default {
 }
 .mapImage {
   image-rendering: pixelated;
-  margin-bottom: 0.4vw;
-  margin-left: 0.4vw;
-  padding: 4px;
+
   width: 35vw;
   height: auto;
   border-radius: 3vw;
   box-shadow: -0.4vw 0.4vw #32a852;
+}
+.gameMapContainer {
+  margin-bottom: 0.4vw;
+  margin-left: 0.4vw;
+  padding:8px;
 }
 .regionInfo {
   width: 100%;

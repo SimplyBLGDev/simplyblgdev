@@ -18,7 +18,7 @@
         { "id":13, "name":"Route 7", "dimensions":[104, 40, 24, 8] },
         { "id":14, "name":"Lavender Town", "dimensions":[128, 40, 8, 8] },
         { "id":15, "name":"Route 8", "dimensions":[80, 40, 16, 8] },
-        { "id":16, "name":"Celadon City", "dimensions":[72, 40, 16, 8] },
+        { "id":16, "name":"Celadon City", "dimensions":[72, 40, 8, 8] },
         { "id":17, "name":"Route 9", "dimensions":[104, 16, 32, 8] },
         { "id":18, "name":"Route 10", "dimensions":[128, 24, 8, 16] },
         { "id":19, "name":"Route 11", "dimensions":[104, 72, 24, 8] },

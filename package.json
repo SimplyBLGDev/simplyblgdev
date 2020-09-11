@@ -12,6 +12,9 @@
     "bootstrap-vue": "^2.16.0",
     "core-js": "^3.6.5",
     "image-map-resizer": "^1.0.10",
+    "jquery": "^3.5.1",
+    "maphilight": "^1.4.0",
+    "pokeapi-js-wrapper": "^1.1.2",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },
