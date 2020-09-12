@@ -4,43 +4,34 @@
       <img src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
       <map id="GameMap" name="Kanto">
         <area v-for="area in mapData.maps" v-bind:key="area.id" shape="rect" :coords=processedDimensions(area.dimensions)
-          :title=area.name @mouseover="setArea(area.name, area.location_id)">
+          :title=area.name @mouseover="setArea(area.name)" @mouseup="fetchEncounters(area.location_id)">
       </map>
     </div>
     <div class="regionInfo">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <h5>{{ selectedArea }}</h5>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">Event</div>
-        </div>
-        <div class="row">
-          <div class="col">Pokémon</div>
-          <div class="col-2">Games</div>
-          <div class="col">Location</div>
-          <div class="col">Levels</div>
-          <div class="col">%</div>
-        </div>
-        <div class="row" v-for="encounter in encounters" v-bind:key="encounter.id">
-          <div class="col">{{ encounter.pokemon | capitalize }}</div>
-          <div class="game col-2">
-            <div class="row">
-              <div class="col gameBox red active" v-if="encounter.games.includes('red')"><b>R</b></div>
-              <div class="col gameBox red" v-else><b>R</b></div>
-              <div class="col gameBox blue active" v-if="encounter.games.includes('blue')"><b>B</b></div>
-              <div class="col gameBox blue" v-else><b>B</b></div>
-              <div class="col gameBox yellow active" v-if="encounter.games.includes('yellow')"><b>Y</b></div>
-              <div class="col gameBox yellow" v-else><b>Y</b></div>
-            </div>
-          </div>
-          <div class="col">{{ encounter.method | capitalize }}</div>
-          <div class="col">{{ encounter.min_level }} - {{encounter.max_level}}</div>
-          <div class="col">{{ encounter.chance }}</div>
-        </div>
-      </div>
+      <table class="regionTable">
+        <tbody>
+          <tr>
+            <th class="regionData header left">Pokémon</th>
+            <th class="regionData header" colspan=6 width="15%">Games</th>
+            <th class="regionData header" width="17%">Location</th>
+            <th class="regionData header" width="17%">Levels</th>
+            <th class="regionData header right" colspan=3 width="20%">%</th>
+          </tr>
+          <tr v-for="encounter in encounters" v-bind:key="encounter.id">
+            <td class="regionData" scope="row">{{ encounter.pokemon | capitalize }}</td>
+            <td class="regionData gameBox red active" colspan=2 v-if="encounter.games.includes('red')"><b>R</b></td>
+            <td class="regionData gameBox red" colspan=2 v-else><b>R</b></td>
+            <td class="regionData gameBox blue active" colspan=2 v-if="encounter.games.includes('blue')"><b>B</b></td>
+            <td class="regionData gameBox blue" colspan=2 v-else><b>B</b></td>
+            <td class="regionData gameBox yellow active" colspan=2 v-if="encounter.games.includes('yellow')"><b>Y</b></td>
+            <td class="regionData gameBox yellow" colspan=2 v-else><b>Y</b></td>
+            <td class="regionData">{{ encounter.method | capitalize }}</td>
+            <td class="regionData">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
+            <td class="regionData" colspan=3>{{ encounter.chance }}%</td>
+          </tr>
+          <tr><td class="regionFooter" colspan="11"> - </td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -97,9 +88,8 @@ export default {
 
       return [x, y, x2, y2].join(',');
     },
-    setArea: function (newArea, locationId) {
+    setArea: function (newArea) {
       this.selectedArea = newArea;
-      this.fetchEncounters(locationId);
     },
     fetchEncounters: function(locationId) {
       this.encounters = GetEncountersForLocation(locationId);
@@ -130,7 +120,7 @@ export default {
   width: 35vw;
   height: auto;
   border-radius: 3vw;
-  box-shadow: -0.4vw 0.4vw #32a852;
+  box-shadow: -0.4vw 0.4vw #39b331;
 }
 .gameMapContainer {
   margin-bottom: 0.4vw;
@@ -143,22 +133,40 @@ export default {
   height: min-content;
   margin: 4px;
   padding: 4px;
-  background-color: #492f77;
-  border-radius: 8px;
+  background-color: #39b331;
+  border-radius: 1.5rem;
 }
-.col {
-  margin:2px;
-  background-color:#2e1f5e;
+.regionTable {
+  color:whitesmoke;
+  vertical-align: middle;
+  text-align: center;
+  width:100%;
+  border-radius: 1rem;
+  border: 2px;
+  background-color: transparent;
+  border-spacing: 4px;
+  border-collapse: separate;
 }
-.col-2 {
-  margin:2px;
-  background-color:#2e1f5e;
+.regionData {
+  background-color:#328d2b;
 }
-.game.col-2 {
-  background-color:transparent;
+.regionData.header {
+  background-color: #2a7925;
+}
+.regionData.header.left {
+  border-top-left-radius: 1rem;
+}
+.regionData.header.right {
+  border-top-right-radius: 1rem;
+}
+.regionFooter {
+  background-color: #2a7925;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 .gameBox {
-  margin:0.2rem;
+  margin-left:0.2rem;
+  margin-right:0.2rem;
   width:2rem;
   height:2rem;
   text-align: center;
