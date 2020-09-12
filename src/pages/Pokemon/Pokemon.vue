@@ -17,7 +17,7 @@
             <th class="regionData header" width="17%">Levels</th>
             <th class="regionData header right" colspan=3 width="20%">%</th>
           </tr>
-          <tr v-for="encounter in encounters" v-bind:key="encounter.id">
+          <tr v-for="encounter in encounters" v-bind:key="encounter.id" style="height:3rem;">
             <td class="regionData" scope="row">{{ encounter.pokemon | capitalize }}</td>
             <td class="regionData gameBox red active" colspan=2 v-if="encounter.games.includes('red')"><b>R</b></td>
             <td class="regionData gameBox red" colspan=2 v-else><b>R</b></td>
@@ -25,7 +25,15 @@
             <td class="regionData gameBox blue" colspan=2 v-else><b>B</b></td>
             <td class="regionData gameBox yellow active" colspan=2 v-if="encounter.games.includes('yellow')"><b>Y</b></td>
             <td class="regionData gameBox yellow" colspan=2 v-else><b>Y</b></td>
-            <td class="regionData">{{ encounter.method | capitalize }}</td>
+            <td class="regionData">
+              <img src="../../assets/transparent.png" class="encounterIcon walk" v-if="encounter.method=='walk'">
+              <img src="../../assets/transparent.png" class="encounterIcon swim" v-if="encounter.method=='surf'">
+              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='old-rod'">
+              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='good-rod'">
+              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='super-rod'">
+              <img src="../../assets/transparent.png" class="encounterIcon event" v-if="encounter.method=='gift'">
+              {{ encounter.method | capitalize }}
+            </td>
             <td class="regionData">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
             <td class="regionData" colspan=3>{{ encounter.chance }}%</td>
           </tr>
@@ -193,5 +201,31 @@ export default {
 .gameBox.yellow.active {
   color:whitesmoke;
   background-color:#ebc934;
+}
+.encounterIcon {
+  background-image: url('../../assets/Pokemon/encounterIcons.png');
+  image-rendering: pixelated;
+  scale: 200%;
+  margin-right: 12px;
+}
+.encounterIcon.walk {
+  width: 16px;
+  height: 20px;
+  background-position: 0px 0px;
+}
+.encounterIcon.swim {
+  width: 16px;
+  height: 11px;
+  background-position: -17px -6px;
+}
+.encounterIcon.fish {
+  width: 22px;
+  height: 16px;
+  background-position: -34px 0px;
+}
+.encounterIcon.event {
+  width: 16px;
+  height: 16px;
+  background-position: -57px 0px;
 }
 </style>
