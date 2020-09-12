@@ -43,7 +43,7 @@ import $ from 'jquery'
 import imageMapResize from 'image-map-resizer'
 import 'maphilight'
 import { Pokedex } from 'pokeapi-js-wrapper'
-import { ProcessLocation, GetEncountersForLocation } from './PokemonParser'
+import { FetchEncounters, GetEncountersForLocation } from './PokemonParser'
 import mapJSON from '../../assets/Pokemon/Maps/KantoMaps.json'
 
 export default {
@@ -80,6 +80,7 @@ export default {
       shadowFrom: false
     }
     $('img[usemap]').maphilight();
+    FetchEncounters(["red", "blue", "yellow"], new Pokedex(), [88]);
   },
   methods: {
     processedDimensions: function (dimensions) {
@@ -92,15 +93,9 @@ export default {
     },
     setArea: function (newArea) {
       this.selectedArea = newArea;
-      this.fetchEncounters();
     },
     fetchEncounters: function() {
-      const P = new Pokedex();
       GetEncountersForLocation();
-
-      P.getLocationAreaByName("295").then(function(response) {
-        console.log(ProcessLocation(response, ["red", "blue", "yellow"]));
-      });
     }
   }
 }

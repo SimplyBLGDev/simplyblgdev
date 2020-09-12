@@ -1,56 +1,95 @@
-var encounterTable;
+var encounterTable = {};
+var pokeAPI;
+var allowedGames;
 
-function ProcessLocation(apiJSON, games) {
-    // For every encounter
-    //  get pokemon
-    //  For every version detail
-    //      check if the version is correct
-    //      For every encounter detail
-    //          accumulate by encounter detail method
-    //      
-    //  For every encounter (method/Pokemon)
-    //      accumulate chances
-    //      calculate min and max level
-    //  Combine identical entries in different games and fuse games fields
-    //  Add to response JSON
-    // Save full JSON
-    var encounters = apiJSON.pokemon_encounters;
-    var r = [];
-    for (var i = 0; i < encounters.length; i++) {
-        var versionDetails = encounters[i].version_details;
-        for (var j = 0; j < versionDetails.length; j++) {
-            if (games.includes(versionDetails[j].version.name)) {
-                var methods = ProcessEncounterDetails(versionDetails[j].encounter_details);
-                console.log(methods);
-                for (var k = 0; k < methods.length; k++) {
-                    r.push({
-                        "pokemon":encounters[i].pokemon.name,
-                        "method": methods[k].method,
-                        "min_level": methods[k].min_level,
-                        "max_level": methods[k].max_level,
-                        "chance": methods[k].chance,
-                        "games":[versionDetails[j].version.name]
-                    });
-                }
-            }
-        }
-    }
+async function FetchEncounters(games, poke, locationCodes) {
+    pokeAPI = poke;
+    allowedGames = games;
+    var table = {
+        "games":games,
+        "locations":[]
+    };
 
-    encounterTable = encounters;
-    return { "encounters":r };
+    locationCodes.forEach(async function(locationCode) {
+        var locationJSON = await pokeAPI.getLocationByName(locationCode);
+        var location = {
+            "name":locationJSON.name,
+            "areas":GetAreas(locationJSON)
+        };
+
+        table.locations.push(location);
+    });
+
+    console.log(table);
 }
 
-function ProcessEncounterDetails(encounterDetails) {
-    if (encounterDetails.length == 0)
-        return [];
-    var methods = [];
+async function GetAreas(locationJSON) {
+    var r = [];
+
+    locationJSON.areas.forEach(async function(area) {
+        var areaJSON = await pokeAPI.getLocationAreaByName(area.name);
+        r.push({
+            "name":area.name,
+            "encounters":GetEncounters(areaJSON)
+        });
+    });
+
+    return r;
+}
+
+function GetEncounters(areaJSON) {
+    var r = []
+    var encounters = areaJSON.pokemon_encounters;
+    encounters.forEach(function(encounter) {
+        var details = GetVersionDetails(encounter);
+        details.forEach(function (detail) {
+            r.push({
+                "pokemon":encounter.pokemon.name,
+                "method":detail.method,
+                "min_level":detail.min_level,
+                "max_level":detail.max_level,
+                "chance":detail.chance,
+                "games":[detail.game]
+            });
+        });
+    });
+
+    return r;
+}
+
+function GetVersionDetails(encounterJSON) {
+    var r = [];
+    var versionDetails = encounterJSON.version_details;
+
+    versionDetails.forEach(function(versionDetail) {
+        if (allowedGames.includes(versionDetail.version.name)) {
+            var details = GetEncounterDetails(versionDetail);
+            details.forEach(function (detail) {
+                r.push({
+                    "game":versionDetail.version.name,
+                    "method":detail.method,
+                    "min_level":detail.min_level,
+                    "max_level":detail.max_level,
+                    "chance":detail.chance
+                });
+            });
+        }
+    });
+
+    return r;
+}
+
+function GetEncounterDetails(versionDetailJSON) {
+    var r = [];
+    var encounterDetails = versionDetailJSON.encounter_details;
+
     var currentMethod = encounterDetails[0].method.name;
     var minLevel = 999;
     var maxLevel = 0;
     var chance = 0;
     for (var i = 0; i < encounterDetails.length; i++) {
         if (currentMethod != encounterDetails[i].method.name) {
-            methods.push({
+            r.push({
                 "method":currentMethod,
                 "min_level":minLevel,
                 "max_level":maxLevel,
@@ -65,18 +104,18 @@ function ProcessEncounterDetails(encounterDetails) {
         minLevel = Math.min(minLevel, encounterDetails[i].min_level);
         maxLevel = Math.max(maxLevel, encounterDetails[i].max_level);
     }
-    methods.push({
+    r.push({
         "method":currentMethod,
         "min_level":minLevel,
         "max_level":maxLevel,
         "chance":chance
     });
 
-    return methods;
+    return r;
 }
 
 function GetEncountersForLocation() {
     return encounterTable;
 }
 
-export { ProcessLocation, GetEncountersForLocation }
+export { FetchEncounters, GetEncountersForLocation }
