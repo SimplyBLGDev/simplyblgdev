@@ -2,7 +2,7 @@ var encounterTable = {};
 var pokeAPI;
 var allowedGames;
 
-async function FetchEncounters(games, poke, locationCodes) {
+async function FetchEncounters(games, poke, locations) {
     pokeAPI = poke;
     allowedGames = games;
     var table = {
@@ -10,10 +10,11 @@ async function FetchEncounters(games, poke, locationCodes) {
         "locations":[]
     };
 
-    locationCodes.forEach(async function(locationCode) {
-        var locationJSON = await pokeAPI.getLocationByName(locationCode);
+    locations.forEach(async function(locationCode) {
+        var locationJSON = await pokeAPI.getLocationByName(locationCode.location_id);
         var location = {
             "name":locationJSON.name,
+            "id":locationJSON.id,
             "areas":GetAreas(locationJSON)
         };
 
@@ -21,7 +22,6 @@ async function FetchEncounters(games, poke, locationCodes) {
     });
 
     encounterTable = table.locations;
-    console.log(encounterTable);
     return table.locations;
 }
 
@@ -116,8 +116,14 @@ function GetEncounterDetails(versionDetailJSON) {
     return r;
 }
 
-function GetEncountersForLocation() {
-    return encounterTable;
+function GetEncountersForLocation(locationID) {
+    for (var i = 0; i < encounterTable.length; i++) {
+        if (encounterTable[i].id == locationID) {
+            return encounterTable[i].areas[0].encounters;
+        }
+    }
+
+    return encounterTable[0].areas[0].ecounters;
 }
 
 export { FetchEncounters, GetEncountersForLocation }

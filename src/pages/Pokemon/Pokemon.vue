@@ -4,7 +4,7 @@
       <img src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
       <map id="GameMap" name="Kanto">
         <area v-for="area in mapData.maps" v-bind:key="area.id" shape="rect" :coords=processedDimensions(area.dimensions)
-          :title=area.name @mouseover="setArea(area.name)">
+          :title=area.name @mouseover="setArea(area.name, area.location_id)">
       </map>
     </div>
     <div class="regionInfo">
@@ -59,66 +59,6 @@ export default {
     selectedArea: "default",
     mapData: mapJSON,
     encounters: [
-      {
-        "pokemon": "pidgey",
-        "method": "walk",
-        "min_level": 2,
-        "max_level": 5,
-        "chance": 50,
-        "games": [
-          "red"
-        ]
-      },
-      {
-        "pokemon": "pidgey",
-        "method": "walk",
-        "min_level": 2,
-        "max_level": 5,
-        "chance": 50,
-        "games": [
-          "blue"
-        ]
-      },
-      {
-        "pokemon": "pidgey",
-        "method": "walk",
-        "min_level": 2,
-        "max_level": 7,
-        "chance": 70,
-        "games": [
-          "yellow"
-        ]
-      },
-      {
-        "pokemon": "rattata",
-        "method": "walk",
-        "min_level": 2,
-        "max_level": 4,
-        "chance": 50,
-        "games": [
-          "red"
-        ]
-      },
-      {
-        "pokemon": "rattata",
-        "method": "walk",
-        "min_level": 2,
-        "max_level": 4,
-        "chance": 50,
-        "games": [
-          "blue"
-        ]
-      },
-      {
-        "pokemon": "rattata",
-        "method": "walk",
-        "min_level": 2,
-        "max_level": 4,
-        "chance": 30,
-        "games": [
-          "yellow"
-        ]
-      }
     ]
   }),
   mounted() {
@@ -146,7 +86,7 @@ export default {
       shadowFrom: false
     }
     $('img[usemap]').maphilight();
-    FetchEncounters(["red", "blue", "yellow"], new Pokedex(), [88]);
+    FetchEncounters(["red", "blue", "yellow"], new Pokedex(), mapJSON.maps);
   },
   methods: {
     processedDimensions: function (dimensions) {
@@ -157,11 +97,12 @@ export default {
 
       return [x, y, x2, y2].join(',');
     },
-    setArea: function (newArea) {
+    setArea: function (newArea, locationId) {
       this.selectedArea = newArea;
+      this.fetchEncounters(locationId);
     },
-    fetchEncounters: function() {
-      GetEncountersForLocation();
+    fetchEncounters: function(locationId) {
+      this.encounters = GetEncountersForLocation(locationId);
     }
   },
   filters: {
