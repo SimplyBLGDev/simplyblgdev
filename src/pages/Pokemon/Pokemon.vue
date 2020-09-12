@@ -18,20 +18,27 @@
           <div class="col">Event</div>
         </div>
         <div class="row">
-          <div class="col">#</div>
           <div class="col">Pokémon</div>
-          <div class="col">Games</div>
+          <div class="col-2">Games</div>
           <div class="col">Location</div>
           <div class="col">Levels</div>
           <div class="col">%</div>
         </div>
         <div class="row" v-for="encounter in encounters" v-bind:key="encounter.id">
-          <div class="col">{{ encounter.number }}</div>
-          <div class="col">{{ encounter.pokemon }}</div>
-          <div class="col">{{ encounter.games }}</div>
-          <div class="col">{{ encounter.location }}</div>
-          <div class="col">{{ encounter.levels }}</div>
-          <div class="col">{{ encounter.probability }}</div>
+          <div class="col">{{ encounter.pokemon | capitalize }}</div>
+          <div class="game col-2">
+            <div class="row">
+              <div class="col gameBox red active" v-if="encounter.games.includes('red')"><b>R</b></div>
+              <div class="col gameBox red" v-else><b>R</b></div>
+              <div class="col gameBox blue active" v-if="encounter.games.includes('blue')"><b>B</b></div>
+              <div class="col gameBox blue" v-else><b>B</b></div>
+              <div class="col gameBox yellow active" v-if="encounter.games.includes('yellow')"><b>Y</b></div>
+              <div class="col gameBox yellow" v-else><b>Y</b></div>
+            </div>
+          </div>
+          <div class="col">{{ encounter.method | capitalize }}</div>
+          <div class="col">{{ encounter.min_level }} - {{encounter.max_level}}</div>
+          <div class="col">{{ encounter.chance }}</div>
         </div>
       </div>
     </div>
@@ -52,7 +59,66 @@ export default {
     selectedArea: "default",
     mapData: mapJSON,
     encounters: [
-
+      {
+        "pokemon": "pidgey",
+        "method": "walk",
+        "min_level": 2,
+        "max_level": 5,
+        "chance": 50,
+        "games": [
+          "red"
+        ]
+      },
+      {
+        "pokemon": "pidgey",
+        "method": "walk",
+        "min_level": 2,
+        "max_level": 5,
+        "chance": 50,
+        "games": [
+          "blue"
+        ]
+      },
+      {
+        "pokemon": "pidgey",
+        "method": "walk",
+        "min_level": 2,
+        "max_level": 7,
+        "chance": 70,
+        "games": [
+          "yellow"
+        ]
+      },
+      {
+        "pokemon": "rattata",
+        "method": "walk",
+        "min_level": 2,
+        "max_level": 4,
+        "chance": 50,
+        "games": [
+          "red"
+        ]
+      },
+      {
+        "pokemon": "rattata",
+        "method": "walk",
+        "min_level": 2,
+        "max_level": 4,
+        "chance": 50,
+        "games": [
+          "blue"
+        ]
+      },
+      {
+        "pokemon": "rattata",
+        "method": "walk",
+        "min_level": 2,
+        "max_level": 4,
+        "chance": 30,
+        "games": [
+          "yellow"
+        ]
+      }
     ]
   }),
   mounted() {
@@ -97,6 +163,13 @@ export default {
     fetchEncounters: function() {
       GetEncountersForLocation();
     }
+  },
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    }
   }
 }
 </script>
@@ -125,6 +198,7 @@ export default {
 }
 .regionInfo {
   width: 100%;
+  min-width: 35vw;
   height: min-content;
   margin: 4px;
   padding: 4px;
@@ -134,5 +208,41 @@ export default {
 .col {
   margin:2px;
   background-color:#2e1f5e;
+}
+.col-2 {
+  margin:2px;
+  background-color:#2e1f5e;
+}
+.game.col-2 {
+  background-color:transparent;
+}
+.gameBox {
+  margin:0.2rem;
+  width:2rem;
+  height:2rem;
+  text-align: center;
+  vertical-align: middle;
+  color:white;
+}
+.gameBox.red {
+  color:#eb4034;
+}
+.gameBox.blue {
+  color:#3434eb;
+}
+.gameBox.yellow {
+  color:#ebc934;
+}
+.gameBox.red.active {
+  color:whitesmoke;
+  background-color:#eb4034;
+}
+.gameBox.blue.active {
+  color:whitesmoke;
+  background-color:#3434eb;
+}
+.gameBox.yellow.active {
+  color:whitesmoke;
+  background-color:#ebc934;
 }
 </style>

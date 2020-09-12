@@ -20,10 +20,12 @@ async function FetchEncounters(games, poke, locationCodes) {
         table.locations.push(location);
     });
 
-    console.log(table);
+    encounterTable = table.locations;
+    console.log(encounterTable);
+    return table.locations;
 }
 
-async function GetAreas(locationJSON) {
+function GetAreas(locationJSON) {
     var r = [];
 
     locationJSON.areas.forEach(async function(area) {
