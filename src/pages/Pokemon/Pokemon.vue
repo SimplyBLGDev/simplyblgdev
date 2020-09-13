@@ -1,11 +1,29 @@
 <template>
   <div id="poke">
-    <div class="gameMapContainer">
-      <img src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
-      <map id="GameMap" name="Kanto">
-        <area v-for="area in mapData.maps" v-bind:key="area.id" shape="rect" :coords=processedDimensions(area.dimensions)
-          :title=area.name @mouseover="setArea(area.name)" @mouseup="fetchEncounters(area.location_id)">
-      </map>
+    <div class="leftContainer">
+      <div class="gameMapContainer">
+        <img src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
+        <map id="GameMap" name="Kanto">
+          <area v-for="area in mapData.maps" v-bind:key="area.id" shape="rect" :coords=processedDimensions(area.dimensions)
+            :title=area.name @mouseover="setArea(area.name)" @mouseup="fetchEncounters(area.location_id)">
+        </map>
+      </div>
+      <div class="searchDiv">
+        <table class="regionTable">
+          <tbody>
+            <tr>
+              <th class="regionData header right left" colspan="6" width="40%" max-width="7rem">Filter Games</th>
+              <th class="regionData header right left">Find Location</th>
+              <th class="regionData header right left">Find Pokemon</th>
+            </tr>
+            <tr>
+              <td class="regionData btn gameBox bottomLeft red" v-bind:class="{ active: filteredGames.includes('red') }" colspan=2 @mouseup="filterGame('red')"><b>R</b></td>
+              <td class="regionData btn gameBox blue" v-bind:class="{ active: filteredGames.includes('blue') }" colspan=2 @mouseup="filterGame('blue')"><b>B</b></td>
+              <td class="regionData btn gameBox bottomRight yellow" v-bind:class="{ active: filteredGames.includes('yellow') }" colspan=2 @mouseup="filterGame('yellow')"><b>Y</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <div class="regionInfo">
       <table class="regionTable">
@@ -18,17 +36,17 @@
             <th class="regionData header right" colspan=3 width="20%">%</th>
           </tr>
           <tr>
-            <th class="regionData header" colspan="11" v-if="encounters.name">{{ encounters.name | alias}}</th>
+            <th class="regionData header" colspan="11" v-if="encounters.name">{{ encounters.name | alias }}</th>
           </tr>
           <template v-for="area in encounters.areas">
             <tr :key="area.name" v-if="encounters.areas.length > 1">
               <td class="regionData" colspan="11">{{ area.name | alias }}</td>
             </tr>
-            <tr v-for="encounter in area.encounters" v-bind:key="encounter.id" style="height:3rem;">
+            <tr v-for="encounter in filterEncounters(area.encounters)" v-bind:key="encounter.id" style="height:3rem;">
               <td class="regionData" scope="row">
                 <img :src=encounter.pokemon.icon :alt=encounter.pokemon.name class="pokeIcon">
-                {{ encounter.pokemon.name | capitalize }}<br v-if="encounter.pokemon.type!=''">
-                <small v-if="encounter.pokemon.type!=''">{{ encounter.pokemon.type | capitalize }}</small>
+                {{ encounter.pokemon.name | capitalize | alias }}<br v-if="encounter.pokemon.type!=''">
+                <small v-if="encounter.pokemon.type!=''">{{ encounter.pokemon.type | capitalize | alias }}</small>
               </td>
               <td class="regionData gameBox red active" colspan=2 v-if="encounter.games.includes('red')"><b>R</b></td>
               <td class="regionData gameBox red" colspan=2 v-else><b>R</b></td>
@@ -68,9 +86,9 @@ export default {
   name: 'Pokemon',
   data: () => ({
     selectedArea: "default",
+    filteredGames: ['red', 'blue', 'yellow'],
     mapData: mapJSON,
-    encounters: [
-    ]
+    encounters: []
   }),
   mounted() {
     imageMapResize(document.getElementById('GameMap'));
@@ -100,6 +118,9 @@ export default {
     FetchEncounters(["red", "blue", "yellow"], new Pokedex(), mapJSON.maps);
   },
   methods: {
+    intersects: function(a, b) {
+      return a.some(r=>b.includes(r));
+    },
     processedDimensions: function (dimensions) {
       var x = dimensions[0];
       var y = dimensions[1];
@@ -113,6 +134,23 @@ export default {
     },
     fetchEncounters: function(locationId) {
       this.encounters = GetEncountersForLocation(locationId);
+    },
+    filterGame(game) {
+      if (this.filteredGames.includes(game)) {
+        this.filteredGames.splice(this.filteredGames.indexOf(game), 1);
+      } else {
+        this.filteredGames.push(game);
+      }
+    },
+    filterEncounters: function(encounters) {
+      var r = [];
+      for (var i = 0; i < encounters.length; i++) {
+        if (this.intersects(encounters[i].games, this.filteredGames)) {
+          r.push(encounters[i]);
+        }
+      }
+      
+      return r;
     }
   },
   filters: {
@@ -143,6 +181,22 @@ export default {
   background-color: #2c2b2a;
   border-radius: 4vw 2vw 2vw 2vw;
 }
+.leftContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: min-content;
+}
+.searchDiv {
+  display: flex;
+  flex-flow: row;
+  margin: 4px;
+  margin-top: 8px;
+  padding: 4px;
+  background-color: #39b331;
+  width: 100%;
+  height: min-content;
+  border-radius: 1.5rem;
+}
 .mapImage {
   image-rendering: pixelated;
 
@@ -154,7 +208,7 @@ export default {
 .gameMapContainer {
   margin-bottom: 0.3vw;
   margin-left: 0.3vw;
-  padding:8px;
+  padding:4px;
 }
 .regionInfo {
   width: 100%;
@@ -182,6 +236,7 @@ export default {
   -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
   box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
   --box-shadow-color: rgb(0, 0, 0, 0.75);
+  border-radius: 3px;
 }
 .regionData.header {
   background-color: #2a7925;
@@ -218,17 +273,27 @@ export default {
 .gameBox.red.active {
   color:whitesmoke;
   background-color:#eb4034;
-  --box-shadow-color: #eb4034;
 }
 .gameBox.blue.active {
   color:whitesmoke;
   background-color:#3434eb;
-  --box-shadow-color:#3434eb
 }
 .gameBox.yellow.active {
   color:whitesmoke;
   background-color:#e0c032;
-  --box-shadow-color:#e0c032;
+}
+.gameBox.bottomLeft {
+  border-bottom-left-radius: 1rem;
+}
+.gameBox.bottomRight {
+  border-bottom-right-radius: 1rem;
+}
+.btn.gameBox {
+  display: table-cell;
+}
+.btn.gameBox:hover {
+  border-width: 1px;
+  border-color: white;
 }
 .pokeIcon {
   image-rendering: pixelated;

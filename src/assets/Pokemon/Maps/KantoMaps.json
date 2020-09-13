@@ -127,6 +127,9 @@
         { "name":"seafoam-islands-b4f", "display":"b4f" },
         { "name":"kanto-victory-road-2-1f", "display":"1f" },
         { "name":"kanto-victory-road-2-2f", "display":"2f" },
-        { "name":"kanto-victory-road-2-3f", "display":"3f" }
+        { "name":"kanto-victory-road-2-3f", "display":"3f" },
+        { "name":"Farfetchd", "display":"Farfetch'd" },
+        { "name":"Nidoran-m", "display":"Nidoran M" },
+        { "name":"Nidoran-f", "display":"Nidoran F" }
     ]
 }
