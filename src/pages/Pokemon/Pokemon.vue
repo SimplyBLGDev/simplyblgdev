@@ -17,6 +17,9 @@
             <th class="regionData header" width="14%">Levels</th>
             <th class="regionData header right" colspan=3 width="20%">%</th>
           </tr>
+          <tr>
+            <th class="regionData header" colspan="11" v-if="encounters.name">{{ encounters.name | alias}}</th>
+          </tr>
           <template v-for="area in encounters.areas">
             <tr :key="area.name" v-if="encounters.areas.length > 1">
               <td class="regionData" colspan="11">{{ area.name | alias }}</td>

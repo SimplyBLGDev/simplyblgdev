@@ -43,10 +43,13 @@ function GetAreas(locationJSON) {
 
     locationJSON.areas.forEach(async function(area) {
         var areaJSON = await pokeAPI.getLocationAreaByName(area.name);
-        r.push({
-            "name":area.name,
-            "encounters":GetEncounters(areaJSON)
-        });
+        var encounters = GetEncounters(areaJSON);
+        if (encounters.length > 0) {
+            r.push({
+                "name":area.name,
+                "encounters":SortByMethod(encounters)
+            });
+        }
     });
 
     return r;
@@ -150,6 +153,21 @@ function CollapseEncountersGames(encountersJSON) {
     }
 
     return encountersJSON
+}
+
+function SortByMethod(list) {
+    return list.sort((a, b) => (GetMethodValue(a.method) > GetMethodValue(b.method) ? 1 : -1));
+}
+
+function GetMethodValue(method) {
+    return {
+        "Event":0,
+        "Grass":1,
+        "Surf":2,
+        "Old Rod":3,
+        "Good Rod":4,
+        "Super Rod":5
+    }[method];
 }
 
 function ConvertMethodName(method) {
