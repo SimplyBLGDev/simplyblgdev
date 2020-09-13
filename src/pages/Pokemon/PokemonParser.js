@@ -143,6 +143,7 @@ function CollapseEncountersGames(encountersJSON) {
                 encountersJSON[i].chance == encountersJSON[j].chance) {
                     encountersJSON[i].games.push(encountersJSON[j].games[0]);
                     encountersJSON.splice(j, 1);
+                    j--;
                 }
         }
     }

@@ -13,15 +13,15 @@
           <tr>
             <th class="regionData header left">Pokémon</th>
             <th class="regionData header" colspan=6 width="15%">Games</th>
-            <th class="regionData header" width="17%">Location</th>
-            <th class="regionData header" width="17%">Levels</th>
+            <th class="regionData header" width="20%">Location</th>
+            <th class="regionData header" width="14%">Levels</th>
             <th class="regionData header right" colspan=3 width="20%">%</th>
           </tr>
           <tr v-for="encounter in encounters" v-bind:key="encounter.id" style="height:3rem;">
             <td class="regionData" scope="row">
               <img :src=encounter.pokemon.icon :alt=encounter.pokemon.name class="pokeIcon">
-              {{ encounter.pokemon.name | capitalize }}
-              {{ encounter.pokemon.type | capitalize }}
+              {{ encounter.pokemon.name | capitalize }}<br v-if="encounter.pokemon.type!=''">
+              <small v-if="encounter.pokemon.type!=''">{{ encounter.pokemon.type | capitalize }}</small>
             </td>
             <td class="regionData gameBox red active" colspan=2 v-if="encounter.games.includes('red')"><b>R</b></td>
             <td class="regionData gameBox red" colspan=2 v-else><b>R</b></td>
