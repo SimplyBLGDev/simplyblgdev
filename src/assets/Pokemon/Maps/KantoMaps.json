@@ -1,54 +1,239 @@
 {
     "name":"Kanto",
     "games":[ "red", "blue", "yellow" ],
+    "maxDexIx":151,
     "maps":[
-        { "name":"Pallet Town", "dimensions":[32, 88, 8, 8], "location_id":86},
-        { "name":"Route 1", "dimensions":[32, 72, 8, 16], "location_id":88 },
-        { "name":"Viridian City", "dimensions":[32, 64, 8, 8], "location_id":154 },
-        { "name":"Route 2", "dimensions":[32, 32, 8, 32], "location_id":99 },
-        { "name":"Pewter City", "dimensions":[32, 24, 8, 8], "location_id":231 },
-        { "name":"Route 3", "dimensions":[40, 24, 24, 8], "location_id":109 },
-        { "name":"Route 4", "dimensions":[64, 16, 32, 8], "location_id":120 },
-        { "name":"Cerulean City", "dimensions":[96, 16, 8, 8], "location_id":68 },
-        { "name":"Route 5", "dimensions":[96, 24, 8, 16], "location_id":130 },
-        { "name":"Saffron City", "dimensions":[96, 40, 8, 8], "location_id":234 },
-        { "name":"Route 6", "dimensions":[96, 48, 8, 24], "location_id":131 },
-        { "name":"Vermilion City", "dimensions":[96, 72, 8, 8], "location_id":151 },
-        { "name":"Route 7", "dimensions":[104, 40, 24, 8], "location_id":132 },
-        { "name":"Lavender Town", "dimensions":[128, 40, 8, 8], "location_id":232 },
-        { "name":"Route 8", "dimensions":[80, 40, 16, 8], "location_id":133 },
-        { "name":"Celadon City", "dimensions":[72, 40, 8, 8], "location_id":67 },
-        { "name":"Route 9", "dimensions":[104, 16, 32, 8], "location_id":134 },
-        { "name":"Route 10", "dimensions":[128, 24, 8, 16], "location_id":89 },
-        { "name":"Route 11", "dimensions":[104, 72, 24, 8], "location_id":90 },
-        { "name":"Route 12", "dimensions":[128, 48, 8, 40], "location_id":91 },
-        { "name":"Route 13", "dimensions":[104, 88, 32, 8], "location_id":92 },
-        { "name":"Route 14", "dimensions":[104, 96, 8, 16], "location_id":93 },
-        { "name":"Route 15", "dimensions":[88, 104, 16, 8], "location_id":94 },
-        { "name":"Fuchsia City", "dimensions":[80, 104, 8, 8], "location_id":76 },
-        { "name":"Route 16", "dimensions":[48, 40, 24, 8], "location_id":95 },
-        { "name":"Route 17", "dimensions":[48, 48, 8, 56], "location_id":96 },
-        { "name":"Route 18", "dimensions":[48, 104, 32, 8], "location_id":97 },
-        { "name":"Route 19", "dimensions":[80, 112, 8, 16], "location_id":98 },
-        { "name":"Route 20", "dimensions":[40, 120, 40, 8], "location_id":100 },
-        { "name":"Cinnabar Island", "dimensions":[32, 120, 8, 8], "location_id":71 },
-        { "name":"Route 21", "dimensions":[32, 96, 8, 24], "location_id":101 },
-        { "name":"Route 22", "dimensions":[16, 64, 16, 8], "location_id":102 },
-        { "name":"Route 23", "dimensions":[16, 24, 8, 40], "location_id":157 },
-        { "name":"Indigo Plateau", "dimensions":[16, 16, 8, 8], "location_id":233 },
-        { "name":"Route 24", "dimensions":[96, 0, 8, 16], "location_id":103 },
-        { "name":"Route 25", "dimensions":[104, 0, 16, 8], "location_id":104 },
-        { "name":"Digglet's Cave", "dimensions":[106, 68, 8, 8], "location_id":73 },
-        { "name":"Digglet's Cave", "dimensions":[36, 72, 8, 8], "location_id":73 },
-        { "name":"Mt. Moon", "dimensions":[60, 12, 16, 8], "location_id":80 },
-        { "name":"Rock Tunnel", "dimensions":[132, 32, 8, 8], "location_id":87 },
-        { "name":"Seafoam Islands", "dimensions":[56, 116, 8, 8], "location_id":136 },
-        { "name":"Cerulean Cave", "dimensions":[88, 8, 8, 8], "location_id":147 },
-        { "name":"Victory Road", "dimensions":[12, 32, 8, 8], "location_id":159 },
-        { "name":"Viridian Forest", "dimensions":[28, 40, 8, 16], "location_id":155 },
-        { "name":"Power Plant", "dimensions":[124, 32, 8, 8], "location_id":158 },
-        { "name":"Safari Zone", "dimensions":[76, 92, 16, 16], "location_id":162 }
-    ],
+        {
+          "name": "Pallet Town",
+          "dimensions": [32, 88, 40, 88, 40, 96, 32, 96],
+          "location_id": 86
+        },
+        {
+          "name": "Route 1",
+          "dimensions": [32, 72, 40, 72, 40, 88, 32, 88],
+          "location_id": 88
+        },
+        {
+          "name": "Viridian City",
+          "dimensions": [32, 64, 40, 64, 40, 72, 32, 72],
+          "location_id": 154
+        },
+        {
+          "name": "Route 2",
+          "dimensions": [32, 32, 40, 32, 40, 64, 32, 64],
+          "location_id": 99
+        },
+        {
+          "name": "Pewter City",
+          "dimensions": [32, 24, 40, 24, 40, 32, 32, 32],
+          "location_id": 231
+        },
+        {
+          "name": "Route 3",
+          "dimensions": [40, 24, 56, 24, 56, 16, 64, 16, 64, 32, 40, 32],
+          "location_id": 109
+        },
+        {
+          "name": "Route 4",
+          "dimensions": [64, 16, 96, 16, 96, 24, 64, 24],
+          "location_id": 120
+        },
+        {
+          "name": "Cerulean City",
+          "dimensions": [96, 16, 104, 16, 104, 24, 96, 24],
+          "location_id": 68
+        },
+        {
+          "name": "Route 5",
+          "dimensions": [96, 24, 104, 24, 104, 40, 96, 40],
+          "location_id": 130
+        },
+        {
+          "name": "Saffron City",
+          "dimensions": [96, 40, 104, 40, 104, 48, 96, 48],
+          "location_id": 234
+        },
+        {
+          "name": "Route 6",
+          "dimensions": [96, 48, 104, 48, 104, 72, 96, 72],
+          "location_id": 131
+        },
+        {
+          "name": "Vermilion City",
+          "dimensions": [96, 72, 104, 72, 104, 80, 96, 80],
+          "location_id": 151
+        },
+        {
+          "name": "Route 7",
+          "dimensions": [104, 40, 128, 40, 128, 48, 104, 48],
+          "location_id": 132
+        },
+        {
+          "name": "Lavender Town",
+          "dimensions": [128, 40, 136, 40, 136, 48, 128, 48],
+          "location_id": 232
+        },
+        {
+          "name": "Route 8",
+          "dimensions": [80, 40, 96, 40, 96, 48, 80, 48],
+          "location_id": 133
+        },
+        {
+          "name": "Celadon City",
+          "dimensions": [72, 40, 80, 40, 80, 48, 72, 48],
+          "location_id": 67
+        },
+        {
+          "name": "Route 9",
+          "dimensions": [104, 16, 136, 16, 136, 24, 104, 24],
+          "location_id": 134
+        },
+        {
+          "name": "Route 10",
+          "dimensions": [128, 24, 136, 24, 136, 40, 128, 40],
+          "location_id": 89
+        },
+        {
+          "name": "Route 11",
+          "dimensions": [104, 72, 128, 72, 128, 80, 104, 80],
+          "location_id": 90
+        },
+        {
+          "name": "Route 12",
+          "dimensions": [128, 48, 136, 48, 136, 88, 128, 88],
+          "location_id": 91
+        },
+        {
+          "name": "Route 13",
+          "dimensions": [104, 88, 136, 88, 136, 96, 104, 96],
+          "location_id": 92
+        },
+        {
+          "name": "Route 14",
+          "dimensions": [104, 96, 112, 96, 112, 112, 104, 112],
+          "location_id": 93
+        },
+        {
+          "name": "Route 15",
+          "dimensions": [88, 104, 104, 104, 104, 112, 88, 112],
+          "location_id": 94
+        },
+        {
+          "name": "Fuchsia City",
+          "dimensions": [80, 104, 88, 104, 88, 112, 80, 112],
+          "location_id": 76
+        },
+        {
+          "name": "Route 16",
+          "dimensions": [48, 40, 72, 40, 72, 48, 48, 48],
+          "location_id": 95
+        },
+        {
+          "name": "Route 17",
+          "dimensions": [48, 48, 56, 48, 56, 104, 48, 104],
+          "location_id": 96
+        },
+        {
+          "name": "Route 18",
+          "dimensions": [48, 104, 80, 104, 80, 112, 48, 112],
+          "location_id": 97
+        },
+        {
+          "name": "Route 19",
+          "dimensions": [80, 112, 88, 112, 88, 128, 80, 128],
+          "location_id": 98
+        },
+        {
+          "name": "Route 20",
+          "dimensions": [40, 120, 80, 120, 80, 128, 40, 128],
+          "location_id": 100
+        },
+        {
+          "name": "Cinnabar Island",
+          "dimensions": [32, 120, 40, 120, 40, 128, 32, 128],
+          "location_id": 71
+        },
+        {
+          "name": "Route 21",
+          "dimensions": [32, 96, 40, 96, 40, 120, 32, 120],
+          "location_id": 101
+        },
+        {
+          "name": "Route 22",
+          "dimensions": [16, 64, 32, 64, 32, 72, 16, 72],
+          "location_id": 102
+        },
+        {
+          "name": "Route 23",
+          "dimensions": [16, 24, 24, 24, 24, 64, 16, 64],
+          "location_id": 157
+        },
+        {
+          "name": "Indigo Plateau",
+          "dimensions": [16, 16, 24, 16, 24, 24, 16, 24],
+          "location_id": 233
+        },
+        {
+          "name": "Route 24",
+          "dimensions": [96, 0, 104, 0, 104, 16, 96, 16],
+          "location_id": 103
+        },
+        {
+          "name": "Route 25",
+          "dimensions": [104, 0, 120, 0, 120, 8, 104, 8],
+          "location_id": 104
+        },
+        {
+          "name": "Digglet's Cave",
+          "dimensions": [106, 68, 114, 68, 114, 76, 106, 76],
+          "location_id": 73
+        },
+        {
+          "name": "Digglet's Cave",
+          "dimensions": [36, 72, 44, 72, 44, 80, 36, 80],
+          "location_id": 73
+        },
+        {
+          "name": "Mt. Moon",
+          "dimensions": [56, 12, 72, 12, 72, 20, 56, 20],
+          "location_id": 80
+        },
+        {
+          "name": "Rock Tunnel",
+          "dimensions": [132, 32, 140, 32, 140, 40, 132, 40],
+          "location_id": 87
+        },
+        {
+          "name": "Seafoam Islands",
+          "dimensions": [56, 116, 64, 116, 64, 124, 56, 124],
+          "location_id": 136
+        },
+        {
+          "name": "Cerulean Cave",
+          "dimensions": [88, 8, 96, 8, 96, 16, 88, 16],
+          "location_id": 147
+        },
+        {
+          "name": "Victory Road",
+          "dimensions": [12, 32, 20, 32, 20, 40, 12, 40],
+          "location_id": 159
+        },
+        {
+          "name": "Viridian Forest",
+          "dimensions": [28, 40, 36, 40, 36, 56, 28, 56],
+          "location_id": 155
+        },
+        {
+          "name": "Power Plant",
+          "dimensions": [124, 32, 132, 32, 132, 40, 124, 40],
+          "location_id": 158
+        },
+        {
+          "name": "Safari Zone",
+          "dimensions": [76, 92, 92, 92, 92, 108, 76, 108],
+          "location_id": 162
+        }
+      ],
     "aliases":[
         { "name":"pallet-town", "display":"Pallet Town" },
         { "name":"viridian-city", "display":"Viridian City" },

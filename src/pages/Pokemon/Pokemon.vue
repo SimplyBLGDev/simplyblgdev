@@ -4,7 +4,7 @@
       <div class="gameMapContainer">
         <img src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
         <map id="GameMap" name="Kanto">
-          <area v-for="area in mapData.maps" v-bind:key="area.id" shape="rect" :coords=processedDimensions(area.dimensions)
+          <area v-for="area in mapData.maps" v-bind:key="area.id" shape="poly" :coords=area.dimensions
             :title=area.name @mouseover="setArea(area.name)" @mouseup="fetchEncounters(area.location_id)">
         </map>
       </div>
@@ -31,9 +31,9 @@
           <tr>
             <th class="regionData header left">Pokémon</th>
             <th class="regionData header" colspan=6 width="15%">Games</th>
-            <th class="regionData header" width="20%">Location</th>
-            <th class="regionData header" width="14%">Levels</th>
-            <th class="regionData header right" colspan=3 width="20%">%</th>
+            <th class="regionData header" width="24%">Location</th>
+            <th class="regionData header" width="13%">Levels</th>
+            <th class="regionData header right" colspan=3 width="18%">%</th>
           </tr>
           <tr>
             <th class="regionData header" colspan="11" v-if="encounters.name">{{ encounters.name | alias }}</th>
@@ -173,34 +173,32 @@ export default {
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
 #poke {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   margin: 8px;
   padding: 8px;
   background-color: #2c2b2a;
   border-radius: 4vw 2vw 2vw 2vw;
 }
 .leftContainer {
-  display: flex;
-  flex-wrap: wrap;
-  height: min-content;
+  width:100%;
+  margin-right:4px;
 }
 .searchDiv {
-  display: flex;
-  flex-flow: row;
   margin: 4px;
   margin-top: 8px;
   padding: 4px;
   background-color: #39b331;
-  width: 100%;
   height: min-content;
   border-radius: 1.5rem;
 }
 .mapImage {
   image-rendering: pixelated;
-
-  width: 35vw;
+  width: 100%;
   height: auto;
   border-radius: 3vw;
   box-shadow: -0.4vw 0.4vw #39b331;
@@ -209,9 +207,9 @@ export default {
   margin-bottom: 0.3vw;
   margin-left: 0.3vw;
   padding:4px;
+  width:100%;
 }
 .regionInfo {
-  width: 100%;
   min-width: 35vw;
   height: min-content;
   margin: 4px;
@@ -327,5 +325,17 @@ export default {
   width: 16px;
   height: 16px;
   background-position: -57px 0px;
+}
+
+@media only screen and (orientation: landscape) {
+  #poke {
+    flex-flow: row;
+  }
+  .leftContainer {
+    width:30%;
+  }
+  .regionInfo {
+    width:70%;
+  }
 }
 </style>

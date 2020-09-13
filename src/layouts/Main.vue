@@ -40,7 +40,10 @@ export default {
 
 <style>
 .bg-blgnavbar {
-  background-color: #249451;
+  background-color: #319e2a;
+  -webkit-box-shadow: 0px 1px 20px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 20px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 20px 0px rgba(0,0,0,0.75);
 }
 .app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
