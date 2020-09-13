@@ -124,7 +124,7 @@ export default {
   margin: 8px;
   padding: 8px;
   background-color: #2c2b2a;
-  border-radius: 8px;
+  border-radius: 4vw 2vw 2vw 2vw;
 }
 .mapImage {
   image-rendering: pixelated;
@@ -135,8 +135,8 @@ export default {
   box-shadow: -0.4vw 0.4vw #39b331;
 }
 .gameMapContainer {
-  margin-bottom: 0.4vw;
-  margin-left: 0.4vw;
+  margin-bottom: 0.3vw;
+  margin-left: 0.3vw;
   padding:8px;
 }
 .regionInfo {
@@ -195,7 +195,7 @@ export default {
   color:#3434eb;
 }
 .gameBox.yellow {
-  color:#ebc934;
+  color:#e0c032;
 }
 .gameBox.red.active {
   color:whitesmoke;
@@ -207,7 +207,7 @@ export default {
 }
 .gameBox.yellow.active {
   color:whitesmoke;
-  background-color:#ebc934;
+  background-color:#e0c032;
 }
 .pokeIcon {
   image-rendering: pixelated;

@@ -1,5 +1,5 @@
-var encounterTable = {};
 import pokeIcons from '../../assets/Pokemon/pokeIcons.json'
+var encounterTable = {};
 var pokeAPI;
 var allowedGames;
 
