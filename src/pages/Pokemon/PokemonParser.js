@@ -22,6 +22,7 @@ async function FetchEncounters(games, poke, locations) {
     });
 
     encounterTable = table.locations;
+    console.log(table);
     return table.locations;
 }
 
@@ -42,11 +43,12 @@ function GetAreas(locationJSON) {
 function GetEncounters(areaJSON) {
     var r = []
     var encounters = areaJSON.pokemon_encounters;
-    encounters.forEach(function(encounter) {
+    encounters.forEach(async function(encounter) {
         var details = GetVersionDetails(encounter);
+        var pokeJSON = await pokeAPI.getPokemonByName(encounter.pokemon.name);
         details.forEach(function (detail) {
             r.push({
-                "pokemon":encounter.pokemon.name,
+                "pokemon":GetPokemonDetails(pokeJSON),
                 "method":ConvertMethodName(detail.method),
                 "min_level":detail.min_level,
                 "max_level":detail.max_level,
@@ -57,6 +59,21 @@ function GetEncounters(areaJSON) {
     });
 
     return CollapseEncountersGames(r);
+}
+
+function GetPokemonDetails(pokemonJSON) {
+    var secondaryType = "";
+    if (pokemonJSON.types.length > 1) {
+        secondaryType = pokemonJSON.types[1].type.name;
+    }
+
+    return {
+        "name":pokemonJSON.name,
+        "type":"",
+        "icon":pokemonJSON.sprites.versions['generation-vii'].icons.front_default,
+        "primary_type":pokemonJSON.types[0].type.name,
+        "secondary_type":secondaryType
+    };
 }
 
 function GetVersionDetails(encounterJSON) {
@@ -130,7 +147,8 @@ function CollapseEncountersGames(encountersJSON) {
     // Can be done more efficiently? yes, will I? no
     for (var i = 0; i < encountersJSON.length; i++) {
         for (var j = i+1; j < encountersJSON.length; j++) {
-            if (encountersJSON[i].pokemon == encountersJSON[j].pokemon &&
+            if (encountersJSON[i].pokemon.name == encountersJSON[j].pokemon.name &&
+                encountersJSON[i].pokemon.type == encountersJSON[j].pokemon.type &&
                 encountersJSON[i].method == encountersJSON[j].method &&
                 encountersJSON[i].min_level == encountersJSON[j].min_level &&
                 encountersJSON[i].max_level == encountersJSON[j].max_level &&

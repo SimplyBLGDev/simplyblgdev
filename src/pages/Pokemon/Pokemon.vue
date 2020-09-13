@@ -18,7 +18,11 @@
             <th class="regionData header right" colspan=3 width="20%">%</th>
           </tr>
           <tr v-for="encounter in encounters" v-bind:key="encounter.id" style="height:3rem;">
-            <td class="regionData" scope="row">{{ encounter.pokemon | capitalize }}</td>
+            <td class="regionData" scope="row">
+              <img :src=encounter.pokemon.icon :alt=encounter.pokemon.name class="pokeIcon">
+              {{ encounter.pokemon.name | capitalize }}
+              {{ encounter.pokemon.type | capitalize }}
+            </td>
             <td class="regionData gameBox red active" colspan=2 v-if="encounter.games.includes('red')"><b>R</b></td>
             <td class="regionData gameBox red" colspan=2 v-else><b>R</b></td>
             <td class="regionData gameBox blue active" colspan=2 v-if="encounter.games.includes('blue')"><b>B</b></td>
@@ -204,6 +208,12 @@ export default {
 .gameBox.yellow.active {
   color:whitesmoke;
   background-color:#ebc934;
+}
+.pokeIcon {
+  image-rendering: pixelated;
+  scale: 200%;
+  float: left;
+  margin-bottom: 2px;
 }
 .encounterIcon {
   background-image: url('../../assets/Pokemon/encounterIcons.png');
