@@ -214,6 +214,7 @@ export default {
   scale: 200%;
   float: left;
   margin-bottom: 2px;
+  margin-right: -40px;
 }
 .encounterIcon {
   background-image: url('../../assets/Pokemon/encounterIcons.png');
