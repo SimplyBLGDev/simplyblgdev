@@ -47,7 +47,7 @@ function GetEncounters(areaJSON) {
         details.forEach(function (detail) {
             r.push({
                 "pokemon":encounter.pokemon.name,
-                "method":detail.method,
+                "method":ConvertMethodName(detail.method),
                 "min_level":detail.min_level,
                 "max_level":detail.max_level,
                 "chance":detail.chance,
@@ -56,7 +56,7 @@ function GetEncounters(areaJSON) {
         });
     });
 
-    return r;
+    return CollapseEncountersGames(r);
 }
 
 function GetVersionDetails(encounterJSON) {
@@ -124,6 +124,35 @@ function GetEncountersForLocation(locationID) {
     }
 
     return encounterTable[0].areas[0].ecounters;
+}
+
+function CollapseEncountersGames(encountersJSON) {
+    // Can be done more efficiently? yes, will I? no
+    for (var i = 0; i < encountersJSON.length; i++) {
+        for (var j = i+1; j < encountersJSON.length; j++) {
+            if (encountersJSON[i].pokemon == encountersJSON[j].pokemon &&
+                encountersJSON[i].method == encountersJSON[j].method &&
+                encountersJSON[i].min_level == encountersJSON[j].min_level &&
+                encountersJSON[i].max_level == encountersJSON[j].max_level &&
+                encountersJSON[i].chance == encountersJSON[j].chance) {
+                    encountersJSON[i].games.push(encountersJSON[j].games[0]);
+                    encountersJSON.splice(j, 1);
+                }
+        }
+    }
+
+    return encountersJSON
+}
+
+function ConvertMethodName(method) {
+    return {
+        "gift":"Event",
+        "walk":"Grass",
+        "surf":"Surf",
+        "old-rod":"Old Rod",
+        "good-rod":"Good Rod",
+        "super-rod":"Super Rod"
+    }[method];
 }
 
 export { FetchEncounters, GetEncountersForLocation }

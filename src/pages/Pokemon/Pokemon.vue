@@ -26,12 +26,12 @@
             <td class="regionData gameBox yellow active" colspan=2 v-if="encounter.games.includes('yellow')"><b>Y</b></td>
             <td class="regionData gameBox yellow" colspan=2 v-else><b>Y</b></td>
             <td class="regionData">
-              <img src="../../assets/transparent.png" class="encounterIcon walk" v-if="encounter.method=='walk'">
-              <img src="../../assets/transparent.png" class="encounterIcon swim" v-if="encounter.method=='surf'">
-              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='old-rod'">
-              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='good-rod'">
-              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='super-rod'">
-              <img src="../../assets/transparent.png" class="encounterIcon event" v-if="encounter.method=='gift'">
+              <img src="../../assets/transparent.png" class="encounterIcon walk" v-if="encounter.method=='Grass'">
+              <img src="../../assets/transparent.png" class="encounterIcon swim" v-if="encounter.method=='Surf'">
+              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Old Rod'">
+              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Good Rod'">
+              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Super Rod'">
+              <img src="../../assets/transparent.png" class="encounterIcon event" v-if="encounter.method=='Event'">
               {{ encounter.method | capitalize }}
             </td>
             <td class="regionData">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
@@ -157,6 +157,9 @@ export default {
 }
 .regionData {
   background-color:#328d2b;
+  -webkit-box-shadow: 1px 1px 5px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px -3px rgba(0,0,0,0.75);
 }
 .regionData.header {
   background-color: #2a7925;
