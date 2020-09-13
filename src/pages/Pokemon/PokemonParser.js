@@ -22,9 +22,20 @@ async function FetchEncounters(games, poke, locations) {
         table.locations.push(location);
     });
 
-    encounterTable = table.locations;
+    encounterTable = table;
+    console.log(table);
     
     return encounterTable;
+}
+
+function GetEncountersForLocation(locationID) {
+    for (var i = 0; i < encounterTable.locations.length; i++) {
+        if (encounterTable.locations[i].id == locationID) {
+            return encounterTable.locations[i];
+        }
+    }
+
+    return encounterTable.locations[0];
 }
 
 function GetAreas(locationJSON) {
@@ -120,16 +131,6 @@ function GetEncounterDetails(versionDetailJSON) {
     });
 
     return r;
-}
-
-function GetEncountersForLocation(locationID) {
-    for (var i = 0; i < encounterTable.length; i++) {
-        if (encounterTable[i].id == locationID) {
-            return encounterTable[i].areas[0].encounters;
-        }
-    }
-
-    return encounterTable[0].areas[0].ecounters;
 }
 
 function CollapseEncountersGames(encountersJSON) {

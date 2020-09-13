@@ -17,31 +17,36 @@
             <th class="regionData header" width="14%">Levels</th>
             <th class="regionData header right" colspan=3 width="20%">%</th>
           </tr>
-          <tr v-for="encounter in encounters" v-bind:key="encounter.id" style="height:3rem;">
-            <td class="regionData" scope="row">
-              <img :src=encounter.pokemon.icon :alt=encounter.pokemon.name class="pokeIcon">
-              {{ encounter.pokemon.name | capitalize }}<br v-if="encounter.pokemon.type!=''">
-              <small v-if="encounter.pokemon.type!=''">{{ encounter.pokemon.type | capitalize }}</small>
-            </td>
-            <td class="regionData gameBox red active" colspan=2 v-if="encounter.games.includes('red')"><b>R</b></td>
-            <td class="regionData gameBox red" colspan=2 v-else><b>R</b></td>
-            <td class="regionData gameBox blue active" colspan=2 v-if="encounter.games.includes('blue')"><b>B</b></td>
-            <td class="regionData gameBox blue" colspan=2 v-else><b>B</b></td>
-            <td class="regionData gameBox yellow active" colspan=2 v-if="encounter.games.includes('yellow')"><b>Y</b></td>
-            <td class="regionData gameBox yellow" colspan=2 v-else><b>Y</b></td>
-            <td class="regionData">
-              <img src="../../assets/transparent.png" class="encounterIcon walk" v-if="encounter.method=='Grass'">
-              <img src="../../assets/transparent.png" class="encounterIcon swim" v-if="encounter.method=='Surf'">
-              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Old Rod'">
-              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Good Rod'">
-              <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Super Rod'">
-              <img src="../../assets/transparent.png" class="encounterIcon event" v-if="encounter.method=='Event'">
-              {{ encounter.method | capitalize }}
-            </td>
-            <td class="regionData">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
-            <td class="regionData" colspan=3>{{ encounter.chance }}%</td>
-          </tr>
-          <tr><td class="regionFooter" colspan="11"> - </td></tr>
+          <template v-for="area in encounters.areas">
+            <tr :key="area.name" v-if="encounters.areas.length > 1">
+              <td class="regionData" colspan="11">{{ area.name | alias }}</td>
+            </tr>
+            <tr v-for="encounter in area.encounters" v-bind:key="encounter.id" style="height:3rem;">
+              <td class="regionData" scope="row">
+                <img :src=encounter.pokemon.icon :alt=encounter.pokemon.name class="pokeIcon">
+                {{ encounter.pokemon.name | capitalize }}<br v-if="encounter.pokemon.type!=''">
+                <small v-if="encounter.pokemon.type!=''">{{ encounter.pokemon.type | capitalize }}</small>
+              </td>
+              <td class="regionData gameBox red active" colspan=2 v-if="encounter.games.includes('red')"><b>R</b></td>
+              <td class="regionData gameBox red" colspan=2 v-else><b>R</b></td>
+              <td class="regionData gameBox blue active" colspan=2 v-if="encounter.games.includes('blue')"><b>B</b></td>
+              <td class="regionData gameBox blue" colspan=2 v-else><b>B</b></td>
+              <td class="regionData gameBox yellow active" colspan=2 v-if="encounter.games.includes('yellow')"><b>Y</b></td>
+              <td class="regionData gameBox yellow" colspan=2 v-else><b>Y</b></td>
+              <td class="regionData">
+                <img src="../../assets/transparent.png" class="encounterIcon walk" v-if="encounter.method=='Grass'">
+                <img src="../../assets/transparent.png" class="encounterIcon swim" v-if="encounter.method=='Surf'">
+                <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Old Rod'">
+                <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Good Rod'">
+                <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Super Rod'">
+                <img src="../../assets/transparent.png" class="encounterIcon event" v-if="encounter.method=='Event'">
+                {{ encounter.method | capitalize }}
+              </td>
+              <td class="regionData">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
+              <td class="regionData" colspan=3>{{ encounter.chance }}%</td>
+            </tr>
+          </template>
+          <tr><td class="regionData regionFooter" colspan="11"> - </td></tr>
         </tbody>
       </table>
     </div>
@@ -112,6 +117,15 @@ export default {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
+    },
+    alias: function(value) {
+      for (var i = 0; i < mapJSON.aliases.length; i++) {
+        if (mapJSON.aliases[i].name == value) {
+          return mapJSON.aliases[i].display;
+        }
+      }
+
+      return value;
     }
   }
 }
@@ -161,9 +175,10 @@ export default {
 }
 .regionData {
   background-color:#328d2b;
-  -webkit-box-shadow: 1px 1px 5px -3px rgba(0,0,0,0.75);
-  -moz-box-shadow: 1px 1px 5px -3px rgba(0,0,0,0.75);
-  box-shadow: 1px 1px 5px -3px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+  -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+  box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+  --box-shadow-color: rgb(0, 0, 0, 0.75);
 }
 .regionData.header {
   background-color: #2a7925;
@@ -200,14 +215,17 @@ export default {
 .gameBox.red.active {
   color:whitesmoke;
   background-color:#eb4034;
+  --box-shadow-color: #eb4034;
 }
 .gameBox.blue.active {
   color:whitesmoke;
   background-color:#3434eb;
+  --box-shadow-color:#3434eb
 }
 .gameBox.yellow.active {
   color:whitesmoke;
   background-color:#e0c032;
+  --box-shadow-color:#e0c032;
 }
 .pokeIcon {
   image-rendering: pixelated;
