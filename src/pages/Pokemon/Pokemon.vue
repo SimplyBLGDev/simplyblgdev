@@ -80,8 +80,8 @@
 
 <script>
 import $ from 'jquery'
-import imageMapResize from 'image-map-resizer'
 import 'maphilight'
+import imageMapResize from 'image-map-resizer'
 import { Pokedex } from 'pokeapi-js-wrapper'
 import { FetchEncounters, GetEncountersForLocation } from './PokemonParser'
 import mapJSON from '../../assets/Pokemon/Maps/KantoMaps.json'
@@ -338,11 +338,12 @@ export default {
   background-position: -57px 0px;
 }
 
-@media only screen and (orientation: landscape) {
+@media only screen and (min-width: 1200px) {
   #poke {
     flex-flow: row;
   }
   .leftContainer {
+    min-width:550px;
     width:30%;
   }
   .regionInfo {
