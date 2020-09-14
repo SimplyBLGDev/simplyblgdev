@@ -2,7 +2,7 @@
   <div id="poke">
     <div class="leftContainer">
       <div class="gameMapContainer">
-        <img src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
+        <img id="mapIMG" src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
         <map id="GameMap" name="Kanto">
           <area v-for="area in mapData.maps" v-bind:key="area.id" shape="poly" :coords=area.dimensions
             :title=area.name @mouseover="setArea(area.name)" @mouseup="fetchEncounters(area.location_id)">
@@ -12,18 +12,24 @@
         <table class="regionTable">
           <tbody>
             <tr>
-              <th class="regionData header right left" colspan=6 max-width="7rem">Filter Games</th>
-              <th class="regionData header right left" colspan=2 width="30%">Find Location</th>
-              <th class="regionData header right left" colspan=2 width="40%">Find Pokemon</th>
+              <th class="regionData header topRight topLeft" colspan=6 max-width="7rem">Filter Games</th>
+              <th class="regionData header topRight topLeft" colspan=2 width="50%">Find Location</th>
             </tr>
             <tr>
-              <td class="regionData btn gameBox bottomLeft red" v-bind:class="{ active: filteredGames.includes('red') }" colspan=2 @mouseup="filterGame('red')"><b>R</b></td>
-              <td class="regionData btn gameBox blue" v-bind:class="{ active: filteredGames.includes('blue') }" colspan=2 @mouseup="filterGame('blue')"><b>B</b></td>
-              <td class="regionData btn gameBox bottomRight yellow" v-bind:class="{ active: filteredGames.includes('yellow') }" colspan=2 @mouseup="filterGame('yellow')"><b>Y</b></td>
+              <td class="regionData btn gameBox bottomLeft red" v-bind:class="{ active: filteredGames.includes('red') }" colspan=2 @click="filterGame('red')"><b>R</b></td>
+              <td class="regionData btn gameBox blue" v-bind:class="{ active: filteredGames.includes('blue') }" colspan=2 @click="filterGame('blue')"><b>B</b></td>
+              <td class="regionData btn gameBox bottomRight yellow" v-bind:class="{ active: filteredGames.includes('yellow') }" colspan=2 @click="filterGame('yellow')"><b>Y</b></td>
               <td><input class="regionData searchInput bottomLeft" type="text"></td>
               <td class="regionData btn gameBox blue active bottomRight">Find</td>
-              <td><input class="regionData searchInput bottomLeft" type="text"></td>
-              <td class="regionData btn gameBox blue active bottomRight">Find</td>
+            </tr>
+            <tr>
+              <th colspan=3 class="regionData header topRight topLeft">Other Options</th>
+              <th class="regionData header topRight topLeft" colspan=6 width="40%">Find Pokemon</th>
+            </tr>
+            <tr>
+              <td colspan=3 class="regionData btn gameBox blue active bottomLeft bottomRight" @click="highlightAll()">All outlines</td>
+              <td colspan=4><input class="regionData searchInput bottomLeft" type="text"></td>
+              <td class="regionData btn gameBox blue active bottomRight" @mouseup="findPokemon()">Find</td>
             </tr>
           </tbody>
         </table>
@@ -33,11 +39,11 @@
       <table class="regionTable">
         <tbody>
           <tr>
-            <th class="regionData header left">Pokémon</th>
+            <th class="regionData header topLeft">Pokémon</th>
             <th class="regionData header" colspan=6 width="15%">Games</th>
             <th class="regionData header" width="24%">Location</th>
             <th class="regionData header" width="13%">Levels</th>
-            <th class="regionData header right" colspan=3 width="18%">%</th>
+            <th class="regionData header topRight" colspan=3 width="18%">%</th>
           </tr>
           <tr>
             <th class="regionData header" colspan="11" v-if="encounters.name">{{ encounters.name | alias }}</th>
@@ -95,7 +101,6 @@ export default {
     encounters: []
   }),
   mounted() {
-    imageMapResize(document.getElementById('GameMap'));
     $.fn.maphilight.defaults = {
       fill: true,
       fillColor: '000000',
@@ -118,8 +123,9 @@ export default {
       shadowPosition: 'outside',
       shadowFrom: false
     }
-    $('img[usemap]').maphilight();
     FetchEncounters(["red", "blue", "yellow"], new Pokedex(), mapJSON.maps);
+    imageMapResize(document.getElementById('GameMap'));
+    $('img[usemap]').maphilight();
   },
   methods: {
     intersects: function(a, b) {
@@ -155,6 +161,11 @@ export default {
       }
       
       return r;
+    },
+    findPokemon: function() {
+
+    },
+    highlightAll: function() {
     }
   },
   filters: {
@@ -183,8 +194,8 @@ export default {
 #poke {
   display: flex;
   flex-flow: column;
-  margin: 8px;
-  padding: 8px;
+  margin: 2px;
+  padding: 2px;
   background-color: #2c2b2a;
   border-radius: 4vw 2vw 2vw 2vw;
 }
@@ -208,9 +219,11 @@ export default {
   border-radius: 1.5rem;
 }
 .mapImage {
+  image-rendering: -moz-crisp-edges;
   image-rendering: pixelated;
   width: 100%;
   height: auto;
+  margin-right: 20px;
   border-radius: 3vw;
   box-shadow: -0.4vw 0.4vw #39b331;
 }
@@ -250,10 +263,10 @@ export default {
 .regionData.header {
   background-color: #2a7925;
 }
-.regionData.header.left {
+.regionData.topLeft {
   border-top-left-radius: 1rem;
 }
-.regionData.header.right {
+.regionData.topRight {
   border-top-right-radius: 1rem;
 }
 .regionFooter {
@@ -309,7 +322,7 @@ export default {
   scale: 200%;
   float: left;
   margin-bottom: 2px;
-  margin-right: -40px;
+  margin-right: 0px;
 }
 .encounterIcon {
   background-image: url('../../assets/Pokemon/encounterIcons.png');
@@ -341,13 +354,21 @@ export default {
 @media only screen and (min-width: 1200px) {
   #poke {
     flex-flow: row;
+    margin: 8px;
+    padding: 8px;
   }
   .leftContainer {
-    min-width:550px;
-    width:30%;
+    min-width: 550px;
+    width: 30%;
   }
   .regionInfo {
     width:70%;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .pokeIcon {
+    margin-right: -40px;
   }
 }
 </style>
