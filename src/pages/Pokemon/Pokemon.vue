@@ -12,14 +12,18 @@
         <table class="regionTable">
           <tbody>
             <tr>
-              <th class="regionData header right left" colspan="6" width="40%" max-width="7rem">Filter Games</th>
-              <th class="regionData header right left">Find Location</th>
-              <th class="regionData header right left">Find Pokemon</th>
+              <th class="regionData header right left" colspan=6 max-width="7rem">Filter Games</th>
+              <th class="regionData header right left" colspan=2 width="30%">Find Location</th>
+              <th class="regionData header right left" colspan=2 width="40%">Find Pokemon</th>
             </tr>
             <tr>
               <td class="regionData btn gameBox bottomLeft red" v-bind:class="{ active: filteredGames.includes('red') }" colspan=2 @mouseup="filterGame('red')"><b>R</b></td>
               <td class="regionData btn gameBox blue" v-bind:class="{ active: filteredGames.includes('blue') }" colspan=2 @mouseup="filterGame('blue')"><b>B</b></td>
               <td class="regionData btn gameBox bottomRight yellow" v-bind:class="{ active: filteredGames.includes('yellow') }" colspan=2 @mouseup="filterGame('yellow')"><b>Y</b></td>
+              <td><input class="regionData searchInput bottomLeft" type="text"></td>
+              <td class="regionData btn gameBox blue active bottomRight">Find</td>
+              <td><input class="regionData searchInput bottomLeft" type="text"></td>
+              <td class="regionData btn gameBox blue active bottomRight">Find</td>
             </tr>
           </tbody>
         </table>
@@ -188,6 +192,13 @@ export default {
   width:100%;
   margin-right:4px;
 }
+.searchInput {
+  border:0;
+  width: 100%;
+  height:2.2rem;
+  text-align: center;
+  color:whitesmoke;
+}
 .searchDiv {
   margin: 4px;
   margin-top: 8px;
@@ -280,10 +291,10 @@ export default {
   color:whitesmoke;
   background-color:#e0c032;
 }
-.gameBox.bottomLeft {
+.regionData.bottomLeft {
   border-bottom-left-radius: 1rem;
 }
-.gameBox.bottomRight {
+.regionData.bottomRight {
   border-bottom-right-radius: 1rem;
 }
 .btn.gameBox {

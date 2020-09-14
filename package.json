@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
-    "bootstrap-vue": "^2.16.0",
+    "bootstrap-vue": "^2.17.0",
     "core-js": "^3.6.5",
     "image-map-resizer": "^1.0.10",
     "jquery": "^3.5.1",
