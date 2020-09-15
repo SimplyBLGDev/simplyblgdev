@@ -43,10 +43,10 @@
         <tbody>
           <tr>
             <th class="regionData header topLeft">Pokémon</th>
-            <th class="regionData header" colspan=6 width="15%">Games</th>
-            <th class="regionData header" width="24%">Location</th>
+            <th class="regionData header gamesColumn">Games</th>
+            <th class="regionData header locationsColumn">Location</th>
             <th class="regionData header" width="15%">Levels</th>
-            <th class="regionData header topRight" colspan=3 width="16%">%</th>
+            <th class="regionData header topRight" width="13%">%</th>
           </tr>
           <tr>
             <th class="regionData header" colspan=12 v-if="encounters.name">{{ encounters.name | alias }}</th>
@@ -61,12 +61,16 @@
                 {{ encounter.pokemon.name | capitalize | alias }}<br v-if="encounter.pokemon.type!=''">
                 <small v-if="encounter.pokemon.type!=''">{{ encounter.pokemon.type | capitalize | alias }}</small>
               </td>
-              <td class="regionData gameBox red active" colspan=2 v-if="encounter.games.includes('red')"><b>R</b></td>
-              <td class="regionData gameBox red" colspan=2 v-else><b>R</b></td>
-              <td class="regionData gameBox blue active" colspan=2 v-if="encounter.games.includes('blue')"><b>B</b></td>
-              <td class="regionData gameBox blue" colspan=2 v-else><b>B</b></td>
-              <td class="regionData gameBox yellow active" colspan=2 v-if="encounter.games.includes('yellow')"><b>Y</b></td>
-              <td class="regionData gameBox yellow" colspan=2 v-else><b>Y</b></td>
+              <td style="height:100%; padding:0; margin:0;">
+                <table class="inTableTable">
+                  <div class="regionData fbox gameBox red active" colspan=2 v-if="encounter.games.includes('red')"><b>R</b></div>
+                  <div class="regionData fbox gameBox red" colspan=2 v-else><b>R</b></div>
+                  <div class="regionData fbox gameBox blue active" colspan=2 v-if="encounter.games.includes('blue')"><b>B</b></div>
+                  <div class="regionData fbox gameBox blue" colspan=2 v-else><b>B</b></div>
+                  <div class="regionData fbox gameBox yellow active" colspan=2 v-if="encounter.games.includes('yellow')"><b>Y</b></div>
+                  <div class="regionData fbox gameBox yellow" colspan=2 v-else><b>Y</b></div>
+                </table>
+              </td>
               <td class="regionData">
                 <img src="../../assets/transparent.png" class="encounterIcon walk" v-if="encounter.method=='Grass'">
                 <img src="../../assets/transparent.png" class="encounterIcon swim" v-if="encounter.method=='Surf'">
@@ -77,7 +81,7 @@
                 {{ encounter.method | capitalize }}
               </td>
               <td class="regionData">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
-              <td class="regionData" colspan=3>{{ encounter.chance }}%</td>
+              <td class="regionData">{{ encounter.chance }}%</td>
             </tr>
           </template>
           <tr><td class="regionData regionFooter" colspan=12> - </td></tr>
@@ -260,6 +264,34 @@ export default {
   --box-shadow-color: rgb(0, 0, 0, 0.75);
   border-radius: 3px;
 }
+.inTableTable {
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  padding:0;
+  margin:0;
+}
+.regionData.fbox:first-child {
+  margin-left: 0;
+  margin-top: 0;
+}
+.regionData.fbox:last-child {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.regionData.fbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 0;
+} 
 .regionData.header {
   background-color: #2a7925;
 }
@@ -268,6 +300,12 @@ export default {
 }
 .regionData.topRight {
   border-top-right-radius: 1rem;
+}
+.regionData.header.gamesColumn {
+  width: 10%;
+}
+.regionData.header.locationsColumn {
+  width: 29%;
 }
 .regionFooter {
   background-color: #2a7925;
@@ -377,6 +415,27 @@ export default {
   .pokeIcon {
     margin-right: -40px;
     margin-left: 0px;
+  }
+  .regionData.header.gamesColumn {
+    width: 15%;
+  }
+  .regionData.header.locationsColumn {
+    width: 24%;
+  }
+  .inTableTable {
+    flex-direction: row;
+  }
+  .regionData.fbox:first-child {
+    margin-left: 0;
+  }
+  .regionData.fbox:last-child {
+    margin-right: 0;
+  }
+  .regionData.fbox {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 </style>

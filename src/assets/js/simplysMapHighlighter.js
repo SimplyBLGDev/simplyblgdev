@@ -11,14 +11,14 @@ var mapHighlightingStyles = {
     }
   },
   "selected": {
-    "offsetX":5,
-    "offsetY":5,
+    "offsetX":4,
+    "offsetY":4,
     "stroke": {
-      "color":"#39b331bb",
-      "width": 3
+      "color":"#eb403477",
+      "width": 2
     },
     "fill": {
-      "color":"#39b33166"
+      "color":"#eb403443"
     }
   },
   "permanent": {
