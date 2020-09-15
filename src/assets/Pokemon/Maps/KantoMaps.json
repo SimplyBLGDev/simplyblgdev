@@ -234,6 +234,11 @@
           "location_id": 162
         }
       ],
+    "pokeAliases":[
+      { "name":"Farfetchd", "display":"Farfetch'd" },
+      { "name":"Nidoran-m", "display":"Nidoran M" },
+      { "name":"Nidoran-f", "display":"Nidoran F" }
+    ],
     "aliases":[
         { "name":"pallet-town", "display":"Pallet Town" },
         { "name":"viridian-city", "display":"Viridian City" },
@@ -312,9 +317,6 @@
         { "name":"seafoam-islands-b4f", "display":"b4f" },
         { "name":"kanto-victory-road-2-1f", "display":"1f" },
         { "name":"kanto-victory-road-2-2f", "display":"2f" },
-        { "name":"kanto-victory-road-2-3f", "display":"3f" },
-        { "name":"Farfetchd", "display":"Farfetch'd" },
-        { "name":"Nidoran-m", "display":"Nidoran M" },
-        { "name":"Nidoran-f", "display":"Nidoran F" }
+        { "name":"kanto-victory-road-2-3f", "display":"3f" }
     ]
 }

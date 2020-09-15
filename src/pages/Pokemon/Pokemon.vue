@@ -45,30 +45,30 @@
             <th class="regionData header topLeft">Pokémon</th>
             <th class="regionData header gamesColumn">Games</th>
             <th class="regionData header locationsColumn">Location</th>
-            <th class="regionData header" width="15%">Levels</th>
+            <th class="regionData header" width="19%">Levels</th>
             <th class="regionData header topRight" width="13%">%</th>
           </tr>
           <tr>
-            <th class="regionData header" colspan=12 v-if="encounters.name">{{ encounters.name | alias }}</th>
+            <th class="regionData header" colspan=5 v-if="encounters.name">{{ encounters.name | alias }}</th>
           </tr>
           <template v-for="area in encounters.areas">
             <tr :key="area.name" v-if="encounters.areas.length > 1">
-              <td class="regionData" colspan=12>{{ area.name | alias }}</td>
+              <td class="regionData" colspan=5>{{ area.name | alias }}</td>
             </tr>
             <tr v-for="encounter in filterEncounters(area.encounters)" v-bind:key="encounter.id" style="height:3rem;">
               <td class="regionData" scope="row">
                 <img :src=encounter.pokemon.icon :alt=encounter.pokemon.name class="pokeIcon">
-                {{ encounter.pokemon.name | capitalize | alias }}<br v-if="encounter.pokemon.type!=''">
-                <small v-if="encounter.pokemon.type!=''">{{ encounter.pokemon.type | capitalize | alias }}</small>
+                {{ encounter.pokemon.name | capitalize | pokeAlias }}<br v-if="encounter.pokemon.type!=''">
+                <small v-if="encounter.pokemon.type!=''">{{ encounter.pokemon.type | capitalize | pokeAlias }}</small>
               </td>
               <td style="height:100%; padding:0; margin:0;">
                 <table class="inTableTable">
-                  <div class="regionData fbox gameBox red active" colspan=2 v-if="encounter.games.includes('red')"><b>R</b></div>
-                  <div class="regionData fbox gameBox red" colspan=2 v-else><b>R</b></div>
-                  <div class="regionData fbox gameBox blue active" colspan=2 v-if="encounter.games.includes('blue')"><b>B</b></div>
-                  <div class="regionData fbox gameBox blue" colspan=2 v-else><b>B</b></div>
-                  <div class="regionData fbox gameBox yellow active" colspan=2 v-if="encounter.games.includes('yellow')"><b>Y</b></div>
-                  <div class="regionData fbox gameBox yellow" colspan=2 v-else><b>Y</b></div>
+                  <div class="regionData fbox gameBox red active" v-if="encounter.games.includes('red')"><b>R</b></div>
+                  <div class="regionData fbox gameBox red" v-else><b>R</b></div>
+                  <div class="regionData fbox gameBox blue active" v-if="encounter.games.includes('blue')"><b>B</b></div>
+                  <div class="regionData fbox gameBox blue" v-else><b>B</b></div>
+                  <div class="regionData fbox gameBox yellow active" v-if="encounter.games.includes('yellow')"><b>Y</b></div>
+                  <div class="regionData fbox gameBox yellow" v-else><b>Y</b></div>
                 </table>
               </td>
               <td class="regionData">
@@ -84,7 +84,7 @@
               <td class="regionData">{{ encounter.chance }}%</td>
             </tr>
           </template>
-          <tr><td class="regionData regionFooter" colspan=12> - </td></tr>
+          <tr><td class="regionData regionFooter" colspan=5> - </td></tr>
         </tbody>
       </table>
     </div>
@@ -176,6 +176,15 @@ export default {
       for (var i = 0; i < mapJSON.aliases.length; i++) {
         if (mapJSON.aliases[i].name == value) {
           return mapJSON.aliases[i].display;
+        }
+      }
+
+      return value;
+    },
+    pokeAlieas: function(value) {
+      for (var i = 0; i < mapJSON.pokeAliases.length; i++) {
+        if (mapJSON.pokeAliases[i].name == value) {
+          return mapJSON.pokeAliases[i].display;
         }
       }
 
