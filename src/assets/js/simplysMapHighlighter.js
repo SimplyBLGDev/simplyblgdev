@@ -3,22 +3,22 @@ var mapHighlightingStyles = {
     "offsetX":4,
     "offsetY":4,
     "stroke": {
-      "color":"#0000ee99",
+      "color":"#3434eb99",
       "width": 2
     },
     "fill": {
-      "color":"#0000ff44"
+      "color":"#3434eb44"
     }
   },
   "selected": {
-    "offsetX":4,
-    "offsetY":4,
+    "offsetX":5,
+    "offsetY":5,
     "stroke": {
-      "color":"#11cc11bb",
+      "color":"#39b331bb",
       "width": 3
     },
     "fill": {
-      "color":"#11cc1166"
+      "color":"#39b33166"
     }
   },
   "permanent": {
