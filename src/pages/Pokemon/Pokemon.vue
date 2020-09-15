@@ -1,11 +1,15 @@
 <template>
   <div id="poke">
     <div class="leftContainer">
+      {{ selectedArea }}
       <div class="gameMapContainer">
         <img id="mapIMG" src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
+        <canvas class="mapCanvas" id="normalCanvas" style="pointer-events:none;"></canvas>
+        <canvas class="mapCanvas" id="selectionCanvas" style="pointer-events:none;"></canvas>
+        <canvas class="mapCanvas" id="permaCanvas" style="pointer-events:none;"></canvas>
         <map id="GameMap" name="Kanto">
-          <area v-for="area in mapData.maps" v-bind:key="area.id" shape="poly" :coords=area.dimensions
-            :title=area.name @mouseover="setArea(area.name)" @mouseup="fetchEncounters(area.location_id)">
+          <area v-for="area in mapData.maps" v-bind:key="area.id" shape="poly" :coords=area.dimensions :id=area.name
+            :title=area.name @mouseover="hoverArea(area.name)" @mouseleave="leaveArea()" @click="fetchEncounters(area.location_id)">
         </map>
       </div>
       <div class="searchDiv">
@@ -27,7 +31,7 @@
               <th class="regionData header topRight topLeft" colspan=6 width="40%">Find Pokemon</th>
             </tr>
             <tr>
-              <td colspan=3 class="regionData btn gameBox blue active bottomLeft bottomRight" @click="highlightAll()">All outlines</td>
+              <td colspan=3 class="regionData btn gameBox blue bottomLeft bottomRight" @click="highlightAll()" v-bind:class="{ active: allOutlines }"><b>All outlines</b></td>
               <td colspan=4><input class="regionData searchInput bottomLeft" type="text"></td>
               <td class="regionData btn gameBox blue active bottomRight" @mouseup="findPokemon()">Find</td>
             </tr>
@@ -85,9 +89,7 @@
 </template>
 
 <script>
-import $ from 'jquery'
-import 'maphilight'
-import imageMapResize from 'image-map-resizer'
+import { SetUpHighlighter, DrawNormal, ClearCanvas, ToggleAll, SelectArea } from '../../assets/js/simplysMapHighlighter'
 import { Pokedex } from 'pokeapi-js-wrapper'
 import { FetchEncounters, GetEncountersForLocation } from './PokemonParser'
 import mapJSON from '../../assets/Pokemon/Maps/KantoMaps.json'
@@ -95,37 +97,16 @@ import mapJSON from '../../assets/Pokemon/Maps/KantoMaps.json'
 export default {
   name: 'Pokemon',
   data: () => ({
-    selectedArea: "default",
+    selectedArea: "-",
+    allOutlines: false,
     filteredGames: ['red', 'blue', 'yellow'],
     mapData: mapJSON,
     encounters: []
   }),
   mounted() {
-    $.fn.maphilight.defaults = {
-      fill: true,
-      fillColor: '000000',
-      fillOpacity: 0.1,
-      stroke: true,
-      strokeColor: '0011ee',
-      strokeOpacity: 1,
-      strokeWidth: 2,
-      fade: true,
-      alwaysOn: false,
-      neverOn: false,
-      groupBy: false,
-      wrapClass: true,
-      shadow: false,
-      shadowX: 0,
-      shadowY: 0,
-      shadowRadius: 6,
-      shadowColor: '000000',
-      shadowOpacity: 0.8,
-      shadowPosition: 'outside',
-      shadowFrom: false
-    }
     FetchEncounters(["red", "blue", "yellow"], new Pokedex(), mapJSON.maps);
-    imageMapResize(document.getElementById('GameMap'));
-    $('img[usemap]').maphilight();
+    SetUpHighlighter(document.querySelector('#GameMap'), document.querySelector('#mapIMG'), document.querySelector('#normalCanvas'),
+      document.querySelector('#selectionCanvas'), document.querySelector('#permaCanvas'), document.querySelectorAll('area'));
   },
   methods: {
     intersects: function(a, b) {
@@ -139,10 +120,16 @@ export default {
 
       return [x, y, x2, y2].join(',');
     },
-    setArea: function (newArea) {
+    hoverArea: function (newArea) {
       this.selectedArea = newArea;
+      DrawNormal(event.target);
+    },
+    leaveArea: function() {
+      this.selectedArea = "-";
+      ClearCanvas();
     },
     fetchEncounters: function(locationId) {
+      SelectArea(event.target);
       this.encounters = GetEncountersForLocation(locationId);
     },
     filterGame(game) {
@@ -166,6 +153,8 @@ export default {
 
     },
     highlightAll: function() {
+      this.allOutlines = !this.allOutlines;
+      ToggleAll(this.allOutlines);
     }
   },
   filters: {
@@ -232,6 +221,12 @@ export default {
   margin-left: 0.3vw;
   padding:4px;
   width:100%;
+  position:relative;
+}
+.mapCanvas {
+  position: absolute;
+  left:0px;
+  top:0px;
 }
 .regionInfo {
   min-width: 35vw;
