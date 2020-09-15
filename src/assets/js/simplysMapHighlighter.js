@@ -34,6 +34,8 @@ var mapHighlightingStyles = {
   }
 }
 
+var setup = false;
+
 var mapIMG;
 var normalCanvas;
 var selectedCanvas;
@@ -51,7 +53,8 @@ function SetUpHighlighter(map, _mapIMG, _normalCanvas, _selectedCanvas, _permaCa
   permaCanvas = _permaCanvas;
   permaCanvasAreas = _permaAreas;
   Resized();
-  window.onresize = Resized;
+  setup = true;
+  //window.addEventListener('resize', Resized, false), resized is called from imageMapResizer's for correct order of execution
 }
 
 function SelectArea(area) {
@@ -61,6 +64,7 @@ function SelectArea(area) {
 }
 
 function Resized() {
+  if (!setup) { return; }
   ClearCanvas(normalCanvas);
   ClearCanvas(selectedCanvas);
   ClearCanvas(permaCanvas);
@@ -107,6 +111,8 @@ function DrawArea(canvas, area, style = mapHighlightingStyles.regular) {
 }
 
 function ClearCanvas(canvas = normalCanvas) {
+  console.log("Clear Canvas");
+  console.log(canvas);
   var ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
@@ -159,6 +165,7 @@ function scaleImageMap(map) {
       }
 
       cachedAreaCoordsArray.forEach(resizeAreaTag)
+      Resized(); // Callback for maphighlighting redrawing
     }
 
     function getCoords(e) {
