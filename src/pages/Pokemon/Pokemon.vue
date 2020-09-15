@@ -1,7 +1,6 @@
 <template>
   <div id="poke">
     <div class="leftContainer">
-      {{ selectedArea }}
       <div class="gameMapContainer">
         <img id="mapIMG" src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
         <canvas class="mapCanvas" id="normalCanvas" style="pointer-events:none;"></canvas>
@@ -89,7 +88,8 @@
 </template>
 
 <script>
-import { SetUpHighlighter, DrawNormal, ClearCanvas, ToggleAll, SelectArea } from '../../assets/js/simplysMapHighlighter'
+import $ from 'jquery'
+import { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea } from '../../assets/js/simplysMapHighlighter'
 import { Pokedex } from 'pokeapi-js-wrapper'
 import { FetchEncounters, GetEncountersForLocation } from './PokemonParser'
 import mapJSON from '../../assets/Pokemon/Maps/KantoMaps.json'
@@ -105,6 +105,7 @@ export default {
   }),
   mounted() {
     FetchEncounters(["red", "blue", "yellow"], new Pokedex(), mapJSON.maps);
+    $('#permaCanvas').fadeOut(0);
     SetUpHighlighter(document.querySelector('#GameMap'), document.querySelector('#mapIMG'), document.querySelector('#normalCanvas'),
       document.querySelector('#selectionCanvas'), document.querySelector('#permaCanvas'), document.querySelectorAll('area'));
   },
@@ -120,13 +121,16 @@ export default {
 
       return [x, y, x2, y2].join(',');
     },
+    // eslint-disable-next-line
     hoverArea: function (newArea) {
-      this.selectedArea = newArea;
       DrawNormal(event.target);
+      $('#normalCanvas').stop(true, false);
+      $('#normalCanvas').fadeIn(120);
     },
     leaveArea: function() {
       this.selectedArea = "-";
-      ClearCanvas();
+      $('#normalCanvas').stop(true, false);
+      $('#normalCanvas').fadeOut(120);
     },
     fetchEncounters: function(locationId) {
       SelectArea(event.target);
@@ -154,7 +158,8 @@ export default {
     },
     highlightAll: function() {
       this.allOutlines = !this.allOutlines;
-      ToggleAll(this.allOutlines);
+      ToggleAll(this.allOutlines)
+      $('#permaCanvas').fadeToggle(200);
     }
   },
   filters: {
@@ -196,6 +201,7 @@ export default {
   border:0;
   width: 100%;
   height:2.2rem;
+  max-height:100%;
   text-align: center;
   color:whitesmoke;
 }
@@ -316,7 +322,8 @@ export default {
   scale: 200%;
   float: left;
   margin-bottom: 2px;
-  margin-right: 0px;
+  margin-right: -5px;
+  margin-left: -12px;
 }
 .encounterIcon {
   background-image: url('../../assets/Pokemon/encounterIcons.png');
@@ -362,7 +369,14 @@ export default {
 
 @media only screen and (min-width: 720px) {
   .pokeIcon {
+    margin-right: -5px;
+  }
+}
+
+@media only screen and (min-width: 610px) {
+  .pokeIcon {
     margin-right: -40px;
+    margin-left: 0px;
   }
 }
 </style>

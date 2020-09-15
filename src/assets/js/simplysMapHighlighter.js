@@ -89,6 +89,7 @@ function Resized() {
 }
 
 function DrawNormal(area) {
+  ClearCanvas(normalCanvas);
   DrawArea(normalCanvas, area, mapHighlightingStyles.regular);
 }
 
@@ -110,7 +111,7 @@ function DrawArea(canvas, area, style = mapHighlightingStyles.regular) {
   ctx.stroke();
 }
 
-function ClearCanvas(canvas = normalCanvas) {
+function ClearCanvas(canvas) {
   var ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
@@ -223,4 +224,4 @@ function scaleImageMap(map) {
     }
   }
 
-export { SetUpHighlighter, DrawNormal, ClearCanvas, ToggleAll, SelectArea }
+export { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea }
