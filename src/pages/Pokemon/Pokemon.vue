@@ -46,15 +46,15 @@
             <th class="regionData header topLeft">Pokémon</th>
             <th class="regionData header" colspan=6 width="15%">Games</th>
             <th class="regionData header" width="24%">Location</th>
-            <th class="regionData header" width="13%">Levels</th>
-            <th class="regionData header topRight" colspan=3 width="18%">%</th>
+            <th class="regionData header" width="15%">Levels</th>
+            <th class="regionData header topRight" colspan=3 width="16%">%</th>
           </tr>
           <tr>
-            <th class="regionData header" colspan="11" v-if="encounters.name">{{ encounters.name | alias }}</th>
+            <th class="regionData header" colspan=12 v-if="encounters.name">{{ encounters.name | alias }}</th>
           </tr>
           <template v-for="area in encounters.areas">
             <tr :key="area.name" v-if="encounters.areas.length > 1">
-              <td class="regionData" colspan="11">{{ area.name | alias }}</td>
+              <td class="regionData" colspan=12>{{ area.name | alias }}</td>
             </tr>
             <tr v-for="encounter in filterEncounters(area.encounters)" v-bind:key="encounter.id" style="height:3rem;">
               <td class="regionData" scope="row">
@@ -81,7 +81,7 @@
               <td class="regionData" colspan=3>{{ encounter.chance }}%</td>
             </tr>
           </template>
-          <tr><td class="regionData regionFooter" colspan="11"> - </td></tr>
+          <tr><td class="regionData regionFooter" colspan=12> - </td></tr>
         </tbody>
       </table>
     </div>
@@ -218,7 +218,6 @@ export default {
 }
 .gameMapContainer {
   margin-bottom: 0.3vw;
-  margin-left: 0.3vw;
   padding:4px;
   width:100%;
   position:relative;
