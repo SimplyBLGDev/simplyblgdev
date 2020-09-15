@@ -111,8 +111,6 @@ function DrawArea(canvas, area, style = mapHighlightingStyles.regular) {
 }
 
 function ClearCanvas(canvas = normalCanvas) {
-  console.log("Clear Canvas");
-  console.log(canvas);
   var ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }

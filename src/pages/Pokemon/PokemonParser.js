@@ -23,7 +23,6 @@ async function FetchEncounters(games, poke, locations) {
     });
 
     encounterTable = table;
-    console.log(table);
     
     return encounterTable;
 }
