@@ -180,6 +180,11 @@ function ConvertMethodName(method) {
     }[method];
 }
 
+function GetPokeList(topIX) {
+    var iconsClone = [...pokeIcons.icons];
+    return iconsClone.splice(0, topIX);
+}
+
 function GetIcon(poke) {
     for (var i = 0; i < pokeIcons.icons.length; i++) {
         if (pokeIcons.icons[i].name == poke) {
@@ -190,4 +195,20 @@ function GetIcon(poke) {
     return "";
 }
 
-export { FetchEncounters, GetEncountersForLocation }
+function FindPokemon(poke) {
+    var resultsIds = []
+    encounterTable.locations.forEach(function(location) {
+        location.areas.forEach(function(area) {
+            for (var i = 0; i < area.encounters.length; i++) {
+                if (area.encounters[i].pokemon.name == poke) {
+                    resultsIds.push(location.id);
+                    return;
+                }
+            }
+        });
+    });
+
+    return resultsIds;
+}
+
+export { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon }

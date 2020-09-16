@@ -5,9 +5,10 @@
         <img id="mapIMG" src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
         <canvas class="mapCanvas" id="normalCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="selectionCanvas" style="pointer-events:none;"></canvas>
+        <canvas class="mapCanvas" id="searchCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="permaCanvas" style="pointer-events:none;"></canvas>
         <map id="GameMap" name="Kanto">
-          <area v-for="area in mapData.maps" v-bind:key="area.id" shape="poly" :coords=area.dimensions :id=area.name
+          <area v-for="area in mapData.maps" v-bind:key="area.id" shape="poly" :coords=area.dimensions :data-locationId=area.location_id
             :title=area.name @mouseover="hoverArea(area.name)" @mouseleave="leaveArea()" @click="fetchEncounters(area.location_id)">
         </map>
       </div>
@@ -22,8 +23,13 @@
               <td class="regionData btn gameBox bottomLeft red" v-bind:class="{ active: filteredGames.includes('red') }" colspan=2 @click="filterGame('red')"><b>R</b></td>
               <td class="regionData btn gameBox blue" v-bind:class="{ active: filteredGames.includes('blue') }" colspan=2 @click="filterGame('blue')"><b>B</b></td>
               <td class="regionData btn gameBox bottomRight yellow" v-bind:class="{ active: filteredGames.includes('yellow') }" colspan=2 @click="filterGame('yellow')"><b>Y</b></td>
-              <td><input class="regionData searchInput bottomLeft" type="text"></td>
-              <td class="regionData btn gameBox blue active bottomRight">Find</td>
+              <td style="padding: 0">
+                <input id="LocationInput" list="LocationDataList" value="" class="regionData searchInput bottomLeft">
+                <datalist id="LocationDataList">
+                  <option v-for="location in mapData.maps" :key="location.name" :value=location.name></option>
+                </datalist>
+              </td>
+              <td class="regionData btn gameBox blue active bottomRight" @click="findLocation()">Find</td>
             </tr>
             <tr>
               <th colspan=3 class="regionData header topRight topLeft">Other Options</th>
@@ -31,8 +37,13 @@
             </tr>
             <tr>
               <td colspan=3 class="regionData btn gameBox blue bottomLeft bottomRight" @click="highlightAll()" v-bind:class="{ active: allOutlines }"><b>All outlines</b></td>
-              <td colspan=4><input class="regionData searchInput bottomLeft" type="text"></td>
-              <td class="regionData btn gameBox blue active bottomRight" @mouseup="findPokemon()">Find</td>
+              <td colspan=4 style="padding: 0">
+                <input id="PokemonInput" list="PokemonDataList" value="" class="regionData searchInput bottomLeft">
+                <datalist id="PokemonDataList">
+                  <option v-for="poke in findablePokemon" :key="poke.name" :value=poke.name|capitalize|pokeAlias></option>
+                </datalist>
+              </td>
+              <td class="regionData btn gameBox blue active bottomRight" @click="findPokemon()">Find</td>
             </tr>
           </tbody>
         </table>
@@ -45,7 +56,7 @@
             <th class="regionData header topLeft">Pokémon</th>
             <th class="regionData header gamesColumn">Games</th>
             <th class="regionData header locationsColumn">Location</th>
-            <th class="regionData header" width="19%">Levels</th>
+            <th class="regionData header levelsColumn">Levels</th>
             <th class="regionData header topRight" width="13%">%</th>
           </tr>
           <tr>
@@ -80,7 +91,8 @@
                 <img src="../../assets/transparent.png" class="encounterIcon event" v-if="encounter.method=='Event'">
                 {{ encounter.method | capitalize }}
               </td>
-              <td class="regionData">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
+              <td class="regionData" v-if="encounter.min_level != encounter.max_level">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
+              <td class="regionData" v-else>{{ encounter.max_level }}</td>
               <td class="regionData">{{ encounter.chance }}%</td>
             </tr>
           </template>
@@ -93,9 +105,9 @@
 
 <script>
 import $ from 'jquery'
-import { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea } from '../../assets/js/simplysMapHighlighter'
+import { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch } from '../../assets/js/simplysMapHighlighter'
 import { Pokedex } from 'pokeapi-js-wrapper'
-import { FetchEncounters, GetEncountersForLocation } from './PokemonParser'
+import { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon } from './PokemonParser'
 import mapJSON from '../../assets/Pokemon/Maps/KantoMaps.json'
 
 export default {
@@ -104,14 +116,16 @@ export default {
     selectedArea: "-",
     allOutlines: false,
     filteredGames: ['red', 'blue', 'yellow'],
+    findablePokemon: [],
     mapData: mapJSON,
     encounters: []
   }),
   mounted() {
     FetchEncounters(["red", "blue", "yellow"], new Pokedex(), mapJSON.maps);
     $('#permaCanvas').fadeOut(0);
+    this.findablePokemon = GetPokeList(151);
     SetUpHighlighter(document.querySelector('#GameMap'), document.querySelector('#mapIMG'), document.querySelector('#normalCanvas'),
-      document.querySelector('#selectionCanvas'), document.querySelector('#permaCanvas'), document.querySelectorAll('area'));
+      document.querySelector('#selectionCanvas'), document.querySelector('#permaCanvas'), document.querySelector('#searchCanvas'), document.querySelectorAll('area'));
   },
   methods: {
     intersects: function(a, b) {
@@ -158,7 +172,16 @@ export default {
       return r;
     },
     findPokemon: function() {
-
+      var search = document.querySelector('#PokemonInput').value;
+      var resultsIds = FindPokemon(search.toLowerCase());
+      var results = []
+      resultsIds.forEach(function(id) {
+        results.push(document.querySelector('[data-locationId = "' + id + '"]'));
+      });
+      DrawSearch(results);
+    },
+    findLocation: function() {
+      document.querySelector('[title = "' + document.querySelector('#LocationInput').value + '"]').click();
     },
     highlightAll: function() {
       this.allOutlines = !this.allOutlines;
@@ -181,7 +204,7 @@ export default {
 
       return value;
     },
-    pokeAlieas: function(value) {
+    pokeAlias: function(value) {
       for (var i = 0; i < mapJSON.pokeAliases.length; i++) {
         if (mapJSON.pokeAliases[i].name == value) {
           return mapJSON.pokeAliases[i].display;
@@ -213,7 +236,7 @@ export default {
 .searchInput {
   border:0;
   width: 100%;
-  height:2.2rem;
+  height:2.4rem;
   max-height:100%;
   text-align: center;
   color:whitesmoke;
@@ -231,7 +254,6 @@ export default {
   image-rendering: pixelated;
   width: 100%;
   height: auto;
-  margin-right: 20px;
   border-radius: 3vw;
   box-shadow: -0.4vw 0.4vw #39b331;
 }
@@ -311,10 +333,13 @@ export default {
   border-top-right-radius: 1rem;
 }
 .regionData.header.gamesColumn {
-  width: 10%;
+  width: 5%;
 }
 .regionData.header.locationsColumn {
-  width: 29%;
+  width: 26%;
+}
+.regionData.header.levelsColumn {
+  width: 21%;
 }
 .regionFooter {
   background-color: #2a7925;
@@ -370,7 +395,7 @@ export default {
   float: left;
   margin-bottom: 2px;
   margin-right: -5px;
-  margin-left: -12px;
+  margin-left: -8px;
 }
 .encounterIcon {
   background-image: url('../../assets/Pokemon/encounterIcons.png');
@@ -430,6 +455,9 @@ export default {
   }
   .regionData.header.locationsColumn {
     width: 24%;
+  }
+  .regionData.header.levelsColumn {
+    width: 16%;
   }
   .inTableTable {
     flex-direction: row;

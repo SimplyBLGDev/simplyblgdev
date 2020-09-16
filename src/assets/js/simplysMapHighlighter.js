@@ -31,6 +31,17 @@ var mapHighlightingStyles = {
     "fill": {
       "color":"#1212120e"
     }
+  },
+  "searchResults": {
+    "offsetX":4,
+    "offsetY":4,
+    "stroke": {
+      "color":"#792fe0aa",
+      "width": 2
+    },
+    "fill": {
+      "color":"#792fe077"
+    }
   }
 }
 
@@ -40,18 +51,21 @@ var mapIMG;
 var normalCanvas;
 var selectedCanvas;
 var permaCanvas;
+var resultsCanvas;
 
 var permaCanvasOn = false;
 var permaCanvasAreas;
 var selectedCanvasArea;
+var resultsCanvasAreas;
 
-function SetUpHighlighter(map, _mapIMG, _normalCanvas, _selectedCanvas, _permaCanvas, _permaAreas) {
+function SetUpHighlighter(map, _mapIMG, _normalCanvas, _selectedCanvas, _permaCanvas, _resultsCanvas, _permaAreas) {
   mapIMG = _mapIMG;
   scaleImageMap(map);
   normalCanvas = _normalCanvas;
   selectedCanvas = _selectedCanvas;
   permaCanvas = _permaCanvas;
   permaCanvasAreas = _permaAreas;
+  resultsCanvas = _resultsCanvas;
   Resized();
   setup = true;
   //window.addEventListener('resize', Resized, false), resized is called from imageMapResizer's for correct order of execution
@@ -68,6 +82,7 @@ function Resized() {
   ClearCanvas(normalCanvas);
   ClearCanvas(selectedCanvas);
   ClearCanvas(permaCanvas);
+  ClearCanvas(resultsCanvas);
 
   var w = mapIMG.width;
   var h = mapIMG.height;
@@ -78,6 +93,8 @@ function Resized() {
   normalCanvas.height = h;
   permaCanvas.height = h;
   selectedCanvas.height = h;
+  resultsCanvas.width = w;
+  resultsCanvas.height = h;
 
   if (permaCanvasOn) {
     DrawAllOutlines(permaCanvas, permaCanvasAreas, mapHighlightingStyles.permanent);
@@ -85,6 +102,10 @@ function Resized() {
 
   if (selectedCanvasArea != null) {
     DrawArea(selectedCanvas, selectedCanvasArea, mapHighlightingStyles.selected);
+  }
+
+  if (resultsCanvasAreas != null) {
+    DrawAllOutlines(resultsCanvas, resultsCanvasAreas, mapHighlightingStyles.searchResults);
   }
 }
 
@@ -126,7 +147,13 @@ function ToggleAll(state) {
 }
 
 function DrawAllOutlines(canvas, areas, style) {
-  areas.forEach(function(area) { DrawArea(canvas, area, mapHighlightingStyles.permanent, style); });
+  areas.forEach(function(area) { DrawArea(canvas, area, style); });
+}
+
+function DrawSearch(areas) {
+  ClearCanvas(resultsCanvas);
+  resultsCanvasAreas = areas;
+  DrawAllOutlines(resultsCanvas, resultsCanvasAreas, mapHighlightingStyles.searchResults);
 }
 
 function scaleImageMap(map) {
@@ -224,4 +251,4 @@ function scaleImageMap(map) {
     }
   }
 
-export { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea }
+export { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch }
