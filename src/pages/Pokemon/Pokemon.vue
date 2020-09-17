@@ -38,10 +38,7 @@
             <tr>
               <td colspan=3 class="regionData btn gameBox blue bottomLeft bottomRight" @click="highlightAll()" v-bind:class="{ active: allOutlines }"><b>All outlines</b></td>
               <td colspan=4 style="padding: 0">
-                <input id="PokemonInput" list="PokemonDataList" value="" class="regionData searchInput bottomLeft">
-                <datalist id="PokemonDataList">
-                  <option v-for="poke in findablePokemon" :key="poke.name" :value=poke.name|capitalize|pokeAlias></option>
-                </datalist>
+                <NiceDatalist id="PokemonInput" class="regionData bottomLeft" :list=findablePokemon @selectedValue="findPokemon()"></NiceDatalist>
               </td>
               <td class="regionData btn gameBox blue active bottomRight" @click="findPokemon()">Find</td>
             </tr>
@@ -124,6 +121,9 @@ export default {
     FetchEncounters(["red", "blue", "yellow"], new Pokedex(), mapJSON.maps);
     $('#permaCanvas').fadeOut(0);
     this.findablePokemon = GetPokeList(151);
+    for (var i = 0; i < this.findablePokemon.length; i++) {
+      this.findablePokemon[i].name = this.$options.filters.pokeAlias(this.$options.filters.capitalize(this.findablePokemon[i].name));
+    }
     SetUpHighlighter(document.querySelector('#GameMap'), document.querySelector('#mapIMG'), document.querySelector('#normalCanvas'),
       document.querySelector('#selectionCanvas'), document.querySelector('#permaCanvas'), document.querySelector('#searchCanvas'), document.querySelectorAll('area'));
   },

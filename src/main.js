@@ -9,6 +9,7 @@ import Layout from './layouts/Main.vue'
 import NotFound from './pages/404.vue'
 import Home from './pages/Home.vue'
 import Pokemon from './pages/Pokemon/Pokemon.vue'
+import NiceDatalist from './components/NiceDatalist.vue'
 
 Vue.use(VueRouter)
 Vue.use(DropdownPlugin)
@@ -44,6 +45,7 @@ const router = new VueRouter({
 })
 
 Vue.component('Pokemon', Pokemon)
+Vue.component('NiceDatalist', NiceDatalist)
 
 new Vue({
   el: '#app',

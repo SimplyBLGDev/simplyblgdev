@@ -182,7 +182,18 @@ function ConvertMethodName(method) {
 
 function GetPokeList(topIX) {
     var iconsClone = [...pokeIcons.icons];
-    return iconsClone.splice(0, topIX);
+    iconsClone = iconsClone.splice(0, topIX);
+
+    var ret = [];
+
+    for (var i = 0; i < iconsClone.length; i++) {
+        ret.push({
+            "name":iconsClone[i].name,
+            "value":iconsClone[i].name
+        });
+    }
+
+    return ret;
 }
 
 function GetIcon(poke) {
