@@ -90,7 +90,7 @@
               <td class="regionData">{{ encounter.chance }}%</td>
             </tr>
           </template>
-          <tr><td class="regionData regionFooter" colspan=5> - </td></tr>
+          <tr><td class="regionData regionFooter" colspan=5 style="color:transparent"> - </td></tr>
         </tbody>
       </table>
     </div>

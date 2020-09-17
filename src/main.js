@@ -24,17 +24,26 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      title: 'Simply BLG'
+    }
   },
   {
     path: '/Pokemon',
     name: 'Pokemon',
-    component: Pokemon
+    component: Pokemon,
+    meta: {
+      title: 'Pokemon interactive maps'
+    }
   },
   {
     path: '*',
     name: '404',
-    component: NotFound
+    component: NotFound,
+    meta: {
+      title: '404 - Page not found'
+    }
   }
 ]
 
@@ -43,6 +52,12 @@ const router = new VueRouter({
   base: __dirname,
   routes: routes // short for `routes: routes`
 })
+
+// eslint-disable-next-line
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title || 'Your Website Title';
+  next();
+});
 
 Vue.component('Pokemon', Pokemon)
 Vue.component('NiceDatalist', NiceDatalist)
