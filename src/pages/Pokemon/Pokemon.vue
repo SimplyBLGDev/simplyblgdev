@@ -24,10 +24,7 @@
               <td class="regionData btn gameBox blue" v-bind:class="{ active: filteredGames.includes('blue') }" colspan=2 @click="filterGame('blue')"><b>B</b></td>
               <td class="regionData btn gameBox bottomRight yellow" v-bind:class="{ active: filteredGames.includes('yellow') }" colspan=2 @click="filterGame('yellow')"><b>Y</b></td>
               <td style="padding: 0">
-                <input id="LocationInput" list="LocationDataList" value="" class="regionData searchInput bottomLeft">
-                <datalist id="LocationDataList">
-                  <option v-for="location in mapData.maps" :key="location.name" :value=location.name></option>
-                </datalist>
+                <NiceDatalist class="regionData bottomLeft" :list=mapData.maps ref="LocInput"></NiceDatalist>
               </td>
               <td class="regionData btn gameBox blue active bottomRight" @click="findLocation()">Find</td>
             </tr>
@@ -38,7 +35,7 @@
             <tr>
               <td colspan=3 class="regionData btn gameBox blue bottomLeft bottomRight" @click="highlightAll()" v-bind:class="{ active: allOutlines }"><b>All outlines</b></td>
               <td colspan=4 style="padding: 0">
-                <NiceDatalist id="PokemonInput" class="regionData bottomLeft" :list=findablePokemon ref="PokeInput"></NiceDatalist>
+                <NiceDatalist class="regionData bottomLeft" :list=findablePokemon ref="PokeInput"></NiceDatalist>
               </td>
               <td class="regionData btn gameBox blue active bottomRight" @click="findPokemon()">Find</td>
             </tr>
@@ -181,7 +178,7 @@ export default {
       DrawSearch(results);
     },
     findLocation: function() {
-      document.querySelector('[title = "' + document.querySelector('#LocationInput').value + '"]').click();
+      document.querySelector('[title = "' + this.$refs.LocInput._data.searchResults[0].name + '"]').click();
     },
     highlightAll: function() {
       this.allOutlines = !this.allOutlines;

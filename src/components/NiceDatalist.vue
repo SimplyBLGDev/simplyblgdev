@@ -1,7 +1,7 @@
 <template>
     <div style="position: relative">
-        <input id="in" class="bg in" type="text" @focus="showList()" @blur="closeList()" @click="search" @input="search">
-        <div id="drop" class="drop">
+        <input ref="in" class="bg in" type="text" @focus="showList" @blur="closeList" @click="search" @input="search">
+        <div ref="drop" class="drop">
             <div class="bg" width="100%" v-for="entry in searchResults" :key="entry.value" style="display:flex;justify-content:center;align-items:center;" @mousedown="chooseOption(entry.name)">
                 {{ entry.name }}
             </div>
@@ -18,20 +18,21 @@ export default {
     }),
     methods: {
         showList: function() {
-            if (!document.querySelector("#drop").classList.contains("show")) {
-                document.querySelector("#drop").classList.add("show");
+            if (!this.$refs.drop.classList.contains("show")) {
+                this.$refs.drop.classList.add("show");
             }
         },
         closeList: function() {
-            if (document.querySelector("#drop").classList.contains("show")) {
-                document.querySelector("#drop").classList.remove("show");
+            if (this.$refs.drop.classList.contains("show")) {
+                this.$refs.drop.classList.remove("show");
             }
         },
         chooseOption: function(value) {
-            document.getElementById("in").value = value;
+            this.$refs.in.value = value;
+            this.search();
         },
         search: function() {
-            var text = document.getElementById("in").value.toLowerCase();
+            var text = this.$refs.in.value.toLowerCase();
 
             var startMatches = [];
             var otherMatches = [];
