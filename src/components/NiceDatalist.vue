@@ -14,7 +14,8 @@ export default {
     name: "NiceDatalist",
     props: ['list'],
     data: () => ({
-        searchResults: []
+        searchResults: [],
+        writtenText: ""
     }),
     methods: {
         showList: function() {
@@ -33,7 +34,7 @@ export default {
         },
         search: function() {
             var text = this.$refs.in.value.toLowerCase();
-
+            this.writtenText = this.$refs.in.value;
             var startMatches = [];
             var otherMatches = [];
             for (var i = 0; i < this.list.length; i++) {

@@ -18,7 +18,7 @@ var mapHighlightingStyles = {
       "width": 2
     },
     "fill": {
-      "color":"#eb403443"
+      "color":"#eb403488"
     }
   },
   "permanent": {
@@ -36,7 +36,7 @@ var mapHighlightingStyles = {
     "offsetX":4,
     "offsetY":4,
     "stroke": {
-      "color":"#792fe0aa",
+      "color":"#792fe000",
       "width": 2
     },
     "fill": {
@@ -146,7 +146,7 @@ function ToggleAll(state) {
   }
 }
 
-function DrawAllOutlines(canvas, areas, style) {
+function DrawAllOutlines(canvas, areas, style = mapHighlightingStyles.permanent) {
   areas.forEach(function(area) { DrawArea(canvas, area, style); });
 }
 

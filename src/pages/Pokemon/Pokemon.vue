@@ -169,6 +169,10 @@ export default {
       return r;
     },
     findPokemon: function() {
+      if (this.$refs.PokeInput._data.writtenText == "") {
+        DrawSearch([]); // Clear search if nothing is written
+        return;
+      }
       var search = this.$refs.PokeInput._data.searchResults[0].name;
       var resultsIds = FindPokemon(search.toLowerCase());
       var results = []
