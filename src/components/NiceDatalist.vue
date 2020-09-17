@@ -1,8 +1,8 @@
 <template>
     <div style="position: relative">
-        <input id="in" class="bg in" type="text" @focus="showList()" @blur="closeList()" @input="search">
+        <input id="in" class="bg in" type="text" @focus="showList()" @blur="closeList()" @click="search" @input="search">
         <div id="drop" class="drop">
-            <div class="bg" width="100%" v-for="entry in searchResults" :key="entry.name" style="display:flex;justify-content:center;align-items:center;" @mousedown="chooseOption(entry.name)">
+            <div class="bg" width="100%" v-for="entry in searchResults" :key="entry.value" style="display:flex;justify-content:center;align-items:center;" @mousedown="chooseOption(entry.name)">
                 {{ entry.name }}
             </div>
         </div>
@@ -29,7 +29,6 @@ export default {
         },
         chooseOption: function(value) {
             document.getElementById("in").value = value;
-            this.$emit('valueSelected');
         },
         search: function() {
             var text = document.getElementById("in").value.toLowerCase();
@@ -38,11 +37,11 @@ export default {
             var otherMatches = [];
             for (var i = 0; i < this.list.length; i++) {
                 var optionText = this.list[i].name;
-                if (optionText.startsWith(text)) {
+                if (optionText.toLowerCase().startsWith(text)) {
                     startMatches.push({
                         "name":optionText
                     });
-                } else if (optionText.includes(text)) {
+                } else if (optionText.toLowerCase().includes(text)) {
                     otherMatches.push({
                         "name":optionText
                     });
@@ -50,11 +49,6 @@ export default {
             }
 
             this.searchResults = startMatches.concat(otherMatches);
-        }
-    },
-    computed: {
-        selectionValue: function() {
-            return 'bulbasaur';
         }
     }
 }
@@ -133,5 +127,13 @@ export default {
     @keyframes showOpa {
         from {opacity: 0;}
         to {opacity: 1;}
+    }
+    .pokeIcon {
+        image-rendering: pixelated;
+        scale: 200%;
+        float: left;
+        margin-bottom: 2px;
+        margin-right: -5px;
+        margin-left: -8px;
     }
 </style>

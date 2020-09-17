@@ -38,7 +38,7 @@
             <tr>
               <td colspan=3 class="regionData btn gameBox blue bottomLeft bottomRight" @click="highlightAll()" v-bind:class="{ active: allOutlines }"><b>All outlines</b></td>
               <td colspan=4 style="padding: 0">
-                <NiceDatalist id="PokemonInput" class="regionData bottomLeft" :list=findablePokemon @selectedValue="findPokemon()"></NiceDatalist>
+                <NiceDatalist id="PokemonInput" class="regionData bottomLeft" :list=findablePokemon ref="PokeInput"></NiceDatalist>
               </td>
               <td class="regionData btn gameBox blue active bottomRight" @click="findPokemon()">Find</td>
             </tr>
@@ -172,7 +172,7 @@ export default {
       return r;
     },
     findPokemon: function() {
-      var search = document.querySelector('#PokemonInput').value;
+      var search = this.$refs.PokeInput._data.searchResults[0].name;
       var resultsIds = FindPokemon(search.toLowerCase());
       var results = []
       resultsIds.forEach(function(id) {

@@ -189,6 +189,7 @@ function GetPokeList(topIX) {
     for (var i = 0; i < iconsClone.length; i++) {
         ret.push({
             "name":iconsClone[i].name,
+            "icon":iconsClone[i].icon,
             "value":iconsClone[i].name
         });
     }
