@@ -17,7 +17,7 @@
           <tbody>
             <tr>
               <th class="regionData header topRight topLeft" colspan=6 max-width="7rem">Filter Games</th>
-              <th class="regionData header topRight topLeft" colspan=2 width="50%">Find Location</th>
+              <th class="regionData header topRight topLeft" colspan=2 width="60%">Go to Location</th>
             </tr>
             <tr>
               <td class="regionData btn gameBox bottomLeft red" v-bind:class="{ active: filteredGames.includes('red') }" colspan=2 @click="filterGame('red')"><b>R</b></td>
@@ -26,14 +26,14 @@
               <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=mapData.maps ref="LocInput"></NiceDatalist>
               </td>
-              <td class="regionData btn gameBox blue active bottomRight" @click="findLocation()">Find</td>
+              <td class="regionData btn gameBox blue active bottomRight" @click="findLocation()">Go to</td>
             </tr>
             <tr>
-              <th colspan=3 class="regionData header topRight topLeft">Other Options</th>
+              <th colspan=3 class="regionData header topRight topLeft">All Outlines</th>
               <th class="regionData header topRight topLeft" colspan=6 width="40%">Find Pokemon</th>
             </tr>
             <tr>
-              <td colspan=3 class="regionData btn gameBox blue bottomLeft bottomRight" @click="highlightAll()" v-bind:class="{ active: allOutlines }"><b>All outlines</b></td>
+              <td colspan=3 class="regionData btn gameBox blue bottomLeft bottomRight" @click="highlightAll()" v-bind:class="{ active: allOutlines }"><b>Enable</b></td>
               <td colspan=4 style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=findablePokemon ref="PokeInput"></NiceDatalist>
               </td>
@@ -48,7 +48,7 @@
         <tbody>
           <tr>
             <th class="regionData header topLeft">Pokémon</th>
-            <th class="regionData header gamesColumn">Games</th>
+            <th class="regionData header gamesColumn"><span>Games</span></th>
             <th class="regionData header locationsColumn">Location</th>
             <th class="regionData header levelsColumn">Levels</th>
             <th class="regionData header topRight" width="13%">%</th>
@@ -336,6 +336,9 @@ export default {
 .regionData.header.gamesColumn {
   width: 5%;
 }
+.regionData.header.gamesColumn span {
+  display: none;
+}
 .regionData.header.locationsColumn {
   width: 26%;
 }
@@ -453,6 +456,9 @@ export default {
   }
   .regionData.header.gamesColumn {
     width: 15%;
+  }
+  .regionData.header.gamesColumn span {
+    display: block;
   }
   .regionData.header.locationsColumn {
     width: 24%;

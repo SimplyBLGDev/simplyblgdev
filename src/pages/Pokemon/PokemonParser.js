@@ -210,14 +210,14 @@ function GetIcon(poke) {
 function FindPokemon(poke) {
     var resultsIds = []
     encounterTable.locations.forEach(function(location) {
-        location.areas.forEach(function(area) {
-            for (var i = 0; i < area.encounters.length; i++) {
-                if (area.encounters[i].pokemon.name == poke) {
+        for (var i = 0; i < location.areas.length; i++) {
+            for (var j = 0; j < location.areas[i].encounters.length; j++) {
+                if (location.areas[i].encounters[j].pokemon.name == poke) {
                     resultsIds.push(location.id);
                     return;
                 }
             }
-        });
+        }
     });
 
     return resultsIds;
