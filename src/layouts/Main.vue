@@ -39,10 +39,6 @@ export default {
 </script>
 
 <style>
-html {
-    overflow: -moz-scrollbars-vertical; 
-    overflow-y: scroll;
-}
 .bg-blgnavbar {
   background-color: #319e2a;
 }

@@ -222,6 +222,12 @@ export default {
 * {
   box-sizing: border-box;
 }
+html {
+  /* The slight width change when a scrollbar appears doesn't call resize() and therefore offsets the canvases and breaks the highlighting temporarily */
+  /* to prevent this we always have the scrollbar visible */
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+}
 #poke {
   display: flex;
   flex-flow: column;

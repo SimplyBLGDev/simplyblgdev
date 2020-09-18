@@ -8,6 +8,7 @@ import { DropdownPlugin, TablePlugin, CardPlugin, NavPlugin, NavbarPlugin } from
 import Layout from './layouts/Main.vue'
 import NotFound from './pages/404.vue'
 import Home from './pages/Home.vue'
+import PokemonIndex from './pages/Pokemon/PokemonIndex.vue'
 import Pokemon from './pages/Pokemon/Pokemon.vue'
 import NiceDatalist from './components/NiceDatalist.vue'
 
@@ -32,9 +33,17 @@ const routes = [
   {
     path: '/Pokemon',
     name: 'Pokemon',
+    component: PokemonIndex,
+    meta: {
+      title: 'Pokémon interactive maps'
+    }
+  },
+  {
+    path: '/Pokemon/Kanto',
+    name: 'Kanto',
     component: Pokemon,
     meta: {
-      title: 'Pokemon interactive maps'
+      title: 'Kanto interactive map for RBY'
     }
   },
   {
@@ -55,7 +64,7 @@ const router = new VueRouter({
 
 // eslint-disable-next-line
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || 'Your Website Title';
+  document.title = to.meta.title || 'Simply BLG';
   next();
 });
 
