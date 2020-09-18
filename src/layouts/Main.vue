@@ -22,9 +22,23 @@
     <router-view></router-view>
 
     <footer>
-      <div class="container-fluid text-muted text-right">
-        <hr>
-        SimplyBLG's 2020
+      <hr>
+      <div class="container-fluid text-muted">
+        <table style="width: 100%; margin-top: 2rem;">
+          <tbody>
+            <tr>
+              <td colspan=2>SimplyBLG's 2020</td>
+            </tr>
+            <tr>
+              <td width="50%"><a href="https://github.com/SimplyBLGDev">Github</a></td>
+              <td width="50%"><a href="mailto:simplyblgdev@gmail.com">Send me an email</a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><a href="paypal.me/ppTheAGame">Donate</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </footer>
   </div>
@@ -50,5 +64,8 @@ export default {
   color: #e6e6e6;
   background-color: #181a1b;
   min-height: 100vh;
+}
+footer table a {
+  color:grey;
 }
 </style>

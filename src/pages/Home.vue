@@ -5,7 +5,7 @@
     <p class="homeText" style="--delay: 10s">Navigate using the navbar or something, there's nothing here</p>
     <p class="homeText" style="--delay: 25s">what are you doing</p>
     <p class="homeText" style="--delay: 50s">go away</p>
-    <p class="homeText" style="--delay: 91s">You've been in here for: {{ time | timeFilter }}</p>
+    <p class="homeText" style="--delay: 90s">You've been in here for: {{ time | timeFilter }}</p>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .homeDiv {
   display:flex;
   justify-content:center;

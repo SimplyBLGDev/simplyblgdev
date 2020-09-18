@@ -1,4 +1,5 @@
 <template>
+<div>
   <div id="poke">
     <div class="leftContainer">
       <div class="gameMapContainer">
@@ -26,7 +27,7 @@
               <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=mapData.maps ref="LocInput"></NiceDatalist>
               </td>
-              <td class="regionData btn gameBox blue active bottomRight" @click="findLocation()">Go to</td>
+              <td class="regionData btn gameBox blue active bottomRight" width="14%" @click="findLocation()">Go to</td>
             </tr>
             <tr>
               <th colspan=3 class="regionData header topRight topLeft">All Outlines</th>
@@ -95,6 +96,13 @@
       </table>
     </div>
   </div>
+  <div class="container-fluid" style="background-color: purple; height: 3rem; display:flex; align-items:center; justify-content:center;">
+    See something wrong? -<a href="mailto:simplyblgdev@gmail.com">Contact me!</a>-
+  </div>
+  <div class="container-fluid" style="background-color: purple; height: 3rem; display:flex; align-items:center; justify-content:center;">
+    Wanna support the develpoment of more tools? -<a href="paypal.me/ppTheAGame">Donate here!</a>-
+  </div>
+</div>
 </template>
 
 <script>
