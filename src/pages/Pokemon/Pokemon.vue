@@ -100,7 +100,7 @@
     See something wrong? -<a href="mailto:simplyblgdev@gmail.com">Contact me!</a>-
   </div>
   <div class="container-fluid" style="background-color: purple; height: 3rem; display:flex; align-items:center; justify-content:center;">
-    Wanna support the develpoment of more tools? -<a href="paypal.me/ppTheAGame">Donate here!</a>-
+    Wanna support the develpoment of more tools? -<a href="https://paypal.me/ppTheAGame">Donate here!</a>-
   </div>
 </div>
 </template>

@@ -35,7 +35,7 @@
             </tr>
             <tr>
               <td></td>
-              <td><a href="paypal.me/ppTheAGame">Donate</a></td>
+              <td><a href="https://paypal.me/ppTheAGame">Donate</a></td>
             </tr>
           </tbody>
         </table>
