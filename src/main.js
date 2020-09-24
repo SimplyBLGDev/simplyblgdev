@@ -10,6 +10,7 @@ import NotFound from './pages/404.vue'
 import Home from './pages/Home.vue'
 import PokemonIndex from './pages/Pokemon/PokemonIndex.vue'
 import Pokemon from './pages/Pokemon/Pokemon.vue'
+import Portfolio from './pages/Portfolio.vue'
 import NiceDatalist from './components/NiceDatalist.vue'
 
 Vue.use(VueRouter)
@@ -28,6 +29,14 @@ const routes = [
     component: Home,
     meta: {
       title: 'Simply BLG'
+    }
+  },
+  {
+    path: '/Portfolio',
+    name: 'Portfolio',
+    component: Portfolio,
+    meta: {
+      title: 'Digital Portfolio'
     }
   },
   {
