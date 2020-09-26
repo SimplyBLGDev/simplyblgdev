@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'jquery'
 import 'pokeapi-js-wrapper'
-import { DropdownPlugin, TablePlugin, CardPlugin, NavPlugin, NavbarPlugin } from 'bootstrap-vue'
+import { DropdownPlugin, TablePlugin, CardPlugin, NavPlugin, NavbarPlugin, CarouselPlugin } from 'bootstrap-vue'
 import Layout from './layouts/Main.vue'
 import NotFound from './pages/404.vue'
 import Home from './pages/Home.vue'
@@ -19,6 +19,7 @@ Vue.use(TablePlugin)
 Vue.use(CardPlugin)
 Vue.use(NavPlugin)
 Vue.use(NavbarPlugin)
+Vue.use(CarouselPlugin)
 
 Vue.config.productionTip = false
 
