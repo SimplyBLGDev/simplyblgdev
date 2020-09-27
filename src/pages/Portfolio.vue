@@ -45,7 +45,7 @@
     </div>
      <div class="w3-display-container caseContainer">
       <div class="case insetBox">
-        <div style="width:60%">
+        <div style="width:50%">
           <div>
             <b class="case header">Study case:</b>
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonCpp.png" alt="C++" title="C++">
@@ -57,7 +57,26 @@
             A fully featured NES emulator with a twist.
           </div>
           <div class="case body">
-            
+            With an efficient C++ core combined with a C# GUI combined via <b>Interop</b> middleware.
+          </div>
+          <div class="case body">
+            It features the ability to <b>replace in-game assets</b> with user-defined alternatives, allowing the bypassing of NES hardware restrictions
+            such as resolution, palette and fidelity, assisted by a user-friendly UI to allow users to replace assets without the need to understand
+            NES hardware.
+          </div>
+        </div>
+        <div style="width:50%; position:relative">
+          <img src="../assets/Portfolio/NARNES/FFOld.png" alt="NARNES: Off" style="width:100%;">
+          <img src="../assets/Portfolio/NARNES/FFNew.png" alt="NARNES: On" class="trans" v-bind:class="{ transparent: !narnesEnabled }" style="width:100%; position:absolute; left:0; top:0;">
+          <div id="NARNESBtn" class="btn cBtn" v-bind:class="{ active: narnesEnabled }" @click="enableNARNES"><b>Activate NARNES</b></div>
+        </div>
+        <div style="width:60%; padding-right:1ch">
+          <img src="../assets/Portfolio/NARNES/UI.gif" alt="NARNES GUI" style="width:100%;">
+        </div>
+        <div style="width:40%">
+          <div class="case body">
+            NARNES' asset replacer tool is designed to be as simple to use as possible, allowing users that might not be knowledgeable on the NES' hardware to create their
+            own 'asset packs'
           </div>
         </div>
       </div>
@@ -107,7 +126,20 @@
 </template>
 
 <script>
+import $ from 'jquery'
+
 export default {
+  data: () => ({
+    narnesEnabled:false
+  }),
+  mounted() {
+    $('.bg-blgnavbar').css("display","none");
+  },
+  methods: {
+    enableNARNES: function() {
+      this.narnesEnabled = !this.narnesEnabled;
+    }
+  }
 }
 </script>
 
@@ -116,6 +148,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
 @import url('../assets/w3.css');
 
+.bg-blgnavbar {
+  display: none;
+}
 .title {
   font-weight: 100;
   font-size: 10ch;
@@ -192,5 +227,38 @@ export default {
 }
 .case.body {
   margin-top:0.8ch;
+}
+.trans {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, opacity 0.4s ease-in-out;
+}
+.transparent {
+  opacity:0;
+}
+.cBtn {
+  width: 100%;
+  background-color: #181a1b;
+  color: #328d2b;
+  -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+  -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+  box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+  --box-shadow-color: rgb(0, 0, 0, 0.75);
+  border-radius: 3px;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding: 4px;
+  text-align: center;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+.cBtn.active {
+  background-color:#328d2b;
+  color: whitesmoke;
+}
+img {
+  border-radius: 4px;
 }
 </style>
