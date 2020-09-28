@@ -14,7 +14,7 @@
         2020
       </div>
       <div class="case insetBox">
-        <div style="width:65%">
+        <div class="caseDiv left" style="--rWidth: 65%">
           <div>
             <b class="case header">Study case:</b>
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonHTML.png" alt="HTML5" title="HTML 5">
@@ -39,7 +39,7 @@
             <a href="/Pokemon/Kanto">Visit it here.</a>
           </div>
         </div>
-        <div style="width:35%; position:relative">
+        <div class="caseDiv right" style="--rWidth: 35%; position:relative">
           <img src="../assets/Portfolio/PokeMap/aspectratio.png" alt="" style="width:100%">
           <img class="pokeImage" style="width:72%; position:absolute; left:17%" src="../assets/Portfolio/PokeMap/pokemonitor.png" alt="Monitor layout" title="Works in every monitor size!">
           <img class="pokeImage" style="width:56%; position:absolute; left:0; bottom:5%" src="../assets/Portfolio/PokeMap/pokesmall.png" alt="Small screen layout"  title="Works in every monitor size!">
@@ -49,7 +49,7 @@
     </div>
      <div class="w3-display-container caseContainer">
       <div class="case insetBox">
-        <div style="width:50%">
+        <div class="caseDiv left" style="--rWidth: 50%">
           <div>
             <b class="case header">Study case:</b>
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonCpp.png" alt="C++" title="C++">
@@ -69,22 +69,22 @@
             NES hardware.
           </div>
         </div>
-        <div style="width:50%; position:relative">
+        <div class="caseDiv right" style="--rWidth: 50%; position:relative">
           <img src="../assets/Portfolio/NARNES/FFOld.png" alt="NARNES: Off" style="width:100%;">
           <img src="../assets/Portfolio/NARNES/FFNew.png" alt="NARNES: On" class="trans" v-bind:class="{ transparent: !narnesEnabled }" style="width:100%; position:absolute; left:0; top:0;">
           <div id="NARNESBtn" class="btn cBtn" v-bind:class="{ active: narnesEnabled }" @click="enableNARNES"><b>Activate NARNES</b></div>
         </div>
-        <div style="width:60%; padding-right:1ch">
+        <div class="caseDiv left" style="--rWidth: 60%; padding-right:1ch">
           <img src="../assets/Portfolio/NARNES/UI.gif" alt="NARNES GUI" style="width:100%;">
         </div>
-        <div style="width:40%">
+        <div class="caseDiv right" style="--rWidth: 40%">
           <div class="case body">
             NARNES' asset replacer tool is designed to be as simple to use as possible, allowing users that might not be knowledgeable on the NES' hardware to create their
             own 'asset packs'
           </div>
         </div>
       </div>
-      <div class="case year">
+      <div class="case year right">
         2019
       </div>
     </div>
@@ -93,7 +93,7 @@
         2018
       </div>
       <div class="case insetBox">
-        <div style="width:60%">
+        <div class="caseDiv left" style="--rWidth: 60%">
           <div>
             <b class="case header">Study case:</b>
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonCSharp.png" alt="C#" title="C#">
@@ -109,13 +109,13 @@
             it then provides a separate executable that launches a clean <b>GUI</b> that can be navigated with either keyboard or gaming controllers.
           </div>
         </div>
-        <div style="width:40%;padding-left:1ch">
+        <div class="caseDiv right" style="--rWidth: 40%">
           <img src="../assets/Portfolio/NARL/A.png" width="100%" height="auto">
         </div>
-        <div style="width:40%;padding-right:1ch">
+        <div class="caseDiv left" style="--rWidth: 40%">
           <img src="../assets/Portfolio/NARL/B.png" width="100%" height="auto">
         </div>
-        <div style="width:60%">
+        <div class="caseDiv right" style="--rWidth: 60%">
           <div class="case body">
             It allows the user to search and launch any game in their PC from a single place, it also provides other convenient features such as keeping
             track of time spent playing each title.
@@ -128,6 +128,10 @@
           </div>
         </div>
       </div>
+    </div>
+    
+    <div style="margin-left:-10px; margin-right:-10px">
+      
     </div>
   </div>
 </template>
@@ -163,7 +167,7 @@ a {
 }
 .title {
   font-weight: 100;
-  font-size: 10ch;
+  font-size: 7ch;
 }
 .mainDiv {
   -webkit-box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.75);
@@ -202,8 +206,8 @@ a {
 }
 .caseContainer {
   display: flex;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 1px;
+  margin-left: 1px;
 }
 .case.insetBox {
   width:100%;
@@ -214,16 +218,19 @@ a {
   flex-wrap: wrap;
 }
 .case.year {
-  writing-mode:tb-rl;
   white-space:nowrap;
-  display:block;
+  display:none;
   font-family: 'Limelight', cursive;
   font-size: 4ch;
   margin:0;
   padding:0;
 }
 .case.year.left {
+  writing-mode:tb-rl;
   transform:rotate(180deg);
+}
+.case.year.right {
+  writing-mode:tb-rl;
 }
 .case.header {
   font-family: 'Limelight', cursive;
@@ -278,10 +285,36 @@ img {
   border-radius: 4px;
 }
 .pokeImage {
-  transition: all 0.45s;
+  transition: translate 0.45s;
   translate: 0 0;
 }
 .pokeImage:hover {
   translate: 0 -6vh;
+}
+.caseDiv {
+  width:100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media only screen and (min-width: 720px) {
+  .case.year {
+    display: block;
+  }
+  .title {
+    font-size: 10ch;
+  }
+  .caseContainer {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .caseDiv {
+    width: var(--rWidth);
+  }
+  .caseDiv.left {
+    padding-right: 1ch;
+  }
+  .caseDiv.right {
+    padding-left: 1ch;
+  }
 }
 </style>
