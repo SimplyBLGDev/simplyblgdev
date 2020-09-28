@@ -16,7 +16,7 @@
       <div class="case insetBox">
         <div class="caseDiv left" style="--rWidth: 65%">
           <div>
-            <b class="case header">Study case:</b>
+            <b class="case header study">Case study:</b>
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonHTML.png" alt="HTML5" title="HTML 5">
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonCSS.png" alt="CSS3" title="CSS 3">
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonJS.png" alt="JS" title="Javascript">
@@ -25,6 +25,7 @@
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonSQL.png" alt="SQL" title="SQL">
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonVue.png" alt="Vue.js" title="Vue JS">
             <br>
+            <b class="case header studyL">Case study:<br></b>
             <b class="case header">Pokémon interactive maps</b>
           </div>
           <div>
@@ -51,10 +52,11 @@
       <div class="case insetBox">
         <div class="caseDiv left" style="--rWidth: 50%">
           <div>
-            <b class="case header">Study case:</b>
+            <b class="case header study">Case study:</b>
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonCpp.png" alt="C++" title="C++">
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonCSharp.png" alt="C#" title="C#">
             <br>
+            <b class="case header studyL">Case study:<br></b>
             <b class="case header">NARNES</b>
           </div>
           <div>
@@ -95,10 +97,11 @@
       <div class="case insetBox">
         <div class="caseDiv left" style="--rWidth: 60%">
           <div>
-            <b class="case header">Study case:</b>
+            <b class="case header study">Case study:</b>
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonCSharp.png" alt="C#" title="C#">
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonGodot.png" alt="Godot" title="Godot Engine">
             <br>
+            <b class="case header studyL">Case study:<br></b>
             <b class="case header">NARL</b>
           </div>
           <div>
@@ -239,7 +242,7 @@ a {
 }
 .case.ribbon {
   position: relative;
-  margin-left: 10px;
+  margin-left: 0;
   top: -27px;
 }
 .case.body {
@@ -296,6 +299,12 @@ img {
   padding-left: 0;
   padding-right: 0;
 }
+.case.header.study {
+  display: none;
+}
+.case.header.studyL {
+  display: contents;
+}
 @media only screen and (min-width: 720px) {
   .case.year {
     display: block;
@@ -315,6 +324,15 @@ img {
   }
   .caseDiv.right {
     padding-left: 1ch;
+  }
+  .case.header.study {
+    display: contents;
+  }
+  .case.header.studyL {
+    display: none;
+  }
+  .case.case.ribbon {
+    margin-left: 10px;
   }
 }
 </style>
