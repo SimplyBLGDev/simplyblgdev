@@ -14,7 +14,7 @@
         2020
       </div>
       <div class="case insetBox">
-        <div style="width:calc(100% - 600px)">
+        <div style="width:65%">
           <div>
             <b class="case header">Study case:</b>
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonHTML.png" alt="HTML5" title="HTML 5">
@@ -35,11 +35,15 @@
             The page itself is <b>responsive</b>, allowing the use of the app on screens of every size and aspect ratio, including
             mobile devices.<br>
           </div>
+          <div class="case body">
+            <a href="/Pokemon/Kanto">Visit it here.</a>
+          </div>
         </div>
-        <div class="" style="display: inline-table; width: 600px; height: 300px;">
-          <img class="w3-animate-bottom w3-animate-opacity" style="margin-left: 80px;" src="../assets/Portfolio/PokeMap/pokemonitor.png" alt="Monitor layout" title="Works in every monitor size!">
-          <img class="w3-animate-bottom w3-animate-opacity" style="animation-delay: 500ms; animation-fill-mode: forwards; opacity: 0; margin-top: -150px" src="../assets/Portfolio/PokeMap/pokesmall.png" alt="Small screen layout"  title="Works in every monitor size!">
-          <img class="w3-animate-bottom w3-animate-opacity" style="animation-delay: 1000ms; animation-fill-mode: forwards; opacity: 0; margin-top:-250px; margin-left: 110px;" src="../assets/Portfolio/PokeMap/pokephone.png" alt="Mobile layout" title="Even in mobile devices!">
+        <div style="width:35%; position:relative">
+          <img src="../assets/Portfolio/PokeMap/aspectratio.png" alt="" style="width:100%">
+          <img class="pokeImage" style="width:72%; position:absolute; left:17%" src="../assets/Portfolio/PokeMap/pokemonitor.png" alt="Monitor layout" title="Works in every monitor size!">
+          <img class="pokeImage" style="width:56%; position:absolute; left:0; bottom:5%" src="../assets/Portfolio/PokeMap/pokesmall.png" alt="Small screen layout"  title="Works in every monitor size!">
+          <img class="pokeImage" style="width:24%; position:absolute; right:0; bottom:0" src="../assets/Portfolio/PokeMap/pokephone.png" alt="Mobile layout" title="Even in mobile devices!">
         </div>
       </div>
     </div>
@@ -113,11 +117,14 @@
         </div>
         <div style="width:60%">
           <div class="case body">
-            It allows the user to search and launch any game in the user's PC from a single place, it also provides other convenient features such as keeping
+            It allows the user to search and launch any game in their PC from a single place, it also provides other convenient features such as keeping
             track of time spent playing each title.
           </div>
           <div class="case body">
             Published on itch.io on January 1, 2019, it was updated for a year and used by more people than I expected. It is now discontinued.
+          </div>
+          <div class="case body">
+            <a href="https://simplyb.itch.io/narl">Find it here.</a>
           </div>
         </div>
       </div>
@@ -148,6 +155,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
 @import url('../assets/w3.css');
 
+a {
+  color: #076cd9;
+}
 .bg-blgnavbar {
   display: none;
 }
@@ -258,7 +268,20 @@ export default {
   background-color:#328d2b;
   color: whitesmoke;
 }
+.cBtn:hover {
+  border-color: green;
+}
+.cBtn.active:hover {
+  border-color: whitesmoke;
+}
 img {
   border-radius: 4px;
+}
+.pokeImage {
+  transition: all 0.45s;
+  translate: 0 0;
+}
+.pokeImage:hover {
+  translate: 0 -6vh;
 }
 </style>
