@@ -140,6 +140,9 @@
         <div v-for="(project, index) in otherPs" :key="project.title">
           <div class="jamCard" v-if="index % otherPsColumns === indexC-1">
             <img :src="project.preview" :alt="project.title + ' preview'" style="width:100%">
+            <div style="position:relative">
+                <div class="case header year">{{ project.year }}</div>
+              </div>
             <div class="insetBox">
               <div class="case header">{{ project.title }}</div>
               <div class="case body" v-html="project.description"></div>
@@ -211,7 +214,7 @@ export default {
         title:"Boat Game Thing",
         year:2018,
         preview:require('../assets/Portfolio/Jams/BoatGameThing.png'),
-        description:"A stealth/simulation game set in a boat, featuring some real programmer art and quite a bit of polish, made in <b>Godot Game Engine, GDScript</b> in 2018."
+        description:"A stealth/simulation game set in a boat, featuring some serious programmer art and quite a bit of polish, made in <b>Godot Game Engine, GDScript</b> in 2018."
       },
       {
         title:"Combat",
@@ -224,15 +227,34 @@ export default {
         year:2018,
         preview:require('../assets/Portfolio/Jams/chatbot.png'),
         description:"An automatic bot that can read and write to a <b>Twitch</b> stream chat, it can detect messages and commands and respond appropriately, made in <b>Python</b>."
+      },
+      {
+        title:"O2",
+        year:2017,
+        preview:require('../assets/Portfolio/Jams/O2.png'),
+        description:"A tower defense game set in a space station, made in just <b>48 hours</b> for <b>Game Maker's Toolkit Game Jam 2017</b> in <b>Godot Game Engine, GDScript</b>."
       }
     ]
   }),
   mounted() {
     $('.bg-blgnavbar').css("display","none");
+    this.calculateColumns();
+    window.onresize = () => { this.calculateColumns(); }
   },
   methods: {
     enableNARNES: function() {
       this.narnesEnabled = !this.narnesEnabled;
+    },
+    calculateColumns: function() {
+      if (window.innerWidth > 2000) {
+        this.otherPsColumns = 4;
+      } else if (window.innerWidth > 1200) {
+        this.otherPsColumns = 3;
+      } else if (window.innerWidth > 800) {
+        this.otherPsColumns = 2;
+      } else {
+        this.otherPsColumns = 1;
+      }
     }
   }
 }
@@ -325,6 +347,7 @@ a {
   position: relative;
   margin-left: 0;
   top: -27px;
+  width:16px;
 }
 .case.body {
   margin-top:0.8ch;
@@ -369,11 +392,11 @@ img {
   border-radius: 4px;
 }
 .pokeImage {
-  transition: translate 0.45s;
-  translate: 0 0;
+  transition: transform 0.45s;
+  transform: translate(0, 0);
 }
 .pokeImage:hover {
-  translate: 0 -6vh;
+  transform: translate(0, -6vh);
 }
 .caseDiv {
   width:100%;
@@ -393,11 +416,10 @@ img {
   display: flex;
   flex-direction: row;
   flex-flow: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .jamColumn {
   margin: 5px;
-  width: calc(33.333% - 10px);
 }
 .jamCard {
   margin-bottom:10px;
@@ -411,6 +433,17 @@ img {
 }
 .jamCard .insetBox .case.header {
   margin-top:0;
+}
+.jamCard .case.header.year {
+  position: absolute;
+  text-align: left;
+  font-size: 5rem;
+  color:#fff;
+  text-shadow: 0.05ch 0.05ch rgb(127, 127, 127);
+  margin: 0;
+  top: -1.7ch;
+  left: 0.2ch;
+  opacity: 0.4;
 }
 @media only screen and (min-width: 720px) {
   .case.year {
@@ -440,6 +473,7 @@ img {
   }
   .case.case.ribbon {
     margin-left: 10px;
+    width:48px;
   }
 }
 </style>
