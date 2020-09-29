@@ -158,6 +158,8 @@
 
     <div class="w3-display-container insetBox contactBox">
       <div class="case header">Contact Me!</div>
+      <div class="case body">e-mail me @ <a href="mailto:fabrilogares@gmail.com">fabrilogares@gmail.com</a></div>
+      <div class="case body">Check out my Github: <a href="https://github.com/SimplyBLGDev">SimplyBLGDev</a></div>
     </div>
   </div>
 </template>
@@ -457,7 +459,10 @@ img {
 }
 .contactBox {
   margin: 0;
-  background-color: blueviolet;
+  background-color: rgb(73, 26, 117);
+}
+.contactBox .case.header {
+  margin:0;
 }
 @media only screen and (min-width: 720px) {
   .case.year {
