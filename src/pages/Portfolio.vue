@@ -40,7 +40,7 @@
             <a href="/Pokemon/Kanto">Visit it here.</a>
           </div>
         </div>
-        <div class="caseDiv right" style="--rWidth: 35%; position:relative">
+        <div class="caseDiv" style="--rWidth: 35%; position:relative">
           <img src="../assets/Portfolio/PokeMap/aspectratio.png" alt="" style="width:100%">
           <img class="pokeImage" style="width:72%; position:absolute; left:17%" src="../assets/Portfolio/PokeMap/pokemonitor.png" alt="Monitor layout" title="Works in every monitor size!">
           <img class="pokeImage" style="width:56%; position:absolute; left:0; bottom:5%" src="../assets/Portfolio/PokeMap/pokesmall.png" alt="Small screen layout"  title="Works in every monitor size!">
@@ -71,12 +71,12 @@
             NES hardware.
           </div>
         </div>
-        <div class="caseDiv right" style="--rWidth: 50%; position:relative">
+        <div class="caseDiv" style="--rWidth: 50%; position:relative">
           <img src="../assets/Portfolio/NARNES/FFOld.png" alt="NARNES: Off" style="width:100%;">
           <img src="../assets/Portfolio/NARNES/FFNew.png" alt="NARNES: On" class="trans" v-bind:class="{ transparent: !narnesEnabled }" style="width:100%; position:absolute; left:0; top:0;">
           <div id="NARNESBtn" class="btn cBtn" v-bind:class="{ active: narnesEnabled }" @click="enableNARNES"><b>Activate NARNES</b></div>
         </div>
-        <div class="caseDiv left" style="--rWidth: 60%; padding-right:1ch">
+        <div class="caseDiv" style="--rWidth: 60%; padding-right:1ch">
           <img src="../assets/Portfolio/NARNES/UI.gif" alt="NARNES GUI" style="width:100%;">
         </div>
         <div class="caseDiv right" style="--rWidth: 40%">
@@ -112,10 +112,10 @@
             it then provides a separate executable that launches a clean <b>GUI</b> that can be navigated with either keyboard or gaming controllers.
           </div>
         </div>
-        <div class="caseDiv right" style="--rWidth: 40%">
+        <div class="caseDiv" style="--rWidth: 40%">
           <img src="../assets/Portfolio/NARL/A.png" width="100%" height="auto">
         </div>
-        <div class="caseDiv left" style="--rWidth: 40%">
+        <div class="caseDiv" style="--rWidth: 40%">
           <img src="../assets/Portfolio/NARL/B.png" width="100%" height="auto">
         </div>
         <div class="caseDiv right" style="--rWidth: 60%">
@@ -133,8 +133,20 @@
       </div>
     </div>
     
-    <div style="margin-left:-10px; margin-right:-10px">
-      
+    <div class="case header" style="margin:0; margin-bottom:5px; margin-top:-5px;">Other projects/Game Jams</div>
+
+    <div class="w3-display-container jamContainer">
+      <div class="jamColumn" v-for="indexC in otherPsColumns" :key="indexC">
+        <div v-for="(project, index) in otherPs" :key="project.title">
+          <div class="jamCard" v-if="index % otherPsColumns === indexC-1">
+            <img :src="project.preview" :alt="project.title + ' preview'" style="width:100%">
+            <div class="insetBox">
+              <div class="case header">{{ project.title }}</div>
+              <div class="case body" v-html="project.description"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -144,7 +156,76 @@ import $ from 'jquery'
 
 export default {
   data: () => ({
-    narnesEnabled:false
+    narnesEnabled:false,
+    otherPsColumns:3,
+    otherPs:[
+      {
+        title:"Legend of Nowhere",
+        year:"2017",
+        preview:require('../assets/Portfolio/Jams/LegendOfNowhere.png'),
+        description:"A small game made in <b>Unity C#</b> by a team of 4 people in just 2 weeks for <b>Adventure Jam 2017</b>."
+      },
+      {
+        title:"Simply's Cards",
+        year:2020,
+        preview:require('../assets/Portfolio/Jams/Cards.png'),
+        description:"A cross-platform collection of card and board games made in <b>Godot game engine, GDScript</b>."
+      },
+      {
+        title:"Boom Bounce",
+        year:2018,
+        preview:require('../assets/Portfolio/Jams/BoomBounce.png'),
+        description:"A game made for <b>Game Maker's Toolkit Game Jam 2018</b> by a team of 6 people, made in <b>Godot game engine, GD Script</b> in just <b>48 hours</b>."
+      },
+      {
+        title:"Untitled Car game",
+        year:2018,
+        preview:require('../assets/Portfolio/Jams/LDJam41.png'),
+        description:"A procedurally generated world with arcade-like gameplay, made by a team of 2 for <b>Ludum Dare 41</b> game jam, in just <b>48 hours</b>."
+      },
+      {
+        title:"Sam Squirrel",
+        year:2015,
+        preview:require('../assets/Portfolio/Jams/SamSquirrel.png'),
+        description:"A simple 3D platformer and my first experience working with a team, made in <b>2015</b> with <b>Unity, C#</b>."
+      },
+      {
+        title:"Untitled World Generator",
+        year:2015,
+        preview:require('../assets/Portfolio/Jams/World2015.png'),
+        description:"An early 3D procedurally generated world and walking simulator, it generates a small and simple landscape to walk around in, made in <b>Unity, C#</b> in 2015."
+      },
+      {
+        title:"World Generator with landmass detection",
+        year:2016,
+        preview:require('../assets/Portfolio/Jams/World2016.png'),
+        description:"A map generator with the ability to detect and deliniate continents and islands, made for a forgotten Procedural Generation show-off."
+      },
+      {
+        title:"Protect the Plant",
+        year:2017,
+        preview:require('../assets/Portfolio/Jams/PTP.png'),
+        description:"A simple arcade game made for <b>Grow Jam 2017</b>, made in about a week with <b>Godot Game Engine, GDScript</b>, my objective was to learn the engine by throwing myself into a game jam right away and it worked, it was fun."
+      },
+      {
+        title:"Boat Game Thing",
+        year:2018,
+        preview:require('../assets/Portfolio/Jams/BoatGameThing.png'),
+        description:"A stealth/simulation game set in a boat, featuring some real programmer art and quite a bit of polish, made in <b>Godot Game Engine, GDScript</b> in 2018."
+      },
+      {
+        title:"Combat",
+        year:2018,
+        preview:require('../assets/Portfolio/Jams/Combat.png'),
+        description:"A multi-platform RPG made in <b>Godot Game Engine</b>."
+      },
+      {
+        title:"Twitch Chatbot",
+        year:2018,
+        preview:require('../assets/Portfolio/Jams/chatbot.png'),
+        description:"An automatic bot that can read and write to a <b>Twitch</b> stream chat, it can detect messages and commands and respond appropriately, made in <b>Python</b>."
+      }
+    ]
   }),
   mounted() {
     $('.bg-blgnavbar').css("display","none");
@@ -211,11 +292,11 @@ a {
   display: flex;
   margin-right: 1px;
   margin-left: 1px;
+  margin-bottom: 11px;
 }
 .case.insetBox {
   width:100%;
   margin:0;
-  margin-bottom:11px;
   text-align: left;
   display: flex;
   flex-wrap: wrap;
@@ -304,6 +385,32 @@ img {
 }
 .case.header.studyL {
   display: contents;
+}
+.jamContainer {
+  margin-top: -5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+.jamColumn {
+  margin: 5px;
+  width: calc(33.333% - 10px);
+}
+.jamCard {
+  margin-bottom:10px;
+  margin-top:10px;
+}
+.jamCard img {
+  margin-bottom:-5px;
+}
+.jamCard .insetBox {
+  margin:0;
+}
+.jamCard .insetBox .case.header {
+  margin-top:0;
 }
 @media only screen and (min-width: 720px) {
   .case.year {
