@@ -14,7 +14,7 @@
         2020
       </div>
       <div class="case insetBox">
-        <div class="caseDiv left" style="--rWidth: 65%">
+        <div class="caseDiv left" style="--rWidth: 60%">
           <div>
             <b class="case header study">Case study:</b>
             <img class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonHTML.png" alt="HTML5" title="HTML 5">
@@ -33,14 +33,18 @@
             in a beautifully designed page.
           </div>
           <div class="case body">
-            The page itself is <b>responsive</b>, allowing the use of the app on screens of every size and aspect ratio, including
-            mobile devices.<br>
+            The application is <b>responsive</b>, adapting itself to any screen size, resolution and device, including mobile devices in both landscape and portrait 
+            modes, it is also <b>reactive</b>, thanks to the utilization of the <b>Vue JS</b> framework.
+          </div>
+          <div class="case body">
+            The page is designed to be efficient and easy to cache, downloading all the necessary data in a single request on page load therefore allowing it's use 
+            once loaded even when offline and allows the data to be refreshed without delay at user request.
           </div>
           <div class="case body">
             <a href="/Pokemon/Kanto">Visit it here.</a>
           </div>
         </div>
-        <div class="caseDiv" style="--rWidth: 35%; position:relative">
+        <div class="caseDiv" style="--rWidth: 40%; position:relative">
           <img src="../assets/Portfolio/PokeMap/aspectratio.png" alt="" style="width:100%">
           <img class="pokeImage" style="width:72%; position:absolute; left:17%" src="../assets/Portfolio/PokeMap/pokemonitor.png" alt="Monitor layout" title="Works in every monitor size!">
           <img class="pokeImage" style="width:56%; position:absolute; left:0; bottom:5%" src="../assets/Portfolio/PokeMap/pokesmall.png" alt="Small screen layout"  title="Works in every monitor size!">
@@ -63,12 +67,12 @@
             A fully featured NES emulator with a twist.
           </div>
           <div class="case body">
-            With an efficient C++ core combined with a C# GUI combined via <b>Interop</b> middleware.
+            It features a <b>C++ core</b> that emulates NES hardware at a low level and a <b>C# forms GUI</b> intercommunicating via <b>Interop middleware</b>, 
+            it has every feature that is expected of a modern emulator: sRAM, save stating, demo recording and even rewinding.
           </div>
           <div class="case body">
-            It features the ability to <b>replace in-game assets</b> with user-defined alternatives, allowing the bypassing of NES hardware restrictions
-            such as resolution, palette and fidelity, assisted by a user-friendly UI to allow users to replace assets without the need to understand
-            NES hardware.
+            More importantly it features the ability to generate and load <b>'asset packs'</b> that allow the <b>replacement of in-game assets</b> 
+            with user-defined alternatives, <b>in real time</b> allowing the bypassing of NES hardware restrictions such as resolution, palette and fidelity.
           </div>
         </div>
         <div class="caseDiv" style="--rWidth: 50%; position:relative">
@@ -81,8 +85,8 @@
         </div>
         <div class="caseDiv right" style="--rWidth: 40%">
           <div class="case body">
-            NARNES' asset replacer tool is designed to be as simple to use as possible, allowing users that might not be knowledgeable on the NES' hardware to create their
-            own 'asset packs'
+            Assisted with a user friendly, drag-and-drop GUI that allows users to create 'asset packs' without the need to understand NES hardware.<br>
+            These asset packs are then saved as a single <b>.narp</b> file that can be easily shared and used by anyone with NARNES.
           </div>
         </div>
       </div>
@@ -151,6 +155,10 @@
         </div>
       </div>
     </div>
+
+    <div class="w3-display-container insetBox contactBox">
+      <div class="case header">Contact Me!</div>
+    </div>
   </div>
 </template>
 
@@ -166,13 +174,13 @@ export default {
         title:"Legend of Nowhere",
         year:"2017",
         preview:require('../assets/Portfolio/Jams/LegendOfNowhere.png'),
-        description:"A small game made in <b>Unity C#</b> by a team of 4 people in just 2 weeks for <b>Adventure Jam 2017</b>."
+        description:"A small game made in <b>Unity, C#</b> by a team of 4 people in just 2 weeks for <b>Adventure Jam 2017</b>."
       },
       {
         title:"Simply's Cards",
         year:2020,
         preview:require('../assets/Portfolio/Jams/Cards.png'),
-        description:"A cross-platform collection of card and board games made in <b>Godot game engine, GDScript</b>."
+        description:"A cross-platform collection of card and board games made in <b>Godot game engine, GDScript</b>, available for <b>Windows</b>, <b>Linux</b> and <b>Android</b>."
       },
       {
         title:"Boom Bounce",
@@ -187,10 +195,10 @@ export default {
         description:"A procedurally generated world with arcade-like gameplay, made by a team of 2 for <b>Ludum Dare 41</b> game jam, in just <b>48 hours</b>."
       },
       {
-        title:"Sam Squirrel",
-        year:2015,
-        preview:require('../assets/Portfolio/Jams/SamSquirrel.png'),
-        description:"A simple 3D platformer and my first experience working with a team, made in <b>2015</b> with <b>Unity, C#</b>."
+        title:"Twitch Chatbot",
+        year:2018,
+        preview:require('../assets/Portfolio/Jams/chatbot.png'),
+        description:"An automatic bot that can read and write to a <b>Twitch</b> stream chat, it can detect messages and commands and respond appropriately, made in <b>Python</b>."
       },
       {
         title:"Untitled World Generator",
@@ -223,10 +231,10 @@ export default {
         description:"A multi-platform RPG made in <b>Godot Game Engine</b>."
       },
       {
-        title:"Twitch Chatbot",
-        year:2018,
-        preview:require('../assets/Portfolio/Jams/chatbot.png'),
-        description:"An automatic bot that can read and write to a <b>Twitch</b> stream chat, it can detect messages and commands and respond appropriately, made in <b>Python</b>."
+        title:"Sam Squirrel",
+        year:2015,
+        preview:require('../assets/Portfolio/Jams/SamSquirrel.png'),
+        description:"A simple 3D platformer and my first experience working with a team, made in <b>2015</b> with <b>Unity, C#</b>."
       },
       {
         title:"O2",
@@ -290,7 +298,7 @@ a {
   background-image: url('../assets/Portfolio/Techs.png');
   background-repeat: repeat;
   background-position: 0 0;
-  animation: scrollBG 60s linear infinite;
+  animation: scrollBG 80s linear infinite;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -299,7 +307,7 @@ a {
     background-position: 0px 0px;
   }
   to {
-    background-position: -1575px -998px;
+    background-position: -1886px -979px;
   }
 }
 .insetBox {
@@ -345,9 +353,9 @@ a {
 }
 .case.ribbon {
   position: relative;
-  margin-left: 0;
+  margin-left: 4px;
   top: -27px;
-  width:16px;
+  width:32px;
 }
 .case.body {
   margin-top:0.8ch;
@@ -420,6 +428,8 @@ img {
 }
 .jamColumn {
   margin: 5px;
+  flex-basis: 0;
+  flex-grow: 1;
 }
 .jamCard {
   margin-bottom:10px;
@@ -437,13 +447,17 @@ img {
 .jamCard .case.header.year {
   position: absolute;
   text-align: left;
-  font-size: 5rem;
+  font-size: 5ch;
   color:#fff;
   text-shadow: 0.05ch 0.05ch rgb(127, 127, 127);
   margin: 0;
   top: -1.7ch;
   left: 0.2ch;
   opacity: 0.4;
+}
+.contactBox {
+  margin: 0;
+  background-color: blueviolet;
 }
 @media only screen and (min-width: 720px) {
   .case.year {
@@ -474,6 +488,9 @@ img {
   .case.case.ribbon {
     margin-left: 10px;
     width:48px;
+  }
+  .jamCard .case.header.year {
+    font-size: 5rem;
   }
 }
 </style>
