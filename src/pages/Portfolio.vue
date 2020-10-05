@@ -7,6 +7,13 @@
           This is a small sample of some of the projects I've undertaken in my years as a hobbyist programmer.
         </div>
       </div>
+      <div style="position: absolute; bottom:10px;">
+        <img src="../assets/arrow.svg" alt="" style="border-radius:0; margin-bottom:5px">
+        <div class="trans lan-flags" v-bind:class="{ spanish: (language==='es') }">
+          <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/gb.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language==='es') }" @click="language='en'">
+          <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/es.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language!=='es') }" @click="language='es'">
+        </div>
+      </div>
     </div>
 
     <div class="w3-display-container caseContainer">
@@ -169,6 +176,7 @@ import $ from 'jquery'
 
 export default {
   data: () => ({
+    language:"en",
     narnesEnabled:false,
     otherPsColumns:3,
     otherPs:[
@@ -278,6 +286,27 @@ export default {
 a {
   color: #076cd9;
 }
+.lan-flags {
+  transform: translate(21.5%, 0);
+}
+.lan-flags.spanish {
+  transform: translate(-27.5%, 0);
+}
+.lan-flags > img {
+  border-radius: 0;
+  transition: filter 0.4s ease-in-out;
+}
+.lan-flags > img:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.lan-flags > img:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.lan-flags > img.deactive {
+  filter: grayscale(85%) opacity(75%);
+}
 .bg-blgnavbar {
   display: none;
 }
@@ -363,7 +392,7 @@ a {
   margin-top:0.8ch;
 }
 .trans {
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, opacity 0.4s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 .transparent {
   opacity:0;
