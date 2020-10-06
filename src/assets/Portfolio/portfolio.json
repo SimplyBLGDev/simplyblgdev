@@ -80,7 +80,25 @@
           }
         ]
       }
-    ]
+    ],
+    "otherPs":[
+      "A small game made in <b>Unity, C#</b> by a team of 4 people in just 2 weeks for <b>Adventure Jam 2017</b>.",
+      "A cross-platform collection of card and board games made in <b>Godot game engine, GDScript</b>, available for <b>Windows</b>, <b>Linux</b> and <b>Android</b>.",
+      "A game made for <b>Game Maker's Toolkit Game Jam 2018</b> by a team of 6 people, made in <b>Godot game engine, GD Script</b> in just <b>48 hours</b>.",
+      "A procedurally generated world with arcade-like gameplay, made by a team of 2 for <b>Ludum Dare 41</b> game jam, in just <b>48 hours</b>.",
+      "An automatic bot that can read and write to a <b>Twitch</b> stream chat, it can detect messages and commands and respond appropriately, made in <b>Python</b>.",
+      "An early 3D procedurally generated world and walking simulator, it generates a small and simple landscape to walk around in, made in <b>Unity, C#</b> in 2015.",
+      "A map generator with the ability to detect and delineate continents and islands, made for a forgotten Procedural Generation show-off.",
+      "A simple arcade game made for <b>Grow Jam 2017</b>, made in about a week with <b>Godot Game Engine, GDScript</b>, my objective was to learn the engine by throwing myself into a game jam right away and it worked, it was fun.",
+      "A stealth/simulation game set in a boat, featuring some serious programmer art and quite a bit of polish, made in <b>Godot Game Engine, GDScript</b> in 2018.",
+      "A multi-platform RPG made in <b>Godot Game Engine</b>.",
+      "A simple 3D platformer and my first experience working with a team, made in <b>2015</b> with <b>Unity, C#</b>.",
+      "A tower defense game set in a space station, made in just <b>48 hours</b> for <b>Game Maker's Toolkit Game Jam 2017</b> in <b>Godot Game Engine, GDScript</b>."
+    ],
+    "otherProjects":"Other projects/Game Jams",
+    "contactMe":"Contact Me!",
+    "email":"e-mail me @ ",
+    "git":"Check out my Github: "
   },
   "es":{
     "title":"Portafolio Digital",
@@ -163,6 +181,24 @@
           }
         ]
       }
-    ]
+    ],
+    "otherPs":[
+      "Un pequeño juego hecho en <b>Unity, C#</b> con un equipo de 4 personas en solo 2 semanas para <b>Adventure Jam 2017</b>.",
+      "Una colección de juegos de carta/mesa multiplataforma, desarrollado en <b>Godot game engine, GDScript</b> para <b>Windows</b>, <b>Linux</b> y <b>Android</b>.",
+      "Un juego hecho para <b>Game Maker’s Toolkit Game Jam 2018</b> con un equipo de 6 personas en <b>Godot Game Engine, GDScript</b> en solo <b>48 horas</b>.",
+      "Un juego estilo arcade, hecho con un equipo de 2 personas para <b>Ludum Dara 41</b>, en menos de <b>48 horas</b>.",
+      "Un bot de <b>Twitch</b> con la habilidad de leer, analizar y responder a comandos enviados en un chat, hecho en <b>Python</b>.",
+      "Un generador de mundos procedural en 3D, genera un pequeño y simple paisaje y permite al usuario explorarlo, hecho en <b>Unity, C#</b> en 2015.",
+      "Un generador de mapas con la habilidad de detectar y delinear continentes e islas, hecho para una muestra de generación procedural en 2016.",
+      "Un simple juego tipo arcade hecho para <b>Grow Jam 2017</b> en una semana utilizando <b>Godot game engine, GDScript</b>, mi objetivo con este proyecto era aprender el engine mediante una game jam y funciono.",
+      "Un juego de simulación/stealth en, hecho en <b>Godot game engine, GDScript</b> en 2018.",
+      "Un RPG multiplataforma hecho en <b>Godot game engine</b>.",
+      "Un simple juego plataforma 3D y mi primera experiencia trabajando con un equipo, hecho en <b>2015</b> con <b>Unity, C#</b>.",
+      "Un juego tower defense en una estación espacial, hecho en <b>48 horas</b> para <b>Game Maker’s Toolkit Game Jam 2017</b> en <b>Godot game engine, GDScript</b>."
+    ],
+    "otherProjects":"Otros proyectos/Game jams",
+    "contactMe":"Contacto",
+    "email":"e-mail @ ",
+    "git":"Visite mi Github: "
   }
 }

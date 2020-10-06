@@ -86,7 +86,7 @@
       </div>
     </div>
     
-    <div class="case header" style="margin:0; margin-bottom:5px; margin-top:-5px;">Other projects/Game Jams</div>
+    <div class="case header" style="margin:0; margin-bottom:5px; margin-top:-5px;">{{ content.otherProjects }}</div>
 
     <div class="w3-display-container jamContainer">
       <div class="jamColumn" v-for="indexC in otherPsColumns" :key="indexC">
@@ -98,7 +98,7 @@
               </div>
             <div class="insetBox">
               <div class="case header">{{ project.title }}</div>
-              <div class="case body" v-html="project.description"></div>
+              <div class="case body" v-html="content.otherPs[index]"></div>
             </div>
           </div>
         </div>
@@ -106,9 +106,9 @@
     </div>
 
     <div class="w3-display-container insetBox contactBox">
-      <div class="case header">Contact Me!</div>
-      <div class="case body">e-mail me @ <a href="mailto:fabrilogares@gmail.com">fabrilogares@gmail.com</a></div>
-      <div class="case body">Check out my Github: <a href="https://github.com/SimplyBLGDev">SimplyBLGDev</a></div>
+      <div class="case header">{{ content.contactMe }}</div>
+      <div class="case body">{{ content.email }}<a href="mailto:fabrilogares@gmail.com">fabrilogares@gmail.com</a></div>
+      <div class="case body">{{ content.git }} <a href="https://github.com/SimplyBLGDev">SimplyBLGDev</a></div>
     </div>
   </div>
 </template>
