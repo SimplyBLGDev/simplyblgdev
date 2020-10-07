@@ -199,6 +199,7 @@ export default {
   }),
   mounted() {
     $('.bg-blgnavbar').css("display","none");
+    console.log("AAAAAAAAA");
     this.calculateColumns();
     window.onresize = () => { this.calculateColumns(); }
   },

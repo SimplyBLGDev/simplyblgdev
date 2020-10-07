@@ -15,8 +15,8 @@
             "textWidth":"60%",
             "contentWidth":"40%",
             "text":[
-              "A simple webapp, small, clean, fast and intuitive, it communicates with a <b>third party, open source database</b> to fetch data which is parsed and presented in a beautifully designed page.",
-              "The application is <b>responsive</b>, adapting itself to any screen size, resolution and device, including mobile devices in both landscape and portrait modes, it is also <b>reactive</b>, thanks to the utilization of the <b>Vue JS</b> framework.",
+              "A simple webapp, small, clean, fast and intuitive, it communicates with a <b>third party open source database</b> to fetch data which is parsed and presented in a beautifully designed page.",
+              "The application is <b>responsive</b>, adapting itself to screens of any size and resolution, including mobile devices in both landscape and portrait modes, it is also <b>reactive</b>, thanks to the utilization of the <b>Vue JS</b> framework.",
               "The page is designed to be efficient and easy to cache, downloading all the necessary data in a single request on page load therefore allowing its use once loaded even when offline and allows the data to be refreshed without delay at user request.",
               "<a href='/Pokemon/Kanto'>Visit it here.</a>"
             ],
@@ -36,8 +36,8 @@
             "contentWidth":"50%",
             "text":[
               "A fully featured NES emulator with a twist.",
-              "It features a <b>C++ core</b> that emulates NES hardware at a low level and a <b>C# forms GUI</b> intercommunicating via <b>Interop middleware</b>, it has every feature that is expected of a modern emulator: sRAM, save stating, demo recording and even rewinding.",
-              "More importantly it features the ability to generate and load <b>'asset packs'</b> that allow the <b>replacement of in-game assets</b> with user-defined alternatives, <b>in real time</b> allowing the bypassing of NES hardware restrictions such as resolution, palette and fidelity."
+              "It features a <b>C++ core</b> that emulates NES hardware at a low level and a <b>C# forms GUI</b> intercommunicating via <b>Interop middleware</b>, it has every feature that is expected of a modern emulator such as sRAM, save stating, demo recording and even rewinding.",
+              "More importantly it features the ability to generate and load <b>'asset packs'</b> that allow the <b>replacement of in-game assets</b> with user-defined alternatives <b>in real time</b> allowing the bypassing of NES hardware restrictions such as resolution, palette and fidelity."
             ],
             "hContents":2
           },
@@ -117,7 +117,7 @@
             "contentWidth":"40%",
             "text":[
               "Una simple aplicación web, pequeña, limpia, rápida e intuitiva, se comunica con una <b>Base de datos open source externa</b> para encontrar la data, la cual es recibida, procesada y presentada en una página hermosamente diseñada.",
-              "La aplicación es <b>responsiva</b>, adaptándose automáticamente a pantallas de cualquier tamaño, resolucion y dispositivo, funcionando en dispositivos mobiles tanto en landscape cómo en portrait, tambien es <b>reactiva</b> mediante la utilizacion de él framework <b>Vue JS</b>.",
+              "La aplicación es <b>responsiva</b>, adaptándose automáticamente a pantallas de cualquier tamaño, resolución y dispositivo, funcionando en dispositivos móviles tanto en landscape cómo en portrait, tambien es <b>reactiva</b> mediante la utilización de él framework <b>Vue JS</b>.",
               "La página está diseñada para ser eficiente y fácil de cachear, una vez cargada todos los datos necesarios son descargados en una única request a la API, esto permite que las búsquedas del usuario sean respondidas inmediatamente, minimiza la comunicación con la base de datos y permite el uso de la página offline una vez se haya cacheado en el navegador del usuario.",
               "<a href='/Pokemon/Kanto'>Visitalo aquí.</a>"
             ],
