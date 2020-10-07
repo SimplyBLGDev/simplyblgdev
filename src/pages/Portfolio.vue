@@ -22,7 +22,7 @@
       </div>
       <div class="case insetBox">
         <template v-for="(row, rIx) in display.contents">
-          <div class="caseDiv left" :style="{ '--rWidth': row.textWidth }" :key="rIx+'text'" v-if="rIx % 2 === 0">
+          <div class="caseDiv left" :style="{ '--rWidth': row.textWidth, 'padding-right': '1ch' }" :key="rIx+'text'" v-if="rIx % 2 === 0">
             <div>
               <template v-if="rIx === 0">
                 <b class="case header study">{{ content["case-study"] }}</b>
@@ -59,24 +59,24 @@
             <template v-else-if="row.hContents === 2">
               <img src="../assets/Portfolio/NARNES/FFOld.png" alt="NARNES: Off" style="width:100%;">
               <img src="../assets/Portfolio/NARNES/FFNew.png" alt="NARNES: On" class="trans" v-bind:class="{ transparent: !narnesEnabled }" style="width:100%; position:absolute; left:0; top:0;">
-              <div id="NARNESBtn" class="btn cBtn" v-bind:class="{ active: narnesEnabled }" @click="enableNARNES"><b>Activate NARNES</b></div>
+              <div id="NARNESBtn" class="btn cBtn" v-bind:class="{ active: narnesEnabled, attention: !narnesNoticed }" @click="enableNARNES"><b>Activate NARNES</b></div>
             </template>
             <template v-else-if="row.hContents === 3">
               <img src="../assets/Portfolio/NARNES/FFOld.png" alt="NARNES: Off" style="width:100%;">
               <img src="../assets/Portfolio/NARNES/FFNew.png" alt="NARNES: On" class="trans" v-bind:class="{ transparent: !narnesEnabled }" style="width:100%; position:absolute; left:0; top:0;">
-              <div id="NARNESBtn" class="btn cBtn" v-bind:class="{ active: narnesEnabled }" @click="enableNARNES"><b>Activar NARNES</b></div>
+              <div id="NARNESBtn" class="btn cBtn" v-bind:class="{ active: narnesEnabled, attention: !narnesNoticed }" @click="enableNARNES"><b>Activar NARNES</b></div>
             </template>
             <template v-else-if="row.hContents === 4">
-              <img src="../assets/Portfolio/NARNES/UI.gif" alt="NARNES GUI" style="width:100%; padding-right:1ch">
+              <img src="../assets/Portfolio/NARNES/UI1.png" alt="NARNES GUI" style="width:100%;">
             </template>
             <template v-else-if="row.hContents === 5">
               <img src="../assets/Portfolio/NARL/A.png" width="100%" height="auto">
             </template>
             <template v-else-if="row.hContents === 6">
-              <img src="../assets/Portfolio/NARL/B.png" width="100%" height="auto" style="padding-right:1ch;">
+              <img src="../assets/Portfolio/NARL/B.png" width="100%" height="auto">
             </template>
           </div>
-          <div class="caseDiv left" :style="{ '--rWidth': row.textWidth }" :key="rIx+'text'" v-if="rIx % 2 === 1">
+          <div class="caseDiv left" :style="{ '--rWidth': row.textWidth, 'padding-left': '1ch' }" :key="rIx+'text'" v-if="rIx % 2 === 1">
             <div class="case body" v-for="p in row.text" :key="p" v-html="p"></div>
           </div>
         </template>
@@ -121,6 +121,7 @@ export default {
   data: () => ({
     language:"en",
     narnesEnabled:false,
+    narnesNoticed:false,
     otherPsColumns:3,
     otherPs:[
       {
@@ -206,6 +207,7 @@ export default {
   methods: {
     enableNARNES: function() {
       this.narnesEnabled = !this.narnesEnabled;
+      this.narnesNoticed = true;
     },
     calculateColumns: function() {
       if (window.innerWidth > 2000) {

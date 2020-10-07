@@ -130,11 +130,17 @@ a {
   margin-top: 4px;
   margin-bottom: 4px;
   padding: 4px;
+  padding-top: 0.5ch;
+  padding-bottom: 0.5ch;
+  margin-bottom: 1ch;
   text-align: center;
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
+}
+.cBtn.attention {
+  animation: cBtnAttentionHighlight 3.4s infinite;
 }
 .cBtn.active {
   background-color:#328d2b;
@@ -147,6 +153,20 @@ a {
 .cBtn.active:hover {
   border-color: whitesmoke;
   color: whitesmoke;
+}
+@keyframes cBtnAttentionHighlight {
+  0% {
+    background-color: #181a1b;
+    color: #328d2b;
+  }
+  50% {
+    background-color: #1c4619;
+    color: #bdc2bd;
+  }
+  100% {
+    background-color: #181a1b;
+    color: #328d2b;
+  }
 }
 img {
   border-radius: 4px;
@@ -214,7 +234,7 @@ img {
 .contactBox .case.header {
   margin:0;
 }
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 1180px) {
   .case.year {
     display: block;
   }
