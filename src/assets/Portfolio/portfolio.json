@@ -118,7 +118,7 @@
             "text":[
               "Una simple aplicación web, pequeña, limpia, rápida e intuitiva, se comunica con una <b>Base de datos open source externa</b> para encontrar la data, la cual es recibida, procesada y presentada en una página hermosamente diseñada.",
               "La aplicación es <b>responsiva</b>, adaptándose automáticamente a pantallas de cualquier tamaño, resolución y dispositivo, funcionando en dispositivos móviles tanto en landscape cómo en portrait, tambien es <b>reactiva</b> mediante la utilización de él framework <b>Vue JS</b>.",
-              "La página está diseñada para ser eficiente y fácil de cachear, una vez cargada todos los datos necesarios son descargados en una única request a la API, esto permite que las búsquedas del usuario sean respondidas inmediatamente, minimiza la comunicación con la base de datos y permite el uso de la página offline una vez se haya cacheado en el navegador del usuario.",
+              "La página está diseñada para ser eficiente y fácil de cachear, una vez encontrado todos los datos necesarios son descargados en una única request a la API, esto permite que las búsquedas del usuario sean respondidas inmediatamente, minimiza la comunicación con la base de datos y permite el uso de la página de manera offline una vez se haya cacheado en el navegador del usuario.",
               "<a href='/Pokemon/Kanto'>Visitalo aquí.</a>"
             ],
             "hContents":1
@@ -189,9 +189,9 @@
       "Un juego estilo arcade, hecho con un equipo de 2 personas para <b>Ludum Dara 41</b>, en menos de <b>48 horas</b>.",
       "Un bot de <b>Twitch</b> con la habilidad de leer, analizar y responder a comandos enviados en un chat, hecho en <b>Python</b>.",
       "Un generador de mundos procedural en 3D, genera un pequeño y simple paisaje y permite al usuario explorarlo, hecho en <b>Unity, C#</b> en 2015.",
-      "Un generador de mapas con la habilidad de detectar y delinear continentes e islas, hecho para una muestra de generación procedural en 2016.",
+      "Un generador de mapas con la habilidad de detectar y delinear continentes e islas, hecho para una jam de generación procedural en 2016.",
       "Un simple juego tipo arcade hecho para <b>Grow Jam 2017</b> en una semana utilizando <b>Godot game engine, GDScript</b>, mi objetivo con este proyecto era aprender el engine mediante una game jam y funciono.",
-      "Un juego de simulación/stealth en, hecho en <b>Godot game engine, GDScript</b> en 2018.",
+      "Un juego de simulación/stealth hecho en <b>Godot game engine, GDScript</b> en 2018.",
       "Un RPG multiplataforma hecho en <b>Godot game engine</b>.",
       "Un simple juego plataforma 3D y mi primera experiencia trabajando con un equipo, hecho en <b>2015</b> con <b>Unity, C#</b>.",
       "Un juego tower defense en una estación espacial, hecho en <b>48 horas</b> para <b>Game Maker’s Toolkit Game Jam 2017</b> en <b>Godot game engine, GDScript</b>."
