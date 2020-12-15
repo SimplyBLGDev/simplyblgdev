@@ -10,6 +10,7 @@ import NotFound from './pages/404.vue'
 import Home from './pages/Home.vue'
 import PokemonIndex from './pages/Pokemon/PokemonIndex.vue'
 import Pokemon from './pages/Pokemon/Pokemon.vue'
+import Graficadora from './pages/Science/Encodings.vue'
 import Portfolio from './pages/Portfolio.vue'
 import NiceDatalist from './components/NiceDatalist.vue'
 
@@ -54,6 +55,14 @@ const routes = [
     component: Pokemon,
     meta: {
       title: 'Kanto interactive map for RBY'
+    }
+  },
+  {
+    path: '/Graficadora',
+    name: 'Graficadora',
+    component: Graficadora,
+    meta: {
+      title: 'Graficadora para señales'
     }
   },
   {
