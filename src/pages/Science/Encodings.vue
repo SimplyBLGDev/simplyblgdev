@@ -24,10 +24,11 @@
           {{ buttons.InputCode }}
         </div>
         <div>
-          <input type="text" class="BinaryInput">
+          <input type="text" class="BinaryInput" id="BinaryInput" @input="updateBinary()" value="0110">
+          <input type="range" class="AmplitudeInput" id="AmplitudeInput" @input="updateAmplitude()" min="-50" max="50" value="50">
         </div>
         <div>
-          <select name="Modulation" id="CMBModulation">
+          <select name="Modulation" id="EncodingInput" @input="updateEncoding()">
             <option value="ASK">ASK (Amplitud)</option>
             <option value="FSK">FSK (Amplitud)</option>
           </select>
@@ -40,7 +41,7 @@
 
 <script>
 import $ from 'jquery'
-import { setUp, updateValues, updateCode } from '../../js/EncodingsGraph.js'
+import { setUp, updateCode, updateAmplitude, updateEncoding } from '../../js/EncodingsGraph.js'
 
 export default {
     name:"Graficadora",
@@ -56,8 +57,26 @@ export default {
     mounted() {
       $('.bg-blgnavbar').css("display","none");
       setUp($('#Graph').width(), $('#Graph').height(), $('#baseLine')[0], document.getElementById("signalLine"), "0110", "ASK", document.getElementById("SVG"));
-      updateValues();
-      updateCode("0110");
+      this.updateBinary();
+    },
+    methods: {
+      updateBinary() {
+        var r = new RegExp("^[01]*$");
+        var binary = $('#BinaryInput').val();
+
+        if (binary == "" || !r.test(binary))
+          return;
+
+        updateCode(binary);
+      },
+      updateAmplitude() {
+        var p = $('#AmplitudeInput').val() / 100.0;
+        updateAmplitude($('#Graph').height() * p);
+      },
+      updateEncoding() {
+        var p = $('#EncodingInput').val();
+        updateEncoding(p);
+      }
     }
 }
 </script>
@@ -122,7 +141,7 @@ export default {
   padding-left: 5px;
   border: 0;
 }
-#CMBModulation {
+#EncodingInput {
   background-color: #bd1353;
   color: whitesmoke;
   border: 0;
