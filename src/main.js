@@ -11,6 +11,8 @@ import Home from './pages/Home.vue'
 import PokemonIndex from './pages/Pokemon/PokemonIndex.vue'
 import Pokemon from './pages/Pokemon/Pokemon.vue'
 import Graficadora from './pages/Science/Encodings.vue'
+import EncodingsTemplate from './pages/Science/EncodingsTemplate.vue'
+import EncodingsInformation from './pages/Science/EncodingsInformation.vue'
 import Portfolio from './pages/Portfolio.vue'
 import NiceDatalist from './components/NiceDatalist.vue'
 
@@ -62,7 +64,17 @@ const routes = [
     name: 'Graficadora',
     component: Graficadora,
     meta: {
-      title: 'Graficadora para señales'
+      title: 'Graficadora para señales',
+      layout: "EncodingsTemplate"
+    }
+  },
+  {
+    path: '/Graficadora/Informacion',
+    name: 'Información/Contacto',
+    component: EncodingsInformation,
+    meta: {
+      title: 'Información',
+      layout: "EncodingsTemplate"
     }
   },
   {
@@ -89,6 +101,8 @@ router.beforeEach((to, from, next) => {
 
 Vue.component('Pokemon', Pokemon)
 Vue.component('NiceDatalist', NiceDatalist)
+Vue.component('EncodingsTemplate-layout', Layout)
+Vue.component('EncodingsTemplate-layout', EncodingsTemplate)
 
 new Vue({
   el: '#app',

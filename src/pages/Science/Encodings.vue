@@ -1,38 +1,41 @@
 <template>
 <div>
-  <div style="background: rgba(0, 0, 0, 0) linear-gradient(95deg, rgb(234, 234, 234) 20%, rgba(24, 26, 27, 0) 60%) repeat scroll 0% 0%;">
-    <div style="display:flex; padding-left:10px;">
-      <img src="https://cdn.worldvectorlogo.com/logos/utn-2.svg" alt="UTN FRC Logo" style="width:80px;">
-      <span class="LogoWords">UTN</span>
+  <div>
+    <div style="background: rgba(0, 0, 0, 0) linear-gradient(95deg, rgb(234, 234, 234) 20%, rgba(24, 26, 27, 0) 60%) repeat scroll 0% 0%;">
+      <div style="display:flex; padding-left:10px;">
+        <img src="https://cdn.worldvectorlogo.com/logos/utn-2.svg" alt="UTN FRC Logo" style="width:80px;">
+        <span class="LogoWords">UTN</span>
+      </div>
     </div>
   </div>
   <div style="padding-left:8px; padding-right:8px;">
     <div class="ButtonPanel">
-      <button class="PanelButton">{{ buttons.Graph }}</button>
-      <button class="PanelButton">{{ buttons.Theory }}</button>
-      <button class="PanelButton">{{ buttons.Info }}</button>
+      <button class="PanelButton" onclick="window.location.href='/Graficadora';">Graficadora</button>
+      <button class="PanelButton" onclick="alert('Proximamente');">Marco teorico</button>
+      <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">Información</button>
     </div>
-    <div class="MainPanel">
-      <div class="Graph" id="Graph">
-        <svg width="100%" height="100%" id="SVG">
-          <polyline points="0,0 0,0" style="stroke:black;stroke-width:2;" id="baseLine" />
-          <path class="signalLine" fill="none" stroke="red" d="" id="signalLine" />
-        </svg>
+  </div>
+
+  <div class="MainPanel">
+    <div class="Graph" id="Graph">
+      <svg width="100%" height="100%" id="SVG">
+        <polyline points="0,0 0,0" style="stroke:black;stroke-width:2;" id="baseLine" />
+        <path class="signalLine" fill="none" stroke="red" d="" id="signalLine" />
+      </svg>
+    </div>
+    <div class="CommandPanel">
+      <div>
+        {{ buttons.InputCode }}
       </div>
-      <div class="CommandPanel">
-        <div>
-          {{ buttons.InputCode }}
-        </div>
-        <div>
-          <input type="text" class="BinaryInput" id="BinaryInput" @input="updateBinary()" value="0110">
-          <input type="range" class="AmplitudeInput" id="AmplitudeInput" @input="updateAmplitude()" min="-50" max="50" value="50">
-        </div>
-        <div>
-          <select name="Modulation" id="EncodingInput" @input="updateEncoding()">
-            <option value="ASK">ASK (Amplitud)</option>
-            <option value="FSK">FSK (Amplitud)</option>
-          </select>
-        </div>
+      <div>
+        <input type="text" class="BinaryInput" id="BinaryInput" @input="updateBinary()" value="0110">
+        <input type="range" class="AmplitudeInput" id="AmplitudeInput" @input="updateAmplitude()" min="-50" max="50" value="50">
+      </div>
+      <div>
+        <select name="Modulation" id="EncodingInput" @input="updateEncoding()">
+          <option value="ASK">ASK (Amplitud)</option>
+          <option value="FSK">FSK (Amplitud)</option>
+        </select>
       </div>
     </div>
   </div>
@@ -56,6 +59,7 @@ export default {
     }),
     mounted() {
       $('.bg-blgnavbar').css("display","none");
+      $('footer').css("display", "none");
       setUp($('#Graph').width(), $('#Graph').height(), $('#baseLine')[0], document.getElementById("signalLine"), "0110", "ASK", document.getElementById("SVG"));
       this.updateBinary();
     },
@@ -113,6 +117,7 @@ export default {
 .PanelButton:last-child {
   margin-right: 0;
 }
+
 .MainPanel {
   display: flex;
   width: 100%;
