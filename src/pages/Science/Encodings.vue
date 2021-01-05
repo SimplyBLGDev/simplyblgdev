@@ -21,21 +21,23 @@
       <svg width="100%" height="100%" id="SVG">
         <polyline points="0,0 0,0" style="stroke:black;stroke-width:2;" id="baseLine" />
         <path class="signalLine" fill="none" stroke="red" d="" id="signalLine" />
+        <polyline points="0,0 0,0" style="stoke:black;stroke-width:2;" id="bitLine" />
       </svg>
     </div>
     <div class="CommandPanel">
       <div>
         {{ buttons.InputCode }}
-      </div>
-      <div>
         <input type="text" class="BinaryInput" id="BinaryInput" @input="updateBinary()" value="0110">
+        Amplitud onda portadora:
         <input type="range" class="AmplitudeInput" id="AmplitudeInput" @input="updateAmplitude()" min="-50" max="50" value="50">
-      </div>
-      <div>
+        Modulacion:
         <select name="Modulation" id="EncodingInput" @input="updateEncoding()">
           <option value="ASK">ASK (Amplitud)</option>
-          <option value="FSK">FSK (Amplitud)</option>
+          <option value="FSK">FSK (Frecuencia)</option>
+          <option value="BPSK">BPSK (Fase)</option>
         </select>
+        Frecuencia onda portadora:
+        <input type="range" class="FrequencyInput" id="FrequencyInput" @input="updateFrequency()" min="1" max="5" value="1">
       </div>
     </div>
   </div>
@@ -44,7 +46,7 @@
 
 <script>
 import $ from 'jquery'
-import { setUp, updateCode, updateAmplitude, updateEncoding } from '../../js/EncodingsGraph.js'
+import { setUp, updateCode, updateAmplitude, updateEncoding, updateFrequency } from '../../js/EncodingsGraph.js'
 
 export default {
     name:"Graficadora",
@@ -60,7 +62,8 @@ export default {
     mounted() {
       $('.bg-blgnavbar').css("display","none");
       $('footer').css("display", "none");
-      setUp($('#Graph').width(), $('#Graph').height(), $('#baseLine')[0], document.getElementById("signalLine"), "0110", "ASK", document.getElementById("SVG"));
+      setUp($('#Graph').width(), $('#Graph').height(), $('#baseLine')[0], document.getElementById("signalLine"), document.getElementById("bitLine"),
+      "0110", "ASK", 1, document.getElementById("SVG"));
       this.updateBinary();
     },
     methods: {
@@ -80,6 +83,10 @@ export default {
       updateEncoding() {
         var p = $('#EncodingInput').val();
         updateEncoding(p);
+      },
+      updateFrequency() {
+        var p = $('#FrequencyInput').val();
+        updateFrequency(p);
       }
     }
 }

@@ -2,22 +2,31 @@ var width;
 var height;
 var baseLine;
 var signalLine;
+var bitLine;
 var baseLineWidth=2;
 var signalLineWidth=8;
+var bitLineWidth=8;
 var baseLineColor="black";
 var signalLineColor="red";
+var bitLineColor="#6905b5";
+var bitLineFill="#6905b566";
 var encoding;
+var frequency;
 var code;
 var amplitude;
 var svg;
 
-function setUp(w, h, bLine, sLine, bin, enc, svgSrc) {
+var bitLineHeight=60;
+
+function setUp(w, h, bLine, sLine, btLine, bin, enc, freq, svgSrc) {
     width = w;
-    height = h;
+    height = h-bitLineHeight;
     baseLine = bLine;
     signalLine = sLine;
+    bitLine = btLine;
     code = bin;
     encoding = enc;
+    frequency = freq;
     amplitude = height / 2;
     svg = svgSrc;
 }
@@ -30,6 +39,7 @@ function updateValues() {
 function updateCode(newCode) {
     code = newCode;
     updateValues();
+    drawbitLine(bitLine);
 }
 
 function drawBaseLine(line) {
@@ -53,6 +63,7 @@ function drawSignalLine(line) {
     switch (encoding) {
         case "ASK": encodeFunction = ASK; break;
         case "FSK": encodeFunction = FSK; break;
+        case "BPSK": encodeFunction = BPSK; break;
         default: encodeFunction = ASK; break;
     }
 
@@ -80,36 +91,131 @@ function drawSignalLine(line) {
     line.setAttribute("d", dataString);
 }
 
+function drawbitLine(line) {
+    line.style.stroke = bitLineColor;
+    line.style["fill"]=bitLineFill;
+    line.style["stroke-width"]=bitLineWidth + "px";
+    line.points.clear();
+
+    var lastBit = parseInt(code[0]);
+    lastBit = Math.abs(lastBit-1);
+
+    var firstPoint = svg.createSVGPoint();
+    firstPoint.x = 0;
+    firstPoint.y = height+bitLineHeight;
+    line.points.appendItem(firstPoint);
+
+    for (var i = 0; i < code.length; i++) {
+        var currentBit = parseInt(code[i]);
+        currentBit = Math.abs(currentBit-1);
+        var p = svg.createSVGPoint();
+        var p2 = svg.createSVGPoint();
+
+        p.x = (width/(code.length))*i;
+        p2.x = p.x;
+        p.y = height+lastBit*bitLineHeight;
+        p2.y = height+currentBit*bitLineHeight
+        
+        line.points.appendItem(p);
+        line.points.appendItem(p2);
+        lastBit = currentBit;
+    }
+
+    var lastPoint = svg.createSVGPoint();
+    lastPoint.x = width;
+    lastPoint.y = height+lastBit*bitLineHeight;
+    line.points.appendItem(lastPoint);
+
+    lastPoint = svg.createSVGPoint(); // return to 0
+    lastPoint.x = width;
+    lastPoint.y = height+bitLineHeight;
+    line.points.appendItem(lastPoint);
+}
+
 // eslint-disable-next-line
 function ASK(pointWidth, i, bit, m) {
-    let p0 = svg.createSVGPoint();
-    let p1 = svg.createSVGPoint();
-    let p2 = svg.createSVGPoint();
-    let p3 = svg.createSVGPoint();
-    
-    var r = 1.25 * amplitude * m;
-    var c = 0.375 * pointWidth;
+    var res = [];
 
-    p0.x = pointWidth * i;
-    p1.x = p0.x + c;
-    p3.x = pointWidth * (i + 1);
-    p2.x = p3.x - c;
+    var waves = frequency;
+    var amp = 0;
+    if (bit == 1)
+        amp = amplitude;
 
-    p0.y = height/2;
-    p3.y = height/2;
-    p1.y = bit * r + height/2;
-    p2.y = bit * r + height/2;
+    for (var w = 0; w < waves; w++) {
+        let p0 = svg.createSVGPoint();
+        let p1 = svg.createSVGPoint();
+        let p2 = svg.createSVGPoint();
+        let p3 = svg.createSVGPoint();
 
-    return [[p0, p1, p2, p3]];
+        var adjustedPWidth = pointWidth / waves;
+        var offX = pointWidth * i;
+
+        var r = 1.25 * amp * m;
+        var c = 0.375 * adjustedPWidth;
+
+        p0.x = offX + adjustedPWidth * w;
+        p1.x = p0.x + c;
+        p3.x = offX + adjustedPWidth * (w + 1);
+        p2.x = p3.x - c;
+
+        p0.y = height/2;
+        p3.y = height/2;
+        p1.y = r + height/2;
+        p2.y = r + height/2;
+
+        m *= -1;
+
+        res.push([p0, p1, p2, p3]);
+    }
+
+    return res;
 }
 
 // eslint-disable-next-line
 function FSK(pointWidth, i, bit, m) {
     var res = [];
 
-    var waves = 1;
+    var waves = frequency;
     if (bit == 1)
-        waves = 4;
+        waves = frequency*3;
+    
+    for (var w = 0; w < waves; w++) {
+        let p0 = svg.createSVGPoint();
+        let p1 = svg.createSVGPoint();
+        let p2 = svg.createSVGPoint();
+        let p3 = svg.createSVGPoint();
+
+        var adjustedPWidth = pointWidth / waves;
+        var offX = pointWidth * i;
+
+        var r = 1.25 * amplitude * m;
+        var c = 0.375 * adjustedPWidth;
+
+        p0.x = offX + adjustedPWidth * w;
+        p1.x = p0.x + c;
+        p3.x = offX + adjustedPWidth * (w + 1);
+        p2.x = p3.x - c;
+
+        p0.y = height/2;
+        p3.y = height/2;
+        p1.y = r + height/2;
+        p2.y = r + height/2;
+
+        m *= -1;
+
+        res.push([p0, p1, p2, p3]);
+    }
+
+    return res;
+}
+
+// eslint-disable-next-line
+function BPSK(pointWidth, i, bit, m) {
+    var res = [];
+
+    var waves = frequency;
+    if (bit == 1)
+        m *= -1;
     
     for (var w = 0; w < waves; w++) {
         let p0 = svg.createSVGPoint();
@@ -151,4 +257,9 @@ function updateEncoding(newEncoding) {
     updateValues();
 }
 
-export { setUp, updateCode, updateAmplitude, updateEncoding }
+function updateFrequency(newFrequency) {
+    frequency = newFrequency;
+    updateValues();
+}
+
+export { setUp, updateCode, updateAmplitude, updateEncoding, updateFrequency }
