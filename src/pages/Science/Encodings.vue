@@ -11,7 +11,7 @@
   <div style="padding-left:8px; padding-right:8px;">
     <div class="ButtonPanel">
       <button class="PanelButton" onclick="window.location.href='/Graficadora';">Graficadora</button>
-      <button class="PanelButton" onclick="alert('Proximamente');">Marco teorico</button>
+      <button class="PanelButton" onclick="window.location.href='/Documents/Marco_Teorico_Graficadora.pdf';">Marco teorico</button>
       <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">Información</button>
     </div>
   </div>
