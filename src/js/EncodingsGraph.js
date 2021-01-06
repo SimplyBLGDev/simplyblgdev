@@ -6,7 +6,7 @@ var bitLine;
 var baseLineWidth=2;
 var signalLineWidth=8;
 var bitLineWidth=8;
-var baseLineColor="black";
+var baseLineColor="blue";
 var signalLineColor="red";
 var bitLineColor="#6905b5";
 var bitLineFill="#6905b566";
@@ -20,7 +20,7 @@ var bitLineHeight=60;
 
 function setUp(w, h, bLine, sLine, btLine, bin, enc, freq, svgSrc) {
     width = w;
-    height = h-bitLineHeight;
+    height = h-bitLineHeight-bitLineWidth/2;
     baseLine = bLine;
     signalLine = sLine;
     bitLine = btLine;
@@ -56,20 +56,29 @@ function drawSignalLine(line) {
     line.style["stroke-width"]=signalLineWidth;
     line.style.fill = "none";
 
-    var pointWidth = width/(code.length);
-    var points = new Array(code.length);
-
     var encodeFunction;
+    var levels=1;
     switch (encoding) {
         case "ASK": encodeFunction = ASK; break;
         case "FSK": encodeFunction = FSK; break;
         case "BPSK": encodeFunction = BPSK; break;
+        case "4QAM": encodeFunction = QAM; levels=2; break;
+        case "8QAM": encodeFunction = QAM; levels=3; break;
         default: encodeFunction = ASK; break;
     }
 
     var carrierDirection = 1;
-    for (var i = 0; i < code.length; i++) {
-        points[i] = encodeFunction(pointWidth, i, parseInt(code[i]), carrierDirection);
+
+    var superBits = []; // Contains the groups of bits in accordance to the levels of the encoding
+
+    for (var b = 0; b < code.length; b+=levels)
+        superBits.push(code.slice(b, b + levels));
+    
+    var points = new Array(Math.floor(code.length / levels));
+    var pointWidth = width/(code.length / levels);
+
+    for (var i = 0; i < superBits.length; i += 1) {
+        points[i] = encodeFunction(pointWidth, i, parseInt(superBits[i], 2), carrierDirection, levels);
         if (points[i].length % 2 == 1)
             carrierDirection *= -1;
     }
@@ -133,7 +142,7 @@ function drawbitLine(line) {
 }
 
 // eslint-disable-next-line
-function ASK(pointWidth, i, bit, m) {
+function ASK(pointWidth, i, bit, m, levels) {
     var res = [];
 
     var waves = frequency;
@@ -172,7 +181,7 @@ function ASK(pointWidth, i, bit, m) {
 }
 
 // eslint-disable-next-line
-function FSK(pointWidth, i, bit, m) {
+function FSK(pointWidth, i, bit, m, levels) {
     var res = [];
 
     var waves = frequency;
@@ -210,7 +219,7 @@ function FSK(pointWidth, i, bit, m) {
 }
 
 // eslint-disable-next-line
-function BPSK(pointWidth, i, bit, m) {
+function BPSK(pointWidth, i, bit, m, levels) {
     var res = [];
 
     var waves = frequency;
@@ -227,6 +236,51 @@ function BPSK(pointWidth, i, bit, m) {
         var offX = pointWidth * i;
 
         var r = 1.25 * amplitude * m;
+        var c = 0.375 * adjustedPWidth;
+
+        p0.x = offX + adjustedPWidth * w;
+        p1.x = p0.x + c;
+        p3.x = offX + adjustedPWidth * (w + 1);
+        p2.x = p3.x - c;
+
+        p0.y = height/2;
+        p3.y = height/2;
+        p1.y = r + height/2;
+        p2.y = r + height/2;
+
+        m *= -1;
+
+        res.push([p0, p1, p2, p3]);
+    }
+
+    return res;
+}
+
+// eslint-disable-next-line
+function QAM(pointWidth, i, bit, m, levels) {
+    var res = [];
+
+    var waves = frequency;
+    var amp = amplitude;
+    if (bit % 2 == 1)
+        m *= -1;
+    
+    if ((bit >> 1) % 2 == 1)
+        amp /= levels;
+
+    if ((bit >> 2) % 2 == 1)
+        amp /= levels;
+
+    for (var w = 0; w < waves; w++) {
+        let p0 = svg.createSVGPoint();
+        let p1 = svg.createSVGPoint();
+        let p2 = svg.createSVGPoint();
+        let p3 = svg.createSVGPoint();
+
+        var adjustedPWidth = pointWidth / waves;
+        var offX = pointWidth * i;
+
+        var r = 1.25 * amp * m;
         var c = 0.375 * adjustedPWidth;
 
         p0.x = offX + adjustedPWidth * w;

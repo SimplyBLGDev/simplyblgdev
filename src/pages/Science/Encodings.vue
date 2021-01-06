@@ -1,10 +1,9 @@
 <template>
 <div>
   <div>
-    <div style="background: rgba(0, 0, 0, 0) linear-gradient(95deg, rgb(234, 234, 234) 20%, rgba(24, 26, 27, 0) 60%) repeat scroll 0% 0%;">
+    <div style="background: rgba(0, 0, 0, 0) linear-gradient(-105deg, rgb(234, 234, 234) 20%, rgba(24, 26, 27, 0) 60%) repeat scroll 0% 0%;">
       <div style="display:flex; padding-left:10px;">
-        <img src="https://cdn.worldvectorlogo.com/logos/utn-2.svg" alt="UTN FRC Logo" style="width:80px;">
-        <span class="LogoWords">UTN</span>
+        <img src="../../assets/UTN Logo.png" alt="UTN FRC Logo" style="width:20%; margin:8px;">
       </div>
     </div>
   </div>
@@ -17,7 +16,7 @@
   </div>
 
   <div class="MainPanel">
-    <div class="Graph" id="Graph">
+    <div class="insetBox" id="Graph">
       <svg width="100%" height="100%" id="SVG">
         <polyline points="0,0 0,0" style="stroke:black;stroke-width:2;" id="baseLine" />
         <path class="signalLine" fill="none" stroke="red" d="" id="signalLine" />
@@ -29,12 +28,14 @@
         {{ buttons.InputCode }}
         <input type="text" class="BinaryInput" id="BinaryInput" @input="updateBinary()" value="0110">
         Amplitud onda portadora:
-        <input type="range" class="AmplitudeInput" id="AmplitudeInput" @input="updateAmplitude()" min="-50" max="50" value="50">
+        <input type="range" class="AmplitudeInput" id="AmplitudeInput" @input="updateAmplitude()" min="-45" max="45" value="45">
         Modulacion:
         <select name="Modulation" id="EncodingInput" @input="updateEncoding()">
           <option value="ASK">ASK (Amplitud)</option>
           <option value="FSK">FSK (Frecuencia)</option>
           <option value="BPSK">BPSK (Fase)</option>
+          <option value="4QAM">4QAM (Amplitud/Fase)</option>
+          <option value="8QAM">8QAM (Amplitud/Fase)</option>
         </select>
         Frecuencia onda portadora:
         <input type="range" class="FrequencyInput" id="FrequencyInput" @input="updateFrequency()" min="1" max="5" value="1">
@@ -131,13 +132,15 @@ export default {
   height: 70vh;
   padding: 8px;
   border-radius: 1.4rem;
-  background-color: #2c2b2d;
+  background-color: #2c2b2d00;
 }
 .Graph {
   background-color: #d2d5d6;
   height: 100%;
   width: 75%;
   border-radius: 1.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .CommandPanel {
   text-align: left;
@@ -148,13 +151,13 @@ export default {
 .BinaryInput {
   color: whitesmoke;
   border-radius: 0.4rem;
-  background-color: #bd1353;
+  background-color: #5b069c;
   width: 100%;
   padding-left: 5px;
   border: 0;
 }
 #EncodingInput {
-  background-color: #bd1353;
+  background-color: #5b069c;
   color: whitesmoke;
   border: 0;
   border-radius: 0.4rem;
@@ -166,6 +169,14 @@ export default {
 }
 .signalLine {
   transition: 0.5s;
+}
+.insetBox {
+  -webkit-box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.6);
+  -moz-box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.6);
+  box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.6);
+  padding: 10px;
+  margin: 10px;
+  background-color: #d8dfe1;
 }
 </style>
 
