@@ -23,8 +23,8 @@
         <polyline points="0,0 0,0" style="stoke:black;stroke-width:2;" id="bitLine" />
       </svg>
     </div>
-    <div class="CommandPanel">
-      <div>
+    <div class="leftPanel">
+      <div class="CommandPanel">
         {{ buttons.InputCode }}
         <input type="text" class="BinaryInput" id="BinaryInput" @input="updateBinary()" value="0110">
         Amplitud onda portadora:
@@ -40,6 +40,14 @@
         Frecuencia onda portadora:
         <input type="range" class="FrequencyInput" id="FrequencyInput" @input="updateFrequency()" min="1" max="5" value="1">
       </div>
+      <div class="ConstellationPanel">
+        <div class="insetBox" style="width:100%;" id="Constellation">
+          <svg id="constSVG" width="100%" height="100%">
+            <polyline points="0,0 0,0" style="stroke:black;stroke-width:2;" id="constHAxis" />
+            <polyline points="0,0 0,0" style="stroke:black;stroke-width:2;" id="constVAxis" />
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -48,6 +56,7 @@
 <script>
 import $ from 'jquery'
 import { setUp, updateCode, updateAmplitude, updateEncoding, updateFrequency } from '../../js/EncodingsGraph.js'
+import { constSetUp, constDrawPoints } from '../../js/ConstellationsGraph.js'
 
 export default {
     name:"Graficadora",
@@ -63,8 +72,13 @@ export default {
     mounted() {
       $('.bg-blgnavbar').css("display","none");
       $('footer').css("display", "none");
+
       setUp($('#Graph').width(), $('#Graph').height(), $('#baseLine')[0], document.getElementById("signalLine"), document.getElementById("bitLine"),
       "0110", "ASK", 1, document.getElementById("SVG"));
+
+      constSetUp($('#Constellation').width(), $('#Constellation').height(), document.getElementById("constHAxis"), document.getElementById("constVAxis"), document.getElementById("constSVG"));
+      $('#Constellation').css("display", "none");
+
       this.updateBinary();
     },
     methods: {
@@ -84,6 +98,16 @@ export default {
       updateEncoding() {
         var p = $('#EncodingInput').val();
         updateEncoding(p);
+        if (p == "4QAM" || p == "8QAM") {
+          $('#Constellation').css("display", "block");
+          
+          var bits = 2;
+          if (p == "8QAM")
+            bits = 3;
+
+          constDrawPoints(bits);
+        } else
+          $('#Constellation').css("display", "none");
       },
       updateFrequency() {
         var p = $('#FrequencyInput').val();
@@ -134,10 +158,19 @@ export default {
   border-radius: 1.4rem;
   background-color: #2c2b2d00;
 }
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.ConstellationPanel {
+  display: flex;
+  width: 100%;
+}
 .Graph {
   background-color: #d2d5d6;
   height: 100%;
-  width: 75%;
+  width: 70%;
   border-radius: 1.5rem;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -145,8 +178,8 @@ export default {
 .CommandPanel {
   text-align: left;
   font-size: 1.3rem;
-  margin-left: 8px;
-  width:25%;
+  padding: 8px;
+  width:100%;
 }
 .BinaryInput {
   color: whitesmoke;

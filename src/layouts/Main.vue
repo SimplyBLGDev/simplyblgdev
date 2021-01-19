@@ -50,6 +50,9 @@ export default {
 </script>
 
 <style>
+html {
+  background-color: #181a1b;
+}
 .bg-blgnavbar {
   background-color: #319e2a;
 }
