@@ -330,13 +330,16 @@ function graphOnMouseHover(x, y) {
     var symbolAreaLength = (bitsPerSymbol * width) / code.length;
     var pointedPosition = Math.floor(x / symbolAreaLength);
 
-
     updateHighlightRectangle(
         symbolAreaLength,
         height,
         pointedPosition*symbolAreaLength,
         0
     );
+
+    var highlightedSymbol = parseInt(code.substring(bitsPerSymbol*pointedPosition, bitsPerSymbol*(pointedPosition+1)), 2);
+
+    return highlightedSymbol;
 }
 
 function updateHighlightRectangle(width, height, posX, posY) {

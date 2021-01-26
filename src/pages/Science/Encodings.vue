@@ -57,7 +57,7 @@
 <script>
 import $ from 'jquery'
 import { setUp, updateCode, updateAmplitude, updateEncoding, updateFrequency, graphOnMouseHover } from '../../js/EncodingsGraph.js'
-import { constSetUp, constDrawPoints } from '../../js/ConstellationsGraph.js'
+import { constSetUp, constDrawPoints, highlightPoint } from '../../js/ConstellationsGraph.js'
 
 export default {
     name:"Graficadora",
@@ -118,11 +118,16 @@ export default {
       graphMouseMove() {
         var e = window.event;
         $("#graphHighlightRect").css('opacity', '0.28125');
-        graphOnMouseHover(e.x, e.y);
+        var bitToHighlight = graphOnMouseHover(e.x, e.y);
+        
+        var p = $('#EncodingInput').val();
+        if (p == "4QAM" || p == "8QAM") {
+          highlightPoint(bitToHighlight);
+        }
       },
       graphMouseLeave() {
-        console.log("left");
         $("#graphHighlightRect").css('opacity', '0');
+        highlightPoint(-1);
       }
     }
 }
@@ -231,4 +236,15 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+.highlightedPoint {
+  fill: red !important;
+  stroke: black !important;
+  stroke-width: 2px;
+}
+.constellationPoint {
+  fill: black;
+  stroke: red;
+  stroke-width: 2px;
+  transition: all 0.19s cubic-bezier(.22,.61,.36,1);
+}
 </style> 

@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 var width;
 var height;
 var horizontalAxis;
@@ -5,11 +7,8 @@ var verticalAxis;
 var lineWidth=3;
 var lineColor="#51a832";
 // eslint-disable-next-line
-var pointColor="#32a852";
-// eslint-disable-next-line
-var pointsSize=5;
-// eslint-disable-next-line
-var points;
+var pointsSize=10;
+var highlightedPoint;
 var svg;
 
 function constSetUp(w, h, hAxis, vAxis, svgSrc) {
@@ -44,7 +43,6 @@ function constDrawPoints(bits) {
     // eslint-disable-next-line
     var amp;
     
-    console.log(svg);
     for (var i = 0; i < svg.childNodes.length; i++) {
         if (svg.childNodes[i].nodeName == "circle") {
             svg.removeChild(svg.childNodes[i]);
@@ -68,8 +66,29 @@ function constDrawPoints(bits) {
         newCircle.setAttributeNS(null, 'cx', (amp+1) * (width / 2));
         newCircle.setAttributeNS(null, 'cy', (phase+1) * (height / 2));
         newCircle.setAttributeNS(null, 'r', pointsSize);
+        newCircle.classList.add("constellationPoint");
         svg.appendChild(newCircle);
     }
 }
 
-export { constSetUp, constDrawPoints }
+function getPoint(value) {
+    return svg.childNodes[2+value];
+}
+
+function highlightPoint(value) {
+    if (value == -1 && highlightedPoint != null) {
+        highlightedPoint.removeClass('highlightedPoint');
+        highlightedPoint = null;
+    }
+
+    var newPoint = $(getPoint(value));
+    if (highlightedPoint == null)
+        highlightedPoint = newPoint;
+    else if (newPoint != $(getPoint(value))) {
+        highlightedPoint.removeClass('highlightedPoint');
+        highlightedPoint = newPoint;
+        highlightedPoint.addClass('highlightedPoint');
+    }
+}
+
+export { constSetUp, constDrawPoints, highlightPoint }
