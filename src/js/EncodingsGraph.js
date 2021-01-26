@@ -14,11 +14,12 @@ var encoding;
 var frequency;
 var code;
 var amplitude;
+var highlightRect;
 var svg;
 
 var bitLineHeight=60;
 
-function setUp(w, h, bLine, sLine, btLine, bin, enc, freq, svgSrc) {
+function setUp(w, h, bLine, sLine, btLine, bin, enc, freq, hRect, svgSrc) {
     width = w;
     height = h-bitLineHeight-bitLineWidth/2;
     baseLine = bLine;
@@ -28,6 +29,7 @@ function setUp(w, h, bLine, sLine, btLine, bin, enc, freq, svgSrc) {
     encoding = enc;
     frequency = freq;
     amplitude = height / 2;
+    highlightRect = hRect;
     svg = svgSrc;
 }
 
@@ -316,4 +318,32 @@ function updateFrequency(newFrequency) {
     updateValues();
 }
 
-export { setUp, updateCode, updateAmplitude, updateEncoding, updateFrequency }
+// eslint-disable-next-line
+function graphOnMouseHover(x, y) {
+    var bitsPerSymbol = 1;
+    switch (encoding) {
+        case "4QAM": bitsPerSymbol = 2; break;
+        case "8QAM": bitsPerSymbol = 3; break;
+        default: bitsPerSymbol = 1; break;
+    }
+
+    var symbolAreaLength = (bitsPerSymbol * width) / code.length;
+    var pointedPosition = Math.floor(x / symbolAreaLength);
+
+
+    updateHighlightRectangle(
+        symbolAreaLength,
+        height,
+        pointedPosition*symbolAreaLength,
+        0
+    );
+}
+
+function updateHighlightRectangle(width, height, posX, posY) {
+    highlightRect.setAttributeNS(null, 'x', posX);
+    highlightRect.setAttributeNS(null, 'y', posY);
+    highlightRect.setAttributeNS(null, 'width', width);
+    highlightRect.setAttributeNS(null, 'height', height+bitLineHeight);
+}
+
+export { setUp, updateCode, updateAmplitude, updateEncoding, updateFrequency, graphOnMouseHover }

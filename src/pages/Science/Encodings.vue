@@ -17,10 +17,11 @@
 
   <div class="MainPanel">
     <div class="insetBox" id="Graph">
-      <svg width="100%" height="100%" id="SVG">
+      <svg width="100%" height="100%" id="SVG" @mousemove="graphMouseMove" @mouseleave="graphMouseLeave">
         <polyline points="0,0 0,0" style="stroke:black;stroke-width:2;" id="baseLine" />
         <path class="signalLine" fill="none" stroke="red" d="" id="signalLine" />
         <polyline points="0,0 0,0" style="stoke:black;stroke-width:2;" id="bitLine" />
+        <rect width=0 height=0 id="graphHighlightRect" />
       </svg>
     </div>
     <div class="leftPanel">
@@ -55,7 +56,7 @@
 
 <script>
 import $ from 'jquery'
-import { setUp, updateCode, updateAmplitude, updateEncoding, updateFrequency } from '../../js/EncodingsGraph.js'
+import { setUp, updateCode, updateAmplitude, updateEncoding, updateFrequency, graphOnMouseHover } from '../../js/EncodingsGraph.js'
 import { constSetUp, constDrawPoints } from '../../js/ConstellationsGraph.js'
 
 export default {
@@ -74,7 +75,7 @@ export default {
       $('footer').css("display", "none");
 
       setUp($('#Graph').width(), $('#Graph').height(), $('#baseLine')[0], document.getElementById("signalLine"), document.getElementById("bitLine"),
-      "0110", "ASK", 1, document.getElementById("SVG"));
+      "0110", "ASK", 1, document.getElementById("graphHighlightRect"), document.getElementById("SVG"));
 
       constSetUp($('#Constellation').width(), $('#Constellation').height(), document.getElementById("constHAxis"), document.getElementById("constVAxis"), document.getElementById("constSVG"));
       $('#Constellation').css("display", "none");
@@ -98,6 +99,7 @@ export default {
       updateEncoding() {
         var p = $('#EncodingInput').val();
         updateEncoding(p);
+
         if (p == "4QAM" || p == "8QAM") {
           $('#Constellation').css("display", "block");
           
@@ -112,6 +114,15 @@ export default {
       updateFrequency() {
         var p = $('#FrequencyInput').val();
         updateFrequency(p);
+      },
+      graphMouseMove() {
+        var e = window.event;
+        $("#graphHighlightRect").css('opacity', '0.28125');
+        graphOnMouseHover(e.x, e.y);
+      },
+      graphMouseLeave() {
+        console.log("left");
+        $("#graphHighlightRect").css('opacity', '0');
       }
     }
 }
@@ -210,6 +221,11 @@ export default {
   padding: 10px;
   margin: 10px;
   background-color: #d8dfe1;
+}
+#graphHighlightRect {
+  opacity: 0.28125;
+  fill: #323aa8;
+  transition: all 0.19s cubic-bezier(.22,.61,.36,1);
 }
 </style>
 
