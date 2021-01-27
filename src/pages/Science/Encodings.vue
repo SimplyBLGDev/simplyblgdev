@@ -16,7 +16,7 @@
   </div>
 
   <div class="MainPanel">
-    <div class="insetBox" id="Graph">
+    <div class="insetBox Graph" id="Graph">
       <svg width="100%" height="100%" id="SVG" @mousemove="graphMouseMove" @mouseleave="graphMouseLeave">
         <polyline points="0,0 0,0" style="stroke:black;stroke-width:2;" id="baseLine" />
         <path class="signalLine" fill="none" stroke="red" d="" id="signalLine" />
