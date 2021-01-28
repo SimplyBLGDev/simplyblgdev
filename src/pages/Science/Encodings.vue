@@ -49,6 +49,15 @@
           </svg>
         </div>
       </div>
+      <div class="FrequencySpectrumPanel">
+        <div class="insetBox" style="width:100%;" id="FrequencySpectrum">
+          <svg width="100%" height="100%" id="frequencySpecSVG">
+            <path class="frequencySpectrumLine" fill="#0000aa38" stroke="blue" style="stroke-width:4;" d="" id="frequencySpectrumLine" />
+            <polyline points="0,0 0,0" style="stroke:red;stroke-width:4;" id="bandwidthLeftStop" />
+            <polyline points="0,0 0,0" style="stroke:red;stroke-width:4;" id="bandwidthRightStop" />
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -58,6 +67,7 @@
 import $ from 'jquery'
 import { setUp, updateCode, updateAmplitude, updateEncoding, updateFrequency, graphOnMouseHover } from '../../js/EncodingsGraph.js'
 import { constSetUp, constDrawPoints, highlightPoint } from '../../js/ConstellationsGraph.js'
+import { setUpFrequencySpectrum, updateFrequencySpectrum, updateFrequencySpectrumsFrequency } from '../../js/FrequencySpectrumGraph.js'
 
 export default {
     name:"Graficadora",
@@ -79,6 +89,9 @@ export default {
 
       constSetUp($('#Constellation').width(), $('#Constellation').height(), document.getElementById("constHAxis"), document.getElementById("constVAxis"), document.getElementById("constSVG"));
       $('#Constellation').css("display", "none");
+
+      setUpFrequencySpectrum($('#FrequencySpectrum').width(), $('#FrequencySpectrum').height(), document.getElementById("bandwidthLeftStop"), document.getElementById("bandwidthRightStop"),
+      document.getElementById("frequencySpectrumLine"), "ASK", document.getElementById("frequencySpecSVG"));
 
       this.updateBinary();
     },
@@ -110,10 +123,13 @@ export default {
           constDrawPoints(bits);
         } else
           $('#Constellation').css("display", "none");
+        
+        updateFrequencySpectrum(p);
       },
       updateFrequency() {
         var p = $('#FrequencyInput').val();
         updateFrequency(p);
+        updateFrequencySpectrumsFrequency(p);
       },
       graphMouseMove() {
         var e = window.event;
@@ -180,6 +196,10 @@ export default {
   width: 30%;
 }
 .ConstellationPanel {
+  display: flex;
+  width: 100%;
+}
+.FrequencySpectrumPanel {
   display: flex;
   width: 100%;
 }
