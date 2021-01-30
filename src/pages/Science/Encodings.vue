@@ -9,9 +9,16 @@
   </div>
   <div style="padding-left:8px; padding-right:8px;">
     <div class="ButtonPanel">
-      <button class="PanelButton" onclick="window.location.href='/Graficadora';">Graficadora</button>
-      <button class="PanelButton" onclick="window.location.href='/Documents/Marco_Teorico_Graficadora.pdf';">Marco teorico</button>
-      <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">Información</button>
+      <button class="PanelButton" onclick="window.location.href='/Graficadora';">{{ content.BtnGraph }}</button>
+      <button class="PanelButton" onclick="window.location.href='/Documents/Marco_Teorico_Graficadora.pdf';">{{ content.BtnTheory }}</button>
+      <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">{{ content.BtnInfo }}</button>
+      <div style="position:absolute; right: 50px">
+        <img src="../../assets/arrow.svg" alt="" style="border-radius:0; margin-bottom:5px">
+        <div class="trans lan-flags" v-bind:class="{ spanish: (language==='es') }">
+          <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/gb.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language==='es') }" @click="language='en'">
+          <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/es.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language!=='es') }" @click="language='es'">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -26,11 +33,11 @@
     </div>
     <div class="leftPanel">
       <div class="CommandPanel">
-        {{ buttons.InputCode }}
+        {{ content.LblInputCode }}
         <input type="text" class="BinaryInput" id="BinaryInput" @input="updateBinary()" value="0110">
-        Amplitud onda portadora:
+        {{ content.LblAmplitude }}
         <input type="range" class="AmplitudeInput" id="AmplitudeInput" @input="updateAmplitude()" min="-45" max="45" value="45">
-        Modulacion:
+        {{ content.LblModulation }}
         <select name="Modulation" id="EncodingInput" @input="updateEncoding()">
           <option value="ASK">ASK (Amplitud)</option>
           <option value="FSK">FSK (Frecuencia)</option>
@@ -38,7 +45,7 @@
           <option value="4QAM">4QAM (Amplitud/Fase)</option>
           <option value="8QAM">8QAM (Amplitud/Fase)</option>
         </select>
-        Frecuencia onda portadora:
+        {{ content.LblFrequency }}
         <input type="range" class="FrequencyInput" id="FrequencyInput" @input="updateFrequency()" min="1" max="5" value="1">
       </div>
       <div class="ConstellationPanel">
@@ -49,6 +56,7 @@
           </svg>
         </div>
       </div>
+      {{ content.LblFrequencySpectrum }}
       <div class="FrequencySpectrumPanel">
         <div class="insetBox" style="width:100%;" id="FrequencySpectrum">
           <svg width="100%" height="100%" id="frequencySpecSVG">
@@ -73,11 +81,27 @@ export default {
     name:"Graficadora",
     data: () => ({
       language: "es",
-      buttons: {
-        "Graph": "Graficadora",
-        "Theory": "Marco Teorico",
-        "Info": "Información/Contacto",
-        "InputCode": "Codigo Binario:"
+      text: {
+        "es": {
+          "BtnGraph":             "Graficadora",
+          "BtnTheory":            "Marco Teorico",
+          "BtnInfo":              "Información",
+          "LblInputCode":         "Codigo Binario: ",
+          "LblAmplitude":         "Amplitud onda portadora: ",
+          "LblModulation":        "Modulacion: ",
+          "LblFrequency":         "Frecuencia onda portadora: ",
+          "LblFrequencySpectrum": "Espectro de frecuencia"
+        },
+        "en": {
+          "BtnGraph":             "Graphing Tool",
+          "BtnTheory":            "Theory",
+          "BtnInfo":              "About",
+          "LblInputCode":         "Digital Signal ",
+          "LblAmplitude":         "Carrier wave amplitude: ",
+          "LblModulation":        "Keying method: ",
+          "LblFrequency":         "Carrier wave frequency: ",
+          "LblFrequencySpectrum": "Frequency Spectrum"
+        }
       }
     }),
     mounted() {
@@ -145,6 +169,14 @@ export default {
         $("#graphHighlightRect").css('opacity', '0');
         highlightPoint(-1);
       }
+    },
+    computed: {
+      content: function() {
+        if (this.language == "es") {
+          return this.text.es;
+        }
+        return this.text.en;
+      } 
     }
 }
 </script>
