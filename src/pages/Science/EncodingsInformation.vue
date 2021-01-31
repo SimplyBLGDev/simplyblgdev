@@ -1,35 +1,42 @@
 <template>
 <div>
-    <div>
-    <div style="background: rgba(0, 0, 0, 0) linear-gradient(95deg, rgb(234, 234, 234) 20%, rgba(24, 26, 27, 0) 60%) repeat scroll 0% 0%;">
-    <div style="display:flex; padding-left:10px;">
-      <img src="https://cdn.worldvectorlogo.com/logos/utn-2.svg" alt="UTN FRC Logo" style="width:80px;">
-      <span class="LogoWords">UTN</span>
+  <div>
+    <div style="background: rgba(0, 0, 0, 0) linear-gradient(-105deg, rgb(234, 234, 234) 20%, rgba(24, 26, 27, 0) 60%) repeat scroll 0% 0%;">
+      <div style="display:flex; padding-left:10px;">
+        <img src="../../assets/UTN Logo.png" alt="UTN FRC Logo" style="width:20%; margin:8px;">
+      </div>
     </div>
-  </div>
   </div>
   <div style="padding-left:8px; padding-right:8px;">
     <div class="ButtonPanel">
-      <button class="PanelButton" onclick="window.location.href='/Graficadora';">Graficadora</button>
-      <button class="PanelButton" onclick="window.location.href='/Documents/Marco_Teorico_Graficadora.pdf';">Marco teorico</button>
-      <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">Información</button>
+      <button class="PanelButton" onclick="window.location.href='/Graficadora';">{{ content.BtnGraph }}</button>
+      <button class="PanelButton" onclick="window.location.href='/Documents/Marco_Teorico_Graficadora.pdf';">{{ content.BtnTheory }}</button>
+      <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">{{ content.BtnInfo }}</button>
+      <div style="position:absolute; right: 50px">
+        <img src="../../assets/arrow.svg" alt="" style="border-radius:0; margin-bottom:5px">
+        <div class="trans lan-flags" v-bind:class="{ spanish: (language==='es') }">
+          <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/gb.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language==='es') }" @click="language='en'">
+          <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/es.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language!=='es') }" @click="language='es'">
+        </div>
+      </div>
     </div>
   </div>
-  <h1>Proyecto: Modulador Digital</h1>
+  
+  <h1>{{ content.Title }}</h1>
   <li>
-    <ul>ASK (Modulación por conmutación de Amplitud)</ul>
-    <ul>FSK (Modulación por conmutación de Frecuencia)</ul>
-    <ul>BPSK (Modulación por conmutacion de Fase)</ul>
-    <ul>QAM (Modulación por combinación de Fase y Amplitud) (Y sus variantes)</ul>
+    <ul>{{ content.c1 }}</ul>
+    <ul>{{ content.c2 }}</ul>
+    <ul>{{ content.c3 }}</ul>
+    <ul>{{ content.c4 }}</ul>
   </li>
   <table>
     <tr>
-      <td>Nombre</td>
-      <td>Apellido</td>
-      <td>DNI</td>
-      <td>Legajo</td>
-      <td>Correo Electrónico</td>
-      <td>Teléfono</td>
+      <td>{{ content.table.Name }}</td>
+      <td>{{ content.table.Surname }}</td>
+      <td>{{ content.table.DNI }}</td>
+      <td>{{ content.table.FileNo }}</td>
+      <td>{{ content.table.Mail }}</td>
+      <td>{{ content.table.PhoneNo }}</td>
     </tr>
     <tr>
       <td>Maximiliano</td>
@@ -56,9 +63,58 @@ import $ from 'jquery'
 
 export default {
     name:"Graficadora",
+    data: () => ({
+      language: "es",
+      text: {
+        "es": {
+          "BtnGraph":   "Graficadora",
+          "BtnTheory":  "Marco Teorico",
+          "BtnInfo":    "Información",
+          "Title":      "Proyecto: Modulador Digital",
+          "c1":         "ASK (Modulación por conmutación de Amplitud)",
+          "c2":         "FSK (Modulación por conmutación de Frecuencia)",
+          "c3":         "BPSK (Modulación por conmutacion de Fase)",
+          "c4":         "QAM (Modulación por combinación de Fase y Amplitud) (Y sus variantes)",
+          "table": {
+            "Name":     "Nombre",
+            "Surname":  "Apellido",
+            "DNI":      "DNI",
+            "Mail":     "Correo Electronico",
+            "FileNo":    "Legajo",
+            "PhoneNo":  "Teléfono"
+          }
+        },
+        "en": {
+          "BtnGraph":   "Graphing Tool",
+          "BtnTheory":  "Theory",
+          "BtnInfo":    "About",
+          "Title":      "Project: Signal Graphing Tool",
+          "c1":         "ASK (Amplitude Shift-Keying)",
+          "c2":         "FSK (Frequenct Shift-Keying)",
+          "c3":         "BPSK (Binary Phase-Shift Keying)",
+          "c4":         "QAM (Quadrature amplitude modulation)",
+          "table": {
+            "Name":     "Name",
+            "Surname":  "Surname",
+            "DNI":      "DNI",
+            "Mail":     "e-Mail",
+            "FileNo":   "File#",
+            "PhoneNo":  "Phone number"
+          }
+        }
+      }
+    }),
     mounted() {
       $('.bg-blgnavbar').css("display","none");
       $('footer').css("display", "none");
+    },
+    computed: {
+      content: function() {
+        if (this.language == "es") {
+          return this.text.es;
+        }
+        return this.text.en;
+      } 
     }
 }
 </script>
