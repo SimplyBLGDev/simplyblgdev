@@ -10,7 +10,7 @@
   <div style="padding-left:8px; padding-right:8px;">
     <div class="ButtonPanel">
       <button class="PanelButton" onclick="window.location.href='/Graficadora';">{{ content.BtnGraph }}</button>
-      <button class="PanelButton" onclick="window.location.href='/Documents/Marco_Teorico_Graficadora.pdf';">{{ content.BtnTheory }}</button>
+      <button class="PanelButton" v-on:click="openTheory">{{ content.BtnTheory }}</button>
       <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">{{ content.BtnInfo }}</button>
       <div style="position:absolute; right: 50px">
         <img src="../../assets/arrow.svg" alt="" style="border-radius:0; margin-bottom:5px">
@@ -107,6 +107,14 @@ export default {
     mounted() {
       $('.bg-blgnavbar').css("display","none");
       $('footer').css("display", "none");
+    },
+    methods: {
+      openTheory() {
+        if (this.language == "es")
+          window.location.href='/Documents/Marco_Teorico_Graficadora.pdf';
+        else if (this.language == "en")
+          window.location.href='/Documents/Graphing_calculator_theory_en.pdf';
+      }
     },
     computed: {
       content: function() {

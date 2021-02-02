@@ -10,7 +10,7 @@
   <div style="padding-left:8px; padding-right:8px;">
     <div class="ButtonPanel">
       <button class="PanelButton" onclick="window.location.href='/Graficadora';">{{ content.BtnGraph }}</button>
-      <button class="PanelButton" onclick="window.location.href='/Documents/Marco_Teorico_Graficadora.pdf';">{{ content.BtnTheory }}</button>
+      <button class="PanelButton" v-on:click="openTheory">{{ content.BtnTheory }}</button>
       <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">{{ content.BtnInfo }}</button>
       <div style="position:absolute; right: 50px">
         <img src="../../assets/arrow.svg" alt="" style="border-radius:0; margin-bottom:5px">
@@ -36,7 +36,11 @@
         {{ content.LblInputCode }}
         <input type="text" class="BinaryInput" id="BinaryInput" @input="updateBinary()" value="0110">
         {{ content.LblAmplitude }}
-        <input type="range" class="AmplitudeInput" id="AmplitudeInput" @input="updateAmplitude()" min="-45" max="45" value="45">
+        <div>
+          -5V
+          <input type="range" class="AmplitudeInput" id="AmplitudeInput" @input="updateAmplitude()" min="-45" max="45" value="45">
+          5V
+        </div>
         {{ content.LblModulation }}
         <select name="Modulation" id="EncodingInput" @input="updateEncoding()">
           <option value="ASK">ASK (Amplitud)</option>
@@ -46,7 +50,11 @@
           <option value="8QAM">8QAM (Amplitud/Fase)</option>
         </select>
         {{ content.LblFrequency }}
-        <input type="range" class="FrequencyInput" id="FrequencyInput" @input="updateFrequency()" min="1" max="5" value="1">
+        <div>
+          1MHz
+          <input type="range" class="FrequencyInput" id="FrequencyInput" @input="updateFrequency()" min="1" max="5" value="1">
+          5MHz
+        </div>
       </div>
       <div class="ConstellationPanel">
         <div class="insetBox" style="width:100%;" id="Constellation">
@@ -59,6 +67,10 @@
       {{ content.LblFrequencySpectrum }}
       <div class="FrequencySpectrumPanel">
         <div class="insetBox" style="width:100%;" id="FrequencySpectrum">
+          <div class="FrequencySpectrumFloatingText">
+            <p id="leftStopText" style="block-size:inherit;">-</p>
+            <p id="rightStopText">-</p>
+          </div>
           <svg width="100%" height="100%" id="frequencySpecSVG">
             <path class="frequencySpectrumLine" fill="#0000aa38" stroke="blue" style="stroke-width:4;" d="" id="frequencySpectrumLine" />
             <polyline points="0,0 0,0" style="stroke:red;stroke-width:4;" id="bandwidthLeftStop" />
@@ -75,7 +87,7 @@
 import $ from 'jquery'
 import { setUp, updateCode, updateAmplitude, updateEncoding, updateFrequency, graphOnMouseHover } from '../../js/EncodingsGraph.js'
 import { constSetUp, constDrawPoints, highlightPoint } from '../../js/ConstellationsGraph.js'
-import { setUpFrequencySpectrum, updateFrequencySpectrum, updateFrequencySpectrumsFrequency } from '../../js/FrequencySpectrumGraph.js'
+import { setUpFrequencySpectrum, updateFrequencySpectrum, updateFrequencySpectrumsFrequency, setFrequencyDigits } from '../../js/FrequencySpectrumGraph.js'
 
 export default {
     name:"Graficadora",
@@ -115,8 +127,9 @@ export default {
       $('#Constellation').css("display", "none");
 
       setUpFrequencySpectrum($('#FrequencySpectrum').width(), $('#FrequencySpectrum').height(), document.getElementById("bandwidthLeftStop"), document.getElementById("bandwidthRightStop"),
-      document.getElementById("frequencySpectrumLine"), "ASK", document.getElementById("frequencySpecSVG"));
+      $("#leftStopText"), $("#rightStopText"), document.getElementById("frequencySpectrumLine"), "ASK", document.getElementById("frequencySpecSVG"));
 
+      setFrequencyDigits('0MHz', '2MHz');
       this.updateBinary();
     },
     methods: {
@@ -149,11 +162,22 @@ export default {
           $('#Constellation').css("display", "none");
         
         updateFrequencySpectrum(p);
+        this.updateFrequencySpectrumsDigits();
       },
       updateFrequency() {
         var p = $('#FrequencyInput').val();
         updateFrequency(p);
         updateFrequencySpectrumsFrequency(p);
+
+        this.updateFrequencySpectrumsDigits();
+      },
+      updateFrequencySpectrumsDigits() {
+        var p = parseInt($('#FrequencyInput').val());
+
+        if ($('#EncodingInput').val() == "FSK")
+          setFrequencyDigits((p-1) + 'MHz', (parseInt(p)+4) + 'MHz');
+        else
+          setFrequencyDigits((p-1) + 'MHz', (parseInt(p)+1) + 'MHz');
       },
       graphMouseMove() {
         var e = window.event;
@@ -168,6 +192,12 @@ export default {
       graphMouseLeave() {
         $("#graphHighlightRect").css('opacity', '0');
         highlightPoint(-1);
+      },
+      openTheory() {
+        if (this.language == "es")
+          window.location.href='/Documents/Marco_Teorico_Graficadora.pdf';
+        else if (this.language == "en")
+          window.location.href='/Documents/Graphing_calculator_theory_en.pdf';
       }
     },
     computed: {
@@ -283,6 +313,21 @@ export default {
   opacity: 0.28125;
   fill: #323aa8;
   transition: all 0.19s cubic-bezier(.22,.61,.36,1);
+}
+.FrequencySpectrumFloatingText {
+  position:relative;
+  width: 0;
+  height: 0;
+}
+.FrequencySpectrumFloatingText * {
+  position: relative;
+  font-weight: bold;
+  top:0;
+  left:0;
+  width: min-content;
+  margin-top: 0;
+  margin-bottom: 0;
+  color:black;
 }
 </style>
 

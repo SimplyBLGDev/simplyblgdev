@@ -2,16 +2,21 @@ var width;
 var height;
 var leftStop;
 var rightStop;
+var leftStopText;
+// eslint-disable-next-line
+var rightStopText;
 var line;
 var encoding;
-var absOff;
+var absOff = 0;
 var svg;
 
-function setUpFrequencySpectrum(w, h, lStop, rStop, _line, enc, _svg) {
-    width = w*0.7;
+function setUpFrequencySpectrum(w, h, lStop, rStop, lStopText, rStopText, _line, enc, _svg) {
+    width = w;
     height = h;
     leftStop = lStop;
     rightStop = rStop;
+    leftStopText = lStopText;
+    rightStopText = rStopText;
     line = _line;
     svg = _svg;
     encoding = enc;
@@ -23,8 +28,9 @@ function updateFrequencySpectrum(newEncoding) {
     drawLine();
 }
 
+// eslint-disable-next-line
 function updateFrequencySpectrumsFrequency(newFrequency) {
-    absOff = (newFrequency-1) * (width*0.3*0.25);
+    //absOff = (newFrequency-1) * (width*0.3*0.25);
     updateFrequencySpectrum(encoding);
 }
 
@@ -66,6 +72,17 @@ function drawLine() {
     rightStop.points[1].x = (stopPos + bandWidth) * pWidth + absOff;
     rightStop.points[0].y = height;
     rightStop.points[1].y = height * 0.5;
+
+    leftStopText.css('top', (leftStop.points[1].y - 20) + 'px');
+    leftStopText.css('left', (leftStop.points[1].x - 20) + 'px');
+
+    rightStopText.css('top', (rightStop.points[1].y - 20) + 'px');
+    rightStopText.css('left', (rightStop.points[1].x - 20) + 'px');
+}
+
+function setFrequencyDigits(left, right) {
+    leftStopText.text(left);
+    rightStopText.text(right);
 }
 
 function getLinePoints(waves) {
@@ -78,7 +95,7 @@ function getLinePoints(waves) {
 
     for (var w = 0; w < waves; w++) {
         if (w == 0 || w==waves-1) {
-            amp = 0.25;
+            amp = 0.15;
             adjustedPWidth = pWidth * 0.5;
         } else {
             amp = 1;
@@ -110,4 +127,4 @@ function getLinePoints(waves) {
     return res;
 }
 
-export { setUpFrequencySpectrum, updateFrequencySpectrum, updateFrequencySpectrumsFrequency }
+export { setUpFrequencySpectrum, updateFrequencySpectrum, updateFrequencySpectrumsFrequency, setFrequencyDigits }
