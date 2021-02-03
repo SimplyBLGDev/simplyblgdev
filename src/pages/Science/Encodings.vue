@@ -75,7 +75,7 @@
       </div>
       {{ content.LblFrequencySpectrum }}
       <div class="FrequencySpectrumPanel">
-        <div class="insetBox" style="width:100%;" id="FrequencySpectrum">
+        <div class="insetBox" id="FrequencySpectrum">
           <div class="FrequencySpectrumFloatingText">
             <p id="leftStopText" style="block-size:inherit;">-</p>
             <p id="rightStopText">-</p>
@@ -280,7 +280,7 @@ export default {
   background-color: #d2d5d6;
   height: 100%;
   min-height: 45vh;
-  width: max-content;
+  width: 100%;
   border-radius: 1.5rem;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -320,6 +320,7 @@ export default {
   padding: 2px;
   margin: 2px;
   background-color: #d8dfe1;
+  width:96%;
 }
 #graphHighlightRect {
   opacity: 0.28125;
@@ -360,6 +361,7 @@ export default {
   .insetBox {
     padding: 10px;
     margin: 10px;
+    width:100%;
   }
   .leftPanel {
     width: 30%;
