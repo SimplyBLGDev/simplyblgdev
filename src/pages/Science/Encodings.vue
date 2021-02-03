@@ -8,11 +8,20 @@
     </div>
   </div>
   <div style="padding-left:8px; padding-right:8px;">
+    <div class="mobileOnly" style="justify-content:center;align-items:center;width:100%;margin-top:0.5rem;margin-bottom:0.5rem;">
+      <div>
+        <img src="../../assets/arrow.svg" alt="" style="border-radius:0; margin-bottom:5px">
+        <div class="trans lan-flags" v-bind:class="{ spanish: (language==='es') }">
+          <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/gb.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language==='es') }" @click="language='en'">
+          <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/es.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language!=='es') }" @click="language='es'">
+        </div>
+      </div>
+    </div>
     <div class="ButtonPanel">
       <button class="PanelButton" onclick="window.location.href='/Graficadora';">{{ content.BtnGraph }}</button>
       <button class="PanelButton" v-on:click="openTheory">{{ content.BtnTheory }}</button>
       <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">{{ content.BtnInfo }}</button>
-      <div style="position:absolute; right: 50px">
+      <div class="desktopOnly" style="position:absolute; right: 50px">
         <img src="../../assets/arrow.svg" alt="" style="border-radius:0; margin-bottom:5px">
         <div class="trans lan-flags" v-bind:class="{ spanish: (language==='es') }">
           <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/gb.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language==='es') }" @click="language='en'">
@@ -220,7 +229,8 @@ export default {
 }
 .ButtonPanel {
   display: flex;
-  margin-left: 1.1rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
 }
 .PanelButton {
   font-family: 'Oxygen Mono', monospace;
@@ -246,16 +256,17 @@ export default {
 
 .MainPanel {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 70vh;
-  padding: 8px;
+  padding: 0px;
   border-radius: 1.4rem;
   background-color: #2c2b2d00;
 }
 .leftPanel {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 100%;
 }
 .ConstellationPanel {
   display: flex;
@@ -268,7 +279,8 @@ export default {
 .Graph {
   background-color: #d2d5d6;
   height: 100%;
-  width: 70%;
+  min-height: 45vh;
+  width: max-content;
   border-radius: 1.5rem;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -305,8 +317,8 @@ export default {
   -webkit-box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.6);
   -moz-box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.6);
   box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.6);
-  padding: 10px;
-  margin: 10px;
+  padding: 2px;
+  margin: 2px;
   background-color: #d8dfe1;
 }
 #graphHighlightRect {
@@ -328,6 +340,39 @@ export default {
   margin-top: 0;
   margin-bottom: 0;
   color:black;
+}
+.desktopOnly {
+  display: none;
+}
+.mobileOnly {
+  display:flex;
+}
+
+@media only screen and (min-width: 610px) {
+  .MainPanel {
+    flex-direction: row;
+    padding: 8px;
+  }
+  .Graph {
+    width: 70%;
+    height: 100%;
+  }
+  .insetBox {
+    padding: 10px;
+    margin: 10px;
+  }
+  .leftPanel {
+    width: 30%;
+  }
+  .desktopOnly {
+    display: block;
+  }
+  .mobileOnly {
+    display:none;
+  }
+  .ButtonPanel {
+    margin-left: 1.1rem;
+  }
 }
 </style>
 
