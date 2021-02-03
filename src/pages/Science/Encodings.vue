@@ -106,7 +106,7 @@ export default {
         "es": {
           "BtnGraph":             "Graficadora",
           "BtnTheory":            "Marco Teorico",
-          "BtnInfo":              "Información",
+          "BtnInfo":              "Contacto",
           "LblInputCode":         "Codigo Binario: ",
           "LblAmplitude":         "Amplitud onda portadora: ",
           "LblModulation":        "Modulacion: ",

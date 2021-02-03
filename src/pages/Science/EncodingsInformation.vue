@@ -8,11 +8,20 @@
     </div>
   </div>
   <div style="padding-left:8px; padding-right:8px;">
+    <div class="mobileOnly" style="justify-content:center;align-items:center;width:100%;margin-top:0.5rem;margin-bottom:0.5rem;">
+      <div>
+        <img src="../../assets/arrow.svg" alt="" style="border-radius:0; margin-bottom:5px">
+        <div class="trans lan-flags" v-bind:class="{ spanish: (language==='es') }">
+          <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/gb.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language==='es') }" @click="language='en'">
+          <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/es.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language!=='es') }" @click="language='es'">
+        </div>
+      </div>
+    </div>
     <div class="ButtonPanel">
       <button class="PanelButton" onclick="window.location.href='/Graficadora';">{{ content.BtnGraph }}</button>
       <button class="PanelButton" v-on:click="openTheory">{{ content.BtnTheory }}</button>
       <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">{{ content.BtnInfo }}</button>
-      <div style="position:absolute; right: 50px">
+      <div class="desktopOnly" style="position:absolute; right: 50px">
         <img src="../../assets/arrow.svg" alt="" style="border-radius:0; margin-bottom:5px">
         <div class="trans lan-flags" v-bind:class="{ spanish: (language==='es') }">
           <img src="https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.9/svg/gb.svg" alt="GB" height="48px" v-bind:class="{ deactive: (language==='es') }" @click="language='en'">
@@ -33,26 +42,26 @@
     <tr>
       <td>{{ content.table.Name }}</td>
       <td>{{ content.table.Surname }}</td>
-      <td>{{ content.table.DNI }}</td>
+      <td class="desktopOnlyTable">{{ content.table.DNI }}</td>
       <td>{{ content.table.FileNo }}</td>
-      <td>{{ content.table.Mail }}</td>
-      <td>{{ content.table.PhoneNo }}</td>
+      <td class="desktopOnlyTable">{{ content.table.Mail }}</td>
+      <td class="desktopOnlyTable">{{ content.table.PhoneNo }}</td>
     </tr>
     <tr>
       <td>Maximiliano</td>
       <td>Saleh</td>
-      <td>42107152</td>
+      <td class="desktopOnlyTable">42107152</td>
       <td>78798</td>
-      <td><a href="mailto:maxisaleh@outlook.com">maxisaleh@outlook.com</a></td>
-      <td>+54 9 351 394 9988</td>
+      <td class="desktopOnlyTable"><a href="mailto:maxisaleh@outlook.com">maxisaleh@outlook.com</a></td>
+      <td class="desktopOnlyTable">+54 9 351 394 9988</td>
     </tr>
     <tr>
       <td>Fabricio Andres</td>
       <td>Logares Avilés</td>
-      <td>42474766</td>
+      <td class="desktopOnlyTable">42474766</td>
       <td>78799</td>
-      <td><a href="mailto:fabrilogares@gmail.com">fabrilogares@gmail.com</a></td>
-      <td>+54 9 351 625 7124</td>
+      <td class="desktopOnlyTable"><a href="mailto:fabrilogares@gmail.com">fabrilogares@gmail.com</a></td>
+      <td class="desktopOnlyTable">+54 9 351 625 7124</td>
     </tr>
   </table>
 </div>
@@ -69,7 +78,7 @@ export default {
         "es": {
           "BtnGraph":   "Graficadora",
           "BtnTheory":  "Marco Teorico",
-          "BtnInfo":    "Información",
+          "BtnInfo":    "Contacto",
           "Title":      "Proyecto: Modulador Digital",
           "c1":         "ASK (Modulación por conmutación de Amplitud)",
           "c2":         "FSK (Modulación por conmutación de Frecuencia)",
@@ -136,7 +145,8 @@ export default {
 }
 .ButtonPanel {
   display: flex;
-  margin-left: 1.1rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
 }
 .PanelButton {
   font-family: 'Oxygen Mono', monospace;
@@ -175,4 +185,28 @@ export default {
   a {
     color: #a8bde2;
   }
+  .desktopOnly {
+    display: none;
+  }
+  .mobileOnly {
+    display:flex;
+  }
+  .desktopOnlyTable {
+    display: none;
+  }
+
+  @media only screen and (min-width: 610px) {
+  .desktopOnly {
+    display: block;
+  }
+  .mobileOnly {
+    display:none;
+  }
+  .desktopOnlyTable {
+    display: revert;
+  }
+  .ButtonPanel {
+    margin-left: 1.1rem;
+  }
+}
 </style>
