@@ -35,6 +35,7 @@
     <div class="insetBox Graph" id="Graph">
       <svg width="100%" height="100%" id="SVG" @mousemove="graphMouseMove" @mouseleave="graphMouseLeave">
         <polyline points="0,0 0,0" style="stroke:black;stroke-width:2;" id="baseLine" />
+        <path class="signalLine" fill="none" stroke="red" d="" id="carrierLine" v-bind:class="{ transparent: !carrierWaveEnabled }" />
         <path class="signalLine" fill="none" stroke="red" d="" id="signalLine" />
         <polyline points="0,0 0,0" style="stoke:black;stroke-width:2;" id="bitLine" />
         <rect width=0 height=0 id="graphHighlightRect" />
@@ -45,7 +46,7 @@
         {{ content.LblInputCode }}
         <input type="text" class="BinaryInput" id="BinaryInput" @input="updateBinary()" value="0110">
         {{ content.LblAmplitude }}
-        <div>
+        <div class="WideFlexItem">
           -5V
           <input type="range" class="AmplitudeInput" id="AmplitudeInput" @input="updateAmplitude()" min="-45" max="45" value="45">
           5V
@@ -59,10 +60,13 @@
           <option value="8QAM">8QAM (Amplitud/Fase)</option>
         </select>
         {{ content.LblFrequency }}
-        <div>
+        <div class="WideFlexItem">
           1MHz
           <input type="range" class="FrequencyInput" id="FrequencyInput" @input="updateFrequency()" min="1" max="5" value="1">
           5MHz
+        </div>
+        <div class="WideFlexItem">
+          <input type="checkbox" name="ChkCarrierWave" id="ChkCarrierWave" @input="toggleCarrierWave()"> {{ content.ChkCarrier }}
         </div>
       </div>
       <div class="ConstellationPanel">
@@ -101,6 +105,7 @@ import { setUpFrequencySpectrum, updateFrequencySpectrum, updateFrequencySpectru
 export default {
     name:"Graficadora",
     data: () => ({
+      carrierWaveEnabled: false,
       language: "es",
       text: {
         "es": {
@@ -111,7 +116,8 @@ export default {
           "LblAmplitude":         "Amplitud onda portadora: ",
           "LblModulation":        "Modulacion: ",
           "LblFrequency":         "Frecuencia onda portadora: ",
-          "LblFrequencySpectrum": "Espectro de frecuencia"
+          "LblFrequencySpectrum": "Espectro de frecuencia",
+          "ChkCarrier":           "Mostrar Onda Portadora"
         },
         "en": {
           "BtnGraph":             "Graphing Tool",
@@ -121,7 +127,8 @@ export default {
           "LblAmplitude":         "Carrier wave amplitude: ",
           "LblModulation":        "Keying method: ",
           "LblFrequency":         "Carrier wave frequency: ",
-          "LblFrequencySpectrum": "Frequency Spectrum"
+          "LblFrequencySpectrum": "Frequency Spectrum",
+          "ChkCarrier":           "Enable Carrier Wave"
         }
       }
     }),
@@ -129,8 +136,8 @@ export default {
       $('.bg-blgnavbar').css("display","none");
       $('footer').css("display", "none");
 
-      setUp($('#Graph').width(), $('#Graph').height(), $('#baseLine')[0], document.getElementById("signalLine"), document.getElementById("bitLine"),
-      "0110", "ASK", 1, document.getElementById("graphHighlightRect"), document.getElementById("SVG"));
+      setUp($('#Graph').width(), $('#Graph').height(), $('#baseLine')[0], document.getElementById("signalLine"), document.getElementById("carrierLine"),
+      document.getElementById("bitLine"), "0110", "ASK", 1, document.getElementById("graphHighlightRect"), document.getElementById("SVG"));
 
       constSetUp($('#Constellation').width(), $('#Constellation').height(), document.getElementById("constHAxis"), document.getElementById("constVAxis"), document.getElementById("constSVG"));
       $('#Constellation').css("display", "none");
@@ -187,6 +194,10 @@ export default {
           setFrequencyDigits((p-1) + 'MHz', (parseInt(p)+4) + 'MHz');
         else
           setFrequencyDigits((p-1) + 'MHz', (parseInt(p)+1) + 'MHz');
+      },
+      toggleCarrierWave() {
+        this.carrierWaveEnabled = !this.carrierWaveEnabled;
+        console.log(this.carrierWaveEnabled);
       },
       graphMouseMove() {
         var e = window.event;
@@ -347,6 +358,12 @@ export default {
 }
 .mobileOnly {
   display:flex;
+}
+.WideFlexItem {
+  width: 100%;
+}
+.transparent {
+  color: #00000000;
 }
 
 @media only screen and (min-width: 610px) {

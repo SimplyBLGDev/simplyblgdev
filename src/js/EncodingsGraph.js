@@ -2,14 +2,17 @@ var width;
 var height;
 var baseLine;
 var signalLine;
+var carrierLine;
 var bitLine;
 var baseLineWidth=2;
 var signalLineWidth=8;
+var carrierLineWidth=6;
 var bitLineWidth=8;
 var baseLineColor="blue";
 var signalLineColor="red";
 var bitLineColor="#6905b5";
 var bitLineFill="#6905b566";
+var carrierLineColor="#AA662260";
 var encoding;
 var frequency;
 var code;
@@ -19,11 +22,12 @@ var svg;
 
 var bitLineHeight=60;
 
-function setUp(w, h, bLine, sLine, btLine, bin, enc, freq, hRect, svgSrc) {
+function setUp(w, h, bLine, sLine, cLine, btLine, bin, enc, freq, hRect, svgSrc) {
     width = w;
     height = h-bitLineHeight-bitLineWidth/2;
     baseLine = bLine;
     signalLine = sLine;
+    carrierLine = cLine;
     bitLine = btLine;
     code = bin;
     encoding = enc;
@@ -31,11 +35,20 @@ function setUp(w, h, bLine, sLine, btLine, bin, enc, freq, hRect, svgSrc) {
     amplitude = height / 2;
     highlightRect = hRect;
     svg = svgSrc;
+
+    signalLine.style["stroke"] = signalLineColor;
+    signalLine.style["stroke-width"]=signalLineWidth;
+    signalLine.style.fill = "none";
+
+    carrierLine.style["stroke"] = carrierLineColor;
+    carrierLine.style["stroke-width"]=carrierLineWidth;
+    carrierLine.style.fill = "none";
 }
 
 function updateValues() {
     drawBaseLine(baseLine);
-    drawSignalLine(signalLine);
+    drawSignalLine(signalLine, code, encoding);
+    drawSignalLine(carrierLine, code.replaceAll("0", "1"), "ASK");
 }
 
 function updateCode(newCode) {
@@ -53,11 +66,7 @@ function drawBaseLine(line) {
     line.points[1].y = height/2;
 }
 
-function drawSignalLine(line) {
-    line.stroke = signalLineColor;
-    line.style["stroke-width"]=signalLineWidth;
-    line.style.fill = "none";
-
+function drawSignalLine(line, code, encoding) {
     var encodeFunction;
     var levels=1;
     switch (encoding) {

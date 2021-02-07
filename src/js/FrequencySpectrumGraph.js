@@ -35,7 +35,11 @@ function updateFrequencySpectrumsFrequency(newFrequency) {
 }
 
 function drawLine() {
-    var waves = 3;
+    // The relative amplitude of the waves on the diagram
+    const WAVES = [0.15, 1, 0.15];
+    const FSK_WAVES = [0.1, 1, 0.1, 0.1, 1, 0.1];
+
+    var waveAmplitudes = WAVES;
     var stopPos;
     var bandWidth;
 
@@ -43,11 +47,11 @@ function drawLine() {
         case "ASK":
         case "BPSK":
         case "4QAM":
-        case "8QAM": stopPos = 0.5; bandWidth = 1.5; break;
-        case "FSK": waves = 4; stopPos = 0.5; bandWidth = 3; break;
+        case "8QAM": stopPos = 0.5; bandWidth = 1; break;
+        case "FSK": waveAmplitudes = FSK_WAVES; stopPos = 0.5; bandWidth = 3; break;
     }
 
-    var points = getLinePoints(waves);
+    var points = getLinePoints(waveAmplitudes);
 
     var dataString = "";
     dataString += "M " + points[0][0].x + "," + points[0][0].y;
@@ -62,7 +66,10 @@ function drawLine() {
     }
     
     line.setAttribute("d", dataString);
-    var pWidth = width / waves;
+
+    // Complex stuff, transforms 3 into 2 and 6 into 4, which is the correspondence between number of waves and waves occupied (since noise waves are half width)
+    var pWidth = width / (Math.floor(waveAmplitudes.length/2)+1);
+    
     leftStop.points[0].x = stopPos * pWidth + absOff;
     leftStop.points[1].x = stopPos * pWidth + absOff;
     leftStop.points[0].y = height;
@@ -85,22 +92,24 @@ function setFrequencyDigits(left, right) {
     rightStopText.text(right);
 }
 
-function getLinePoints(waves) {
+function getLinePoints(waveAmplitudes) {
+    var waves = waveAmplitudes.length;
     var res = [];
 
     var amp = 1;
     var adjustedPWidth;
-    var pWidth = width / waves;
+    // Complex stuff, transforms 3 into 2 and 6 into 4, which is the correspondence between number of waves and waves occupied (since noise waves are half width)
+    var pWidth = width / (Math.floor(waves/2)+1);
     var offX = absOff;
 
     for (var w = 0; w < waves; w++) {
-        if (w == 0 || w==waves-1) {
-            amp = 0.15;
-            adjustedPWidth = pWidth * 0.5;
+        if (Math.ceil(waves/2) - (Math.floor(Math.abs(w-((waves-1)/2)))) == 2) { // Distance from either end of the set is 2 (Where the ends of the set are 1)
+            adjustedPWidth = pWidth;
         } else {
-            amp = 1;
-            adjustedPWidth = pWidth * 1.5;
+            adjustedPWidth = pWidth * 0.5; // noise waves are horizontally smaller
         }
+
+        amp = waveAmplitudes[w];
 
         let p0 = svg.createSVGPoint();
         let p1 = svg.createSVGPoint();
