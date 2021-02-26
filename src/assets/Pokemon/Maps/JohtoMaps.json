@@ -1,7 +1,7 @@
 {
-  "name":"Kanto",
-  "games":[ "red", "blue", "yellow" ],
-  "maxDexIx":151,
+  "name":"Johto",
+  "games":[ "gold", "silver", "crystal" ],
+  "maxDexIx":251,
   "maps":[
     {
       "name": "Digglet's Cave",

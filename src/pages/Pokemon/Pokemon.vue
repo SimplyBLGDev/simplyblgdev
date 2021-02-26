@@ -3,13 +3,13 @@
   <div id="poke">
     <div class="leftContainer">
       <div class="gameMapContainer">
-        <img id="mapIMG" src="../../assets/Pokemon/Maps/Kanto.png" class="mapImage" alt="Kanto Map" usemap="#Kanto" width="160" height="136">
+        <img id="mapIMG" :src=mapIMGsrc class="mapImage" alt="Game Map" usemap="#Map" width="160" height="136">
         <canvas class="mapCanvas" id="normalCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="selectionCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="searchCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="permaCanvas" style="pointer-events:none;"></canvas>
-        <map id="GameMap" name="Kanto">
-          <area v-for="area in mapData.maps" v-bind:key="area.id" shape="poly" :coords=area.dimensions :data-locationId=area.location_id
+        <map id="GameMap" name="Map">
+          <area v-for="area in mapJSON.maps" v-bind:key="area.id" shape="poly" :coords=area.dimensions :data-locationId=area.location_id
             :title=area.name @mouseover="hoverArea(area.name)" @mouseleave="leaveArea()" @click="fetchEncounters(area.location_id)">
         </map>
       </div>
@@ -25,7 +25,7 @@
               <td class="regionData btn gameBox blue" v-bind:class="{ active: filteredGames.includes('blue') }" colspan=2 @click="filterGame('blue')"><b>B</b></td>
               <td class="regionData btn gameBox bottomRight yellow" v-bind:class="{ active: filteredGames.includes('yellow') }" colspan=2 @click="filterGame('yellow')"><b>Y</b></td>
               <td style="padding: 0">
-                <NiceDatalist class="regionData bottomLeft" :list=mapData.maps ref="LocInput"></NiceDatalist>
+                <NiceDatalist class="regionData bottomLeft" :list=mapJSON.maps ref="LocInput"></NiceDatalist>
               </td>
               <td class="regionData btn gameBox blue active bottomRight" width="14%" @click="findLocation()">Go to</td>
             </tr>
@@ -55,17 +55,17 @@
             <th class="regionData header topRight" width="13%">%</th>
           </tr>
           <tr>
-            <th class="regionData header" colspan=5 v-if="encounters.name">{{ encounters.name | alias }}</th>
+            <th class="regionData header" colspan=5 v-if="encounters.name">{{ alias(encounters.name) }}</th>
           </tr>
           <template v-for="area in encounters.areas">
             <tr :key="area.name" v-if="encounters.areas.length > 1">
-              <td class="regionData" colspan=5>{{ area.name | alias }}</td>
+              <td class="regionData" colspan=5>{{ alias(area.name) }}</td>
             </tr>
             <tr v-for="encounter in filterEncounters(area.encounters)" v-bind:key="encounter.id" style="height:3rem;">
               <td class="regionData" scope="row">
                 <img :src=encounter.pokemon.icon :alt=encounter.pokemon.name class="pokeIcon">
-                {{ encounter.pokemon.name | capitalize | pokeAlias }}<br v-if="encounter.pokemon.type!=''">
-                <small v-if="encounter.pokemon.type!=''">{{ encounter.pokemon.type | capitalize | pokeAlias }}</small>
+                {{ pokeAlias(encounter.pokemon.name) | capitalize }}<br v-if="encounter.pokemon.type!=''">
+                <small v-if="encounter.pokemon.type!=''">{{ pokeAlias(encounter.pokemon.type) | capitalize }}</small>
               </td>
               <td style="height:100%; padding:0; margin:0;">
                 <table class="inTableTable">
@@ -96,10 +96,10 @@
       </table>
     </div>
   </div>
-  <div class="container-fluid" style="background-color: purple; height: 3rem; display:flex; align-items:center; justify-content:center;">
+  <div class="container-fluid contactMe">
     See something wrong? -<a href="mailto:simplyblgdev@gmail.com">Contact me!</a>-
   </div>
-  <div class="container-fluid" style="background-color: purple; height: 3rem; display:flex; align-items:center; justify-content:center;">
+  <div class="container-fluid contactMe">
     Wanna support the develpoment of more tools? -<a href="https://paypal.me/ppTheAGame">Donate here!</a>-
   </div>
 </div>
@@ -110,7 +110,6 @@ import $ from 'jquery'
 import { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch } from '../../assets/js/simplysMapHighlighter'
 import { Pokedex } from 'pokeapi-js-wrapper'
 import { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon } from './PokemonParser'
-import mapJSON from '../../assets/Pokemon/Maps/KantoMaps.json'
 
 export default {
   name: 'Pokemon',
@@ -119,15 +118,16 @@ export default {
     allOutlines: false,
     filteredGames: ['red', 'blue', 'yellow'],
     findablePokemon: [],
-    mapData: mapJSON,
     encounters: []
   }),
+  props: ['region', 'mapJSON', 'mapIMGsrc' ],
   mounted() {
-    FetchEncounters(["red", "blue", "yellow"], new Pokedex(), mapJSON.maps);
+    console.log(this.mapJSON);
+    FetchEncounters(["red", "blue", "yellow"], new Pokedex(), this.mapJSON.maps);
     $('#permaCanvas').fadeOut(0);
-    this.findablePokemon = GetPokeList(151);
+    this.findablePokemon = GetPokeList(this.mapJSON.maxDexIx);
     for (var i = 0; i < this.findablePokemon.length; i++) {
-      this.findablePokemon[i].name = this.$options.filters.pokeAlias(this.$options.filters.capitalize(this.findablePokemon[i].name));
+      this.findablePokemon[i].name = this.pokeAlias(this.$options.filters.capitalize(this.findablePokemon[i].name), this.mapJSON);
     }
     SetUpHighlighter(document.querySelector('#GameMap'), document.querySelector('#mapIMG'), document.querySelector('#normalCanvas'),
       document.querySelector('#selectionCanvas'), document.querySelector('#permaCanvas'), document.querySelector('#searchCanvas'), document.querySelectorAll('area'));
@@ -196,6 +196,24 @@ export default {
       this.allOutlines = !this.allOutlines;
       ToggleAll(this.allOutlines)
       $('#permaCanvas').fadeToggle(200);
+    },
+    alias: function(value) {
+      for (var i = 0; i < this.mapJSON.aliases.length; i++) {
+        if (this.mapJSON.aliases[i].name == value) {
+          return this.mapJSON.aliases[i].display;
+        }
+      }
+
+      return value;
+    },
+    pokeAlias: function(value) {
+      for (var i = 0; i < this.mapJSON.pokeAliases.length; i++) {
+        if (this.mapJSON.pokeAliases[i].name == value) {
+          return this.mapJSON.pokeAliases[i].display;
+        }
+      }
+
+      return value;
     }
   },
   filters: {
@@ -203,24 +221,6 @@ export default {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
-    },
-    alias: function(value) {
-      for (var i = 0; i < mapJSON.aliases.length; i++) {
-        if (mapJSON.aliases[i].name == value) {
-          return mapJSON.aliases[i].display;
-        }
-      }
-
-      return value;
-    },
-    pokeAlias: function(value) {
-      for (var i = 0; i < mapJSON.pokeAliases.length; i++) {
-        if (mapJSON.pokeAliases[i].name == value) {
-          return mapJSON.pokeAliases[i].display;
-        }
-      }
-
-      return value;
     }
   }
 }
@@ -409,7 +409,7 @@ html {
 }
 .pokeIcon {
   image-rendering: pixelated;
-  scale: 200%;
+  transform: scale(2);
   float: left;
   margin-bottom: 2px;
   margin-right: -5px;
@@ -418,7 +418,7 @@ html {
 .encounterIcon {
   background-image: url('../../assets/Pokemon/encounterIcons.png');
   image-rendering: pixelated;
-  scale: 200%;
+  transform: scale(2);
   margin-right: 12px;
 }
 .encounterIcon.walk {
@@ -440,6 +440,13 @@ html {
   width: 16px;
   height: 16px;
   background-position: -57px 0px;
+}
+.contactMe {
+  background-color: purple;
+  height: 3rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 @media only screen and (min-width: 1200px) {

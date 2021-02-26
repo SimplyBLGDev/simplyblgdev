@@ -57,6 +57,24 @@ const routes = [
     component: Pokemon,
     meta: {
       title: 'Kanto interactive map for RBY'
+    },
+    props: {
+      'region': "Kanto",
+      'mapJSON': require('@/assets/Pokemon/Maps/KantoMaps.json'),
+      'mapIMGsrc': require('@/assets/Pokemon/Maps/Kanto.png')
+    }
+  },
+  {
+    path: '/Pokemon/Johto',
+    name: 'Johto',
+    component: Pokemon,
+    meta: {
+      title: 'Johto interactive map for RBY'
+    },
+    props: {
+      'region': "Johto",
+      'mapJSON': require('@/assets/Pokemon/Maps/JohtoMaps.json'),
+      'mapIMGsrc': require('@/assets/Pokemon/Maps/Johto.png')
     }
   },
   {
