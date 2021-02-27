@@ -1,6 +1,8 @@
 {
   "name":"Kanto",
   "games":[ "red", "blue", "yellow" ],
+  "mapWidth":160,
+  "mapHeight":136,
   "maxDexIx":151,
   "maps":[
     {

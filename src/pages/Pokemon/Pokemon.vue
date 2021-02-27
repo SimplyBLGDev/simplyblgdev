@@ -3,7 +3,7 @@
   <div id="poke">
     <div class="leftContainer">
       <div class="gameMapContainer">
-        <img id="mapIMG" :src=mapIMGsrc class="mapImage" alt="Game Map" usemap="#Map" width="160" height="136">
+        <img id="mapIMG" :src=mapIMGsrc class="mapImage" alt="Game Map" usemap="#Map" :width=mapJSON.mapWidth :height=mapJSON.mapHeight>
         <canvas class="mapCanvas" id="normalCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="selectionCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="searchCanvas" style="pointer-events:none;"></canvas>
@@ -21,9 +21,16 @@
               <th class="regionData header topRight topLeft" colspan=2 width="60%">Go to Location</th>
             </tr>
             <tr>
-              <td class="regionData btn gameBox bottomLeft red" v-bind:class="{ active: filteredGames.includes('red') }" colspan=2 @click="filterGame('red')"><b>R</b></td>
-              <td class="regionData btn gameBox blue" v-bind:class="{ active: filteredGames.includes('blue') }" colspan=2 @click="filterGame('blue')"><b>B</b></td>
-              <td class="regionData btn gameBox bottomRight yellow" v-bind:class="{ active: filteredGames.includes('yellow') }" colspan=2 @click="filterGame('yellow')"><b>Y</b></td>
+              <template v-if="region==='Kanto'">
+                <td class="regionData btn gameBox bottomLeft red" v-bind:class="{ active: filteredGames.includes('red') }" colspan=2 @click="filterGame('red')"><b>R</b></td>
+                <td class="regionData btn gameBox blue" v-bind:class="{ active: filteredGames.includes('blue') }" colspan=2 @click="filterGame('blue')"><b>B</b></td>
+                <td class="regionData btn gameBox bottomRight yellow" v-bind:class="{ active: filteredGames.includes('yellow') }" colspan=2 @click="filterGame('yellow')"><b>Y</b></td>
+              </template>
+              <template v-else-if="region==='Johto'">
+                <td class="regionData btn gameBox bottomLeft gold" v-bind:class="{ active: filteredGames.includes('gold') }" colspan=2 @click="filterGame('gold')"><b>G</b></td>
+                <td class="regionData btn gameBox silver" v-bind:class="{ active: filteredGames.includes('silver') }" colspan=2 @click="filterGame('silver')"><b>S</b></td>
+                <td class="regionData btn gameBox bottomRight crystal" v-bind:class="{ active: filteredGames.includes('crystal') }" colspan=2 @click="filterGame('crystal')"><b>C</b></td>
+              </template>
               <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=mapJSON.maps ref="LocInput"></NiceDatalist>
               </td>
@@ -69,12 +76,16 @@
               </td>
               <td style="height:100%; padding:0; margin:0;">
                 <table class="inTableTable">
-                  <div class="regionData fbox gameBox red active" v-if="encounter.games.includes('red')"><b>R</b></div>
-                  <div class="regionData fbox gameBox red" v-else><b>R</b></div>
-                  <div class="regionData fbox gameBox blue active" v-if="encounter.games.includes('blue')"><b>B</b></div>
-                  <div class="regionData fbox gameBox blue" v-else><b>B</b></div>
-                  <div class="regionData fbox gameBox yellow active" v-if="encounter.games.includes('yellow')"><b>Y</b></div>
-                  <div class="regionData fbox gameBox yellow" v-else><b>Y</b></div>
+                  <template v-if="region==='Kanto'">
+                    <div class="regionData fbox gameBox red" v-bind:class="{ active: encounter.games.includes('red') }"><b>R</b></div>
+                    <div class="regionData fbox gameBox blue" v-bind:class="{ active: encounter.games.includes('blue') }"><b>B</b></div>
+                    <div class="regionData fbox gameBox yellow" v-bind:class="{ active: encounter.games.includes('yellow') }"><b>Y</b></div>
+                  </template>
+                  <template v-else-if="region==='Johto'">
+                    <div class="regionData fbox gameBox gold" v-bind:class="{ active: encounter.games.includes('gold') }"><b>G</b></div>
+                    <div class="regionData fbox gameBox silver" v-bind:class="{ active: encounter.games.includes('silver') }"><b>S</b></div>
+                    <div class="regionData fbox gameBox crystal" v-bind:class="{ active: encounter.games.includes('crystal') }"><b>C</b></div>
+                  </template>
                 </table>
               </td>
               <td class="regionData">
@@ -116,19 +127,21 @@ export default {
   data: () => ({
     selectedArea: "-",
     allOutlines: false,
-    filteredGames: ['red', 'blue', 'yellow'],
+    filteredGames: [],
     findablePokemon: [],
     encounters: []
   }),
   props: ['region', 'mapJSON', 'mapIMGsrc' ],
   mounted() {
-    console.log(this.mapJSON);
-    FetchEncounters(["red", "blue", "yellow"], new Pokedex(), this.mapJSON.maps);
+    this.filteredGames = this.mapJSON.games;
+    FetchEncounters(this.mapJSON.games, new Pokedex(), this.mapJSON.maps);
     $('#permaCanvas').fadeOut(0);
+
     this.findablePokemon = GetPokeList(this.mapJSON.maxDexIx);
     for (var i = 0; i < this.findablePokemon.length; i++) {
       this.findablePokemon[i].name = this.pokeAlias(this.$options.filters.capitalize(this.findablePokemon[i].name), this.mapJSON);
     }
+
     SetUpHighlighter(document.querySelector('#GameMap'), document.querySelector('#mapIMG'), document.querySelector('#normalCanvas'),
       document.querySelector('#selectionCanvas'), document.querySelector('#permaCanvas'), document.querySelector('#searchCanvas'), document.querySelectorAll('area'));
   },
@@ -393,6 +406,27 @@ html {
 .gameBox.yellow.active {
   color:whitesmoke;
   background-color:#e0c032;
+}
+.gameBox.gold {
+  color:#f0ca0d;
+}
+.gameBox.silver {
+  color:#a5bfd8;
+}
+.gameBox.crystal {
+  color:#74c6df;
+}
+.gameBox.gold.active {
+  color:whitesmoke;
+  background-color:#f0ca0d;
+}
+.gameBox.silver.active {
+  color:whitesmoke;
+  background-color:#a5bfd8;
+}
+.gameBox.crystal.active {
+  color:whitesmoke;
+  background-color:#74c6df;
 }
 .regionData.bottomLeft {
   border-bottom-left-radius: 1rem;

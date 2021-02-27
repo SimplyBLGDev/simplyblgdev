@@ -69,7 +69,7 @@ const routes = [
     name: 'Johto',
     component: Pokemon,
     meta: {
-      title: 'Johto interactive map for RBY'
+      title: 'Johto interactive map for GSC'
     },
     props: {
       'region': "Johto",
