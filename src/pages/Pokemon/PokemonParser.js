@@ -164,7 +164,6 @@ function CollapseEncountersGames(encountersJSON) {
     return encountersJSON
 }
 
-// eslint-disable-next-line
 function GetIconGender(encounterJSON) {
     var femaleAllowed = true;
     switch (generation) {

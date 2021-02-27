@@ -6,6 +6,16 @@
   "maxDexIx":151,
   "maps":[
     {
+      "name": "Pokémon Tower",
+      "dimensions": [136, 40, 144, 40, 144, 48, 136, 48],
+      "location_id": 160
+    },
+    {
+      "name": "Pokémon Mansion",
+      "dimensions": [36, 116, 44, 116, 44, 124, 36, 124],
+      "location_id": 161
+    },
+    {
       "name": "Digglet's Cave",
       "dimensions": [106, 68, 114, 68, 114, 76, 106, 76],
       "location_id": 73
@@ -263,6 +273,8 @@
       { "name":"kanto-victory-road-2", "display":"Victory Road" },
       { "name":"power-plant", "display":"Power Plant" },
       { "name":"kanto-safari-zone", "display":"Safari Zone" },
+      { "name":"pokemon-mansion", "display":"Pokémon Mansion" },
+      { "name":"pokemon-tower", "display":"Pokémon Tower" },
       { "name":"kanto-route-1", "display":"Route 1" },
       { "name":"kanto-route-2", "display":"Route 2" },
       { "name":"kanto-route-3", "display":"Route 3" },
@@ -319,6 +331,16 @@
       { "name":"seafoam-islands-b4f", "display":"b4f" },
       { "name":"kanto-victory-road-2-1f", "display":"1f" },
       { "name":"kanto-victory-road-2-2f", "display":"2f" },
-      { "name":"kanto-victory-road-2-3f", "display":"3f" }
+      { "name":"kanto-victory-road-2-3f", "display":"3f" },
+      { "name":"pokemon-mansion-1f", "display":"1f" },
+      { "name":"pokemon-mansion-2f", "display":"2f" },
+      { "name":"pokemon-mansion-3f", "display":"3f" },
+      { "name":"pokemon-mansion-4f", "display":"4f" },
+      { "name":"pokemon-mansion-b1f", "display":"b1f" },
+      { "name":"pokemon-tower-3f", "display":"3f" },
+      { "name":"pokemon-tower-4f", "display":"4f" },
+      { "name":"pokemon-tower-5f", "display":"5f" },
+      { "name":"pokemon-tower-6f", "display":"6f" },
+      { "name":"pokemon-tower-7f", "display":"7f" }
   ]
 }
