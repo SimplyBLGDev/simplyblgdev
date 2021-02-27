@@ -2,10 +2,13 @@ import pokeIcons from '../../assets/Pokemon/pokeIcons.json'
 var encounterTable = {};
 var pokeAPI;
 var allowedGames;
+var generation;
+var rngCounter = [12, 47]; // Used for randomizing icon gender
 
-async function FetchEncounters(games, poke, locations) {
+async function FetchEncounters(gen, games, poke, locations) {
     pokeAPI = poke;
     allowedGames = games;
+    generation = gen;
     var table = {
         "games":games,
         "locations":[]
@@ -70,12 +73,19 @@ function GetEncounters(areaJSON) {
                 "min_level":detail.min_level,
                 "max_level":detail.max_level,
                 "chance":detail.chance,
-                "games":[detail.game]
+                "games":[detail.game],
+                "iconGender":0 // For display purposes only, assigned on collapse
             });
         });
     });
 
-    return CollapseEncountersGames(r);
+    var collapsed = CollapseEncountersGames(r);
+
+    for (var i = 0; i < collapsed.length; i++) {
+        collapsed[i]["iconGender"] = GetIconGender(collapsed[i]);
+    }
+
+    return collapsed;
 }
 
 function GetVersionDetails(encounterJSON) {
@@ -154,6 +164,37 @@ function CollapseEncountersGames(encountersJSON) {
     return encountersJSON
 }
 
+// eslint-disable-next-line
+function GetIconGender(encounterJSON) {
+    var femaleAllowed = true;
+    switch (generation) {
+        case 1: femaleAllowed = false; break;
+        case 2: if (!encounterJSON.games.includes('crystal')) femaleAllowed = false; break;
+    }
+
+    if (!femaleAllowed)
+        return 0;
+    else{
+        return getRNG() % 2;
+    }
+}
+
+function getRNG() {
+    tickRNG();
+    return tickRNG();
+}
+
+function tickRNG() {
+    rngCounter[0] = (5 * rngCounter[0] + 1) % 256;
+    var c = (rngCounter[1] & 0x80) != 0;
+    var z = (rngCounter[1] & 0x10) != 0;
+    rngCounter[1] = (2 * rngCounter[1]) % 256;
+    if (c == z) {
+        rngCounter[1]++;
+    }
+    return rngCounter[0] + rngCounter[1];
+}
+
 function SortByMethod(list) {
     return list.sort((a, b) => (GetMethodValue(a.method) > GetMethodValue(b.method) ? 1 : -1));
 }
@@ -165,7 +206,9 @@ function GetMethodValue(method) {
         "Surf":2,
         "Old Rod":3,
         "Good Rod":4,
-        "Super Rod":5
+        "Super Rod":5,
+        "Egg":6,
+        "Rock Smash":7
     }[method];
 }
 
@@ -176,7 +219,9 @@ function ConvertMethodName(method) {
         "surf":"Surf",
         "old-rod":"Old Rod",
         "good-rod":"Good Rod",
-        "super-rod":"Super Rod"
+        "super-rod":"Super Rod",
+        "gift-egg":"Egg",
+        "rock-smash":"Rock Smash"
     }[method];
 }
 

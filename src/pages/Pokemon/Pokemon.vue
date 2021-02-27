@@ -88,14 +88,16 @@
                   </template>
                 </table>
               </td>
-              <td class="regionData">
+              <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', male: encounter.iconGender===0}">
                 <img src="../../assets/transparent.png" class="encounterIcon walk" v-if="encounter.method=='Grass'">
-                <img src="../../assets/transparent.png" class="encounterIcon swim" v-if="encounter.method=='Surf'">
-                <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Old Rod'">
-                <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Good Rod'">
-                <img src="../../assets/transparent.png" class="encounterIcon fish" v-if="encounter.method=='Super Rod'">
-                <img src="../../assets/transparent.png" class="encounterIcon event" v-if="encounter.method=='Event'">
-                {{ encounter.method | capitalize }}
+                <img src="../../assets/transparent.png" class="encounterIcon swim" v-else-if="encounter.method=='Surf'">
+                <img src="../../assets/transparent.png" class="encounterIcon fish" v-else-if="encounter.method=='Old Rod'">
+                <img src="../../assets/transparent.png" class="encounterIcon fish" v-else-if="encounter.method=='Good Rod'">
+                <img src="../../assets/transparent.png" class="encounterIcon fish" v-else-if="encounter.method=='Super Rod'">
+                <img src="../../assets/transparent.png" class="encounterIcon event" v-else-if="encounter.method=='Event'">
+                <img src="../../assets/transparent.png" class="encounterIcon egg" v-else-if="encounter.method=='Egg'">
+                <img src="../../assets/transparent.png" class="encounterIcon rockSmash" v-else-if="encounter.method=='Rock Smash'">
+                {{ encounter.method }}
               </td>
               <td class="regionData" v-if="encounter.min_level != encounter.max_level">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
               <td class="regionData" v-else>{{ encounter.max_level }}</td>
@@ -134,7 +136,7 @@ export default {
   props: ['region', 'mapJSON', 'mapIMGsrc' ],
   mounted() {
     this.filteredGames = this.mapJSON.games;
-    FetchEncounters(this.mapJSON.games, new Pokedex(), this.mapJSON.maps);
+    FetchEncounters(2, this.mapJSON.games, new Pokedex(), this.mapJSON.maps);
     $('#permaCanvas').fadeOut(0);
 
     this.findablePokemon = GetPokeList(this.mapJSON.maxDexIx);
@@ -240,26 +242,27 @@ export default {
 </script>
 
 <style>
-* {
-  box-sizing: border-box;
-}
 html {
   /* The slight width change when a scrollbar appears doesn't call resize() and therefore offsets the canvases and breaks the highlighting temporarily */
   /* to prevent this we always have the scrollbar visible */
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
 }
+</style>
+
+<style scoped>
+* {
+  box-sizing: border-box;
+}
 #poke {
   display: flex;
   flex-flow: column;
-  margin: 2px;
   padding: 2px;
-  background-color: #2c2b2a;
-  border-radius: 4vw 2vw 2vw 2vw;
 }
 .leftContainer {
   width:100%;
   margin-right:4px;
+  margin-bottom:8px;
 }
 .searchInput {
   border:0;
@@ -270,8 +273,7 @@ html {
   color:whitesmoke;
 }
 .searchDiv {
-  margin: 4px;
-  margin-top: 8px;
+  margin-top: 12px;
   padding: 4px;
   background-color: #39b331;
   height: min-content;
@@ -287,9 +289,10 @@ html {
 }
 .gameMapContainer {
   margin-bottom: 0.3vw;
-  padding:4px;
-  width:100%;
-  position:relative;
+  margin-left: 0.3vw;
+  padding: 4px;
+  width: 100%;
+  position: relative;
 }
 .mapCanvas {
   position: absolute;
@@ -299,7 +302,8 @@ html {
 .regionInfo {
   min-width: 35vw;
   height: min-content;
-  margin: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
   padding: 4px;
   background-color: #39b331;
   border-radius: 1.5rem;
@@ -454,26 +458,65 @@ html {
   image-rendering: pixelated;
   transform: scale(2);
   margin-right: 12px;
+  --y-pos: 0px;
 }
-.encounterIcon.walk {
+.male>.encounterIcon {
+  --y-pos: -21px;
+}
+.kanto>.encounterIcon.walk {
   width: 16px;
   height: 20px;
-  background-position: 0px 0px;
+  background-position: 0px var(--y-pos);
 }
-.encounterIcon.swim {
+.kanto>.encounterIcon.swim {
   width: 16px;
   height: 11px;
-  background-position: -17px -6px;
+  background-position: -17px var(--y-pos);
 }
-.encounterIcon.fish {
+.kanto>.encounterIcon.fish {
   width: 22px;
   height: 16px;
-  background-position: -34px 0px;
+  background-position: -34px var(--y-pos);
 }
-.encounterIcon.event {
+.kanto>.encounterIcon.event {
   width: 16px;
   height: 16px;
-  background-position: -57px 0px;
+  background-position: -57px var(--y-pos);
+}
+.johto>.encounterIcon.walk {
+  width: 15px;
+  height: 19px;
+  background-position: -74px var(--y-pos);
+}
+.johto>.encounterIcon.fish {
+  width: 22px;
+  height: 16px;
+  background-position: -90px var(--y-pos);
+}
+.johto>.encounterIcon.swim {
+  width: 16px;
+  height: 16px;
+  background-position: -113px var(--y-pos);
+}
+.johto>.encounterIcon.event {
+  width: 16px;
+  height: 16px;
+  background-position: -130px var(--y-pos);
+}
+.johto>.encounterIcon.headbutt {
+  width: 16px;
+  height: 16px;
+  background-position: -147px var(--y-pos);
+}
+.johto>.encounterIcon.rockSmash {
+  width: 16px;
+  height: 16px;
+  background-position: -164px var(--y-pos);
+}
+.johto>.encounterIcon.egg {
+  width: 12px;
+  height: 12px;
+  background-position: -181px var(--y-pos);
 }
 .contactMe {
   background-color: purple;
@@ -486,7 +529,6 @@ html {
 @media only screen and (min-width: 1200px) {
   #poke {
     flex-flow: row;
-    margin: 8px;
     padding: 8px;
   }
   .leftContainer {

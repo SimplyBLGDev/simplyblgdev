@@ -2,7 +2,7 @@
     <div style="position: relative">
         <input ref="in" class="bg in" type="text" @focus="showList" @blur="closeList" @click="search" @input="search">
         <div ref="drop" class="drop">
-            <div class="bg" width="100%" v-for="entry in searchResults" :key="entry.value" style="display:flex;justify-content:center;align-items:center;" @mousedown="chooseOption(entry.name)">
+            <div class="bg" width="100%" v-for="entry in searchResults" :key="entry.value" style="display:flex;justify-content:center;align-items:center;user-select:none;" @mousedown="chooseOption(entry.name)">
                 {{ entry.name }}
             </div>
         </div>
