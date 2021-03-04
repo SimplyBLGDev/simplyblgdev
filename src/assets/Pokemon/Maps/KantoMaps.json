@@ -126,9 +126,9 @@
       "location_id": 151
     },
     {
-      "name": "Route 7",
+      "name": "Route 8",
       "dimensions": [104, 40, 128, 40, 128, 48, 104, 48],
-      "location_id": 132
+      "location_id": 133
     },
     {
       "name": "Lavender Town",
@@ -136,9 +136,9 @@
       "location_id": 232
     },
     {
-      "name": "Route 8",
+      "name": "Route 7",
       "dimensions": [80, 40, 96, 40, 96, 48, 80, 48],
-      "location_id": 133
+      "location_id": 132
     },
     {
       "name": "Celadon City",

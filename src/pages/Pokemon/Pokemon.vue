@@ -18,7 +18,7 @@
           <tbody>
             <tr>
               <th class="regionData header topRight topLeft" colspan=6 max-width="7rem">Filter Games</th>
-              <th class="regionData header topRight topLeft" colspan=2 width="60%">Go to Location</th>
+              <th class="regionData header topRight topLeft" colspan=2 width="61%">Go to Location</th>
             </tr>
             <tr>
               <template v-if="region==='Kanto'">
@@ -34,15 +34,19 @@
               <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=mapJSON.maps ref="LocInput"></NiceDatalist>
               </td>
-              <td class="regionData btn gameBox blue active bottomRight" width="14%" @click="findLocation()">Go to</td>
+              <td class="regionData btn gameBox blue active bottomRight" width="14%" @click="findLocation()">Go</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="regionTable">
+          <tbody>
+            <tr>
+              <th class="regionData header topRight topLeft" width="19.5%">Outlines</th>
+              <th colspan=2 class="regionData header topRight topLeft">Find Pokémon</th>
             </tr>
             <tr>
-              <th colspan=3 class="regionData header topRight topLeft">All Outlines</th>
-              <th class="regionData header topRight topLeft" colspan=6 width="40%">Find Pokemon</th>
-            </tr>
-            <tr>
-              <td colspan=3 class="regionData btn gameBox blue bottomLeft bottomRight" @click="highlightAll()" v-bind:class="{ active: allOutlines }"><b>Enable</b></td>
-              <td colspan=4 style="padding: 0">
+              <td class="regionData btn gameBox blue bottomLeft bottomRight" @click="highlightAll()" v-bind:class="{ active: allOutlines }"><b>Enable</b></td>
+              <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=findablePokemon ref="PokeInput"></NiceDatalist>
               </td>
               <td class="regionData btn gameBox blue active bottomRight" @click="findPokemon()">Find</td>
@@ -74,19 +78,17 @@
                 {{ pokeAlias(encounter.pokemon.name) | capitalize }}<br v-if="encounter.pokemon.type!=''">
                 <small v-if="encounter.pokemon.type!=''">{{ pokeAlias(encounter.pokemon.type) | capitalize }}</small>
               </td>
-              <td style="height:100%; padding:0; margin:0;">
-                <table class="inTableTable">
-                  <template v-if="region==='Kanto'">
-                    <div class="regionData fbox gameBox red" v-bind:class="{ active: encounter.games.includes('red') }"><b>R</b></div>
-                    <div class="regionData fbox gameBox blue" v-bind:class="{ active: encounter.games.includes('blue') }"><b>B</b></div>
-                    <div class="regionData fbox gameBox yellow" v-bind:class="{ active: encounter.games.includes('yellow') }"><b>Y</b></div>
-                  </template>
-                  <template v-else-if="region==='Johto'">
-                    <div class="regionData fbox gameBox gold" v-bind:class="{ active: encounter.games.includes('gold') }"><b>G</b></div>
-                    <div class="regionData fbox gameBox silver" v-bind:class="{ active: encounter.games.includes('silver') }"><b>S</b></div>
-                    <div class="regionData fbox gameBox crystal" v-bind:class="{ active: encounter.games.includes('crystal') }"><b>C</b></div>
-                  </template>
-                </table>
+              <td class="inTableTable">
+                <template v-if="region==='Kanto'">
+                  <div class="regionData fbox gameBox red" v-bind:class="{ active: encounter.games.includes('red') }"><b>R</b></div>
+                  <div class="regionData fbox gameBox blue" v-bind:class="{ active: encounter.games.includes('blue') }"><b>B</b></div>
+                  <div class="regionData fbox gameBox yellow" v-bind:class="{ active: encounter.games.includes('yellow') }"><b>Y</b></div>
+                </template>
+                <template v-else-if="region==='Johto'">
+                  <div class="regionData fbox gameBox gold" v-bind:class="{ active: encounter.games.includes('gold') }"><b>G</b></div>
+                  <div class="regionData fbox gameBox silver" v-bind:class="{ active: encounter.games.includes('silver') }"><b>S</b></div>
+                  <div class="regionData fbox gameBox crystal" v-bind:class="{ active: encounter.games.includes('crystal') }"><b>C</b></div>
+                </template>
               </td>
               <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', male: encounter.iconGender===0}">
                 <img src="../../assets/transparent.png" class="encounterIcon walk" v-if="encounter.method=='Grass'">
@@ -104,7 +106,7 @@
               <td class="regionData">{{ encounter.chance }}%</td>
             </tr>
           </template>
-          <tr><td class="regionData regionFooter" colspan=5 style="color:transparent"> - </td></tr>
+          <tr><td class="regionData regionFooter" colspan=5 style="color:transparent; user-select:none;"> - </td></tr>
         </tbody>
       </table>
     </div>
@@ -113,7 +115,7 @@
     See something wrong? -<a href="mailto:simplyblgdev@gmail.com">Contact me!</a>-
   </div>
   <div class="container-fluid contactMe">
-    Wanna support the develpoment of more tools? -<a href="https://paypal.me/ppTheAGame">Donate here!</a>-
+    Wanna support the development of more tools? -<a href="https://paypal.me/ppTheAGame">Donate here!</a>-
   </div>
 </div>
 </template>
@@ -267,7 +269,7 @@ html {
 .searchInput {
   border:0;
   width: 100%;
-  height:2.4rem;
+  height:2.3rem;
   max-height:100%;
   text-align: center;
   color:whitesmoke;
@@ -330,10 +332,9 @@ html {
 .inTableTable {
   width:100%;
   height:100%;
-  display:flex;
-  flex-direction: column;
   padding:0;
   margin:0;
+  display:inline-flex;
 }
 .regionData.fbox:first-child {
   margin-left: 0;
@@ -380,6 +381,10 @@ html {
   background-color: #2a7925;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+}
+.inTableTable > .gameBox {
+  height: 100%;
+  min-height: 3rem;
 }
 .gameBox {
   margin-left:0.2rem;
@@ -440,6 +445,7 @@ html {
 }
 .btn.gameBox {
   display: table-cell;
+  width:13%;
 }
 .btn.gameBox:hover {
   border-width: 1px;
