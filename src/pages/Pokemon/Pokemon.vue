@@ -103,7 +103,20 @@
               </td>
               <td class="regionData" v-if="encounter.min_level != encounter.max_level">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
               <td class="regionData" v-else>{{ encounter.max_level }}</td>
-              <td class="regionData">{{ encounter.chance }}%</td>
+              <td class="regionData" v-if="encounter.timedChances.default != 0">
+                {{ encounter.timedChances.default }}%
+              </td>
+              <td class="inTableTable" v-else>
+                <div class="regionData fbox gameBox morning">
+                  {{ encounter.timedChances["time-morning"] }}%
+                </div>
+                <div class="regionData fbox gameBox day">
+                  {{ encounter.timedChances["time-day"] }}%
+                </div>
+                <div class="regionData fbox gameBox night">
+                  {{ encounter.timedChances["time-night"] }}%
+                </div>
+              </td>
             </tr>
           </template>
           <tr><td class="regionData regionFooter" colspan=5 style="color:transparent; user-select:none;"> - </td></tr>
@@ -138,7 +151,7 @@ export default {
   props: ['region', 'mapJSON', 'mapIMGsrc' ],
   mounted() {
     this.filteredGames = this.mapJSON.games;
-    FetchEncounters(2, this.mapJSON.games, new Pokedex(), this.mapJSON.maps);
+    console.log(FetchEncounters(2, this.mapJSON.games, new Pokedex(), this.mapJSON.maps));
     $('#permaCanvas').fadeOut(0);
 
     this.findablePokemon = GetPokeList(this.mapJSON.maxDexIx);
@@ -335,6 +348,7 @@ html {
   padding:0;
   margin:0;
   display:inline-flex;
+  flex-direction: column;
 }
 .regionData.fbox:first-child {
   margin-left: 0;
@@ -384,7 +398,6 @@ html {
 }
 .inTableTable > .gameBox {
   height: 100%;
-  min-height: 3rem;
 }
 .gameBox {
   margin-left:0.2rem;
@@ -531,6 +544,15 @@ html {
   align-items:center;
   justify-content:center;
 }
+.gameBox.morning {
+  background-color: #d3d925;
+}
+.gameBox.day {
+  background-color: #1bccb3;
+}
+.gameBox.night {
+  background-color: #4432bf;
+}
 
 @media only screen and (min-width: 1200px) {
   #poke {
@@ -571,6 +593,9 @@ html {
   }
   .inTableTable {
     flex-direction: row;
+  }
+  .inTableTable > .gameBox {
+    min-height: 3rem;
   }
   .regionData.fbox:first-child {
     margin-left: 0;

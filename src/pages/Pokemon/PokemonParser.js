@@ -73,13 +73,15 @@ function GetEncounters(areaJSON) {
                 "min_level":detail.min_level,
                 "max_level":detail.max_level,
                 "chance":detail.chance,
+                "conditions":detail.conditions,
+                "timedChances":detail.timedChances, // To be replaced on collapse with time of day chances
                 "games":[detail.game],
                 "iconGender":0 // For display purposes only, assigned on collapse
             });
         });
     });
 
-    var collapsed = CollapseEncountersGames(r);
+    var collapsed = CollapseEncountersGames(CollapseEncountersTimes(r));
 
     for (var i = 0; i < collapsed.length; i++) {
         collapsed[i]["iconGender"] = GetIconGender(collapsed[i]);
@@ -99,6 +101,8 @@ function GetVersionDetails(encounterJSON) {
                 r.push({
                     "game":versionDetail.version.name,
                     "method":detail.method,
+                    "conditions":detail.conditions,
+                    "timedChances":detail.timedChances,
                     "min_level":detail.min_level,
                     "max_level":detail.max_level,
                     "chance":detail.chance
@@ -118,20 +122,41 @@ function GetEncounterDetails(versionDetailJSON) {
     var minLevel = 999;
     var maxLevel = 0;
     var chance = 0;
+    var timedChances = {
+        "default": 0,
+        "time-morning": 0,
+        "time-day": 0,
+        "time-night": 0
+    };
+    var conditions = ProcessEncounterDetailConditions(encounterDetails[0].condition_values)[0];
+
     for (var i = 0; i < encounterDetails.length; i++) {
-        if (currentMethod != encounterDetails[i].method.name) {
+        var [nConditions, nTimed] = ProcessEncounterDetailConditions(encounterDetails[i].condition_values);
+
+        if (currentMethod != encounterDetails[i].method.name || JSON.stringify(conditions) != JSON.stringify(nConditions)) {
             r.push({
                 "method":currentMethod,
                 "min_level":minLevel,
                 "max_level":maxLevel,
+                "conditions":conditions,
+                "timedChances":timedChances,
                 "chance":chance
             });
+            conditions = nConditions;
             currentMethod = encounterDetails[i].method.name;
             minLevel = 999;
             maxLevel = 0;
             chance = 0;
+            timedChances = {
+                "default": 0,
+                "time-morning": 0,
+                "time-day": 0,
+                "time-night": 0
+            };
         }
+
         chance += encounterDetails[i].chance;
+        timedChances[nTimed] += encounterDetails[i].chance;
         minLevel = Math.min(minLevel, encounterDetails[i].min_level);
         maxLevel = Math.max(maxLevel, encounterDetails[i].max_level);
     }
@@ -139,10 +164,27 @@ function GetEncounterDetails(versionDetailJSON) {
         "method":currentMethod,
         "min_level":minLevel,
         "max_level":maxLevel,
+        "conditions":conditions,
+        "timedChances":timedChances,
         "chance":chance
     });
 
     return r;
+}
+
+function ProcessEncounterDetailConditions(conditions) {
+    var rConditions = [];
+    var rTimes = "default";
+
+    for (var i = 0; i < conditions.length; i++) {
+        if (["time-day", "time-morning", "time-night"].includes(conditions[i].name)) {
+            rTimes = conditions[i].name;
+        } else {
+            rConditions.push(conditions[i].name);
+        }
+    }
+
+    return [rConditions, rTimes];
 }
 
 function CollapseEncountersGames(encountersJSON) {
@@ -153,7 +195,8 @@ function CollapseEncountersGames(encountersJSON) {
                 encountersJSON[i].method == encountersJSON[j].method &&
                 encountersJSON[i].min_level == encountersJSON[j].min_level &&
                 encountersJSON[i].max_level == encountersJSON[j].max_level &&
-                encountersJSON[i].chance == encountersJSON[j].chance) {
+                JSON.stringify(encountersJSON[i].timedChances) == JSON.stringify(encountersJSON[j].timedChances) &&
+                JSON.stringify(encountersJSON[i].conditions) == JSON.stringify(encountersJSON[j].conditions)) {
                     encountersJSON[i].games.push(encountersJSON[j].games[0]);
                     encountersJSON.splice(j, 1);
                     j--;
@@ -161,7 +204,26 @@ function CollapseEncountersGames(encountersJSON) {
         }
     }
 
-    return encountersJSON
+    return encountersJSON;
+}
+
+//eslint-disable-next-line
+function CollapseEncountersTimes(encountersJSON) {
+    for (var i = 0; i < encountersJSON.length; i++) {
+        if (encountersJSON[i].timedChances["time-morning"] != 0
+            && encountersJSON[i].timedChances["time-morning"] == encountersJSON[i].timedChances["time-night"]
+            && encountersJSON[i].timedChances["time-morning"] == encountersJSON[i].timedChances["time-day"]) {
+                var realValue = encountersJSON[i].timedChances["time-day"];
+                encountersJSON[i].timedChances = {
+                    "default": realValue,
+                    "time-morning": 0,
+                    "time-day": 0,
+                    "time-night": 0
+                }
+            }
+    }
+
+    return encountersJSON;
 }
 
 function GetIconGender(encounterJSON) {
