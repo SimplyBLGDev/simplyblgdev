@@ -19,6 +19,7 @@ async function FetchEncounters(gen, games, poke, locations) {
         var location = {
             "name":locationJSON.name,
             "id":locationJSON.id,
+            "hasTimedEncounters":false,
             "areas":GetAreas(locationJSON)
         };
 
@@ -207,7 +208,6 @@ function CollapseEncountersGames(encountersJSON) {
     return encountersJSON;
 }
 
-//eslint-disable-next-line
 function CollapseEncountersTimes(encountersJSON) {
     for (var i = 0; i < encountersJSON.length; i++) {
         if (encountersJSON[i].timedChances["time-morning"] != 0

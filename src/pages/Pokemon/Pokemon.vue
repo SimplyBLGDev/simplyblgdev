@@ -58,13 +58,37 @@
     <div class="regionInfo">
       <table class="regionTable">
         <tbody>
-          <tr>
-            <th class="regionData header topLeft">Pokémon</th>
-            <th class="regionData header gamesColumn"><span>Games</span></th>
-            <th class="regionData header locationsColumn">Location</th>
-            <th class="regionData header levelsColumn">Levels</th>
-            <th class="regionData header topRight" width="13%">%</th>
-          </tr>
+          <template v-if="region==='Kanto'">
+            <tr>
+              <th class="regionData header topLeft">Pokémon</th>
+              <th class="regionData header gamesColumn"><span>Games</span></th>
+              <th class="regionData header locationsColumn">Location</th>
+              <th class="regionData header levelsColumn">Levels</th>
+              <th class="regionData header topRight" width="13%">%</th>
+            </tr>
+          </template>
+          <template v-else>
+            <tr>
+              <th class="regionData header topLeft" rowspan="2">Pokémon</th>
+              <th class="regionData header gamesColumn" rowspan="2"><span>Games</span></th>
+              <th class="regionData header locationsColumn" rowspan="2">Location</th>
+              <th class="regionData header levelsColumn" width="11%" rowspan="2">Levels</th>
+              <th class="regionData header topRight" width="18%">%</th>
+            </tr>
+            <tr>
+              <td class="inTableTable">
+                <div class="regionData fbox gameBox morning" style="min-height:auto">
+                  <b>04:00 - 9:59</b>
+                </div>
+                <div class="regionData fbox gameBox day" style="min-height:auto">
+                  <b>10:00 - 5:59</b>
+                </div>
+                <div class="regionData fbox gameBox night" style="min-height:auto">
+                  <b>06:00 - 3:59</b>
+                </div>
+              </td>
+            </tr>
+          </template>
           <tr>
             <th class="regionData header" colspan=5 v-if="encounters.name">{{ alias(encounters.name) }}</th>
           </tr>
@@ -545,7 +569,7 @@ html {
   justify-content:center;
 }
 .gameBox.morning {
-  background-color: #d3d925;
+  background-color: #cad01e;
 }
 .gameBox.day {
   background-color: #1bccb3;

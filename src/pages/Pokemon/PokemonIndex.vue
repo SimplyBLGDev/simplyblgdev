@@ -3,38 +3,28 @@
 		<div class="fullWidthDiv">
 			<span>Pokémon interactive maps</span>
 		</div>
-		<div class="full" @click="Goto('Kanto')">
-			<div style="float:left">
-				<img class="mapSpec" src='../../assets/Pokemon/Maps/KantoPreview.png'>
-			</div>
-			<div style="float:right">
-				<div class="gamesSpec">
-					<table style="width: 100%; height: 100%">
-						<tbody>
-							<tr>
-								<td class="gameIndicator red"><b>R</b></td>
-							</tr>
-							<tr>
-								<td class="gameIndicator blue"><b>B</b></td>
-							</tr>
-							<tr>
-								<td class="gameIndicator yellow"><b>Y</b></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<div class="fullWidthDiv Kanto">
-				<span>Kanto</span>
-			</div>
-		</div>
+    <template v-for="region in regions">
+      <div class="full" @click="Goto(region.address)" v-bind:key="region.name">
+        <div style="float:left">
+          <img class="mapSpec" :src="region.preview">
+        </div>
+        <div style="float:right">
+          <div class="gamesSpec">
+            <div class="gameIndicator" v-for="game in region.games" :key="game.name" :class="[game.class]"><b>{{ game.name }}</b></div>
+          </div>
+        </div>
+        <div class="fullWidthDiv" :class="[region.class]">
+          <span>{{ region.name }}</span>
+        </div>
+      </div>
+    </template>
 
 		<div class="full">
 			<div style="position: absolute; width: 100%; height: 9rem;display: flex;align-items: center;text-align: center;justify-content: center;background-color: #444444bb;">
 				<span style="transform: rotate(20deg); font-size:4rem;">WIP</span>
 			</div>
 			<div class="fullWidthDiv Johto">
-				<span>Johto</span>
+				<span>Kanto remakes</span>
 			</div>
 		</div>
 	</div>
@@ -43,6 +33,51 @@
 <script>
 
 export default {
+	data: () => ({
+    //eslint-disable-next-line
+		regions:[
+			{
+				name: "Kanto",
+        address: 'Kanto',
+        preview: require('../../assets/Pokemon/Maps/KantoPreview.png'),
+        class:"kanto",
+				games:[
+					{
+            name:"R",
+            class:"red"
+          },
+          {
+            name:"B",
+            class:"blue"
+          },
+          {
+            name:"Y",
+            class:"yellow"
+          }
+				]
+			},
+      {
+				name: "Johto",
+        address: 'Johto',
+        preview: require('../../assets/Pokemon/Maps/JohtoPreview.png'),
+        class:"johto",
+				games:[
+					{
+            name:"G",
+            class:"gold"
+          },
+          {
+            name:"S",
+            class:"silver"
+          },
+          {
+            name:"C",
+            class:"crystal"
+          }
+				]
+			}
+		]
+	}),
 	methods: {
 		Goto: function(destination) {
 			window.location.href = "/Pokemon/" + destination;
@@ -66,8 +101,8 @@ export default {
 	width:100%;
 	height:9rem;
 	float: right;
-	margin-top:2rem;
-	margin-bottom:2rem;
+	margin-top:1rem;
+	margin-bottom:1rem;
 }
 .mapSpec {
 	position:absolute;
@@ -81,40 +116,47 @@ export default {
 	display: flex;
 	flex-direction: column;
 }
-.Kanto {
+.kanto {
 	background-color: #5c5c5c;
 }
-.Kanto:hover {
+.kanto:hover {
 	background-color: #757575;
 }
-.Johto {
-	background-color: #2c83bd;
+.johto {
+	background-color: #5555b9;
 }
-.Johto:hover {
-	background-color: #3393d3;
+.johto:hover {
+	background-color: #6b6bb6;
 }
 .gameIndicator {
 	padding-right: 1.5rem;
-  text-align: right;
-  vertical-align: middle;
   color:whitesmoke;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  height: 100%;
+  --gameColor: #000000;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 20%, var(--gameColor) 90%, var(--gameColor) 100%);
+}
+.gameIndicator:hover {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 5%, var(--gameColor) 90%, var(--gameColor) 100%);
 }
 .gameIndicator.red {
-  background: linear-gradient(90deg, rgba(255,255,255,0) 20%, rgba(235,64,52,1) 90%, rgba(235,64,52,1) 100%);
+  --gameColor: #eb4034;
 }
 .gameIndicator.blue {
-	background: linear-gradient(90deg, rgba(255,255,255,0) 20%, rgba(52,52,235,1) 90%, rgba(52,52,235,1) 100%);
+	--gameColor: #3434eb;
 }
 .gameIndicator.yellow {
-	background: linear-gradient(90deg, rgba(255,255,255,0) 20%, rgba(224,192,50,1) 90%, rgba(224,192,50,1) 100%);
+	--gameColor: #e0c032;
 }
-.gameIndicator.red:hover {
-  background: linear-gradient(90deg, rgba(255,255,255,0) 5%, rgba(235,64,52,1) 90%, rgba(235,64,52,1) 100%);
+.gameIndicator.gold {
+  --gameColor: #f0ca0d;
 }
-.gameIndicator.blue:hover {
-	background: linear-gradient(90deg, rgba(255,255,255,0) 5%, rgba(52,52,235,1) 90%, rgba(52,52,235,1) 100%);
+.gameIndicator.silver {
+  --gameColor: #a5bfd8;
 }
-.gameIndicator.yellow:hover {
-	background: linear-gradient(90deg, rgba(255,255,255,0) 5%, rgba(224,192,50,1) 90%, rgba(224,192,50,1) 100%);
+.gameIndicator.crystal {
+  --gameColor: #74c6df;
 }
 </style>

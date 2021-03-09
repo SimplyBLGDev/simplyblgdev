@@ -8,7 +8,7 @@
     {
       "name": "Victory Road",
       "dimensions": [160, 32, 168, 32, 168, 48, 160, 48],
-      "location_id": 159
+      "location_id": 152
     },
     {
       "name": "Dark Cave",
@@ -490,7 +490,7 @@
       { "name":"digletts-cave", "display":"Digglet's Cave" },
       { "name":"rock-tunnel", "display":"Rock Tunnel" },
       { "name":"seafoam-islands", "display":"Seafoam Islands" },
-      { "name":"kanto-victory-road-2", "display":"Victory Road" },
+      { "name":"kanto-victory-road-1", "display":"Victory Road" },
       { "name":"union-cave", "display":"Union Cave" },
       { "name":"ruins-of-alph", "display":"Ruins of Alph" },
       { "name":"slowpoke-well", "display":"Slowpoke Well" },
@@ -601,6 +601,9 @@
       { "name":"ice-path-1f", "display":"1f" },
       { "name":"ice-path-b1f", "display":"b1f" },
       { "name":"ice-path-b2f", "display":"b2f" },
-      { "name":"ice-path-b3f", "display":"b3f" }
+      { "name":"ice-path-b3f", "display":"b3f" },
+      { "name":"kanto-victory-road-1-1f", "display":"1f" },
+      { "name":"kanto-victory-road-1-2f", "display":"2f" },
+      { "name":"kanto-victory-road-1-3f", "display":"3f" }
   ]
 }
