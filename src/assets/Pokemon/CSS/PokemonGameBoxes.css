@@ -1,0 +1,60 @@
+.gameBox {
+  margin-left:0.2rem;
+  margin-right:0.2rem;
+  width:2rem;
+  height:2rem;
+  text-align: center;
+  vertical-align: middle;
+  color:white;
+}
+.gameBox.red {
+  color:#eb4034;
+}
+.gameBox.blue {
+  color:#3434eb;
+}
+.gameBox.yellow {
+  color:#e0c032;
+}
+.gameBox.red.active {
+  color:whitesmoke;
+  background-color:#eb4034;
+}
+.gameBox.blue.active {
+  color:whitesmoke;
+  background-color:#3434eb;
+}
+.gameBox.yellow.active {
+  color:whitesmoke;
+  background-color:#e0c032;
+}
+.gameBox.gold {
+  color:#f0ca0d;
+}
+.gameBox.silver {
+  color:#a5bfd8;
+}
+.gameBox.crystal {
+  color:#74c6df;
+}
+.gameBox.gold.active {
+  color:whitesmoke;
+  background-color:#f0ca0d;
+}
+.gameBox.silver.active {
+  color:whitesmoke;
+  background-color:#a5bfd8;
+}
+.gameBox.crystal.active {
+  color:whitesmoke;
+  background-color:#74c6df;
+}
+.gameBox.morning {
+  background-color: #cad01e;
+}
+.gameBox.day {
+  background-color: #1bccb3;
+}
+.gameBox.night {
+  background-color: #4432bf;
+}

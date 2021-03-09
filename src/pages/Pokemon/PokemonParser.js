@@ -1,14 +1,18 @@
 import pokeIcons from '../../assets/Pokemon/pokeIcons.json'
+var excludeMethod = ["headbutt-low"];
 var encounterTable = {};
 var pokeAPI;
 var allowedGames;
 var generation;
+var baseLocationIds;
 var rngCounter = [12, 47]; // Used for randomizing icon gender
 
-async function FetchEncounters(gen, games, poke, locations) {
+async function FetchEncounters(gen, games, poke, locations, baseLocations) {
     pokeAPI = poke;
     allowedGames = games;
     generation = gen;
+    baseLocationIds = baseLocations[0].location_id;
+    locations = locations.concat(baseLocations);
     var table = {
         "games":games,
         "locations":[]
@@ -70,7 +74,7 @@ function GetEncounters(areaJSON) {
                     "type":"",
                     "icon":GetIcon(encounter.pokemon.name)
                 },
-                "method":ConvertMethodName(detail.method),
+                "method":detail.method,
                 "min_level":detail.min_level,
                 "max_level":detail.max_level,
                 "chance":detail.chance,
@@ -135,14 +139,16 @@ function GetEncounterDetails(versionDetailJSON) {
         var [nConditions, nTimed] = ProcessEncounterDetailConditions(encounterDetails[i].condition_values);
 
         if (currentMethod != encounterDetails[i].method.name || JSON.stringify(conditions) != JSON.stringify(nConditions)) {
-            r.push({
-                "method":currentMethod,
-                "min_level":minLevel,
-                "max_level":maxLevel,
-                "conditions":conditions,
-                "timedChances":timedChances,
-                "chance":chance
-            });
+            if (!excludeMethod.includes(currentMethod)) {
+                r.push({
+                    "method":currentMethod,
+                    "min_level":minLevel,
+                    "max_level":maxLevel,
+                    "conditions":conditions,
+                    "timedChances":timedChances,
+                    "chance":chance
+                });
+            }
             conditions = nConditions;
             currentMethod = encounterDetails[i].method.name;
             minLevel = 999;
@@ -161,14 +167,16 @@ function GetEncounterDetails(versionDetailJSON) {
         minLevel = Math.min(minLevel, encounterDetails[i].min_level);
         maxLevel = Math.max(maxLevel, encounterDetails[i].max_level);
     }
-    r.push({
-        "method":currentMethod,
-        "min_level":minLevel,
-        "max_level":maxLevel,
-        "conditions":conditions,
-        "timedChances":timedChances,
-        "chance":chance
-    });
+    if (!excludeMethod.includes(currentMethod)) {
+        r.push({
+            "method":currentMethod,
+            "min_level":minLevel,
+            "max_level":maxLevel,
+            "conditions":conditions,
+            "timedChances":timedChances,
+            "chance":chance
+        });
+    }
 
     return r;
 }
@@ -262,27 +270,18 @@ function SortByMethod(list) {
 
 function GetMethodValue(method) {
     return {
-        "Event":0,
-        "Grass":1,
-        "Surf":2,
-        "Old Rod":3,
-        "Good Rod":4,
-        "Super Rod":5,
-        "Egg":6,
-        "Rock Smash":7
-    }[method];
-}
-
-function ConvertMethodName(method) {
-    return {
-        "gift":"Event",
-        "walk":"Grass",
-        "surf":"Surf",
-        "old-rod":"Old Rod",
-        "good-rod":"Good Rod",
-        "super-rod":"Super Rod",
-        "gift-egg":"Egg",
-        "rock-smash":"Rock Smash"
+        "gift":0,
+        "walk":1,
+        "surf":2,
+        "old-rod":3,
+        "good-rod":4,
+        "super-rod":5,
+        "headbutt-normal":6,
+        "headbutt-high":7,
+        "rock-smash":8,
+        "pokeflute":9,
+        "gift-egg":10,
+        "only-one":11
     }[method];
 }
 
@@ -325,6 +324,10 @@ function FindPokemon(poke) {
             }
         }
     });
+
+    if (resultsIds.length == 1 && resultsIds == baseLocationIds) {
+        return []; // Don't highlight base location
+    }
 
     return resultsIds;
 }

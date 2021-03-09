@@ -4,6 +4,11 @@
   "mapWidth":288,
   "mapHeight":128,
   "maxDexIx":251,
+  "baseLocation": [{ "name": "Roaming Pokémon", "location_id": 800 }],
+  "grassMapsLocationIds": [
+    8, 83, 79, 233, 88, 99, 109, 120, 130, 131, 132, 133, 134, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 100, 101, 102,
+    157, 103, 104, 105, 106, 107, 108, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 121, 122, 123,124, 125, 126, 127, 78
+  ],
   "maps":[
     {
       "name": "Victory Road",
@@ -506,6 +511,7 @@
       { "name":"tohjo-falls", "display":"Tohjo Falls" },
       { "name":"mt-silver", "display":"Mt. Silver" },
       { "name":"radio-tower", "display":"Radio Tower" },
+      { "name":"roaming-johto", "display":"Roaming Pokémon" },
       { "name":"kanto-route-1", "display":"Route 1" },
       { "name":"kanto-route-2", "display":"Route 2" },
       { "name":"kanto-route-3", "display":"Route 3" },
@@ -604,6 +610,7 @@
       { "name":"ice-path-b3f", "display":"b3f" },
       { "name":"kanto-victory-road-1-1f", "display":"1f" },
       { "name":"kanto-victory-road-1-2f", "display":"2f" },
-      { "name":"kanto-victory-road-1-3f", "display":"3f" }
+      { "name":"kanto-victory-road-1-3f", "display":"3f" },
+      { "name":"bell-tower-roof", "display":"Roof" }
   ]
 }

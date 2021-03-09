@@ -4,6 +4,10 @@
   "mapWidth":160,
   "mapHeight":136,
   "maxDexIx":151,
+  "baseLocation": [],
+  "grassMapsLocationIds": [
+    86, 88, 99, 68, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 100, 101, 102, 157, 233, 103, 104, 155, 162, 120, 130, 131, 133, 132, 134
+  ],
   "maps":[
     {
       "name": "Pokémon Tower",

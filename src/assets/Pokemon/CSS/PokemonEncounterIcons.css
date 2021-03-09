@@ -1,0 +1,104 @@
+.encounterIcon {
+  background-image: url('../encounterIcons.png');
+  image-rendering: pixelated;
+  transform: scale(2);
+  margin-right: 12px;
+  border-radius: 0;
+  --y-pos: 0px;
+  --x-pos: 0px;
+  background-position: var(--x-pos) var(--y-pos);
+}
+.male>.encounterIcon {
+  --y-pos: -21px;
+}
+.kanto.grass>.encounterIcon.walk {
+  width: 16px;
+  height: 20px;
+  --x-pos: 0;
+}
+.kanto>.encounterIcon.walk {
+  width: 12px;
+  height: 15px;
+  --x-pos: -17px;
+}
+.kanto>.encounterIcon.surf {
+  width: 16px;
+  height: 11px;
+  --x-pos: -31px;
+}
+.kanto>.encounterIcon.old-rod, .kanto>.encounterIcon.good-rod, .kanto>.encounterIcon.super-rod {
+  width: 22px;
+  height: 16px;
+  --x-pos: -48px;
+}
+.kanto>.encounterIcon.pokeflute {
+  width: 16px;
+  height: 16px;
+  --x-pos: -104px;
+}
+.kanto>.encounterIcon.gift {
+  width: 16px;
+  height: 16px;
+  --x-pos: -71px;
+}
+.kanto>.encounterIcon.only-one {
+  width: 16px;
+  height: 16px;
+  --x-pos: -88px;
+}
+.johto.grass>.encounterIcon.walk {
+  width: 15px;
+  height: 19px;
+  --x-pos: -121px;
+}
+.johto>.encounterIcon.walk {
+  width: 13px;
+  height: 15px;
+  --x-pos: -137px;
+}
+.johto>.encounterIcon.old-rod, .johto>.encounterIcon.good-rod, .johto>.encounterIcon.super-rod {
+  width: 22px;
+  height: 16px;
+  --x-pos: -151px;
+}
+.johto>.encounterIcon.surf {
+  width: 16px;
+  height: 16px;
+  --x-pos: -174px;
+}
+.johto>.encounterIcon.gift {
+  width: 16px;
+  height: 16px;
+  --x-pos: -191px;
+}
+.johto>.encounterIcon.headbutt-normal {
+  width: 16px;
+  height: 16px;
+  --x-pos: -208px;
+}
+.johto>.encounterIcon.headbutt-high {
+  width: 16px;
+  height: 16px;
+  --x-pos: -208px;
+}
+.johto>.encounterIcon.rock-smash {
+  width: 16px;
+  height: 16px;
+  --x-pos: -225px;
+}
+.johto>.encounterIcon.gift-egg {
+  width: 12px;
+  height: 12px;
+  --x-pos: -242px;
+}
+.johto>.encounterIcon.only-one {
+  width: 16px;
+  height: 16px;
+  --x-pos: -191px;
+}
+.johto>.encounterIcon.pokeflute {
+  width: 32px;
+  height: 32px;
+  --x-pos: -255px;
+  --y-pos: 0px;
+}

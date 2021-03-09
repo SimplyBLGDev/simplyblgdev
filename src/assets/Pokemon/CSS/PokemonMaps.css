@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+}
+#poke {
+  display: flex;
+  flex-flow: column;
+  padding: 2px;
+}
+.leftContainer {
+  width:100%;
+  margin-right:4px;
+  margin-bottom:8px;
+}
+.searchInput {
+  border:0;
+  width: 100%;
+  height:2.3rem;
+  max-height:100%;
+  text-align: center;
+  color:whitesmoke;
+}
+.searchDiv {
+  margin-top: 12px;
+  padding: 4px;
+  background-color: #39b331;
+  height: min-content;
+  border-radius: 1.5rem;
+}
+.mapImage {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  width: 100%;
+  height: auto;
+  border-radius: 3vw;
+  box-shadow: -0.4vw 0.4vw #39b331;
+}
+.gameMapContainer {
+  margin-bottom: 0.3vw;
+  margin-left: 0.3vw;
+  padding: 4px;
+  width: 100%;
+  position: relative;
+}
+.mapCanvas {
+  position: absolute;
+  left:0px;
+  top:0px;
+}
+.regionInfo {
+  min-width: 35vw;
+  height: min-content;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 4px;
+  background-color: #39b331;
+  border-radius: 1.5rem;
+}
+.regionTable {
+  color:whitesmoke;
+  vertical-align: middle;
+  text-align: center;
+  width:100%;
+  border-radius: 1rem;
+  border: 2px;
+  background-color: transparent;
+  border-spacing: 4px;
+  border-collapse: separate;
+}
+.regionData {
+  background-color:#328d2b;
+  -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+  -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+  box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+  --box-shadow-color: rgb(0, 0, 0, 0.75);
+  border-radius: 3px;
+}
+.inTableTable {
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  display:inline-flex;
+  flex-direction: column;
+}
+.regionData.fbox:first-child {
+  margin-left: 0;
+  margin-top: 0;
+}
+.regionData.fbox:last-child {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.regionData.fbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 0;
+} 
+.regionData.header {
+  background-color: #2a7925;
+}
+.regionData.topLeft {
+  border-top-left-radius: 1rem;
+}
+.regionData.topRight {
+  border-top-right-radius: 1rem;
+}
+.regionData.header.gamesColumn {
+  width: 5%;
+}
+.regionData.header.gamesColumn span {
+  display: none;
+}
+.regionData.header.locationsColumn {
+  width: 26%;
+}
+.regionData.header.levelsColumn {
+  width: 21%;
+}
+.regionFooter {
+  background-color: #2a7925;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.inTableTable > .gameBox {
+  height: 100%;
+}
+.regionData.bottomLeft {
+  border-bottom-left-radius: 1rem;
+}
+.regionData.bottomRight {
+  border-bottom-right-radius: 1rem;
+}
+.btn.gameBox {
+  display: table-cell;
+  width:13%;
+}
+.btn.gameBox:hover {
+  border-width: 1px;
+  border-color: white;
+}
+.pokeIcon {
+  image-rendering: pixelated;
+  transform: scale(2);
+  float: left;
+  margin-bottom: 2px;
+  margin-right: -5px;
+  margin-left: -8px;
+}
+.contactMe {
+  --color-hue: 0;
+  background-color: HSL(var(--color-hue), 70%, 27%);
+  text-shadow: 1px 1px 3px #000;
+  height: 3rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+@media only screen and (min-width: 1200px) {
+  #poke {
+    flex-flow: row;
+    padding: 8px;
+  }
+  .leftContainer {
+    min-width: 550px;
+    width: 30%;
+  }
+  .regionInfo {
+    width:70%;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .pokeIcon {
+    margin-right: -5px;
+  }
+}
+
+@media only screen and (min-width: 610px) {
+  .pokeIcon {
+    margin-right: -40px;
+    margin-left: 0px;
+  }
+  .regionData.header.gamesColumn {
+    width: 15%;
+  }
+  .regionData.header.gamesColumn span {
+    display: block;
+  }
+  .regionData.header.locationsColumn {
+    width: 24%;
+  }
+  .regionData.header.levelsColumn {
+    width: 16%;
+  }
+  .inTableTable {
+    flex-direction: row;
+  }
+  .inTableTable > .gameBox {
+    min-height: 3rem;
+  }
+  .regionData.fbox:first-child {
+    margin-left: 0;
+  }
+  .regionData.fbox:last-child {
+    margin-right: 0;
+  }
+  .regionData.fbox {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

@@ -3,7 +3,7 @@
   <div id="poke">
     <div class="leftContainer">
       <div class="gameMapContainer">
-        <img id="mapIMG" :src=mapIMGsrc class="mapImage" alt="Game Map" usemap="#Map" :width=mapJSON.mapWidth :height=mapJSON.mapHeight>
+        <img id="mapIMG" :src=mapIMGsrc class="mapImage" alt="Game Map" usemap="#Map" :width=mapJSON.mapWidth :height=mapJSON.mapHeight @click="baseClick()">
         <canvas class="mapCanvas" id="normalCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="selectionCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="searchCanvas" style="pointer-events:none;"></canvas>
@@ -78,13 +78,13 @@
             <tr>
               <td class="inTableTable">
                 <div class="regionData fbox gameBox morning" style="min-height:auto">
-                  <b>04:00 - 9:59</b>
+                  <b>04:00 - 09:59</b>
                 </div>
                 <div class="regionData fbox gameBox day" style="min-height:auto">
-                  <b>10:00 - 5:59</b>
+                  <b>10:00 - 17:59</b>
                 </div>
                 <div class="regionData fbox gameBox night" style="min-height:auto">
-                  <b>06:00 - 3:59</b>
+                  <b>18:00 - 03:59</b>
                 </div>
               </td>
             </tr>
@@ -114,16 +114,10 @@
                   <div class="regionData fbox gameBox crystal" v-bind:class="{ active: encounter.games.includes('crystal') }"><b>C</b></div>
                 </template>
               </td>
-              <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', male: encounter.iconGender===0}">
-                <img src="../../assets/transparent.png" class="encounterIcon walk" v-if="encounter.method=='Grass'">
-                <img src="../../assets/transparent.png" class="encounterIcon swim" v-else-if="encounter.method=='Surf'">
-                <img src="../../assets/transparent.png" class="encounterIcon fish" v-else-if="encounter.method=='Old Rod'">
-                <img src="../../assets/transparent.png" class="encounterIcon fish" v-else-if="encounter.method=='Good Rod'">
-                <img src="../../assets/transparent.png" class="encounterIcon fish" v-else-if="encounter.method=='Super Rod'">
-                <img src="../../assets/transparent.png" class="encounterIcon event" v-else-if="encounter.method=='Event'">
-                <img src="../../assets/transparent.png" class="encounterIcon egg" v-else-if="encounter.method=='Egg'">
-                <img src="../../assets/transparent.png" class="encounterIcon rockSmash" v-else-if="encounter.method=='Rock Smash'">
-                {{ encounter.method }}
+              <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', male: encounter.iconGender===0,
+                grass: mapJSON.grassMapsLocationIds.includes(encounters.id) }">
+                <img src="../../assets/transparent.png" class="encounterIcon" :class="[encounter.method]">
+                {{ encounter.method | convertMethod }}
               </td>
               <td class="regionData" v-if="encounter.min_level != encounter.max_level">{{ encounter.min_level }} - {{ encounter.max_level }}</td>
               <td class="regionData" v-else>{{ encounter.max_level }}</td>
@@ -175,8 +169,9 @@ export default {
   props: ['region', 'mapJSON', 'mapIMGsrc' ],
   mounted() {
     this.filteredGames = this.mapJSON.games;
-    console.log(FetchEncounters(2, this.mapJSON.games, new Pokedex(), this.mapJSON.maps));
+    console.log(FetchEncounters(2, this.mapJSON.games, new Pokedex(), this.mapJSON.maps, this.mapJSON.baseLocation));
     $('#permaCanvas').fadeOut(0);
+    $('.contactMe').css('--color-hue', Math.floor(Math.random() * 360)); // Random hue for contact boxes
 
     this.findablePokemon = GetPokeList(this.mapJSON.maxDexIx);
     for (var i = 0; i < this.findablePokemon.length; i++) {
@@ -268,6 +263,11 @@ export default {
       }
 
       return value;
+    },
+    baseClick: function() {
+      if (this.mapJSON.baseLocation.length > 0) {
+        this.encounters = GetEncountersForLocation(this.mapJSON.baseLocation[0].location_id);
+      }
     }
   },
   filters: {
@@ -275,6 +275,23 @@ export default {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
+    },
+    convertMethod: function(value) {
+      return {
+        "walk": "Walk",
+        "surf": "Surf",
+        "old-rod": "Old Rod",
+        "good-rod": "Good Rod",
+        "super-rod": "Super Rod",
+        "headbutt-low": "Headbutt Low",
+        "headbutt-normal": "Headbutt",
+        "headbutt-high": "Headbutt Rare trees",
+        "rock-smash":"Rock Smash",
+        "pokeflute":"Pokéflute",
+        "gift": "Gift",
+        "gift-egg": "Gift Egg",
+        "only-one": "Only One"
+      }[value];
     }
   }
 }
@@ -290,348 +307,7 @@ html {
 </style>
 
 <style scoped>
-* {
-  box-sizing: border-box;
-}
-#poke {
-  display: flex;
-  flex-flow: column;
-  padding: 2px;
-}
-.leftContainer {
-  width:100%;
-  margin-right:4px;
-  margin-bottom:8px;
-}
-.searchInput {
-  border:0;
-  width: 100%;
-  height:2.3rem;
-  max-height:100%;
-  text-align: center;
-  color:whitesmoke;
-}
-.searchDiv {
-  margin-top: 12px;
-  padding: 4px;
-  background-color: #39b331;
-  height: min-content;
-  border-radius: 1.5rem;
-}
-.mapImage {
-  image-rendering: -moz-crisp-edges;
-  image-rendering: pixelated;
-  width: 100%;
-  height: auto;
-  border-radius: 3vw;
-  box-shadow: -0.4vw 0.4vw #39b331;
-}
-.gameMapContainer {
-  margin-bottom: 0.3vw;
-  margin-left: 0.3vw;
-  padding: 4px;
-  width: 100%;
-  position: relative;
-}
-.mapCanvas {
-  position: absolute;
-  left:0px;
-  top:0px;
-}
-.regionInfo {
-  min-width: 35vw;
-  height: min-content;
-  margin-left: 4px;
-  margin-right: 4px;
-  padding: 4px;
-  background-color: #39b331;
-  border-radius: 1.5rem;
-}
-.regionTable {
-  color:whitesmoke;
-  vertical-align: middle;
-  text-align: center;
-  width:100%;
-  border-radius: 1rem;
-  border: 2px;
-  background-color: transparent;
-  border-spacing: 4px;
-  border-collapse: separate;
-}
-.regionData {
-  background-color:#328d2b;
-  -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-  -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-  box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-  --box-shadow-color: rgb(0, 0, 0, 0.75);
-  border-radius: 3px;
-}
-.inTableTable {
-  width:100%;
-  height:100%;
-  padding:0;
-  margin:0;
-  display:inline-flex;
-  flex-direction: column;
-}
-.regionData.fbox:first-child {
-  margin-left: 0;
-  margin-top: 0;
-}
-.regionData.fbox:last-child {
-  margin-right: 0;
-  margin-bottom: 0;
-}
-.regionData.fbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  padding: 0;
-} 
-.regionData.header {
-  background-color: #2a7925;
-}
-.regionData.topLeft {
-  border-top-left-radius: 1rem;
-}
-.regionData.topRight {
-  border-top-right-radius: 1rem;
-}
-.regionData.header.gamesColumn {
-  width: 5%;
-}
-.regionData.header.gamesColumn span {
-  display: none;
-}
-.regionData.header.locationsColumn {
-  width: 26%;
-}
-.regionData.header.levelsColumn {
-  width: 21%;
-}
-.regionFooter {
-  background-color: #2a7925;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-.inTableTable > .gameBox {
-  height: 100%;
-}
-.gameBox {
-  margin-left:0.2rem;
-  margin-right:0.2rem;
-  width:2rem;
-  height:2rem;
-  text-align: center;
-  vertical-align: middle;
-  color:white;
-}
-.gameBox.red {
-  color:#eb4034;
-}
-.gameBox.blue {
-  color:#3434eb;
-}
-.gameBox.yellow {
-  color:#e0c032;
-}
-.gameBox.red.active {
-  color:whitesmoke;
-  background-color:#eb4034;
-}
-.gameBox.blue.active {
-  color:whitesmoke;
-  background-color:#3434eb;
-}
-.gameBox.yellow.active {
-  color:whitesmoke;
-  background-color:#e0c032;
-}
-.gameBox.gold {
-  color:#f0ca0d;
-}
-.gameBox.silver {
-  color:#a5bfd8;
-}
-.gameBox.crystal {
-  color:#74c6df;
-}
-.gameBox.gold.active {
-  color:whitesmoke;
-  background-color:#f0ca0d;
-}
-.gameBox.silver.active {
-  color:whitesmoke;
-  background-color:#a5bfd8;
-}
-.gameBox.crystal.active {
-  color:whitesmoke;
-  background-color:#74c6df;
-}
-.regionData.bottomLeft {
-  border-bottom-left-radius: 1rem;
-}
-.regionData.bottomRight {
-  border-bottom-right-radius: 1rem;
-}
-.btn.gameBox {
-  display: table-cell;
-  width:13%;
-}
-.btn.gameBox:hover {
-  border-width: 1px;
-  border-color: white;
-}
-.pokeIcon {
-  image-rendering: pixelated;
-  transform: scale(2);
-  float: left;
-  margin-bottom: 2px;
-  margin-right: -5px;
-  margin-left: -8px;
-}
-.encounterIcon {
-  background-image: url('../../assets/Pokemon/encounterIcons.png');
-  image-rendering: pixelated;
-  transform: scale(2);
-  margin-right: 12px;
-  --y-pos: 0px;
-}
-.male>.encounterIcon {
-  --y-pos: -21px;
-}
-.kanto>.encounterIcon.walk {
-  width: 16px;
-  height: 20px;
-  background-position: 0px var(--y-pos);
-}
-.kanto>.encounterIcon.swim {
-  width: 16px;
-  height: 11px;
-  background-position: -17px var(--y-pos);
-}
-.kanto>.encounterIcon.fish {
-  width: 22px;
-  height: 16px;
-  background-position: -34px var(--y-pos);
-}
-.kanto>.encounterIcon.event {
-  width: 16px;
-  height: 16px;
-  background-position: -57px var(--y-pos);
-}
-.johto>.encounterIcon.walk {
-  width: 15px;
-  height: 19px;
-  background-position: -74px var(--y-pos);
-}
-.johto>.encounterIcon.fish {
-  width: 22px;
-  height: 16px;
-  background-position: -90px var(--y-pos);
-}
-.johto>.encounterIcon.swim {
-  width: 16px;
-  height: 16px;
-  background-position: -113px var(--y-pos);
-}
-.johto>.encounterIcon.event {
-  width: 16px;
-  height: 16px;
-  background-position: -130px var(--y-pos);
-}
-.johto>.encounterIcon.headbutt {
-  width: 16px;
-  height: 16px;
-  background-position: -147px var(--y-pos);
-}
-.johto>.encounterIcon.rockSmash {
-  width: 16px;
-  height: 16px;
-  background-position: -164px var(--y-pos);
-}
-.johto>.encounterIcon.egg {
-  width: 12px;
-  height: 12px;
-  background-position: -181px var(--y-pos);
-}
-.contactMe {
-  background-color: purple;
-  height: 3rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.gameBox.morning {
-  background-color: #cad01e;
-}
-.gameBox.day {
-  background-color: #1bccb3;
-}
-.gameBox.night {
-  background-color: #4432bf;
-}
-
-@media only screen and (min-width: 1200px) {
-  #poke {
-    flex-flow: row;
-    padding: 8px;
-  }
-  .leftContainer {
-    min-width: 550px;
-    width: 30%;
-  }
-  .regionInfo {
-    width:70%;
-  }
-}
-
-@media only screen and (min-width: 720px) {
-  .pokeIcon {
-    margin-right: -5px;
-  }
-}
-
-@media only screen and (min-width: 610px) {
-  .pokeIcon {
-    margin-right: -40px;
-    margin-left: 0px;
-  }
-  .regionData.header.gamesColumn {
-    width: 15%;
-  }
-  .regionData.header.gamesColumn span {
-    display: block;
-  }
-  .regionData.header.locationsColumn {
-    width: 24%;
-  }
-  .regionData.header.levelsColumn {
-    width: 16%;
-  }
-  .inTableTable {
-    flex-direction: row;
-  }
-  .inTableTable > .gameBox {
-    min-height: 3rem;
-  }
-  .regionData.fbox:first-child {
-    margin-left: 0;
-  }
-  .regionData.fbox:last-child {
-    margin-right: 0;
-  }
-  .regionData.fbox {
-    margin-left: 2px;
-    margin-right: 2px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
+@import url('../../assets/Pokemon/CSS/PokemonMaps.css');
+@import url('../../assets/Pokemon/CSS/PokemonEncounterIcons.css');
+@import url('../../assets/Pokemon/CSS/PokemonGameBoxes.css');
 </style>
