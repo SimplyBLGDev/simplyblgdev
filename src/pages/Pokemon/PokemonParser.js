@@ -11,8 +11,10 @@ async function FetchEncounters(gen, games, poke, locations, baseLocations) {
     pokeAPI = poke;
     allowedGames = games;
     generation = gen;
-    baseLocationIds = baseLocations[0].location_id;
-    locations = locations.concat(baseLocations);
+    if (baseLocations.length > 0) {
+        baseLocationIds = baseLocations[0].location_id;
+        locations = locations.concat(baseLocations);
+    }
     var table = {
         "games":games,
         "locations":[]

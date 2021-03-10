@@ -49,56 +49,56 @@
 .johto.grass>.encounterIcon.walk {
   width: 15px;
   height: 19px;
-  --x-pos: -121px;
+  --x-pos: -122px;
 }
 .johto>.encounterIcon.walk {
   width: 13px;
   height: 15px;
-  --x-pos: -137px;
+  --x-pos: -138px;
 }
 .johto>.encounterIcon.old-rod, .johto>.encounterIcon.good-rod, .johto>.encounterIcon.super-rod {
   width: 22px;
   height: 16px;
-  --x-pos: -151px;
+  --x-pos: -152px;
 }
 .johto>.encounterIcon.surf {
   width: 16px;
   height: 16px;
-  --x-pos: -174px;
+  --x-pos: -175px;
 }
 .johto>.encounterIcon.gift {
   width: 16px;
   height: 16px;
-  --x-pos: -191px;
+  --x-pos: -192px;
 }
 .johto>.encounterIcon.headbutt-normal {
   width: 16px;
   height: 16px;
-  --x-pos: -208px;
+  --x-pos: -209px;
 }
 .johto>.encounterIcon.headbutt-high {
   width: 16px;
   height: 16px;
-  --x-pos: -208px;
+  --x-pos: -209px;
 }
 .johto>.encounterIcon.rock-smash {
   width: 16px;
   height: 16px;
-  --x-pos: -225px;
+  --x-pos: -226px;
 }
 .johto>.encounterIcon.gift-egg {
   width: 12px;
   height: 12px;
-  --x-pos: -242px;
+  --x-pos: -243px;
 }
 .johto>.encounterIcon.only-one {
   width: 16px;
   height: 16px;
-  --x-pos: -191px;
+  --x-pos: -192px;
 }
 .johto>.encounterIcon.pokeflute {
   width: 32px;
   height: 32px;
-  --x-pos: -255px;
+  --x-pos: -256px;
   --y-pos: 0px;
 }
