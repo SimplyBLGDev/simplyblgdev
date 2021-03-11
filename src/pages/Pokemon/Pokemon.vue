@@ -31,6 +31,10 @@
                 <td class="regionData btn gameBox silver" v-bind:class="{ active: filteredGames.includes('silver') }" colspan=2 @click="filterGame('silver')"><b>S</b></td>
                 <td class="regionData btn gameBox bottomRight crystal" v-bind:class="{ active: filteredGames.includes('crystal') }" colspan=2 @click="filterGame('crystal')"><b>C</b></td>
               </template>
+              <template v-else-if="region==='Kanto3'">
+                <td class="regionData btn gameBox bottomLeft fireRed" v-bind:class="{ active: filteredGames.includes('firered') }" colspan=3 @click="filterGame('firered')"><b>FR</b></td>
+                <td class="regionData btn gameBox bottomRight leafGreen" v-bind:class="{ active: filteredGames.includes('leafgreen') }" colspan=3 @click="filterGame('leafgreen')"><b>LG</b></td>
+              </template>
               <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=mapJSON.maps ref="LocInput"></NiceDatalist>
               </td>
@@ -113,10 +117,14 @@
                   <div class="regionData fbox gameBox silver" v-bind:class="{ active: encounter.games.includes('silver') }"><b>S</b></div>
                   <div class="regionData fbox gameBox crystal" v-bind:class="{ active: encounter.games.includes('crystal') }"><b>C</b></div>
                 </template>
+                <template v-else-if="region==='Kanto3'">
+                  <div class="regionData fbox gameBox fireRed" v-bind:class="{ active: encounter.games.includes('firered') }"><b>FR</b></div>
+                  <div class="regionData fbox gameBox leafGreen" v-bind:class="{ active: encounter.games.includes('leafgreen') }"><b>LG</b></div>
+                </template>
               </td>
-              <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', male: encounter.iconGender===0,
+              <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', kanto3: region==='Kanto3', male: encounter.iconGender===0,
                 grass: mapJSON.grassMapsLocationIds.includes(encounters.id) }">
-                <img src="../../assets/transparent.png" class="encounterIcon" :class="[encounter.method]">
+                <img src="../../assets/transparent.png" class="encounterIcon" :class="[encounter.method, encounter.pokemon.name]">
                 {{ encounter.method | convertMethod }}
               </td>
               <td class="regionData" v-if="encounter.min_level != encounter.max_level">{{ encounter.min_level }} - {{ encounter.max_level }}</td>

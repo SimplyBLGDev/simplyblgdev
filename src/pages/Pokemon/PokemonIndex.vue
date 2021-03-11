@@ -34,7 +34,6 @@
 
 export default {
 	data: () => ({
-    //eslint-disable-next-line
 		regions:[
 			{
 				name: "Kanto",

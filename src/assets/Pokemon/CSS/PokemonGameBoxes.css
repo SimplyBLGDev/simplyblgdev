@@ -49,6 +49,20 @@
   color:whitesmoke;
   background-color:#74c6df;
 }
+.gameBox.fireRed {
+  color:#f2451e;
+}
+.gameBox.leafGreen {
+  color:#2fe138;
+}
+.gameBox.fireRed.active {
+  color:whitesmoke;
+  background-color:#f2451e;
+}
+.gameBox.leafGreen.active {
+  color:whitesmoke;
+  background-color:#2fe138;
+}
 .gameBox.morning {
   background-color: #cad01e;
 }

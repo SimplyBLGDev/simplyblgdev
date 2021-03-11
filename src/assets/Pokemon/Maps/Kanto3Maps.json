@@ -1,0 +1,503 @@
+{
+  "name":"Kanto3",
+  "games":[ "firered", "leafgreen" ],
+  "mapWidth":192,
+  "mapHeight":576,
+  "maxDexIx":386,
+  "baseLocation": [{ "name": "Roaming Pokémon", "location_id": 799 }],
+  "grassMapsLocationIds": [
+    86, 88, 99, 68, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 100, 101, 102, 157, 233, 103, 104, 155, 162, 120, 130, 131, 133, 132, 134, 109
+  ],
+  "maps":[
+    {
+      "name": "Pallet Town",
+      "dimensions": [40, 104, 48, 104, 48, 112, 40, 112],
+      "location_id": 86
+    },{
+      "name": "Viridian City",
+      "dimensions": [40, 80, 48, 80, 48, 88, 40, 88],
+      "location_id": 154
+    },{
+      "name": "Pewter City",
+      "dimensions": [40, 48, 48, 48, 48, 56, 40, 56],
+      "location_id": 231
+    },{
+      "name": "Cerulean City",
+      "dimensions": [120, 40, 128, 40, 128, 48, 120, 48],
+      "location_id": 68
+    },{
+      "name": "Safron City",
+      "dimensions": [120, 64, 128, 64, 128, 72, 120, 72],
+      "location_id": 234
+    },{
+      "name": "Lavender Town",
+      "dimensions": [152, 64, 160, 64, 160, 72, 152, 72],
+      "location_id": 232
+    },{
+      "name": "Celadon City",
+      "dimensions": [96, 64, 104, 64, 104, 72, 96, 72],
+      "location_id": 67
+    },{
+      "name": "Vermilion City",
+      "dimensions": [120, 88, 128, 88, 128, 96, 120, 96],
+      "location_id": 151
+    },{
+      "name": "Fuchsia City",
+      "dimensions": [104, 112, 112, 112, 112, 120, 104, 120],
+      "location_id": 76
+    },{
+      "name": "Cinnabar Island",
+      "dimensions": [40, 128, 48, 128, 48, 136, 40, 136],
+      "location_id": 71
+    },{
+      "name": "Indigo Plateau",
+      "dimensions": [24, 40, 32, 40, 32, 48, 24, 48],
+      "location_id": 233
+    },{
+      "name": "One Island",
+      "dimensions": [16, 224, 24, 224, 24, 232, 16, 232],
+      "location_id": 526
+    },{
+      "name": "Four Island",
+      "dimensions": [32, 336, 40, 336, 40, 344, 32, 344],
+      "location_id": 527
+    },{
+      "name": "Five Island",
+      "dimensions": [136, 392, 144, 392, 144, 400, 136, 400],
+      "location_id": 528
+    },{
+      "name": "Seafoam Islands",
+      "dimensions": [72, 124, 80, 124, 80, 132, 72, 132],
+      "location_id": 136
+    },{
+      "name": "Victory Road",
+      "dimensions": [28, 48, 36, 48, 36, 56, 28, 56],
+      "location_id": 159
+    },{
+      "name": "Viridian Forest",
+      "dimensions": [36, 60, 44, 60, 44, 76, 36, 76],
+      "location_id": 155
+    },{
+      "name": "Digglet's Tunnel (Route 2)",
+      "dimensions": [44, 56, 52, 56, 52, 64, 44, 64],
+      "location_id": 73
+    },{
+      "name": "Mt. Moon",
+      "dimensions": [72, 36, 88, 36, 88, 44, 72, 44],
+      "location_id": 80
+    },{
+      "name": "Cerulean Cave",
+      "dimensions": [112, 32, 120, 32, 120, 40, 112, 40],
+      "location_id": 147
+    },{
+      "name": "Power Plant",
+      "dimensions": [156, 48, 164, 48, 164, 56, 156, 56],
+      "location_id": 158
+    },{
+      "name": "Rock Tunnel",
+      "dimensions": [148, 52, 156, 52, 156, 60, 148, 60],
+      "location_id": 87
+    },{
+      "name": "Pokemon Tower",
+      "dimensions": [160, 64, 168, 64, 168, 72, 160, 72],
+      "location_id": 160
+    },{
+      "name": "Digglet Tunnel",
+      "dimensions": [128, 84, 136, 84, 136, 92, 128, 92],
+      "location_id": 73
+    },{
+      "name": "Safari Zone",
+      "dimensions": [100, 100, 116, 100, 116, 116, 100, 116],
+      "location_id": 162
+    },{
+      "name": "Pokemon Mansion",
+      "dimensions": [43, 124, 51, 124, 51, 132, 43, 132],
+      "location_id": 161
+    },{
+      "name": "Mt. Ember",
+      "dimensions": [24, 184, 32, 184, 32, 192, 24, 192],
+      "location_id": 500
+    },{
+      "name": "Berry Forest",
+      "dimensions": [120, 256, 128, 256, 128, 264, 120, 264],
+      "location_id": 501
+    },{
+      "name": "Icefall Cave",
+      "dimensions": [36, 332, 44, 332, 44, 340, 36, 340],
+      "location_id": 502
+    },{
+      "name": "Lost Cave",
+      "dimensions": [152, 376, 160, 376, 160, 384, 152, 384],
+      "location_id": 504
+    },{
+      "name": "Pattern Bush",
+      "dimensions": [144, 472, 152, 472, 152, 480, 144, 480],
+      "location_id": 503
+    },{
+      "name": "Outcast Island",
+      "dimensions": [128, 456, 136, 456, 136, 472, 128, 472],
+      "location_id": 514
+    },{
+      "name": "Altering Cave",
+      "dimensions": [128, 448, 136, 448, 136, 456, 128, 456],
+      "location_id": 529
+    },{
+      "name": "Ruin Valley",
+      "dimensions": [136, 504, 152, 504, 152, 520, 136, 520],
+      "location_id": 517
+    },{
+      "name": "Trainer Tower",
+      "dimensions": [48, 496, 56, 496, 56, 512, 48, 512],
+      "location_id": 518
+    },{
+      "name": "Canyon Entrance",
+      "dimensions": [48, 520, 56, 520, 56, 528, 48, 528],
+      "location_id": 519
+    },{
+      "name": "Savault Canyon",
+      "dimensions": [56, 520, 64, 520, 64, 544, 56, 544],
+      "location_id": 520
+    },{
+      "name": "Tanoby Ruins",
+      "dimensions": [32, 544, 88, 544, 88, 552, 32, 552],
+      "location_id": 521
+    },{
+      "name": "Monean Chamber",
+      "dimensions": [32, 552, 40, 552, 40, 560, 32, 560],
+      "location_id": 491
+    },{
+      "name": "Liptoo Chamber",
+      "dimensions": [40, 552, 48, 552, 48, 560, 40, 560],
+      "location_id": 492
+    },{
+      "name": "Weepth Chamber",
+      "dimensions": [48, 552, 56, 552, 56, 560, 48, 560],
+      "location_id": 493
+    },{
+      "name": "Dilford Chamber",
+      "dimensions": [56, 552, 64, 552, 64, 560, 56, 560],
+      "location_id": 494
+    },{
+      "name": "Scufib Chamber",
+      "dimensions": [64, 552, 72, 552, 72, 560, 64, 560],
+      "location_id": 495
+    },{
+      "name": "Rixy Chamber",
+      "dimensions": [72, 552, 80, 552, 80, 560, 72, 560],
+      "location_id": 496
+    },{
+      "name": "Viapois Chamber",
+      "dimensions": [80, 552, 88, 552, 88, 560, 80, 560],
+      "location_id": 497
+    },{
+      "name": "Resort Gorgeous",
+      "dimensions": [136, 376, 160, 376, 160, 384, 136, 384],
+      "location_id": 510
+    },{
+      "name": "Water Labyrinth",
+      "dimensions": [120, 384, 144, 384, 144, 392, 120, 392],
+      "location_id": 511
+    },{
+      "name": "Five Isle Meadow",
+      "dimensions": [144, 392, 152, 392, 152, 408, 144, 408],
+      "location_id": 512
+    },{
+      "name": "Memorial Pillar",
+      "dimensions": [152, 400, 160, 400, 160, 424, 152, 424],
+      "location_id": 513
+    },{
+      "name": "Bond Bridge",
+      "dimensions": [128, 256, 152, 256, 152, 264, 128, 264],
+      "location_id": 508
+    },{
+      "name": "Cape Brink",
+      "dimensions": [80, 216, 88, 216, 88, 232, 80, 232],
+      "location_id": 507
+    },{
+      "name": "Kindle Road",
+      "dimensions": [24, 192, 32, 192, 32, 232, 24, 232],
+      "location_id": 505
+    },{
+      "name": "Treasure Beach",
+      "dimensions": [16, 232, 24, 232, 24, 248, 16, 248],
+      "location_id": 506
+    },{
+      "name": "Water Path",
+      "dimensions": [152, 472, 160, 472, 160, 512, 152, 512],
+      "location_id": 516
+    },{
+      "name": "Green Path",
+      "dimensions": [128, 472, 144, 472, 144, 480, 128, 480],
+      "location_id": 515
+    },{
+      "name": "Three Isle Port",
+      "dimensions": [152, 264, 168, 264, 168, 272, 152, 272],
+      "location_id": 509
+    },{
+      "name": "Route 1",
+      "dimensions": [40, 88, 48, 88, 48, 104, 40, 104],
+      "location_id": 88
+    },{
+      "name": "Route 2",
+      "dimensions": [40, 56, 48, 56, 48, 80, 40, 80],
+      "location_id": 99
+    },{
+      "name": "Route 3",
+      "dimensions": [48, 48, 72, 48, 72, 40, 80, 40, 80, 56, 48, 56],
+      "location_id": 109
+    },{
+      "name": "Route 4",
+      "dimensions": [80, 40, 120, 40, 120, 48, 80, 48],
+      "location_id": 120
+    },{
+      "name": "Route 5",
+      "dimensions": [120, 48, 128, 48, 128, 64, 120, 64],
+      "location_id": 130
+    },{
+      "name": "Route 6",
+      "dimensions": [120, 72, 128, 72, 128, 88, 120, 88],
+      "location_id": 131
+    },{
+      "name": "Route 7",
+      "dimensions": [104, 64, 120, 64, 120, 72, 104, 72],
+      "location_id": 132
+    },{
+      "name": "Route 8",
+      "dimensions": [128, 64, 152, 64, 152, 72, 128, 72],
+      "location_id": 133
+    },{
+      "name": "Route 9",
+      "dimensions": [128, 40, 160, 40, 160, 48, 128, 48],
+      "location_id": 134
+    },{
+      "name": "Route 10",
+      "dimensions": [152, 48, 160, 48, 160, 64, 152, 64],
+      "location_id": 89
+    },{
+      "name": "Route 11",
+      "dimensions": [128, 88, 152, 88, 152, 96, 128, 96],
+      "location_id": 90
+    },{
+      "name": "Route 12",
+      "dimensions": [152, 72, 160, 72, 160, 104, 152, 104],
+      "location_id": 91
+    },{
+      "name": "Route 13",
+      "dimensions": [136, 104, 160, 104, 160, 112, 136, 112],
+      "location_id": 92
+    },{
+      "name": "Route 14",
+      "dimensions": [128, 104, 136, 104, 136, 120, 128, 120],
+      "location_id": 93
+    },{
+      "name": "Route 15",
+      "dimensions": [112, 112, 128, 112, 128, 120, 112, 120],
+      "location_id": 94
+    },{
+      "name": "Route 16",
+      "dimensions": [64, 64, 96, 64, 96, 72, 64, 72],
+      "location_id": 95
+    },{
+      "name": "Route 17",
+      "dimensions": [64, 72, 72, 72, 72, 112, 64, 112],
+      "location_id": 96
+    },{
+      "name": "Route 18",
+      "dimensions": [64, 112, 104, 112, 104, 120, 64, 120],
+      "location_id": 97
+    },{
+      "name": "Route 19",
+      "dimensions": [104, 120, 112, 120, 112, 136, 104, 136],
+      "location_id": 98
+    },{
+      "name": "Route 20",
+      "dimensions": [48, 128, 104, 128, 104, 136, 48, 136],
+      "location_id": 100
+    },{
+      "name": "Route 21",
+      "dimensions": [40, 112, 48, 112, 48, 128, 40, 128],
+      "location_id": 101
+    },{
+      "name": "Route 22",
+      "dimensions": [24, 80, 40, 80, 40, 88, 24, 88],
+      "location_id": 102
+    },{
+      "name": "Route 23",
+      "dimensions": [24, 48, 32, 48, 32, 80, 24, 80],
+      "location_id": 157
+    },{
+      "name": "Route 24",
+      "dimensions": [120, 24, 128, 24, 128, 40, 120, 40],
+      "location_id": 103
+    },{
+      "name": "Route 25",
+      "dimensions": [128, 24, 144, 24, 144, 32, 128, 32],
+      "location_id": 104
+    }
+  ],
+  "pokeAliases":[
+    { "name":"farfetchd", "display":"Farfetch'd" },
+    { "name":"nidoran-m", "display":"Nidoran M" },
+    { "name":"nidoran-f", "display":"Nidoran F" }
+  ],
+  "aliases":[
+      { "name":"pallet-town", "display":"Pallet Town" },
+      { "name":"viridian-city", "display":"Viridian City" },
+      { "name":"pewter-city", "display":"Pewter City" },
+      { "name":"cerulean-city", "display":"Cerulean City" },
+      { "name":"viridian-city", "display":"Viridian City" },
+      { "name":"lavender-town", "display":"Lavender Town" },
+      { "name":"saffron-city", "display":"Saffron City" },
+      { "name":"celadon-city", "display":"Celadon City" },
+      { "name":"vermilion-city", "display":"Vermilion City" },
+      { "name":"fuchsia-city", "display":"Fuchsia City" },
+      { "name":"indigo-plateau", "display":"Indigo Plateau" },
+      { "name":"cinnabar-island", "display":"Cinnabar Island" },
+      { "name":"viridian-forest", "display":"Viridian Forest" },
+      { "name":"mt-moon", "display":"Mt. Moon" },
+      { "name":"digletts-cave", "display":"Digglet's Cave" },
+      { "name":"rock-tunnel", "display":"Rock Tunnel" },
+      { "name":"seafoam-islands", "display":"Seafoam Islands" },
+      { "name":"cerulean-cave", "display":"Cerulean Cave" },
+      { "name":"kanto-victory-road-2", "display":"Victory Road" },
+      { "name":"power-plant", "display":"Power Plant" },
+      { "name":"kanto-safari-zone", "display":"Safari Zone" },
+      { "name":"pokemon-mansion", "display":"Pokémon Mansion" },
+      { "name":"pokemon-tower", "display":"Pokémon Tower" },
+      { "name":"kanto-route-1", "display":"Route 1" },
+      { "name":"kanto-route-2", "display":"Route 2" },
+      { "name":"kanto-route-3", "display":"Route 3" },
+      { "name":"kanto-route-4", "display":"Route 4" },
+      { "name":"kanto-route-5", "display":"Route 5" },
+      { "name":"kanto-route-6", "display":"Route 6" },
+      { "name":"kanto-route-7", "display":"Route 7" },
+      { "name":"kanto-route-8", "display":"Route 8" },
+      { "name":"kanto-route-9", "display":"Route 9" },
+      { "name":"kanto-route-10", "display":"Route 10" },
+      { "name":"kanto-route-11", "display":"Route 11" },
+      { "name":"kanto-route-12", "display":"Route 12" },
+      { "name":"kanto-route-13", "display":"Route 13" },
+      { "name":"kanto-route-14", "display":"Route 14" },
+      { "name":"kanto-route-15", "display":"Route 15" },
+      { "name":"kanto-route-16", "display":"Route 16" },
+      { "name":"kanto-route-17", "display":"Route 17" },
+      { "name":"kanto-route-18", "display":"Route 18" },
+      { "name":"kanto-sea-route-19", "display":"Route 19" },
+      { "name":"kanto-sea-route-20", "display":"Route 20" },
+      { "name":"kanto-sea-route-21", "display":"Route 21" },
+      { "name":"kanto-route-22", "display":"Route 22" },
+      { "name":"kanto-route-23", "display":"Route 23" },
+      { "name":"kanto-route-24", "display":"Route 24" },
+      { "name":"kanto-route-25", "display":"Route 25" },
+      { "name":"mt-ember", "display":"Mt. Ember" },
+      { "name":"kindle-road", "display":"Kindle Road" },
+      { "name":"one-island", "display":"One Island" },
+      { "name":"two-island", "display":"Two Island" },
+      { "name":"three-island", "display":"Three Island" },
+      { "name":"four-island", "display":"Four Island" },
+      { "name":"five-island", "display":"Five Island" },
+      { "name":"six-island", "display":"Sixe Island" },
+      { "name":"seven-island", "display":"Seven Island" },
+      { "name":"cape-brink", "display":"Cape Brink" },
+      { "name":"berry-forest", "display":"Berry Forest" },
+      { "name":"bond-bridge", "display":"Bond Bridge" },
+      { "name":"cape-brink", "display":"Cape Brink" },
+      { "name":"lost-cave", "display":"Lost Cave" },
+      { "name":"resort-gorgeous", "display":"Resort Gorgeous" },
+      { "name":"five-isle-meadow", "display":"Five Isle Meadow" },
+      { "name":"memorial-pillar", "display":"Memorial Pillar" },
+      { "name":"kanto-altering-cave", "display":"Kanto Altering Cave" },
+      { "name":"outcast-island", "display":"Outcast Island" },
+      { "name":"pattern-bush", "display":"Pattern Bush" },
+      { "name":"water-labyrinth", "display":"Water Labyrinth" },
+      { "name":"ruin-valley", "display":"Ruin Valley" },
+      { "name":"trainer-tower", "display":"Trainer Tower" },
+      { "name":"canyon-entrance", "display":"Canyon Entrance" },
+      { "name":"sevault-canyon", "display":"Sevault Canyon" },
+      { "name":"tanoby-ruins", "display":"Tanoby Ruins" },
+      { "name":"monean-chamber", "display":"Monean Chamber" },
+      { "name":"liptoo-chamber", "display":"Liptoo Chamber" },
+      { "name":"weepth-chamber", "display":"Weepth Chamber" },
+      { "name":"dilford-chamber", "display":"Dilford Chamber" },
+      { "name":"scufib-chamber", "display":"Scufib Chamber" },
+      { "name":"rixy-chamber", "display":"Rixy Chamber" },
+      { "name":"viapos-chamber", "display":"Viapos Chamber" },
+      { "name":"icefall-cave", "display":"Icefall Cave" },
+      { "name":"water-path", "display":"Water Path" },
+      { "name":"green-path", "display":"Green Path" },
+      { "name":"three-isle-port", "display":"Three Isle Port" },
+      { "name":"roaming-kanto", "display":"Roaming Kanto" },
+      { "name":"kanto-route-4-area", "display":"Route 4" },
+      { "name":"kanto-route-4-pokemon-center", "display":"Route 4 Pokemon Center" },
+      { "name":"cerulean-cave-1f", "display":"1f" },
+      { "name":"cerulean-cave-2f", "display":"2f" },
+      { "name":"cerulean-cave-b1f", "display":"b1f" },
+      { "name":"rock-tunnel-1f", "display":"1f" },
+      { "name":"rock-tunnel-b1f", "display":"b1f" },
+      { "name":"rock-tunnel-b2f", "display":"b2f" },
+      { "name":"saffron-city-fighting-dojo", "display":"Fighting Dojo" },
+      { "name":"saffron-city-silph-co-7f", "display":"Silph Co. 7f" },
+      { "name":"celadon-city-area", "display":"Celadon City" },
+      { "name":"celadon-city-celadon-mansion", "display":"Celadon Mansion" },
+      { "name":"vermilion-city-area", "display":"Vermilion City" },
+      { "name":"vermilion-city-ss-anne-dock", "display":"SS Anne Dock" },
+      { "name":"kanto-safari-zone-middle", "display":"Middle" },
+      { "name":"kanto-safari-zone-area-1-east", "display":"East" },
+      { "name":"kanto-safari-zone-area-2-north", "display":"North" },
+      { "name":"kanto-safari-zone-area-3-west", "display":"West" },
+      { "name":"mt-moon-mt-moon-square", "display":"Mt. Moon Square" },
+      { "name":"mt-moon-1f", "display":"1f" },
+      { "name":"mt-moon-2f", "display":"2f" },
+      { "name":"mt-moon-b1f", "display":"b1f" },
+      { "name":"mt-moon-b2f", "display":"b2f" },
+      { "name":"seafoam-islands-1f", "display":"1f" },
+      { "name":"seafoam-islands-b1f", "display":"b1f" },
+      { "name":"seafoam-islands-b2f", "display":"b2f" },
+      { "name":"seafoam-islands-b3f", "display":"b3f" },
+      { "name":"seafoam-islands-b4f", "display":"b4f" },
+      { "name":"kanto-victory-road-2-1f", "display":"1f" },
+      { "name":"kanto-victory-road-2-2f", "display":"2f" },
+      { "name":"kanto-victory-road-2-3f", "display":"3f" },
+      { "name":"pokemon-mansion-1f", "display":"1f" },
+      { "name":"pokemon-mansion-2f", "display":"2f" },
+      { "name":"pokemon-mansion-3f", "display":"3f" },
+      { "name":"pokemon-mansion-4f", "display":"4f" },
+      { "name":"pokemon-mansion-b1f", "display":"b1f" },
+      { "name":"pokemon-tower-3f", "display":"3f" },
+      { "name":"pokemon-tower-4f", "display":"4f" },
+      { "name":"pokemon-tower-5f", "display":"5f" },
+      { "name":"pokemon-tower-6f", "display":"6f" },
+      { "name":"pokemon-tower-7f", "display":"7f" },
+      { "name":"mt-ember-area", "display":"Mt. Ember" },
+      { "name":"mt-ember-b1f", "display":"b1f" },
+      { "name":"mt-ember-b2f", "display":"b2f" },
+      { "name":"mt-ember-b3f", "display":"b3f" },
+      { "name":"mt-ember-inside", "display":"Inside" },
+      { "name":"mt-ember-1f-cave-behind-team-rocket", "display":"1f, cave behind team Rocket" },
+      { "name":"mt-ember-cave", "display":"Cave" },
+      { "name":"lost-cave-room-1", "display":"Room 1" },
+      { "name":"lost-cave-room-2", "display":"Room 2" },
+      { "name":"lost-cave-room-3", "display":"Room 3" },
+      { "name":"lost-cave-room-4", "display":"Room 4" },
+      { "name":"lost-cave-room-5", "display":"Room 5" },
+      { "name":"lost-cave-room-6", "display":"Room 6" },
+      { "name":"lost-cave-room-7", "display":"Room 7" },
+      { "name":"lost-cave-room-8", "display":"Room 8" },
+      { "name":"lost-cave-room-9", "display":"Room 9" },
+      { "name":"lost-cave-room-10", "display":"Room 10" },
+      { "name":"lost-cave-room-item-rooms", "display":"Item Rooms" },
+      { "name":"kanto-altering-cave-a", "display":"Cave A" },
+      { "name":"kanto-altering-cave-b", "display":"Cave B" },
+      { "name":"kanto-altering-cave-c", "display":"Cave C" },
+      { "name":"kanto-altering-cave-d", "display":"Cave D" },
+      { "name":"kanto-altering-cave-e", "display":"Cave E" },
+      { "name":"kanto-altering-cave-f", "display":"Cave F" },
+      { "name":"kanto-altering-cave-g", "display":"Cave G" },
+      { "name":"kanto-altering-cave-h", "display":"Cave H" },
+      { "name":"kanto-altering-cave-i", "display":"Cave I" },
+      { "name":"icefall-cave-entrance", "display":"Entrance" },
+      { "name":"icefall-cave-waterfall", "display":"Waterfall" },
+      { "name":"icefall-cave-1f", "display":"1f" },
+      { "name":"icefall-cave-b1f", "display":"b1f" }
+  ]
+}

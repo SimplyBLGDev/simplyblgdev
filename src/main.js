@@ -78,6 +78,19 @@ const routes = [
     }
   },
   {
+    path: '/Pokemon/Kanto3',
+    name: 'Kanto Gen 3',
+    component: Pokemon,
+    meta: {
+      title: 'Kanto interactive map for FRLG'
+    },
+    props: {
+      'region': "Kanto3",
+      'mapJSON': require('@/assets/Pokemon/Maps/Kanto3Maps.json'),
+      'mapIMGsrc': require('@/assets/Pokemon/Maps/Kanto3.png')
+    }
+  },
+  {
     path: '/Graficadora',
     name: 'Graficadora',
     component: Graficadora,

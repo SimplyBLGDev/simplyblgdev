@@ -12,9 +12,9 @@
           <b-dropdown-item href="/Pokemon/Kalos">Gen 6 - Kalos</b-dropdown-item>
           <b-dropdown-item href="/Pokemon/Alola">Gen 7 - Alola</b-dropdown-item>
           <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="/Pokemon/Kanto_3">Gen 3 - Kanto</b-dropdown-item>
-          <b-dropdown-item href="/Pokemon/Johto_4">Gen 4 - Johto</b-dropdown-item>
-          <b-dropdown-item href="/Pokemon/Hoenn_6">Gen 6 - Hoenn</b-dropdown-item>
+          <b-dropdown-item href="/Pokemon/Kanto3">Gen 3 - Kanto</b-dropdown-item>
+          <b-dropdown-item href="/Pokemon/Johto4">Gen 4 - Johto</b-dropdown-item>
+          <b-dropdown-item href="/Pokemon/Hoenn6">Gen 6 - Hoenn</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-navbar>
