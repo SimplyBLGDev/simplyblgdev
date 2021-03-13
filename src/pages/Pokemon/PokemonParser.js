@@ -241,6 +241,7 @@ function GetIconGender(encounterJSON) {
     switch (generation) {
         case 1: femaleAllowed = false; break;
         case 2: if (!encounterJSON.games.includes('crystal')) femaleAllowed = false; break;
+        default: femaleAllowed = true;
     }
 
     if (!femaleAllowed)

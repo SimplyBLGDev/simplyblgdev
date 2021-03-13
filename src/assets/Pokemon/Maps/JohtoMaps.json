@@ -1,9 +1,11 @@
 {
   "name":"Johto",
   "games":[ "gold", "silver", "crystal" ],
+  "generation": 2,
   "mapWidth":288,
   "mapHeight":128,
   "maxDexIx":251,
+  "enableTimeHUD": true,
   "baseLocation": [{ "name": "Roaming Pokémon", "location_id": 800 }],
   "grassMapsLocationIds": [
     8, 83, 79, 233, 88, 99, 109, 120, 130, 131, 132, 133, 134, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 100, 101, 102,

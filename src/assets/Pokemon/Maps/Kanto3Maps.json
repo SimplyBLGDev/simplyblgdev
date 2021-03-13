@@ -1,9 +1,11 @@
 {
   "name":"Kanto3",
   "games":[ "firered", "leafgreen" ],
+  "generation": 3,
   "mapWidth":192,
   "mapHeight":576,
   "maxDexIx":386,
+  "enableTimeHUD": false,
   "baseLocation": [{ "name": "Roaming Pokémon", "location_id": 799 }],
   "grassMapsLocationIds": [
     86, 88, 99, 68, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 100, 101, 102, 157, 233, 103, 104, 155, 162, 120, 130, 131, 133, 132, 134, 109
@@ -338,7 +340,8 @@
   "pokeAliases":[
     { "name":"farfetchd", "display":"Farfetch'd" },
     { "name":"nidoran-m", "display":"Nidoran M" },
-    { "name":"nidoran-f", "display":"Nidoran F" }
+    { "name":"nidoran-f", "display":"Nidoran F" },
+    { "name":"ho-oh", "display":"Ho-Oh" }
   ],
   "aliases":[
       { "name":"pallet-town", "display":"Pallet Town" },

@@ -142,6 +142,46 @@
   height: 22px;
   --x-pos: -481px;
 }
+.hoenn.grass>.encounterIcon.walk {
+  width: 16px;
+  height: 24px;
+  --x-pos: -606px;
+}
+.hoenn>.encounterIcon.walk {
+  width: 14px;
+  height: 21px;
+  --x-pos: -623px;
+}
+.hoenn>.encounterIcon.old-rod, .hoenn>.encounterIcon.good-rod, .hoenn>.encounterIcon.super-rod {
+  width: 29px;
+  height: 20px;
+  --x-pos: -638px;
+}
+.hoenn>.encounterIcon.wailmer-pail {
+  width: 23px;
+  height: 20px;
+  --x-pos: -668px;
+}
+.hoenn>.encounterIcon.gift {
+  width: 20px;
+  height: 22px;
+  --x-pos: -692px;
+}
+.hoenn>.encounterIcon.surf {
+  width: 22px;
+  height: 27px;
+  --x-pos: -713px;
+}
+.hoenn>.encounterIcon.dive {
+  width: 19px;
+  height: 24px;
+  --x-pos: -736px;
+}
+.hoenn>.encounterIcon.rock-smash {
+  width: 14px;
+  height: 14px;
+  --x-pos: -920px;
+}
 
 .kanto>.encounterIcon.only-one.articuno, .kanto>.encounterIcon.only-one.zapdos, .kanto>.encounterIcon.only-one.moltres {
   width: 12px;
@@ -209,13 +249,13 @@
   --x-pos: -556px;
   --y-pos: 0px;
 }
-.kanto3>.encounterIcon.only-one.lugia {
+.kanto3>.encounterIcon.only-one.lugia, .hoenn>.encounterIcon.only-one.suicune {
   width: 23px;
   height: 22px;
   --x-pos: -581px;
   --y-pos: 0px;
 }
-.kanto3>.encounterIcon.only-one.hooh {
+.kanto3>.encounterIcon.only-one.hooh, .hoenn>.encounterIcon.only-one.hooh {
   width: 24px;
   height: 22px;
   --x-pos: -581px;
@@ -245,9 +285,63 @@
   --x-pos: -523px;
   --y-pos: -38px;
 }
-.kanto3>.encounterIcon.only-one.mew {
+.kanto3>.encounterIcon.only-one.mew, .hoenn>.encounterIcon.only-one.mew {
   width: 13px;
   height: 25px;
   --x-pos: -540px;
   --y-pos: -20px;
+}
+.hoenn>.encounterIcon.only-one.rayquaza {
+  width: 32px;
+  height: 38px;
+  --x-pos: -757px;
+  --y-pos: 0px;
+}
+.hoenn>.encounterIcon.only-one.groudon {
+  width: 31px;
+  height: 32px;
+  --x-pos: -790px;
+  --y-pos: 0px;
+}
+.hoenn>.encounterIcon.only-one.kyogre {
+  width: 32px;
+  height: 31px;
+  --x-pos: -790px;
+  --y-pos: -33px;
+}
+.hoenn>.encounterIcon.only-one.regirock {
+  width: 31px;
+  height: 30px;
+  --x-pos: -823px;
+  --y-pos: 0px;
+}
+.hoenn>.encounterIcon.only-one.registeel {
+  width: 31px;
+  height: 29px;
+  --x-pos: -855px;
+  --y-pos: 0px;
+}
+.hoenn>.encounterIcon.only-one.regice {
+  width: 31px;
+  height: 30px;
+  --x-pos: -823px;
+  --y-pos: -31px;
+}
+.hoenn>.encounterIcon.only-one.dexoys {
+  width: 28px;
+  height: 29px;
+  --x-pos: -855px;
+  --y-pos: -31px;
+}
+.hoenn>.encounterIcon.only-one.latios {
+  width: 31px;
+  height: 30px;
+  --x-pos: -887px;
+  --y-pos: -31px;
+}
+.hoenn>.encounterIcon.only-one.latias {
+  width: 32px;
+  height: 30px;
+  --x-pos: -887px;
+  --y-pos: 0px;
 }

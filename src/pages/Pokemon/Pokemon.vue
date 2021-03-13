@@ -35,6 +35,11 @@
                 <td class="regionData btn gameBox bottomLeft fireRed" v-bind:class="{ active: filteredGames.includes('firered') }" colspan=3 @click="filterGame('firered')"><b>FR</b></td>
                 <td class="regionData btn gameBox bottomRight leafGreen" v-bind:class="{ active: filteredGames.includes('leafgreen') }" colspan=3 @click="filterGame('leafgreen')"><b>LG</b></td>
               </template>
+              <template v-else-if="region==='Hoenn'">
+                <td class="regionData btn gameBox bottomLeft ruby" v-bind:class="{ active: filteredGames.includes('ruby') }" colspan=2 @click="filterGame('ruby')"><b>R</b></td>
+                <td class="regionData btn gameBox sapphire" v-bind:class="{ active: filteredGames.includes('sapphire') }" colspan=2 @click="filterGame('sapphire')"><b>S</b></td>
+                <td class="regionData btn gameBox bottomRight emerald" v-bind:class="{ active: filteredGames.includes('emerald') }" colspan=2 @click="filterGame('emerald')"><b>E</b></td>
+              </template>
               <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=mapJSON.maps ref="LocInput"></NiceDatalist>
               </td>
@@ -62,16 +67,7 @@
     <div class="regionInfo">
       <table class="regionTable">
         <tbody>
-          <template v-if="region==='Kanto'">
-            <tr>
-              <th class="regionData header topLeft">Pokémon</th>
-              <th class="regionData header gamesColumn"><span>Games</span></th>
-              <th class="regionData header locationsColumn">Location</th>
-              <th class="regionData header levelsColumn">Levels</th>
-              <th class="regionData header topRight" width="13%">%</th>
-            </tr>
-          </template>
-          <template v-else>
+          <template v-if="mapJSON.enableTimeHUD">
             <tr>
               <th class="regionData header topLeft" rowspan="2">Pokémon</th>
               <th class="regionData header gamesColumn" rowspan="2"><span>Games</span></th>
@@ -91,6 +87,15 @@
                   <b>18:00 - 03:59</b>
                 </div>
               </td>
+            </tr>
+          </template>
+          <template v-else>
+            <tr>
+              <th class="regionData header topLeft">Pokémon</th>
+              <th class="regionData header gamesColumn"><span>Games</span></th>
+              <th class="regionData header locationsColumn">Location</th>
+              <th class="regionData header levelsColumn">Levels</th>
+              <th class="regionData header topRight" width="13%">%</th>
             </tr>
           </template>
           <tr>
@@ -121,8 +126,13 @@
                   <div class="regionData fbox gameBox fireRed" v-bind:class="{ active: encounter.games.includes('firered') }"><b>FR</b></div>
                   <div class="regionData fbox gameBox leafGreen" v-bind:class="{ active: encounter.games.includes('leafgreen') }"><b>LG</b></div>
                 </template>
+                <template v-else-if="region==='Hoenn'">
+                  <div class="regionData fbox gameBox ruby" v-bind:class="{ active: encounter.games.includes('ruby') }"><b>R</b></div>
+                  <div class="regionData fbox gameBox sapphire" v-bind:class="{ active: encounter.games.includes('sapphire') }"><b>S</b></div>
+                  <div class="regionData fbox gameBox emerald" v-bind:class="{ active: encounter.games.includes('emerald') }"><b>E</b></div>
+                </template>
               </td>
-              <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', kanto3: region==='Kanto3', male: encounter.iconGender===0,
+              <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', kanto3: region==='Kanto3', hoenn: region==='Hoenn', male: encounter.iconGender===0,
                 grass: mapJSON.grassMapsLocationIds.includes(encounters.id) }">
                 <img src="../../assets/transparent.png" class="encounterIcon" :class="[encounter.method, encounter.pokemon.name]">
                 {{ encounter.method | convertMethod }}
@@ -177,7 +187,7 @@ export default {
   props: ['region', 'mapJSON', 'mapIMGsrc' ],
   mounted() {
     this.filteredGames = this.mapJSON.games;
-    console.log(FetchEncounters(2, this.mapJSON.games, new Pokedex(), this.mapJSON.maps, this.mapJSON.baseLocation));
+    console.log(FetchEncounters(this.mapJSON.generation, this.mapJSON.games, new Pokedex(), this.mapJSON.maps, this.mapJSON.baseLocation));
     $('#permaCanvas').fadeOut(0);
     $('.contactMe').css('--color-hue', Math.floor(Math.random() * 360)); // Random hue for contact boxes
 

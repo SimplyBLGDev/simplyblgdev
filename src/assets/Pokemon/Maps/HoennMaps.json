@@ -1,0 +1,482 @@
+{
+  "name": "Hoenn",
+  "games":[ "ruby", "sapphire", "emerald" ],
+  "generation": 3,
+  "mapWidth": 257,
+  "mapHeight": 196,
+  "maxDexIx": 386,
+  "enableTimeHUD": false,
+  "baseLocation": [{ "name": "Roaming Pokémon", "location_id": 801 }],
+  "grassMapsLocationIds": [
+    449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 463, 464, 465, 466, 467, 468, 469, 470, 471,
+    472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 439, 483
+  ],
+  "maps":[{
+    "name": "Littleroot Town",
+    "dimensions": [40, 104, 48, 104, 48, 112, 40, 112],
+    "location_id":567
+  },{
+    "name": "Oldale Town",
+    "dimensions": [40, 88, 48, 88, 48, 96, 40, 96],
+    "location_id":568
+  },{
+    "name": "Petalburg City",
+    "dimensions": [16, 88, 24, 88, 24, 96, 16, 96],
+    "location_id":429
+  },{
+    "name": "Rustboro City",
+    "dimensions": [8, 56, 16, 56, 16, 72, 8, 72],
+    "location_id":573
+  },{
+    "name": "Fallarbor Town",
+    "dimensions": [32, 16, 40, 16, 40, 24, 32, 24],
+    "location_id":570
+  },{
+    "name": "Lavaridge Town",
+    "dimensions": [48, 40, 56, 40, 56, 48, 48, 48],
+    "location_id":569
+  },{
+    "name": "Mauville City",
+    "dimensions": [72, 64, 88, 64, 88, 72, 72, 72],
+    "location_id":572
+  },{
+    "name": "Verdanturf Town",
+    "dimensions": [40, 64, 48, 64, 48, 72, 40, 72],
+    "location_id":571
+  },{
+    "name": "Slateport City",
+    "dimensions": [72, 96, 80, 96, 80, 112, 72, 112],
+    "location_id":430
+  },{
+    "name": "Dewford Town",
+    "dimensions": [24, 128, 32, 128, 32, 136, 24, 136],
+    "location_id":484
+  },{
+    "name": "Fortree City",
+    "dimensions": [104, 16, 112, 16, 112, 24, 104, 24],
+    "location_id":574
+  },{
+    "name": "Lilycove City",
+    "dimensions": [152, 40, 168, 40, 168, 48, 152, 48],
+    "location_id":431
+  },{
+    "name": "Mossdeep City",
+    "dimensions": [200, 56, 216, 56, 216, 64, 200, 64],
+    "location_id":432
+  },{
+    "name": "Sootopolis City",
+    "dimensions": [176, 72, 184, 72, 184, 80, 176, 80],
+    "location_id":433
+  },{
+    "name": "Pacifidlog Town",
+    "dimensions": [144, 96, 152, 96, 152, 104, 144, 104],
+    "location_id":485
+  },{
+    "name": "Ever Grande City",
+    "dimensions": [224, 80, 232, 80, 232, 96, 224, 96],
+    "location_id":434
+  },{
+    "name": "Victory Road",
+    "dimensions": [228, 84, 236, 84, 236, 92, 228, 92],
+    "location_id":444
+  },{
+    "name": "Shoal Cave",
+    "dimensions": [200, 48, 208, 48, 208, 56, 200, 56],
+    "location_id":445
+  },{
+    "name": "Team Aqua Hideout",
+    "dimensions": [164, 36, 172, 36, 172, 44, 164, 44],
+    "location_id":692
+  },{
+    "name": "Safari Zone",
+    "dimensions": [132, 28, 148, 28, 148, 44, 132, 44],
+    "location_id":483
+  },{
+    "name": "Ancient Tomb",
+    "dimensions": [116, 32, 124, 32, 124, 40, 116, 40],
+    "location_id":583
+  },{
+    "name": "Weather Institute",
+    "dimensions": [92, 28, 100, 28, 100, 36, 92, 36],
+    "location_id":768
+  },{
+    "name": "Mt. Pyre",
+    "dimensions": [136, 53, 144, 53, 144, 61, 136, 61],
+    "location_id":441
+  },{
+    "name": "Desert Ruins",
+    "dimensions": [68, 44, 76, 44, 76, 52, 68, 52],
+    "location_id":582
+  },{
+    "name": "Jagged Pass",
+    "dimensions": [52, 32, 60, 32, 60, 40, 52, 40],
+    "location_id":439
+  },{
+    "name": "Fiery Path",
+    "dimensions": [60, 32, 72, 32, 72, 40, 60, 40],
+    "location_id":440
+  },{
+    "name": "Team Magma Hideout",
+    "dimensions": [64, 24, 72, 24, 72, 32, 64, 32],
+    "location_id":486
+  },{
+    "name": "Desert Underpass",
+    "dimensions": [24, 12, 32, 12, 32, 20, 24, 20],
+    "location_id":488
+  },{
+    "name": "Meteor Falls",
+    "dimensions": [4, 36, 12, 36, 12, 44, 4, 44],
+    "location_id":435
+  },{
+    "name": "Petalburg Woods",
+    "dimensions": [4, 80, 12, 80, 12, 88, 4, 88],
+    "location_id":438
+  },{
+    "name": "Altering Cave",
+    "dimensions": [56, 76, 64, 76, 64, 84, 56, 84],
+    "location_id":490
+  },{
+    "name": "Rusturf Tunnel",
+    "dimensions": [52, 60, 68, 60, 68, 68, 52, 68],
+    "location_id":436
+  },{
+    "name": "Island Cave",
+    "dimensions": [4, 102, 12, 102, 12, 110, 4, 110],
+    "location_id":581
+  },{
+    "name": "Abandoned Ship",
+    "dimensions": [46, 124, 62, 124, 62, 132, 46, 132],
+    "location_id":447
+  },{
+    "name": "Cave of Origin",
+    "dimensions": [180, 68, 188, 68, 188, 76, 180, 76],
+    "location_id":443
+  },{
+    "name": "Mirage Island",
+    "dimensions": [168, 88, 176, 88, 176, 96, 168, 96],
+    "location_id":577
+  },{
+    "name": "Seafloor Cavern",
+    "dimensions": [184, 88, 192, 88, 192, 96, 184, 96],
+    "location_id":442
+  },{
+    "name": "Sky Pillar",
+    "dimensions": [160, 88, 168, 88, 168, 96, 160, 96],
+    "location_id":448
+  },{
+    "name": "Southern Island",
+    "dimensions": [104, 128, 112, 128, 112, 136, 104, 136],
+    "location_id":578
+  },{
+    "name": "Artisan Cave",
+    "dimensions": [188, 108, 196, 108, 196, 116, 188, 116],
+    "location_id":489
+  },{
+    "name": "Granite Cave",
+    "dimensions": [16, 128, 24, 128, 24, 136, 16, 136],
+    "location_id":437
+  },{
+    "name": "New Mauville",
+    "dimensions": [76, 72, 84, 72, 84, 80, 76, 80],
+    "location_id":446
+  },{
+    "name": "Mt. Chimney",
+    "dimensions": [56, 24, 64, 24, 64, 32, 56, 32],
+    "location_id":576
+  },{
+    "name": "Mirage Tower",
+    "dimensions": [80, 16, 88, 16, 88, 64, 80, 64],
+    "location_id":487
+  },{
+    "name": "Sealed Chamber",
+    "dimensions": [92, 88, 100, 88, 100, 96, 92, 96],
+    "location_id":579
+  },{
+    "name": "Scorched Slab",
+    "dimensions": [112, 12, 120, 12, 120, 20, 112, 20],
+    "location_id":580
+  },{
+    "name": "Route 101",
+    "dimensions": [40, 96, 48, 96, 48, 104, 40, 104],
+    "location_id":449
+  },{
+    "name": "Route 102",
+    "dimensions": [24, 88, 40, 88, 40, 96, 24, 96],
+    "location_id":450
+  },{
+    "name": "Route 103",
+    "dimensions": [40, 80, 72, 80, 72, 88, 40, 88],
+    "location_id":451
+  },{
+    "name": "Route 104",
+    "dimensions": [8, 72, 16, 72, 16, 96, 8, 96],
+    "location_id":452
+  },{
+    "name": "Route 105",
+    "dimensions": [8, 96, 16, 96, 16, 120, 8, 120],
+    "location_id":453
+  },{
+    "name": "Route 106",
+    "dimensions": [8, 120, 32, 120, 32, 128, 8, 128],
+    "location_id":454
+  },{
+    "name": "Route 107",
+    "dimensions": [32, 128, 56, 128, 56, 136, 32, 136],
+    "location_id":455
+  },{
+    "name": "Route 108",
+    "dimensions": [56, 128, 72, 128, 72, 136, 56, 136],
+    "location_id":456
+  },{
+    "name": "Route 109",
+    "dimensions": [72, 112, 80, 112, 80, 136, 72, 136],
+    "location_id":457
+  },{
+    "name": "Route 110",
+    "dimensions": [72, 72, 80, 72, 80, 96, 72, 96],
+    "location_id":458
+  },{
+    "name": "Route 111",
+    "dimensions": [72, 16, 80, 16, 80, 64, 72, 64],
+    "location_id":459
+  },{
+    "name": "Route 112",
+    "dimensions": [56, 40, 72, 40, 72, 48, 56, 48],
+    "location_id":460
+  },{
+    "name": "Route 113",
+    "dimensions": [40, 16, 72, 16, 72, 24, 40, 24],
+    "location_id":461
+  },{
+    "name": "Route 114",
+    "dimensions": [16, 16, 32, 16, 32, 24, 24, 24, 24, 40, 16, 40],
+    "location_id":462
+  },{
+    "name": "Route 115",
+    "dimensions": [8, 32, 16, 32, 16, 56, 8, 56],
+    "location_id":463
+  },{
+    "name": "Rotue 116",
+    "dimensions": [16, 56, 48, 56, 48, 64, 16, 64],
+    "location_id":464
+  },{
+    "name": "Route 117",
+    "dimensions": [48, 64, 72, 64, 72, 72, 48, 72],
+    "location_id":465
+  },{
+    "name": "Route 118",
+    "dimensions": [88, 64, 104, 64, 104, 72, 88, 72],
+    "location_id":466
+  },{
+    "name": "Route 119",
+    "dimensions": [96, 16, 104, 16, 104, 64, 96, 64],
+    "location_id":467
+  },{
+    "name": "Route 120",
+    "dimensions": [112, 16, 120, 16, 120, 48, 112, 48],
+    "location_id":468
+  },{
+    "name": "Route 121",
+    "dimensions": [120, 40, 152, 40, 152, 48, 120, 48],
+    "location_id":469
+  },{
+    "name": "Route 122",
+    "dimensions": [136, 48, 144, 48, 144, 64, 136, 64],
+    "location_id":470
+  },{
+    "name": "Route 123",
+    "dimensions": [104, 64, 144, 64, 144, 72, 104, 72],
+    "location_id":471
+  },{
+    "name": "Route 124",
+    "dimensions": [168, 40, 200, 40, 200, 64, 168, 64],
+    "location_id":472
+  },{
+    "name": "Route 125",
+    "dimensions": [200, 40, 216, 40, 216, 56, 200, 56],
+    "location_id":473
+  },{
+    "name": "Route 126",
+    "dimensions": [168, 64, 192, 64, 192, 88, 168, 88],
+    "location_id":474
+  },{
+    "name": "Route 127",
+    "dimensions": [192, 64, 216, 64, 216, 88, 192, 88],
+    "location_id":475
+  },{
+    "name": "Route 128",
+    "dimensions": [192, 88, 224, 88, 224, 96, 192, 96],
+    "location_id":476
+  },{
+    "name": "Route 129",
+    "dimensions": [200, 96, 216, 96, 216, 104, 200, 104],
+    "location_id":477
+  },{
+    "name": "Route 130",
+    "dimensions": [176, 96, 200, 96, 200, 104, 176, 104],
+    "location_id":478
+  },{
+    "name": "Route 131",
+    "dimensions": [152, 96, 176, 96, 176, 104, 152, 104],
+    "location_id":479
+  },{
+    "name": "Route 132",
+    "dimensions": [128, 96, 144, 96, 144, 104, 128, 104],
+    "location_id":480
+  },{
+    "name": "Route 133",
+    "dimensions": [104, 96, 128, 96, 128, 104, 104, 104],
+    "location_id":481
+  },{
+    "name": "Route 134",
+    "dimensions": [80, 96, 104, 96, 104, 104, 80, 104],
+    "location_id":482
+  }],
+  "pokeAliases":[
+    { "name":"farfetchd", "display":"Farfetch'd" },
+    { "name":"nidoran-m", "display":"Nidoran M" },
+    { "name":"nidoran-f", "display":"Nidoran F" },
+    { "name":"ho-oh", "display":"Ho-Oh" },
+    { "name":"deoxys-normal", "display":"Deoxys" }
+  ],
+  "aliases":[
+    { "name":"littleroot-town", "display":"Littleroot Town" },
+    { "name":"oldale-town", "display":"Oldale Town" },
+    { "name":"petalburg-city", "display":"Petalburg City" },
+    { "name":"rustboro-city", "display":"Rustboro City" },
+    { "name":"fallarbor-town", "display":"Fallarbor Town" },
+    { "name":"lavaridge-town", "display":"Lavaridge Town" },
+    { "name":"verdanturf-town", "display":"Verdanturf Town" },
+    { "name":"slateport-city", "display":"Slateport City" },
+    { "name":"dewford-town", "display":"Dewford Town" },
+    { "name":"pacifidlog-town", "display":"Pacifidlog Town" },
+    { "name":"sootopolis-city", "display":"Sootopolis City" },
+    { "name":"mossdeep-city", "display":"Mossdep City" },
+    { "name":"mossdeep-city-area", "display":"Mossdeep City" },
+    { "name":"mossdeep-city-stevens-house", "display":"Steven's House" },
+    { "name":"ever-grande-city", "display":"Ever Grande City" },
+    { "name":"lilycove-city", "display":"Lilycove City" },
+    { "name":"fortree-city", "display":"Fortree City" },
+    { "name":"roaming-hoenn", "display":"Roaming Hoenn" },
+    { "name":"roaming-hoenn-area", "display":"Roaming Hoenn Area" },
+    { "name":"artisan-cave", "display":"Artisan Cave" },
+    { "name":"southern-island", "display":"Southern Island" },
+    { "name":"mt-pyre", "display":"Mt. Pyre" },
+    { "name":"mt-pyre-1f", "display":"1f" },
+    { "name":"mt-pyre-2f", "display":"2f" },
+    { "name":"mt-pyre-3f", "display":"3f" },
+    { "name":"mt-pyre-4f", "display":"4f" },
+    { "name":"mt-pyre-5f", "display":"5f" },
+    { "name":"mt-pyre-6f", "display":"6f" },
+    { "name":"mt-pyre-outside", "display":"Outside" },
+    { "name":"mt-pyre-summit", "display":"Summit" },
+    { "name":"cave-of-origin", "display":"Cave of Origin" },
+    { "name":"cave-of-origin-entrance", "display":"Entrance" },
+    { "name":"cave-of-origin-1f", "display":"1f" },
+    { "name":"cave-of-origin-b1f", "display":"b1f" },
+    { "name":"cave-of-origin-b2f", "display":"b2f" },
+    { "name":"cave-of-origin-b3f", "display":"b3f" },
+    { "name":"cave-of-origin-b4f", "display":"b4f" },
+    { "name":"shoal-cave", "display":"Shoal Cave" },
+    { "name":"shoal-cave-area", "display":"Shoal Cave" },
+    { "name":"shoal-cave-b1f", "display":"b1f" },
+    { "name":"hoenn-victory-road", "display":"Victory Road" },
+    { "name":"hoenn-victory-road-1f", "display":"1f" },
+    { "name":"hoenn-victory-road-b1f", "display":"b1f" },
+    { "name":"hoenn-victory-road-b2f", "display":"b2f" },
+    { "name":"scorched-slab", "display":"Scorched Slab" },
+    { "name":"ancient-tomb", "display":"Ancient Tomb" },
+    { "name":"hoenn-safari-zone", "display":"Safari Zone" },
+    { "name":"hoenn-safari-zone-nwmach-bike-area", "display":"North West (Mach Bike area)" },
+    { "name":"hoenn-safari-zone-neacro-bike-area", "display":"North East (Acro Bike area)" },
+    { "name":"hoenn-safari-zone-sw", "display":"South West" },
+    { "name":"hoenn-safari-zone-se", "display":"South East" },
+    { "name":"hoenn-safari-zone-expansion-south", "display":"South Expansion" },
+    { "name":"hoenn-safari-zone-expansion-north", "display":"North Expansion" },
+    { "name":"malie-city", "display":"Malie City" },
+    { "name":"mirage-tower", "display":"Mirage Tower" },
+    { "name":"jagged-pass", "display":"Jagged Pass" },
+    { "name":"desert-underpass", "display":"Desert Underpass" },
+    { "name":"fiery-path", "display":"Fiery Path" },
+    { "name":"magma-hideout", "display":"Team Magma Hideout" },
+    { "name":"mt-chimney", "display":"Mt. Chimney" },
+    { "name":"desert-ruins", "display":"Desert Ruins" },
+    { "name":"meteor-falls", "display":"Meteor Falls" },
+    { "name":"meteor-falls-area", "display":"Meteor Falls" },
+    { "name":"meteor-falls-back", "display":"Back" },
+    { "name":"meteor-falls-b1f", "display":"b1f" },
+    { "name":"meteor-falls-backsmall-room", "display":"Back Small Room" },
+    { "name":"mauville-city", "display":"Mauville City" },
+    { "name":"new-mauville", "display":"New Mauville" },
+    { "name":"new-mauville-entrance", "display":"Entrance" },
+    { "name":"new-mauville-area", "display":"New Mauville" },
+    { "name":"petalburg-woods", "display":"Petalburg Woods" },
+    { "name":"island-cave", "display":"Island Cave" },
+    { "name":"abandoned-ship", "display":"Abandoned Ship" },
+    { "name":"granite-cave", "display":"Granite Cave" },
+    { "name":"granite-cave-1f", "display":"1f" },
+    { "name":"granite-cave-b1f", "display":"b1f" },
+    { "name":"granite-cave-b2f", "display":"b2f" },
+    { "name":"granite-cave-1fsmall-room", "display":"1f Small Room" },
+    { "name":"sealed-chamber", "display":"Sealed Chamber" },
+    { "name":"sky-pillar", "display":"Sky Pillar" },
+    { "name":"sky-pillar-1f", "display":"1f" },
+    { "name":"sky-pillar-2f", "display":"2f" },
+    { "name":"sky-pillar-3f", "display":"3f" },
+    { "name":"sky-pillar-4f", "display":"4f" },
+    { "name":"sky-pillar-5f", "display":"5f" },
+    { "name":"sky-pillar-apex", "display":"Apex" },
+    { "name":"mirage-island", "display":"Mirage Island" },
+    { "name":"hoenn-altering-cave", "display":"Altering Cave" },
+    { "name":"hoenn-altering-cave-a", "display":"A" },
+    { "name":"hoenn-altering-cave-b", "display":"B" },
+    { "name":"hoenn-altering-cave-c", "display":"C" },
+    { "name":"hoenn-altering-cave-d", "display":"D" },
+    { "name":"hoenn-altering-cave-e", "display":"E" },
+    { "name":"hoenn-altering-cave-f", "display":"F" },
+    { "name":"hoenn-altering-cave-g", "display":"G" },
+    { "name":"hoenn-altering-cave-h", "display":"H" },
+    { "name":"hoenn-altering-cave-i", "display":"I" },
+    { "name":"hoenn-route-101", "display":"Route 101" },
+    { "name":"hoenn-route-102", "display":"Route 102" },
+    { "name":"hoenn-route-103", "display":"Route 103" },
+    { "name":"hoenn-route-104", "display":"Route 104" },
+    { "name":"hoenn-route-105", "display":"Route 105" },
+    { "name":"hoenn-route-106", "display":"Route 106" },
+    { "name":"hoenn-route-107", "display":"Route 107" },
+    { "name":"hoenn-route-108", "display":"Route 108" },
+    { "name":"hoenn-route-109", "display":"Route 109" },
+    { "name":"hoenn-route-110", "display":"Route 110" },
+    { "name":"hoenn-route-111", "display":"Route 111" },
+    { "name":"hoenn-route-112", "display":"Route 112" },
+    { "name":"hoenn-route-113", "display":"Route 113" },
+    { "name":"hoenn-route-114", "display":"Route 114" },
+    { "name":"hoenn-route-115", "display":"Route 115" },
+    { "name":"hoenn-route-116", "display":"Route 116" },
+    { "name":"hoenn-route-117", "display":"Route 117" },
+    { "name":"hoenn-route-118", "display":"Route 118" },
+    { "name":"hoenn-route-119", "display":"Route 119" },
+    { "name":"hoenn-route-120", "display":"Route 120" },
+    { "name":"hoenn-route-121", "display":"Route 121" },
+    { "name":"hoenn-route-122", "display":"Route 122" },
+    { "name":"hoenn-route-123", "display":"Route 123" },
+    { "name":"hoenn-route-124", "display":"Route 124" },
+    { "name":"hoenn-route-125", "display":"Route 125" },
+    { "name":"hoenn-route-126", "display":"Route 126" },
+    { "name":"hoenn-route-127", "display":"Route 127" },
+    { "name":"hoenn-route-128", "display":"Route 128" },
+    { "name":"hoenn-route-129", "display":"Route 129" },
+    { "name":"hoenn-route-130", "display":"Route 130" },
+    { "name":"hoenn-route-131", "display":"Route 131" },
+    { "name":"hoenn-route-132", "display":"Route 132" },
+    { "name":"hoenn-route-133", "display":"Route 133" },
+    { "name":"hoenn-route-134", "display":"Route 134" },
+    { "name":"seafloor-cavern", "display":"Seafloor Cavern" },
+    { "name":"hoenn-route-126-area", "display":"Route 126" },
+    { "name":"hoenn-route-126-underwater", "display":"Underwater" },
+    { "name":"hoenn-route-124-area", "display":"Route 124" },
+    { "name":"hoenn-route-124-underwater", "display":"Underwater" },
+    { "name":"team-aqua-hideout", "display":"Team Aqua Hideout" },
+    { "name":"rusturf-tunnel", "display":"Rusturf Tunnel" }
+  ]
+}

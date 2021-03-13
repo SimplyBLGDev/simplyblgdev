@@ -91,6 +91,19 @@ const routes = [
     }
   },
   {
+    path: '/Pokemon/Hoenn',
+    name: 'Hoenn',
+    component: Pokemon,
+    meta: {
+      title: 'Hoenn interactive map for RSE'
+    },
+    props: {
+      'region': "Hoenn",
+      'mapJSON': require('@/assets/Pokemon/Maps/HoennMaps.json'),
+      'mapIMGsrc': require('@/assets/Pokemon/Maps/Hoenn.png')
+    }
+  },
+  {
     path: '/Graficadora',
     name: 'Graficadora',
     component: Graficadora,

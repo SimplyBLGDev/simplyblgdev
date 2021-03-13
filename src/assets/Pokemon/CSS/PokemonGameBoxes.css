@@ -5,63 +5,50 @@
   height:2rem;
   text-align: center;
   vertical-align: middle;
-  color:white;
+  color: var(--gb-color);
+}
+.gameBox:hover {
+  color: var(--gb-color);
+}
+.gameBox.active {
+  color: whitesmoke;
+  background-color: var(--gb-color);
 }
 .gameBox.red {
-  color:#eb4034;
+  --gb-color:#eb4034;
 }
 .gameBox.blue {
-  color:#3434eb;
+  --gb-color:#3434eb;
 }
 .gameBox.yellow {
-  color:#e0c032;
-}
-.gameBox.red.active {
-  color:whitesmoke;
-  background-color:#eb4034;
-}
-.gameBox.blue.active {
-  color:whitesmoke;
-  background-color:#3434eb;
-}
-.gameBox.yellow.active {
-  color:whitesmoke;
-  background-color:#e0c032;
+  --gb-color:#e0c032;
 }
 .gameBox.gold {
-  color:#f0ca0d;
+  --gb-color:#f0ca0d;
 }
 .gameBox.silver {
-  color:#a5bfd8;
+  --gb-color:#a5bfd8;
 }
 .gameBox.crystal {
-  color:#74c6df;
-}
-.gameBox.gold.active {
-  color:whitesmoke;
-  background-color:#f0ca0d;
-}
-.gameBox.silver.active {
-  color:whitesmoke;
-  background-color:#a5bfd8;
-}
-.gameBox.crystal.active {
-  color:whitesmoke;
-  background-color:#74c6df;
+  --gb-color:#74c6df;
 }
 .gameBox.fireRed {
-  color:#f2451e;
+  --gb-color:#f2451e;
 }
 .gameBox.leafGreen {
-  color:#2fe138;
+  --gb-color:#2fe138;
 }
-.gameBox.fireRed.active {
-  color:whitesmoke;
-  background-color:#f2451e;
+.gameBox.ruby {
+  --gb-color:#db332a;
 }
-.gameBox.leafGreen.active {
-  color:whitesmoke;
-  background-color:#2fe138;
+.gameBox.sapphire {
+  --gb-color:#045aff;
+}
+.gameBox.sapphire.active {
+  --gb-color:#007cff;
+}
+.gameBox.emerald {
+  --gb-color:#6ed926;
 }
 .gameBox.morning {
   background-color: #cad01e;
