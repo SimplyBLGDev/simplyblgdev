@@ -613,6 +613,7 @@
       { "name":"kanto-victory-road-1-1f", "display":"1f" },
       { "name":"kanto-victory-road-1-2f", "display":"2f" },
       { "name":"kanto-victory-road-1-3f", "display":"3f" },
-      { "name":"bell-tower-roof", "display":"Roof" }
+      { "name":"bell-tower-roof", "display":"Roof" },
+      { "name":"bell-tower-1f", "display":"1f" }
   ]
 }

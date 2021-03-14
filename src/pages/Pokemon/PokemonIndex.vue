@@ -37,9 +37,9 @@ export default {
 		regions:[
 			{
 				name: "Kanto",
-        address: 'Kanto',
-        preview: require('../../assets/Pokemon/Maps/KantoPreview.png'),
-        class:"kanto",
+				address: 'Kanto',
+				preview: require('../../assets/Pokemon/Maps/KantoPreview.png'),
+				class:"kanto",
 				games:[
 					{
             name:"R",
@@ -55,11 +55,11 @@ export default {
           }
 				]
 			},
-      {
+			{
 				name: "Johto",
-        address: 'Johto',
-        preview: require('../../assets/Pokemon/Maps/JohtoPreview.png'),
-        class:"johto",
+				address: 'Johto',
+				preview: require('../../assets/Pokemon/Maps/JohtoPreview.png'),
+				class:"johto",
 				games:[
 					{
             name:"G",
@@ -73,6 +73,26 @@ export default {
             name:"C",
             class:"crystal"
           }
+				]
+			},
+			{
+				name: "Hoenn",
+				address: 'Hoenn',
+				preview: require('../../assets/Pokemon/Maps/HoennPreview.png'),
+				class:"hoenn",
+				games:[
+					{
+						name:"R",
+						class:"ruby"
+					},
+					{
+						name:"S",
+						class:"sapphire"
+					},
+					{
+						name:"E",
+						class:"emerald"
+					}
 				]
 			}
 		]
@@ -127,6 +147,12 @@ export default {
 .johto:hover {
 	background-color: #6b6bb6;
 }
+.hoenn {
+	background-color: #103986;
+}
+.hoenn:hover {
+	background-color: #123f91;
+}
 .gameIndicator {
 	padding-right: 1.5rem;
   color:whitesmoke;
@@ -157,5 +183,14 @@ export default {
 }
 .gameIndicator.crystal {
   --gameColor: #74c6df;
+}
+.gameIndicator.ruby {
+  --gameColor: #db332a;
+}
+.gameIndicator.sapphire {
+  --gameColor: #045aff;
+}
+.gameIndicator.emerald {
+  --gameColor: #6ed926;
 }
 </style>

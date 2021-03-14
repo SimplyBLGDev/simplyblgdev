@@ -276,15 +276,16 @@ function GetMethodValue(method) {
         "gift":0,
         "walk":1,
         "surf":2,
-        "old-rod":3,
-        "good-rod":4,
-        "super-rod":5,
-        "headbutt-normal":6,
-        "headbutt-high":7,
-        "rock-smash":8,
-        "pokeflute":9,
-        "gift-egg":10,
-        "only-one":11
+        "seaweed":3,
+        "old-rod":4,
+        "good-rod":5,
+        "super-rod":6,
+        "headbutt-normal":7,
+        "headbutt-high":8,
+        "rock-smash":9,
+        "pokeflute":10,
+        "gift-egg":11,
+        "only-one":12
     }[method];
 }
 
