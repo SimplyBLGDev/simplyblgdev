@@ -284,8 +284,10 @@ function GetMethodValue(method) {
         "headbutt-high":8,
         "rock-smash":9,
         "pokeflute":10,
-        "gift-egg":11,
-        "only-one":12
+        "squirt-bottle":11,
+        "wailmer-pail":12,
+        "gift-egg":13,
+        "only-one":14
     }[method];
 }
 

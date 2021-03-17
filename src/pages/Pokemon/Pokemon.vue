@@ -301,6 +301,7 @@ export default {
         "old-rod": "Old Rod",
         "good-rod": "Good Rod",
         "super-rod": "Super Rod",
+        "seaweed": "Seaweed",
         "headbutt-low": "Headbutt Low",
         "headbutt-normal": "Headbutt",
         "headbutt-high": "Headbutt Rare trees",
@@ -308,7 +309,9 @@ export default {
         "pokeflute":"Pokéflute",
         "gift": "Gift",
         "gift-egg": "Gift Egg",
-        "only-one": "Only One"
+        "only-one": "Only One",
+        "wailmer-pail": "Wailmer Pail",
+        "squirt-bottle": "Squirt Bottle"
       }[value];
     }
   }

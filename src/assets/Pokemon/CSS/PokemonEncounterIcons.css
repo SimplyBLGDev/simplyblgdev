@@ -182,7 +182,7 @@
   height: 14px;
   --x-pos: -920px;
 }
-.hoenn.encounterIcon.seaweed {
+.hoenn>.encounterIcon.seaweed {
   width: 19px;
   height: 24px;
   --x-pos: -736px;
@@ -200,7 +200,7 @@
   --x-pos:-319px;
   --y-pos:-33px;
 }
-.johto>.encounterIcon.watering-can.sudowoodo {
+.johto>.encounterIcon.squirt-bottle.sudowoodo {
   width: 16px;
   height: 16px;
   --x-pos: -289px;

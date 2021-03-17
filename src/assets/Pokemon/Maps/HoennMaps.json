@@ -96,10 +96,6 @@
     "dimensions": [116, 32, 124, 32, 124, 40, 116, 40],
     "location_id":583
   },{
-    "name": "Weather Institute",
-    "dimensions": [92, 28, 100, 28, 100, 36, 92, 36],
-    "location_id":768
-  },{
     "name": "Mt. Pyre",
     "dimensions": [136, 53, 144, 53, 144, 61, 136, 61],
     "location_id":441
@@ -171,6 +167,10 @@
     "name": "Artisan Cave",
     "dimensions": [188, 108, 196, 108, 196, 116, 188, 116],
     "location_id":489
+  },{
+    "name": "Battle Frontier",
+    "dimensions": [180, 108, 188, 108, 188, 116, 180, 116],
+    "location_id":813
   },{
     "name": "Granite Cave",
     "dimensions": [16, 128, 24, 128, 24, 136, 16, 136],
@@ -477,6 +477,9 @@
     { "name":"hoenn-route-124-area", "display":"Route 124" },
     { "name":"hoenn-route-124-underwater", "display":"Underwater" },
     { "name":"team-aqua-hideout", "display":"Team Aqua Hideout" },
-    { "name":"rusturf-tunnel", "display":"Rusturf Tunnel" }
+    { "name":"rusturf-tunnel", "display":"Rusturf Tunnel" },
+    { "name":"hoenn-battle-frontier", "display":"Battle Frontier" },
+    { "name":"hoenn-route-119-area", "display":"Route 119" },
+    { "name":"hoenn-route-119-weather-institute", "display":"Weather Institute" }
   ]
 }

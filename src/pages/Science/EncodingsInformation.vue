@@ -42,26 +42,20 @@
     <tr>
       <td>{{ content.table.Name }}</td>
       <td>{{ content.table.Surname }}</td>
-      <td class="desktopOnlyTable">{{ content.table.DNI }}</td>
       <td>{{ content.table.FileNo }}</td>
       <td class="desktopOnlyTable">{{ content.table.Mail }}</td>
-      <td class="desktopOnlyTable">{{ content.table.PhoneNo }}</td>
     </tr>
     <tr>
       <td>Maximiliano</td>
       <td>Saleh</td>
-      <td class="desktopOnlyTable">42107152</td>
       <td>78798</td>
       <td class="desktopOnlyTable"><a href="mailto:maxisaleh@outlook.com">maxisaleh@outlook.com</a></td>
-      <td class="desktopOnlyTable">+54 9 351 394 9988</td>
     </tr>
     <tr>
       <td>Fabricio Andres</td>
       <td>Logares Avilés</td>
-      <td class="desktopOnlyTable">42474766</td>
       <td>78799</td>
       <td class="desktopOnlyTable"><a href="mailto:fabrilogares@gmail.com">fabrilogares@gmail.com</a></td>
-      <td class="desktopOnlyTable">+54 9 351 625 7124</td>
     </tr>
   </table>
 </div>
@@ -87,10 +81,8 @@ export default {
           "table": {
             "Name":     "Nombre",
             "Surname":  "Apellido",
-            "DNI":      "DNI",
             "Mail":     "Correo Electronico",
-            "FileNo":    "Legajo",
-            "PhoneNo":  "Teléfono"
+            "FileNo":    "Legajo"
           }
         },
         "en": {
@@ -105,10 +97,8 @@ export default {
           "table": {
             "Name":     "Name",
             "Surname":  "Surname",
-            "DNI":      "DNI",
             "Mail":     "e-Mail",
-            "FileNo":   "File#",
-            "PhoneNo":  "Phone number"
+            "FileNo":   "File#"
           }
         }
       }
