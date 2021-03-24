@@ -14,6 +14,7 @@ import Graficadora from './pages/Science/Encodings.vue'
 import EncodingsTemplate from './pages/Science/EncodingsTemplate.vue'
 import EncodingsInformation from './pages/Science/EncodingsInformation.vue'
 import Portfolio from './pages/Portfolio.vue'
+import Pseudorandom from './pages/Science/SIM/pseudoaleatorio.vue'
 import NiceDatalist from './components/NiceDatalist.vue'
 
 Vue.use(VueRouter)
@@ -108,8 +109,7 @@ const routes = [
     name: 'Graficadora',
     component: Graficadora,
     meta: {
-      title: 'Graficadora para señales',
-      layout: "EncodingsTemplate"
+      title: 'Graficadora para señales'
     }
   },
   {
@@ -117,8 +117,15 @@ const routes = [
     name: 'Información/Contacto',
     component: EncodingsInformation,
     meta: {
-      title: 'Información',
-      layout: "EncodingsTemplate"
+      title: 'Información'
+    }
+  },
+  {
+    path: '/Science/SIM/pseudoaleatorio',
+    name: 'Pseudoaleatorio',
+    component: Pseudorandom,
+    meta: {
+      title: 'Generador de Números pseudo-aleatorios'
     }
   },
   {
