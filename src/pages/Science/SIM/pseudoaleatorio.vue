@@ -1,17 +1,7 @@
 <template>
   <div>
-    <div>
-      <div style="background: rgba(0, 0, 0, 0) linear-gradient(-105deg, rgb(234, 234, 234) 20%, rgba(24, 26, 27, 0) 60%) repeat scroll 0% 0%;">
-        <div style="display:flex; padding-left:10px;">
-          <img src="../../../assets/UTN Logo.png" alt="UTN FRC Logo" style="width:20%; margin:8px;">
-        </div>
-      </div>
-    </div>
-    <div class="ButtonPanel">
-      <button class="PanelButton" onclick="window.location.href='/Graficadora';">Generador Pseudoaleatorio</button>
-      <button class="PanelButton" v-on:click="openTheory">Prueba de Frecuencias</button>
-      <button class="PanelButton" onclick="window.location.href='/Graficadora/Informacion';">Contacto</button>
-    </div>
+
+    <UTNNavBar />
 
     <div class="root">
       <div class="metodo_cmb">
@@ -22,15 +12,15 @@
       </select>
     </div>
     <div class="linea_texts">
-      X0:<input type="text" name="x0" id="x0" :placeholder="calculated.x0" @input="updateValues()">
-      a:<input type="text" name="a" id="a" :placeholder="calculated.a" @input="updateValues()">
-      c:<input type="text" name="c" id="c" :placeholder="calculated.c" @input="updateValues()">
-      m:<input type="text" name="m" id="m" :placeholder="calculated.m" @input="updateValues()">
-      g:<input type="text" name="g" id="g" :placeholder="calculated.g" @input="updateValues()">
-      k:<input type="text" name="k" id="k" :placeholder="calculated.k" @input="updateValues()">
+      X0:<input type="text" name="x0" id="x0" :placeholder="x0" @input="updateValues()">
+      a:<input type="text" name="a" id="a" :placeholder="a" @input="updateValues()">
+      <div :class="{ invisible: metodo != 'lineal' }">c:<input type="text" name="c" id="c" :placeholder="c" @input="updateValues()"></div>
+      m:<input type="text" name="m" id="m" :placeholder="m" @input="updateValues()">
+      g:<input type="text" name="g" id="g" :placeholder="g" @input="updateValues()">
+      k:<input type="text" name="k" id="k" :placeholder="k" @input="updateValues()">
     </div>
-    <div class="warning">
-      Los valores introducidos no cumplen con las recomendaciones para maximizar el periodo
+    <div class="warning" v-if="warning != ''">
+      {{ warning }}
     </div>
     <div class="data-container">
       <table class="data-table">
@@ -42,7 +32,7 @@
         <tr v-for="value in this.tableValues" :key="value.i">
           <td class="data-table-cell">{{ value.i }}</td>
           <td class="data-table-cell">{{ value.xi }}</td>
-          <td class="data-table-cell" colspan="2" :class="{ mesimo: (value.i%calculated.m)===0 }">{{ value.r }}</td>
+          <td class="data-table-cell" colspan="2" :class="{ mesimo: (value.i%m)===0 }">{{ value.r }}</td>
         </tr>
         <tr>
           <td class="data-foot" colspan="3">-</td>
@@ -60,13 +50,10 @@
 import $ from 'jquery';
 
 export default {
-   data: () => ({
-    inputted: {
-      x0: "", a: "", c: "", m: "", g: "", k: ""
-    },
-    calculated: {
-      x0: 0, a: 0, c: 0, m: 0, g: 0, k: 0
-    },
+  data: () => ({
+    x0: 0, a: 0, c: 0, m: 0, g: 0, k: 0,
+    metodo: "lineal",
+    warning: "",
     maxI: 20,
     tableValues: []
   }),
@@ -76,63 +63,102 @@ export default {
   },
   methods: {
     updateValuesLineal() {
-      this.calculated.a = 1 + 4*this.calculated.k;
-      this.calculated.m = Math.pow(2, this.calculated.g);
+      if ($("#a").val() == 0) { this.a = 1 + 4*this.k; }
+      if ($("#m").val() == 0) {this.m = Math.pow(2, this.g); }
 
       this.tableValues = [];
       var lastValues = {
         i: 0,
-        xi: this.calculated.x0,
+        xi: this.x0,
         r:0
       }
 
       for (var i = 1; i <= this.maxI; i++) {
-        var xi = (lastValues.xi * this.calculated.a + this.calculated.c) % this.calculated.m;
+        var xi = (lastValues.xi * this.a + this.c) % this.m;
         lastValues = {
           "i": i,
           "xi": xi,
-          "r": (xi / this.calculated.m).toFixed(4)
+          "r": (xi / this.m).toFixed(4)
         }
 
         this.tableValues.push(lastValues);
       }
     },
     updateValuesMultiplicativo() {
-      this.calculated.a = 3 + 8*this.calculated.k;
-      this.calculated.m = Math.pow(2, this.calculated.g);
+      if ($("#a").val() == 0) { this.a = 3 + 8*this.k; }
+      if ($("#a").val() == 0) { this.m = Math.pow(2, this.g); }
 
       this.tableValues = [];
       var lastValues = {
         i: 0,
-        xi: this.calculated.x0,
+        xi: this.x0,
         r:0
       }
 
       for (var i = 1; i <= this.maxI; i++) {
-        var xi = (lastValues.xi * this.calculated.a) % this.calculated.m;
+        var xi = (lastValues.xi * this.a) % this.m;
         lastValues = {
           "i": i,
           "xi": xi,
-          "r": (xi / this.calculated.m).toFixed(4)
+          "r": (xi / this.m).toFixed(4)
         }
 
         this.tableValues.push(lastValues);
       }
     },
     updateValues() {
-      this.calculated.x0 = parseInt($("#x0").val());
-      this.calculated.c = parseInt($("#c").val());
-      this.calculated.m = parseInt($("#m").val());
-      this.calculated.k = parseInt($("#k").val());
-      this.calculated.g = parseInt($("#g").val());
-      if (isNaN(this.calculated.k)) { this.calculated.k=0; }
-      if (isNaN(this.calculated.g)) { this.calculated.g=0; }
+      if ($("#x0").val() != "") { this.x0 = parseInt($("#x0").val()); }
+      if ($("#c").val() != "") { this.c = parseInt($("#c").val()); }
+      if ($("#m").val() != "") { this.m = parseInt($("#m").val()); }
+      if ($("#k").val() != "") { this.k = parseInt($("#k").val()); }
+      if ($("#g").val() != "") { this.g = parseInt($("#g").val()); }
+      if (isNaN(this.k)) { this.k=0; }
+      if (isNaN(this.g)) { this.g=0; }
+      this.metodo = $("#metodo").val();
 
       if ($("#metodo").val() == "lineal") {
         this.updateValuesLineal();
       } else {
         this.updateValuesMultiplicativo();
       }
+
+      this.warning = this.getWarning();
+    },
+    getWarning() {
+      var metodo = $("#metodo").val();
+      var l;
+
+      switch (metodo) {
+        case "lineal":
+          if ((this.a - 1) % 4 != 0) { return "a no responde a la formula recomendada"; }
+          l = Math.log2(this.m);
+          if (l - Math.floor(l) != 0 || l < 0) { return "m no es potencia de 2 positiva"; }
+          if (this.shareMember(this.getDivisors(this.c), this.getDivisors(this.m)).length > 0) { return "c y m no son relativamente primos"; }
+          break;
+
+        default:
+          if ((this.a - 3) % 8 != 0) { return "a no responde a la formula recomendada"; }
+          l = Math.log2(this.m);
+          if (l - Math.floor(l) != 0) { return "m no es potencia de 2"; }
+          if (this.x0 % 2 == 0) { return "X0 no es impar"; }
+          break;
+      }
+
+      return "";
+    },
+    shareMember(a, b) {
+      return b.filter(function(e) {
+        return a.indexOf(e) > -1;
+      });
+    },
+    getDivisors(n) {
+      var divisors = [];
+      for (var i = 2; i < n / 2 + 1; i++) {
+        if (n % i == 0) {
+          divisors.push(i);
+        }
+      }
+      return divisors;
     },
     incrementMaxI() {
       this.maxI += 1;
@@ -143,27 +169,9 @@ export default {
 </script>
 
 <style scoped>
-  .ButtonPanel {
-    display: flex;
-    margin-left: 0.1rem;
-    margin-right: 0.1rem;
+  .invisible {
+    display: none;
   }
-  .PanelButton {
-    font-family: 'Oxygen Mono', monospace;
-    font-weight: bold;
-    border: 0;
-    margin: 5px;
-    background-color: #6905b5;
-    color: whitesmoke;
-    padding: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 6px;
-    box-shadow: 5px 4px 5px 0px rgba(0,0,0,0.3);
-    -webkit-box-shadow: 5px 4px 5px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 5px 4px 5px 0px rgba(0,0,0,0.3);
-  }
-
   .root {
     width: 100%;
     padding: 8px;
@@ -171,6 +179,14 @@ export default {
   .metodo_cmb {
     width: 100%;
     text-align: left;
+  }
+  .metodo_cmb select {
+    height: 2rem;
+    background-color: #2e87d7;
+    border: none;
+    color: whitesmoke;
+    margin: 0 4px;
+    border-radius: 4px;
   }
   .linea_texts {
     width: 100%;
@@ -183,7 +199,11 @@ export default {
     width: 3rem;
     height: 2rem;
     margin: 0 0.5rem;
-    background-color: #872d8e;
+    background-color: #2E87D7;
+    -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+    -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+    box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
+    --box-shadow-color: rgb(0, 0, 0, 0.75);
     color: whitesmoke;
   }
   .warning {
@@ -201,8 +221,9 @@ export default {
     margin-left: 4px;
     margin-right: 4px;
     padding: 4px;
-    background-color: #39b331;
+    background-color: #1c68ba;
     border-radius: 1.5rem;
+    margin-top: 1rem;
   }
   .data-table {
     color:whitesmoke;
@@ -216,7 +237,7 @@ export default {
     border-collapse: separate;
   }
   .data-table-cell {
-    background-color: #328d2b;
+    background-color: #3883d2;
     -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
     -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
     box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
@@ -227,7 +248,7 @@ export default {
     background-color: blue;
   }
   .data-table tr th {
-    background-color: #2a7925;
+    background-color: #1f5288;
     -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
     -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
     box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
@@ -241,7 +262,7 @@ export default {
     border-top-right-radius: 1rem;
   }
   .data-foot {
-    background-color: #2a7925;
+    background-color: #1f5288;
     -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
     -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
     box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
@@ -253,7 +274,7 @@ export default {
   }
   .data-btn-add {
     width: 10%;
-    background-color: rgb(12, 12, 247);
+    background-color: rgb(39, 189, 77);
     -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
     -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
     box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
@@ -261,7 +282,8 @@ export default {
     border-radius: 3px 3px 1rem 3px;
     font-weight: bold;
   }
-  .data-btn-add:hover {
+  .data-btn-add:hover() {
+    background-color: rgb(60, 192, 93);
     border-width: 1px;
     border-color: white;
   }

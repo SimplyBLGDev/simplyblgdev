@@ -4,6 +4,8 @@
       <b-navbar-brand href="/">SimplyBLG</b-navbar-brand>
       <b-navbar-nav>
         <b-nav-item-dropdown text="Pokémon Maps" type="dark">
+          <b-dropdown-item href="/Pokemon">Index</b-dropdown-item>
+          <b-dropdown-divider></b-dropdown-divider>
           <b-dropdown-item href="/Pokemon/Kanto">Gen 1 - Kanto</b-dropdown-item>
           <b-dropdown-item href="/Pokemon/Johto">Gen 2 - Johto</b-dropdown-item>
           <b-dropdown-item href="/Pokemon/Hoenn">Gen 3 - Hoenn</b-dropdown-item>
@@ -15,6 +17,12 @@
           <b-dropdown-item href="/Pokemon/Kanto3">Gen 3 - Kanto</b-dropdown-item>
           <b-dropdown-item href="/Pokemon/Johto4">Gen 4 - Johto</b-dropdown-item>
           <b-dropdown-item href="/Pokemon/Hoenn6">Gen 6 - Hoenn</b-dropdown-item>
+        </b-nav-item-dropdown>
+        <b-nav-item-dropdown text="Science" type="dark">
+          <b-dropdown-item href="/science">Index</b-dropdown-item>
+          <b-dropdown-divider></b-dropdown-divider>
+          <b-dropdown-item href="/science/graficadora">Signal Encoding</b-dropdown-item>
+          <b-dropdown-item href="/science/SIM/pseudorandom">Pseudo-random number generation</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-navbar>
