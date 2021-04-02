@@ -248,7 +248,7 @@ export default {
         DrawSearch([]); // Clear search if nothing is written
         return;
       }
-      var search = this.$refs.PokeInput._data.searchResults[0].name;
+      var search = this.$refs.PokeInput._data.writtenText;
       var resultsIds = FindPokemon(search.toLowerCase());
       var results = []
       resultsIds.forEach(function(id) {

@@ -68,6 +68,11 @@
       "location_id": 139
     },
     {
+      "name": "Sprout Tower",
+      "dimensions": [72, 36, 80, 36, 80, 44, 72, 44],
+      "location_id": 138
+    },
+    {
       "name": "Mt. Mortar",
       "dimensions": [72, 20, 80, 20, 80, 28, 72, 28],
       "location_id": 81
@@ -467,6 +472,7 @@
     { "name":"farfetchd", "display":"Farfetch'd" },
     { "name":"nidoran-m", "display":"Nidoran M" },
     { "name":"nidoran-f", "display":"Nidoran F" },
+    { "name":"mr-mime", "display":"Mr. Mime" },
     { "name":"ho-oh", "display":"Ho-Oh" }
   ],
   "aliases":[
@@ -513,7 +519,8 @@
       { "name":"tohjo-falls", "display":"Tohjo Falls" },
       { "name":"mt-silver", "display":"Mt. Silver" },
       { "name":"radio-tower", "display":"Radio Tower" },
-      { "name":"roaming-johto", "display":"Roaming Pokémon" },
+      { "name":"sprout-tower", "display":"Sprout Tower" },
+      { "name":"roaming-johto", "display":"Roaming Johto" },
       { "name":"kanto-route-1", "display":"Route 1" },
       { "name":"kanto-route-2", "display":"Route 2" },
       { "name":"kanto-route-3", "display":"Route 3" },
@@ -614,6 +621,8 @@
       { "name":"kanto-victory-road-1-2f", "display":"2f" },
       { "name":"kanto-victory-road-1-3f", "display":"3f" },
       { "name":"bell-tower-roof", "display":"Roof" },
-      { "name":"bell-tower-1f", "display":"1f" }
+      { "name":"bell-tower-1f", "display":"1f" },
+      { "name":"sprout-tower-2f", "display":"2f" },
+      { "name":"sprout-tower-3f", "display":"3f" }
   ]
 }

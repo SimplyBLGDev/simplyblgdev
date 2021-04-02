@@ -335,13 +335,40 @@
       "name": "Route 25",
       "dimensions": [128, 24, 144, 24, 144, 32, 128, 32],
       "location_id": 104
+    },
+    {
+      "name": "Two Island",
+      "dimensions": [80, 232, 88, 232, 88, 240, 80, 240],
+      "location_id": 805
+    },{
+      "name": "Three Island",
+      "dimensions": [152, 256, 160, 256, 160, 264, 152, 264],
+      "location_id": 806
+    },{
+      "name": "Navel Rock",
+      "dimensions": [87, 366, 95, 366, 95, 374, 87, 374],
+      "location_id": 811
+    },{
+      "name": "Six Island",
+      "dimensions": [144, 488, 152, 488, 152, 496, 144, 496],
+      "location_id": 808
+    },{
+      "name": "Seven Island",
+      "dimensions": [48, 512, 56, 512, 56, 520, 48, 520],
+      "location_id": 809
+    },{
+      "name": "Birth Island",
+      "dimensions": [149, 559, 150, 561, 161, 561, 162, 559, 156, 547, 154, 547],
+      "location_id": 810
     }
   ],
   "pokeAliases":[
     { "name":"farfetchd", "display":"Farfetch'd" },
     { "name":"nidoran-m", "display":"Nidoran M" },
     { "name":"nidoran-f", "display":"Nidoran F" },
-    { "name":"ho-oh", "display":"Ho-Oh" }
+    { "name":"mr-mime", "display":"Mr. Mime" },
+    { "name":"ho-oh", "display":"Ho-Oh" },
+    { "name":"deoxys-normal", "display":"Deoxys" }
   ],
   "aliases":[
       { "name":"pallet-town", "display":"Pallet Town" },
@@ -401,6 +428,8 @@
       { "name":"five-island", "display":"Five Island" },
       { "name":"six-island", "display":"Sixe Island" },
       { "name":"seven-island", "display":"Seven Island" },
+      { "name":"birth-island", "display":"Birth Island" },
+      { "name":"navel-rock", "display":"Navel Rock" },
       { "name":"cape-brink", "display":"Cape Brink" },
       { "name":"berry-forest", "display":"Berry Forest" },
       { "name":"bond-bridge", "display":"Bond Bridge" },

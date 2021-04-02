@@ -23,8 +23,8 @@
 			<div style="position: absolute; width: 100%; height: 9rem;display: flex;align-items: center;text-align: center;justify-content: center;background-color: #444444bb;">
 				<span style="transform: rotate(20deg); font-size:4rem;">WIP</span>
 			</div>
-			<div class="fullWidthDiv Johto">
-				<span>Kanto remakes</span>
+			<div class="fullWidthDiv sinnoh">
+				<span>Sinnoh</span>
 			</div>
 		</div>
 	</div>
@@ -94,6 +94,22 @@ export default {
 						class:"emerald"
 					}
 				]
+			},
+			{
+				name: "Kanto Remakes",
+				address: 'Kanto',
+				preview: require('../../assets/Pokemon/Maps/Kanto3Preview.png'),
+				class:"kanto3",
+				games:[
+					{
+            name:"FR",
+            class:"firered"
+          },
+          {
+            name:"LG",
+            class:"leafgreen"
+          }
+				]
 			}
 		]
 	}),
@@ -153,6 +169,12 @@ export default {
 .hoenn:hover {
 	background-color: #123f91;
 }
+.kanto3 {
+	background-color: #579152;
+}
+.kanto3:hover {
+	background-color: #6c9468;
+}
 .gameIndicator {
 	padding-right: 1.5rem;
   color:whitesmoke;
@@ -192,5 +214,11 @@ export default {
 }
 .gameIndicator.emerald {
   --gameColor: #6ed926;
+}
+.gameIndicator.firered {
+  --gameColor: #e83d3d;
+}
+.gameIndicator.leafgreen {
+  --gameColor: #57d94c;
 }
 </style>

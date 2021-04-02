@@ -255,7 +255,8 @@
   "pokeAliases":[
     { "name":"farfetchd", "display":"Farfetch'd" },
     { "name":"nidoran-m", "display":"Nidoran M" },
-    { "name":"nidoran-f", "display":"Nidoran F" }
+    { "name":"nidoran-f", "display":"Nidoran F" },
+    { "name":"mr-mime", "display":"Mr. Mime" }
   ],
   "aliases":[
       { "name":"pallet-town", "display":"Pallet Town" },
