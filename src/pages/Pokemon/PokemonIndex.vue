@@ -4,7 +4,7 @@
 			<span>Pokémon interactive maps</span>
 		</div>
     <template v-for="region in regions">
-      <div class="full" @click="Goto(region.address)" v-bind:key="region.name">
+      <div class="full direction-banner" @click="Goto(region.address)" v-bind:key="region.name">
         <div style="float:left">
           <img class="mapSpec" :src="region.preview">
         </div>
@@ -97,7 +97,7 @@ export default {
 			},
 			{
 				name: "Kanto Remakes",
-				address: 'Kanto',
+				address: 'Kanto3',
 				preview: require('../../assets/Pokemon/Maps/Kanto3Preview.png'),
 				class:"kanto3",
 				games:[
@@ -128,9 +128,13 @@ export default {
 	justify-content:center;
 	align-items:center;
 	width: 100%;
-	height: 9rem;
+	min-height: 9rem;
 	font-size: 4rem;
 	text-align: center;
+}
+.direction-banner {
+  user-select: none;
+  cursor: pointer;
 }
 .full {
 	width:100%;
