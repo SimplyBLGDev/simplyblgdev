@@ -89,6 +89,18 @@ const routes = [
       'mapIMGsrc': require('@/assets/Pokemon/Maps/Hoenn.png')
     }
   },
+  { path: '/Pokemon/Sinnoh',
+    name: 'Sinnoh',
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/Pokemon.vue'),
+    meta: {
+      title: 'Sinnoh interactive map for DPPt'
+    },
+    props: {
+      'region': "Sinnoh",
+      'mapJSON': require('@/assets/Pokemon/Maps/SinnohMaps.json'),
+      'mapIMGsrc': require('@/assets/Pokemon/Maps/Sinnoh.png')
+    }
+  },
   { path: '/Graficadora',
     name: 'Graficadora',
     component: () => import(/* webpackChunkName: "Encodings" */'./pages/Science/Encodings.vue'),

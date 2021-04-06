@@ -50,6 +50,15 @@
 .gameBox.emerald {
   --gb-color:#6ed926;
 }
+.gameBox.diamond {
+  --gb-color:#9addc4;
+}
+.gameBox.pearl {
+  --gb-color:#e646c0;
+}
+.gameBox.platinum {
+  --gb-color:#bcbcbc;
+}
 .gameBox.morning {
   background-color: #cad01e;
 }

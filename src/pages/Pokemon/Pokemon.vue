@@ -40,6 +40,11 @@
                 <td class="regionData btn gameBox sapphire" v-bind:class="{ active: filteredGames.includes('sapphire') }" colspan=2 @click="filterGame('sapphire')"><b>S</b></td>
                 <td class="regionData btn gameBox bottomRight emerald" v-bind:class="{ active: filteredGames.includes('emerald') }" colspan=2 @click="filterGame('emerald')"><b>E</b></td>
               </template>
+              <template v-else-if="region==='Sinnoh'">
+                <td class="regionData btn gameBox bottomLeft diamond" v-bind:class="{ active: filteredGames.includes('diamond') }" colspan=2 @click="filterGame('diamond')"><b>D</b></td>
+                <td class="regionData btn gameBox pearl" v-bind:class="{ active: filteredGames.includes('pearl') }" colspan=2 @click="filterGame('pearl')"><b>P</b></td>
+                <td class="regionData btn gameBox bottomRight platinum" v-bind:class="{ active: filteredGames.includes('platinum') }" colspan=2 @click="filterGame('platinum')"><b>Pt</b></td>
+              </template>
               <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=mapJSON.maps ref="LocInput"></NiceDatalist>
               </td>
@@ -131,6 +136,11 @@
                   <div class="regionData fbox gameBox sapphire" v-bind:class="{ active: encounter.games.includes('sapphire') }"><b>S</b></div>
                   <div class="regionData fbox gameBox emerald" v-bind:class="{ active: encounter.games.includes('emerald') }"><b>E</b></div>
                 </template>
+                <template v-else-if="region==='Sinnoh'">
+                  <div class="regionData fbox gameBox diamond" v-bind:class="{ active: encounter.games.includes('diamond') }"><b>D</b></div>
+                  <div class="regionData fbox gameBox pearl" v-bind:class="{ active: encounter.games.includes('pearl') }"><b>P</b></div>
+                  <div class="regionData fbox gameBox platinum" v-bind:class="{ active: encounter.games.includes('platinum') }"><b>Pt</b></div>
+                </template>
               </td>
               <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', kanto3: region==='Kanto3', hoenn: region==='Hoenn', male: encounter.iconGender===0,
                 grass: mapJSON.grassMapsLocationIds.includes(encounters.id) }">
@@ -193,7 +203,7 @@ export default {
 
     this.findablePokemon = GetPokeList(this.mapJSON.maxDexIx);
     for (var i = 0; i < this.findablePokemon.length; i++) {
-      this.findablePokemon[i].name = this.pokeAlias(this.$options.filters.capitalize(this.findablePokemon[i].name), this.mapJSON);
+      this.findablePokemon[i].name = this.$options.filters.capitalize(this.pokeAlias(this.findablePokemon[i].name, this.mapJSON));
     }
 
     SetUpHighlighter(document.querySelector('#GameMap'), document.querySelector('#mapIMG'), document.querySelector('#normalCanvas'),
