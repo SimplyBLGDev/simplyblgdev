@@ -122,6 +122,13 @@ const routes = [
       title: 'Generador de Números pseudo-aleatorios'
     }
   },
+  { path: '/science/sim/jisquare',
+    name: 'JiSquare',
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/chi.vue'),
+    meta: {
+      title: 'Prueba Ji-Cuadrado'
+    }
+  },
   { path: '*',
     name: '404',
     component: () => import(/* webpackChunkName: "404" */'./pages/404.vue'),

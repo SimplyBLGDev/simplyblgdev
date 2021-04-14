@@ -4,7 +4,7 @@
     <UTNNavBar />
 
     <div class="root">
-      <div class="metodo_cmb">
+      <div class="cmb">
       <label for="metodo"><b>Metodo: </b></label>
       <select name="metodo" id="metodo" @input="updateValues()">
         <option value="lineal">Congruencial lineal</option>
@@ -169,42 +169,10 @@ export default {
 </script>
 
 <style scoped>
-  .invisible {
-    display: none;
-  }
+  @import url('../../../assets/Science/science-table.css');
   .root {
     width: 100%;
     padding: 8px;
-  }
-  .metodo_cmb {
-    width: 100%;
-    text-align: left;
-  }
-  .metodo_cmb select {
-    height: 2rem;
-    background-color: #2e87d7;
-    border: none;
-    color: whitesmoke;
-    margin: 0 4px;
-    border-radius: 4px;
-  }
-  .linea_texts {
-    width: 100%;
-    display: flex;
-    align-items:center;
-  }
-  .linea_texts input {
-    border: none;
-    border-radius: 4px;
-    width: 3rem;
-    height: 2rem;
-    margin: 0 0.5rem;
-    background-color: #2E87D7;
-    -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    --box-shadow-color: rgb(0, 0, 0, 0.75);
-    color: whitesmoke;
   }
   .warning {
     width: 100%;
@@ -214,77 +182,5 @@ export default {
     font-weight: bold;
     border-radius: 0.5rem;
     padding: 1rem;
-  }
-  .data-container {
-    min-width: 35vw;
-    height: min-content;
-    margin-left: 4px;
-    margin-right: 4px;
-    padding: 4px;
-    background-color: #1c68ba;
-    border-radius: 1.5rem;
-    margin-top: 1rem;
-  }
-  .data-table {
-    color:whitesmoke;
-    vertical-align: middle;
-    text-align: center;
-    width:100%;
-    border-radius: 1rem;
-    border: 2px;
-    background-color: transparent;
-    border-spacing: 4px;
-    border-collapse: separate;
-  }
-  .data-table-cell {
-    background-color: #3883d2;
-    -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    --box-shadow-color: rgb(0, 0, 0, 0.75);
-    border-radius: 3px;
-  }
-  .data-table-cell .mesimo {
-    background-color: blue;
-  }
-  .data-table tr th {
-    background-color: #1f5288;
-    -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    --box-shadow-color: rgb(0, 0, 0, 0.75);
-    border-radius: 3px;
-  }
-  .data-table tr th:first-child {
-    border-top-left-radius: 1rem;
-  }
-  .data-table tr th:last-child {
-    border-top-right-radius: 1rem;
-  }
-  .data-foot {
-    background-color: #1f5288;
-    -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    --box-shadow-color: rgb(0, 0, 0, 0.75);
-    border-radius: 3px;
-    border-radius: 3px 3px 3px 1rem;
-    user-select: none;
-    color: transparent;
-  }
-  .data-btn-add {
-    width: 10%;
-    background-color: rgb(39, 189, 77);
-    -webkit-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    -moz-box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    box-shadow: 1px 1px 5px -3px var(--box-shadow-color);
-    --box-shadow-color: rgb(0, 0, 0, 0.75);
-    border-radius: 3px 3px 1rem 3px;
-    font-weight: bold;
-  }
-  .data-btn-add:hover() {
-    background-color: rgb(60, 192, 93);
-    border-width: 1px;
-    border-color: white;
   }
 </style>
