@@ -48,12 +48,12 @@
           <tr>
             <th>Valor</th>
           </tr>
-          <tr v-for="(result, id) in this.results" :key="id" class="data-table-cell">
-            <td>{{ result }}</td>
+          <tr v-for="(result, id) in this.results" :key="id">
+            <td class="data-table-cell">{{ result }}</td>
           </tr>
           <tr>
-              <td class="data-foot">-</td>
-            </tr>
+            <td class="data-foot">-</td>
+          </tr>
         </table>
       </div>
       <div class="data-container graph">
@@ -140,10 +140,10 @@ export default {
         case 'exp': this.results = generarExponencialLambda(lambda, n); break;
       }
 
-      var intervalInfo = this.graph();
+      var intervalInfo = this.graph(this.metodo);
 
       this.jiSquare = this.getJiSquareValue(this.metodo, this.intervals);
-      var cAcc = 0;
+      var cAcc = 0.0;
 
       for (var i = 0; i < intervalInfo.length; i++) {
         switch (this.metodo) {
@@ -166,7 +166,7 @@ export default {
       this.c = cAcc;
       this.accepted = this.c <= this.jiSquare;
     },
-    graph() {
+    graph(metodo) {
       var r = [];
       var max = 0;
       var min = 9999999;
@@ -179,12 +179,21 @@ export default {
       var l = (max - min) / this.intervals;
 
       for (var j = 0; j < this.intervals; j++) {
-        r.push({
-          'f0': 0,
-          'fe': 0,
-          'from': parseFloat(((l * j) + min).toPrecision(4)),
-          'to': parseFloat(((l * (j + 1)) + min).toPrecision(4))
-        });
+        if (metodo == "poisson") {
+          r.push({
+            'f0': 0,
+            'fe': 0,
+            'from': Math.floor((l * j) + min),
+            'to': Math.floor((l * (j + 1) + min))
+          });
+        } else {
+          r.push({
+            'f0': 0,
+            'fe': 0,
+            'from': parseFloat(((l * j) + min).toPrecision(4)),
+            'to': parseFloat(((l * (j + 1)) + min).toPrecision(4))
+          });
+        }
       }
 
       for (var i = 0; i < this.results.length; i++) {
@@ -204,14 +213,14 @@ export default {
     },
     getNormalFe(limInf, limSup, media, dev, n) {
       var intervalMiddlePoint = (limInf + limSup) / 2;
-      var pArea = 1 / (dev * Math.sqrt(2 * Math.PI)) * Math.exp((-1 / 2) * Math.pow((intervalMiddlePoint-media) / dev, 2));
+      var pArea = 1 / (dev * Math.sqrt(2 * Math.PI)) * Math.exp(-0.5 * Math.pow((intervalMiddlePoint-media) / dev, 2));
+      pArea *= (limSup - limInf);
       return pArea * n;
     },
     getPoissonFe(limInf, limSup, lambda, n) {
       var fe = 0;
 
-      for (var i = limInf; i <= limSup; i++) {
-        console.log(i);
+      for (var i = limInf; i < limSup; i++) {
         var pI = Math.pow(lambda, i)*Math.exp(-lambda) / this.factorial(i);
         fe += pI;
       }

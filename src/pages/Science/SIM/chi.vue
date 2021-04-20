@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <UTNNavBar />
+    <UTNNavBar :data="contactInfo"></UTNNavBar>
 
     <div class="cmb">
       <label for="metodo"><b>Metodo: </b></label>
@@ -103,6 +103,33 @@ import $ from 'jquery';
 
 export default {
   data: () => ({
+    contactInfo: [
+      {
+        "name": "Logares Fabricio",
+        "no": "78799",
+        "mail": "fabrilogares@gmail.com"
+      },
+      {
+        "name": "Saleh Maximiliano",
+        "no": "78798",
+        "mail": "maxisaleh@outlook.com"
+      },
+      {
+        "name": "Paz Fessia Facundo",
+        "no": "78579",
+        "mail": "facupazfessia@gmail.com"
+      },
+      {
+        "name": "Landa Valle Santiago",
+        "no": "78637",
+        "mail": "santi.land4@gmail.com"
+      },
+      {
+        "name": "Villane Ignacio",
+        "no": "62687",
+        "mail": "ignaciovillane@gmail.com"
+      }
+    ],
     x0: 0, a: 0, c: 0, m: 0, g: 0, k: 0, n: 20, intervals: 20,
     source: [],
     jiSquare: 0,
