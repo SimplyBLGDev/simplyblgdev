@@ -31,7 +31,7 @@
         <label for="lambda">Lambda:</label>
         <input type="text" name="lambda" id="lambda" placeholder="10" @input="updateValues()">
       </div>
-      <div class="cmb">
+      <div class="cmb" :class="{ invisible: metodo == 'poisson'}">
         <label for="intervals"><b>Intervalos: </b></label>
         <select name="intervals" id="intervals" @input="updateValues()">
           <option value="5">5</option>
@@ -142,7 +142,6 @@ export default {
 
       var intervalInfo = this.graph(this.metodo);
 
-      this.jiSquare = this.getJiSquareValue(this.metodo, this.intervals);
       var cAcc = 0.0;
 
       for (var i = 0; i < intervalInfo.length; i++) {
@@ -163,10 +162,28 @@ export default {
         cAcc += Math.pow(intervalInfo[i].f0 - intervalInfo[i].fe, 2) / intervalInfo[i].fe;
       }
 
+      var inter = this.intervals;
+
+      if (this.metodo == 'poisson') {
+        var fEAcc = 0;
+        inter = 0;
+        for (var j = 0; j < intervalInfo.length; j++) {
+          fEAcc += intervalInfo[j].fe;
+          if (fEAcc > 0.05 || intervalInfo.length == j - 1) {
+            inter++;
+          }
+        }
+      }
+
+      this.jiSquare = this.getJiSquareValue(this.getDegrees(this.metodo, inter));
+
       this.c = cAcc;
       this.accepted = this.c <= this.jiSquare;
     },
     graph(metodo) {
+      if (metodo == "poisson")
+        return this.graphPoisson();
+
       var r = [];
       var max = 0;
       var min = 9999999;
@@ -179,26 +196,44 @@ export default {
       var l = (max - min) / this.intervals;
 
       for (var j = 0; j < this.intervals; j++) {
-        if (metodo == "poisson") {
-          r.push({
-            'f0': 0,
-            'fe': 0,
-            'from': Math.floor((l * j) + min),
-            'to': Math.floor((l * (j + 1) + min))
-          });
-        } else {
-          r.push({
-            'f0': 0,
-            'fe': 0,
-            'from': parseFloat(((l * j) + min).toPrecision(4)),
-            'to': parseFloat(((l * (j + 1)) + min).toPrecision(4))
-          });
-        }
+        r.push({
+          'f0': 0,
+          'fe': 0,
+          'from': parseFloat(((l * j) + min).toPrecision(4)),
+          'to': parseFloat(((l * (j + 1)) + min).toPrecision(4))
+        });
       }
 
       for (var i = 0; i < this.results.length; i++) {
         var ix = Math.min(Math.floor((this.results[i] - min) / l), this.intervals - 1);
         r[ix].f0 += 1;
+      }
+
+      graph(r);
+
+      return r;
+    },
+    graphPoisson() {
+      var r = [];
+      var max = 0;
+      var min = 9999999;
+
+      for (var k = 0; k < this.results.length; k++) {
+        max = Math.max(this.results[k], max);
+        min = Math.min(this.results[k], min);
+      }
+
+      for (var j = min; j <= max; j++) {
+        r.push({
+          'f0': 0,
+          'fe': 0,
+          'from': j,
+          'to': j+1
+        });
+      }
+
+      for (var i = 0; i < this.results.length; i++) {
+        r[this.results[i] - min].f0 += 1;
       }
 
       graph(r);
@@ -230,39 +265,41 @@ export default {
     getUniformFe(intervals, n) {
       return n / intervals;
     },
-    getJiSquareValue(distribution, intervals) {
+    getDegrees(method, intervals) {
+      switch (method) {
+        case 'uniform': return intervals - 1;
+        case 'boxMuller':
+        case 'convolucion': return intervals - 3;
+        case 'poisson':
+        case 'exp': return intervals - 2;
+      }
+    },
+    getJiSquareValue(v) {
       return {
-        "uniform": {
-          5: 9.49,
-          10: 16.9,
-          15: 23.7,
-          20: 30.1
-        },
-        "boxMuller": {
-          5: 5.99,
-          10: 14.1,
-          15: 21,
-          20: 27.6
-        },
-        "convolucion": {
-          5: 5.99,
-          10: 14.1,
-          15: 21,
-          20: 27.6
-        },
-        "poisson": {
-          5: 7.81,
-          10: 15.5,
-          15: 22.4,
-          20: 28.9
-        },
-        "exp": {
-          5: 7.81,
-          10: 15.5,
-          15: 22.4,
-          20: 28.9
-        }
-      }[distribution][intervals];
+        1: 3.84,
+        2: 5.99,
+        3: 7.81,
+        4: 9.49,
+        5: 11.1,
+        6: 12.6,
+        7: 14.1,
+        8: 15.5,
+        9: 16.9,
+        10: 18.3,
+        11: 19.7,
+        12: 21.0,
+        13: 22.4,
+        14: 23.7,
+        15: 25,
+        16: 26.3,
+        17: 27.6,
+        18: 28.9,
+        19: 30.1,
+        20: 31.4,
+        21: 32.7,
+        22: 33.9,
+        23: 35.2
+      }[v];
     },
     factorial(n) {
       if (n == 0 || n == 1) { return 1; }
