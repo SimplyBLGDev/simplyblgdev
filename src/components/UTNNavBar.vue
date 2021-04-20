@@ -4,13 +4,35 @@
       <img src="../assets/UTN Logo.png" alt="UTN FRC Logo" style="width:15%;">
     </div>
     <div class="button-panel">
-      <button onclick="window.location.href='/Graficadora/Informacion';">Contacto</button>
+      <button @click="showContact = !showContact">Contacto</button>
+    </div>
+    <div v-if="showContact">
+      <table class="contact-table">
+        <tr>
+          <th>Nombre</th>
+          <th>Legajo</th>
+          <th>Mail</th>
+        </tr>
+        <tr v-for="(contact, id) in data" :key="id">
+          <td>{{ contact.name }}</td>
+          <td>{{ contact.no }}</td>
+          <td>{{ contact.mail }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data: () => ({
+    showContact: false
+  }),
+  props: {
+    data: {
+      type: Array
+    }
+  },
   name: 'utnnavbar'
 }
 </script>
@@ -20,6 +42,17 @@ export default {
 </style>
 
 <style scoped>
+  .contact-table {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .contact-table td {
+    color: white;
+    font-weight: bolder;
+    text-shadow: black 3px 3px;
+    font-size: x-large;
+    background-color: #1C68BA;
+  }
   .bar {
     background-color: #1c68ba;
   }

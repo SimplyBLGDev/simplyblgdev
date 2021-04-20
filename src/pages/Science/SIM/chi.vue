@@ -72,13 +72,12 @@
           c: {{ accumulatedC }}
         </div>
         <div class="data-container graph">
-          <svg>
-            <rect  />
+          <svg id="Graph">
           </svg>
         </div>
       </div>
 
-      <div class="data-container source-table" :class="{ transparent: !showSource }">
+      <div class="data-container source-table" :class="{ removed: !showSource }">
         <table class="data-table">
           <tr>
             <th>Value</th>
@@ -98,8 +97,8 @@
 <script>
 
 // eslint-disable-next-line
-import { generate } from "../../../assets/Science/parametrizedRNG.js";
-import { setUp, graph } from "../../../assets/Science/jiSquareGraphicManager.js";
+import { generate } from "@/assets/Science/parametrizedRNG.js";
+import { setUp, graph } from "@/assets/Science/jiSquareGraphicManager.js";
 import $ from 'jquery';
 
 export default {
@@ -117,7 +116,7 @@ export default {
     $('.bg-blgnavbar').css("display","none");
     $('footer').css("display", "none");
 
-    setUp(document.getElementById("Graph"), $("#Graph").width, $("#Graph").height);
+    setUp(document.getElementById("Graph"), $("#Graph").width(), $("#Graph").height());
   },
   methods: {
     updateValues() {
@@ -137,6 +136,8 @@ export default {
       for (var i = 0; i < ret.results.length; i++) {
         ret.results[i].from = parseFloat(ret.results[i].from.toPrecision(4));
         ret.results[i].to = parseFloat(ret.results[i].to.toPrecision(4));
+        ret.results[i].cAcc = parseFloat(ret.results[i].cAcc.toPrecision(4));
+        ret.accumulatedC = parseFloat(ret.accumulatedC.toPrecision(4));
       }
 
       this.results = ret.results;
@@ -145,23 +146,42 @@ export default {
       this.accepted = ret.accepted;
       this.source = ret.sourceValues;
 
-      graph();
+      this.fetchFrequencies();
+    },
+    fetchFrequencies() {
+      graph(this.results);
     }
   }
 }
 </script>
 
+<style>
+  .fe-bar {
+    fill: #0db52f4d;
+  }
+  .f0-bar {
+    fill: #1C68BA;
+  }
+  .intervalText {
+    color: black;
+    font-weight: bold;
+  }
+</style>
+
 <style scoped>
   @import url('../../../assets/Science/science-table.css');
+  .removed {
+    opacity: 0;
+  }
   .main-flex {
     display: flex;
     width: 100%;
   }
   .data-fold {
-    width: 80%;
+    width: 60%;
   }
   .results-fold {
-    width: 20%;
+    width: 40%;
   }
   .results-panel {
     height: 20rem;
@@ -172,7 +192,7 @@ export default {
     background-repeat: no-repeat;
     background-color: rgb(14, 133, 53);
     background-size: 15rem;
-    background-position-x: right -30%;
+    background-position-x: right -10%;
     background-position-y: bottom -50%;
   }
   .results-panel.rejected {
@@ -180,10 +200,16 @@ export default {
     background-repeat: no-repeat;
     background-color: rgb(133, 14, 14);
     background-size: 15rem;
-    background-position-x: right -30%;
+    background-position-x: right -10%;
     background-position-y: bottom -50%;
   }
-  .graph {
-
+  .data-container.graph {
+    background-color: white;
+    height: 30rem;
+    padding: 10px;
+  }
+  #Graph {
+    width: 100%;
+    height: 100%;
   }
 </style>

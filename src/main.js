@@ -129,6 +129,13 @@ const routes = [
       title: 'Prueba Ji-Cuadrado'
     }
   },
+  { path: '/science/sim/tp3',
+    name: 'TP3',
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/TP3.vue'),
+    meta: {
+      title: 'TP3'
+    }
+  },
   { path: '*',
     name: '404',
     component: () => import(/* webpackChunkName: "404" */'./pages/404.vue'),
