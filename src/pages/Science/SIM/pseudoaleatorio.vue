@@ -113,7 +113,7 @@ export default {
     },
     updateValuesMultiplicativo() {
       if ($("#a").val() == 0) { this.a = 3 + 8*this.k; }
-      if ($("#a").val() == 0) { this.m = Math.pow(2, this.g); }
+      if ($("#m").val() == 0) { this.m = Math.pow(2, this.g); }
 
       this.tableValues = [];
       var lastValues = {

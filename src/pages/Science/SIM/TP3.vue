@@ -152,7 +152,7 @@ export default {
             intervalInfo[i].fe = this.getNormalFe(intervalInfo[i].from, intervalInfo[i].to, median, dev, n);
             break;
           case "poisson":
-            intervalInfo[i].fe = this.getPoissonFe(intervalInfo[i].from, intervalInfo[i].to, lambda, n);
+            intervalInfo[i].fe = this.getPoissonFe(intervalInfo[i].from, lambda, n);
             break;
           case "exp":
             intervalInfo[i].fe = this.getExpFe(intervalInfo[i].from, intervalInfo[i].to, lambda, n);
@@ -169,7 +169,7 @@ export default {
         inter = 0;
         for (var j = 0; j < intervalInfo.length; j++) {
           fEAcc += intervalInfo[j].fe;
-          if (fEAcc > 0.05 || intervalInfo.length == j - 1) {
+          if (fEAcc > 5 || intervalInfo.length == j - 1) {
             inter++;
           }
         }
@@ -252,13 +252,11 @@ export default {
       pArea *= (limSup - limInf);
       return pArea * n;
     },
-    getPoissonFe(limInf, limSup, lambda, n) {
+    getPoissonFe(v, lambda, n) {
       var fe = 0;
 
-      for (var i = limInf; i < limSup; i++) {
-        var pI = Math.pow(lambda, i)*Math.exp(-lambda) / this.factorial(i);
-        fe += pI;
-      }
+      var pI = Math.pow(lambda, v)*Math.exp(-lambda) / this.factorial(v);
+      fe += pI;
 
       return fe * n;
     },
