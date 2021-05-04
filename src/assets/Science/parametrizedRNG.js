@@ -63,7 +63,7 @@ function randomLineal() {
     var lastXi = x0;
 
     for (var i = 1; i <= n; i++) {
-        var r = (lastXi / m);
+        var r = (lastXi / (m - 1));
         lastXi = (lastXi * a + c) % m;
 
         tableValues.push(r);

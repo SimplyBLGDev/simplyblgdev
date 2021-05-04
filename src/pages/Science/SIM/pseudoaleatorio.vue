@@ -105,7 +105,7 @@ export default {
         lastValues = {
           "i": i,
           "xi": xi,
-          "r": (xi / this.m).toFixed(4)
+          "r": (xi / (this.m - 1)).toFixed(4)
         }
 
         this.tableValues.push(lastValues);
@@ -135,6 +135,7 @@ export default {
     },
     updateValues() {
       if ($("#x0").val() != "") { this.x0 = parseInt($("#x0").val()); }
+      if ($("#a").val() != "") { this.a = parseInt($("#a").val()); }
       if ($("#c").val() != "") { this.c = parseInt($("#c").val()); }
       if ($("#m").val() != "") { this.m = parseInt($("#m").val()); }
       if ($("#k").val() != "") { this.k = parseInt($("#k").val()); }
