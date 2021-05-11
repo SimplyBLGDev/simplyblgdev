@@ -136,6 +136,13 @@ const routes = [
       title: 'TP3'
     }
   },
+  { path: '/science/sim/tp4',
+    name: 'TP4',
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/TP4.vue'),
+    meta: {
+      title: 'TP4'
+    }
+  },
   { path: '*',
     name: '404',
     component: () => import(/* webpackChunkName: "404" */'./pages/404.vue'),
