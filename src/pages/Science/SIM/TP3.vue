@@ -165,12 +165,19 @@ export default {
       var inter = this.intervals;
 
       if (this.metodo == 'poisson') {
+        cAcc = 0;
         var fEAcc = 0;
+        var f0Acc = 0;
         inter = 0;
         for (var j = 0; j < intervalInfo.length; j++) {
           fEAcc += intervalInfo[j].fe;
-          if (fEAcc > 5 || intervalInfo.length == j - 1) {
+          f0Acc += intervalInfo[j].f0;
+          if (fEAcc >= 5 || intervalInfo.length == j - 1) {
             inter++;
+            cAcc += Math.pow(f0Acc - fEAcc, 2) / fEAcc;
+            console.log(inter, cAcc, f0Acc, fEAcc);
+            fEAcc = 0;
+            f0Acc = 0;
           }
         }
       }
@@ -258,7 +265,7 @@ export default {
       var pI = Math.pow(lambda, v)*Math.exp(-lambda) / this.factorial(v);
       fe += pI;
 
-      return fe * n;
+      return Math.round(fe * n);
     },
     getUniformFe(intervals, n) {
       return n / intervals;
