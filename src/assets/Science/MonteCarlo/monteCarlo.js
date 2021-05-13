@@ -122,7 +122,7 @@ function simulate() {
     };
     var savedRows = [];
 
-    for (var period = 1; period < daysToSimulate; period++) {
+    for (var period = 1; period <= daysToSimulate; period++) {
         _calcRows[period % 2] = simulatePeriod(_calcRows[(period - 1) % 2], stats);
         if (period <= saveRowTo && period >= saveRowFrom) {
             savedRows.push(_calcRows[period % 2]);
