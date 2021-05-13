@@ -11,9 +11,9 @@
     </div>
     <div class="linea_texts">
       <label for="n">Cantidad a simular:</label>
-      <input type="text" name="n" id="n" placeholder="20" @input="updateValues()">
+      <input type="text" name="n" id="n" placeholder="25" @input="updateValues()">
       <label for="from">Mostrar:</label>
-      <input type="text" name="from" id="from" placeholder="0" @input="updateValues()">
+      <input type="text" name="from" id="from" placeholder="1" @input="updateValues()">
       <label for="to">-</label>
       <input type="text" name="to" id="to" placeholder="100" @input="updateValues()">
     </div>
@@ -95,7 +95,7 @@ export default {
       }
     ],
     n: 25,
-    from: 0,
+    from: 10,
     to: 100,
     results: [],
     totalCost: "-",
@@ -108,8 +108,8 @@ export default {
   },
   methods: {
       updateValues() {
-        if ($("#n").val() != "") { this.n = parseInt($("#n").val()); } else { this.n = 100; }
-        if ($("#from").val() != "") { this.from = parseInt($("#from").val()); } else { this.from = 0; }
+        if ($("#n").val() != "") { this.n = parseInt($("#n").val()); } else { this.n = 25; }
+        if ($("#from").val() != "") { this.from = parseInt($("#from").val()); } else { this.from = 1; }
         if ($("#to").val() != "") { this.to = parseInt($("#to").val()); } else { this.to = 100; }
 
         switch ($("#politica").val()) {
