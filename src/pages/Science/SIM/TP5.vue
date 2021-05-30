@@ -48,11 +48,11 @@
             <td class="data-table-cell">{{ result.I }}</td>
             <td class="data-table-cell">{{ result.clock | getTime }}</td>
             <td class="data-table-cell">{{ result.evento }}</td>
-            <td class="data-table-cell">{{ result.server }}</td>
-            <td class="data-table-cell">{{ result.subserver }}</td>
-            <td class="data-table-cell">{{ result.cola }}</td>
-            <td class="data-table-cell">{{ result.jugando }}</td>
-            <td class="data-table-cell">{{ result.jugando2 }}</td>
+            <td class="data-table-cell" @click="showDetailedData(0, result.server)">{{ result.server.estado }}</td>
+            <td class="data-table-cell" @click="showDetailedData(1, result.subserver)">{{ result.subserver.estado }}</td>
+            <td class="data-table-cell" @click="showDetailedData(2, result.cola)">{{ result.cola.length }}</td>
+            <td class="data-table-cell" @click="showDetailedData(3, result.jugando)">{{ result.jugando == null ? "" : result.jugando.name }}</td>
+            <td class="data-table-cell" @click="showDetailedData(4, result.jugando2)">{{ result.jugando2 == null ? "" : result.jugando2.name }}</td>
             <td class="data-table-cell">{{ result.delayFutbol | getTime }}</td>
             <td class="data-table-cell">{{ result.nextFutbol | getTime }}</td>
             <td class="data-table-cell">{{ result.delayHandball | getTime }}</td>
@@ -66,10 +66,12 @@
         </table>
       </div>
 
+      <DataBox ref="dataBox"></DataBox>
   </div>
 </template>
 
 <script>
+import DataBox from './DataBox.vue';
 // eslint-disable-next-line
 import { simulate } from '../../../assets/Science/Queue/TP5.js';
 import $ from 'jquery';
@@ -107,6 +109,7 @@ export default {
   mounted() {
     $('.bg-blgnavbar').css("display","none");
     $('footer').css("display", "none");
+    this.updateValues();
   },
   methods: {
       updateValues() {
@@ -119,6 +122,32 @@ export default {
         this.stats = result.estadisticas;
 
         console.log(result);
+      },
+      showDetailedData(mode, data) {
+        var newText = [];
+
+        switch (mode) {
+          case 0: // Server
+          case 1: // Subserver
+            if (data.cliente != null) {
+              newText.push("Tiempo juego: " + this.$options.filters.getTime(data.cliente.tiempoJuego));
+            }
+            newText.push("Tiempo desocupacion: " + this.$options.filters.getTime(data.tiempoDesocupacion));
+            break;
+          case 2: // Cola
+            for (var i = 0; i < data.length; i++) {
+              newText.push(i + " - " + data[i].name);
+            }
+            break;
+          case 3:
+          case 4:
+            newText.push("Tiempo creacion: " + this.$options.filters.getTime(data.tiempoCreacion));
+            newText.push("Tiempo comienzo juego: " + this.$options.filters.getTime(data.tiempoJuego));
+            break;
+        }
+
+        this.$refs.dataBox.$props.text = newText;
+        event.target.appendChild(this.$refs.dataBox.$el);
       }
   },
   filters: {
@@ -135,11 +164,14 @@ export default {
     percent: function(value) {
         return (Math.round(value * 10000)/100) + "%";
     }
+  },
+  components: {
+    // eslint-disable-next-line
+    DataBox
   }
 }
 </script>
 
-<style scoped>
+<style>
 @import url('../../../assets/Science/science-table.css');
-
 </style>
