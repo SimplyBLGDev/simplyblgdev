@@ -150,6 +150,13 @@ const routes = [
       title: 'TP5'
     }
   },
+  { path: '/science/sim/tp6',
+    name: 'TP6',
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/TP6.vue'),
+    meta: {
+      title: 'TP6'
+    }
+  },
   { path: '*',
     name: '404',
     component: () => import(/* webpackChunkName: "404" */'./pages/404.vue'),

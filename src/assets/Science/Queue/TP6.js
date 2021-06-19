@@ -1,5 +1,6 @@
 // eslint-disable-next-line
 import { generarUniforme, generarNormalBoxMuller, generarNormalConvolucion, generarPoisson, generarExponencialMedia, generarExponencialLambda } from '../../../../public/SIMTP3.js'
+import { rungeKuttaTP6, rungeKuttaL } from './rungeKutta.js'
 
 class Nube {
     name;
@@ -92,6 +93,10 @@ class Server {
     }
 
     arrival(cliente) {
+        if (this.estado == "purgando") {
+            return false;
+        }
+
         if (this.estado == "ocupado") {
             if (cliente.name == "basket" && this.cliente.name == "basket" && this.subserver != null) {
                 return this.subserver.arrival(cliente);
@@ -144,7 +149,7 @@ class Server {
     }
 
     getNextTiempoDesocupacion() {
-        if (this.estado == "libre") {
+        if (this.estado == "libre" || this.estado == "purgando") {
             return Infinity;
         }
         return this.tiempoDesocupacion;
@@ -158,7 +163,8 @@ class Server {
         switch (this.estado) {
             case 'acondicionando': return new Evento("fin_acondicionamiento", "fin", this.getNextTiempoDesocupacion(), this);
             case 'ocupado': return new Evento("fin_" + this.cliente.name, "fin", this.getNextTiempoDesocupacion(), this);
-            case 'libre': return new Evento("-", "-", this.getNextTiempoDesocupacion(), this);
+            case 'libre':
+            case 'purgando': return new Evento("-", "-", this.getNextTiempoDesocupacion(), this);
         }
     }
 
@@ -168,6 +174,31 @@ class Server {
         }
 
         return false;
+    }
+
+    purgar() {
+        this.estado = 'purgando';
+    }
+
+    loadstate(state) {
+        if (state.tiempoRestante != Infinity) {
+            this.tiempoDesocupacion = clock + state.tiempoRestante;
+        }
+        if (state.tiempoRestanteSubserver != Infinity) {
+            this.subserver.tiempoDesocupacion = clock + state.tiempoRestanteSubserver;
+        }
+
+        this.estado = state.estado;
+        this.subserver.estado = state.estadoSubserver;
+    }
+
+    savestate() {
+        return {
+            "tiempoRestante": this.estado == 'libre' ? Infinity : this.tiempoDesocupacion - clock,
+            "tiempoRestanteSubserver": this.subserver?.estado == 'libre' ? Infinity : this.subserver?.tiempoDesocupacion - clock,
+            "estado": this.estado,
+            "estadoSubserver": this.subserver.estado
+        };
     }
 }
 
@@ -195,6 +226,26 @@ function getNubeProximaLlegada() {
     }
 }
 
+function calcularProximaPurga() {
+    var proximoTiempo;
+    var rnd = Math.random();
+    if (rnd <= 0.5) { proximoTiempo = clock + tiemposOcupacionDisco[50]; }
+    else if (rnd <= 0.8) { proximoTiempo = clock + tiemposOcupacionDisco[70]; }
+    else { proximoTiempo = clock + tiemposOcupacionDisco[100]; }
+
+    proximaPurga = new Evento("inicio_purga", "inicio_purga", proximoTiempo, null);
+}
+
+function calcularFinPurga() {
+    var l = rungeKuttaL(alpha, h, cantidadLlegadasPurga);
+    var t = clock + l.result;
+
+    proximaPurga = new Evento("fin_purga", "fin_purga", t, null);
+}
+
+var alpha;
+var h;
+
 var clock = 0;
 
 var server;
@@ -204,6 +255,11 @@ var log;
 var nubeFutbol = new Nube("futbol");
 var nubeHandball = new Nube("handball");
 var nubeBasket = new Nube("basket");
+
+var proximaPurga;
+var tiemposOcupacionDisco;
+var cantidadLlegadasPurga = 0;
+var serverPrepurgaState;
 
 var estadisticas = {
     "tiempoEsperaTotalFutbol": 0,
@@ -218,7 +274,12 @@ var estadisticas = {
     "tiempoTotal": 0
 };
 
-function simulate(n, saveFrom, saveTo) {
+function simulate(n, saveFrom, saveTo, _alpha, _h) {
+    alpha = _alpha;
+    h = _h;
+
+    tiemposOcupacionDisco = rungeKuttaTP6(alpha, h).result;
+
     estadisticas = {
         "tiempoEsperaTotalFutbol": 0,
         "tiempoEsperaTotalHandball": 0,
@@ -247,6 +308,7 @@ function simulate(n, saveFrom, saveTo) {
     nubeFutbol.calcularProximaLlegada();
     nubeHandball.calcularProximaLlegada();
     nubeBasket.calcularProximaLlegada();
+    calcularProximaPurga();
 
     server = new Server(true);
     cola = [];
@@ -258,6 +320,7 @@ function simulate(n, saveFrom, saveTo) {
         var proximoEventoServer = server.getProximoEvento();
 
         var proximoEvento = proximoEventoNube.tiempo < proximoEventoServer.tiempo ? proximoEventoNube : proximoEventoServer;
+        proximoEvento = proximoEvento.tiempo < proximaPurga.tiempo ? proximoEvento : proximaPurga;
         clock = proximoEvento.tiempo;
 
         if (server.trulyFree()) {
@@ -266,6 +329,7 @@ function simulate(n, saveFrom, saveTo) {
 
         switch (proximoEvento.tipo) {
             case "llegada":
+                cantidadLlegadasPurga += 1;
                 var client = proximoEvento.objeto.getClient();
                 if (!server.arrival(client)) {
                     cola.push(client);
@@ -286,6 +350,16 @@ function simulate(n, saveFrom, saveTo) {
                         }
                     }
                 }
+                break;
+            case "inicio_purga":
+                calcularFinPurga();
+                serverPrepurgaState = server.savestate();
+                server.purgar();
+                cantidadLlegadasPurga = 0;
+                break;
+            case "fin_purga":
+                calcularProximaPurga();
+                server.loadstate(serverPrepurgaState);
                 break;
         }
 
