@@ -12,7 +12,8 @@
       <label for="alpha">α</label>
       <input type="text" name="alpha" id="alpha" placeholder="0.0218" @input="updateValues()">
       <label for="h">h</label>
-      <input type="text" name="h" id="h" placeholder="0.1" @input="updateValues()">
+      <input type="text" name="h" id="h" placeholder="2" @input="updateValues()">
+      <button class="rkButton" @click="showRungeKutta()">Mostrar Runge Kutta E</button>
     </div>
     <div style="display: flex;align-items: center;justify-content: center;">
         <table>
@@ -28,6 +29,34 @@
             <tr><td style="text-align:right"><b>Tiempo Libre:</b></td><td style="text-align:left"> {{ stats.tiempoLibreServidor | getTime }}<br></td></tr>
             <tr><td style="text-align:right"><b>Tiempo Total dos basket:</b></td><td style="text-align:left"> {{ stats.tiempoTotalDuoBasket | getTime }}<br></td></tr>
         </table>
+    </div>
+
+    <div class="data-container values rungeKutta" v-if="this.showRK">
+      <table class="data-table">
+        <tr>
+          <th>t</th>
+          <th>{{this.rkType}}</th>
+          <th>k1</th>
+          <th>k2</th>
+          <th>k3</th>
+          <th>k4</th>
+          <th>t+1</th>
+          <th>{{this.rkType}}+1</th>
+        </tr>
+        <tr v-for="iteration in this.displayRungeKutta" :key="iteration.t">
+          <td class="data-table-cell">{{ iteration.t | round }}</td>
+          <td class="data-table-cell">{{ iteration.E | round }}</td>
+          <td class="data-table-cell">{{ iteration.k1 | round }}</td>
+          <td class="data-table-cell">{{ iteration.k2 | round }}</td>
+          <td class="data-table-cell">{{ iteration.k3 | round }}</td>
+          <td class="data-table-cell">{{ iteration.k4 | round }}</td>
+          <td class="data-table-cell">{{ iteration["t+1"] | round }}</td>
+          <td class="data-table-cell">{{ iteration["E+1"] | round }}</td>
+        </tr>
+        <tr>
+          <td class="data-foot" colspan="8">-</td>
+        </tr>
+      </table>
     </div>
 
     <div class="data-container values">
@@ -47,6 +76,8 @@
             <th>Proxima llegada Handball</th>
             <th>Demora Basket</th>
             <th>Proxima llegada Basket</th>
+            <th>Proxima Purga</th>
+            <th>Cantidad Llegadas</th>
           </tr>
           <tr v-for="result in this.results" :key="result.I">
             <td class="data-table-cell">{{ result.I }}</td>
@@ -63,9 +94,11 @@
             <td class="data-table-cell">{{ result.nextHandball | getTime }}</td>
             <td class="data-table-cell">{{ result.delayBasket | getTime }}</td>
             <td class="data-table-cell">{{ result.nextBasket | getTime }}</td>
+            <td class="data-table-cell" @click="showDetailedData(5, result.proximaPurga)">{{ result.proximaPurga.tiempo | getTime }}</td>
+            <td class="data-table-cell">{{ result.cantidadLlegadas }}</td>
           </tr>
           <tr>
-            <td class="data-foot" colspan="14">-</td>
+            <td class="data-foot" colspan="16">-</td>
           </tr>
         </table>
       </div>
@@ -76,7 +109,7 @@
 
 <script>
 import DataBox from './DataBox.vue';
-import { simulate } from '../../../assets/Science/Queue/TP6.js';
+import { simulate, setUpRK } from '../../../assets/Science/Queue/TP6.js';
 import $ from 'jquery';
 
 export default {
@@ -107,9 +140,13 @@ export default {
     from: 1,
     to: 100,
     alpha: 0.0218,
-    h: 0.1,
+    h: 2,
     results: [],
-    stats: {}
+    stats: {},
+    rungeKutta: [],
+    displayRungeKutta: [],
+    showRK: false,
+    rkType: "E"
   }),
   mounted() {
     $('.bg-blgnavbar').css("display","none");
@@ -121,10 +158,11 @@ export default {
         if ($("#n").val() != "") { this.n = parseInt($("#n").val()); } else { this.n = 25; }
         if ($("#from").val() != "") { this.from = parseInt($("#from").val()); } else { this.from = 1; }
         if ($("#to").val() != "") { this.to = parseInt($("#to").val()); } else { this.to = 100; }
-        if ($("#alpha").val() != "") { this.alpha = parseInt($("#alpha").val()); } else { this.alpha = 0.0218; }
-        if ($("#h").val() != "") { this.h = parseInt($("#h").val()); } else { this.h = 0.1; }
+        if ($("#alpha").val() != "") { this.alpha = Math.max(0.001, parseInt($("#alpha").val())); } else { this.alpha = 0.0218; }
+        if ($("#h").val() != "") { this.h = parseInt($("#h").val()); } else { this.h = 2; }
 
-        var result = simulate(this.n, this.from, this.to, this.alpha, this.h);
+        this.rungeKutta = setUpRK(this.alpha, this.h);
+        var result = simulate(this.n, this.from, this.to);
         this.results = result.log;
         this.stats = result.estadisticas;
       },
@@ -149,10 +187,21 @@ export default {
             newText.push("Tiempo creacion: " + this.$options.filters.getTime(data.tiempoCreacion));
             newText.push("Tiempo comienzo juego: " + this.$options.filters.getTime(data.tiempoJuego));
             break;
+          case 5:
+            this.displayRungeKutta = data.objeto;
+            this.showRK = true;
+            this.rkType = "L";
+            return;
         }
 
         this.$refs.dataBox.$props.text = newText;
         event.target.appendChild(this.$refs.dataBox.$el);
+        this.showRK = false;
+      },
+      showRungeKutta() {
+        this.displayRungeKutta = this.rungeKutta;
+        this.showRK = !this.showRK;
+        this.rkType = "E";
       }
   },
   filters: {
@@ -179,4 +228,29 @@ export default {
 
 <style>
 @import url('../../../assets/Science/science-table.css');
+.rkButton {
+  border: 0;
+  border-radius: 4px;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  height: 100%;
+}
+.data-container.rungeKutta {
+  background-color: #d38900;
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  box-shadow: 1px 1px 50px -1px rgba(0,0,0,0.75);
+}
+.data-container.rungeKutta tr th {
+  background-color: #96660e;
+}
+.data-container.rungeKutta .data-foot {
+  background-color: #96660e;
+}
+.data-container.rungeKutta tr td {
+  background-color: rgb(226, 151, 12);
+}
 </style>

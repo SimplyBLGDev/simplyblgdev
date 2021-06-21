@@ -240,7 +240,7 @@ function calcularFinPurga() {
     var l = rungeKuttaL(alpha, h, cantidadLlegadasPurga);
     var t = clock + l.result;
 
-    proximaPurga = new Evento("fin_purga", "fin_purga", t, null);
+    proximaPurga = new Evento("fin_purga", "fin_purga", t, l.log);
 }
 
 var alpha;
@@ -274,12 +274,18 @@ var estadisticas = {
     "tiempoTotal": 0
 };
 
-function simulate(n, saveFrom, saveTo, _alpha, _h) {
+function setUpRK(_alpha, _h) {
     alpha = _alpha;
     h = _h;
 
-    tiemposOcupacionDisco = rungeKuttaTP6(alpha, h).result;
+    var rk = rungeKuttaTP6(alpha, h);
 
+    tiemposOcupacionDisco = rk.result;
+
+    return rk.log;
+}
+
+function simulate(n, saveFrom, saveTo, _alpha, _h) {
     estadisticas = {
         "tiempoEsperaTotalFutbol": 0,
         "tiempoEsperaTotalHandball": 0,
@@ -381,7 +387,9 @@ function simulate(n, saveFrom, saveTo, _alpha, _h) {
                 "delayBasket": nubeBasket.lastRND,
                 "nextFutbol": nubeFutbol.proximaLlegada,
                 "nextHandball": nubeHandball.proximaLlegada,
-                "nextBasket": nubeBasket.proximaLlegada
+                "nextBasket": nubeBasket.proximaLlegada,
+                "proximaPurga": proximaPurga,
+                "cantidadLlegadas": cantidadLlegadasPurga
             });
         }
     }
@@ -391,4 +399,4 @@ function simulate(n, saveFrom, saveTo, _alpha, _h) {
     return { "log": log, "estadisticas": estadisticas };
 }
 
-export { simulate }
+export { simulate, setUpRK }

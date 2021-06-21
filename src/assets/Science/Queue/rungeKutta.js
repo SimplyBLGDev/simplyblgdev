@@ -68,13 +68,13 @@ function rungeKuttaL(beta, h, L) {
 
         log.push({
             "t": t,
-            "L": L,
+            "E": L,
             "k1": k1,
             "k2": k2,
             "k3": k3,
             "k4": k4,
             "t+1":tS,
-            "L+1":LS
+            "E+1":LS
         });
 
         if (L - LS <= 0.02) {
