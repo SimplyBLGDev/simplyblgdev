@@ -285,6 +285,7 @@ function setUpRK(_alpha, _h) {
     return rk.log;
 }
 
+//eslint-disable-next-line
 function simulate(n, saveFrom, saveTo, _alpha, _h) {
     estadisticas = {
         "tiempoEsperaTotalFutbol": 0,
