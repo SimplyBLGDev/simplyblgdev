@@ -50,11 +50,11 @@ class Cliente {
     finAtencion() {
         if (this.facturaVencida) {
             if (this.actualizado) {
-                estadisticas.clientesFullService += 1;
-                estadisticas.tiempoClientesFullServiceTotal += this.getTiempoPermanencia();
-            } else {
                 estadisticas.clientesNoPagan += 1;
                 estadisticas.tiempoClientesNoPaganTotal += this.getTiempoPermanencia();
+            } else {
+                estadisticas.clientesFullService += 1;
+                estadisticas.tiempoClientesFullServiceTotal += this.getTiempoPermanencia();
             }
         } else {
             estadisticas.clientesNoVencida += 1;
@@ -179,7 +179,7 @@ function getProximoEventoServer(servers) {
     var evento = servers[0].getProximoEvento();
 
     for (var i = 1; i < servers.length; i++) {
-        var e = cajas[i].getProximoEvento();
+        var e = servers[i].getProximoEvento();
         evento = e.tiempo < evento.tiempo ? e : evento;
     }
 
@@ -264,7 +264,7 @@ function simulate(n, from, iterations) {
     log = [];
     var i = 0;
 
-    while (i < n) {
+    while (clock < n) {
         var proximoEvento = getProximoEvento();
         clock = proximoEvento.tiempo;
 
@@ -272,7 +272,11 @@ function simulate(n, from, iterations) {
             case "llegada_cliente":
                 var client = proximoEvento.objeto.getClient();
                 if (!acomodarPaciente(client)) {
-                    cola.push(client);
+                    if (client.facturaVencida) {
+                        colaActualizacion.push(client);
+                    } else {
+                        cola.push(client);
+                    }
                 }
                 proximoEvento.objeto.calcularProximaLlegada();
                 break;
@@ -288,12 +292,14 @@ function simulate(n, from, iterations) {
                 break;
             case "fin_actualizacion":
                 if (proximoEvento.objeto.cliente.postActualizacionQuierePagar()) {
-                    if (!acomodarPaciente(client)) {
-                        cola.push(client);
+                    if (!acomodarPaciente(proximoEvento.objeto.cliente)) {
+                        cola.push(proximoEvento.objeto.cliente);
                     }
                 } else {
                     proximoEvento.objeto.cliente.finAtencion();
                 }
+
+                proximoEvento.objeto.cliente.actualizar();
                 proximoEvento.objeto.liberar();
                 if (colaActualizacion.length > 0) {
                     var r = colaActualizacion[0];
@@ -304,7 +310,7 @@ function simulate(n, from, iterations) {
                 break;
         }
 
-        if (i >= from && i <= from + iterations) {
+        if ((clock >= from && log.length < iterations) || clock >= n) {
             log.push({
                 "I": i,
                 "clock": clock,

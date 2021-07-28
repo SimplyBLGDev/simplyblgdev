@@ -3,9 +3,9 @@
     <UTNNavBar :data="contactInfo"></UTNNavBar>
 
     <div class="linea_texts">
-      <label for="n">Pasos a simular:</label>
+      <label for="n">Segundos a simular:</label>
       <input type="text" name="n" id="n" placeholder="600" @input="updateValues()">
-      <label for="from">Mostrar desde paso:</label>
+      <label for="from">Mostrar desde segundo:</label>
       <input type="text" name="from" id="from" placeholder="0" @input="updateValues()">
       <label for="to">por</label>
       <input type="text" name="to" id="to" placeholder="30" @input="updateValues()">
@@ -112,6 +112,10 @@ export default {
         this.n = 0;
         this.warnings.push("No se puede simular menos de 0 pasos.");
       }
+      if (this.from > 500) {
+        this.to = 500;
+        this.warnings.push("Maximas iteraciones a mostrar: 500");
+      }
     },
     showDetailedData(mode, data) {
       var newText = [];
@@ -156,15 +160,19 @@ export default {
       return value.toPrecision(4);
     },
     getTime: function(value) {
-        var s = "" + Math.floor(value % 60);
-        if (s.length == 1) {
-            s = "0" + s;
-        }
-        var m = "" + (Math.floor(value / 60) % 60);
-        if (m.length == 1) {
-            m = "0" + m;
-        }
-        return Math.floor(value / 3600) + ":" + m + ":" + s;
+      if (isNaN(value)) {
+        return "-"
+      }
+      
+      var s = "" + Math.floor(value % 60);
+      if (s.length == 1) {
+          s = "0" + s;
+      }
+      var m = "" + (Math.floor(value / 60) % 60);
+      if (m.length == 1) {
+          m = "0" + m;
+      }
+      return Math.floor(value / 3600) + ":" + m + ":" + s;
     },
     percent: function(value) {
         return (Math.round(value * 1000000)/10000) + "%";
