@@ -49,7 +49,7 @@ class Ambulance {
     }
 
     arrival(cliente) {
-        if (this.estado == "ocupado") {
+        if (this.estado != "libre") {
             return false;
         }
 
@@ -149,7 +149,36 @@ function getServersLibres(servers) {
     return x;
 }
 
-function simulate(n, nAmbulances) {
+function serverString(servers) {
+    var r = [];
+    for (var i = 0; i < servers.length; i++) {
+        r.push({
+            "numero": i,
+            "estado": servers[i].estado,
+            "tDesocupacion": servers[i].tiempoDesocupacion
+        });
+    }
+
+    return r;
+}
+
+function colaString(cola) {
+    var nCola = [];
+    for (var i = 0; i < cola.length; i++) {
+        nCola.push(cola[i].tiempoCreacion);
+    }
+    return nCola;
+}
+
+function getProximoEvento() {
+    var proximoEventoNube = nube.getProximoEvento();
+    var proximoEventoServer = getProximoEventoServer(servers);
+
+    var proximoEvento = proximoEventoNube.tiempo < proximoEventoServer.tiempo ? proximoEventoNube : proximoEventoServer;
+    return proximoEvento;
+}
+
+function simulate(n, nAmbulances, from, iterations) {
     estadisticas = {
         "pacientes": 0,
         "noWait": 0,
@@ -167,12 +196,10 @@ function simulate(n, nAmbulances) {
     servers = generarServers(nAmbulances);
     cola = [];
     log = [];
+    var i = 0;
 
-    for (var i = 0; i < n; i++) {
-        var proximoEventoNube = nube.getProximoEvento();
-        var proximoEventoServer = getProximoEventoServer(servers);
-
-        var proximoEvento = proximoEventoNube.tiempo < proximoEventoServer.tiempo ? proximoEventoNube : proximoEventoServer;
+    while (clock < n) {
+        var proximoEvento = getProximoEvento();
         clock = proximoEvento.tiempo;
 
         switch (proximoEvento.tipo) {
@@ -198,15 +225,21 @@ function simulate(n, nAmbulances) {
 
         var serversLibres = getServersLibres(servers);
 
-        log.push({
-            "I": i,
-            "clock": clock,
-            "evento": proximoEvento.name,
-            "cola": cola.length,
-            "libre": serversLibres,
-            "ocupados": nAmbulances - serversLibres,
-            "ambulancias": servers.splice()
-        });
+        if ((clock >= from && log.length < iterations) || clock >= n) {
+            log.push({
+                "I": i,
+                "tPacientes": estadisticas.pacientes,
+                "tNoWait": estadisticas.noWait,
+                "clock": clock,
+                "proxPaciente": nube.getProximoEvento(),
+                "evento": proximoEvento.name,
+                "cola": colaString(cola),
+                "libre": serversLibres,
+                "ocupados": nAmbulances - serversLibres,
+                "ambulancias": serverString(servers)
+            });
+        }
+        i++;
     }
 
     estadisticas.tiempoTotal = clock;
