@@ -156,11 +156,15 @@ export default {
       return value.toPrecision(4);
     },
     getTime: function(value) {
-        var m = "" + Math.floor(value % 60);
+        var s = "" + Math.floor(value % 60);
+        if (s.length == 1) {
+            s = "0" + s;
+        }
+        var m = "" + (Math.floor(value / 60) % 60);
         if (m.length == 1) {
             m = "0" + m;
         }
-        return Math.floor(value / 60) + ":" + m;
+        return Math.floor(value / 3600) + ":" + m + ":" + s;
     },
     percent: function(value) {
         return (Math.round(value * 1000000)/10000) + "%";
