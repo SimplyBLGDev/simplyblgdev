@@ -19,10 +19,13 @@
         <table>
             <tr><td style="text-align:right"><b>Tiempo total:</b></td><td style="text-align:left"> {{ stats.tiempoTotal | getTime }}<br></td></tr>
             <tr><td style="text-align:right"><b>Total clientes:</b></td><td style="text-align:left"> {{ stats.clientes }}<br></td></tr>
-            <tr><td style="text-align:right"><b>Tiempo promedio atencion:</b></td><td style="text-align:left"> {{ (stats.tiempoClientesTotal / stats.clientes) | getTime }}<br></td></tr>
-            <tr><td style="text-align:right"><b>Tiempo promedio atencion factura no vencida:</b></td><td style="text-align:left"> {{ (stats.tiempoClientesNoVencidaTotal / stats.clientesNoVencida) | getTime}}<br></td></tr>
-            <tr><td style="text-align:right"><b>Tiempo promedio atencion sin pago:</b></td><td style="text-align:left"> {{ (stats.tiempoClientesNoPaganTotal / stats.clientesNoPagan) | getTime }}<br></td></tr>
-            <tr><td style="text-align:right"><b>Tiempo promedio atencion pago y actualizacion:</b></td><td style="text-align:left"> {{ (stats.tiempoClientesFullServiceTotal / stats.clientesFullService) | getTime }}<br></td></tr>
+            <tr><td style="text-align:right"><b>Total clientes factura no vencida:</b></td><td style="text-align:left"> {{ stats.clientesNoVencida }}<br></td></tr>
+            <tr><td style="text-align:right"><b>Total clientes factura no pagan:</b></td><td style="text-align:left"> {{ stats.clientesNoPagan }}<br></td></tr>
+            <tr><td style="text-align:right"><b>Total clientes factura pago y actualizacion:</b></td><td style="text-align:left"> {{ stats.clientesFullService }}<br></td></tr>
+            <tr><td style="text-align:right"><b>Tiempo promedio permanencia:</b></td><td style="text-align:left"> {{ (stats.tiempoClientesTotal / stats.clientes) | getTime }}<br></td></tr>
+            <tr><td style="text-align:right"><b>Tiempo promedio permanencia factura no vencida:</b></td><td style="text-align:left"> {{ (stats.tiempoClientesNoVencidaTotal / stats.clientesNoVencida) | getTime}}<br></td></tr>
+            <tr><td style="text-align:right"><b>Tiempo promedio permanencia sin pago:</b></td><td style="text-align:left"> {{ (stats.tiempoClientesNoPaganTotal / stats.clientesNoPagan) | getTime }}<br></td></tr>
+            <tr><td style="text-align:right"><b>Tiempo promedio permanencia pago y actualizacion:</b></td><td style="text-align:left"> {{ (stats.tiempoClientesFullServiceTotal / stats.clientesFullService) | getTime }}<br></td></tr>
         </table>
     </div>
 
@@ -32,22 +35,56 @@
           <th>#</th>
           <th>Reloj</th>
           <th>Evento</th>
+          <th>Proximo Evento</th>
           <th>Cola pago</th>
           <th>Cola actualizacion</th>
-          <th>Ventanillas Libres</th>
-          <th>Cajas Libres</th>
+          <th>Caja 1</th>
+          <th>Caja 2</th>
+          <th>Caja 3</th>
+          <th>Caja 4</th>
+          <th>Caja 5</th>
+          <th>Caja 6</th>
+          <th>Caja 7</th>
+          <th>Caja 8</th>
+          <th>Caja 9</th>
+          <th>Ventanilla 1</th>
+          <th>Ventanilla 2</th>
+          <th>Ventanilla 3</th>
+          <th>Ventanilla 4</th>
+          <th>Ventanilla 5</th>
+          <th>Ventanilla 6</th>
+          <th>Ventanilla 7</th>
+          <th>Ventanilla 8</th>
+          <th>Ventanilla 9</th>
         </tr>
         <tr v-for="result in this.results" :key="result.I">
           <td class="data-table-cell" @click="showDetailedData(1, [result.clientes, result.tClientes, result.clientesNV, result.tClientesNV, result.clientesNP, result.tClientesNP, result.clientesFS, result.tClientesFS, result.proxPaciente])">{{ result.I }}</td>
           <td class="data-table-cell">{{ result.clock | getTime }}</td>
           <td class="data-table-cell" @click="showDetailedData(0, result.servers)">{{ result.evento }}</td>
+          <td class="data-table-cell" @click="showDetailedData(0, result.servers)">{{ result.proxEvento.name }}</td>
           <td class="data-table-cell" @click="showDetailedData(2, result.cola)">{{ result.cola.length }}</td>
           <td class="data-table-cell" @click="showDetailedData(2, result.colaActualizacion)">{{ result.colaActualizacion.length }}</td>
-          <td class="data-table-cell">{{ result.ventanillasLibres }}</td>
-          <td class="data-table-cell">{{ result.cajasLibres }}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[0] )}}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[1] )}}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[2] )}}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[3] )}}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[4] )}}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[5] )}}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[6] )}}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[7] )}}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[8] )}}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[9] )}}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[10]) }}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[11]) }}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[12]) }}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[13]) }}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[14]) }}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[15]) }}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[16]) }}</td>
+          <td class="data-table-cell">{{ detServer(result.servers[17]) }}</td>
         </tr>
         <tr>
-          <td class="data-foot" colspan="7">-</td>
+          <td class="data-foot" colspan="25">-</td>
         </tr>
       </table>
     </div>
@@ -112,7 +149,7 @@ export default {
         this.n = 0;
         this.warnings.push("No se puede simular menos de 0 pasos.");
       }
-      if (this.from > 500) {
+      if (this.to > 500) {
         this.to = 500;
         this.warnings.push("Maximas iteraciones a mostrar: 500");
       }
@@ -146,13 +183,20 @@ export default {
           break;
         case 2: // Cola
           for (var j = 0; j < data.length; j++) {
-            newText.push("Cliente " + (j + 1) + " - " + this.$options.filters.getTime(data[j]));
+            newText.push("Cliente " + data[j].id + " - " + this.$options.filters.getTime(data[j].t));
           }
           break;
       }
 
       this.$refs.dataBox.$props.text = newText;
       event.target.appendChild(this.$refs.dataBox.$el);
+    },
+    detServer(value) {
+      if (value.estado == "libre") {
+        return value.estado;
+      }
+
+      return value.estado + " - Cliente " + value.cliente + " - " + this.$options.filters.getTime(value.tDesocupacion) + " - " + this.$options.filters.getTime(value.tL);
     }
   },
   filters: {
@@ -211,5 +255,8 @@ export default {
 }
 .data-container.rungeKutta tr td {
   background-color: rgb(226, 151, 12);
+}
+.data-container {
+  width: 200%;
 }
 </style>

@@ -21,13 +21,16 @@ class Nube {
 }
 
 class Cliente {
+    id;
     tiempoCreacion;
     facturaVencida;
     actualizado;
 
     constructor() {
+        gClienteID += 1;
+        this.id = gClienteID + 0;
         this.tiempoCreacion = clock;
-        this.facturaVencida = (generarUniforme(0, 1, 1)[0] <= 0.4);
+        this.facturaVencida = (Math.random() <= 0.4);
         this.actualizado = false;
     }
 
@@ -40,7 +43,7 @@ class Cliente {
     }
 
     postActualizacionQuierePagar() {
-        return (generarUniforme(0, 1, 1)[0] <= 0.8);
+        return (Math.random() <= 0.8);
     }
 
     actualizar() {
@@ -50,11 +53,11 @@ class Cliente {
     finAtencion() {
         if (this.facturaVencida) {
             if (this.actualizado) {
-                estadisticas.clientesNoPagan += 1;
-                estadisticas.tiempoClientesNoPaganTotal += this.getTiempoPermanencia();
-            } else {
                 estadisticas.clientesFullService += 1;
                 estadisticas.tiempoClientesFullServiceTotal += this.getTiempoPermanencia();
+            } else {
+                estadisticas.clientesNoPagan += 1;
+                estadisticas.tiempoClientesNoPaganTotal += this.getTiempoPermanencia();
             }
         } else {
             estadisticas.clientesNoVencida += 1;
@@ -142,6 +145,8 @@ class Evento {
     }
 }
 
+var gClienteID = 0;
+
 var clock = 0;
 
 var cajas;
@@ -163,8 +168,8 @@ function generarServers(numero, tipo) {
     return s;
 }
 
-function acomodarPaciente(client) {
-    var servers = (!client.facturaVencida || client.actualizado) ? cajas : ventanillas;
+function acomodarPaciente(client, forceCaja) {
+    var servers = (!client.facturaVencida || client.actualizado || forceCaja) ? cajas : ventanillas;
 
     for (var i = 0; i < servers.length; i++) {
         if (servers[i].arrival(client)) {
@@ -201,17 +206,21 @@ function serverString(cajas, ventanillas) {
     var r = [];
     for (var i = 0; i < cajas.length; i++) {
         r.push({
-            "id": "Caja " + i,
+            "id": "Caja " + (i + 1),
             "estado": cajas[i].estado,
-            "tDesocupacion": cajas[i].tiempoDesocupacion
+            "tDesocupacion": cajas[i].tiempoDesocupacion,
+            "cliente": cajas[i].cliente?.id,
+            "tL": cajas[i].cliente?.tiempoCreacion
         });
     }
 
     for (var j = 0; j < ventanillas.length; j++) {
         r.push({
-            "id": "Ventanilla " + j,
+            "id": "Ventanilla " + (j + 1),
             "estado": ventanillas[j].estado,
-            "tDesocupacion": ventanillas[j].tiempoDesocupacion
+            "tDesocupacion": ventanillas[j].tiempoDesocupacion,
+            "cliente": ventanillas[j].cliente?.id,
+            "tL": ventanillas[j].cliente?.tiempoCreacion
         });
     }
 
@@ -221,7 +230,10 @@ function serverString(cajas, ventanillas) {
 function colaString(cola) {
     var nCola = [];
     for (var i = 0; i < cola.length; i++) {
-        nCola.push(cola[i].tiempoCreacion);
+        nCola.push({
+            "t": cola[i].tiempoCreacion,
+            "id": cola[i].id
+        });
     }
     return nCola;
 }
@@ -250,6 +262,7 @@ function simulate(n, from, iterations) {
     };
 
     clock = 0;
+    gClienteID = 0;
 
     nube.rnd = function() {
         return generarExponencialMedia(60, 1)[0];
@@ -267,11 +280,12 @@ function simulate(n, from, iterations) {
     while (clock < n) {
         var proximoEvento = getProximoEvento();
         clock = proximoEvento.tiempo;
+        var extraData = "";
 
         switch (proximoEvento.name) {
             case "llegada_cliente":
                 var client = proximoEvento.objeto.getClient();
-                if (!acomodarPaciente(client)) {
+                if (!acomodarPaciente(client, false)) {
                     if (client.facturaVencida) {
                         colaActualizacion.push(client);
                     } else {
@@ -279,6 +293,7 @@ function simulate(n, from, iterations) {
                     }
                 }
                 proximoEvento.objeto.calcularProximaLlegada();
+                extraData = "Llegada cliente " + client.id;
                 break;
             case "fin_cobro":
                 proximoEvento.objeto.cliente.finAtencion();
@@ -292,7 +307,7 @@ function simulate(n, from, iterations) {
                 break;
             case "fin_actualizacion":
                 if (proximoEvento.objeto.cliente.postActualizacionQuierePagar()) {
-                    if (!acomodarPaciente(proximoEvento.objeto.cliente)) {
+                    if (!acomodarPaciente(proximoEvento.objeto.cliente, true)) {
                         cola.push(proximoEvento.objeto.cliente);
                     }
                 } else {
@@ -303,7 +318,7 @@ function simulate(n, from, iterations) {
                 proximoEvento.objeto.liberar();
                 if (colaActualizacion.length > 0) {
                     var r = colaActualizacion[0];
-                    if (acomodarPaciente(r)) {
+                    if (acomodarPaciente(r, false)) {
                         colaActualizacion.splice(0, 1);
                     }
                 }
@@ -315,6 +330,7 @@ function simulate(n, from, iterations) {
                 "I": i,
                 "clock": clock,
                 "proxPaciente": nube.getProximoEvento(),
+                "proxEvento": getProximoEvento(),
                 "evento": proximoEvento.name,
                 "tClientes": estadisticas.tiempoClientesTotal,
                 "tClientesNV": estadisticas.tiempoClientesNoVencidaTotal,
@@ -328,7 +344,8 @@ function simulate(n, from, iterations) {
                 "colaActualizacion": colaString(colaActualizacion),
                 "ventanillasLibres": getLibres(ventanillas),
                 "cajasLibres": getLibres(cajas),
-                "servers": serverString(cajas, ventanillas)
+                "servers": serverString(cajas, ventanillas),
+                "extraData": extraData
             });
         }
         i++;
