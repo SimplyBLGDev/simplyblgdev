@@ -101,14 +101,21 @@ const routes = [
       'mapIMGsrc': require('@/assets/Pokemon/Maps/Sinnoh.png')
     }
   },
-  { path: '/Graficadora',
+  { path: '/Pokemon/GoogleTranslatedEmerald',
+    name: 'Google Translated Pokémon Emerald',
+    component: () => import(/* webpackChunkName: "GoogleTranslate" */'./pages/Pokemon/GoogleTranslate.vue'),
+    meta: {
+      title: 'Google Translated Pokémon Emerald'
+    }
+  },
+  { path: '/science/graficadora',
     name: 'Graficadora',
     component: () => import(/* webpackChunkName: "Encodings" */'./pages/Science/Encodings.vue'),
     meta: {
       title: 'Graficadora para señales'
     }
   },
-  { path: '/Graficadora/Informacion',
+  { path: '/science/graficadora/informacion',
     name: 'Información/Contacto',
     component: () => import(/* webpackChunkName: "Encodings" */'./pages/Science/EncodingsInformation.vue'),
     meta: {

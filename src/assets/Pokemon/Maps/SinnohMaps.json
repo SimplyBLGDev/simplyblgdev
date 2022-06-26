@@ -457,6 +457,7 @@
     { "name":"snowpoint-temple-b3f", "display":"b3f" },
     { "name":"snowpoint-temple-b4f", "display":"b4f" },
     { "name":"snowpoint-temple-b5f", "display":"b5f" },
+    { "name":"solaceon-town", "display":"Solaceon Town" },
     { "name":"solaceon-ruins", "display":"Solaceon Ruins" },
     { "name":"solaceon-ruins-2f", "display":"2f" },
     { "name":"solaceon-ruins-1f", "display":"1f" },
