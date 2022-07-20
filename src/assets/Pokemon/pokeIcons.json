@@ -2,4037 +2,4037 @@
   "icons": [
     {
       "name": "bulbasaur",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/1.png",
+      "icon": "1",
       "forms": []
     },
     {
       "name": "ivysaur",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/2.png",
+      "icon": "2",
       "forms": []
     },
     {
       "name": "venusaur",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
+      "icon": "3",
       "forms": []
     },
     {
       "name": "charmander",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png",
+      "icon": "4",
       "forms": []
     },
     {
       "name": "charmeleon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/5.png",
+      "icon": "5",
       "forms": []
     },
     {
       "name": "charizard",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/6.png",
+      "icon": "6",
       "forms": []
     },
     {
       "name": "squirtle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/7.png",
+      "icon": "7",
       "forms": []
     },
     {
       "name": "wartortle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/8.png",
+      "icon": "8",
       "forms": []
     },
     {
       "name": "blastoise",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/9.png",
+      "icon": "9",
       "forms": []
     },
     {
       "name": "caterpie",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/10.png",
+      "icon": "10",
       "forms": []
     },
     {
       "name": "metapod",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/11.png",
+      "icon": "11",
       "forms": []
     },
     {
       "name": "butterfree",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/12.png",
+      "icon": "12",
       "forms": []
     },
     {
       "name": "weedle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/13.png",
+      "icon": "13",
       "forms": []
     },
     {
       "name": "kakuna",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/14.png",
+      "icon": "14",
       "forms": []
     },
     {
       "name": "beedrill",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/15.png",
+      "icon": "15",
       "forms": []
     },
     {
       "name": "pidgey",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/16.png",
+      "icon": "16",
       "forms": []
     },
     {
       "name": "pidgeotto",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/17.png",
+      "icon": "17",
       "forms": []
     },
     {
       "name": "pidgeot",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/18.png",
+      "icon": "18",
       "forms": []
     },
     {
       "name": "rattata",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/19.png",
+      "icon": "19",
       "forms": []
     },
     {
       "name": "raticate",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/20.png",
+      "icon": "20",
       "forms": []
     },
     {
       "name": "spearow",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/21.png",
+      "icon": "21",
       "forms": []
     },
     {
       "name": "fearow",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/22.png",
+      "icon": "22",
       "forms": []
     },
     {
       "name": "ekans",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/23.png",
+      "icon": "23",
       "forms": []
     },
     {
       "name": "arbok",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/24.png",
+      "icon": "24",
       "forms": []
     },
     {
       "name": "pikachu",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/25.png",
+      "icon": "25",
       "forms": []
     },
     {
       "name": "raichu",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/26.png",
+      "icon": "26",
       "forms": []
     },
     {
       "name": "sandshrew",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/27.png",
+      "icon": "27",
       "forms": []
     },
     {
       "name": "sandslash",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/28.png",
+      "icon": "28",
       "forms": []
     },
     {
       "name": "nidoran-f",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/29.png",
+      "icon": "29",
       "forms": []
     },
     {
       "name": "nidorina",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/30.png",
+      "icon": "30",
       "forms": []
     },
     {
       "name": "nidoqueen",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/31.png",
+      "icon": "31",
       "forms": []
     },
     {
       "name": "nidoran-m",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/32.png",
+      "icon": "32",
       "forms": []
     },
     {
       "name": "nidorino",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/33.png",
+      "icon": "33",
       "forms": []
     },
     {
       "name": "nidoking",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/34.png",
+      "icon": "34",
       "forms": []
     },
     {
       "name": "clefairy",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/35.png",
+      "icon": "35",
       "forms": []
     },
     {
       "name": "clefable",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/36.png",
+      "icon": "36",
       "forms": []
     },
     {
       "name": "vulpix",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/37.png",
+      "icon": "37",
       "forms": []
     },
     {
       "name": "ninetales",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/38.png",
+      "icon": "38",
       "forms": []
     },
     {
       "name": "jigglypuff",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/39.png",
+      "icon": "39",
       "forms": []
     },
     {
       "name": "wigglytuff",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/40.png",
+      "icon": "40",
       "forms": []
     },
     {
       "name": "zubat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/41.png",
+      "icon": "41",
       "forms": []
     },
     {
       "name": "golbat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/42.png",
+      "icon": "42",
       "forms": []
     },
     {
       "name": "oddish",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/43.png",
+      "icon": "43",
       "forms": []
     },
     {
       "name": "gloom",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/44.png",
+      "icon": "44",
       "forms": []
     },
     {
       "name": "vileplume",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/45.png",
+      "icon": "45",
       "forms": []
     },
     {
       "name": "paras",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/46.png",
+      "icon": "46",
       "forms": []
     },
     {
       "name": "parasect",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/47.png",
+      "icon": "47",
       "forms": []
     },
     {
       "name": "venonat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/48.png",
+      "icon": "48",
       "forms": []
     },
     {
       "name": "venomoth",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/49.png",
+      "icon": "49",
       "forms": []
     },
     {
       "name": "diglett",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/50.png",
+      "icon": "50",
       "forms": []
     },
     {
       "name": "dugtrio",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/51.png",
+      "icon": "51",
       "forms": []
     },
     {
       "name": "meowth",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/52.png",
+      "icon": "52",
       "forms": []
     },
     {
       "name": "persian",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/53.png",
+      "icon": "53",
       "forms": []
     },
     {
       "name": "psyduck",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/54.png",
+      "icon": "54",
       "forms": []
     },
     {
       "name": "golduck",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/55.png",
+      "icon": "55",
       "forms": []
     },
     {
       "name": "mankey",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/56.png",
+      "icon": "56",
       "forms": []
     },
     {
       "name": "primeape",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/57.png",
+      "icon": "57",
       "forms": []
     },
     {
       "name": "growlithe",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/58.png",
+      "icon": "58",
       "forms": []
     },
     {
       "name": "arcanine",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/59.png",
+      "icon": "59",
       "forms": []
     },
     {
       "name": "poliwag",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/60.png",
+      "icon": "60",
       "forms": []
     },
     {
       "name": "poliwhirl",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/61.png",
+      "icon": "61",
       "forms": []
     },
     {
       "name": "poliwrath",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/62.png",
+      "icon": "62",
       "forms": []
     },
     {
       "name": "abra",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/63.png",
+      "icon": "63",
       "forms": []
     },
     {
       "name": "kadabra",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/64.png",
+      "icon": "64",
       "forms": []
     },
     {
       "name": "alakazam",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/65.png",
+      "icon": "65",
       "forms": []
     },
     {
       "name": "machop",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/66.png",
+      "icon": "66",
       "forms": []
     },
     {
       "name": "machoke",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/67.png",
+      "icon": "67",
       "forms": []
     },
     {
       "name": "machamp",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/68.png",
+      "icon": "68",
       "forms": []
     },
     {
       "name": "bellsprout",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/69.png",
+      "icon": "69",
       "forms": []
     },
     {
       "name": "weepinbell",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/70.png",
+      "icon": "70",
       "forms": []
     },
     {
       "name": "victreebel",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/71.png",
+      "icon": "71",
       "forms": []
     },
     {
       "name": "tentacool",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/72.png",
+      "icon": "72",
       "forms": []
     },
     {
       "name": "tentacruel",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/73.png",
+      "icon": "73",
       "forms": []
     },
     {
       "name": "geodude",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/74.png",
+      "icon": "74",
       "forms": []
     },
     {
       "name": "graveler",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/75.png",
+      "icon": "75",
       "forms": []
     },
     {
       "name": "golem",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/76.png",
+      "icon": "76",
       "forms": []
     },
     {
       "name": "ponyta",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/77.png",
+      "icon": "77",
       "forms": []
     },
     {
       "name": "rapidash",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/78.png",
+      "icon": "78",
       "forms": []
     },
     {
       "name": "slowpoke",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/79.png",
+      "icon": "79",
       "forms": []
     },
     {
       "name": "slowbro",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/80.png",
+      "icon": "80",
       "forms": []
     },
     {
       "name": "magnemite",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/81.png",
+      "icon": "81",
       "forms": []
     },
     {
       "name": "magneton",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/82.png",
+      "icon": "82",
       "forms": []
     },
     {
       "name": "farfetchd",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/83.png",
+      "icon": "83",
       "forms": []
     },
     {
       "name": "doduo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/84.png",
+      "icon": "84",
       "forms": []
     },
     {
       "name": "dodrio",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/85.png",
+      "icon": "85",
       "forms": []
     },
     {
       "name": "seel",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/86.png",
+      "icon": "86",
       "forms": []
     },
     {
       "name": "dewgong",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/87.png",
+      "icon": "87",
       "forms": []
     },
     {
       "name": "grimer",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/88.png",
+      "icon": "88",
       "forms": []
     },
     {
       "name": "muk",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/89.png",
+      "icon": "89",
       "forms": []
     },
     {
       "name": "shellder",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/90.png",
+      "icon": "90",
       "forms": []
     },
     {
       "name": "cloyster",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/91.png",
+      "icon": "91",
       "forms": []
     },
     {
       "name": "gastly",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/92.png",
+      "icon": "92",
       "forms": []
     },
     {
       "name": "haunter",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/93.png",
+      "icon": "93",
       "forms": []
     },
     {
       "name": "gengar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/94.png",
+      "icon": "94",
       "forms": []
     },
     {
       "name": "onix",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/95.png",
+      "icon": "95",
       "forms": []
     },
     {
       "name": "drowzee",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/96.png",
+      "icon": "96",
       "forms": []
     },
     {
       "name": "hypno",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/97.png",
+      "icon": "97",
       "forms": []
     },
     {
       "name": "krabby",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/98.png",
+      "icon": "98",
       "forms": []
     },
     {
       "name": "kingler",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/99.png",
+      "icon": "99",
       "forms": []
     },
     {
       "name": "voltorb",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/100.png",
+      "icon": "100",
       "forms": []
     },
     {
       "name": "electrode",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/101.png",
+      "icon": "101",
       "forms": []
     },
     {
       "name": "exeggcute",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/102.png",
+      "icon": "102",
       "forms": []
     },
     {
       "name": "exeggutor",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/103.png",
+      "icon": "103",
       "forms": []
     },
     {
       "name": "cubone",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/104.png",
+      "icon": "104",
       "forms": []
     },
     {
       "name": "marowak",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/105.png",
+      "icon": "105",
       "forms": []
     },
     {
       "name": "hitmonlee",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/106.png",
+      "icon": "106",
       "forms": []
     },
     {
       "name": "hitmonchan",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/107.png",
+      "icon": "107",
       "forms": []
     },
     {
       "name": "lickitung",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/108.png",
+      "icon": "108",
       "forms": []
     },
     {
       "name": "koffing",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/109.png",
+      "icon": "109",
       "forms": []
     },
     {
       "name": "weezing",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/110.png",
+      "icon": "110",
       "forms": []
     },
     {
       "name": "rhyhorn",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/111.png",
+      "icon": "111",
       "forms": []
     },
     {
       "name": "rhydon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/112.png",
+      "icon": "112",
       "forms": []
     },
     {
       "name": "chansey",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/113.png",
+      "icon": "113",
       "forms": []
     },
     {
       "name": "tangela",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/114.png",
+      "icon": "114",
       "forms": []
     },
     {
       "name": "kangaskhan",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/115.png",
+      "icon": "115",
       "forms": []
     },
     {
       "name": "horsea",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/116.png",
+      "icon": "116",
       "forms": []
     },
     {
       "name": "seadra",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/117.png",
+      "icon": "117",
       "forms": []
     },
     {
       "name": "goldeen",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/118.png",
+      "icon": "118",
       "forms": []
     },
     {
       "name": "seaking",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/119.png",
+      "icon": "119",
       "forms": []
     },
     {
       "name": "staryu",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/120.png",
+      "icon": "120",
       "forms": []
     },
     {
       "name": "starmie",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/121.png",
+      "icon": "121",
       "forms": []
     },
     {
       "name": "mr-mime",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/122.png",
+      "icon": "122",
       "forms": []
     },
     {
       "name": "scyther",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/123.png",
+      "icon": "123",
       "forms": []
     },
     {
       "name": "jynx",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/124.png",
+      "icon": "124",
       "forms": []
     },
     {
       "name": "electabuzz",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/125.png",
+      "icon": "125",
       "forms": []
     },
     {
       "name": "magmar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/126.png",
+      "icon": "126",
       "forms": []
     },
     {
       "name": "pinsir",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/127.png",
+      "icon": "127",
       "forms": []
     },
     {
       "name": "tauros",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/128.png",
+      "icon": "128",
       "forms": []
     },
     {
       "name": "magikarp",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/129.png",
+      "icon": "129",
       "forms": []
     },
     {
       "name": "gyarados",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/130.png",
+      "icon": "130",
       "forms": []
     },
     {
       "name": "lapras",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/131.png",
+      "icon": "131",
       "forms": []
     },
     {
       "name": "ditto",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/132.png",
+      "icon": "132",
       "forms": []
     },
     {
       "name": "eevee",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/133.png",
+      "icon": "133",
       "forms": []
     },
     {
       "name": "vaporeon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/134.png",
+      "icon": "134",
       "forms": []
     },
     {
       "name": "jolteon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/135.png",
+      "icon": "135",
       "forms": []
     },
     {
       "name": "flareon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/136.png",
+      "icon": "136",
       "forms": []
     },
     {
       "name": "porygon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/137.png",
+      "icon": "137",
       "forms": []
     },
     {
       "name": "omanyte",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/138.png",
+      "icon": "138",
       "forms": []
     },
     {
       "name": "omastar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/139.png",
+      "icon": "139",
       "forms": []
     },
     {
       "name": "kabuto",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/140.png",
+      "icon": "140",
       "forms": []
     },
     {
       "name": "kabutops",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/141.png",
+      "icon": "141",
       "forms": []
     },
     {
       "name": "aerodactyl",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/142.png",
+      "icon": "142",
       "forms": []
     },
     {
       "name": "snorlax",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/143.png",
+      "icon": "143",
       "forms": []
     },
     {
       "name": "articuno",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/144.png",
+      "icon": "144",
       "forms": []
     },
     {
       "name": "zapdos",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/145.png",
+      "icon": "145",
       "forms": []
     },
     {
       "name": "moltres",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/146.png",
+      "icon": "146",
       "forms": []
     },
     {
       "name": "dratini",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/147.png",
+      "icon": "147",
       "forms": []
     },
     {
       "name": "dragonair",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/148.png",
+      "icon": "148",
       "forms": []
     },
     {
       "name": "dragonite",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/149.png",
+      "icon": "149",
       "forms": []
     },
     {
       "name": "mewtwo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/150.png",
+      "icon": "150",
       "forms": []
     },
     {
       "name": "mew",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/151.png",
+      "icon": "151",
       "forms": []
     },
     {
       "name": "chikorita",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/152.png",
+      "icon": "152",
       "forms": []
     },
     {
       "name": "bayleef",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/153.png",
+      "icon": "153",
       "forms": []
     },
     {
       "name": "meganium",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/154.png",
+      "icon": "154",
       "forms": []
     },
     {
       "name": "cyndaquil",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/155.png",
+      "icon": "155",
       "forms": []
     },
     {
       "name": "quilava",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/156.png",
+      "icon": "156",
       "forms": []
     },
     {
       "name": "typhlosion",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/157.png",
+      "icon": "157",
       "forms": []
     },
     {
       "name": "totodile",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/158.png",
+      "icon": "158",
       "forms": []
     },
     {
       "name": "croconaw",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/159.png",
+      "icon": "159",
       "forms": []
     },
     {
       "name": "feraligatr",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/160.png",
+      "icon": "160",
       "forms": []
     },
     {
       "name": "sentret",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/161.png",
+      "icon": "161",
       "forms": []
     },
     {
       "name": "furret",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/162.png",
+      "icon": "162",
       "forms": []
     },
     {
       "name": "hoothoot",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/163.png",
+      "icon": "163",
       "forms": []
     },
     {
       "name": "noctowl",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/164.png",
+      "icon": "164",
       "forms": []
     },
     {
       "name": "ledyba",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/165.png",
+      "icon": "165",
       "forms": []
     },
     {
       "name": "ledian",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/166.png",
+      "icon": "166",
       "forms": []
     },
     {
       "name": "spinarak",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/167.png",
+      "icon": "167",
       "forms": []
     },
     {
       "name": "ariados",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/168.png",
+      "icon": "168",
       "forms": []
     },
     {
       "name": "crobat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/169.png",
+      "icon": "169",
       "forms": []
     },
     {
       "name": "chinchou",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/170.png",
+      "icon": "170",
       "forms": []
     },
     {
       "name": "lanturn",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/171.png",
+      "icon": "171",
       "forms": []
     },
     {
       "name": "pichu",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/172.png",
+      "icon": "172",
       "forms": []
     },
     {
       "name": "cleffa",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/173.png",
+      "icon": "173",
       "forms": []
     },
     {
       "name": "igglybuff",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/174.png",
+      "icon": "174",
       "forms": []
     },
     {
       "name": "togepi",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/175.png",
+      "icon": "175",
       "forms": []
     },
     {
       "name": "togetic",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/176.png",
+      "icon": "176",
       "forms": []
     },
     {
       "name": "natu",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/177.png",
+      "icon": "177",
       "forms": []
     },
     {
       "name": "xatu",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/178.png",
+      "icon": "178",
       "forms": []
     },
     {
       "name": "mareep",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/179.png",
+      "icon": "179",
       "forms": []
     },
     {
       "name": "flaaffy",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/180.png",
+      "icon": "180",
       "forms": []
     },
     {
       "name": "ampharos",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/181.png",
+      "icon": "181",
       "forms": []
     },
     {
       "name": "bellossom",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/182.png",
+      "icon": "182",
       "forms": []
     },
     {
       "name": "marill",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/183.png",
+      "icon": "183",
       "forms": []
     },
     {
       "name": "azumarill",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/184.png",
+      "icon": "184",
       "forms": []
     },
     {
       "name": "sudowoodo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/185.png",
+      "icon": "185",
       "forms": []
     },
     {
       "name": "politoed",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/186.png",
+      "icon": "186",
       "forms": []
     },
     {
       "name": "hoppip",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/187.png",
+      "icon": "187",
       "forms": []
     },
     {
       "name": "skiploom",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/188.png",
+      "icon": "188",
       "forms": []
     },
     {
       "name": "jumpluff",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/189.png",
+      "icon": "189",
       "forms": []
     },
     {
       "name": "aipom",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/190.png",
+      "icon": "190",
       "forms": []
     },
     {
       "name": "sunkern",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/191.png",
+      "icon": "191",
       "forms": []
     },
     {
       "name": "sunflora",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/192.png",
+      "icon": "192",
       "forms": []
     },
     {
       "name": "yanma",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/193.png",
+      "icon": "193",
       "forms": []
     },
     {
       "name": "wooper",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/194.png",
+      "icon": "194",
       "forms": []
     },
     {
       "name": "quagsire",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/195.png",
+      "icon": "195",
       "forms": []
     },
     {
       "name": "espeon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/196.png",
+      "icon": "196",
       "forms": []
     },
     {
       "name": "umbreon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/197.png",
+      "icon": "197",
       "forms": []
     },
     {
       "name": "murkrow",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/198.png",
+      "icon": "198",
       "forms": []
     },
     {
       "name": "slowking",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/199.png",
+      "icon": "199",
       "forms": []
     },
     {
       "name": "misdreavus",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/200.png",
+      "icon": "200",
       "forms": []
     },
     {
       "name": "unown",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/201.png",
+      "icon": "201",
       "forms": []
     },
     {
       "name": "wobbuffet",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/202.png",
+      "icon": "202",
       "forms": []
     },
     {
       "name": "girafarig",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/203.png",
+      "icon": "203",
       "forms": []
     },
     {
       "name": "pineco",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/204.png",
+      "icon": "204",
       "forms": []
     },
     {
       "name": "forretress",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/205.png",
+      "icon": "205",
       "forms": []
     },
     {
       "name": "dunsparce",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/206.png",
+      "icon": "206",
       "forms": []
     },
     {
       "name": "gligar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/207.png",
+      "icon": "207",
       "forms": []
     },
     {
       "name": "steelix",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/208.png",
+      "icon": "208",
       "forms": []
     },
     {
       "name": "snubbull",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/209.png",
+      "icon": "209",
       "forms": []
     },
     {
       "name": "granbull",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/210.png",
+      "icon": "210",
       "forms": []
     },
     {
       "name": "qwilfish",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/211.png",
+      "icon": "211",
       "forms": []
     },
     {
       "name": "scizor",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/212.png",
+      "icon": "212",
       "forms": []
     },
     {
       "name": "shuckle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/213.png",
+      "icon": "213",
       "forms": []
     },
     {
       "name": "heracross",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/214.png",
+      "icon": "214",
       "forms": []
     },
     {
       "name": "sneasel",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/215.png",
+      "icon": "215",
       "forms": []
     },
     {
       "name": "teddiursa",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/216.png",
+      "icon": "216",
       "forms": []
     },
     {
       "name": "ursaring",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/217.png",
+      "icon": "217",
       "forms": []
     },
     {
       "name": "slugma",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/218.png",
+      "icon": "218",
       "forms": []
     },
     {
       "name": "magcargo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/219.png",
+      "icon": "219",
       "forms": []
     },
     {
       "name": "swinub",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/220.png",
+      "icon": "220",
       "forms": []
     },
     {
       "name": "piloswine",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/221.png",
+      "icon": "221",
       "forms": []
     },
     {
       "name": "corsola",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/222.png",
+      "icon": "222",
       "forms": []
     },
     {
       "name": "remoraid",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/223.png",
+      "icon": "223",
       "forms": []
     },
     {
       "name": "octillery",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/224.png",
+      "icon": "224",
       "forms": []
     },
     {
       "name": "delibird",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/225.png",
+      "icon": "225",
       "forms": []
     },
     {
       "name": "mantine",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/226.png",
+      "icon": "226",
       "forms": []
     },
     {
       "name": "skarmory",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/227.png",
+      "icon": "227",
       "forms": []
     },
     {
       "name": "houndour",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/228.png",
+      "icon": "228",
       "forms": []
     },
     {
       "name": "houndoom",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/229.png",
+      "icon": "229",
       "forms": []
     },
     {
       "name": "kingdra",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/230.png",
+      "icon": "230",
       "forms": []
     },
     {
       "name": "phanpy",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/231.png",
+      "icon": "231",
       "forms": []
     },
     {
       "name": "donphan",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/232.png",
+      "icon": "232",
       "forms": []
     },
     {
       "name": "porygon2",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/233.png",
+      "icon": "233",
       "forms": []
     },
     {
       "name": "stantler",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/234.png",
+      "icon": "234",
       "forms": []
     },
     {
       "name": "smeargle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/235.png",
+      "icon": "235",
       "forms": []
     },
     {
       "name": "tyrogue",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/236.png",
+      "icon": "236",
       "forms": []
     },
     {
       "name": "hitmontop",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/237.png",
+      "icon": "237",
       "forms": []
     },
     {
       "name": "smoochum",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/238.png",
+      "icon": "238",
       "forms": []
     },
     {
       "name": "elekid",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/239.png",
+      "icon": "239",
       "forms": []
     },
     {
       "name": "magby",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/240.png",
+      "icon": "240",
       "forms": []
     },
     {
       "name": "miltank",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/241.png",
+      "icon": "241",
       "forms": []
     },
     {
       "name": "blissey",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/242.png",
+      "icon": "242",
       "forms": []
     },
     {
       "name": "raikou",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/243.png",
+      "icon": "243",
       "forms": []
     },
     {
       "name": "entei",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/244.png",
+      "icon": "244",
       "forms": []
     },
     {
       "name": "suicune",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/245.png",
+      "icon": "245",
       "forms": []
     },
     {
       "name": "larvitar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/246.png",
+      "icon": "246",
       "forms": []
     },
     {
       "name": "pupitar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/247.png",
+      "icon": "247",
       "forms": []
     },
     {
       "name": "tyranitar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/248.png",
+      "icon": "248",
       "forms": []
     },
     {
       "name": "lugia",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/249.png",
+      "icon": "249",
       "forms": []
     },
     {
       "name": "ho-oh",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/250.png",
+      "icon": "250",
       "forms": []
     },
     {
       "name": "celebi",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/251.png",
+      "icon": "251",
       "forms": []
     },
     {
       "name": "treecko",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/252.png",
+      "icon": "252",
       "forms": []
     },
     {
       "name": "grovyle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/253.png",
+      "icon": "253",
       "forms": []
     },
     {
       "name": "sceptile",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/254.png",
+      "icon": "254",
       "forms": []
     },
     {
       "name": "torchic",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/255.png",
+      "icon": "255",
       "forms": []
     },
     {
       "name": "combusken",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/256.png",
+      "icon": "256",
       "forms": []
     },
     {
       "name": "blaziken",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/257.png",
+      "icon": "257",
       "forms": []
     },
     {
       "name": "mudkip",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/258.png",
+      "icon": "258",
       "forms": []
     },
     {
       "name": "marshtomp",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/259.png",
+      "icon": "259",
       "forms": []
     },
     {
       "name": "swampert",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/260.png",
+      "icon": "260",
       "forms": []
     },
     {
       "name": "poochyena",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/261.png",
+      "icon": "261",
       "forms": []
     },
     {
       "name": "mightyena",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/262.png",
+      "icon": "262",
       "forms": []
     },
     {
       "name": "zigzagoon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/263.png",
+      "icon": "263",
       "forms": []
     },
     {
       "name": "linoone",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/264.png",
+      "icon": "264",
       "forms": []
     },
     {
       "name": "wurmple",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/265.png",
+      "icon": "265",
       "forms": []
     },
     {
       "name": "silcoon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/266.png",
+      "icon": "266",
       "forms": []
     },
     {
       "name": "beautifly",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/267.png",
+      "icon": "267",
       "forms": []
     },
     {
       "name": "cascoon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/268.png",
+      "icon": "268",
       "forms": []
     },
     {
       "name": "dustox",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/269.png",
+      "icon": "269",
       "forms": []
     },
     {
       "name": "lotad",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/270.png",
+      "icon": "270",
       "forms": []
     },
     {
       "name": "lombre",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/271.png",
+      "icon": "271",
       "forms": []
     },
     {
       "name": "ludicolo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/272.png",
+      "icon": "272",
       "forms": []
     },
     {
       "name": "seedot",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/273.png",
+      "icon": "273",
       "forms": []
     },
     {
       "name": "nuzleaf",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/274.png",
+      "icon": "274",
       "forms": []
     },
     {
       "name": "shiftry",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/275.png",
+      "icon": "275",
       "forms": []
     },
     {
       "name": "taillow",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/276.png",
+      "icon": "276",
       "forms": []
     },
     {
       "name": "swellow",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/277.png",
+      "icon": "277",
       "forms": []
     },
     {
       "name": "wingull",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/278.png",
+      "icon": "278",
       "forms": []
     },
     {
       "name": "pelipper",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/279.png",
+      "icon": "279",
       "forms": []
     },
     {
       "name": "ralts",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/280.png",
+      "icon": "280",
       "forms": []
     },
     {
       "name": "kirlia",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/281.png",
+      "icon": "281",
       "forms": []
     },
     {
       "name": "gardevoir",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/282.png",
+      "icon": "282",
       "forms": []
     },
     {
       "name": "surskit",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/283.png",
+      "icon": "283",
       "forms": []
     },
     {
       "name": "masquerain",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/284.png",
+      "icon": "284",
       "forms": []
     },
     {
       "name": "shroomish",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/285.png",
+      "icon": "285",
       "forms": []
     },
     {
       "name": "breloom",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/286.png",
+      "icon": "286",
       "forms": []
     },
     {
       "name": "slakoth",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/287.png",
+      "icon": "287",
       "forms": []
     },
     {
       "name": "vigoroth",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/288.png",
+      "icon": "288",
       "forms": []
     },
     {
       "name": "slaking",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/289.png",
+      "icon": "289",
       "forms": []
     },
     {
       "name": "nincada",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/290.png",
+      "icon": "290",
       "forms": []
     },
     {
       "name": "ninjask",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/291.png",
+      "icon": "291",
       "forms": []
     },
     {
       "name": "shedinja",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/292.png",
+      "icon": "292",
       "forms": []
     },
     {
       "name": "whismur",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/293.png",
+      "icon": "293",
       "forms": []
     },
     {
       "name": "loudred",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/294.png",
+      "icon": "294",
       "forms": []
     },
     {
       "name": "exploud",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/295.png",
+      "icon": "295",
       "forms": []
     },
     {
       "name": "makuhita",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/296.png",
+      "icon": "296",
       "forms": []
     },
     {
       "name": "hariyama",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/297.png",
+      "icon": "297",
       "forms": []
     },
     {
       "name": "azurill",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/298.png",
+      "icon": "298",
       "forms": []
     },
     {
       "name": "nosepass",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/299.png",
+      "icon": "299",
       "forms": []
     },
     {
       "name": "skitty",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/300.png",
+      "icon": "300",
       "forms": []
     },
     {
       "name": "delcatty",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/301.png",
+      "icon": "301",
       "forms": []
     },
     {
       "name": "sableye",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/302.png",
+      "icon": "302",
       "forms": []
     },
     {
       "name": "mawile",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/303.png",
+      "icon": "303",
       "forms": []
     },
     {
       "name": "aron",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/304.png",
+      "icon": "304",
       "forms": []
     },
     {
       "name": "lairon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/305.png",
+      "icon": "305",
       "forms": []
     },
     {
       "name": "aggron",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/306.png",
+      "icon": "306",
       "forms": []
     },
     {
       "name": "meditite",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/307.png",
+      "icon": "307",
       "forms": []
     },
     {
       "name": "medicham",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/308.png",
+      "icon": "308",
       "forms": []
     },
     {
       "name": "electrike",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/309.png",
+      "icon": "309",
       "forms": []
     },
     {
       "name": "manectric",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/310.png",
+      "icon": "310",
       "forms": []
     },
     {
       "name": "plusle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/311.png",
+      "icon": "311",
       "forms": []
     },
     {
       "name": "minun",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/312.png",
+      "icon": "312",
       "forms": []
     },
     {
       "name": "volbeat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/313.png",
+      "icon": "313",
       "forms": []
     },
     {
       "name": "illumise",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/314.png",
+      "icon": "314",
       "forms": []
     },
     {
       "name": "roselia",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/315.png",
+      "icon": "315",
       "forms": []
     },
     {
       "name": "gulpin",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/316.png",
+      "icon": "316",
       "forms": []
     },
     {
       "name": "swalot",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/317.png",
+      "icon": "317",
       "forms": []
     },
     {
       "name": "carvanha",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/318.png",
+      "icon": "318",
       "forms": []
     },
     {
       "name": "sharpedo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/319.png",
+      "icon": "319",
       "forms": []
     },
     {
       "name": "wailmer",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/320.png",
+      "icon": "320",
       "forms": []
     },
     {
       "name": "wailord",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/321.png",
+      "icon": "321",
       "forms": []
     },
     {
       "name": "numel",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/322.png",
+      "icon": "322",
       "forms": []
     },
     {
       "name": "camerupt",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/323.png",
+      "icon": "323",
       "forms": []
     },
     {
       "name": "torkoal",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/324.png",
+      "icon": "324",
       "forms": []
     },
     {
       "name": "spoink",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/325.png",
+      "icon": "325",
       "forms": []
     },
     {
       "name": "grumpig",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/326.png",
+      "icon": "326",
       "forms": []
     },
     {
       "name": "spinda",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/327.png",
+      "icon": "327",
       "forms": []
     },
     {
       "name": "trapinch",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/328.png",
+      "icon": "328",
       "forms": []
     },
     {
       "name": "vibrava",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/329.png",
+      "icon": "329",
       "forms": []
     },
     {
       "name": "flygon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/330.png",
+      "icon": "330",
       "forms": []
     },
     {
       "name": "cacnea",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/331.png",
+      "icon": "331",
       "forms": []
     },
     {
       "name": "cacturne",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/332.png",
+      "icon": "332",
       "forms": []
     },
     {
       "name": "swablu",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/333.png",
+      "icon": "333",
       "forms": []
     },
     {
       "name": "altaria",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/334.png",
+      "icon": "334",
       "forms": []
     },
     {
       "name": "zangoose",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/335.png",
+      "icon": "335",
       "forms": []
     },
     {
       "name": "seviper",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/336.png",
+      "icon": "336",
       "forms": []
     },
     {
       "name": "lunatone",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/337.png",
+      "icon": "337",
       "forms": []
     },
     {
       "name": "solrock",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/338.png",
+      "icon": "338",
       "forms": []
     },
     {
       "name": "barboach",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/339.png",
+      "icon": "339",
       "forms": []
     },
     {
       "name": "whiscash",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/340.png",
+      "icon": "340",
       "forms": []
     },
     {
       "name": "corphish",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/341.png",
+      "icon": "341",
       "forms": []
     },
     {
       "name": "crawdaunt",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/342.png",
+      "icon": "342",
       "forms": []
     },
     {
       "name": "baltoy",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/343.png",
+      "icon": "343",
       "forms": []
     },
     {
       "name": "claydol",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/344.png",
+      "icon": "344",
       "forms": []
     },
     {
       "name": "lileep",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/345.png",
+      "icon": "345",
       "forms": []
     },
     {
       "name": "cradily",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/346.png",
+      "icon": "346",
       "forms": []
     },
     {
       "name": "anorith",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/347.png",
+      "icon": "347",
       "forms": []
     },
     {
       "name": "armaldo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/348.png",
+      "icon": "348",
       "forms": []
     },
     {
       "name": "feebas",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/349.png",
+      "icon": "349",
       "forms": []
     },
     {
       "name": "milotic",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/350.png",
+      "icon": "350",
       "forms": []
     },
     {
       "name": "castform",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/351.png",
+      "icon": "351",
       "forms": []
     },
     {
       "name": "kecleon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/352.png",
+      "icon": "352",
       "forms": []
     },
     {
       "name": "shuppet",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/353.png",
+      "icon": "353",
       "forms": []
     },
     {
       "name": "banette",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/354.png",
+      "icon": "354",
       "forms": []
     },
     {
       "name": "duskull",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/355.png",
+      "icon": "355",
       "forms": []
     },
     {
       "name": "dusclops",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/356.png",
+      "icon": "356",
       "forms": []
     },
     {
       "name": "tropius",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/357.png",
+      "icon": "357",
       "forms": []
     },
     {
       "name": "chimecho",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/358.png",
+      "icon": "358",
       "forms": []
     },
     {
       "name": "absol",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/359.png",
+      "icon": "359",
       "forms": []
     },
     {
       "name": "wynaut",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/360.png",
+      "icon": "360",
       "forms": []
     },
     {
       "name": "snorunt",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/361.png",
+      "icon": "361",
       "forms": []
     },
     {
       "name": "glalie",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/362.png",
+      "icon": "362",
       "forms": []
     },
     {
       "name": "spheal",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/363.png",
+      "icon": "363",
       "forms": []
     },
     {
       "name": "sealeo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/364.png",
+      "icon": "364",
       "forms": []
     },
     {
       "name": "walrein",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/365.png",
+      "icon": "365",
       "forms": []
     },
     {
       "name": "clamperl",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/366.png",
+      "icon": "366",
       "forms": []
     },
     {
       "name": "huntail",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/367.png",
+      "icon": "367",
       "forms": []
     },
     {
       "name": "gorebyss",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/368.png",
+      "icon": "368",
       "forms": []
     },
     {
       "name": "relicanth",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/369.png",
+      "icon": "369",
       "forms": []
     },
     {
       "name": "luvdisc",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/370.png",
+      "icon": "370",
       "forms": []
     },
     {
       "name": "bagon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/371.png",
+      "icon": "371",
       "forms": []
     },
     {
       "name": "shelgon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/372.png",
+      "icon": "372",
       "forms": []
     },
     {
       "name": "salamence",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/373.png",
+      "icon": "373",
       "forms": []
     },
     {
       "name": "beldum",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/374.png",
+      "icon": "374",
       "forms": []
     },
     {
       "name": "metang",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/375.png",
+      "icon": "375",
       "forms": []
     },
     {
       "name": "metagross",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/376.png",
+      "icon": "376",
       "forms": []
     },
     {
       "name": "regirock",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/377.png",
+      "icon": "377",
       "forms": []
     },
     {
       "name": "regice",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/378.png",
+      "icon": "378",
       "forms": []
     },
     {
       "name": "registeel",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/379.png",
+      "icon": "379",
       "forms": []
     },
     {
       "name": "latias",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/380.png",
+      "icon": "380",
       "forms": []
     },
     {
       "name": "latios",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/381.png",
+      "icon": "381",
       "forms": []
     },
     {
       "name": "kyogre",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/382.png",
+      "icon": "382",
       "forms": []
     },
     {
       "name": "groudon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/383.png",
+      "icon": "383",
       "forms": []
     },
     {
       "name": "rayquaza",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/384.png",
+      "icon": "384",
       "forms": []
     },
     {
       "name": "jirachi",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/385.png",
+      "icon": "385",
       "forms": []
     },
     {
       "name": "deoxys-normal",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/386.png",
+      "icon": "386",
       "forms": []
     },
     {
       "name": "turtwig",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/387.png",
+      "icon": "387",
       "forms": []
     },
     {
       "name": "grotle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/388.png",
+      "icon": "388",
       "forms": []
     },
     {
       "name": "torterra",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/389.png",
+      "icon": "389",
       "forms": []
     },
     {
       "name": "chimchar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/390.png",
+      "icon": "390",
       "forms": []
     },
     {
       "name": "monferno",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/391.png",
+      "icon": "391",
       "forms": []
     },
     {
       "name": "infernape",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/392.png",
+      "icon": "392",
       "forms": []
     },
     {
       "name": "piplup",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/393.png",
+      "icon": "393",
       "forms": []
     },
     {
       "name": "prinplup",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/394.png",
+      "icon": "394",
       "forms": []
     },
     {
       "name": "empoleon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/395.png",
+      "icon": "395",
       "forms": []
     },
     {
       "name": "starly",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/396.png",
+      "icon": "396",
       "forms": []
     },
     {
       "name": "staravia",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/397.png",
+      "icon": "397",
       "forms": []
     },
     {
       "name": "staraptor",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/398.png",
+      "icon": "398",
       "forms": []
     },
     {
       "name": "bidoof",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/399.png",
+      "icon": "399",
       "forms": []
     },
     {
       "name": "bibarel",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/400.png",
+      "icon": "400",
       "forms": []
     },
     {
       "name": "kricketot",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/401.png",
+      "icon": "401",
       "forms": []
     },
     {
       "name": "kricketune",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/402.png",
+      "icon": "402",
       "forms": []
     },
     {
       "name": "shinx",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/403.png",
+      "icon": "403",
       "forms": []
     },
     {
       "name": "luxio",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/404.png",
+      "icon": "404",
       "forms": []
     },
     {
       "name": "luxray",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/405.png",
+      "icon": "405",
       "forms": []
     },
     {
       "name": "budew",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/406.png",
+      "icon": "406",
       "forms": []
     },
     {
       "name": "roserade",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/407.png",
+      "icon": "407",
       "forms": []
     },
     {
       "name": "cranidos",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/408.png",
+      "icon": "408",
       "forms": []
     },
     {
       "name": "rampardos",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/409.png",
+      "icon": "409",
       "forms": []
     },
     {
       "name": "shieldon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/410.png",
+      "icon": "410",
       "forms": []
     },
     {
       "name": "bastiodon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/411.png",
+      "icon": "411",
       "forms": []
     },
     {
       "name": "burmy",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/412.png",
+      "icon": "412",
       "forms": []
     },
     {
       "name": "wormadam-plant",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/413.png",
+      "icon": "413",
       "forms": []
     },
     {
       "name": "mothim",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/414.png",
+      "icon": "414",
       "forms": []
     },
     {
       "name": "combee",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/415.png",
+      "icon": "415",
       "forms": []
     },
     {
       "name": "vespiquen",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/416.png",
+      "icon": "416",
       "forms": []
     },
     {
       "name": "pachirisu",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/417.png",
+      "icon": "417",
       "forms": []
     },
     {
       "name": "buizel",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/418.png",
+      "icon": "418",
       "forms": []
     },
     {
       "name": "floatzel",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/419.png",
+      "icon": "419",
       "forms": []
     },
     {
       "name": "cherubi",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/420.png",
+      "icon": "420",
       "forms": []
     },
     {
       "name": "cherrim",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/421.png",
+      "icon": "421",
       "forms": []
     },
     {
       "name": "shellos",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/422.png",
+      "icon": "422",
       "forms": []
     },
     {
       "name": "gastrodon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/423.png",
+      "icon": "423",
       "forms": []
     },
     {
       "name": "ambipom",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/424.png",
+      "icon": "424",
       "forms": []
     },
     {
       "name": "drifloon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/425.png",
+      "icon": "425",
       "forms": []
     },
     {
       "name": "drifblim",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/426.png",
+      "icon": "426",
       "forms": []
     },
     {
       "name": "buneary",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/427.png",
+      "icon": "427",
       "forms": []
     },
     {
       "name": "lopunny",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/428.png",
+      "icon": "428",
       "forms": []
     },
     {
       "name": "mismagius",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/429.png",
+      "icon": "429",
       "forms": []
     },
     {
       "name": "honchkrow",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/430.png",
+      "icon": "430",
       "forms": []
     },
     {
       "name": "glameow",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/431.png",
+      "icon": "431",
       "forms": []
     },
     {
       "name": "purugly",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/432.png",
+      "icon": "432",
       "forms": []
     },
     {
       "name": "chingling",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/433.png",
+      "icon": "433",
       "forms": []
     },
     {
       "name": "stunky",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/434.png",
+      "icon": "434",
       "forms": []
     },
     {
       "name": "skuntank",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/435.png",
+      "icon": "435",
       "forms": []
     },
     {
       "name": "bronzor",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/436.png",
+      "icon": "436",
       "forms": []
     },
     {
       "name": "bronzong",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/437.png",
+      "icon": "437",
       "forms": []
     },
     {
       "name": "bonsly",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/438.png",
+      "icon": "438",
       "forms": []
     },
     {
       "name": "mime-jr",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/439.png",
+      "icon": "439",
       "forms": []
     },
     {
       "name": "happiny",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/440.png",
+      "icon": "440",
       "forms": []
     },
     {
       "name": "chatot",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/441.png",
+      "icon": "441",
       "forms": []
     },
     {
       "name": "spiritomb",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/442.png",
+      "icon": "442",
       "forms": []
     },
     {
       "name": "gible",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/443.png",
+      "icon": "443",
       "forms": []
     },
     {
       "name": "gabite",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/444.png",
+      "icon": "444",
       "forms": []
     },
     {
       "name": "garchomp",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/445.png",
+      "icon": "445",
       "forms": []
     },
     {
       "name": "munchlax",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/446.png",
+      "icon": "446",
       "forms": []
     },
     {
       "name": "riolu",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/447.png",
+      "icon": "447",
       "forms": []
     },
     {
       "name": "lucario",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/448.png",
+      "icon": "448",
       "forms": []
     },
     {
       "name": "hippopotas",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/449.png",
+      "icon": "449",
       "forms": []
     },
     {
       "name": "hippowdon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/450.png",
+      "icon": "450",
       "forms": []
     },
     {
       "name": "skorupi",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/451.png",
+      "icon": "451",
       "forms": []
     },
     {
       "name": "drapion",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/452.png",
+      "icon": "452",
       "forms": []
     },
     {
       "name": "croagunk",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/453.png",
+      "icon": "453",
       "forms": []
     },
     {
       "name": "toxicroak",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/454.png",
+      "icon": "454",
       "forms": []
     },
     {
       "name": "carnivine",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/455.png",
+      "icon": "455",
       "forms": []
     },
     {
       "name": "finneon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/456.png",
+      "icon": "456",
       "forms": []
     },
     {
       "name": "lumineon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/457.png",
+      "icon": "457",
       "forms": []
     },
     {
       "name": "mantyke",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/458.png",
+      "icon": "458",
       "forms": []
     },
     {
       "name": "snover",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/459.png",
+      "icon": "459",
       "forms": []
     },
     {
       "name": "abomasnow",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/460.png",
+      "icon": "460",
       "forms": []
     },
     {
       "name": "weavile",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/461.png",
+      "icon": "461",
       "forms": []
     },
     {
       "name": "magnezone",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/462.png",
+      "icon": "462",
       "forms": []
     },
     {
       "name": "lickilicky",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/463.png",
+      "icon": "463",
       "forms": []
     },
     {
       "name": "rhyperior",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/464.png",
+      "icon": "464",
       "forms": []
     },
     {
       "name": "tangrowth",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/465.png",
+      "icon": "465",
       "forms": []
     },
     {
       "name": "electivire",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/466.png",
+      "icon": "466",
       "forms": []
     },
     {
       "name": "magmortar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/467.png",
+      "icon": "467",
       "forms": []
     },
     {
       "name": "togekiss",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/468.png",
+      "icon": "468",
       "forms": []
     },
     {
       "name": "yanmega",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/469.png",
+      "icon": "469",
       "forms": []
     },
     {
       "name": "leafeon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/470.png",
+      "icon": "470",
       "forms": []
     },
     {
       "name": "glaceon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/471.png",
+      "icon": "471",
       "forms": []
     },
     {
       "name": "gliscor",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/472.png",
+      "icon": "472",
       "forms": []
     },
     {
       "name": "mamoswine",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/473.png",
+      "icon": "473",
       "forms": []
     },
     {
       "name": "porygon-z",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/474.png",
+      "icon": "474",
       "forms": []
     },
     {
       "name": "gallade",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/475.png",
+      "icon": "475",
       "forms": []
     },
     {
       "name": "probopass",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/476.png",
+      "icon": "476",
       "forms": []
     },
     {
       "name": "dusknoir",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/477.png",
+      "icon": "477",
       "forms": []
     },
     {
       "name": "froslass",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/478.png",
+      "icon": "478",
       "forms": []
     },
     {
       "name": "rotom",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/479.png",
+      "icon": "479",
       "forms": []
     },
     {
       "name": "uxie",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/480.png",
+      "icon": "480",
       "forms": []
     },
     {
       "name": "mesprit",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/481.png",
+      "icon": "481",
       "forms": []
     },
     {
       "name": "azelf",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/482.png",
+      "icon": "482",
       "forms": []
     },
     {
       "name": "dialga",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/483.png",
+      "icon": "483",
       "forms": []
     },
     {
       "name": "palkia",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/484.png",
+      "icon": "484",
       "forms": []
     },
     {
       "name": "heatran",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/485.png",
+      "icon": "485",
       "forms": []
     },
     {
       "name": "regigigas",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/486.png",
+      "icon": "486",
       "forms": []
     },
     {
       "name": "giratina-altered",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/487.png",
+      "icon": "487",
       "forms": []
     },
     {
       "name": "cresselia",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/488.png",
+      "icon": "488",
       "forms": []
     },
     {
       "name": "phione",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/489.png",
+      "icon": "489",
       "forms": []
     },
     {
       "name": "manaphy",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/490.png",
+      "icon": "490",
       "forms": []
     },
     {
       "name": "darkrai",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/491.png",
+      "icon": "491",
       "forms": []
     },
     {
       "name": "shaymin-land",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/492.png",
+      "icon": "492",
       "forms": []
     },
     {
       "name": "arceus",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/493.png",
+      "icon": "493",
       "forms": []
     },
     {
       "name": "victini",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/494.png",
+      "icon": "494",
       "forms": []
     },
     {
       "name": "snivy",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/495.png",
+      "icon": "495",
       "forms": []
     },
     {
       "name": "servine",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/496.png",
+      "icon": "496",
       "forms": []
     },
     {
       "name": "serperior",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/497.png",
+      "icon": "497",
       "forms": []
     },
     {
       "name": "tepig",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/498.png",
+      "icon": "498",
       "forms": []
     },
     {
       "name": "pignite",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/499.png",
+      "icon": "499",
       "forms": []
     },
     {
       "name": "emboar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/500.png",
+      "icon": "500",
       "forms": []
     },
     {
       "name": "oshawott",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/501.png",
+      "icon": "501",
       "forms": []
     },
     {
       "name": "dewott",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/502.png",
+      "icon": "502",
       "forms": []
     },
     {
       "name": "samurott",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/503.png",
+      "icon": "503",
       "forms": []
     },
     {
       "name": "patrat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/504.png",
+      "icon": "504",
       "forms": []
     },
     {
       "name": "watchog",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/505.png",
+      "icon": "505",
       "forms": []
     },
     {
       "name": "lillipup",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/506.png",
+      "icon": "506",
       "forms": []
     },
     {
       "name": "herdier",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/507.png",
+      "icon": "507",
       "forms": []
     },
     {
       "name": "stoutland",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/508.png",
+      "icon": "508",
       "forms": []
     },
     {
       "name": "purrloin",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/509.png",
+      "icon": "509",
       "forms": []
     },
     {
       "name": "liepard",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/510.png",
+      "icon": "510",
       "forms": []
     },
     {
       "name": "pansage",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/511.png",
+      "icon": "511",
       "forms": []
     },
     {
       "name": "simisage",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/512.png",
+      "icon": "512",
       "forms": []
     },
     {
       "name": "pansear",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/513.png",
+      "icon": "513",
       "forms": []
     },
     {
       "name": "simisear",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/514.png",
+      "icon": "514",
       "forms": []
     },
     {
       "name": "panpour",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/515.png",
+      "icon": "515",
       "forms": []
     },
     {
       "name": "simipour",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/516.png",
+      "icon": "516",
       "forms": []
     },
     {
       "name": "munna",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/517.png",
+      "icon": "517",
       "forms": []
     },
     {
       "name": "musharna",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/518.png",
+      "icon": "518",
       "forms": []
     },
     {
       "name": "pidove",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/519.png",
+      "icon": "519",
       "forms": []
     },
     {
       "name": "tranquill",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/520.png",
+      "icon": "520",
       "forms": []
     },
     {
       "name": "unfezant",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/521.png",
+      "icon": "521",
       "forms": []
     },
     {
       "name": "blitzle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/522.png",
+      "icon": "522",
       "forms": []
     },
     {
       "name": "zebstrika",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/523.png",
+      "icon": "523",
       "forms": []
     },
     {
       "name": "roggenrola",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/524.png",
+      "icon": "524",
       "forms": []
     },
     {
       "name": "boldore",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/525.png",
+      "icon": "525",
       "forms": []
     },
     {
       "name": "gigalith",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/526.png",
+      "icon": "526",
       "forms": []
     },
     {
       "name": "woobat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/527.png",
+      "icon": "527",
       "forms": []
     },
     {
       "name": "swoobat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/528.png",
+      "icon": "528",
       "forms": []
     },
     {
       "name": "drilbur",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/529.png",
+      "icon": "529",
       "forms": []
     },
     {
       "name": "excadrill",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/530.png",
+      "icon": "530",
       "forms": []
     },
     {
       "name": "audino",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/531.png",
+      "icon": "531",
       "forms": []
     },
     {
       "name": "timburr",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/532.png",
+      "icon": "532",
       "forms": []
     },
     {
       "name": "gurdurr",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/533.png",
+      "icon": "533",
       "forms": []
     },
     {
       "name": "conkeldurr",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/534.png",
+      "icon": "534",
       "forms": []
     },
     {
       "name": "tympole",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/535.png",
+      "icon": "535",
       "forms": []
     },
     {
       "name": "palpitoad",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/536.png",
+      "icon": "536",
       "forms": []
     },
     {
       "name": "seismitoad",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/537.png",
+      "icon": "537",
       "forms": []
     },
     {
       "name": "throh",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/538.png",
+      "icon": "538",
       "forms": []
     },
     {
       "name": "sawk",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/539.png",
+      "icon": "539",
       "forms": []
     },
     {
       "name": "sewaddle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/540.png",
+      "icon": "540",
       "forms": []
     },
     {
       "name": "swadloon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/541.png",
+      "icon": "541",
       "forms": []
     },
     {
       "name": "leavanny",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/542.png",
+      "icon": "542",
       "forms": []
     },
     {
       "name": "venipede",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/543.png",
+      "icon": "543",
       "forms": []
     },
     {
       "name": "whirlipede",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/544.png",
+      "icon": "544",
       "forms": []
     },
     {
       "name": "scolipede",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/545.png",
+      "icon": "545",
       "forms": []
     },
     {
       "name": "cottonee",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/546.png",
+      "icon": "546",
       "forms": []
     },
     {
       "name": "whimsicott",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/547.png",
+      "icon": "547",
       "forms": []
     },
     {
       "name": "petilil",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/548.png",
+      "icon": "548",
       "forms": []
     },
     {
       "name": "lilligant",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/549.png",
+      "icon": "549",
       "forms": []
     },
     {
       "name": "basculin-red-striped",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/550.png",
+      "icon": "550",
       "forms": []
     },
     {
       "name": "sandile",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/551.png",
+      "icon": "551",
       "forms": []
     },
     {
       "name": "krokorok",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/552.png",
+      "icon": "552",
       "forms": []
     },
     {
       "name": "krookodile",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/553.png",
+      "icon": "553",
       "forms": []
     },
     {
       "name": "darumaka",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/554.png",
+      "icon": "554",
       "forms": []
     },
     {
       "name": "darmanitan-standard",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/555.png",
+      "icon": "555",
       "forms": []
     },
     {
       "name": "maractus",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/556.png",
+      "icon": "556",
       "forms": []
     },
     {
       "name": "dwebble",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/557.png",
+      "icon": "557",
       "forms": []
     },
     {
       "name": "crustle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/558.png",
+      "icon": "558",
       "forms": []
     },
     {
       "name": "scraggy",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/559.png",
+      "icon": "559",
       "forms": []
     },
     {
       "name": "scrafty",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/560.png",
+      "icon": "560",
       "forms": []
     },
     {
       "name": "sigilyph",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/561.png",
+      "icon": "561",
       "forms": []
     },
     {
       "name": "yamask",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/562.png",
+      "icon": "562",
       "forms": []
     },
     {
       "name": "cofagrigus",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/563.png",
+      "icon": "563",
       "forms": []
     },
     {
       "name": "tirtouga",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/564.png",
+      "icon": "564",
       "forms": []
     },
     {
       "name": "carracosta",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/565.png",
+      "icon": "565",
       "forms": []
     },
     {
       "name": "archen",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/566.png",
+      "icon": "566",
       "forms": []
     },
     {
       "name": "archeops",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/567.png",
+      "icon": "567",
       "forms": []
     },
     {
       "name": "trubbish",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/568.png",
+      "icon": "568",
       "forms": []
     },
     {
       "name": "garbodor",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/569.png",
+      "icon": "569",
       "forms": []
     },
     {
       "name": "zorua",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/570.png",
+      "icon": "570",
       "forms": []
     },
     {
       "name": "zoroark",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/571.png",
+      "icon": "571",
       "forms": []
     },
     {
       "name": "minccino",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/572.png",
+      "icon": "572",
       "forms": []
     },
     {
       "name": "cinccino",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/573.png",
+      "icon": "573",
       "forms": []
     },
     {
       "name": "gothita",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/574.png",
+      "icon": "574",
       "forms": []
     },
     {
       "name": "gothorita",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/575.png",
+      "icon": "575",
       "forms": []
     },
     {
       "name": "gothitelle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/576.png",
+      "icon": "576",
       "forms": []
     },
     {
       "name": "solosis",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/577.png",
+      "icon": "577",
       "forms": []
     },
     {
       "name": "duosion",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/578.png",
+      "icon": "578",
       "forms": []
     },
     {
       "name": "reuniclus",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/579.png",
+      "icon": "579",
       "forms": []
     },
     {
       "name": "ducklett",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/580.png",
+      "icon": "580",
       "forms": []
     },
     {
       "name": "swanna",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/581.png",
+      "icon": "581",
       "forms": []
     },
     {
       "name": "vanillite",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/582.png",
+      "icon": "582",
       "forms": []
     },
     {
       "name": "vanillish",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/583.png",
+      "icon": "583",
       "forms": []
     },
     {
       "name": "vanilluxe",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/584.png",
+      "icon": "584",
       "forms": []
     },
     {
       "name": "deerling",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/585.png",
+      "icon": "585",
       "forms": []
     },
     {
       "name": "sawsbuck",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/586.png",
+      "icon": "586",
       "forms": []
     },
     {
       "name": "emolga",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/587.png",
+      "icon": "587",
       "forms": []
     },
     {
       "name": "karrablast",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/588.png",
+      "icon": "588",
       "forms": []
     },
     {
       "name": "escavalier",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/589.png",
+      "icon": "589",
       "forms": []
     },
     {
       "name": "foongus",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/590.png",
+      "icon": "590",
       "forms": []
     },
     {
       "name": "amoonguss",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/591.png",
+      "icon": "591",
       "forms": []
     },
     {
       "name": "frillish",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/592.png",
+      "icon": "592",
       "forms": []
     },
     {
       "name": "jellicent",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/593.png",
+      "icon": "593",
       "forms": []
     },
     {
       "name": "alomomola",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/594.png",
+      "icon": "594",
       "forms": []
     },
     {
       "name": "joltik",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/595.png",
+      "icon": "595",
       "forms": []
     },
     {
       "name": "galvantula",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/596.png",
+      "icon": "596",
       "forms": []
     },
     {
       "name": "ferroseed",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/597.png",
+      "icon": "597",
       "forms": []
     },
     {
       "name": "ferrothorn",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/598.png",
+      "icon": "598",
       "forms": []
     },
     {
       "name": "klink",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/599.png",
+      "icon": "599",
       "forms": []
     },
     {
       "name": "klang",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/600.png",
+      "icon": "600",
       "forms": []
     },
     {
       "name": "klinklang",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/601.png",
+      "icon": "601",
       "forms": []
     },
     {
       "name": "tynamo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/602.png",
+      "icon": "602",
       "forms": []
     },
     {
       "name": "eelektrik",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/603.png",
+      "icon": "603",
       "forms": []
     },
     {
       "name": "eelektross",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/604.png",
+      "icon": "604",
       "forms": []
     },
     {
       "name": "elgyem",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/605.png",
+      "icon": "605",
       "forms": []
     },
     {
       "name": "beheeyem",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/606.png",
+      "icon": "606",
       "forms": []
     },
     {
       "name": "litwick",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/607.png",
+      "icon": "607",
       "forms": []
     },
     {
       "name": "lampent",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/608.png",
+      "icon": "608",
       "forms": []
     },
     {
       "name": "chandelure",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/609.png",
+      "icon": "609",
       "forms": []
     },
     {
       "name": "axew",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/610.png",
+      "icon": "610",
       "forms": []
     },
     {
       "name": "fraxure",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/611.png",
+      "icon": "611",
       "forms": []
     },
     {
       "name": "haxorus",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/612.png",
+      "icon": "612",
       "forms": []
     },
     {
       "name": "cubchoo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/613.png",
+      "icon": "613",
       "forms": []
     },
     {
       "name": "beartic",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/614.png",
+      "icon": "614",
       "forms": []
     },
     {
       "name": "cryogonal",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/615.png",
+      "icon": "615",
       "forms": []
     },
     {
       "name": "shelmet",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/616.png",
+      "icon": "616",
       "forms": []
     },
     {
       "name": "accelgor",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/617.png",
+      "icon": "617",
       "forms": []
     },
     {
       "name": "stunfisk",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/618.png",
+      "icon": "618",
       "forms": []
     },
     {
       "name": "mienfoo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/619.png",
+      "icon": "619",
       "forms": []
     },
     {
       "name": "mienshao",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/620.png",
+      "icon": "620",
       "forms": []
     },
     {
       "name": "druddigon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/621.png",
+      "icon": "621",
       "forms": []
     },
     {
       "name": "golett",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/622.png",
+      "icon": "622",
       "forms": []
     },
     {
       "name": "golurk",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/623.png",
+      "icon": "623",
       "forms": []
     },
     {
       "name": "pawniard",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/624.png",
+      "icon": "624",
       "forms": []
     },
     {
       "name": "bisharp",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/625.png",
+      "icon": "625",
       "forms": []
     },
     {
       "name": "bouffalant",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/626.png",
+      "icon": "626",
       "forms": []
     },
     {
       "name": "rufflet",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/627.png",
+      "icon": "627",
       "forms": []
     },
     {
       "name": "braviary",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/628.png",
+      "icon": "628",
       "forms": []
     },
     {
       "name": "vullaby",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/629.png",
+      "icon": "629",
       "forms": []
     },
     {
       "name": "mandibuzz",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/630.png",
+      "icon": "630",
       "forms": []
     },
     {
       "name": "heatmor",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/631.png",
+      "icon": "631",
       "forms": []
     },
     {
       "name": "durant",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/632.png",
+      "icon": "632",
       "forms": []
     },
     {
       "name": "deino",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/633.png",
+      "icon": "633",
       "forms": []
     },
     {
       "name": "zweilous",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/634.png",
+      "icon": "634",
       "forms": []
     },
     {
       "name": "hydreigon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/635.png",
+      "icon": "635",
       "forms": []
     },
     {
       "name": "larvesta",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/636.png",
+      "icon": "636",
       "forms": []
     },
     {
       "name": "volcarona",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/637.png",
+      "icon": "637",
       "forms": []
     },
     {
       "name": "cobalion",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/638.png",
+      "icon": "638",
       "forms": []
     },
     {
       "name": "terrakion",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/639.png",
+      "icon": "639",
       "forms": []
     },
     {
       "name": "virizion",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/640.png",
+      "icon": "640",
       "forms": []
     },
     {
       "name": "tornadus-incarnate",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/641.png",
+      "icon": "641",
       "forms": []
     },
     {
       "name": "thundurus-incarnate",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/642.png",
+      "icon": "642",
       "forms": []
     },
     {
       "name": "reshiram",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/643.png",
+      "icon": "643",
       "forms": []
     },
     {
       "name": "zekrom",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/644.png",
+      "icon": "644",
       "forms": []
     },
     {
       "name": "landorus-incarnate",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/645.png",
+      "icon": "645",
       "forms": []
     },
     {
       "name": "kyurem",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/646.png",
+      "icon": "646",
       "forms": []
     },
     {
       "name": "keldeo-ordinary",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/647.png",
+      "icon": "647",
       "forms": []
     },
     {
       "name": "meloetta-aria",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/648.png",
+      "icon": "648",
       "forms": []
     },
     {
       "name": "genesect",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/649.png",
+      "icon": "649",
       "forms": []
     },
     {
       "name": "chespin",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/650.png",
+      "icon": "650",
       "forms": []
     },
     {
       "name": "quilladin",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/651.png",
+      "icon": "651",
       "forms": []
     },
     {
       "name": "chesnaught",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/652.png",
+      "icon": "652",
       "forms": []
     },
     {
       "name": "fennekin",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/653.png",
+      "icon": "653",
       "forms": []
     },
     {
       "name": "braixen",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/654.png",
+      "icon": "654",
       "forms": []
     },
     {
       "name": "delphox",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/655.png",
+      "icon": "655",
       "forms": []
     },
     {
       "name": "froakie",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/656.png",
+      "icon": "656",
       "forms": []
     },
     {
       "name": "frogadier",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/657.png",
+      "icon": "657",
       "forms": []
     },
     {
       "name": "greninja",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/658.png",
+      "icon": "658",
       "forms": []
     },
     {
       "name": "bunnelby",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/659.png",
+      "icon": "659",
       "forms": []
     },
     {
       "name": "diggersby",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/660.png",
+      "icon": "660",
       "forms": []
     },
     {
       "name": "fletchling",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/661.png",
+      "icon": "661",
       "forms": []
     },
     {
       "name": "fletchinder",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/662.png",
+      "icon": "662",
       "forms": []
     },
     {
       "name": "talonflame",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/663.png",
+      "icon": "663",
       "forms": []
     },
     {
       "name": "scatterbug",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/664.png",
+      "icon": "664",
       "forms": []
     },
     {
       "name": "spewpa",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/665.png",
+      "icon": "665",
       "forms": []
     },
     {
       "name": "vivillon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/666.png",
+      "icon": "666",
       "forms": []
     },
     {
       "name": "litleo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/667.png",
+      "icon": "667",
       "forms": []
     },
     {
       "name": "pyroar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/668.png",
+      "icon": "668",
       "forms": []
     },
     {
       "name": "flabebe",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/669.png",
+      "icon": "669",
       "forms": []
     },
     {
       "name": "floette",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/670.png",
+      "icon": "670",
       "forms": []
     },
     {
       "name": "florges",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/671.png",
+      "icon": "671",
       "forms": []
     },
     {
       "name": "skiddo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/672.png",
+      "icon": "672",
       "forms": []
     },
     {
       "name": "gogoat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/673.png",
+      "icon": "673",
       "forms": []
     },
     {
       "name": "pancham",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/674.png",
+      "icon": "674",
       "forms": []
     },
     {
       "name": "pangoro",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/675.png",
+      "icon": "675",
       "forms": []
     },
     {
       "name": "furfrou",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/676.png",
+      "icon": "676",
       "forms": []
     },
     {
       "name": "espurr",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/677.png",
+      "icon": "677",
       "forms": []
     },
     {
       "name": "meowstic-male",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/678.png",
+      "icon": "678",
       "forms": []
     },
     {
       "name": "honedge",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/679.png",
+      "icon": "679",
       "forms": []
     },
     {
       "name": "doublade",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/680.png",
+      "icon": "680",
       "forms": []
     },
     {
       "name": "aegislash-shield",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/681.png",
+      "icon": "681",
       "forms": []
     },
     {
       "name": "spritzee",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/682.png",
+      "icon": "682",
       "forms": []
     },
     {
       "name": "aromatisse",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/683.png",
+      "icon": "683",
       "forms": []
     },
     {
       "name": "swirlix",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/684.png",
+      "icon": "684",
       "forms": []
     },
     {
       "name": "slurpuff",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/685.png",
+      "icon": "685",
       "forms": []
     },
     {
       "name": "inkay",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/686.png",
+      "icon": "686",
       "forms": []
     },
     {
       "name": "malamar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/687.png",
+      "icon": "687",
       "forms": []
     },
     {
       "name": "binacle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/688.png",
+      "icon": "688",
       "forms": []
     },
     {
       "name": "barbaracle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/689.png",
+      "icon": "689",
       "forms": []
     },
     {
       "name": "skrelp",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/690.png",
+      "icon": "690",
       "forms": []
     },
     {
       "name": "dragalge",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/691.png",
+      "icon": "691",
       "forms": []
     },
     {
       "name": "clauncher",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/692.png",
+      "icon": "692",
       "forms": []
     },
     {
       "name": "clawitzer",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/693.png",
+      "icon": "693",
       "forms": []
     },
     {
       "name": "helioptile",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/694.png",
+      "icon": "694",
       "forms": []
     },
     {
       "name": "heliolisk",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/695.png",
+      "icon": "695",
       "forms": []
     },
     {
       "name": "tyrunt",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/696.png",
+      "icon": "696",
       "forms": []
     },
     {
       "name": "tyrantrum",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/697.png",
+      "icon": "697",
       "forms": []
     },
     {
       "name": "amaura",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/698.png",
+      "icon": "698",
       "forms": []
     },
     {
       "name": "aurorus",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/699.png",
+      "icon": "699",
       "forms": []
     },
     {
       "name": "sylveon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/700.png",
+      "icon": "700",
       "forms": []
     },
     {
       "name": "hawlucha",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/701.png",
+      "icon": "701",
       "forms": []
     },
     {
       "name": "dedenne",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/702.png",
+      "icon": "702",
       "forms": []
     },
     {
       "name": "carbink",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/703.png",
+      "icon": "703",
       "forms": []
     },
     {
       "name": "goomy",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/704.png",
+      "icon": "704",
       "forms": []
     },
     {
       "name": "sliggoo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/705.png",
+      "icon": "705",
       "forms": []
     },
     {
       "name": "goodra",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/706.png",
+      "icon": "706",
       "forms": []
     },
     {
       "name": "klefki",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/707.png",
+      "icon": "707",
       "forms": []
     },
     {
       "name": "phantump",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/708.png",
+      "icon": "708",
       "forms": []
     },
     {
       "name": "trevenant",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/709.png",
+      "icon": "709",
       "forms": []
     },
     {
       "name": "pumpkaboo-average",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/710.png",
+      "icon": "710",
       "forms": []
     },
     {
       "name": "gourgeist-average",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/711.png",
+      "icon": "711",
       "forms": []
     },
     {
       "name": "bergmite",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/712.png",
+      "icon": "712",
       "forms": []
     },
     {
       "name": "avalugg",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/713.png",
+      "icon": "713",
       "forms": []
     },
     {
       "name": "noibat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/714.png",
+      "icon": "714",
       "forms": []
     },
     {
       "name": "noivern",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/715.png",
+      "icon": "715",
       "forms": []
     },
     {
       "name": "xerneas",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/716.png",
+      "icon": "716",
       "forms": []
     },
     {
       "name": "yveltal",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/717.png",
+      "icon": "717",
       "forms": []
     },
     {
       "name": "zygarde",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/718.png",
+      "icon": "718",
       "forms": []
     },
     {
       "name": "diancie",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/719.png",
+      "icon": "719",
       "forms": []
     },
     {
       "name": "hoopa",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/720.png",
+      "icon": "720",
       "forms": []
     },
     {
       "name": "volcanion",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/721.png",
+      "icon": "721",
       "forms": []
     },
     {
       "name": "rowlet",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/722.png",
+      "icon": "722",
       "forms": []
     },
     {
       "name": "dartrix",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/723.png",
+      "icon": "723",
       "forms": []
     },
     {
       "name": "decidueye",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/724.png",
+      "icon": "724",
       "forms": []
     },
     {
       "name": "litten",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/725.png",
+      "icon": "725",
       "forms": []
     },
     {
       "name": "torracat",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/726.png",
+      "icon": "726",
       "forms": []
     },
     {
       "name": "incineroar",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/727.png",
+      "icon": "727",
       "forms": []
     },
     {
       "name": "popplio",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/728.png",
+      "icon": "728",
       "forms": []
     },
     {
       "name": "brionne",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/729.png",
+      "icon": "729",
       "forms": []
     },
     {
       "name": "primarina",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/730.png",
+      "icon": "730",
       "forms": []
     },
     {
       "name": "pikipek",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/731.png",
+      "icon": "731",
       "forms": []
     },
     {
       "name": "trumbeak",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/732.png",
+      "icon": "732",
       "forms": []
     },
     {
       "name": "toucannon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/733.png",
+      "icon": "733",
       "forms": []
     },
     {
       "name": "yungoos",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/734.png",
+      "icon": "734",
       "forms": []
     },
     {
       "name": "gumshoos",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/735.png",
+      "icon": "735",
       "forms": []
     },
     {
       "name": "grubbin",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/736.png",
+      "icon": "736",
       "forms": []
     },
     {
       "name": "charjabug",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/737.png",
+      "icon": "737",
       "forms": []
     },
     {
       "name": "vikavolt",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/738.png",
+      "icon": "738",
       "forms": []
     },
     {
       "name": "crabrawler",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/739.png",
+      "icon": "739",
       "forms": []
     },
     {
       "name": "crabominable",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/740.png",
+      "icon": "740",
       "forms": []
     },
     {
       "name": "oricorio-baile",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/741.png",
+      "icon": "741",
       "forms": []
     },
     {
       "name": "cutiefly",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/742.png",
+      "icon": "742",
       "forms": []
     },
     {
       "name": "ribombee",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/743.png",
+      "icon": "743",
       "forms": []
     },
     {
       "name": "rockruff",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/744.png",
+      "icon": "744",
       "forms": []
     },
     {
       "name": "lycanroc-midday",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/745.png",
+      "icon": "745",
       "forms": []
     },
     {
       "name": "wishiwashi-solo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/746.png",
+      "icon": "746",
       "forms": []
     },
     {
       "name": "mareanie",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/747.png",
+      "icon": "747",
       "forms": []
     },
     {
       "name": "toxapex",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/748.png",
+      "icon": "748",
       "forms": []
     },
     {
       "name": "mudbray",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/749.png",
+      "icon": "749",
       "forms": []
     },
     {
       "name": "mudsdale",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/750.png",
+      "icon": "750",
       "forms": []
     },
     {
       "name": "dewpider",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/751.png",
+      "icon": "751",
       "forms": []
     },
     {
       "name": "araquanid",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/752.png",
+      "icon": "752",
       "forms": []
     },
     {
       "name": "fomantis",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/753.png",
+      "icon": "753",
       "forms": []
     },
     {
       "name": "lurantis",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/754.png",
+      "icon": "754",
       "forms": []
     },
     {
       "name": "morelull",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/755.png",
+      "icon": "755",
       "forms": []
     },
     {
       "name": "shiinotic",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/756.png",
+      "icon": "756",
       "forms": []
     },
     {
       "name": "salandit",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/757.png",
+      "icon": "757",
       "forms": []
     },
     {
       "name": "salazzle",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/758.png",
+      "icon": "758",
       "forms": []
     },
     {
       "name": "stufful",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/759.png",
+      "icon": "759",
       "forms": []
     },
     {
       "name": "bewear",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/760.png",
+      "icon": "760",
       "forms": []
     },
     {
       "name": "bounsweet",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/761.png",
+      "icon": "761",
       "forms": []
     },
     {
       "name": "steenee",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/762.png",
+      "icon": "762",
       "forms": []
     },
     {
       "name": "tsareena",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/763.png",
+      "icon": "763",
       "forms": []
     },
     {
       "name": "comfey",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/764.png",
+      "icon": "764",
       "forms": []
     },
     {
       "name": "oranguru",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/765.png",
+      "icon": "765",
       "forms": []
     },
     {
       "name": "passimian",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/766.png",
+      "icon": "766",
       "forms": []
     },
     {
       "name": "wimpod",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/767.png",
+      "icon": "767",
       "forms": []
     },
     {
       "name": "golisopod",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/768.png",
+      "icon": "768",
       "forms": []
     },
     {
       "name": "sandygast",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/769.png",
+      "icon": "769",
       "forms": []
     },
     {
       "name": "palossand",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/770.png",
+      "icon": "770",
       "forms": []
     },
     {
       "name": "pyukumuku",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/771.png",
+      "icon": "771",
       "forms": []
     },
     {
       "name": "type-null",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/772.png",
+      "icon": "772",
       "forms": []
     },
     {
       "name": "silvally",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/773.png",
+      "icon": "773",
       "forms": []
     },
     {
       "name": "minior-red-meteor",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/774.png",
+      "icon": "774",
       "forms": []
     },
     {
       "name": "komala",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/775.png",
+      "icon": "775",
       "forms": []
     },
     {
       "name": "turtonator",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/776.png",
+      "icon": "776",
       "forms": []
     },
     {
       "name": "togedemaru",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/777.png",
+      "icon": "777",
       "forms": []
     },
     {
       "name": "mimikyu-disguised",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/778.png",
+      "icon": "778",
       "forms": []
     },
     {
       "name": "bruxish",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/779.png",
+      "icon": "779",
       "forms": []
     },
     {
       "name": "drampa",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/780.png",
+      "icon": "780",
       "forms": []
     },
     {
       "name": "dhelmise",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/781.png",
+      "icon": "781",
       "forms": []
     },
     {
       "name": "jangmo-o",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/782.png",
+      "icon": "782",
       "forms": []
     },
     {
       "name": "hakamo-o",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/783.png",
+      "icon": "783",
       "forms": []
     },
     {
       "name": "kommo-o",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/784.png",
+      "icon": "784",
       "forms": []
     },
     {
       "name": "tapu-koko",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/785.png",
+      "icon": "785",
       "forms": []
     },
     {
       "name": "tapu-lele",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/786.png",
+      "icon": "786",
       "forms": []
     },
     {
       "name": "tapu-bulu",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/787.png",
+      "icon": "787",
       "forms": []
     },
     {
       "name": "tapu-fini",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/788.png",
+      "icon": "788",
       "forms": []
     },
     {
       "name": "cosmog",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/789.png",
+      "icon": "789",
       "forms": []
     },
     {
       "name": "cosmoem",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/790.png",
+      "icon": "790",
       "forms": []
     },
     {
       "name": "solgaleo",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/791.png",
+      "icon": "791",
       "forms": []
     },
     {
       "name": "lunala",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/792.png",
+      "icon": "792",
       "forms": []
     },
     {
       "name": "nihilego",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/793.png",
+      "icon": "793",
       "forms": []
     },
     {
       "name": "buzzwole",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/794.png",
+      "icon": "794",
       "forms": []
     },
     {
       "name": "pheromosa",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/795.png",
+      "icon": "795",
       "forms": []
     },
     {
       "name": "xurkitree",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/796.png",
+      "icon": "796",
       "forms": []
     },
     {
       "name": "celesteela",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/797.png",
+      "icon": "797",
       "forms": []
     },
     {
       "name": "kartana",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/798.png",
+      "icon": "798",
       "forms": []
     },
     {
       "name": "guzzlord",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/799.png",
+      "icon": "799",
       "forms": []
     },
     {
       "name": "necrozma",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/800.png",
+      "icon": "800",
       "forms": []
     },
     {
       "name": "magearna",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/801.png",
+      "icon": "801",
       "forms": []
     },
     {
       "name": "marshadow",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/802.png",
+      "icon": "802",
       "forms": []
     },
     {
       "name": "poipole",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/803.png",
+      "icon": "803",
       "forms": []
     },
     {
       "name": "naganadel",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/804.png",
+      "icon": "804",
       "forms": []
     },
     {
       "name": "stakataka",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/805.png",
+      "icon": "805",
       "forms": []
     },
     {
       "name": "blacephalon",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/806.png",
+      "icon": "806",
       "forms": []
     },
     {
       "name": "zeraora",
-      "icon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/807.png",
+      "icon": "807",
       "forms": []
     }
   ]

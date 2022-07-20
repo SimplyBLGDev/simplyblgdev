@@ -1,6 +1,6 @@
 {
   "name":"Kanto3",
-  "games":[ "firered", "leafgreen" ],
+  "games":[ "fr", "lg" ],
   "generation": 3,
   "mapWidth":192,
   "mapHeight":576,

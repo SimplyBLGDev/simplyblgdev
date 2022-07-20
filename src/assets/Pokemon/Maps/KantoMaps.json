@@ -1,6 +1,6 @@
 {
   "name":"Kanto",
-  "games":[ "red", "blue", "yellow" ],
+  "games":[ "r", "b", "y" ],
   "generation": 1,
   "mapWidth":160,
   "mapHeight":136,

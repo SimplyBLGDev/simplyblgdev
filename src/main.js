@@ -50,6 +50,7 @@ const routes = [
     props: {
       'region': "Kanto",
       'mapJSON': require('@/assets/Pokemon/Maps/KantoMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Encounters/KantoEncounters.json'),
       'mapIMGsrc': require('@/assets/Pokemon/Maps/Kanto.png')
     }
   },
@@ -62,6 +63,7 @@ const routes = [
     props: {
       'region': "Johto",
       'mapJSON': require('@/assets/Pokemon/Maps/JohtoMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Encounters/JohtoEncounters.json'),
       'mapIMGsrc': require('@/assets/Pokemon/Maps/Johto.png')
     }
   },
@@ -74,6 +76,7 @@ const routes = [
     props: {
       'region': "Kanto3",
       'mapJSON': require('@/assets/Pokemon/Maps/Kanto3Maps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Encounters/Kanto3Encounters.json'),
       'mapIMGsrc': require('@/assets/Pokemon/Maps/Kanto3.png')
     }
   },
@@ -86,6 +89,7 @@ const routes = [
     props: {
       'region': "Hoenn",
       'mapJSON': require('@/assets/Pokemon/Maps/HoennMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Encounters/HoennEncounters.json'),
       'mapIMGsrc': require('@/assets/Pokemon/Maps/Hoenn.png')
     }
   },
@@ -98,6 +102,7 @@ const routes = [
     props: {
       'region': "Sinnoh",
       'mapJSON': require('@/assets/Pokemon/Maps/SinnohMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Encounters/SinnohEncounters.json'),
       'mapIMGsrc': require('@/assets/Pokemon/Maps/Sinnoh.png')
     }
   },

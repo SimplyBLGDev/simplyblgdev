@@ -1,6 +1,6 @@
 {
   "name": "Hoenn",
-  "games":[ "ruby", "sapphire", "emerald" ],
+  "games":[ "r", "s", "e" ],
   "generation": 3,
   "mapWidth": 257,
   "mapHeight": 196,
