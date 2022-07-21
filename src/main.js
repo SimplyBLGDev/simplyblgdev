@@ -51,7 +51,7 @@ const routes = [
       'region': "Kanto",
       'mapJSON': require('@/assets/Pokemon/Maps/KantoMaps.json'),
       'encountersJSON': require('@/assets/Pokemon/Encounters/KantoEncounters.json'),
-      'mapIMGsrc': require('@/assets/Pokemon/Maps/Kanto.png')
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Kanto.png') ]
     }
   },
   { path: '/Pokemon/Johto',
@@ -64,7 +64,7 @@ const routes = [
       'region': "Johto",
       'mapJSON': require('@/assets/Pokemon/Maps/JohtoMaps.json'),
       'encountersJSON': require('@/assets/Pokemon/Encounters/JohtoEncounters.json'),
-      'mapIMGsrc': require('@/assets/Pokemon/Maps/Johto.png')
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Johto.png') ]
     }
   },
   { path: '/Pokemon/Kanto3',
@@ -77,7 +77,12 @@ const routes = [
       'region': "Kanto3",
       'mapJSON': require('@/assets/Pokemon/Maps/Kanto3Maps.json'),
       'encountersJSON': require('@/assets/Pokemon/Encounters/Kanto3Encounters.json'),
-      'mapIMGsrc': require('@/assets/Pokemon/Maps/Kanto3.png')
+      'mapIMGsrc': [
+        require('@/assets/Pokemon/Maps/Kanto3.png'),
+        require('@/assets/Pokemon/Maps/Kanto3_1.png'),
+        require('@/assets/Pokemon/Maps/Kanto3_2.png'),
+        require('@/assets/Pokemon/Maps/Kanto3_3.png')
+      ]
     }
   },
   { path: '/Pokemon/Hoenn',
@@ -90,7 +95,7 @@ const routes = [
       'region': "Hoenn",
       'mapJSON': require('@/assets/Pokemon/Maps/HoennMaps.json'),
       'encountersJSON': require('@/assets/Pokemon/Encounters/HoennEncounters.json'),
-      'mapIMGsrc': require('@/assets/Pokemon/Maps/Hoenn.png')
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Hoenn.png') ]
     }
   },
   { path: '/Pokemon/Sinnoh',
@@ -103,7 +108,7 @@ const routes = [
       'region': "Sinnoh",
       'mapJSON': require('@/assets/Pokemon/Maps/SinnohMaps.json'),
       'encountersJSON': require('@/assets/Pokemon/Encounters/SinnohEncounters.json'),
-      'mapIMGsrc': require('@/assets/Pokemon/Maps/Sinnoh.png')
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Sinnoh.png') ]
     }
   },
   { path: '/Pokemon/GoogleTranslatedEmerald',

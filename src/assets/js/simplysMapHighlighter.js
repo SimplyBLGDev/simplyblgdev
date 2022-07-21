@@ -58,6 +58,8 @@ var permaCanvasAreas;
 var selectedCanvasArea;
 var resultsCanvasAreas;
 
+var globalOffset = [0, 0];
+
 function SetUpHighlighter(map, _mapIMG, _normalCanvas, _selectedCanvas, _permaCanvas, _resultsCanvas, _permaAreas) {
   mapIMG = _mapIMG;
   scaleImageMap(map);
@@ -75,6 +77,11 @@ function SelectArea(area) {
   selectedCanvasArea = area;
   ClearCanvas(selectedCanvas);
   DrawArea(selectedCanvas, selectedCanvasArea, mapHighlightingStyles.selected);
+}
+
+function SetOffset(newOffset) {
+  globalOffset = newOffset;
+  Resized();
 }
 
 function Resized() {
@@ -161,9 +168,10 @@ function scaleImageMap(map) {
       function resizeAreaTag(cachedAreaCoords, idx) {
         function scale(coord) {
           var dimension = 1 === (isWidth = 1 - isWidth) ? 'width' : 'height'
+          var offset = (dimension === 'width') ? globalOffset[0] : globalOffset[1];
           return (
             padding[dimension] +
-            Math.floor(Number(coord) * scalingFactor[dimension])
+            Math.floor((offset + Number(coord)) * scalingFactor[dimension])
           )
         }
 
@@ -251,4 +259,4 @@ function scaleImageMap(map) {
     }
   }
 
-export { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch }
+export { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch, SetOffset }

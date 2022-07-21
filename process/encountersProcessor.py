@@ -213,9 +213,30 @@ def processRegion(region):
     fileToWrite = '{0}Encounters.json'.format(region)
     processFile(fileToLoad, fileToWrite, region)
 
+def getLocationsAt(maps, regionTopLeft, regionBottomRight):
+    found = []
+    for map in maps:
+        if regionBottomRight[0] > map['dimensions'][0] > regionTopLeft[0]:
+            if regionBottomRight[1] > map['dimensions'][1] > regionTopLeft[1]:
+                found.append(map['location_id'])
+    
+    return found
+
+def getLocationsIncludedInRangeFromFile(file, regionTopLeft, regionBottomRight):
+    maps = []
+    with open(file) as f:
+        maps = json.loads(f.read())['maps']
+    return getLocationsAt(maps, regionTopLeft, regionBottomRight)
+
 if __name__ == '__main__':
-    processRegion('Kanto')
-    processRegion('Johto')
-    processRegion('Hoenn')
-    processRegion('Kanto3')
-    processRegion('Sinnoh')
+    #processRegion('Kanto')
+    #processRegion('Johto')
+    #processRegion('Hoenn')
+    #processRegion('Kanto3')
+    #processRegion('Sinnoh')
+
+    #print(getLocationsIncludedInRangeFromFile('..\\src\\assets\\Pokemon\\Maps\\Kanto3Maps.json', [0, 0], [192, 144]))
+    #print(getLocationsIncludedInRangeFromFile('..\\src\\assets\\Pokemon\\Maps\\Kanto3Maps.json', [0, 144], [192, 288]))
+    #print(getLocationsIncludedInRangeFromFile('..\\src\\assets\\Pokemon\\Maps\\Kanto3Maps.json', [0, 288], [192, 432]))
+    #print(getLocationsIncludedInRangeFromFile('..\\src\\assets\\Pokemon\\Maps\\Kanto3Maps.json', [0, 432], [192, 576]))
+    pass

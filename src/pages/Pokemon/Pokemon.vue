@@ -2,8 +2,16 @@
 <div>
   <div id="poke">
     <div class="leftContainer">
+
+      <div class="mapSwitchHUD" v-if="mapJSON.subregions">
+        <div class="mapSwitchButton" v-for="subregion in mapJSON.subregions" :key="subregion.name" :class="{ active: mapSubregion === subregion.id }" @click="setSubregion(subregion.id)">
+          <img src="../../assets/Pokemon/alert.png" alt="!!" v-if="subregionSearchResults.includes(subregion.id)">
+          {{ subregion.name }}
+        </div>
+      </div>
+
       <div class="gameMapContainer">
-        <img id="mapIMG" :src=mapIMGsrc class="mapImage" alt="Game Map" usemap="#Map" :width=mapJSON.mapWidth :height=mapJSON.mapHeight @click="baseClick()">
+        <img id="mapIMG" :src=mapIMGsrc[mapSubregion] class="mapImage" alt="Game Map" usemap="#Map" :width=mapJSON.mapWidth :height=mapJSON.mapHeight @click="baseClick()">
         <canvas class="mapCanvas" id="normalCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="selectionCanvas" style="pointer-events:none;"></canvas>
         <canvas class="mapCanvas" id="searchCanvas" style="pointer-events:none;"></canvas>
@@ -143,7 +151,7 @@
               </td>
               <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', kanto3: region==='Kanto3', hoenn: region==='Hoenn', sinnoh: region==='Sinnoh', male: encounter.iconGender===0,
                 grass: mapJSON.grassMapsLocationIds.includes(encounters.id) }">
-                <img src="../../assets/transparent.png" class="encounterIcon" :class="[encounter.method, encounter.pkmn|PKMNName]">
+                <img src="../../assets/transparent.png" class="encounterIcon" :class="[encounter.method, GetPKMNName(encounter.pkmn)]">
                 {{ encounter.method | convertMethod }}
               </td>
               <td class="regionData" v-if="encounter.min != encounter.max">{{ encounter.min }} - {{ encounter.max }}</td>
@@ -180,7 +188,7 @@
 
 <script>
 import $ from 'jquery'
-import { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch } from '../../assets/js/simplysMapHighlighter'
+import { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch, SetOffset } from '../../assets/js/simplysMapHighlighter'
 import { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName } from './PokemonParser'
 
 export default {
@@ -190,7 +198,10 @@ export default {
     allOutlines: false,
     filteredGames: [],
     findablePokemon: [],
-    encounters: []
+    encounters: [],
+    mapSubregion: 0,
+    subregionSearchResults: [],
+    mapCoordsOffset: [0, 0]
   }),
   props: ['region', 'mapJSON', 'encountersJSON', 'mapIMGsrc' ],
   mounted() {
@@ -206,6 +217,7 @@ export default {
 
     SetUpHighlighter(document.querySelector('#GameMap'), document.querySelector('#mapIMG'), document.querySelector('#normalCanvas'),
       document.querySelector('#selectionCanvas'), document.querySelector('#permaCanvas'), document.querySelector('#searchCanvas'), document.querySelectorAll('area'));
+    this.visibleMaps = this.mapJSON.maps;
   },
   methods: {
     intersects: function(a, b) {
@@ -231,6 +243,16 @@ export default {
       $('#normalCanvas').fadeOut(120);
     },
     fetchEncounters: function(locationId) {
+      if (this.mapJSON.subregions) {
+        for (var i = 0; i < this.mapJSON.subregions.length; i++) {
+          if (this.mapJSON.subregions[i].locationIds.includes(locationId)) {
+            if (this.mapJSON.subregions[i].id != this.mapSubregion) {
+              this.setSubregion(this.mapJSON.subregions[i].id);
+            }
+          }
+        }
+      }
+      
       SelectArea(event.target);
       this.encounters = GetEncountersForLocation(locationId);
     },
@@ -254,6 +276,7 @@ export default {
     findPokemon: function() {
       if (this.$refs.PokeInput._data.writtenText == "") {
         DrawSearch([]); // Clear search if nothing is written
+        this.subregionSearchResults = [];
         return;
       }
       var search = this.unPokeAlias(this.$refs.PokeInput._data.writtenText);
@@ -262,6 +285,16 @@ export default {
       resultsIds.forEach(function(id) {
         results.push(document.querySelector('[data-locationId = "' + id + '"]'));
       });
+
+      if (this.mapJSON.subregions) {
+        this.subregionSearchResults = [];
+        for (var i = 0; i < this.mapJSON.subregions.length; i++) {
+          if (this.intersects(this.mapJSON.subregions[i].locationIds, resultsIds)) {
+            this.subregionSearchResults.push(this.mapJSON.subregions[i].id);
+          }
+        }
+      }
+
       DrawSearch(results);
     },
     findLocation: function() {
@@ -303,6 +336,17 @@ export default {
       if (this.mapJSON.baseLocation.length > 0) {
         this.encounters = GetEncountersForLocation(this.mapJSON.baseLocation[0].location_id);
       }
+    },
+    GetPKMNName: function(value) {
+      return this.$options.filters.PKMNName(value);
+    },
+    setSubregion: function(value) {
+      this.mapSubregion = value;
+      var offset = [
+        -this.mapJSON.subregions[this.mapSubregion].imgRegion[0],
+        -this.mapJSON.subregions[this.mapSubregion].imgRegion[1]
+      ];
+      SetOffset(offset);
     }
   },
   filters: {

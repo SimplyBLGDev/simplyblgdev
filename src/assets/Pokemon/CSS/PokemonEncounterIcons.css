@@ -107,7 +107,7 @@
   height: 18px;
   --x-pos: -353px;
 }
-.kanto3>.encounterIcon.grass {
+.kanto3.grass>.encounterIcon.walk {
   width: 16px;
   height: 20px;
   --x-pos: -336px;

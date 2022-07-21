@@ -31,8 +31,8 @@
   image-rendering: pixelated;
   width: 100%;
   height: auto;
-  border-radius: 3vw;
   box-shadow: -0.4vw 0.4vw #39b331;
+  border-radius: 0.3vw;
 }
 .gameMapContainer {
   margin-bottom: 0.3vw;
@@ -161,6 +161,44 @@
   display:flex;
   align-items:center;
   justify-content:center;
+}
+.mapSwitchHUD {
+  display: flex;
+}
+.mapSwitchButton {
+  transition: all .15s ease-in-out;
+  width: 100%;
+  border-radius: 4px;
+  margin-left: 1px;
+  margin-right: 2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #2a7925;
+  font-weight: bold;
+  user-select: none;
+}
+.mapSwitchButton img {
+  scale: 2;
+  image-rendering: pixelated;
+  margin-right: 4px;
+}
+.mapSwitchButton:first-child {
+  border-top-left-radius: 3vw;
+  margin-left: 0;
+} 
+.mapSwitchButton:last-child {
+  border-top-right-radius: 3vw;
+  margin-right: 0;
+}
+.mapSwitchButton:hover {
+  background-color: #32972b;
+  transform: translateY(-4px);
+}
+.mapSwitchButton.active {
+  background-color: #39b331;
+  transform: translateY(4px);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 @media only screen and (min-width: 1200px) {
