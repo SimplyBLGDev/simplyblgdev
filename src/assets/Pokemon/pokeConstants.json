@@ -131,6 +131,38 @@
           "value": "slot2-emerald"
         }
       ]
+    },
+    {
+      "name": "radio",
+      "type": "selection",
+      "options": [
+        {
+          "name": "Radio Off",
+          "value": "radio-off"
+        },
+        {
+          "name": "Hoenn Sound",
+          "value": "radio-hoenn"
+        },
+        {
+          "name": "Sinnoh Sound",
+          "value": "radio-sinnoh"
+        }
+      ]
+    },
+    {
+      "name": "vermillion-copycat",
+      "type": "toggle",
+      "options": [
+        {
+          "name": "Vermillion Copycat completed",
+          "value": "story-progress-vermilion-copycat"
+        },
+        {
+          "name": "Didn't give doll to Vermillion Copycat",
+          "value": ""
+        }
+      ]
     }
   ],
   "icons": [

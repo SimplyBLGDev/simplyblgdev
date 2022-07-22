@@ -12,6 +12,7 @@
           <b-dropdown-item href="/Pokemon/Sinnoh">Gen 4 - Sinnoh</b-dropdown-item>
           <b-dropdown-divider></b-dropdown-divider>
           <b-dropdown-item href="/Pokemon/Kanto3">Gen 3 - Kanto</b-dropdown-item>
+          <b-dropdown-item href="/Pokemon/Johto4">Gen 4 - Johto</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Other" type="dark">
           <b-dropdown-item href="/Pokemon/GoogleTranslatedEmerald">Google translated Pokémon Emerald</b-dropdown-item>
@@ -27,7 +28,7 @@
         <table style="width: 100%; margin-top: 2rem;">
           <tbody>
             <tr>
-              <td colspan=2>SimplyBLG's 2020</td>
+              <td colspan=2>SimplyBLG's 2022</td>
             </tr>
             <tr>
               <td width="50%"><a href="https://github.com/SimplyBLGDev">Github</a></td>

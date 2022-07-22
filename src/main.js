@@ -110,6 +110,19 @@ const routes = [
       'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Sinnoh.png') ]
     }
   },
+  { path: '/Pokemon/Johto4',
+    name: 'Johto4',
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/Pokemon.vue'),
+    meta: {
+      title: 'Johto interactive map for HGSS'
+    },
+    props: {
+      'region': "Johto4",
+      'mapJSON': require('@/assets/Pokemon/Maps/Johto4Maps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Encounters/Johto4Encounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Johto4.png') ]
+    }
+  },
   { path: '/Pokemon/GoogleTranslatedEmerald',
     name: 'Google Translated Pokémon Emerald',
     component: () => import(/* webpackChunkName: "GoogleTranslate" */'./pages/Pokemon/GoogleTranslate.vue'),

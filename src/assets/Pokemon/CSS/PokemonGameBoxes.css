@@ -59,6 +59,12 @@
 .gameBox.platinum {
   --gb-color:#bcbcbc;
 }
+.gameBox.heartgold {
+  --gb-color:#ccc916;
+}
+.gameBox.soulsilver {
+  --gb-color:#bcbcbc;
+}
 .gameBox.morning {
   background-color: #c3c838;
 }

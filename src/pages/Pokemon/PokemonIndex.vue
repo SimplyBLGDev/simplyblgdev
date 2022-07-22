@@ -23,8 +23,8 @@
 			<div style="position: absolute; width: 100%; height: 9rem;display: flex;align-items: center;text-align: center;justify-content: center;background-color: #444444bb;">
 				<span style="transform: rotate(20deg); font-size:4rem;">WIP</span>
 			</div>
-			<div class="fullWidthDiv sinnoh">
-				<span>Sinnoh</span>
+			<div class="fullWidthDiv unova">
+				<span>Unova</span>
 			</div>
 		</div>
 	</div>
@@ -99,7 +99,7 @@ export default {
 				name: "Kanto Remakes",
 				address: 'Kanto3',
 				preview: require('../../assets/Pokemon/Maps/Kanto3Preview.png'),
-				class:"kanto3",
+				class: "kanto3",
 				games:[
 					{
             name:"FR",
@@ -115,7 +115,7 @@ export default {
 				name: "Sinnoh",
 				address: 'Sinnoh',
 				preview: require('../../assets/Pokemon/Maps/SinnohPreview.png'),
-				class:"sinnoh",
+				class: "sinnoh",
 				games:[
 					{
 						name:"D",
@@ -128,6 +128,22 @@ export default {
 					{
 						name:"Pt",
 						class:"platinum"
+					}
+				]
+			},
+			{
+				name: "Johto Remakes",
+				address: 'Johto',
+				preview: require('../../assets/Pokemon/Maps/Johto4Preview.png'),
+				class: "johto",
+				games:[
+					{
+						name:"HG",
+						class:"heartgold"
+					},
+					{
+						name:"SS",
+						class:"soulsilver"
 					}
 				]
 			}
@@ -259,5 +275,11 @@ export default {
 }
 .gameIndicator.platinum {
 	--gameColor: #6f6f6f;
+}
+.gameIndicator.heartgold {
+	--gameColor: #ccc916;
+}
+.gameIndicator.soulsilver {
+	--gameColor: #bcbcbc;
 }
 </style>

@@ -31,3 +31,12 @@
 .conditionButton.awakened_beasts.story-progress-awakened-beasts {
     --condition_color: #b82626;
 }
+.conditionButton.radio.radio-hoenn {
+    --condition_color: #d76a2a;
+}
+.conditionButton.radio.radio-sinnoh {
+    --condition_color: #4a2ad7;
+}
+.conditionButton.radio.vermillion-copycat.story-progress-vermillion-copycat {
+    --condition_color: #c025b3;
+}

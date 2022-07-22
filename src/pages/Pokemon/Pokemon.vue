@@ -53,6 +53,10 @@
                 <td class="regionData btn gameBox pearl" v-bind:class="{ active: filteredGames.includes('p') }" colspan=2 @click="filterGame('p')"><b>P</b></td>
                 <td class="regionData btn gameBox bottomRight platinum" v-bind:class="{ active: filteredGames.includes('Pt') }" colspan=2 @click="filterGame('Pt')"><b>Pt</b></td>
               </template>
+              <template v-else-if="region==='Johto4'">
+                <td class="regionData btn gameBox bottomLeft heartgold" v-bind:class="{ active: filteredGames.includes('hg') }" colspan=3 @click="filterGame('hg')"><b>HG</b></td>
+                <td class="regionData btn gameBox bottomRight soulsilver" v-bind:class="{ active: filteredGames.includes('ss') }" colspan=3 @click="filterGame('ss')"><b>SS</b></td>
+              </template>
               <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=mapJSON.maps ref="LocInput"></NiceDatalist>
               </td>
@@ -117,7 +121,7 @@
             <th colspan=5 v-if="encounters.name">
               <div class="inTableTable conditionTable">
                 <div class="regionData header">{{ alias(encounters.name) }}</div>
-                <div v-for="condition in currentConditions" :key="condition" :class=" [ 'regionData', 'conditionButton', condition.name, condition.options[selectedConditions[condition.name]].value ]" @click="selectCondition(condition)">
+                <div v-for="condition in currentConditions" :key="condition.name" :class=" [ 'regionData', 'conditionButton', condition.name, condition.options[selectedConditions[condition.name]].value ]" @click="selectCondition(condition)">
                   {{ condition.options[selectedConditions[condition.name]].name }}
                 </div>
               </div>
@@ -157,8 +161,12 @@
                   <div class="regionData fbox gameBox pearl" v-bind:class="{ active: encounter.games.includes('p') }"><b>P</b></div>
                   <div class="regionData fbox gameBox platinum" v-bind:class="{ active: encounter.games.includes('Pt') }"><b>Pt</b></div>
                 </template>
+                <template v-else-if="region==='Johto4'">
+                  <div class="regionData fbox gameBox heartgold" v-bind:class="{ active: encounter.games.includes('hg') }"><b>HG</b></div>
+                  <div class="regionData fbox gameBox soulsilver" v-bind:class="{ active: encounter.games.includes('ss') }"><b>SS</b></div>
+                </template>
               </td>
-              <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', kanto3: region==='Kanto3', hoenn: region==='Hoenn', sinnoh: region==='Sinnoh', male: encounter.iconGender===0,
+              <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', kanto3: region==='Kanto3', hoenn: region==='Hoenn', sinnoh: region==='Sinnoh', johto4: region==='Johto4', male: encounter.iconGender===0,
                 grass: mapJSON.grassMapsLocationIds.includes(encounters.id) }">
                 <img src="../../assets/transparent.png" class="encounterIcon" :class="[encounter.method, GetPKMNName(encounter.pkmn)]">
                 {{ encounter.method | convertMethod }}
@@ -217,6 +225,7 @@ export default {
   }),
   props: ['region', 'mapJSON', 'encountersJSON', 'mapIMGsrc' ],
   mounted() {
+    console.log("v2.0");
     this.filteredGames = this.mapJSON.games;
     console.log(FetchEncounters(this.mapJSON.generation, this.encountersJSON));
     $('#permaCanvas').fadeOut(0);
@@ -479,8 +488,8 @@ export default {
         "headbutt-low": "Headbutt Low",
         "headbutt-normal": "Headbutt",
         "headbutt-high": "Headbutt Rare trees",
-        "rock-smash":"Rock Smash",
-        "pokeflute":"Pokéflute",
+        "rock-smash": "Rock Smash",
+        "pokeflute": "Pokéflute",
         "gift": "Gift",
         "gift-egg": "Gift Egg",
         "only-one": "Only One",

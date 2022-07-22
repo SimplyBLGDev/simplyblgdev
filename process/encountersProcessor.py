@@ -248,11 +248,12 @@ def getLocationsIncludedInRangeFromFile(file, regionTopLeft, regionBottomRight):
     return getLocationsAt(maps, regionTopLeft, regionBottomRight)
 
 if __name__ == '__main__':
-    processRegion('Kanto')
-    processRegion('Johto')
-    processRegion('Hoenn')
-    processRegion('Kanto3')
-    processRegion('Sinnoh')
+    #processRegion('Kanto')
+    #processRegion('Johto')
+    #processRegion('Hoenn')
+    #processRegion('Kanto3')
+    #processRegion('Sinnoh')
+    processRegion('Johto4')
 
     print(allConditions)
     print(allMethods)
