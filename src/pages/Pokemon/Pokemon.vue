@@ -94,10 +94,12 @@
                   <b>04:00 - 09:59</b>
                 </div>
                 <div class="regionData fbox gameBox day" style="min-height:auto">
-                  <b>10:00 - 17:59</b>
+                  <b v-if="region==='Johto'">10:00 - 17:59</b>
+                  <b v-else>10:00 - 19:59</b>
                 </div>
                 <div class="regionData fbox gameBox night" style="min-height:auto">
-                  <b>18:00 - 03:59</b>
+                  <b v-if="region==='Johto'">18:00 - 03:59</b>
+                  <b v-else>20:00 - 03:59</b>
                 </div>
               </td>
             </tr>
@@ -112,16 +114,23 @@
             </tr>
           </template>
           <tr>
-            <th class="regionData header" colspan=5 v-if="encounters.name">{{ alias(encounters.name) }}</th>
+            <th colspan=5 v-if="encounters.name">
+              <div class="inTableTable conditionTable">
+                <div class="regionData header">{{ alias(encounters.name) }}</div>
+                <div v-for="condition in currentConditions" :key="condition" :class=" [ 'regionData', 'conditionButton', condition.name, condition.options[selectedConditions[condition.name]].value ]" @click="selectCondition(condition)">
+                  {{ condition.options[selectedConditions[condition.name]].name }}
+                </div>
+              </div>
+            </th>
           </tr>
           <template v-for="area in encounters.areas">
             <tr :key="area.name" v-if="encounters.areas.length > 1">
               <td class="regionData" colspan=5>{{ alias(area.name) }}</td>
             </tr>
-            <tr v-for="encounter in filterEncounters(area.encounters)" v-bind:key="encounter.id" style="height:3rem;">
+            <tr v-for="encounter in filterEncounters(area.encounters, selectedConditions)" v-bind:key="encounter.id" style="height:3rem;">
               <td class="regionData" scope="row">
                 <img :src=encounter.pkmn|PKMNIcon :alt=encounter.pkmn|PKMNName class="pokeIcon">
-                {{ encounter.pkmn | PKMNName | capitalize }}
+                {{ pokeFromDex(encounter.pkmn) }}
               </td>
               <td class="inTableTable">
                 <template v-if="region==='Kanto'">
@@ -188,6 +197,7 @@
 
 <script>
 import $ from 'jquery'
+import pokeConstants from '../../assets/Pokemon/pokeConstants.json'
 import { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch, SetOffset } from '../../assets/js/simplysMapHighlighter'
 import { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName } from './PokemonParser'
 
@@ -201,7 +211,9 @@ export default {
     encounters: [],
     mapSubregion: 0,
     subregionSearchResults: [],
-    mapCoordsOffset: [0, 0]
+    mapCoordsOffset: [0, 0],
+    currentConditions: [],
+    selectedConditions: []
   }),
   props: ['region', 'mapJSON', 'encountersJSON', 'mapIMGsrc' ],
   mounted() {
@@ -223,6 +235,7 @@ export default {
     intersects: function(a, b) {
       return a.some(r=>b.includes(r));
     },
+
     processedDimensions: function (dimensions) {
       var x = dimensions[0];
       var y = dimensions[1];
@@ -231,17 +244,20 @@ export default {
 
       return [x, y, x2, y2].join(',');
     },
+
     // eslint-disable-next-line
     hoverArea: function (newArea) {
       DrawNormal(event.target);
       $('#normalCanvas').stop(true, false);
       $('#normalCanvas').fadeIn(120);
     },
+
     leaveArea: function() {
       this.selectedArea = "-";
       $('#normalCanvas').stop(true, false);
       $('#normalCanvas').fadeOut(120);
     },
+
     fetchEncounters: function(locationId) {
       if (this.mapJSON.subregions) {
         for (var i = 0; i < this.mapJSON.subregions.length; i++) {
@@ -254,8 +270,9 @@ export default {
       }
       
       SelectArea(event.target);
-      this.encounters = GetEncountersForLocation(locationId);
+      this.setLocation(locationId);
     },
+
     filterGame(game) {
       if (this.filteredGames.includes(game)) {
         this.filteredGames.splice(this.filteredGames.indexOf(game), 1);
@@ -263,16 +280,53 @@ export default {
         this.filteredGames.push(game);
       }
     },
-    filterEncounters: function(encounters) {
+
+    filterEncounters: function(encounters, conditions) {
       var r = [];
       for (var i = 0; i < encounters.length; i++) {
         if (this.intersects(encounters[i].games, this.filteredGames)) {
           r.push(encounters[i]);
         }
       }
+
+      // I apologize in advance for this, tried to modularize it, it wouldn't work anywhere else
+      var conditioned = [];
+      for (var j = 0; j < r.length; j++) {
+        var valid = true;
+        if (r[j].conditions.length > 0) {
+          this.currentConditions.forEach(conditionGroup => {
+
+            switch (conditionGroup.type) {
+
+              case "selection":
+                var allConditionsExceptSelected = conditionGroup.options.slice(); // Copy
+                allConditionsExceptSelected.splice(conditions[conditionGroup.name], 1); // Remove selected
+
+                var values = allConditionsExceptSelected.map(a => a.value);
+                if (this.intersects(values, r[j].conditions)) {
+                  valid = false;
+                }
+                break;
+              
+              case "toggle":
+                if (conditions[conditionGroup.name] != 0) {
+                  valid = false;
+                }
+                break;
+              
+            }
+
+          });
+        }
+
+        if (valid) {
+          conditioned.push(r[j]);
+        }
+      }
       
-      return r;
+      return conditioned;
     },
+
     findPokemon: function() {
       if (this.$refs.PokeInput._data.writtenText == "") {
         DrawSearch([]); // Clear search if nothing is written
@@ -297,14 +351,17 @@ export default {
 
       DrawSearch(results);
     },
+
     findLocation: function() {
       document.querySelector('[title = "' + this.$refs.LocInput._data.searchResults[0].name + '"]').click();
     },
+
     highlightAll: function() {
       this.allOutlines = !this.allOutlines;
       ToggleAll(this.allOutlines)
       $('#permaCanvas').fadeToggle(200);
     },
+
     alias: function(value) {
       for (var i = 0; i < this.mapJSON.aliases.length; i++) {
         if (this.mapJSON.aliases[i].name == value) {
@@ -314,6 +371,15 @@ export default {
 
       return value;
     },
+
+    pokeFromDex: function(value) {
+      value = this.$options.filters.PKMNName(value);
+      value = this.pokeAlias(value);
+      value = this.$options.filters.capitalize(value);
+
+      return value;
+    },
+
     pokeAlias: function(value) {
       for (var i = 0; i < this.mapJSON.pokeAliases.length; i++) {
         if (this.mapJSON.pokeAliases[i].name == value) {
@@ -323,6 +389,7 @@ export default {
 
       return value;
     },
+
     unPokeAlias: function(value) {
       for (var i = 0; i < this.mapJSON.pokeAliases.length; i++) {
         if (this.mapJSON.pokeAliases[i].display == value) {
@@ -332,14 +399,17 @@ export default {
 
       return value;
     },
+
     baseClick: function() {
       if (this.mapJSON.baseLocation.length > 0) {
-        this.encounters = GetEncountersForLocation(this.mapJSON.baseLocation[0].location_id);
+        this.setLocation(this.mapJSON.baseLocation[0].location_id);
       }
     },
+
     GetPKMNName: function(value) {
       return this.$options.filters.PKMNName(value);
     },
+
     setSubregion: function(value) {
       this.mapSubregion = value;
       var offset = [
@@ -347,6 +417,49 @@ export default {
         -this.mapJSON.subregions[this.mapSubregion].imgRegion[1]
       ];
       SetOffset(offset);
+    },
+
+    setLocation: function(locationId) {
+      this.encounters = GetEncountersForLocation(locationId);
+      this.populateConditions();
+    },
+
+    populateConditions: function() {
+      var foundConditions = [];
+      this.currentConditions = [];
+      this.selectedConditions = [];
+
+      this.encounters.areas.forEach(area => {
+        area.encounters.forEach(encounter => {
+          encounter.conditions.forEach(condition => {
+            if (!foundConditions.includes(condition)) {
+
+              pokeConstants.condition_groups.forEach(conditionGroup => {
+                conditionGroup.options.forEach(option => {
+                  if (condition == option.value && !foundConditions.includes(conditionGroup)) {
+                    foundConditions.push(conditionGroup);
+                  }
+                });
+              });
+
+            }
+          });
+        });
+      });
+
+      var selectedConditions = {};
+
+      foundConditions.forEach(conditionGroup => {
+        selectedConditions[conditionGroup.name] = 0;
+      });
+
+      this.selectedConditions = selectedConditions;
+      this.currentConditions = foundConditions;
+    },
+
+    selectCondition: function(conditionGroup) {
+      var currentOptionIx = this.selectedConditions[conditionGroup.name];
+      this.selectedConditions[conditionGroup.name] = (currentOptionIx + 1) % conditionGroup.options.length;
     }
   },
   filters: {
@@ -398,4 +511,5 @@ html {
 @import url('../../assets/Pokemon/CSS/PokemonMaps.css');
 @import url('../../assets/Pokemon/CSS/PokemonEncounterIcons.css');
 @import url('../../assets/Pokemon/CSS/PokemonGameBoxes.css');
+@import url('../../assets/Pokemon/CSS/PokemonConditions.css');
 </style>

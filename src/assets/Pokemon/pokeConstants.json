@@ -1,4 +1,138 @@
 {
+  "condition_groups": [
+    {
+      "name": "swarm",
+      "type": "selection",
+      "options": [
+        {
+          "name": "No Swarm",
+          "value": "swarm-no"
+        },
+        {
+          "name": "Swarm",
+          "value": "swarm-yes"
+        }
+      ]
+    },
+    {
+      "name": "awakened_beasts",
+      "type": "toggle",
+      "options": [
+        {
+          "name": "Awakened Beasts",
+          "value": "story-progress-awakened-beasts"
+        },
+        {
+          "name": "Didn't Awake Beasts",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": "hall_of_fame",
+      "type": "toggle",
+      "options": [
+        {
+          "name": "Beat champion",
+          "value": "story-progress-hall-of-fame"
+        },
+        {
+          "name": "Didn't beat champion",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": "tv_option",
+      "type": "selection",
+      "options": [
+        {
+          "name": "Emerald TV Red",
+          "value": "tv-option-red"
+        },
+        {
+          "name": "Emerald TV Blue",
+          "value": "tv-option-blue"
+        }
+      ]
+    },
+    {
+      "name": "beat_elite_four_round_two",
+      "type": "toggle",
+      "options": [
+        {
+          "name": "Beat Elite 4 Round 2",
+          "value": "story-progress-beat-elite-four-round-two"
+        },
+        {
+          "name": "Didn't Beat Elite 4 Round 2",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "name": "starter_frlg",
+      "type": "selection",
+      "options": [
+        {
+          "name": "Starter Bulbasaur",
+          "value": "starter-bulbasaur"
+        },
+        {
+          "name": "Starter Squirtle",
+          "value": "starter-squirtle"
+        },
+        {
+          "name": "Starter Charmander",
+          "value": "starter-charmander"
+        }
+      ]
+    },
+    {
+      "name": "radar",
+      "type": "selection",
+      "options": [
+        {
+          "name": "Radar Off",
+          "value": "radar-off"
+        },
+        {
+          "name": "Radar On",
+          "value": "radar-on"
+        }
+      ]
+    },
+    {
+      "name": "slot2",
+      "type": "selection",
+      "options": [
+        {
+          "name": "Slot 2 None",
+          "value": "slot2-none"
+        },
+        {
+          "name": "Slot 2 FireRed",
+          "value": "slot2-firered"
+        },
+        {
+          "name": "Slot 2 LeafGreen",
+          "value": "slot2-leafgreen"
+        },
+        {
+          "name": "Slot 2 Ruby",
+          "value": "slot2-ruby"
+        },
+        {
+          "name": "Slot 2 Sapphire",
+          "value": "slot2-sapphire"
+        },
+        {
+          "name": "Slot 2 Emerald",
+          "value": "slot2-emerald"
+        }
+      ]
+    }
+  ],
   "icons": [
     {
       "name": "bulbasaur",

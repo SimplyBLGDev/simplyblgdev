@@ -200,6 +200,32 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+.conditionTable {
+  
+}
+.conditionTable .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.conditionButton {
+  margin-left: 4px;
+  --condition_color: #2a7925;
+  background-color: var(--condition_color);
+  border-color: var(--condition_color);
+  color: whitesmoke;
+  transition: all .15s ease-in-out;
+  width: 13.3%;
+  user-select: none;
+  border-style: solid;
+  border-width: 2px;
+}
+.conditionButton:hover {
+  border-color: whitesmoke;
+}
 
 @media only screen and (min-width: 1200px) {
   #poke {

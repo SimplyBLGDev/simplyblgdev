@@ -9,7 +9,7 @@
           <b-dropdown-item href="/Pokemon/Kanto">Gen 1 - Kanto</b-dropdown-item>
           <b-dropdown-item href="/Pokemon/Johto">Gen 2 - Johto</b-dropdown-item>
           <b-dropdown-item href="/Pokemon/Hoenn">Gen 3 - Hoenn</b-dropdown-item>
-          <b-dropdown-item href="/Pokemon/Sinnoh">(WIP)Gen 4 - Sinnoh</b-dropdown-item>
+          <b-dropdown-item href="/Pokemon/Sinnoh">Gen 4 - Sinnoh</b-dropdown-item>
           <b-dropdown-divider></b-dropdown-divider>
           <b-dropdown-item href="/Pokemon/Kanto3">Gen 3 - Kanto</b-dropdown-item>
         </b-nav-item-dropdown>

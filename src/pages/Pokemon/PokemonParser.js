@@ -1,4 +1,4 @@
-import pokeIcons from '../../assets/Pokemon/pokeIcons.json'
+import pokeConstants from '../../assets/Pokemon/pokeConstants.json'
 var encounterTable = {};
 var generation;
 var baseLocationIds;
@@ -91,7 +91,7 @@ function GetMethodValue(method) {
 }
 
 function GetPokeList(topIX) {
-    var iconsClone = [...pokeIcons.icons];
+    var iconsClone = [...pokeConstants.icons];
     iconsClone = iconsClone.splice(0, topIX);
 
     var ret = [];
@@ -108,7 +108,7 @@ function GetPokeList(topIX) {
 }
 
 function GetPokeName(dexNo) {
-    return pokeIcons.icons[dexNo-1].name;
+    return pokeConstants.icons[dexNo-1].name;
 }
 
 function FindPokemon(poke) {

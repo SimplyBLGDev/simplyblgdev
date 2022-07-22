@@ -1,0 +1,33 @@
+.conditionButton.swarm.swarm-yes {
+    --condition_color: #3294c4;
+}
+.conditionButton.slot2.slot2-firered {
+    --condition_color: #ca2c2c;
+}
+.conditionButton.slot2.slot2-leafgreen {
+    --condition_color: #328d2b;
+}
+.conditionButton.slot2.slot2-ruby {
+    --condition_color: #ca4c2c;
+}
+.conditionButton.slot2.slot2-sapphire {
+    --condition_color: #3294c4;
+}
+.conditionButton.slot2.slot2-emerald {
+    --condition_color: #328d2b;
+}
+.conditionButton.radar.radar-on {
+    --condition_color: #b82626;
+}
+.conditionButton.tv_option.tv-option-red {
+    --condition_color: #b82626;
+}
+.conditionButton.tv_option.tv-option-blue {
+    --condition_color: #2635b8;
+}
+.conditionButton.hall_of_fame.story-progress-hall-of-fame {
+    --condition_color: #328d2b;
+}
+.conditionButton.awakened_beasts.story-progress-awakened-beasts {
+    --condition_color: #b82626;
+}

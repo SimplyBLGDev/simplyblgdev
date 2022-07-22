@@ -110,6 +110,26 @@ export default {
             class:"leafgreen"
           }
 				]
+			},
+			{
+				name: "Sinnoh",
+				address: 'Sinnoh',
+				preview: require('../../assets/Pokemon/Maps/SinnohPreview.png'),
+				class:"sinnoh",
+				games:[
+					{
+						name:"D",
+						class:"diamond"
+					},
+					{
+						name:"P",
+						class:"pearl"
+					},
+					{
+						name:"Pt",
+						class:"platinum"
+					}
+				]
 			}
 		]
 	}),
@@ -179,6 +199,12 @@ export default {
 .kanto3:hover {
 	background-color: #6c9468;
 }
+.sinnoh {
+	background-color: #1d7e91;
+}
+.sinnoh:hover {
+	background-color: #2999af;
+}
 .gameIndicator {
 	padding-right: 1.5rem;
   color:whitesmoke;
@@ -224,5 +250,14 @@ export default {
 }
 .gameIndicator.leafgreen {
   --gameColor: #57d94c;
+}
+.gameIndicator.pearl {
+	--gameColor: #ba80bf;
+}
+.gameIndicator.diamond {
+	--gameColor: #8093bf;
+}
+.gameIndicator.platinum {
+	--gameColor: #6f6f6f;
 }
 </style>

@@ -187,6 +187,31 @@
   height: 24px;
   --x-pos: -736px;
 }
+.sinnoh.grass>.encounterIcon.walk {
+  width: 17px;
+  height: 29px;
+  --x-pos: -934px;
+}
+.sinnoh>.encounterIcon.walk {
+  width: 17px;
+  height: 25px;
+  --x-pos: -953px;
+}
+.sinnoh>.encounterIcon.old-rod, .sinnoh>.encounterIcon.good-rod, .sinnoh>.encounterIcon.super-rod {
+  width: 30px;
+  height: 24px;
+  --x-pos: -970px;
+}
+.sinnoh>.encounterIcon.surf {
+  width: 26px;
+  height: 30px;
+  --x-pos: -1001px;
+}
+.sinnoh>.encounterIcon.gift {
+  width: 17px;
+  height: 17px;
+  --x-pos: -1028px;
+}
 
 .kanto>.encounterIcon.only-one.articuno, .kanto>.encounterIcon.only-one.zapdos, .kanto>.encounterIcon.only-one.moltres {
   width: 12px;
