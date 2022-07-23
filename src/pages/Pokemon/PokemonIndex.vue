@@ -133,7 +133,7 @@ export default {
 			},
 			{
 				name: "Johto Remakes",
-				address: 'Johto',
+				address: 'Johto4',
 				preview: require('../../assets/Pokemon/Maps/Johto4Preview.png'),
 				class: "johto",
 				games:[

@@ -225,7 +225,7 @@ export default {
   }),
   props: ['region', 'mapJSON', 'encountersJSON', 'mapIMGsrc' ],
   mounted() {
-    console.log("v2.0");
+    console.log("v2.1");
     this.filteredGames = this.mapJSON.games;
     console.log(FetchEncounters(this.mapJSON.generation, this.encountersJSON));
     $('#permaCanvas').fadeOut(0);
