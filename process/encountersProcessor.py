@@ -1,37 +1,12 @@
-from concurrent.futures import process
-
 import json
+import utils
 
 allConditions = []
 allMethods = []
 
-def readFile(file):
-    with open(file, 'r') as f:
-        return json.loads(f.read())
-
-def cleanupName(name, ignoreRoot = ''):
-    destroyWords = [ 'kanto', 'johto', 'hoenn', 'sinnoh', 'unova', 'kalos', 'alola', 'galar' ]
-
-    name = name.removesuffix('-area')
-    if ignoreRoot != '':
-        name = name.replace(ignoreRoot, '')
-    name = name.replace('sea-route', 'route')
-    words = name.split('-')
-    newWords = []
-    for word in words:
-        if (word not in destroyWords and not name.startswith('roaming')):
-            if len(word) > 3:
-                newWords.append(word.capitalize())
-            else:
-                newWords.append(word)
-    
-    return ' '.join(newWords)
-
-### END UTILS
-
 def processFile(src, fileName, name):
     processed = {}
-    original = readFile(src)
+    original = utils.readFile(src)
 
     processed['name'] = name
     processed['games'] = original['games']
@@ -40,12 +15,11 @@ def processFile(src, fileName, name):
         newLocation = processLocation(location)
         processed['locations'].append(newLocation)
 
-    with open(fileName, 'w') as f:
-        f.write(json.dumps(processed))
+    utils.writeFile(fileName, processed)
 
 def processLocation(original):
     newLocation = {}
-    newLocation['name'] = cleanupName(original['name'])
+    newLocation['name'] = utils.cleanupName(original['name'])
     newLocation['id'] = original['id']
     newLocation['areas'] = []
     for area in original['areas']:
@@ -57,7 +31,7 @@ def processLocation(original):
 def processArea(original, root):
     newArea = {}
     name = original['name']
-    newArea['name'] = cleanupName(name, root)
+    newArea['name'] = utils.cleanupName(name, root)
     newArea['encounters'] = []
     for encounter in original['encounters']:
         newEncounter = processEncounter(encounter)
@@ -73,7 +47,7 @@ def processEncounter(original):
     pokemonId = original['pokemon']['icon'].split('/')[-1].removesuffix('.png')
     newEncounter['pkmn'] = int(pokemonId)
     newEncounter['method'] = original['method']
-    newEncounter['chance'] = original['chance']
+    newEncounter['chance'] = original['timedChances']['default']
     newEncounter['min'] = original['min_level']
     newEncounter['max'] = original['max_level']
 
@@ -243,17 +217,16 @@ def getLocationsAt(maps, regionTopLeft, regionBottomRight):
 
 def getLocationsIncludedInRangeFromFile(file, regionTopLeft, regionBottomRight):
     maps = []
-    with open(file) as f:
-        maps = json.loads(f.read())['maps']
+    utils.readFile(file)['maps']
     return getLocationsAt(maps, regionTopLeft, regionBottomRight)
 
 if __name__ == '__main__':
-    #processRegion('Kanto')
-    #processRegion('Johto')
-    #processRegion('Hoenn')
-    #processRegion('Kanto3')
-    #processRegion('Sinnoh')
-    #processRegion('Johto4')
+    processRegion('Kanto')
+    processRegion('Johto')
+    processRegion('Hoenn')
+    processRegion('Kanto3')
+    processRegion('Sinnoh')
+    processRegion('Johto4')
 
     print(allConditions)
     print(allMethods)
