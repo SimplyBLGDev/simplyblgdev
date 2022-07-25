@@ -1,5 +1,6 @@
 {
   "name":"Johto4",
+  "region": "johto4",
   "games":[ "hg", "ss" ],
   "generation": 4,
   "mapWidth":362,

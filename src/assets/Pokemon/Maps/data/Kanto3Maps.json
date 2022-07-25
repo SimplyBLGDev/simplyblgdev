@@ -1,5 +1,6 @@
 {
   "name":"Kanto3",
+  "region": "kanto3",
   "games":[ "fr", "lg" ],
   "generation": 3,
   "mapWidth":192,

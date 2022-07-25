@@ -38,7 +38,7 @@ export default {
 			{
 				name: "Kanto",
 				address: 'Kanto',
-				preview: require('../../assets/Pokemon/Maps/KantoPreview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/KantoPreview.png'),
 				class:"kanto",
 				games:[
 					{
@@ -58,7 +58,7 @@ export default {
 			{
 				name: "Johto",
 				address: 'Johto',
-				preview: require('../../assets/Pokemon/Maps/JohtoPreview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/JohtoPreview.png'),
 				class:"johto",
 				games:[
 					{
@@ -78,7 +78,7 @@ export default {
 			{
 				name: "Hoenn",
 				address: 'Hoenn',
-				preview: require('../../assets/Pokemon/Maps/HoennPreview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/HoennPreview.png'),
 				class:"hoenn",
 				games:[
 					{
@@ -98,7 +98,7 @@ export default {
 			{
 				name: "Kanto Remakes",
 				address: 'Kanto3',
-				preview: require('../../assets/Pokemon/Maps/Kanto3Preview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/Kanto3Preview.png'),
 				class: "kanto3",
 				games:[
 					{
@@ -114,7 +114,7 @@ export default {
 			{
 				name: "Sinnoh",
 				address: 'Sinnoh',
-				preview: require('../../assets/Pokemon/Maps/SinnohPreview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/SinnohPreview.png'),
 				class: "sinnoh",
 				games:[
 					{
@@ -134,7 +134,7 @@ export default {
 			{
 				name: "Johto Remakes",
 				address: 'Johto4',
-				preview: require('../../assets/Pokemon/Maps/Johto4Preview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/Johto4Preview.png'),
 				class: "johto",
 				games:[
 					{

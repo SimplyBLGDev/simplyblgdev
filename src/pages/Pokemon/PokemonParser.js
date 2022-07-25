@@ -216,10 +216,16 @@ function CollapseEncounters(encounters) {
             collapsed[key].min = Math.min(collapsed[key].min, encounter.min);
             collapsed[key].iconGender = Math.min(collapsed[key].iconGender, encounter.iconGender);
             
-            if (!collapsed[key]['timedChance'] && !encounter['timedChance']) {
-                collapsed[key].chance += encounter.chance;
-            } else {
+            if (collapsed[key]['timedChance'] || encounter['timedChance']) {
+                console.log(key);
                 collapsed[key].timedChance = JoinTimedChances([collapsed[key], encounter]);
+                console.log(collapsed[key].timedChance);
+                if (collapsed[key].timedChance.morning == collapsed[key].timedChance.day && collapsed[key].timedChance.day == collapsed[key].timedChance.night) {
+                    collapsed[key].chance = collapsed[key].timedChance.day;
+                    delete collapsed[key].timedChance;
+                }
+            } else {
+                collapsed[key].chance += encounter.chance;
             }
         }
     });

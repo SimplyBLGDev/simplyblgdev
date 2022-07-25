@@ -74,6 +74,18 @@
   --box-shadow-color: rgb(0, 0, 0, 0.75);
   border-radius: 3px;
 }
+.gen-7-cell {
+  height: 3rem;
+}
+.gen-8-cell {
+  height: 4rem;
+}
+.gen-8-cell>.regionData>.pokeIcon {
+  translate: -10px -10px;
+}
+.gen-8-cell>.inTableTable {
+  height: 4rem;
+}
 .inTableTable {
   width:100%;
   height:100%;

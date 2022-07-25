@@ -1,5 +1,6 @@
 {
   "name":"Kanto",
+  "region": "kanto",
   "games":[ "r", "b", "y" ],
   "generation": 1,
   "mapWidth":160,

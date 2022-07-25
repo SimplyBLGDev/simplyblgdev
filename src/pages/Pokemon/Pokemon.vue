@@ -29,31 +29,31 @@
               <th class="regionData header topRight topLeft" colspan=2 width="61%">Go to Location</th>
             </tr>
             <tr>
-              <template v-if="region==='Kanto'">
+              <template v-if="mapJSON.region==='kanto'">
                 <td class="regionData btn gameBox bottomLeft red" v-bind:class="{ active: filteredGames.includes('r') }" colspan=2 @click="filterGame('r')"><b>R</b></td>
                 <td class="regionData btn gameBox blue" v-bind:class="{ active: filteredGames.includes('b') }" colspan=2 @click="filterGame('b')"><b>B</b></td>
                 <td class="regionData btn gameBox bottomRight yellow" v-bind:class="{ active: filteredGames.includes('y') }" colspan=2 @click="filterGame('y')"><b>Y</b></td>
               </template>
-              <template v-else-if="region==='Johto'">
+              <template v-else-if="mapJSON.region==='johto'">
                 <td class="regionData btn gameBox bottomLeft gold" v-bind:class="{ active: filteredGames.includes('g') }" colspan=2 @click="filterGame('g')"><b>G</b></td>
                 <td class="regionData btn gameBox silver" v-bind:class="{ active: filteredGames.includes('s') }" colspan=2 @click="filterGame('s')"><b>S</b></td>
                 <td class="regionData btn gameBox bottomRight crystal" v-bind:class="{ active: filteredGames.includes('c') }" colspan=2 @click="filterGame('c')"><b>C</b></td>
               </template>
-              <template v-else-if="region==='Kanto3'">
+              <template v-else-if="mapJSON.region==='kanto3'">
                 <td class="regionData btn gameBox bottomLeft fireRed" v-bind:class="{ active: filteredGames.includes('fr') }" colspan=3 @click="filterGame('fr')"><b>FR</b></td>
                 <td class="regionData btn gameBox bottomRight leafGreen" v-bind:class="{ active: filteredGames.includes('lg') }" colspan=3 @click="filterGame('lg')"><b>LG</b></td>
               </template>
-              <template v-else-if="region==='Hoenn'">
+              <template v-else-if="mapJSON.region==='hoenn'">
                 <td class="regionData btn gameBox bottomLeft ruby" v-bind:class="{ active: filteredGames.includes('r') }" colspan=2 @click="filterGame('r')"><b>R</b></td>
                 <td class="regionData btn gameBox sapphire" v-bind:class="{ active: filteredGames.includes('s') }" colspan=2 @click="filterGame('s')"><b>S</b></td>
                 <td class="regionData btn gameBox bottomRight emerald" v-bind:class="{ active: filteredGames.includes('e') }" colspan=2 @click="filterGame('e')"><b>E</b></td>
               </template>
-              <template v-else-if="region==='Sinnoh'">
+              <template v-else-if="mapJSON.region==='sinnoh'">
                 <td class="regionData btn gameBox bottomLeft diamond" v-bind:class="{ active: filteredGames.includes('d') }" colspan=2 @click="filterGame('d')"><b>D</b></td>
                 <td class="regionData btn gameBox pearl" v-bind:class="{ active: filteredGames.includes('p') }" colspan=2 @click="filterGame('p')"><b>P</b></td>
                 <td class="regionData btn gameBox bottomRight platinum" v-bind:class="{ active: filteredGames.includes('Pt') }" colspan=2 @click="filterGame('Pt')"><b>Pt</b></td>
               </template>
-              <template v-else-if="region==='Johto4'">
+              <template v-else-if="mapJSON.region==='johto4'">
                 <td class="regionData btn gameBox bottomLeft heartgold" v-bind:class="{ active: filteredGames.includes('hg') }" colspan=3 @click="filterGame('hg')"><b>HG</b></td>
                 <td class="regionData btn gameBox bottomRight soulsilver" v-bind:class="{ active: filteredGames.includes('ss') }" colspan=3 @click="filterGame('ss')"><b>SS</b></td>
               </template>
@@ -87,7 +87,7 @@
           <template v-if="mapJSON.enableTimeHUD">
             <tr>
               <th class="regionData header topLeft" rowspan="2">Pokémon</th>
-              <th class="regionData header gamesColumn" rowspan="2"><span>Games</span></th>
+              <th class="regionData header gamesColumn" rowspan="2" v-if="mapJSON.games.length > 1"><span>Games</span></th>
               <th class="regionData header locationsColumn" rowspan="2">Location</th>
               <th class="regionData header levelsColumn" width="11%" rowspan="2">Levels</th>
               <th class="regionData header topRight" width="18%">%</th>
@@ -98,11 +98,11 @@
                   <b>04:00 - 09:59</b>
                 </div>
                 <div class="regionData fbox gameBox day" style="min-height:auto">
-                  <b v-if="region==='Johto'">10:00 - 17:59</b>
+                  <b v-if="mapJSON.region==='johto'">10:00 - 17:59</b>
                   <b v-else>10:00 - 19:59</b>
                 </div>
                 <div class="regionData fbox gameBox night" style="min-height:auto">
-                  <b v-if="region==='Johto'">18:00 - 03:59</b>
+                  <b v-if="mapJSON.region==='johto'">18:00 - 03:59</b>
                   <b v-else>20:00 - 03:59</b>
                 </div>
               </td>
@@ -111,7 +111,7 @@
           <template v-else>
             <tr>
               <th class="regionData header topLeft">Pokémon</th>
-              <th class="regionData header gamesColumn"><span>Games</span></th>
+              <th class="regionData header gamesColumn" v-if="mapJSON.games.length > 1"><span>Games</span></th>
               <th class="regionData header locationsColumn">Location</th>
               <th class="regionData header levelsColumn">Levels</th>
               <th class="regionData header topRight" width="13%">%</th>
@@ -131,43 +131,42 @@
             <tr :key="area.name" v-if="encounters.areas.length > 1">
               <td class="regionData" colspan=5>{{ alias(area.name) }}</td>
             </tr>
-            <tr v-for="encounter in filterEncounters(area.encounters, selectedConditions)" v-bind:key="encounter.id" style="height:3rem;">
+            <tr v-for="encounter in filterEncounters(area.encounters, selectedConditions)" v-bind:key="encounter.id" :class=" { 'gen-7-cell':(encounter.pkmn <= 807), 'gen-8-cell':(encounter.pkmn > 808)} ">
               <td class="regionData" scope="row">
                 <img :src=encounter.pkmn|PKMNIcon :alt=encounter.pkmn|PKMNName class="pokeIcon">
                 {{ pokeFromDex(encounter.pkmn) }}
               </td>
-              <td class="inTableTable">
-                <template v-if="region==='Kanto'">
+              <td class="inTableTable" v-if="mapJSON.games.length > 1">
+                <template v-if="mapJSON.region==='kanto'">
                   <div class="regionData fbox gameBox red" v-bind:class="{ active: encounter.games.includes('r') }"><b>R</b></div>
                   <div class="regionData fbox gameBox blue" v-bind:class="{ active: encounter.games.includes('b') }"><b>B</b></div>
                   <div class="regionData fbox gameBox yellow" v-bind:class="{ active: encounter.games.includes('y') }"><b>Y</b></div>
                 </template>
-                <template v-else-if="region==='Johto'">
+                <template v-else-if="mapJSON.region==='johto'">
                   <div class="regionData fbox gameBox gold" v-bind:class="{ active: encounter.games.includes('g') }"><b>G</b></div>
                   <div class="regionData fbox gameBox silver" v-bind:class="{ active: encounter.games.includes('s') }"><b>S</b></div>
                   <div class="regionData fbox gameBox crystal" v-bind:class="{ active: encounter.games.includes('c') }"><b>C</b></div>
                 </template>
-                <template v-else-if="region==='Kanto3'">
+                <template v-else-if="mapJSON.region==='kanto3'">
                   <div class="regionData fbox gameBox fireRed" v-bind:class="{ active: encounter.games.includes('fr') }"><b>FR</b></div>
                   <div class="regionData fbox gameBox leafGreen" v-bind:class="{ active: encounter.games.includes('lg') }"><b>LG</b></div>
                 </template>
-                <template v-else-if="region==='Hoenn'">
+                <template v-else-if="mapJSON.region==='hoenn'">
                   <div class="regionData fbox gameBox ruby" v-bind:class="{ active: encounter.games.includes('r') }"><b>R</b></div>
                   <div class="regionData fbox gameBox sapphire" v-bind:class="{ active: encounter.games.includes('s') }"><b>S</b></div>
                   <div class="regionData fbox gameBox emerald" v-bind:class="{ active: encounter.games.includes('e') }"><b>E</b></div>
                 </template>
-                <template v-else-if="region==='Sinnoh'">
+                <template v-else-if="mapJSON.region==='sinnoh'">
                   <div class="regionData fbox gameBox diamond" v-bind:class="{ active: encounter.games.includes('d') }"><b>D</b></div>
                   <div class="regionData fbox gameBox pearl" v-bind:class="{ active: encounter.games.includes('p') }"><b>P</b></div>
                   <div class="regionData fbox gameBox platinum" v-bind:class="{ active: encounter.games.includes('Pt') }"><b>Pt</b></div>
                 </template>
-                <template v-else-if="region==='Johto4'">
+                <template v-else-if="mapJSON.region==='johto4'">
                   <div class="regionData fbox gameBox heartgold" v-bind:class="{ active: encounter.games.includes('hg') }"><b>HG</b></div>
                   <div class="regionData fbox gameBox soulsilver" v-bind:class="{ active: encounter.games.includes('ss') }"><b>SS</b></div>
                 </template>
               </td>
-              <td class="regionData" :class="{ kanto: region==='Kanto', johto: region==='Johto', kanto3: region==='Kanto3', hoenn: region==='Hoenn', sinnoh: region==='Sinnoh', johto4: region==='Johto4', male: encounter.iconGender===0,
-                grass: mapJSON.grassMapsLocationIds.includes(encounters.id) }">
+              <td class="regionData" :class="[ encounter.iconGender===0?'male':'', mapJSON.grassMapsLocationIds.includes(encounters.id)?'grass':'', mapJSON.region ]">
                 <img src="../../assets/transparent.png" class="encounterIcon" :class="[encounter.method, GetPKMNName(encounter.pkmn)]">
                 {{ encounter.method | convertMethod }}
               </td>
@@ -223,7 +222,7 @@ export default {
     currentConditions: [],
     selectedConditions: []
   }),
-  props: ['region', 'mapJSON', 'encountersJSON', 'mapIMGsrc' ],
+  props: [ 'mapJSON', 'encountersJSON', 'mapIMGsrc' ],
   mounted() {
     console.log("v2.1");
     this.filteredGames = this.mapJSON.games;
@@ -456,10 +455,19 @@ export default {
       }[value];
     },
     PKMNIcon: function(value) {
-      return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/' + value + '.png';
+      if (value < 808) {
+        return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/' + value + '.png';
+      } else if (value < 989) {
+        return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/' + value + '.png';
+      }
+
+      return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/1.png';
     },
-    PKMNName: function(value) {
-      return GetPokeName(value);
+    PKMNName: function(dexNo) {
+      if (dexNo > 898) {
+        return dexNo + '';
+      }
+      return GetPokeName(dexNo);
     }
   }
 }

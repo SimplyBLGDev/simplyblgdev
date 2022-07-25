@@ -25,3 +25,10 @@ def cleanupName(name, ignoreRoot = ''):
                 newWords.append(word)
     
     return ' '.join(newWords)
+
+def getDictionaryValues(dict):
+    values = []
+    for key in dict:
+        values.append(dict[key])
+    
+    return values

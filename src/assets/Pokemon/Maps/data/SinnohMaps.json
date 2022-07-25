@@ -1,5 +1,6 @@
 {
   "name":"Sinnoh",
+  "region": "sinnoh",
   "games":[ "d", "p", "Pt" ],
   "generation": 4,
   "mapWidth":216,

@@ -1,5 +1,6 @@
 {
   "name": "Hoenn",
+  "region": "hoenn",
   "games":[ "r", "s", "e" ],
   "generation": 3,
   "mapWidth": 257,

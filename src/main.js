@@ -47,10 +47,9 @@ const routes = [
       title: 'Kanto interactive map for RBY'
     },
     props: {
-      'region': "Kanto",
-      'mapJSON': require('@/assets/Pokemon/Maps/KantoMaps.json'),
-      'encountersJSON': require('@/assets/Pokemon/Encounters/KantoEncounters.json'),
-      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Kanto.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/KantoMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/KantoEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Kanto.png') ]
     }
   },
   { path: '/Pokemon/Johto',
@@ -60,10 +59,9 @@ const routes = [
       title: 'Johto interactive map for GSC'
     },
     props: {
-      'region': "Johto",
-      'mapJSON': require('@/assets/Pokemon/Maps/JohtoMaps.json'),
-      'encountersJSON': require('@/assets/Pokemon/Encounters/JohtoEncounters.json'),
-      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Johto.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/JohtoMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/JohtoEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Johto.png') ]
     }
   },
   { path: '/Pokemon/Kanto3',
@@ -73,14 +71,13 @@ const routes = [
       title: 'Kanto interactive map for FRLG'
     },
     props: {
-      'region': "Kanto3",
-      'mapJSON': require('@/assets/Pokemon/Maps/Kanto3Maps.json'),
-      'encountersJSON': require('@/assets/Pokemon/Encounters/Kanto3Encounters.json'),
+      'mapJSON': require('@/assets/Pokemon/Maps/data/Kanto3Maps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/Kanto3Encounters.json'),
       'mapIMGsrc': [
-        require('@/assets/Pokemon/Maps/Kanto3.png'),
-        require('@/assets/Pokemon/Maps/Kanto3_1.png'),
-        require('@/assets/Pokemon/Maps/Kanto3_2.png'),
-        require('@/assets/Pokemon/Maps/Kanto3_3.png')
+        require('@/assets/Pokemon/Maps/regions/Kanto3.png'),
+        require('@/assets/Pokemon/Maps/regions/Kanto3_1.png'),
+        require('@/assets/Pokemon/Maps/regions/Kanto3_2.png'),
+        require('@/assets/Pokemon/Maps/regions/Kanto3_3.png')
       ]
     }
   },
@@ -91,10 +88,9 @@ const routes = [
       title: 'Hoenn interactive map for RSE'
     },
     props: {
-      'region': "Hoenn",
-      'mapJSON': require('@/assets/Pokemon/Maps/HoennMaps.json'),
-      'encountersJSON': require('@/assets/Pokemon/Encounters/HoennEncounters.json'),
-      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Hoenn.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/HoennMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/HoennEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Hoenn.png') ]
     }
   },
   { path: '/Pokemon/Sinnoh',
@@ -104,10 +100,9 @@ const routes = [
       title: 'Sinnoh interactive map for DPPt'
     },
     props: {
-      'region': "Sinnoh",
-      'mapJSON': require('@/assets/Pokemon/Maps/SinnohMaps.json'),
-      'encountersJSON': require('@/assets/Pokemon/Encounters/SinnohEncounters.json'),
-      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Sinnoh.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/SinnohMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/SinnohEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Sinnoh.png') ]
     }
   },
   { path: '/Pokemon/Johto4',
@@ -117,10 +112,9 @@ const routes = [
       title: 'Johto interactive map for HGSS'
     },
     props: {
-      'region': "Johto4",
-      'mapJSON': require('@/assets/Pokemon/Maps/Johto4Maps.json'),
-      'encountersJSON': require('@/assets/Pokemon/Encounters/Johto4Encounters.json'),
-      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/Johto4.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/Johto4Maps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/Johto4Encounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Johto4.png') ]
     }
   },
   { path: '/Pokemon/GoogleTranslatedEmerald',
@@ -128,6 +122,18 @@ const routes = [
     component: () => import(/* webpackChunkName: "GoogleTranslate" */'./pages/Pokemon/GoogleTranslate.vue'),
     meta: {
       title: 'Google Translated Pokémon Emerald'
+    }
+  },
+  { path: '/Pokemon/ROWE',
+    name: 'HoennROWE',
+    component: () => import(/* webpackChunkName: "PokemonRH" */'./pages/Pokemon/Pokemon.vue'),
+    meta: {
+      title: 'Hoenn interactive map for ROWE'
+    },
+    props: {
+      'mapJSON': require('@/assets/Pokemon/Maps/data/ROWEMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/ROWEEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Hoenn.png') ]
     }
   },
   { path: '/science/graficadora',
