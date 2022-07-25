@@ -131,4 +131,129 @@ function FindPokemon(poke) {
     return resultsIds;
 }
 
-export { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName }
+function FilterEncounters(encounters, currentGames, conditions, currentConditions) {
+    var ret = encounters;
+    ret = FilterGames(ret, currentGames);
+    ret = ConditionEncounters(ret, conditions, currentConditions);
+    ret = CollapseEncounters(ret);
+
+    return ret;
+}
+
+function FilterGames(encounters, games) {
+    var filtered = [];
+    for (var i = 0; i < encounters.length; i++) {
+        if (Intersects(encounters[i].games, games)) {
+            filtered.push(encounters[i]);
+        }
+    }
+
+    return filtered;
+}
+
+function ConditionEncounters(encounters, conditions, currentConditions) {
+    var conditioned = [];
+      for (var j = 0; j < encounters.length; j++) {
+        var valid = true;
+        if (encounters[j].conditions.length > 0) {
+          currentConditions.forEach(conditionGroup => {
+
+            switch (conditionGroup.type) {
+
+              case "selection":
+                var allConditionsExceptSelected = conditionGroup.options.slice(); // Copy
+                allConditionsExceptSelected.splice(conditions[conditionGroup.name], 1); // Remove selected
+
+                var values = allConditionsExceptSelected.map(a => a.value);
+                if (Intersects(values, encounters[j].conditions)) {
+                  valid = false;
+                }
+                break;
+              
+              case "toggle":
+                if (conditions[conditionGroup.name] != 0) {
+                  valid = false;
+                }
+                break;
+              
+            }
+
+          });
+        }
+
+        if (valid) {
+          conditioned.push(encounters[j]);
+        }
+      }
+      
+      return conditioned;
+}
+
+function Intersects(a, b) {
+    return a.some(r=>b.includes(r));
+}
+
+function CollapseEncounters(encounters) {
+    var collapsed = {};
+    var cloned = [];
+
+    encounters.forEach(encounter => {
+        var key = encounter.pkmn + ';' + encounter.method + ';' + encounter.games.join(';');
+        
+        if (!collapsed[key]) {
+            collapsed[key] = encounter;
+        } else {
+            if (!cloned.includes(key)) {
+                // Copy by value (as to not invoke getters and setters in the UI and enter an endless loop)
+                // The stringification allows us to get rid of all the setters and getters attached to the properties
+                // Altough it is pretty awkward
+                // The cloned array allows us to only clone it by value once and only whene necessary (when we're
+                // about to fuse two encounters)
+                collapsed[key] = JSON.parse(JSON.stringify(collapsed[key]));
+                cloned.push(key);
+            }
+            collapsed[key].max = Math.max(collapsed[key].max, encounter.max);
+            collapsed[key].min = Math.min(collapsed[key].min, encounter.min);
+            collapsed[key].iconGender = Math.min(collapsed[key].iconGender, encounter.iconGender);
+            
+            if (!collapsed[key]['timedChance'] && !encounter['timedChance']) {
+                collapsed[key].chance += encounter.chance;
+            } else {
+                collapsed[key].timedChance = JoinTimedChances([collapsed[key], encounter]);
+            }
+        }
+    });
+
+    var result = [];
+
+    // Move from a dictionary to an array
+    for (var key in collapsed) {
+        result.push(collapsed[key]);
+    }
+
+    return result;
+}
+
+function JoinTimedChances(encounters) {
+    var result = {
+        'morning': 0,
+        'day': 0,
+        'night': 0
+    }
+
+    encounters.forEach(member => {
+        if (!member.timedChance) {
+            result.morning += member.chance;
+            result.day += member.chance;
+            result.night += member.chance;
+        } else {
+            result.morning += member.timedChance.morning;
+            result.day += member.timedChance.day;
+            result.night += member.timedChance.night;
+        }
+    });
+
+    return result;
+}
+
+export { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName, FilterEncounters }

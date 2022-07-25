@@ -207,7 +207,7 @@
 import $ from 'jquery'
 import pokeConstants from '../../assets/Pokemon/pokeConstants.json'
 import { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch, SetOffset } from '../../assets/js/simplysMapHighlighter'
-import { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName } from './PokemonParser'
+import { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName, FilterEncounters } from './PokemonParser'
 
 export default {
   name: 'Pokemon',
@@ -291,49 +291,7 @@ export default {
     },
 
     filterEncounters: function(encounters, conditions) {
-      var r = [];
-      for (var i = 0; i < encounters.length; i++) {
-        if (this.intersects(encounters[i].games, this.filteredGames)) {
-          r.push(encounters[i]);
-        }
-      }
-
-      // I apologize in advance for this, tried to modularize it, it wouldn't work anywhere else
-      var conditioned = [];
-      for (var j = 0; j < r.length; j++) {
-        var valid = true;
-        if (r[j].conditions.length > 0) {
-          this.currentConditions.forEach(conditionGroup => {
-
-            switch (conditionGroup.type) {
-
-              case "selection":
-                var allConditionsExceptSelected = conditionGroup.options.slice(); // Copy
-                allConditionsExceptSelected.splice(conditions[conditionGroup.name], 1); // Remove selected
-
-                var values = allConditionsExceptSelected.map(a => a.value);
-                if (this.intersects(values, r[j].conditions)) {
-                  valid = false;
-                }
-                break;
-              
-              case "toggle":
-                if (conditions[conditionGroup.name] != 0) {
-                  valid = false;
-                }
-                break;
-              
-            }
-
-          });
-        }
-
-        if (valid) {
-          conditioned.push(r[j]);
-        }
-      }
-      
-      return conditioned;
+      return FilterEncounters(encounters, this.filteredGames, conditions, this.currentConditions);
     },
 
     findPokemon: function() {

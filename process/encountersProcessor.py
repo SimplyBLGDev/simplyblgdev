@@ -253,7 +253,7 @@ if __name__ == '__main__':
     #processRegion('Hoenn')
     #processRegion('Kanto3')
     #processRegion('Sinnoh')
-    processRegion('Johto4')
+    #processRegion('Johto4')
 
     print(allConditions)
     print(allMethods)

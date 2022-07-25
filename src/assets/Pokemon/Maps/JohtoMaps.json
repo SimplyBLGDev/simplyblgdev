@@ -83,6 +83,11 @@
       "location_id": 77
     },
     {
+      "name": "Dragon's Den",
+      "dimensions": [112, 16, 120, 16, 120, 24, 112, 24],
+      "location_id": 74
+    },
+    {
       "name": "Lake of Rage",
       "dimensions": [96, 8, 104, 8, 104, 16, 96, 16],
       "location_id": 79
