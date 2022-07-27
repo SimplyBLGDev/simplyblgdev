@@ -1,30 +1,37 @@
 import copy
-import json
+from this import d
 import utils
 import NatDex
+import nameParser
+import pokepy
+import ROWE_MAP_IDS
 
+pokeAPI = pokepy.V2Client()
 GAME = 'R'
 NATDEX = NatDex.NATDEX
 SPECIES_PREFIX = 'SPECIES_'
+MAP_IDS = ROWE_MAP_IDS.ROWE_MAP_IDS
 currentMapIx = 0
 
-def process(fileName, dest):
+def process(fileName, dest, parser):
     src = utils.readFile(fileName)
-    dst = parse(src['wild_encounter_groups'][0]) # gWildMonHeaders
+    dst = parse(src['wild_encounter_groups'][0], parser) # gWildMonHeaders
     utils.writeFile(dest, dst)
 
 
-def parse(src):
+def parse(src, nameParser):
     encounter_method_slots = parseEncounterMethodSlots(src['fields'])
 
     maps = []
     for map in src['encounters']:
         newMap = parseMap(map, encounter_method_slots)
         maps.append(newMap)
+
+    locations = groupLocations(maps, nameParser)
     
     return {
         'name': 'ROWE',
-        'locations': maps
+        'locations': locations
     }
 
 
@@ -40,27 +47,19 @@ def parseEncounterMethodSlots(fields):
 def parseMap(map, encounter_method_slots):
     global currentMapIx
 
-    name = map['base_label']
     table = []
 
     for method in encounter_method_slots:
         if method in map:
             newTable = parseTable(map[method]['mons'], encounter_method_slots[method], method)
             table += newTable
-    
-    map = {
-        'name': name,
-        'id': currentMapIx,
-        'areas': [
-            {
-                'name': '',
-                'encounters': table
-            }
-        ]
-    }
+
     currentMapIx += 1
     
-    return postProcessMap(map)
+    return {
+        'name': map['map'],
+        'encounters': table
+        }
 
 
 def parseTable(table, slots, method):
@@ -124,7 +123,7 @@ def parseMethod(method, slotId):
 
 def getNatDexNumber(specie):
     specie = specie.removeprefix(SPECIES_PREFIX)
-    natDexNo = NATDEX.index(specie) + 1
+    natDexNo = utils.getDictKeyFromValue(NATDEX, specie)
     return natDexNo
 
 
@@ -146,15 +145,10 @@ def collapseTable(table):
     for key in result:
         if 'timedChance' in result[key]:
             if result[key]['timedChance']['morning'] == result[key]['timedChance']['day'] == result[key]['timedChance']['night']:
-                print('yelp')
                 result[key]['chance'] = result[key]['timedChance']['day']
                 del result[key]['timedChance']
 
     return utils.getDictionaryValues(result)
-
-
-def postProcessMap(map):
-    return map
 
 
 def generateConstantIcons():
@@ -168,6 +162,76 @@ def generateConstantIcons():
     print(res)
 
 
+def groupLocations(maps, nameParser):
+    locations = {}
+
+    for map in maps:
+        group, name = nameParser.parse(map['name'])
+        map['name'] = name
+
+        if group not in locations.keys():
+            if group in MAP_IDS:
+                id = MAP_IDS[group]
+            else:
+                id = 0
+            locations[group] = {
+                'name': group,
+                'id': id,
+                'areas': [ map ]
+            }
+        else:
+            locations[group]['areas'].append(map)
+        
+    return utils.getDictionaryValues(locations)
+
+
+def defineNameAndGroupsFromFile(file: str, parser):
+    data = utils.readFile(file)
+    groups = getGroups(data['wild_encounter_groups'][0]['encounters'], parser)
+    
+    for group in groups:
+        print("'{0}': {1}".format(group, getPokeAPIIDForLocation(group, 'hoenn ')))
+
+
+def getPokeAPIIDForLocation(name, routeRegions):
+    if name.startswith('Route') or name.startswith('Victory') or name.startswith('Safari'):
+        name = routeRegions + name
+    words = name.split(' ')
+    l = []
+    for word in words:
+        l.append(word.lower())
+    
+    locationName = '-'.join(l)
+    try:
+        response = pokeAPI.get_location(locationName)
+    except:
+        print("Couldn't find " + name)
+        return input("Manually input ID: ")
+
+    return response[0].id
+
+
+def getGroups(encounters, parser):
+    groups = []
+    for encounter in encounters:
+        group, name = parser.parse(encounter['map'])
+        if group not in groups:
+            groups.append(group)
+    
+    return groups
+
+
+def getPokemonFormsAPI():
+    for i in range(1, 906):
+        p = pokeAPI.get_pokemon(i)[0]
+        print("{1}: '{0}',".format(p.name.upper().replace('-', '_'), str(i)))
+    for i in range(10001, 10250):
+        p = pokeAPI.get_pokemon(i)[0]
+        print("{1}: '{0}',".format(p.name.upper().replace('-', '_'), str(i)))
+
+
 if __name__ == '__main__':
-    process('_ROWEEncounters.json', 'ROWEEncounters.json')
+    #getPokemonFormsAPI()
+    process('_ROWEEncounters.json', 'ROWEEncounters.json', nameParser.GBASourceNameParser())
     #generateConstantIcons()
+    #groups = defineNameAndGroupsFromFile('_ROWEEncounters.json', nameParser.GBASourceNameParser())

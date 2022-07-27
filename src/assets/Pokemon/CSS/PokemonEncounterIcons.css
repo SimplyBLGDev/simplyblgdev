@@ -200,6 +200,11 @@
   height: 24px;
   --x-pos: -736px;
 }
+.hoenn>.encounterIcon.devon-scope {
+  width: 14px;
+  height: 20px;
+  --x-pos: -935px;
+}
 
 /* D P Pt */
 .sinnoh.grass>.encounterIcon.walk {

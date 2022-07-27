@@ -72,21 +72,22 @@ function SortByMethod(list) {
 
 function GetMethodValue(method) {
     return {
-        "gift":0,
-        "walk":1,
-        "surf":2,
-        "seaweed":3,
-        "old-rod":4,
-        "good-rod":5,
-        "super-rod":6,
-        "headbutt-normal":7,
-        "headbutt-high":8,
-        "rock-smash":9,
-        "pokeflute":10,
-        "squirt-bottle":11,
-        "wailmer-pail":12,
-        "gift-egg":13,
-        "only-one":14
+        "gift": 0,
+        "walk": 1,
+        "surf": 2,
+        "seaweed": 3,
+        "old-rod": 4,
+        "good-rod": 5,
+        "super-rod": 6,
+        "headbutt-normal": 7,
+        "headbutt-high": 8,
+        "rock-smash": 9,
+        "pokeflute": 10,
+        "squirt-bottle": 11,
+        "wailmer-pail": 12,
+        "gift-egg": 13,
+        "only-one": 14,
+        'devon-scope': 15
     }[method];
 }
 
@@ -217,9 +218,7 @@ function CollapseEncounters(encounters) {
             collapsed[key].iconGender = Math.min(collapsed[key].iconGender, encounter.iconGender);
             
             if (collapsed[key]['timedChance'] || encounter['timedChance']) {
-                console.log(key);
                 collapsed[key].timedChance = JoinTimedChances([collapsed[key], encounter]);
-                console.log(collapsed[key].timedChance);
                 if (collapsed[key].timedChance.morning == collapsed[key].timedChance.day && collapsed[key].timedChance.day == collapsed[key].timedChance.night) {
                     collapsed[key].chance = collapsed[key].timedChance.day;
                     delete collapsed[key].timedChance;

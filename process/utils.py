@@ -32,3 +32,10 @@ def getDictionaryValues(dict):
         values.append(dict[key])
     
     return values
+
+
+def getDictKeyFromValue(dict, value):
+    values = list(dict.values())
+    keys = list(dict.keys())
+    ix = values.index(value)
+    return keys[ix]

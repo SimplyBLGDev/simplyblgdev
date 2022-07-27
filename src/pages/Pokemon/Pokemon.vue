@@ -131,9 +131,9 @@
             <tr :key="area.name" v-if="encounters.areas.length > 1">
               <td class="regionData" colspan=5>{{ alias(area.name) }}</td>
             </tr>
-            <tr v-for="encounter in filterEncounters(area.encounters, selectedConditions)" v-bind:key="encounter.id" :class=" { 'gen-7-cell':(encounter.pkmn <= 807), 'gen-8-cell':(encounter.pkmn > 808)} ">
+            <tr v-for="encounter in filterEncounters(area.encounters)" v-bind:key="encounter.id" :class="[ mapJSON.generation <= 7 ? 'gen-7-cell' : 'gen-8-cell' ]">
               <td class="regionData" scope="row">
-                <img :src=encounter.pkmn|PKMNIcon :alt=encounter.pkmn|PKMNName class="pokeIcon">
+                <img :src=PKMNIcon(encounter.pkmn) :alt=encounter.pkmn|PKMNName class="pokeIcon">
                 {{ pokeFromDex(encounter.pkmn) }}
               </td>
               <td class="inTableTable" v-if="mapJSON.games.length > 1">
@@ -289,8 +289,8 @@ export default {
       }
     },
 
-    filterEncounters: function(encounters, conditions) {
-      return FilterEncounters(encounters, this.filteredGames, conditions, this.currentConditions);
+    filterEncounters: function(encounters) {
+      return FilterEncounters(encounters, this.filteredGames, this.selectConditions, this.currentConditions);
     },
 
     findPokemon: function() {
@@ -426,7 +426,14 @@ export default {
     selectCondition: function(conditionGroup) {
       var currentOptionIx = this.selectedConditions[conditionGroup.name];
       this.selectedConditions[conditionGroup.name] = (currentOptionIx + 1) % conditionGroup.options.length;
-    }
+    },
+
+    PKMNIcon: function(value) {
+      if (this.mapJSON.generation <= 7) {
+        return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/' + value + '.png';
+      }
+      return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/' + value + '.png';
+    },
   },
   filters: {
     capitalize: function (value) {
@@ -434,6 +441,7 @@ export default {
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
     },
+
     convertMethod: function(value) {
       return {
         "walk": "Walk",
@@ -451,18 +459,11 @@ export default {
         "gift-egg": "Gift Egg",
         "only-one": "Only One",
         "wailmer-pail": "Wailmer Pail",
-        "squirt-bottle": "Squirt Bottle"
+        "squirt-bottle": "Squirt Bottle",
+        "devon-scope": "Hidden"
       }[value];
     },
-    PKMNIcon: function(value) {
-      if (value < 808) {
-        return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/' + value + '.png';
-      } else if (value < 989) {
-        return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/' + value + '.png';
-      }
-
-      return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/1.png';
-    },
+    
     PKMNName: function(dexNo) {
       if (dexNo > 898) {
         return dexNo + '';
