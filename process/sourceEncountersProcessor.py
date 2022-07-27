@@ -46,12 +46,13 @@ def parseEncounterMethodSlots(fields):
 
 def parseMap(map, encounter_method_slots):
     global currentMapIx
+    hasTimedEncounters = 'land_mons_night' in map
 
     table = []
 
     for method in encounter_method_slots:
         if method in map:
-            newTable = parseTable(map[method]['mons'], encounter_method_slots[method], method)
+            newTable = parseTable(map[method]['mons'], encounter_method_slots[method], method, hasTimedEncounters)
             table += newTable
 
     currentMapIx += 1
@@ -62,11 +63,11 @@ def parseMap(map, encounter_method_slots):
         }
 
 
-def parseTable(table, slots, method):
+def parseTable(table, slots, method, hasTimedEncounters):
     encounters = []
     ix = 0
     for encounter in table:
-        newEncounter = parseEncounter(encounter, slots[ix], method, ix)
+        newEncounter = parseEncounter(encounter, slots[ix], method, ix, hasTimedEncounters)
         encounters.append(newEncounter)
         ix += 1
     
@@ -74,7 +75,7 @@ def parseTable(table, slots, method):
     return collapsed
 
 
-def parseEncounter(encounter, chance, method, slotId):
+def parseEncounter(encounter, chance, method, slotId, hasTimedEncounters):
     species = getNatDexNumber(encounter['species'])
     enc = {
         'pkmn': species,
@@ -86,18 +87,19 @@ def parseEncounter(encounter, chance, method, slotId):
         'games': [ GAME ]
     }
 
-    if method in ['land_mons_night']:
-        enc['timedChance'] = {
-            'morning': 0,
-            'day': 0,
-            'night': chance
-        }
-    elif method in ['land_mons']:
-        enc['timedChance'] = {
-            'morning': chance,
-            'day': chance,
-            'night': 0
-        }
+    if hasTimedEncounters:
+        if method in ['land_mons_night']:
+            enc['timedChance'] = {
+                'morning': 0,
+                'day': 0,
+                'night': chance
+            }
+        elif method in ['land_mons']:
+            enc['timedChance'] = {
+                'morning': chance,
+                'day': chance,
+                'night': 0
+            }
     
     return enc
 
