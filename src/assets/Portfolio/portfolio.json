@@ -18,7 +18,7 @@
               "A simple webapp, small, clean, fast and intuitive, it communicates with a <b>third party open source database</b> to fetch data which is parsed and presented in a beautifully designed page.",
               "The application is <b>responsive</b>, adapting itself to screens of any size and resolution, including mobile devices in both landscape and portrait modes, it is also <b>reactive</b>, thanks to the utilization of the <b>Vue JS</b> framework.",
               "The page is designed to be efficient and easy to cache, downloading all the necessary data in a single request on page load therefore allowing its use once loaded even when offline and allows the data to be refreshed without delay at user request.",
-              "<a href='/Pokemon/Kanto'>Visit it here.</a>"
+              "<a href='/pokemon/kanto'>Visit it here.</a>"
             ],
             "hContents":0
           }
@@ -119,7 +119,7 @@
               "Una simple aplicación web, pequeña, limpia, rápida e intuitiva, se comunica con una <b>Base de datos open source externa</b> para encontrar la data, la cual es recibida, procesada y presentada en una página hermosamente diseñada.",
               "La aplicación es <b>responsiva</b>, adaptándose automáticamente a pantallas de cualquier tamaño, resolución y dispositivo, funcionando en dispositivos móviles tanto en landscape cómo en portrait, tambien es <b>reactiva</b> mediante la utilización de él framework <b>Vue JS</b>.",
               "La página está diseñada para ser eficiente y fácil de cachear, una vez encontrado todos los datos necesarios son descargados en una única request a la API, esto permite que las búsquedas del usuario sean respondidas inmediatamente, minimiza la comunicación con la base de datos y permite el uso de la página de manera offline una vez se haya cacheado en el navegador del usuario.",
-              "<a href='/Pokemon/Kanto'>Visitalo aquí.</a>"
+              "<a href='/pokemon/kanto'>Visitalo aquí.</a>"
             ],
             "hContents":1
           }

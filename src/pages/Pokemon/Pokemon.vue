@@ -5,7 +5,7 @@
 
       <div class="mapSwitchHUD" v-if="mapJSON.subregions">
         <div class="mapSwitchButton" v-for="subregion in mapJSON.subregions" :key="subregion.name" :class="{ active: mapSubregion === subregion.id }" @click="setSubregion(subregion.id)">
-          <img src="../../assets/Pokemon/alert.png" alt="!!" v-if="subregionSearchResults.includes(subregion.id)">
+          <img src="../../assets/pokemon/alert.png" alt="!!" v-if="subregionSearchResults.includes(subregion.id)">
           {{ subregion.name }}
         </div>
       </div>
@@ -204,7 +204,7 @@
 
 <script>
 import $ from 'jquery'
-import pokeConstants from '../../assets/Pokemon/pokeConstants.json'
+import pokeConstants from '../../assets/pokemon/pokeConstants.json'
 import { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch, SetOffset } from '../../assets/js/simplysMapHighlighter'
 import { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName, FilterEncounters } from './PokemonParser'
 
@@ -290,7 +290,7 @@ export default {
     },
 
     filterEncounters: function(encounters) {
-      return FilterEncounters(encounters, this.filteredGames, this.selectConditions, this.currentConditions);
+      return FilterEncounters(encounters, this.filteredGames, this.selectedConditions, this.currentConditions);
     },
 
     findPokemon: function() {
@@ -484,8 +484,8 @@ html {
 </style>
 
 <style scoped>
-@import url('../../assets/Pokemon/CSS/PokemonMaps.css');
-@import url('../../assets/Pokemon/CSS/PokemonEncounterIcons.css');
-@import url('../../assets/Pokemon/CSS/PokemonGameBoxes.css');
-@import url('../../assets/Pokemon/CSS/PokemonConditions.css');
+@import url('../../assets/pokemon/css/PokemonMaps.css');
+@import url('../../assets/pokemon/css/PokemonEncounterIcons.css');
+@import url('../../assets/pokemon/css/PokemonGameBoxes.css');
+@import url('../../assets/pokemon/css/PokemonConditions.css');
 </style>

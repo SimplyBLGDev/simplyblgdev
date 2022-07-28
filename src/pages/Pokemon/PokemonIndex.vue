@@ -37,8 +37,8 @@ export default {
 		regions:[
 			{
 				name: "Kanto",
-				address: 'Kanto',
-				preview: require('../../assets/Pokemon/Maps/previews/KantoPreview.png'),
+				address: 'kanto',
+				preview: require('../../assets/pokemon/maps/previews/KantoPreview.png'),
 				class:"kanto",
 				games:[
 					{
@@ -57,8 +57,8 @@ export default {
 			},
 			{
 				name: "Johto",
-				address: 'Johto',
-				preview: require('../../assets/Pokemon/Maps/previews/JohtoPreview.png'),
+				address: 'johto',
+				preview: require('../../assets/pokemon/maps/previews/JohtoPreview.png'),
 				class:"johto",
 				games:[
 					{
@@ -77,8 +77,8 @@ export default {
 			},
 			{
 				name: "Hoenn",
-				address: 'Hoenn',
-				preview: require('../../assets/Pokemon/Maps/previews/HoennPreview.png'),
+				address: 'hoenn',
+				preview: require('../../assets/pokemon/maps/previews/HoennPreview.png'),
 				class:"hoenn",
 				games:[
 					{
@@ -97,8 +97,8 @@ export default {
 			},
 			{
 				name: "Kanto Remakes",
-				address: 'Kanto3',
-				preview: require('../../assets/Pokemon/Maps/previews/Kanto3Preview.png'),
+				address: 'kanto3',
+				preview: require('../../assets/pokemon/maps/previews/Kanto3Preview.png'),
 				class: "kanto3",
 				games:[
 					{
@@ -113,8 +113,8 @@ export default {
 			},
 			{
 				name: "Sinnoh",
-				address: 'Sinnoh',
-				preview: require('../../assets/Pokemon/Maps/previews/SinnohPreview.png'),
+				address: 'sinnoh',
+				preview: require('../../assets/pokemon/maps/previews/SinnohPreview.png'),
 				class: "sinnoh",
 				games:[
 					{
@@ -133,8 +133,8 @@ export default {
 			},
 			{
 				name: "Johto Remakes",
-				address: 'Johto4',
-				preview: require('../../assets/Pokemon/Maps/previews/Johto4Preview.png'),
+				address: 'johto4',
+				preview: require('../../assets/pokemon/maps/previews/Johto4Preview.png'),
 				class: "johto",
 				games:[
 					{
@@ -151,7 +151,7 @@ export default {
 	}),
 	methods: {
 		Goto: function(destination) {
-			window.location.href = "/Pokemon/" + destination;
+			window.location.href = "/pokemon/" + destination;
 		}
 	}
 }

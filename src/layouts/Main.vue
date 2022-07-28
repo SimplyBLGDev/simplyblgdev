@@ -4,18 +4,18 @@
       <b-navbar-brand href="/">SimplyBLG</b-navbar-brand>
       <b-navbar-nav>
         <b-nav-item-dropdown text="Pokémon Maps" type="dark">
-          <b-dropdown-item href="/Pokemon">Index</b-dropdown-item>
+          <b-dropdown-item href="/pokemon">Index</b-dropdown-item>
           <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="/Pokemon/Kanto">Gen 1 - Kanto</b-dropdown-item>
-          <b-dropdown-item href="/Pokemon/Johto">Gen 2 - Johto</b-dropdown-item>
-          <b-dropdown-item href="/Pokemon/Hoenn">Gen 3 - Hoenn</b-dropdown-item>
-          <b-dropdown-item href="/Pokemon/Sinnoh">Gen 4 - Sinnoh</b-dropdown-item>
+          <b-dropdown-item href="/pokemon/kanto">Gen 1 - Kanto</b-dropdown-item>
+          <b-dropdown-item href="/pokemon/johto">Gen 2 - Johto</b-dropdown-item>
+          <b-dropdown-item href="/pokemon/hoenn">Gen 3 - Hoenn</b-dropdown-item>
+          <b-dropdown-item href="/pokemon/sinnoh">Gen 4 - Sinnoh</b-dropdown-item>
           <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item href="/Pokemon/Kanto3">Gen 3 - Kanto</b-dropdown-item>
-          <b-dropdown-item href="/Pokemon/Johto4">Gen 4 - Johto</b-dropdown-item>
+          <b-dropdown-item href="/pokemon/kanto3">Gen 3 - Kanto</b-dropdown-item>
+          <b-dropdown-item href="/pokemon/johto4">Gen 4 - Johto</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Other" type="dark">
-          <b-dropdown-item href="/Pokemon/GoogleTranslatedEmerald">Google translated Pokémon Emerald</b-dropdown-item>
+          <b-dropdown-item href="/pokemon/googletranslatedemerald">Google translated Pokémon Emerald</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-navbar>
