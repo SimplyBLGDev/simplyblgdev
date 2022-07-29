@@ -176,7 +176,7 @@
                 </template>
               </td>
               <td class="regionData" :class="[ encounter.iconGender===0?'male':'', mapJSON.grassMapsLocationIds.includes(encounters.id)?'grass':'', mapJSON.region ]">
-                <img src="../../assets/transparent.png" class="encounterIcon" :class="[encounter.method, GetPKMNName(encounter.pkmn)]">
+                <img src="../../assets/transparent.png" class="encounterIcon" :class="[encounter.method, GetPKMNName(encounter.pkmn).toLowerCase()]">
                 {{ encounter.method | convertMethod }}
               </td>
               <td class="regionData" v-if="encounter.min != encounter.max">{{ encounter.min }} - {{ encounter.max }}</td>

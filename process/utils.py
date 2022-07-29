@@ -1,5 +1,6 @@
 import re
 import json
+import utils
 
 def readFile(file):
     with open(file, 'r') as f:
@@ -14,7 +15,7 @@ def cleanupName(name, ignoreRoot = ''):
 
     name = name.removesuffix('-area')
     if name == ignoreRoot:
-        return name
+        return ' '.join(utils.capitalizeAll(name.split('-')))
     
     if ignoreRoot != '':
         name = name.replace(ignoreRoot, '')

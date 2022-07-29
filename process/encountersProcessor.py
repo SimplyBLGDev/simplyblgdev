@@ -223,13 +223,13 @@ def getLocationsIncludedInRangeFromFile(file, regionTopLeft, regionBottomRight):
     return getLocationsAt(maps, regionTopLeft, regionBottomRight)
 
 def sortLocations(locations):
-    return locations.sort(key=lambda x: locationSorterKey(x['name']), reverse=True)
+    return locations.sort(key=lambda x: locationSorterKey(x['name']))
 
 def locationSorterKey(x):
     if re.search(r'^[0-9]+f', x):
         return 'zzz' + chr(100 - int(x[:-1])) # Remove f and sort at bottom of locations by floor number top to bottom
     elif re.search(r'^b[0-9]+f', x):
-        return 'zzz' + chr(100 + int(x[1:-1])) # Remove b and f and sort bottom to top from below the regular floors at the bottom of the list
+        return 'zzz' + chr(200 + int(x[1:-1])) # Remove b and f and sort bottom to top from below the regular floors at the bottom of the list
     else:
         return x
 
