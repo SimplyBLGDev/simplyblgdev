@@ -117,6 +117,18 @@ const routes = [
       'mapIMGsrc': [ require('@/assets/pokemon/maps/regions/Johto4.png') ]
     }
   },
+  { path: '/pokemon/unova',
+    name: 'Unova',
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/pokemon/Pokemon.vue'),
+    meta: {
+      title: 'Unova interactive map for BW'
+    },
+    props: {
+      'mapJSON': require('@/assets/pokemon/maps/data/UnovaMaps.json'),
+      'encountersJSON': require('@/assets/pokemon/maps/data/UnovaEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/pokemon/maps/regions/Unova.png') ]
+    }
+  },
   { path: '/pokemon/googletranslatedemerald',
     name: 'Google Translated Pokémon Emerald',
     component: () => import(/* webpackChunkName: "GoogleTranslate" */'./pages/pokemon/GoogleTranslate.vue'),

@@ -1,5 +1,6 @@
 import json
 import utils
+import re
 
 allConditions = []
 allMethods = []
@@ -26,6 +27,7 @@ def processLocation(original):
         newArea = processArea(area, original['name'])
         newLocation['areas'].append(newArea)
     
+    sortLocations(newLocation['areas'])
     return newLocation
 
 def processArea(original, root):
@@ -220,6 +222,17 @@ def getLocationsIncludedInRangeFromFile(file, regionTopLeft, regionBottomRight):
     utils.readFile(file)['maps']
     return getLocationsAt(maps, regionTopLeft, regionBottomRight)
 
+def sortLocations(locations):
+    return locations.sort(key=lambda x: locationSorterKey(x['name']), reverse=True)
+
+def locationSorterKey(x):
+    if re.search(r'^[0-9]+f', x):
+        return 'zzz' + chr(100 - int(x[:-1])) # Remove f and sort at bottom of locations by floor number top to bottom
+    elif re.search(r'^b[0-9]+f', x):
+        return 'zzz' + chr(100 + int(x[1:-1])) # Remove b and f and sort bottom to top from below the regular floors at the bottom of the list
+    else:
+        return x
+
 if __name__ == '__main__':
     processRegion('Kanto')
     processRegion('Johto')
@@ -227,6 +240,7 @@ if __name__ == '__main__':
     processRegion('Kanto3')
     processRegion('Sinnoh')
     processRegion('Johto4')
+    processRegion('Unova')
 
     print(allConditions)
     print(allMethods)

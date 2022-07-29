@@ -10,6 +10,8 @@
           <b-dropdown-item href="/pokemon/johto">Gen 2 - Johto</b-dropdown-item>
           <b-dropdown-item href="/pokemon/hoenn">Gen 3 - Hoenn</b-dropdown-item>
           <b-dropdown-item href="/pokemon/sinnoh">Gen 4 - Sinnoh</b-dropdown-item>
+          <b-dropdown-item href="/pokemon/unova">Gen 5 - Unova</b-dropdown-item>
+          <b-dropdown-item href="/pokemon/unova2">Gen 5 - Unova2</b-dropdown-item>
           <b-dropdown-divider></b-dropdown-divider>
           <b-dropdown-item href="/pokemon/kanto3">Gen 3 - Kanto</b-dropdown-item>
           <b-dropdown-item href="/pokemon/johto4">Gen 4 - Johto</b-dropdown-item>

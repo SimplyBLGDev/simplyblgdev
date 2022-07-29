@@ -524,19 +524,6 @@
 		"location_id": 129
 	}
   ],
-  "pokeAliases":[
-    { "name":"farfetchd", "display":"Farfetch'd" },
-    { "name":"nidoran-m", "display":"Nidoran M" },
-    { "name":"nidoran-f", "display":"Nidoran F" },
-    { "name":"mr-mime", "display":"Mr. Mime" },
-    { "name":"ho-oh", "display":"Ho-Oh" },
-    { "name":"deoxys-normal", "display":"Deoxys" },
-    { "name":"wormadam-plant", "display":"Wormadam" },
-    { "name":"mime-jr", "display":"Mime Jr." },
-    { "name":"porygon-z", "display":"Porygon-Z" },
-    { "name":"giratina-altered", "display":"Giratina" },
-    { "name":"shaymin-land", "display":"Shaymin" }
-  ],
   "aliases":[
       
   ]

@@ -1,3 +1,4 @@
+import re
 import json
 
 def readFile(file):
@@ -12,6 +13,9 @@ def cleanupName(name, ignoreRoot = ''):
     destroyWords = [ 'kanto', 'johto', 'hoenn', 'sinnoh', 'unova', 'kalos', 'alola', 'galar' ]
 
     name = name.removesuffix('-area')
+    if name == ignoreRoot:
+        return name
+    
     if ignoreRoot != '':
         name = name.replace(ignoreRoot, '')
     name = name.replace('sea-route', 'route')
@@ -19,10 +23,10 @@ def cleanupName(name, ignoreRoot = ''):
     newWords = []
     for word in words:
         if (word not in destroyWords and not name.startswith('roaming')):
-            if len(word) > 3:
-                newWords.append(word.capitalize())
-            else:
+            if re.search(r'b?[0-9]+f', word):
                 newWords.append(word)
+            else:
+                newWords.append(word.capitalize())
     
     return ' '.join(newWords)
 
@@ -39,3 +43,11 @@ def getDictKeyFromValue(dict, value):
     keys = list(dict.keys())
     ix = values.index(value)
     return keys[ix]
+
+
+def capitalizeAll(words):
+    r = []
+    for word in words:
+        r.append(word.capitalize())
+    
+    return r

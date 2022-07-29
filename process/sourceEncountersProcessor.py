@@ -1,12 +1,9 @@
 import copy
-from this import d
 import utils
 import NatDex
 import nameParser
-import pokepy
 import ROWE_MAP_IDS
 
-pokeAPI = pokepy.V2Client()
 GAME = 'R'
 NATDEX = NatDex.NATDEX
 SPECIES_PREFIX = 'SPECIES_'
@@ -153,17 +150,6 @@ def collapseTable(table):
     return utils.getDictionaryValues(result)
 
 
-def generateConstantIcons():
-    res = []
-    for i in range(0, 898):
-        res.append({
-            'name': NATDEX[i].lower(),
-            'icon': i+1
-        })
-    
-    print(res)
-
-
 def groupLocations(maps, nameParser):
     locations = {}
 
@@ -195,24 +181,6 @@ def defineNameAndGroupsFromFile(file: str, parser):
         print("'{0}': {1}".format(group, getPokeAPIIDForLocation(group, 'hoenn ')))
 
 
-def getPokeAPIIDForLocation(name, routeRegions):
-    if name.startswith('Route') or name.startswith('Victory') or name.startswith('Safari'):
-        name = routeRegions + name
-    words = name.split(' ')
-    l = []
-    for word in words:
-        l.append(word.lower())
-    
-    locationName = '-'.join(l)
-    try:
-        response = pokeAPI.get_location(locationName)
-    except:
-        print("Couldn't find " + name)
-        return input("Manually input ID: ")
-
-    return response[0].id
-
-
 def getGroups(encounters, parser):
     groups = []
     for encounter in encounters:
@@ -223,17 +191,6 @@ def getGroups(encounters, parser):
     return groups
 
 
-def getPokemonFormsAPI():
-    for i in range(1, 906):
-        p = pokeAPI.get_pokemon(i)[0]
-        print("{1}: '{0}',".format(p.name.upper().replace('-', '_'), str(i)))
-    for i in range(10001, 10250):
-        p = pokeAPI.get_pokemon(i)[0]
-        print("{1}: '{0}',".format(p.name.upper().replace('-', '_'), str(i)))
-
-
 if __name__ == '__main__':
-    #getPokemonFormsAPI()
     process('_ROWEEncounters.json', 'ROWEEncounters.json', nameParser.GBASourceNameParser())
-    #generateConstantIcons()
     #groups = defineNameAndGroupsFromFile('_ROWEEncounters.json', nameParser.GBASourceNameParser())

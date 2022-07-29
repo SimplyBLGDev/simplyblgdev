@@ -23,3 +23,7 @@ pnpm-debug.log*
 *.sln
 *.sw?
 *.pyc
+*.md5
+*.stex
+process/Misc Tools/.import/.gdignore
+*.import

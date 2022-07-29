@@ -1,0 +1,454 @@
+{
+    "name": "Unova",
+    "region": "unova",
+    "games": [ "b", "w" ],
+    "generation": 5,
+    "maxDexIx": 649,
+    "enableTimeHUD": false,
+    "baseLocation": [
+        {
+            "name": "Roaming Unova",
+            "location_id": 0
+        }
+    ],
+    "aliases": [],
+    "grassMapsLocationIds": [
+        346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 383, 384, 393, 404, 378, 385, 399, 411, 414, 412, 413, 375, 374, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 406, 376
+    ],
+    "maps": [
+        {
+            "name": "Nuvema Town",
+            "dimensions": [
+                226, 152, 238, 152, 238, 164, 226, 164
+            ],
+            "location_id": 346
+        },
+        {
+            "name": "Accumula Town",
+            "dimensions": [
+                226, 132, 238, 132, 238, 144, 226, 144
+            ],
+            "location_id": 347
+        },
+        {
+            "name": "Striaton City",
+            "dimensions": [
+                222, 124, 234, 124, 234, 112, 222, 112
+            ],
+            "location_id": 348
+        },
+        {
+            "name": "Nacrene City",
+            "dimensions": [
+                197, 124, 209, 124, 209, 112, 197, 112
+            ],
+            "location_id": 349
+        },
+        {
+            "name": "Castelia City",
+            "dimensions": [
+                126, 124, 138, 124, 138, 136, 126, 136
+            ],
+            "location_id": 350
+        },
+        {
+            "name": "Nimbasa City",
+            "dimensions": [
+                126, 85, 138, 85, 138, 97, 126, 97
+            ],
+            "location_id": 351
+        },
+        {
+            "name": "Driftveil City",
+            "dimensions": [
+                68, 85, 80, 85, 80, 97, 68, 97
+            ],
+            "location_id": 352
+        },
+        {
+            "name": "Mistralton City",
+            "dimensions": [
+                34, 61, 46, 61, 46, 73, 34, 73
+            ],
+            "location_id": 353
+        },
+        {
+            "name": "Icirrus City",
+            "dimensions": [
+                68, 37, 80, 37, 80, 49, 68, 49
+            ],
+            "location_id": 354
+        },
+        {
+            "name": "Opelucid City",
+            "dimensions": [
+                126, 37, 138, 37, 138, 49, 126, 49
+            ],
+            "location_id": 355
+        },
+        {
+            "name": "Lacunosa Town",
+            "dimensions": [
+                184, 37, 196, 37, 196, 49, 184, 49
+            ],
+            "location_id": 383
+        },
+        {
+            "name": "Undella Town",
+            "dimensions": [
+                218, 61, 230, 61, 230, 73, 218, 73
+            ],
+            "location_id": 384
+        },
+        {
+            "name": "Black City",
+            "dimensions": [
+                196, 85, 196, 97, 184, 97
+            ],
+            "location_id": 392
+        },
+        {
+            "name": "White Forest",
+            "dimensions": [
+                184, 85, 196, 85, 184, 97
+            ],
+            "location_id": 393
+        },
+        {
+            "name": "Victory Road",
+            "dimensions": [
+                159, 20, 167, 20, 167, 28, 159, 28
+            ],
+            "location_id": 382
+        },
+        {
+            "name": "Pokémon League",
+            "dimensions": [
+                164, 9, 176, 9, 176, 21, 164, 21
+            ],
+            "location_id": 386
+        },
+        {
+            "name": "Unity Tower",
+            "dimensions": [
+                95, 153, 103, 153, 103, 161, 95, 161
+            ],
+            "location_id": 394
+        },
+        {
+            "name": "Liberty Garden",
+            "dimensions": [
+                71, 142, 77, 142, 77, 148, 71, 148
+            ],
+            "location_id": 404
+        },
+        {
+            "name": "Relic Castle",
+            "dimensions": [
+                112, 101, 118, 101, 118, 107, 112, 107
+            ],
+            "location_id": 377
+        },
+        {
+            "name": "Cold Storage",
+            "dimensions": [
+                71, 100, 77, 100, 77, 106, 71, 106
+            ],
+            "location_id": 378
+        },
+        {
+            "name": "Chargestone Cave",
+            "dimensions": [
+                39, 77, 45, 77, 45, 83, 39, 83
+            ],
+            "location_id": 379
+        },
+        {
+            "name": "Mistralton Cave",
+            "dimensions": [
+                66, 71, 72, 71, 72, 77, 66, 77
+            ],
+            "location_id": 396
+        },
+        {
+            "name": "Anville Town",
+            "dimensions": [
+                4, 27, 10, 27, 10, 33, 4, 33
+            ],
+            "location_id": 385
+        },
+        {
+            "name": "Celestial Tower",
+            "dimensions": [
+                51, 47, 57, 47, 57, 53, 51, 53
+            ],
+            "location_id": 398
+        },
+        {
+            "name": "Twist Mountain",
+            "dimensions": [
+                69, 52, 75, 52, 75, 58, 69, 58
+            ],
+            "location_id": 380
+        },
+        {
+            "name": "Dragonspiral Tower",
+            "dimensions": [
+                63, 28, 69, 28, 69, 34, 63, 34
+            ],
+            "location_id": 381
+        },
+        {
+            "name": "Moor of Icirrus",
+            "dimensions": [
+                85, 33, 91, 33, 91, 39, 85, 39
+            ],
+            "location_id": 399
+        },
+        {
+            "name": "Challenger's Cave",
+            "dimensions": [
+                114, 46, 120, 46, 120, 52, 114, 52
+            ],
+            "location_id": 401
+        },
+        {
+            "name": "Entralink",
+            "dimensions": [
+                129, 64, 135, 64, 135, 70, 129, 70
+            ],
+            "location_id": 411
+        },
+        {
+            "name": "Lostlorn Forest",
+            "dimensions": [
+                143, 81, 149, 81, 149, 87, 143, 87
+            ],
+            "location_id": 414
+        },
+        {
+            "name": "Poké Transfer Lab",
+            "dimensions": [
+                174, 81, 180, 81, 180, 87, 174, 87
+            ],
+            "location_id": 402
+        },
+        {
+            "name": "Abundant Shrine",
+            "dimensions": [
+                194, 74, 200, 74, 200, 80, 194, 80
+            ],
+            "location_id": 412
+        },
+        {
+            "name": "Giant Chasm",
+            "dimensions": [
+                195, 28, 201, 28, 201, 34, 195, 34
+            ],
+            "location_id": 403
+        },
+        {
+            "name": "Undella Bay",
+            "dimensions": [
+                245, 65, 251, 65, 251, 71, 245, 71
+            ],
+            "location_id": 413
+        },
+        {
+            "name": "Wellspring Cave",
+            "dimensions": [
+                212, 107, 218, 107, 218, 113, 212, 113
+            ],
+            "location_id": 395
+        },
+        {
+            "name": "Pinwheel Forest",
+            "dimensions": [
+                191, 122, 197, 122, 197, 128, 191, 128
+            ],
+            "location_id": 375
+        },
+        {
+            "name": "P2 Laboratory",
+            "dimensions": [
+                219, 148, 225, 148, 225, 154, 219, 154
+            ],
+            "location_id": 405
+        },
+        {
+            "name": "Dreamyard",
+            "dimensions": [
+                236, 115, 242, 115, 242, 121, 236, 121
+            ],
+            "location_id": 374
+        },
+        {
+            "name": "Route 1",
+            "dimensions": [
+                231, 144, 233, 144, 233, 152, 231, 152
+            ],
+            "location_id": 356
+        },
+        {
+            "name": "Route 2",
+            "dimensions": [
+                230, 132, 232, 132, 231, 124, 229, 124
+            ],
+            "location_id": 357
+        },
+        {
+            "name": "Route 3",
+            "dimensions": [
+                222, 117, 222, 119, 209, 119, 209, 117
+            ],
+            "location_id": 358
+        },
+        {
+            "name": "Route 4",
+            "dimensions": [
+                131, 97, 133, 97, 133, 124, 131, 124
+            ],
+            "location_id": 359
+        },
+        {
+            "name": "Route 5",
+            "dimensions": [
+                126, 90, 126, 92, 114, 92, 114, 90
+            ],
+            "location_id": 360
+        },
+        {
+            "name": "Route 6",
+            "dimensions": [
+                46, 70, 46, 73, 68, 88, 68, 85
+            ],
+            "location_id": 361
+        },
+        {
+            "name": "Route 7",
+            "dimensions": [
+                46, 64, 46, 61, 68, 45, 68, 48
+            ],
+            "location_id": 362
+        },
+        {
+            "name": "Route 8",
+            "dimensions": [
+                94, 42, 94, 44, 80, 44, 80, 42
+            ],
+            "location_id": 363
+        },
+        {
+            "name": "Route 9",
+            "dimensions": [
+                114, 42, 114, 44, 126, 44, 126, 42
+            ],
+            "location_id": 364
+        },
+        {
+            "name": "Route 10",
+            "dimensions": [
+                135, 37, 133, 37, 135, 30, 157, 30, 159, 28, 162, 28, 158, 32, 137, 32
+            ],
+            "location_id": 365
+        },
+        {
+            "name": "Route 11",
+            "dimensions": [
+                138, 42, 138, 44, 150, 44, 150, 42
+            ],
+            "location_id": 366
+        },
+        {
+            "name": "Route 12",
+            "dimensions": [
+                171, 42, 171, 44, 184, 44, 184, 42
+            ],
+            "location_id": 367
+        },
+        {
+            "name": "Route 13",
+            "dimensions": [
+                196, 46, 196, 49, 218, 64, 218, 61
+            ],
+            "location_id": 368
+        },
+        {
+            "name": "Route 14",
+            "dimensions": [
+                218, 70, 218, 73, 196, 88, 196, 85
+            ],
+            "location_id": 369
+        },
+        {
+            "name": "Route 15",
+            "dimensions": [
+                184, 90, 184, 92, 170, 92, 170, 90
+            ],
+            "location_id": 370
+        },
+        {
+            "name": "Route 16",
+            "dimensions": [
+                138, 90, 138, 92, 150, 92, 150, 90
+            ],
+            "location_id": 371
+        },
+        {
+            "name": "Route 17",
+            "dimensions": [
+                226, 157, 226, 159, 211, 159, 211, 157
+            ],
+            "location_id": 372
+        },
+        {
+            "name": "Route 18",
+            "dimensions": [
+                202, 157, 202, 159, 211, 159, 211, 157
+            ],
+            "location_id": 373
+        },
+        {
+            "name": "Skyarrow Bridge",
+            "dimensions": [
+                197, 117, 197, 119, 187, 119, 172, 123, 172, 121, 150, 125, 149, 128, 138, 130, 138, 128, 147, 126, 148, 123, 174, 118, 174, 120, 186, 117
+            ],
+            "location_id": 406
+        },
+        {
+            "name": "Desert Resort",
+            "dimensions": [
+                118, 103, 118, 105, 131, 105, 131, 103
+            ],
+            "location_id": 376
+        },
+        {
+            "name": "Driftveil Drawbridge",
+            "dimensions": [
+                114, 92, 114, 89, 113, 88, 95, 88, 94, 90, 80, 90, 80, 92, 95, 92, 96, 90, 112, 90
+            ],
+            "location_id": 407
+        },
+        {
+            "name": "Tubeline Bridge",
+            "dimensions": [
+                94, 41, 94, 44, 96, 42, 111, 42, 114, 44, 114, 41, 112, 40, 95, 40
+            ],
+            "location_id": 408
+        },
+        {
+            "name": "Village Bridge",
+            "dimensions": [
+                150, 44, 150, 42, 152, 40, 168, 40, 171, 42, 171, 44, 168, 42, 152, 42
+            ],
+            "location_id": 409
+        },
+        {
+            "name": "Marvelous Bridge",
+            "dimensions": [
+                150, 92, 152, 90, 168, 90, 170, 92, 170, 90, 168, 88, 152, 88, 150, 90
+            ],
+            "location_id": 410
+        }
+    ]
+}

@@ -333,14 +333,6 @@
     "dimensions": [80, 96, 104, 96, 104, 104, 80, 104],
     "location_id":482
   }],
-  "pokeAliases":[
-    { "name":"farfetchd", "display":"Farfetch'd" },
-    { "name":"nidoran-m", "display":"Nidoran M" },
-    { "name":"nidoran-f", "display":"Nidoran F" },
-    { "name":"mr-mime", "display":"Mr. Mime" },
-    { "name":"ho-oh", "display":"Ho-Oh" },
-    { "name":"deoxys-normal", "display":"Deoxys" }
-  ],
   "aliases":[
     
   ]

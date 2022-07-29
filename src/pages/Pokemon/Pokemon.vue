@@ -57,6 +57,10 @@
                 <td class="regionData btn gameBox bottomLeft heartgold" v-bind:class="{ active: filteredGames.includes('hg') }" colspan=3 @click="filterGame('hg')"><b>HG</b></td>
                 <td class="regionData btn gameBox bottomRight soulsilver" v-bind:class="{ active: filteredGames.includes('ss') }" colspan=3 @click="filterGame('ss')"><b>SS</b></td>
               </template>
+              <template v-else-if="mapJSON.region==='unova'">
+                <td class="regionData btn gameBox bottomLeft black" v-bind:class="{ active: filteredGames.includes('b') }" colspan=3 @click="filterGame('b')"><b>B</b></td>
+                <td class="regionData btn gameBox bottomRight white" v-bind:class="{ active: filteredGames.includes('w') }" colspan=3 @click="filterGame('w')"><b>W</b></td>
+              </template>
               <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=mapJSON.maps ref="LocInput"></NiceDatalist>
               </td>
@@ -134,7 +138,8 @@
             <tr v-for="encounter in filterEncounters(area.encounters)" v-bind:key="encounter.id" :class="[ mapJSON.generation <= 7 ? 'gen-7-cell' : 'gen-8-cell' ]">
               <td class="regionData" scope="row">
                 <img :src=PKMNIcon(encounter.pkmn) :alt=encounter.pkmn|PKMNName class="pokeIcon">
-                {{ pokeFromDex(encounter.pkmn) }}
+                <div>{{ encounter.pkmnName }}</div>
+                <div class="form">{{ encounter.form }}</div>
               </td>
               <td class="inTableTable" v-if="mapJSON.games.length > 1">
                 <template v-if="mapJSON.region==='kanto'">
@@ -164,6 +169,10 @@
                 <template v-else-if="mapJSON.region==='johto4'">
                   <div class="regionData fbox gameBox heartgold" v-bind:class="{ active: encounter.games.includes('hg') }"><b>HG</b></div>
                   <div class="regionData fbox gameBox soulsilver" v-bind:class="{ active: encounter.games.includes('ss') }"><b>SS</b></div>
+                </template>
+                <template v-else-if="mapJSON.region==='unova'">
+                  <div class="regionData fbox gameBox black" v-bind:class="{ active: encounter.games.includes('b') }"><b>B</b></div>
+                  <div class="regionData fbox gameBox white" v-bind:class="{ active: encounter.games.includes('w') }"><b>W</b></div>
                 </template>
               </td>
               <td class="regionData" :class="[ encounter.iconGender===0?'male':'', mapJSON.grassMapsLocationIds.includes(encounters.id)?'grass':'', mapJSON.region ]">
@@ -206,7 +215,7 @@
 import $ from 'jquery'
 import pokeConstants from '../../assets/pokemon/pokeConstants.json'
 import { SetUpHighlighter, DrawNormal, ToggleAll, SelectArea, DrawSearch, SetOffset } from '../../assets/js/simplysMapHighlighter'
-import { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName, FilterEncounters } from './PokemonParser'
+import { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName, FilterEncounters, GetPokeIcon } from './PokemonParser'
 
 export default {
   name: 'Pokemon',
@@ -224,15 +233,14 @@ export default {
   }),
   props: [ 'mapJSON', 'encountersJSON', 'mapIMGsrc' ],
   mounted() {
-    console.log("v2.1");
-    this.filteredGames = this.mapJSON.games;
+    this.filteredGames = this.mapJSON.games.slice();
     console.log(FetchEncounters(this.mapJSON.generation, this.encountersJSON));
     $('#permaCanvas').fadeOut(0);
     $('.contactMe').css('--color-hue', Math.floor(Math.random() * 360)); // Random hue for contact boxes
 
     this.findablePokemon = GetPokeList(this.mapJSON.maxDexIx);
     for (var i = 0; i < this.findablePokemon.length; i++) {
-      this.findablePokemon[i].name = this.$options.filters.capitalize(this.pokeAlias(this.findablePokemon[i].name, this.mapJSON));
+      this.findablePokemon[i].name = this.pokeAlias(this.findablePokemon[i].name, this.mapJSON);
     }
 
     SetUpHighlighter(document.querySelector('#GameMap'), document.querySelector('#mapIMG'), document.querySelector('#normalCanvas'),
@@ -341,15 +349,14 @@ export default {
     pokeFromDex: function(value) {
       value = this.$options.filters.PKMNName(value);
       value = this.pokeAlias(value);
-      value = this.$options.filters.capitalize(value);
 
       return value;
     },
 
     pokeAlias: function(value) {
-      for (var i = 0; i < this.mapJSON.pokeAliases.length; i++) {
-        if (this.mapJSON.pokeAliases[i].name == value) {
-          return this.mapJSON.pokeAliases[i].display;
+      for (var i = 0; i < pokeConstants.pokeAliases.length; i++) {
+        if (pokeConstants.pokeAliases[i].name == value) {
+          return pokeConstants.pokeAliases[i].display;
         }
       }
 
@@ -357,9 +364,9 @@ export default {
     },
 
     unPokeAlias: function(value) {
-      for (var i = 0; i < this.mapJSON.pokeAliases.length; i++) {
-        if (this.mapJSON.pokeAliases[i].display == value) {
-          return this.mapJSON.pokeAliases[i].name;
+      for (var i = 0; i < pokeConstants.pokeAliases.length; i++) {
+        if (pokeConstants.pokeAliases[i].display == value) {
+          return pokeConstants.pokeAliases[i].name;
         }
       }
 
@@ -429,6 +436,7 @@ export default {
     },
 
     PKMNIcon: function(value) {
+      value = GetPokeIcon(value);
       if (this.mapJSON.generation <= 7) {
         return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/' + value + '.png';
       }
@@ -460,14 +468,17 @@ export default {
         "only-one": "Only One",
         "wailmer-pail": "Wailmer Pail",
         "squirt-bottle": "Squirt Bottle",
-        "devon-scope": "Hidden"
+        "devon-scope": "Hidden",
+        "super-rod-spots": "Fishing Spot",
+        "surf-spots": "Surfing Spot",
+        "cave-spots": "Cave Spot",
+        "grass-spots": "Grass Spot",
+        "dark-grass": "Dark Grass",
+        "bridge-spots": "Bridge Spot"
       }[value];
     },
     
     PKMNName: function(dexNo) {
-      if (dexNo > 898) {
-        return dexNo + '';
-      }
       return GetPokeName(dexNo);
     }
   }

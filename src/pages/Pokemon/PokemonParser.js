@@ -6,6 +6,7 @@ var rngCounter = [12, 47]; // Used for randomizing icon gender
 
 function FetchEncounters(gen, encounters) {
     generation = gen;
+    encounterTable = ExpandEncounters(encounters);
     encounterTable = AssignGendersToTable(encounters);
     
     return encounterTable;
@@ -21,6 +22,20 @@ function AssignGendersToTable(table) {
     });
 
     return table;
+}
+
+function ExpandEncounters(table) {
+    table.locations.forEach(location => {
+        location.areas.forEach(area => {
+            area.encounters.forEach(encounter => {
+                var form = GetPokeForm(encounter.pkmn);
+                if (form != '') {
+                    encounter.form = form;
+                }
+                encounter['pkmnName'] = GetPokeName(encounter.pkmn);
+            });
+        });
+    });
 }
 
 function GetEncountersForLocation(locationId) {
@@ -87,7 +102,13 @@ function GetMethodValue(method) {
         "wailmer-pail": 12,
         "gift-egg": 13,
         "only-one": 14,
-        'devon-scope': 15
+        'devon-scope': 15,
+        'super-rod-spots': 16,
+        'surf-spots': 17,
+        'cave-spots': 18,
+        'grass-spots': 19,
+        'dark-grass': 20,
+        'bridge-spots': 21
     }[method];
 }
 
@@ -109,15 +130,52 @@ function GetPokeList(topIX) {
 }
 
 function GetPokeName(dexNo) {
-    return pokeConstants.icons[dexNo-1].name;
+    if (dexNo < 898) {
+        return pokeConstants.icons[dexNo-1].name;
+    }
+    for (var i = 0; i < pokeConstants.icons.length; i++) {
+        if (pokeConstants.icons[i].ix == dexNo) {
+            return pokeConstants.icons[i].name;
+        }
+    }
+}
+
+function GetPokeIcon(dexNo) {
+    if (dexNo < 898) {
+        return pokeConstants.icons[dexNo-1].icon;
+    }
+    for (var i = 0; i < pokeConstants.icons.length; i++) {
+        if (pokeConstants.icons[i].ix == dexNo) {
+            return pokeConstants.icons[i].icon;
+        }
+    }
+}
+
+function GetPokeDexNo(name) {
+    name = name.toLowerCase();
+    for (var i = 0; i < pokeConstants.icons.length; i++) {
+        if (pokeConstants.icons[i].name.toLowerCase() == name) {
+            return pokeConstants.icons[i].ix;
+        }
+    }
+}
+
+function GetPokeForm(dexNo) {
+    for (var i = 0; i < pokeConstants.icons.length; i++) {
+        if (pokeConstants.icons[i].ix == dexNo) {
+            return pokeConstants.icons[i].form ? pokeConstants.icons[i].form : '';
+        }
+    }
 }
 
 function FindPokemon(poke) {
+    var dexNo = GetPokeDexNo(poke);
+
     var resultsIds = []
     encounterTable.locations.forEach(function(location) {
         for (var i = 0; i < location.areas.length; i++) {
             for (var j = 0; j < location.areas[i].encounters.length; j++) {
-                if (GetPokeName(location.areas[i].encounters[j].pkmn) == poke) {
+                if (location.areas[i].encounters[j].pkmn == dexNo) {
                     resultsIds.push(location.id);
                     return;
                 }
@@ -261,4 +319,4 @@ function JoinTimedChances(encounters) {
     return result;
 }
 
-export { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName, FilterEncounters }
+export { FetchEncounters, GetEncountersForLocation, GetPokeList, FindPokemon, GetPokeName, FilterEncounters, GetPokeIcon }

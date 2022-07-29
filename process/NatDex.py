@@ -1,3 +1,6 @@
+from traceback import format_exception
+
+
 NATDEX = {
     1: 'BULBASAUR',
     2: 'IVYSAUR',
@@ -1163,5 +1166,72 @@ NATDEX = {
     10257: 'FLABEBE_BLUE_FLOWER',
     10258: 'FLABEBE_WHITE_FLOWER',
     10259: 'FLABEBE_ORANGE_FLOWER',
-    10260: 'FLABEBE_YELLOW_FLOWER'
+    10260: 'FLABEBE_YELLOW_FLOWER',
+    10261: 'UNOWN_A',
+    10262: 'UNOWN_B',
+    10263: 'UNOWN_C',
+    10264: 'UNOWN_D',
+    10265: 'UNOWN_E',
+    10266: 'UNOWN_F',
+    10267: 'UNOWN_G',
+    10268: 'UNOWN_H',
+    10269: 'UNOWN_I',
+    10270: 'UNOWN_J',
+    10271: 'UNOWN_K',
+    10272: 'UNOWN_L',
+    10273: 'UNOWN_M',
+    10274: 'UNOWN_N',
+    10275: 'UNOWN_O',
+    10276: 'UNOWN_P',
+    10277: 'UNOWN_Q',
+    10278: 'UNOWN_R',
+    10279: 'UNOWN_S',
+    10280: 'UNOWN_T',
+    10281: 'UNOWN_U',
+    10282: 'UNOWN_V',
+    10283: 'UNOWN_W',
+    10284: 'UNOWN_X',
+    10285: 'UNOWN_Y',
+    10286: 'UNOWN_Z',
+    10287: 'UNOWN_QUESTION_MARK',
+    10288: 'UNOWN_EXCLAMATION_MARK'
 }
+
+def generateConstantIcons():
+    exceptions = {
+        'NIDORAN_M': 'Nidoran♂',
+        'NIDORAN_F': 'Nidoran♀'
+    }
+    formExceptions = {
+        'GALAR': 'Galarian',
+        'HISUI': 'Hisuian',
+        'GMAX': 'Gigantamax'
+    }
+
+    res = []
+    for i in NATDEX:
+        name = NATDEX[i]
+        if name in exceptions:
+            name = exceptions[name]
+        else:
+            name = name.lower()
+            name = name.capitalize()
+            formWords = name.split('_')[1:]
+            name = name.split('_')[0]
+
+            for i in range(len(formWords)):
+                if formWords[i] in formExceptions:
+                    formWords[i] = formExceptions[formWords[i]]
+                else:
+                    formWords[i] = formWords[i].lower.capitalize()
+            
+            form = ' '.join(formWords)
+        
+        res.append({
+            'name': NATDEX[i].lower(),
+            'icon': i
+        })
+        if form:
+            res[-1]['form'] = form
+    
+    print(res)

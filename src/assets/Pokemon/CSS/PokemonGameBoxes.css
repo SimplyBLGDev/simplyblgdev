@@ -65,6 +65,12 @@
 .gameBox.soulsilver {
   --gb-color:#bcbcbc;
 }
+.gameBox.black {
+  --gb-color:#464646;
+}
+.gameBox.white {
+  --gb-color:#c5c5c5;
+}
 .gameBox.morning {
   background-color: #c3c838;
 }
