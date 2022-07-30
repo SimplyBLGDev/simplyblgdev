@@ -93,8 +93,8 @@ def processGames(games):
         'soulsilver': 'ss',
         'black': 'b',
         'white': 'w',
-        'black2': 'b2',
-        'white2': 'w2',
+        'black-2': 'b2',
+        'white-2': 'w2',
         'x': 'x',
         'y': 'y',
         'omegaruby': 'or',
@@ -241,6 +241,7 @@ if __name__ == '__main__':
     processRegion('Sinnoh')
     processRegion('Johto4')
     processRegion('Unova')
+    processRegion('Unova2')
 
     print(allConditions)
     print(allMethods)

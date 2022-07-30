@@ -84,6 +84,10 @@ def geticonPokeConstantsAPI():
         'porygon-z': {
             'name': 'Porygon-Z',
             'form': ''
+        },
+        'mr-mime-galar': {
+            'name': 'Mr. Mime',
+            'form': 'Galar'
         }
     }
     def getStr(i):
@@ -121,5 +125,5 @@ def getRegion():
 
 
 if __name__ == '__main__':
-    #getRegion()
-    geticonPokeConstantsAPI()
+    getRegion()
+    #geticonPokeConstantsAPI()

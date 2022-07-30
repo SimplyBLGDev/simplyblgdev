@@ -61,6 +61,10 @@
                 <td class="regionData btn gameBox bottomLeft black" v-bind:class="{ active: filteredGames.includes('b') }" colspan=3 @click="filterGame('b')"><b>B</b></td>
                 <td class="regionData btn gameBox bottomRight white" v-bind:class="{ active: filteredGames.includes('w') }" colspan=3 @click="filterGame('w')"><b>W</b></td>
               </template>
+              <template v-else-if="mapJSON.region==='unova2'">
+                <td class="regionData btn gameBox bottomLeft black2" v-bind:class="{ active: filteredGames.includes('b2') }" colspan=3 @click="filterGame('b2')"><b>B2</b></td>
+                <td class="regionData btn gameBox bottomRight white2" v-bind:class="{ active: filteredGames.includes('w2') }" colspan=3 @click="filterGame('w2')"><b>W2</b></td>
+              </template>
               <td style="padding: 0">
                 <NiceDatalist class="regionData bottomLeft" :list=mapJSON.maps ref="LocInput"></NiceDatalist>
               </td>
@@ -173,6 +177,10 @@
                 <template v-else-if="mapJSON.region==='unova'">
                   <div class="regionData fbox gameBox black" v-bind:class="{ active: encounter.games.includes('b') }"><b>B</b></div>
                   <div class="regionData fbox gameBox white" v-bind:class="{ active: encounter.games.includes('w') }"><b>W</b></div>
+                </template>
+                <template v-else-if="mapJSON.region==='unova2'">
+                  <div class="regionData fbox gameBox black2" v-bind:class="{ active: encounter.games.includes('b2') }"><b>B2</b></div>
+                  <div class="regionData fbox gameBox white2" v-bind:class="{ active: encounter.games.includes('w2') }"><b>W2</b></div>
                 </template>
               </td>
               <td class="regionData" :class="[ encounter.iconGender===0?'male':'', mapJSON.grassMapsLocationIds.includes(encounters.id)?'grass':'', mapJSON.region ]">

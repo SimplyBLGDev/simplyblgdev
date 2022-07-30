@@ -16,10 +16,10 @@
 .sinnoh>.encounterIcon, .johto4>.encounterIcon {
   background-image: url('../encounterIconsDS.png');
 }
-.unova>.encounterIcon, .unova>.encounterIcon {
+.unova>.encounterIcon, .unova2>.encounterIcon {
   background-image: url('../encounterIconsV.png');
 }
-.unova.male>.encounterIcon {
+.unova.male>.encounterIcon, .unova2.male>.encounterIcon {
   --y-pos: -39px;
 }
 
@@ -364,6 +364,8 @@
 	height: 15px;
 	--x-pos: -254px;
 }
+
+/* B2 W2*/
 .unova2>.encounterIcon.grass {
 	width: 22px;
 	height: 36px;
@@ -379,11 +381,10 @@
 	height: 37px;
 	--x-pos: -316px;
 }
-.unova2>.encounterIcon.fish {
-	width: 32px;
+.unova2>.encounterIcon.old-rod, .unova2>.encounterIcon.good-rod, .unova2>.encounterIcon.super-rod {
+  width: 32px;
 	height: 27px;
 	--x-pos: -348px;
-	--y-pos: -1px;
 }
 .unova2>.encounterIcon.gift {
 	width: 29px;
