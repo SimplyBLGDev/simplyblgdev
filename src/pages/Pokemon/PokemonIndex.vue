@@ -23,8 +23,8 @@
 			<div style="position: absolute; width: 100%; height: 9rem;display: flex;align-items: center;text-align: center;justify-content: center;background-color: #444444bb;">
 				<span style="transform: rotate(20deg); font-size:4rem;">WIP</span>
 			</div>
-			<div class="fullWidthDiv unova">
-				<span>Unova</span>
+			<div class="fullWidthDiv kalos">
+				<span>Kalos</span>
 			</div>
 		</div>
 	</div>
@@ -146,6 +146,38 @@ export default {
 						class:"soulsilver"
 					}
 				]
+			},
+			{
+				name: "Unova",
+				address: 'unova',
+				preview: require('../../assets/pokemon/maps/previews/UnovaPreview.png'),
+				class: "unova",
+				games:[
+					{
+						name:"B",
+						class:"black"
+					},
+					{
+						name:"W",
+						class:"white"
+					}
+				]
+			},
+			{
+				name: "Unova Again",
+				address: 'unova2',
+				preview: require('../../assets/pokemon/maps/previews/Unova2Preview.png'),
+				class: "unova2",
+				games:[
+					{
+						name:"B2",
+						class:"black2"
+					},
+					{
+						name:"W2",
+						class:"white2"
+					}
+				]
 			}
 		]
 	}),
@@ -221,6 +253,19 @@ export default {
 .sinnoh:hover {
 	background-color: #2999af;
 }
+.unova {
+	background-color: #464646;
+}
+.unova:hover {
+	background-color: #5a5a5a;
+}
+.unova2 {
+	background-color: #c5c5c5;
+	color: #5a5a5a;
+}
+.unova2:hover {
+	background-color: #b1b1b1;
+}
 .gameIndicator {
 	padding-right: 1.5rem;
   color:whitesmoke;
@@ -281,5 +326,11 @@ export default {
 }
 .gameIndicator.soulsilver {
 	--gameColor: #bcbcbc;
+}
+.gameIndicator.black, .gameIndicator.black2 {
+	--gameColor: #464646;
+}
+.gameIndicator.white, .gameIndicator.white2 {
+	--gameColor: #c5c5c5;
 }
 </style>
