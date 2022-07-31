@@ -1,25 +1,36 @@
 tool
-extends TileMap
+extends Node2D
 
-export var activate = false setget activate
-export var pRegion = ''
+export(String, MULTILINE) var result = ''
 
-func activate(value):
-	$RichTextLabel.text = ""
-	for tile in tile_set.get_tiles_ids():
-		var title = tile_set.tile_get_name(tile)
-		var region = tile_set.tile_get_region(tile)
-		if title == 'fish':
-			$RichTextLabel.text += '.' + pRegion + '>.encounterIcon.old-rod, '
-			$RichTextLabel.text += '.' + pRegion + '>.encounterIcon.good-rod, '
-			$RichTextLabel.text += '.' + pRegion + '>.encounterIcon.super-rod {\n'
-		elif title == 'grass':
-			$RichTextLabel.text += '.' + pRegion + '.grass>.encounterIcon.walk {\n'
-		else:
-			$RichTextLabel.text += '.' + pRegion + '>.encounterIcon.' + title + ' {\n'
-		$RichTextLabel.text += '\twidth: ' + str(int(region.size.x)) + 'px;\n'
-		$RichTextLabel.text += '\theight: ' + str(int(region.size.y)) + 'px;\n'
-		$RichTextLabel.text += '\t--x-pos: -' + str(int(region.position.x)) + 'px;\n'
-		if region.position.y != 0:
-			$RichTextLabel.text += '\t--y-pos: -' + str(int(region.position.y)) + 'px;\n'
-		$RichTextLabel.text += '}\n'
+
+func _on_Iconeer_visibility_changed():
+	if visible:
+		calculate_result()
+
+
+func calculate_result():
+	result = ''
+	result += '.encounterIcon {\n'
+	result += '\timage-rendering: pixelated;\n'
+	result += '\ttransform: scale(2);\n'
+	result += '\tmargin-right: 12px;\n'
+	result += '\tborder-radius: 0;\n'
+	result += '\t--y-pos: 0px;\n'
+	result += '\t--x-pos: 0px;\n'
+	result += '\tbackground-position: var(--x-pos) var(--y-pos);\n'
+	result += '}\n\n'
+	
+	for region in get_children():
+		result += region.declaration_CSS
+	
+	result += '\n'
+	for region in get_children():
+		result += region.CSS
+		result += '\n'
+	
+	result += '/* ------------------------Special------------------------ */'
+	
+	for region in get_children():
+		result += region.special_CSS
+		result += '\n'
