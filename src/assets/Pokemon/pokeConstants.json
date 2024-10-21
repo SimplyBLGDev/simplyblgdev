@@ -43,6 +43,20 @@
       ]
     },
     {
+      "name": "national_dex",
+      "type": "selection",
+      "options": [
+        {
+          "name": "National Dex",
+          "value": "story-progress-national-dex"
+        },
+        {
+          "name": "No National Dex",
+          "value": "story-progress-none"
+        }
+      ]
+    },
+    {
       "name": "tv_option",
       "type": "selection",
       "options": [
@@ -952,7 +966,7 @@
     {"name": "Pyukumuku", "icon": "771", "ix": 771},
     {"name": "Type", "form": "Null", "icon": "772", "ix": 772},
     {"name": "Silvally", "icon": "773", "ix": 773},
-    {"name": "Minior", "form": "Red Meteor", "icon": "774", "ix": 774},
+    {"name": "Minior", "icon": "774", "ix": 774},
     {"name": "Komala", "icon": "775", "ix": 775},
     {"name": "Turtonator", "icon": "776", "ix": 776},
     {"name": "Togedemaru", "icon": "777", "ix": 777},
@@ -960,9 +974,9 @@
     {"name": "Bruxish", "icon": "779", "ix": 779},
     {"name": "Drampa", "icon": "780", "ix": 780},
     {"name": "Dhelmise", "icon": "781", "ix": 781},
-    {"name": "Jangmo", "form": "O", "icon": "782", "ix": 782},
-    {"name": "Hakamo", "form": "O", "icon": "783", "ix": 783},
-    {"name": "Kommo", "form": "O", "icon": "784", "ix": 784},
+    {"name": "Jangmo-O", "icon": "782", "ix": 782},
+    {"name": "Hakamo-O", "icon": "783", "ix": 783},
+    {"name": "Kommo-O", "icon": "784", "ix": 784},
     {"name": "Tapu-Koko", "icon": "785", "ix": 785},
     {"name": "Tapu-Lele", "icon": "786", "ix": 786},
     {"name": "Tpu-Bulu", "icon": "787", "ix": 787},
@@ -1174,7 +1188,7 @@
     {"name": "Lopunny", "form": "Mega", "icon": "10088", "ix": 10088},
     {"name": "Salamence", "form": "Mega", "icon": "10089", "ix": 10089},
     {"name": "Beedrill", "form": "Mega", "icon": "10090", "ix": 10090},
-    {"name": "Rattata", "form": "Alola", "icon": "10091", "ix": 10091},
+    {"name": "Rattata", "form": "Alola", "icon": "19-alola", "ix": 10091},
     {"name": "Raticate", "form": "Alola", "icon": "10092", "ix": 10092},
     {"name": "Raticate", "form": "Totem Alola", "icon": "20-totem-alola", "ix": 10093},
     {"name": "Pikachu", "form": "Original Cap", "icon": "25-original-cap", "ix": 10094},
@@ -1190,11 +1204,11 @@
     {"name": "Ninetales", "form": "Alola", "icon": "10104", "ix": 10104},
     {"name": "Diglett", "form": "Alola", "icon": "10105", "ix": 10105},
     {"name": "Dugtrio", "form": "Alola", "icon": "10106", "ix": 10106},
-    {"name": "Meowth", "form": "Alola", "icon": "10107", "ix": 10107},
-    {"name": "Persian", "form": "Alola", "icon": "10108", "ix": 10108},
-    {"name": "Geodude", "form": "Alola", "icon": "10109", "ix": 10109},
-    {"name": "Graveler", "form": "Alola", "icon": "10110", "ix": 10110},
-    {"name": "Golem", "form": "Alola", "icon": "10111", "ix": 10111},
+    {"name": "Meowth", "form": "Alola", "icon": "52-alola", "ix": 10107},
+    {"name": "Persian", "form": "Alola", "icon": "53-alola", "ix": 10108},
+    {"name": "Geodude", "form": "Alola", "icon": "74-alola", "ix": 10109},
+    {"name": "Graveler", "form": "Alola", "icon": "75-alola", "ix": 10110},
+    {"name": "Golem", "form": "Alola", "icon": "76-alola", "ix": 10111},
     {"name": "Grimer", "form": "Alola", "icon": "10112", "ix": 10112},
     {"name": "Muk", "form": "Alola", "icon": "10113", "ix": 10113},
     {"name": "Exeggutor", "form": "Alola", "icon": "10114", "ix": 10114},
@@ -1263,7 +1277,7 @@
     {"name": "Darmanitan", "form": "Galar Standard", "icon": "10177", "ix": 10177},
     {"name": "Darmanitan", "form": "Galar Zen", "icon": "10178", "ix": 10178},
     {"name": "Yamask", "form": "Galar", "icon": "562-galar", "ix": 10179},
-    {"name": "Stunfisk", "form": "Galar", "icon": "10180", "ix": 10180},
+    {"name": "Stunfisk", "form": "Galar", "icon": "618-galar", "ix": 10180},
     {"name": "Zygarde", "form": "10%", "icon": "718-10", "ix": 10181},
     {"name": "Cramorant", "form": "Gulping", "icon": "0", "ix": 10182},
     {"name": "Cramorant", "form": "Gorging", "icon": "0", "ix": 10183},

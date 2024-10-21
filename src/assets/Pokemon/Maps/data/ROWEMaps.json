@@ -8,6 +8,26 @@
   "maxDexIx": 908,
   "enableTimeHUD": false,
   "baseLocation": [{ "name": "Roaming Pokémon", "location_id": 801 }],
+  "subregions": [
+    {
+      "id": 0,
+      "name": "Hoenn",
+      "imgRegion": [0, 0, 257, 169],
+      "locationIds": [
+        567, 568, 429, 573, 570, 569, 572, 430, 484, 571, 574, 431, 432, 433, 434, 485, 578, 214, 489, 447, 581, 438, 435, 488, 440, 439, 576, 486, 582, 436, 490, 446,
+        579, 577, 448, 444, 445, 692, 580, 583, 441, 483, 487, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469,
+        470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Sevii Islands 1, 2 & 3",
+      "imgRegion": [0, 169, 192, 288],
+      "locationIds": [
+        526, 506, 505, 500, 805, 507, 806, 509, 508, 501
+      ]
+    }
+  ],
   "grassMapsLocationIds": [
     449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 463, 464, 465, 466, 467, 468, 469, 470, 471,
     472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 439, 483
@@ -333,7 +353,58 @@
       "name": "Route 134",
       "dimensions": [80, 96, 104, 96, 104, 104, 80, 104],
       "location_id":482
-    }],
+    },
+    {
+        "name": "One Island",
+        "dimensions": [16, 249, 24, 249, 24, 257, 16, 257],
+        "location_id": 526
+    },
+    {
+        "name": "Treasure Beach",
+        "dimensions": [16, 273, 24, 273, 24, 257, 16, 257],
+        "location_id": 506
+    },
+    {
+        "name": "Kindle Road",
+        "dimensions": [24, 217, 32, 217, 32, 257, 24, 257],
+        "location_id": 505
+    },
+    {
+        "name": "Mt Ember",
+        "dimensions": [24, 209, 32, 209, 32, 217, 24, 217],
+        "location_id": 500
+    },
+    {
+        "name": "Two Island",
+        "dimensions": [80, 257, 88, 257, 88, 265, 80, 265],
+        "location_id": 805
+    },
+    {
+        "name": "Cape Brink",
+        "dimensions": [80, 241, 88, 241, 88, 257, 80, 257],
+        "location_id": 507
+    },
+    {
+        "name": "Three Island",
+        "dimensions": [152, 281, 160, 281, 160, 289, 152, 289],
+        "location_id": 806
+    },
+    {
+        "name": "Three Isle Port",
+        "dimensions": [152, 297, 168, 297, 168, 289, 152, 289],
+        "location_id": 509
+    },
+    {
+        "name": "Bond Bridge",
+        "dimensions": [128, 281, 152, 281, 152, 289, 128, 289],
+        "location_id": 508
+    },
+    {
+        "name": "Berry Forest",
+        "dimensions": [120, 281, 128, 281, 128, 289, 120, 289],
+        "location_id": 501
+    }
+  ],
   "pokeAliases":[
     { "name":"farfetchd", "display":"Farfetch'd" },
     { "name":"nidoran-m", "display":"Nidoran M" },

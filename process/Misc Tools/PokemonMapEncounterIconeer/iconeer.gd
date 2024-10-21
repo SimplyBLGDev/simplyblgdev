@@ -27,10 +27,8 @@ func calculate_result():
 	result += '\n'
 	for region in get_children():
 		result += region.CSS
-		result += '\n'
 	
-	result += '/* ------------------------Special------------------------ */'
+	result += '/* ------------------------Special------------------------ */\n'
 	
 	for region in get_children():
 		result += region.special_CSS
-		result += '\n'

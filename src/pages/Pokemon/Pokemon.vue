@@ -213,9 +213,6 @@
   <div class="container-fluid contactMe">
     See something wrong? -<a href="mailto:simplyblgdev@gmail.com">Contact me!</a>-
   </div>
-  <div class="container-fluid contactMe">
-    Wanna support the development of more tools? -<a href="https://paypal.me/ppTheAGame">Donate here!</a>-
-  </div>
 </div>
 </template>
 

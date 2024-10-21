@@ -201,10 +201,12 @@
 .mapSwitchButton:first-child {
   border-top-left-radius: 3vw;
   margin-left: 0;
+  padding-left: 1.5vw;
 } 
 .mapSwitchButton:last-child {
   border-top-right-radius: 3vw;
   margin-right: 0;
+  padding-right: 1.5vw;
 }
 .mapSwitchButton:hover {
   background-color: #32972b;

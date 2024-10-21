@@ -157,7 +157,10 @@ const routes = [
     props: {
       'mapJSON': require('@/assets/pokemon/maps/data/ROWEMaps.json'),
       'encountersJSON': require('@/assets/pokemon/maps/data/ROWEEncounters.json'),
-      'mapIMGsrc': [ require('@/assets/pokemon/maps/regions/Hoenn.png') ]
+      'mapIMGsrc': [
+        require('@/assets/pokemon/maps/regions/Hoenn.png'),
+        require('@/assets/pokemon/maps/regions/Kanto3_1.png')
+      ]
     }
   },
   { path: '/science/graficadora',

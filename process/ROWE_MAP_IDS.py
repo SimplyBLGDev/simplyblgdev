@@ -84,6 +84,7 @@ ROWE_MAP_IDS = {
     'Relic Cave': 2,
     'One Island Treasure Beach': 506,
     'One Island Kindle Road': 505,
+    'Mt Ember': 59,
     'Mt Ember Exterior': 59,
     'Mt Ember Summit Patch': 59,
     'Mt Ember Summit Path': 59,

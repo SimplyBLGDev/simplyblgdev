@@ -97,7 +97,7 @@ a {
   writing-mode:tb-rl;
 }
 .case.header {
-  font-family: 'Limelight', cursive;
+  font-family: 'Raleway', sans-serif;
   font-size: xx-large;
   margin-top: 20px;
 }
@@ -226,6 +226,7 @@ img {
   top: -1.7ch;
   left: 0.2ch;
   opacity: 0.4;
+  font-family: 'Limelight', cursive;
 }
 .contactBox {
   margin: 0;
@@ -266,5 +267,6 @@ img {
   }
   .jamCard .case.header.year {
     font-size: 5rem;
+    font-family: 'Limelight', cursive;
   }
 }

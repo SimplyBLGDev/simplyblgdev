@@ -43,8 +43,8 @@ func calculateFinalJSON():
 			'location_id': polygon.location_id
 		})
 		for coord in polygon.get("polygon"):
-			r['maps'][-1]['dimensions'].append(coord.x)
-			r['maps'][-1]['dimensions'].append(coord.y)
+			r['maps'][-1]['dimensions'].append(coord.x + region.offset.x)
+			r['maps'][-1]['dimensions'].append(coord.y + region.offset.y)
 		if polygon.is_grass:
 			r['grassMapsLocationIds'].append(polygon.location_id)
 	

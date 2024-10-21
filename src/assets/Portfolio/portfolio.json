@@ -5,6 +5,48 @@
     "case-study":"Case Study:",
     "displays":[
       {
+        "title":"Kitty Kart 64",
+        "year":2024,
+        "ribbons":[
+          "Godot"
+        ],
+        "contents":[
+          {
+            "textWidth":"60%",
+            "contentWidth":"40%",
+            "text":[
+              "Developed for the <a hred='https://itch.io/jam/lsdjam-2023'><b>LSD JAM 2023</b></a> game jam with a team of 7, this 3 month-long project was made in <b>Godot</b> and tested my collaboration and teamwork skills.",
+              "The game uses a variety of technologies from <b>Blender</b>, <b>Godot</b>, <b>FMod</b>, as well as vector and raster graphical tools. A generic programming framework was developed as part of the process.",
+              "The game went on to receive great reviews and became the top game in <a hred='https://itch.io'><b>itch.io</b></a> for multiple weeks, development on a full, commercial version is underway.",
+              "<a href='https://snugboat11.itch.io/kitty-kart-64'>LSD2023 Game Jam edition.</a>",
+              "<a href='https://store.steampowered.com/app/2940460/Kitty_Kart_64/'>Steam listing.</a>"
+            ],
+            "hContents":8
+          }
+        ]
+      },
+      {
+        "title":"AGB Decompilation",
+        "year":2021,
+        "ribbons":[
+          "ASM", "Python", "Ghidra", "C++"
+        ],
+        "contents":[
+          {
+            "textWidth":"60%",
+            "contentWidth":"40%",
+            "text":[
+              "Part of a joint, open source effort to decompile and disassemble AGB games, these efforts can be seen in multiple repositories under the <a href='https://github.com/pret><b>pret</b></a> github account.",
+              "The information extracted from the ROMs can be used by the open source community to develop better tools and information about the games.",
+              "This information was used extensively to cover blindspots in the <a href='https://github.com/PokeAPI/pokeapi'>PokéAPI</a> Open API, which responds to over 2.5 billion API calls a month. <a href='https://pokeapi.co>(More details)</a>",
+              "In addition I developed a <b>python</b> script that automatically translated the entirety of Pokémon Emerald through Google Translate many times over, for comedic effect.",
+              "<a href='/pokemon/googletranslatedemerald'>It can be viewed here.</a>"
+            ],
+            "hContents":7
+          }
+        ]
+      },
+      {
         "title":"Pokémon Interactive Maps",
         "year":2020,
         "ribbons":[
@@ -102,9 +144,51 @@
   },
   "es":{
     "title":"Portafolio Digital",
-    "subtitle":"Una pequeña muestra de alguno de los proyectos que he desarrollado durante mis años como programador hobbyista.",
+    "subtitle":"Una pequeña muestra de algunos de los proyectos que he desarrollado durante mis años como programador hobbyista.",
     "case-study":"Caso de Estudio:",
     "displays":[
+      {
+        "title":"Kitty Kart 64",
+        "year":2024,
+        "ribbons":[
+          "Godot"
+        ],
+        "contents":[
+          {
+            "textWidth":"60%",
+            "contentWidth":"40%",
+            "text":[
+              "Desarrollado para la <a hred='https://itch.io/jam/lsdjam-2023'><b>LSD JAM 2023</b></a> con un equipo multidisciplinario compuesto por 7 personas, este projecto de tan solo 3 meses de duracion puso a prueba mis habilidades de colaboracion y trabajo en equipo.",
+              "El juego necesito el uso de variadas tecnologias como <b>Blender</b>, <b>Godot</b>, <b>FMod</b>, herramientas graficas de vector y raster. Un framework generico de desarrollo nacio durante el desarrollo del engine.",
+              "El juego recivio muy buenas criticas y se posiciono como el juego mas popular de <a hred='https://itch.io'><b>itch.io</b></a> por multiples semanas, una version completa y comercial esta en desarrollo.",
+              "<a href='https://snugboat11.itch.io/kitty-kart-64'>Edicion para la LSD2023 Game Jam.</a>",
+              "<a href='https://store.steampowered.com/app/2940460/Kitty_Kart_64/'>Listado en Steam.</a>"
+            ],
+            "hContents":8
+          }
+        ]
+      },
+      {
+        "title":"AGB Decompilation",
+        "year":2021,
+        "ribbons":[
+          "ASM", "Python", "Ghidra", "C++"
+        ],
+        "contents":[
+          {
+            "textWidth":"60%",
+            "contentWidth":"40%",
+            "text":[
+              "Parte de un esfuerzo abierto y open source para decompilar juegos de AGB, estos esfuerzos forman parte de la cuenta <a href='https://github.com/pret><b>pret</b></a> en github.",
+              "La informacion resultante de esta decompilacion es usada por la comunidad para desarrollar mejores herramientas y extraer informacion sobre los ROMs.",
+              "Esta informacion fue utilizada para cubrir blindspots en API abierta de <a href='https://github.com/PokeAPI/pokeapi'>PokéAPI</a>, que maneja mas de 2.5 billones llamadas de API al mes. <a href='https://pokeapi.co>(More detalles)</a>",
+              "Esto fue un punto de partida para crear un script de <b>python</b> que tradujo Pokémon Esmeralda con Google Translate a travez de muchos idiomas, logrando efectos comedicos.",
+              "<a href='/pokemon/googletranslatedemerald'>Puede ser visitado aquí.</a>"
+            ],
+            "hContents":7
+          }
+        ]
+      },
       {
         "title":"Mapas interactivos Pokémon",
         "year":2020,

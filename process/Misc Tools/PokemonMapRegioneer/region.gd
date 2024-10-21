@@ -9,7 +9,8 @@ export var maxDexIx = 0
 export var enableTimeHUD = false
 export var baseLocation = ''
 export var baseLocationID = 0
-export var map = preload("res://PokemonMapRegioneer/Kanto3_1.png")
+export var offset = Vector2(0, 0)
+export var map = preload("res://PokemonMapRegioneer/Map/Kanto3_1.png")
 export(String, MULTILINE) var location_ids setget set_loc, get_loc
 
 func getCurrentLocations():

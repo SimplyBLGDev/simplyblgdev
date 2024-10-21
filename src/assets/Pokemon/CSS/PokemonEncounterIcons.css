@@ -94,7 +94,6 @@
 	--x-pos: -112px;
 }
 
-
 /* G S C */
 .johto.grass>.encounterIcon.walk {
 	width: 15px;
@@ -147,7 +146,6 @@
 	--x-pos: -341px;
 }
 
-
 /* FR LG */
 .kanto3.grass>.encounterIcon.walk {
 	width: 16px;
@@ -189,7 +187,6 @@
 	height: 22px;
 	--x-pos: -154px;
 }
-
 
 /* R S E */
 .hoenn.grass>.encounterIcon.walk {
@@ -238,7 +235,6 @@
 	--x-pos: -609px;
 }
 
-
 /* D P Pt */
 .sinnoh.grass>.encounterIcon.walk {
 	width: 16px;
@@ -281,7 +277,6 @@
 	--x-pos: -721px;
 }
 
-
 /* HG SS */
 .johto4.grass>.encounterIcon.walk {
 	width: 21px;
@@ -323,7 +318,6 @@
 	height: 16px;
 	--x-pos: -705px;
 }
-
 
 /* B W */
 .unova.grass>.encounterIcon.walk {
@@ -387,7 +381,6 @@
 	--x-pos: -265px;
 }
 
-
 /* B2 W2 */
 .unova2.grass>.encounterIcon.walk {
 	width: 19px;
@@ -424,7 +417,7 @@
 	height: 21px;
 	--x-pos: -174px;
 }
-.unova2>.encounterIcon.bridge-spot {
+.unova2>.encounterIcon.bridge-spots {
 	width: 22px;
 	height: 26px;
 	--x-pos: -195px;
@@ -434,7 +427,7 @@
 	height: 20px;
 	--x-pos: -218px;
 }
-.unova2>.encounterIcon.super-rod-spot {
+.unova2>.encounterIcon.super-rod-spots {
 	width: 19px;
 	height: 14px;
 	--x-pos: -244px;
@@ -450,8 +443,8 @@
 	--x-pos: -265px;
 }
 
-
-/* ------------------------Special------------------------ *//* R B Y Specials */
+/* ------------------------Special------------------------ */
+/* R B Y Specials */
 .kanto>.encounterIcon.only-one.articuno {
 	width: 12px;
 	height: 16px;
@@ -488,7 +481,6 @@
 	--x-pos: -375px;
 	--y-pos: -0px;
 }
-
 
 /* G S C Specials */
 .johto>.encounterIcon.only-one.snorlax {
@@ -539,7 +531,6 @@
 	--x-pos: -356px;
 	--y-pos: -0px;
 }
-
 
 /* FR LG Specials */
 .kanto3>.encounterIcon.only-one.articuno {
@@ -603,7 +594,6 @@
 	--y-pos: -24px;
 }
 
-
 /* R S E Specials */
 .hoenn>.encounterIcon.only-one.regirock {
 	width: 31px;
@@ -659,7 +649,6 @@
 	--x-pos: -542px;
 	--y-pos: -31px;
 }
-
 
 /* D P Pt Specials */
 .sinnoh>.encounterIcon.only-one.uxie {
@@ -734,7 +723,6 @@
 	--x-pos: -464px;
 	--y-pos: -0px;
 }
-
 
 /* HG SS Specials */
 .johto4>.encounterIcon.only-one.ho-oh {
@@ -846,10 +834,7 @@
 	--y-pos: -46px;
 }
 
-
 /* B W Specials */
 
-
 /* B2 W2 Specials */
-
 

@@ -9,7 +9,7 @@
 [ext_resource path="res://PokemonMapRegioneer/Map/Johto4.png" type="Texture" id=7]
 [ext_resource path="res://PokemonMapRegioneer/Map/Sinnoh.png" type="Texture" id=8]
 [ext_resource path="res://PokemonMapRegioneer/Map/Unova2.png" type="Texture" id=9]
-[ext_resource path="res://PokemonMapRegioneer/Map/Kanto3_1.png" type="Texture" id=10]
+[ext_resource path="res://PokemonMapRegioneer/Map/Kalos.png" type="Texture" id=10]
 
 [node name="PokemonMapsRegioneer" type="Control"]
 anchor_right = 1.0
@@ -35,7 +35,7 @@ margin_top = 7.0
 margin_right = 1301.0
 margin_bottom = 641.0
 focus_mode = 2
-text = "{\"name\":\"Unova\",\"region\":\"unova2\",\"games\":[\"b2\",\"w2\"],\"generation\":5,\"maxDexIx\":649,\"enableTimeHUD\":false,\"baseLocation\":[{\"name\":\"Roaming Unova\",\"location_id\":0}],\"aliases\":[],\"grassMapsLocationIds\":[346,347,348,349,350,351,352,353,354,355,383,384,552,533,537,531,536,532,404,0,385,399,411,414,412,375,374,535,546,547,413,554,557,550,551,543,534,545,555,544,428,356,357,358,359,360,361,362,363,364,366,367,368,369,370,371,372,373,538,539,540,541,542,406,376],\"maps\":[{\"name\":\"Nuvema Town\",\"dimensions\":[226,152,238,152,238,164,226,164],\"location_id\":346},{\"name\":\"Accumula Town\",\"dimensions\":[226,132,238,132,238,144,226,144],\"location_id\":347},{\"name\":\"Striaton City\",\"dimensions\":[222,124,234,124,234,112,222,112],\"location_id\":348},{\"name\":\"Nacrene City\",\"dimensions\":[197,124,209,124,209,112,197,112],\"location_id\":349},{\"name\":\"Castelia City\",\"dimensions\":[126,124,138,124,138,136,126,136],\"location_id\":350},{\"name\":\"Nimbasa City\",\"dimensions\":[126,85,138,85,138,97,126,97],\"location_id\":351},{\"name\":\"Driftveil City\",\"dimensions\":[68,85,80,85,80,97,68,97],\"location_id\":352},{\"name\":\"Mistralton City\",\"dimensions\":[34,61,46,61,46,73,34,73],\"location_id\":353},{\"name\":\"Icirrus City\",\"dimensions\":[68,37,80,37,80,49,68,49],\"location_id\":354},{\"name\":\"Opelucid City\",\"dimensions\":[126,37,138,37,138,49,126,49],\"location_id\":355},{\"name\":\"Lacunosa Town\",\"dimensions\":[184,37,196,37,196,49,184,49],\"location_id\":383},{\"name\":\"Undella Town\",\"dimensions\":[218,61,230,61,230,73,218,73],\"location_id\":384},{\"name\":\"Black Tower\",\"dimensions\":[196,85,196,97,184,97],\"location_id\":553},{\"name\":\"White Treehollow\",\"dimensions\":[184,85,196,85,184,97],\"location_id\":552},{\"name\":\"Humilau City\",\"dimensions\":[229,30,241,30,241,42,229,42],\"location_id\":533},{\"name\":\"Lentimas Town\",\"dimensions\":[181,61,193,61,193,73,181,73],\"location_id\":537},{\"name\":\"Aspertia City\",\"dimensions\":[8,147,20,147,20,159,8,159],\"location_id\":531},{\"name\":\"Floccesy Town\",\"dimensions\":[27,121,39,121,39,133,27,133],\"location_id\":536},{\"name\":\"Virbank City\",\"dimensions\":[63,121,75,121,75,133,63,133],\"location_id\":532},{\"name\":\"Victory Road\",\"dimensions\":[180,12,188,12,188,20,180,20],\"location_id\":382},{\"name\":\"Ns Castle\",\"dimensions\":[179,3,185,3,185,9,179,9],\"location_id\":387},{\"name\":\"Pokémon League\",\"dimensions\":[164,9,176,9,176,21,164,21],\"location_id\":386},{\"name\":\"Unity Tower\",\"dimensions\":[95,153,103,153,103,161,95,161],\"location_id\":394},{\"name\":\"Liberty Garden\",\"dimensions\":[71,142,77,142,77,148,71,148],\"location_id\":404},{\"name\":\"Relic Castle\",\"dimensions\":[112,101,118,101,118,107,112,107],\"location_id\":377},{\"name\":\"PWT\",\"dimensions\":[73,99,81,99,81,107,73,107],\"location_id\":0},{\"name\":\"Chargestone Cave\",\"dimensions\":[39,77,45,77,45,83,39,83],\"location_id\":379},{\"name\":\"Mistralton Cave\",\"dimensions\":[61,68,67,68,67,74,61,74],\"location_id\":396},{\"name\":\"Anville Town\",\"dimensions\":[4,27,10,27,10,33,4,33],\"location_id\":385},{\"name\":\"Celestial Tower\",\"dimensions\":[51,47,57,47,57,53,51,53],\"location_id\":398},{\"name\":\"Twist Mountain\",\"dimensions\":[69,52,75,52,75,58,69,58],\"location_id\":380},{\"name\":\"Dragonspiral Tower\",\"dimensions\":[63,28,69,28,69,34,63,34],\"location_id\":381},{\"name\":\"Moor of Icirrus\",\"dimensions\":[85,33,91,33,91,39,85,39],\"location_id\":399},{\"name\":\"Challenger's Cave\",\"dimensions\":[114,46,120,46,120,52,114,52],\"location_id\":401},{\"name\":\"Entralink\",\"dimensions\":[129,64,135,64,135,70,129,70],\"location_id\":411},{\"name\":\"Lostlorn Forest\",\"dimensions\":[143,81,149,81,149,87,143,87],\"location_id\":414},{\"name\":\"Poké Transfer Lab\",\"dimensions\":[174,81,180,81,180,87,174,87],\"location_id\":402},{\"name\":\"Abundant Shrine\",\"dimensions\":[194,74,200,74,200,80,194,80],\"location_id\":412},{\"name\":\"Giant Chasm\",\"dimensions\":[205,33,211,33,211,39,205,39],\"location_id\":403},{\"name\":\"Wellspring Cave\",\"dimensions\":[212,107,218,107,218,113,212,113],\"location_id\":395},{\"name\":\"Pinwheel Forest\",\"dimensions\":[191,122,197,122,197,128,191,128],\"location_id\":375},{\"name\":\"P2 Laboratory\",\"dimensions\":[211,148,217,148,217,154,211,154],\"location_id\":405},{\"name\":\"Plasma Frigate\",\"dimensions\":[219,154,225,154,225,148,219,148],\"location_id\":549},{\"name\":\"Dreamyard\",\"dimensions\":[236,115,242,115,242,121,236,121],\"location_id\":374},{\"name\":\"Join Avenue\",\"dimensions\":[128,100,136,100,136,108,128,108],\"location_id\":535},{\"name\":\"Reversal Mountain\",\"dimensions\":[193,66,203,66,203,64,209,64,209,66,218,66,218,68,209,68,209,70,203,70,203,68,193,68],\"location_id\":546},{\"name\":\"Strange House\",\"dimensions\":[195,56,201,56,201,62,195,62],\"location_id\":547},{\"name\":\"Undella Bay\",\"dimensions\":[230,63,230,61,229,61,234,56,237,56],\"location_id\":413},{\"name\":\"Seaside Cave\",\"dimensions\":[232,50,238,50,238,56,232,56],\"location_id\":554},{\"name\":\"Marine Tube\",\"dimensions\":[241,35,241,37,244,39,250,39,251,40,251,67,250,68,235,68,233,66,230,66,230,68,232,68,234,70,251,70,253,68,253,39,251,37,245,37,243,35],\"location_id\":557},{\"name\":\"Relic Passage\",\"dimensions\":[102,115,108,115,108,121,102,121],\"location_id\":550},{\"name\":\"Clay Tunnel\",\"dimensions\":[69,74,75,74,75,80,69,80],\"location_id\":551},{\"name\":\"Castelia Sewers\",\"dimensions\":[153,140,159,140,159,146,153,146],\"location_id\":543},{\"name\":\"Pokéstar Studios\",\"dimensions\":[60,111,68,111,68,119,60,119],\"location_id\":534},{\"name\":\"Virbank Complex\",\"dimensions\":[61,135,67,135,67,141,61,141],\"location_id\":545},{\"name\":\"Cave of Being\",\"dimensions\":[38,141,44,141,44,135,38,135],\"location_id\":555},{\"name\":\"Floccesy Ranch\",\"dimensions\":[38,115,44,115,44,121,38,121],\"location_id\":544},{\"name\":\"Abyssal Ruins\",\"dimensions\":[239,60,245,60,245,66,239,66],\"location_id\":428},{\"name\":\"Route 1\",\"dimensions\":[231,144,233,144,233,152,231,152],\"location_id\":356},{\"name\":\"Route 2\",\"dimensions\":[230,132,232,132,231,124,229,124],\"location_id\":357},{\"name\":\"Route 3\",\"dimensions\":[222,117,222,119,209,119,209,117],\"location_id\":358},{\"name\":\"Route 4\",\"dimensions\":[131,97,133,97,133,124,131,124],\"location_id\":359},{\"name\":\"Route 5\",\"dimensions\":[126,90,126,92,114,92,114,90],\"location_id\":360},{\"name\":\"Route 6\",\"dimensions\":[46,70,46,73,68,88,68,85],\"location_id\":361},{\"name\":\"Route 7\",\"dimensions\":[46,64,46,61,68,45,68,48],\"location_id\":362},{\"name\":\"Route 8\",\"dimensions\":[94,42,94,44,80,44,80,42],\"location_id\":363},{\"name\":\"Route 9\",\"dimensions\":[114,42,114,44,126,44,126,42],\"location_id\":364},{\"name\":\"Route 11\",\"dimensions\":[138,42,138,44,150,44,150,42],\"location_id\":366},{\"name\":\"Route 12\",\"dimensions\":[171,42,171,44,184,44,184,42],\"location_id\":367},{\"name\":\"Route 13\",\"dimensions\":[196,46,196,49,218,64,218,61],\"location_id\":368},{\"name\":\"Route 14\",\"dimensions\":[218,70,218,73,196,88,196,85],\"location_id\":369},{\"name\":\"Route 15\",\"dimensions\":[184,90,184,92,170,92,170,90],\"location_id\":370},{\"name\":\"Route 16\",\"dimensions\":[138,90,138,92,150,92,150,90],\"location_id\":371},{\"name\":\"Route 17\",\"dimensions\":[226,157,226,159,211,159,211,157],\"location_id\":372},{\"name\":\"Route 18\",\"dimensions\":[202,157,202,159,211,159,211,157],\"location_id\":373},{\"name\":\"Route 19\",\"dimensions\":[13,147,15,147,15,133,27,129,27,126,13,131],\"location_id\":538},{\"name\":\"Route 20\",\"dimensions\":[39,126,39,128,63,128,63,126],\"location_id\":539},{\"name\":\"Route 21\",\"dimensions\":[234,50,236,50,236,42,234,42],\"location_id\":540},{\"name\":\"Route 22\",\"dimensions\":[211,35,211,37,229,37,229,35],\"location_id\":541},{\"name\":\"Route 23\",\"dimensions\":[188,15,195,15,197,17,197,34,198,35,205,35,205,37,197,37,195,35,195,18,194,17,188,17],\"location_id\":542},{\"name\":\"Skyarrow Bridge\",\"dimensions\":[197,117,197,119,187,119,172,123,172,121,150,125,149,128,138,130,138,128,147,126,148,123,174,118,174,120,186,117],\"location_id\":406},{\"name\":\"Desert Resort\",\"dimensions\":[118,103,118,105,128,105,128,103],\"location_id\":376},{\"name\":\"Driftveil Drawbridge\",\"dimensions\":[114,92,114,89,113,88,95,88,94,90,80,90,80,92,95,92,96,90,112,90],\"location_id\":407},{\"name\":\"Tubeline Bridge\",\"dimensions\":[94,41,94,44,96,42,111,42,114,44,114,41,112,40,95,40],\"location_id\":408},{\"name\":\"Village Bridge\",\"dimensions\":[150,44,150,42,152,40,168,40,171,42,171,44,168,42,152,42],\"location_id\":409},{\"name\":\"Marvelous Bridge\",\"dimensions\":[150,92,152,90,168,90,170,92,170,90,168,88,152,88,150,90],\"location_id\":410},{\"name\":\"Nature Preserve\",\"dimensions\":[168,159,168,162,171,161,176,153,185,152,188,144,181,138,175,138,176,142,183,145,182,148,174,149],\"location_id\":560}]}"
+text = "{\"name\":\"Johto4\",\"region\":\"johto4\",\"games\":[\"heartgold\",\"soulsilver\"],\"generation\":4,\"maxDexIx\":483,\"enableTimeHUD\":true,\"baseLocation\":[{\"name\":\"roaming-johto\",\"location_id\":800}],\"aliases\":[],\"grassMapsLocationIds\":[],\"maps\":[{\"name\":\"New Bark Town\",\"dimensions\":[159,103,171,103,171,115,159,115],\"location_id\":0},{\"name\":\"Cherrygrove City\",\"dimensions\":[119,103,139,103,139,115,119,115],\"location_id\":69},{\"name\":\"Blackthorn City\",\"dimensions\":[151,39,171,39,171,59,151,59],\"location_id\":65},{\"name\":\"Mahogany Town\",\"dimensions\":[119,47,131,47,131,59,119,59],\"location_id\":230},{\"name\":\"Ecruteak City\",\"dimensions\":[79,39,99,39,99,59,79,59],\"location_id\":75},{\"name\":\"Olivine City\",\"dimensions\":[55,63,75,63,75,83,55,83],\"location_id\":85},{\"name\":\"Cianwood City\",\"dimensions\":[31,87,43,87,43,107,31,107],\"location_id\":70},{\"name\":\"Goldenrod City\",\"dimensions\":[63,87,91,87,91,107,63,107],\"location_id\":229},{\"name\":\"Azalea Town\",\"dimensions\":[88,119,107,119,107,131,88,131],\"location_id\":228},{\"name\":\"Violet City\",\"dimensions\":[103,63,123,63,123,83,103,83],\"location_id\":153},{\"name\":\"Pallet Town\",\"dimensions\":[247,95,259,95,259,107,247,107],\"location_id\":86},{\"name\":\"Viridian City\",\"dimensions\":[239,63,259,63,259,83,239,83],\"location_id\":154},{\"name\":\"Pewter City\",\"dimensions\":[247,23,267,23,267,43,247,43],\"location_id\":231},{\"name\":\"Cerulean City\",\"dimensions\":[311,31,331,31,331,51,311,51],\"location_id\":68},{\"name\":\"Lavender Town\",\"dimensions\":[343,63,355,63,355,74,343,74],\"location_id\":232},{\"name\":\"Pokémon Tower\",\"dimensions\":[355,63,361,63,361,69,355,69],\"location_id\":160},{\"name\":\"Celadon City\",\"dimensions\":[287,63,307,63,307,83,287,83],\"location_id\":67},{\"name\":\"Vermilion City\",\"dimensions\":[311,79,331,79,331,99,311,99],\"location_id\":151},{\"name\":\"Saffron City\",\"dimensions\":[311,55,331,55,331,75,311,75],\"location_id\":234},{\"name\":\"Fuchsia City\",\"dimensions\":[287,103,307,103,307,123,287,123],\"location_id\":76},{\"name\":\"Cinnabar Island\",\"dimensions\":[247,127,259,127,259,139,247,139],\"location_id\":71},{\"name\":\"Safari Zone\",\"dimensions\":[9,73,25,73,25,89,9,89],\"location_id\":814},{\"name\":\"Lake of Rage\",\"dimensions\":[111,15,139,15,139,35,111,35],\"location_id\":79},{\"name\":\"Indigo Plateau\",\"dimensions\":[217,57,225,57,225,65,217,65],\"location_id\":233},{\"name\":\"Victory Road\",\"dimensions\":[225,81,217,81,217,73,225,73],\"location_id\":152},{\"name\":\"Mt Silver\",\"dimensions\":[193,73,201,73,201,81,193,81],\"location_id\":82},{\"name\":\"Slowpoke Well\",\"dimensions\":[97,113,104,113,104,119,97,119],\"location_id\":137},{\"name\":\"Union Cave\",\"dimensions\":[105,113,113,113,113,121,105,121],\"location_id\":141},{\"name\":\"Dark Cave\",\"dimensions\":[129,81,129,73,145,73,145,57,161,57,161,65,153,65,153,97,145,97,145,81],\"location_id\":72},{\"name\":\"Ice Path\",\"dimensions\":[165,45,175,45,175,35,165,35],\"location_id\":77},{\"name\":\"Dragon's Den\",\"dimensions\":[156,45,165,45,165,35,156,35],\"location_id\":74},{\"name\":\"Mt Mortar\",\"dimensions\":[105,53,113,53,113,44,105,44],\"location_id\":81},{\"name\":\"Burned Tower\",\"dimensions\":[79,45,89,45,89,33,79,33],\"location_id\":66},{\"name\":\"Bell Tower\",\"dimensions\":[99,45,89,45,89,33,99,33],\"location_id\":139},{\"name\":\"National Park\",\"dimensions\":[75,71,87,71,87,59,75,59],\"location_id\":83},{\"name\":\"Battle Frontier\",\"dimensions\":[43,59,55,59,55,71,43,71],\"location_id\":245},{\"name\":\"Sinjoh Ruins\",\"dimensions\":[89,1,93,12,85,12],\"location_id\":247},{\"name\":\"Lighthouse\",\"dimensions\":[69,77,79,77,79,87,69,87],\"location_id\":236},{\"name\":\"Whirl Islands\",\"dimensions\":[53,101,60,101,60,108,53,108],\"location_id\":156},{\"name\":\"Ilex Forest\",\"dimensions\":[85,125,85,132,78,132,78,125],\"location_id\":78},{\"name\":\"Tohjo Falls\",\"dimensions\":[177,109,185,109,185,103,177,103],\"location_id\":140},{\"name\":\"Ruins of Alph\",\"dimensions\":[107,71,107,91,95,91,95,71],\"location_id\":135},{\"name\":\"Sprout Tower\",\"dimensions\":[117,69,127,69,127,59,117,59],\"location_id\":138},{\"name\":\"Viridian Forest\",\"dimensions\":[253,57,253,49,246,49,246,57],\"location_id\":155},{\"name\":\"Mt Moon\",\"dimensions\":[281,37,289,37,289,30,281,30],\"location_id\":80},{\"name\":\"Cerulean Cave\",\"dimensions\":[317,37,307,37,307,27,317,27],\"location_id\":147},{\"name\":\"Power Plant\",\"dimensions\":[349,49,355,49,355,57,349,57],\"location_id\":158},{\"name\":\"Rock Tunnel\",\"dimensions\":[342,57,349,57,349,49,342,49],\"location_id\":87},{\"name\":\"Digglet's Cave\",\"dimensions\":[330,85,337,85,337,78,330,78],\"location_id\":73},{\"name\":\"Kanto Safari Zone\",\"dimensions\":[293,109,283,109,283,99,293,99],\"location_id\":162},{\"name\":\"Seafoam Islands\",\"dimensions\":[273,133,281,133,281,127,273,127],\"location_id\":136},{\"name\":\"Embedded Tower\",\"dimensions\":[9,113,22,113,22,120,9,120],\"location_id\":248},{\"name\":\"Cliff Edge Gate\",\"dimensions\":[33,107,43,107,43,113,33,113],\"location_id\":250},{\"name\":\"Cliff Cave\",\"dimensions\":[33,113,33,120,22,120,22,113],\"location_id\":244},{\"name\":\"Route 1\",\"dimensions\":[249,95,257,95,257,83,249,83],\"location_id\":88},{\"name\":\"Route 2\",\"dimensions\":[249,63,257,63,257,43,249,43],\"location_id\":99},{\"name\":\"Route 3\",\"dimensions\":[267,33,285,33,285,41,267,41],\"location_id\":109},{\"name\":\"Route 4\",\"dimensions\":[311,33,311,41,285,41,285,33],\"location_id\":120},{\"name\":\"Route 5\",\"dimensions\":[313,51,321,51,321,55,313,55],\"location_id\":130},{\"name\":\"Route 6\",\"dimensions\":[313,75,321,75,321,79,313,79],\"location_id\":131},{\"name\":\"Route 7\",\"dimensions\":[307,65,311,65,311,73,307,73],\"location_id\":132},{\"name\":\"Route 8\",\"dimensions\":[331,65,343,65,343,73,331,73],\"location_id\":133},{\"name\":\"Route 9\",\"dimensions\":[331,41,353,41,353,49,331,49],\"location_id\":134},{\"name\":\"Route 10\",\"dimensions\":[345,49,353,49,353,63,345,63],\"location_id\":89},{\"name\":\"Route 11\",\"dimensions\":[331,81,345,81,345,89,331,89],\"location_id\":90},{\"name\":\"Route 12\",\"dimensions\":[345,74,353,74,353,97,345,97],\"location_id\":91},{\"name\":\"Route 13\",\"dimensions\":[329,97,353,97,353,105,329,105],\"location_id\":92},{\"name\":\"Route 14\",\"dimensions\":[329,121,337,121,337,105,329,105],\"location_id\":93},{\"name\":\"Route 15\",\"dimensions\":[307,113,329,113,329,121,307,121],\"location_id\":94},{\"name\":\"Route 16\",\"dimensions\":[273,73,287,73,287,81,273,81],\"location_id\":95},{\"name\":\"Route 17\",\"dimensions\":[281,113,273,113,273,81,281,81],\"location_id\":96},{\"name\":\"Route 18\",\"dimensions\":[287,113,287,121,273,121,273,113],\"location_id\":97},{\"name\":\"Route 19\",\"dimensions\":[289,123,297,123,297,137,289,137],\"location_id\":98},{\"name\":\"Route 20\",\"dimensions\":[259,129,289,129,289,137,259,137],\"location_id\":100},{\"name\":\"Route 21\",\"dimensions\":[249,107,257,107,257,127,249,127],\"location_id\":101},{\"name\":\"Route 22\",\"dimensions\":[239,73,239,81,225,81,225,73],\"location_id\":102},{\"name\":\"Route 23\",\"dimensions\":[217,65,225,65,225,73,217,73],\"location_id\":157},{\"name\":\"Route 24\",\"dimensions\":[321,17,329,17,329,31,321,31],\"location_id\":103},{\"name\":\"Route 25\",\"dimensions\":[353,17,353,25,329,25,329,17],\"location_id\":104},{\"name\":\"Route 26\",\"dimensions\":[217,81,225,81,225,113,217,113],\"location_id\":105},{\"name\":\"Route 27\",\"dimensions\":[171,105,217,105,217,113,171,113],\"location_id\":106},{\"name\":\"Route 28\",\"dimensions\":[201,73,217,73,217,81,201,81],\"location_id\":107},{\"name\":\"Route 29\",\"dimensions\":[139,105,159,105,159,113,139,113],\"location_id\":108},{\"name\":\"Route 30\",\"dimensions\":[129,81,137,81,137,103,129,103],\"location_id\":110},{\"name\":\"Route 31\",\"dimensions\":[123,73,129,73,129,81,123,81],\"location_id\":111},{\"name\":\"Route 32\",\"dimensions\":[105,83,113,83,113,113,105,113],\"location_id\":112},{\"name\":\"Route 33\",\"dimensions\":[107,121,113,121,113,129,107,129],\"location_id\":113},{\"name\":\"Route 34\",\"dimensions\":[81,107,89,107,89,129,81,129],\"location_id\":114},{\"name\":\"Route 35\",\"dimensions\":[81,87,89,87,89,73,81,73],\"location_id\":115},{\"name\":\"Route 36\",\"dimensions\":[103,73,103,65,81,65,81,73],\"location_id\":116},{\"name\":\"Route 37\",\"dimensions\":[89,59,97,59,97,65,89,65],\"location_id\":117},{\"name\":\"Route 38\",\"dimensions\":[79,49,79,57,65,57,65,49],\"location_id\":118},{\"name\":\"Route 39\",\"dimensions\":[57,49,65,49,65,63,57,63],\"location_id\":119},{\"name\":\"Route 40\",\"dimensions\":[49,73,57,73,57,89,49,89],\"location_id\":121},{\"name\":\"Route 41\",\"dimensions\":[57,105,57,89,43,89,43,105],\"location_id\":122},{\"name\":\"Route 42\",\"dimensions\":[99,49,119,49,119,57,99,57],\"location_id\":123},{\"name\":\"Route 43\",\"dimensions\":[121,35,129,35,129,47,121,47],\"location_id\":124},{\"name\":\"Route 44\",\"dimensions\":[131,49,151,49,151,57,131,57],\"location_id\":125},{\"name\":\"Route 45\",\"dimensions\":[153,59,161,59,161,97,153,97],\"location_id\":126},{\"name\":\"Route 46\",\"dimensions\":[145,97,153,97,153,105,145,105],\"location_id\":127},{\"name\":\"Route 47\",\"dimensions\":[33,97,33,113,9,113,9,97],\"location_id\":128},{\"name\":\"Route 48\",\"dimensions\":[9,89,25,89,25,97,9,97],\"location_id\":129}]}"
 selection_enabled = true
 
 [node name="LocationList" type="PanelContainer" parent="HBoxContainer"]
@@ -56,7 +56,7 @@ margin_right = 1294.0
 margin_bottom = 634.0
 focus_mode = 2
 size_flags_horizontal = 3
-text = "nuvema-town accumula-town striaton-city nacrene-city castelia-city nimbasa-city driftveil-city mistralton-city icirrus-city opelucid-city lacunosa-town undella-town black-tower white-treehollow humilau-city lentimas-town aspertia-city floccesy-town virbank-city victory-road ns-castle pokemon-league unity-tower liberty-garden relic-castle pwt chargestone-cave mistralton-cave anville-town celestial-tower twist-mountain dragonspiral-tower moor-of-icirrus challengers-cave entralink lostlorn-forest poke-transfer-lab abundant-shrine giant-chasm wellspring-cave pinwheel-forest p2-laboratory plasma-frigate dreamyard join-avenue reversal-mountain strange-house undella-bay seaside-cave marine-tube relic-passage clay-tunnel castelia-sewers pokestar-studios virbank-complex cave-of-being floccesy-ranch abyssal-ruins route-1 route-2 route-3 route-4 route-5 route-6 route-7 route-8 route-9 route-11 route-12 route-13 route-14 route-15 route-16 route-17 route-18 route-19 route-20 route-21 route-22 route-23 skyarrow-bridge desert-resort driftveil-drawbridge tubeline-bridge village-bridge marvelous-bridge nature-preserve "
+text = "new-bark-town cherrygrove-city blackthorn-city mahogany-town ecruteak-city olivine-city cianwood-city goldenrod-city azalea-town violet-city pallet-town viridian-city pewter-city cerulean-city lavender-town pokemon-tower celadon-city vermilion-city saffron-city fuchsia-city cinnabar-island safari-zone lake-of-rage indigo-plateau victory-road mt-silver slowpoke-well union-cave dark-cave ice-path dragons-den mt-mortar burned-tower bell-tower national-park battle-frontier sinjoh-ruins lighthouse whirl-islands ilex-forest tohjo-falls ruins-of-alph sprout-tower viridian-forest mt-moon cerulean-cave power-plant rock-tunnel digglets-cave kanto-safari-zone seafoam-islands embedded-tower cliff-edge-gate cliff-cave route-1 route-2 route-3 route-4 route-5 route-6 route-7 route-8 route-9 route-10 route-11 route-12 route-13 route-14 route-15 route-16 route-17 route-18 route-19 route-20 route-21 route-22 route-23 route-24 route-25 route-26 route-27 route-28 route-29 route-30 route-31 route-32 route-33 route-34 route-35 route-36 route-37 route-38 route-39 route-40 route-41 route-42 route-43 route-44 route-45 route-46 route-47 route-48 "
 selection_enabled = true
 
 [node name="Polygons" type="Node2D" parent="."]
@@ -65,15 +65,6 @@ z_index = 4
 [node name="SeviiIslands" type="Node2D" parent="Polygons"]
 visible = false
 script = ExtResource( 5 )
-internalName = ""
-regionName = ""
-games = PoolStringArray(  )
-generation = 0
-maxDexIx = 0
-enableTimeHUD = false
-baseLocation = ""
-baseLocationID = 0
-map = ExtResource( 10 )
 location_ids = "526
 506
 505
@@ -169,14 +160,13 @@ is_grass = true
 [node name="Hoenn" type="Node2D" parent="Polygons"]
 visible = false
 script = ExtResource( 5 )
-internalName = ""
-regionName = "Hoenn"
-games = PoolStringArray(  )
-generation = 0
-maxDexIx = 0
-enableTimeHUD = false
-baseLocation = ""
-baseLocationID = 0
+internalName = "Hoenn"
+regionName = "hoenn"
+games = PoolStringArray( "ruby", "sapphire", "emerald" )
+generation = 3
+maxDexIx = 384
+baseLocation = "roaming-hoenn"
+baseLocationID = 796
 map = ExtResource( 3 )
 location_ids = "567
 568
@@ -861,14 +851,13 @@ is_grass = true
 [node name="Sinnoh" type="Node2D" parent="Polygons"]
 visible = false
 script = ExtResource( 5 )
-internalName = ""
-regionName = "Sinnoh"
-games = PoolStringArray(  )
-generation = 0
-maxDexIx = 0
-enableTimeHUD = false
-baseLocation = ""
-baseLocationID = 0
+internalName = "Sinnoh"
+regionName = "sinnoh"
+games = PoolStringArray( "diamond", "pearl", "platinum" )
+generation = 4
+maxDexIx = 494
+baseLocation = "roaming-sinnoh"
+baseLocationID = 802
 map = ExtResource( 8 )
 location_ids = "0
 178
@@ -1496,16 +1485,15 @@ script = ExtResource( 4 )
 location_id = 64
 
 [node name="Johto4" type="Node2D" parent="Polygons"]
-visible = false
 script = ExtResource( 5 )
-internalName = ""
-regionName = "Johto4"
-games = PoolStringArray(  )
-generation = 0
-maxDexIx = 0
-enableTimeHUD = false
-baseLocation = ""
-baseLocationID = 0
+internalName = "Johto4"
+regionName = "johto4"
+games = PoolStringArray( "heartgold", "soulsilver" )
+generation = 4
+maxDexIx = 483
+enableTimeHUD = true
+baseLocation = "roaming-johto"
+baseLocationID = 800
 map = ExtResource( 7 )
 location_ids = "0
 69
@@ -1528,7 +1516,7 @@ location_ids = "0
 234
 76
 71
-243
+814
 79
 233
 152
@@ -1741,7 +1729,7 @@ location_id = 71
 color = Color( 0, 0, 0, 0.376471 )
 polygon = PoolVector2Array( 9, 73, 25, 73, 25, 89, 9, 89 )
 script = ExtResource( 4 )
-location_id = 243
+location_id = 814
 
 [node name="Lake of Rage" type="Polygon2D" parent="Polygons/Johto4"]
 color = Color( 0, 0, 0, 0.376471 )
@@ -2228,12 +2216,10 @@ visible = false
 script = ExtResource( 5 )
 internalName = "Unova"
 regionName = "unova"
-games = PoolStringArray( "b", "w" )
+games = PoolStringArray( "black", "white" )
 generation = 5
 maxDexIx = 649
-enableTimeHUD = false
 baseLocation = "Roaming Unova"
-baseLocationID = 0
 map = ExtResource( 6 )
 location_ids = "346
 347
@@ -2777,15 +2763,14 @@ script = ExtResource( 4 )
 location_id = 410
 
 [node name="UnovaBW2" type="Node2D" parent="Polygons"]
+visible = false
 script = ExtResource( 5 )
 internalName = "Unova"
 regionName = "unova2"
-games = PoolStringArray( "b2", "w2" )
+games = PoolStringArray( "black-2", "white-2" )
 generation = 5
 maxDexIx = 649
-enableTimeHUD = false
 baseLocation = "Roaming Unova"
-baseLocationID = 0
 map = ExtResource( 9 )
 location_ids = "346
 347
@@ -3550,10 +3535,31 @@ polygon = PoolVector2Array( 168, 159, 168, 162, 171, 161, 176, 153, 185, 152, 18
 script = ExtResource( 4 )
 location_id = 560
 
+[node name="Kalos" type="Node2D" parent="Polygons"]
+visible = false
+script = ExtResource( 5 )
+internalName = "Unova"
+regionName = "unova2"
+games = PoolStringArray( "x", "y" )
+generation = 5
+maxDexIx = 649
+baseLocation = "Roaming Unova"
+map = ExtResource( 10 )
+location_ids = "346
+"
+
+[node name="Nuvema Town" type="Polygon2D" parent="Polygons/Kalos"]
+color = Color( 0, 0, 0, 0.376471 )
+invert_border = 1.0
+polygon = PoolVector2Array( 160, 92, 171, 92, 179, 85, 179, 72, 171, 65, 160, 65, 152, 72, 152, 85 )
+script = ExtResource( 4 )
+location_id = 346
+is_grass = true
+
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 362.0
 margin_bottom = 145.0
-texture = ExtResource( 9 )
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -3565,3 +3571,4 @@ __meta__ = {
 [connection signal="visibility_changed" from="Polygons/Johto4" to="." method="_on_map_vis"]
 [connection signal="visibility_changed" from="Polygons/UnovaBW" to="." method="_on_map_vis"]
 [connection signal="visibility_changed" from="Polygons/UnovaBW2" to="." method="_on_map_vis"]
+[connection signal="visibility_changed" from="Polygons/Kalos" to="." method="_on_map_vis"]

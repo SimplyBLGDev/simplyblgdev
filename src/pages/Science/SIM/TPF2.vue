@@ -102,9 +102,9 @@ export default {
   data: () => ({
     contactInfo: [
       {
-        "name": "Logares Fabricio",
+        "name": "Logares Abril",
         "no": "78799",
-        "mail": "fabrilogares@gmail.com"
+        "mail": "abrillogares@gmail.com"
       }
     ],
     n: 600,

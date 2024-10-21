@@ -30,15 +30,11 @@
         <table style="width: 100%; margin-top: 2rem;">
           <tbody>
             <tr>
-              <td colspan=2>SimplyBLG's 2020 - 2022</td>
+              <td colspan=2>SimplyBLG's 2020 - 2024</td>
             </tr>
             <tr>
               <td width="50%"><a href="https://github.com/SimplyBLGDev">Github</a></td>
               <td width="50%"><a href="mailto:simplyblgdev@gmail.com">Send me an email</a></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="https://paypal.me/SimplyBLGDev">Donate</a></td>
             </tr>
           </tbody>
         </table>

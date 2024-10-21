@@ -36,6 +36,9 @@
                 <img v-if="display['ribbons'].includes('C++')" class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonCpp.png" alt="C++" title="C++">
                 <img v-if="display['ribbons'].includes('C#')" class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonCSharp.png" alt="C#" title="C#">
                 <img v-if="display['ribbons'].includes('Godot')" class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonGodot.png" alt="Godot" title="Godot Engine">
+                <img v-if="display['ribbons'].includes('ASM')" class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonASM.png" alt="ASM" title="Intel 8080 Assembly Code">
+                <img v-if="display['ribbons'].includes('Python')" class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonPython.png" alt="Python" title="Python">
+                <img v-if="display['ribbons'].includes('Ghidra')" class="case ribbon" src="../assets/Portfolio/Ribbons/RibbonGhidra.png" alt="Ghidra" title="Ghidra">
                 <br>
                 <b class="case header studyL">{{ content["case-study"] }}<br></b>
                 <b class="case header">{{ display["title"] }}</b>
@@ -75,6 +78,15 @@
             <template v-else-if="row.hContents === 6">
               <img src="../assets/Portfolio/NARL/B.png" width="100%" height="auto">
             </template>
+            <template v-else-if="row.hContents === 7">
+              <img src="../assets/Portfolio/PokeMap/aspectratio.png" alt="" style="width:100%">
+              <img class="pokeImage" style="width:72%; position:absolute; left:17%" src="../assets/Portfolio/Decompilation/hex.png" alt="Hex code" title="Hexadecimal source code">
+              <img class="pokeImage" style="width:56%; position:absolute; left:0; bottom:5%" src="../assets/Portfolio/Decompilation/Makefile.png" alt="Makefile script"  title="Makefile">
+              <img class="pokeImage" style="width:55%; position:absolute; right:0; bottom:0" src="../assets/Portfolio/Decompilation/Defs.png" alt="Constant definitions" title="Constant Definitions">
+            </template>
+            <template v-else-if="row.hContents === 8">
+              <img src="../assets/Portfolio/KK64.png" width="100%" height="auto">
+            </template>
           </div>
           <div class="caseDiv left" :style="{ '--rWidth': row.textWidth, 'padding-left': '1ch' }" :key="rIx+'text'" v-if="rIx % 2 === 1">
             <div class="case body" v-for="p in row.text" :key="p" v-html="p"></div>
@@ -107,7 +119,7 @@
 
     <div class="w3-display-container insetBox contactBox">
       <div class="case header">{{ content.contactMe }}</div>
-      <div class="case body">{{ content.email }}<a href="mailto:fabrilogares@gmail.com">fabrilogares@gmail.com</a></div>
+      <div class="case body">{{ content.email }}<a href="mailto:abrillogares@gmail.com">abrillogares@gmail.com</a></div>
       <div class="case body">{{ content.git }} <a href="https://github.com/SimplyBLGDev">SimplyBLGDev</a></div>
     </div>
   </div>

@@ -227,9 +227,9 @@ def sortLocations(locations):
 
 def locationSorterKey(x):
     if re.search(r'^[0-9]+f', x):
-        return 'zzz' + chr(100 - int(x[:-1])) # Remove f and sort at bottom of locations by floor number top to bottom
+        return 'ZZZ' + chr(100 - int(x[:-1])) # Remove f and sort at bottom of locations by floor number top to bottom
     elif re.search(r'^b[0-9]+f', x):
-        return 'zzz' + chr(200 + int(x[1:-1])) # Remove b and f and sort bottom to top from below the regular floors at the bottom of the list
+        return 'ZZZ' + chr(200 + int(x[1:-1])) # Remove b and f and sort bottom to top from below the regular floors at the bottom of the list
     else:
         return x
 
