@@ -1,62 +1,57 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=11 format=3 uid="uid://6ckv06jdn1y7"]
 
-[ext_resource path="res://defTheme.tres" type="Theme" id=1]
-[ext_resource path="res://PokemonMapRegioneer/PokemonMapsRegioneer.gd" type="Script" id=2]
-[ext_resource path="res://PokemonMapRegioneer/Map/Hoenn.png" type="Texture" id=3]
-[ext_resource path="res://PokemonMapRegioneer/Polygon2D.gd" type="Script" id=4]
-[ext_resource path="res://PokemonMapRegioneer/region.gd" type="Script" id=5]
-[ext_resource path="res://PokemonMapRegioneer/Map/Unova.png" type="Texture" id=6]
-[ext_resource path="res://PokemonMapRegioneer/Map/Johto4.png" type="Texture" id=7]
-[ext_resource path="res://PokemonMapRegioneer/Map/Sinnoh.png" type="Texture" id=8]
-[ext_resource path="res://PokemonMapRegioneer/Map/Unova2.png" type="Texture" id=9]
-[ext_resource path="res://PokemonMapRegioneer/Map/Kalos.png" type="Texture" id=10]
+[ext_resource type="Theme" uid="uid://bburoeeq3j52t" path="res://defTheme.tres" id="1"]
+[ext_resource type="Script" path="res://PokemonMapRegioneer/PokemonMapsRegioneer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://o488ljqqx3uc" path="res://PokemonMapRegioneer/Map/Hoenn.png" id="3"]
+[ext_resource type="Script" path="res://PokemonMapRegioneer/Polygon2D.gd" id="4"]
+[ext_resource type="Script" path="res://PokemonMapRegioneer/region.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://cc7ve8odk4ih7" path="res://PokemonMapRegioneer/Map/Unova.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b73i7sonlvggt" path="res://PokemonMapRegioneer/Map/Johto4.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dbmdmtagb6x4a" path="res://PokemonMapRegioneer/Map/Sinnoh.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bd2g2e2i3xexu" path="res://PokemonMapRegioneer/Map/Unova2.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://mrpmfda4rhm4" path="res://PokemonMapRegioneer/Map/Kalos.png" id="10"]
 
 [node name="PokemonMapsRegioneer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 1 )
-script = ExtResource( 2 )
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+script = ExtResource("2")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1308.0
+offset_left = -1308.0
 
 [node name="FinalJSON" type="PanelContainer" parent="HBoxContainer"]
-margin_right = 1308.0
-margin_bottom = 648.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/FinalJSON"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 1301.0
-margin_bottom = 641.0
+layout_mode = 2
 focus_mode = 2
-text = "{\"name\":\"Johto4\",\"region\":\"johto4\",\"games\":[\"heartgold\",\"soulsilver\"],\"generation\":4,\"maxDexIx\":483,\"enableTimeHUD\":true,\"baseLocation\":[{\"name\":\"roaming-johto\",\"location_id\":800}],\"aliases\":[],\"grassMapsLocationIds\":[],\"maps\":[{\"name\":\"New Bark Town\",\"dimensions\":[159,103,171,103,171,115,159,115],\"location_id\":0},{\"name\":\"Cherrygrove City\",\"dimensions\":[119,103,139,103,139,115,119,115],\"location_id\":69},{\"name\":\"Blackthorn City\",\"dimensions\":[151,39,171,39,171,59,151,59],\"location_id\":65},{\"name\":\"Mahogany Town\",\"dimensions\":[119,47,131,47,131,59,119,59],\"location_id\":230},{\"name\":\"Ecruteak City\",\"dimensions\":[79,39,99,39,99,59,79,59],\"location_id\":75},{\"name\":\"Olivine City\",\"dimensions\":[55,63,75,63,75,83,55,83],\"location_id\":85},{\"name\":\"Cianwood City\",\"dimensions\":[31,87,43,87,43,107,31,107],\"location_id\":70},{\"name\":\"Goldenrod City\",\"dimensions\":[63,87,91,87,91,107,63,107],\"location_id\":229},{\"name\":\"Azalea Town\",\"dimensions\":[88,119,107,119,107,131,88,131],\"location_id\":228},{\"name\":\"Violet City\",\"dimensions\":[103,63,123,63,123,83,103,83],\"location_id\":153},{\"name\":\"Pallet Town\",\"dimensions\":[247,95,259,95,259,107,247,107],\"location_id\":86},{\"name\":\"Viridian City\",\"dimensions\":[239,63,259,63,259,83,239,83],\"location_id\":154},{\"name\":\"Pewter City\",\"dimensions\":[247,23,267,23,267,43,247,43],\"location_id\":231},{\"name\":\"Cerulean City\",\"dimensions\":[311,31,331,31,331,51,311,51],\"location_id\":68},{\"name\":\"Lavender Town\",\"dimensions\":[343,63,355,63,355,74,343,74],\"location_id\":232},{\"name\":\"Pokémon Tower\",\"dimensions\":[355,63,361,63,361,69,355,69],\"location_id\":160},{\"name\":\"Celadon City\",\"dimensions\":[287,63,307,63,307,83,287,83],\"location_id\":67},{\"name\":\"Vermilion City\",\"dimensions\":[311,79,331,79,331,99,311,99],\"location_id\":151},{\"name\":\"Saffron City\",\"dimensions\":[311,55,331,55,331,75,311,75],\"location_id\":234},{\"name\":\"Fuchsia City\",\"dimensions\":[287,103,307,103,307,123,287,123],\"location_id\":76},{\"name\":\"Cinnabar Island\",\"dimensions\":[247,127,259,127,259,139,247,139],\"location_id\":71},{\"name\":\"Safari Zone\",\"dimensions\":[9,73,25,73,25,89,9,89],\"location_id\":814},{\"name\":\"Lake of Rage\",\"dimensions\":[111,15,139,15,139,35,111,35],\"location_id\":79},{\"name\":\"Indigo Plateau\",\"dimensions\":[217,57,225,57,225,65,217,65],\"location_id\":233},{\"name\":\"Victory Road\",\"dimensions\":[225,81,217,81,217,73,225,73],\"location_id\":152},{\"name\":\"Mt Silver\",\"dimensions\":[193,73,201,73,201,81,193,81],\"location_id\":82},{\"name\":\"Slowpoke Well\",\"dimensions\":[97,113,104,113,104,119,97,119],\"location_id\":137},{\"name\":\"Union Cave\",\"dimensions\":[105,113,113,113,113,121,105,121],\"location_id\":141},{\"name\":\"Dark Cave\",\"dimensions\":[129,81,129,73,145,73,145,57,161,57,161,65,153,65,153,97,145,97,145,81],\"location_id\":72},{\"name\":\"Ice Path\",\"dimensions\":[165,45,175,45,175,35,165,35],\"location_id\":77},{\"name\":\"Dragon's Den\",\"dimensions\":[156,45,165,45,165,35,156,35],\"location_id\":74},{\"name\":\"Mt Mortar\",\"dimensions\":[105,53,113,53,113,44,105,44],\"location_id\":81},{\"name\":\"Burned Tower\",\"dimensions\":[79,45,89,45,89,33,79,33],\"location_id\":66},{\"name\":\"Bell Tower\",\"dimensions\":[99,45,89,45,89,33,99,33],\"location_id\":139},{\"name\":\"National Park\",\"dimensions\":[75,71,87,71,87,59,75,59],\"location_id\":83},{\"name\":\"Battle Frontier\",\"dimensions\":[43,59,55,59,55,71,43,71],\"location_id\":245},{\"name\":\"Sinjoh Ruins\",\"dimensions\":[89,1,93,12,85,12],\"location_id\":247},{\"name\":\"Lighthouse\",\"dimensions\":[69,77,79,77,79,87,69,87],\"location_id\":236},{\"name\":\"Whirl Islands\",\"dimensions\":[53,101,60,101,60,108,53,108],\"location_id\":156},{\"name\":\"Ilex Forest\",\"dimensions\":[85,125,85,132,78,132,78,125],\"location_id\":78},{\"name\":\"Tohjo Falls\",\"dimensions\":[177,109,185,109,185,103,177,103],\"location_id\":140},{\"name\":\"Ruins of Alph\",\"dimensions\":[107,71,107,91,95,91,95,71],\"location_id\":135},{\"name\":\"Sprout Tower\",\"dimensions\":[117,69,127,69,127,59,117,59],\"location_id\":138},{\"name\":\"Viridian Forest\",\"dimensions\":[253,57,253,49,246,49,246,57],\"location_id\":155},{\"name\":\"Mt Moon\",\"dimensions\":[281,37,289,37,289,30,281,30],\"location_id\":80},{\"name\":\"Cerulean Cave\",\"dimensions\":[317,37,307,37,307,27,317,27],\"location_id\":147},{\"name\":\"Power Plant\",\"dimensions\":[349,49,355,49,355,57,349,57],\"location_id\":158},{\"name\":\"Rock Tunnel\",\"dimensions\":[342,57,349,57,349,49,342,49],\"location_id\":87},{\"name\":\"Digglet's Cave\",\"dimensions\":[330,85,337,85,337,78,330,78],\"location_id\":73},{\"name\":\"Kanto Safari Zone\",\"dimensions\":[293,109,283,109,283,99,293,99],\"location_id\":162},{\"name\":\"Seafoam Islands\",\"dimensions\":[273,133,281,133,281,127,273,127],\"location_id\":136},{\"name\":\"Embedded Tower\",\"dimensions\":[9,113,22,113,22,120,9,120],\"location_id\":248},{\"name\":\"Cliff Edge Gate\",\"dimensions\":[33,107,43,107,43,113,33,113],\"location_id\":250},{\"name\":\"Cliff Cave\",\"dimensions\":[33,113,33,120,22,120,22,113],\"location_id\":244},{\"name\":\"Route 1\",\"dimensions\":[249,95,257,95,257,83,249,83],\"location_id\":88},{\"name\":\"Route 2\",\"dimensions\":[249,63,257,63,257,43,249,43],\"location_id\":99},{\"name\":\"Route 3\",\"dimensions\":[267,33,285,33,285,41,267,41],\"location_id\":109},{\"name\":\"Route 4\",\"dimensions\":[311,33,311,41,285,41,285,33],\"location_id\":120},{\"name\":\"Route 5\",\"dimensions\":[313,51,321,51,321,55,313,55],\"location_id\":130},{\"name\":\"Route 6\",\"dimensions\":[313,75,321,75,321,79,313,79],\"location_id\":131},{\"name\":\"Route 7\",\"dimensions\":[307,65,311,65,311,73,307,73],\"location_id\":132},{\"name\":\"Route 8\",\"dimensions\":[331,65,343,65,343,73,331,73],\"location_id\":133},{\"name\":\"Route 9\",\"dimensions\":[331,41,353,41,353,49,331,49],\"location_id\":134},{\"name\":\"Route 10\",\"dimensions\":[345,49,353,49,353,63,345,63],\"location_id\":89},{\"name\":\"Route 11\",\"dimensions\":[331,81,345,81,345,89,331,89],\"location_id\":90},{\"name\":\"Route 12\",\"dimensions\":[345,74,353,74,353,97,345,97],\"location_id\":91},{\"name\":\"Route 13\",\"dimensions\":[329,97,353,97,353,105,329,105],\"location_id\":92},{\"name\":\"Route 14\",\"dimensions\":[329,121,337,121,337,105,329,105],\"location_id\":93},{\"name\":\"Route 15\",\"dimensions\":[307,113,329,113,329,121,307,121],\"location_id\":94},{\"name\":\"Route 16\",\"dimensions\":[273,73,287,73,287,81,273,81],\"location_id\":95},{\"name\":\"Route 17\",\"dimensions\":[281,113,273,113,273,81,281,81],\"location_id\":96},{\"name\":\"Route 18\",\"dimensions\":[287,113,287,121,273,121,273,113],\"location_id\":97},{\"name\":\"Route 19\",\"dimensions\":[289,123,297,123,297,137,289,137],\"location_id\":98},{\"name\":\"Route 20\",\"dimensions\":[259,129,289,129,289,137,259,137],\"location_id\":100},{\"name\":\"Route 21\",\"dimensions\":[249,107,257,107,257,127,249,127],\"location_id\":101},{\"name\":\"Route 22\",\"dimensions\":[239,73,239,81,225,81,225,73],\"location_id\":102},{\"name\":\"Route 23\",\"dimensions\":[217,65,225,65,225,73,217,73],\"location_id\":157},{\"name\":\"Route 24\",\"dimensions\":[321,17,329,17,329,31,321,31],\"location_id\":103},{\"name\":\"Route 25\",\"dimensions\":[353,17,353,25,329,25,329,17],\"location_id\":104},{\"name\":\"Route 26\",\"dimensions\":[217,81,225,81,225,113,217,113],\"location_id\":105},{\"name\":\"Route 27\",\"dimensions\":[171,105,217,105,217,113,171,113],\"location_id\":106},{\"name\":\"Route 28\",\"dimensions\":[201,73,217,73,217,81,201,81],\"location_id\":107},{\"name\":\"Route 29\",\"dimensions\":[139,105,159,105,159,113,139,113],\"location_id\":108},{\"name\":\"Route 30\",\"dimensions\":[129,81,137,81,137,103,129,103],\"location_id\":110},{\"name\":\"Route 31\",\"dimensions\":[123,73,129,73,129,81,123,81],\"location_id\":111},{\"name\":\"Route 32\",\"dimensions\":[105,83,113,83,113,113,105,113],\"location_id\":112},{\"name\":\"Route 33\",\"dimensions\":[107,121,113,121,113,129,107,129],\"location_id\":113},{\"name\":\"Route 34\",\"dimensions\":[81,107,89,107,89,129,81,129],\"location_id\":114},{\"name\":\"Route 35\",\"dimensions\":[81,87,89,87,89,73,81,73],\"location_id\":115},{\"name\":\"Route 36\",\"dimensions\":[103,73,103,65,81,65,81,73],\"location_id\":116},{\"name\":\"Route 37\",\"dimensions\":[89,59,97,59,97,65,89,65],\"location_id\":117},{\"name\":\"Route 38\",\"dimensions\":[79,49,79,57,65,57,65,49],\"location_id\":118},{\"name\":\"Route 39\",\"dimensions\":[57,49,65,49,65,63,57,63],\"location_id\":119},{\"name\":\"Route 40\",\"dimensions\":[49,73,57,73,57,89,49,89],\"location_id\":121},{\"name\":\"Route 41\",\"dimensions\":[57,105,57,89,43,89,43,105],\"location_id\":122},{\"name\":\"Route 42\",\"dimensions\":[99,49,119,49,119,57,99,57],\"location_id\":123},{\"name\":\"Route 43\",\"dimensions\":[121,35,129,35,129,47,121,47],\"location_id\":124},{\"name\":\"Route 44\",\"dimensions\":[131,49,151,49,151,57,131,57],\"location_id\":125},{\"name\":\"Route 45\",\"dimensions\":[153,59,161,59,161,97,153,97],\"location_id\":126},{\"name\":\"Route 46\",\"dimensions\":[145,97,153,97,153,105,145,105],\"location_id\":127},{\"name\":\"Route 47\",\"dimensions\":[33,97,33,113,9,113,9,97],\"location_id\":128},{\"name\":\"Route 48\",\"dimensions\":[9,89,25,89,25,97,9,97],\"location_id\":129}]}"
+text = "{\"aliases\":[],\"baseLocation\":[{\"location_id\":800,\"name\":\"roaming-johto\"}],\"enableTimeHUD\":true,\"games\":[\"heartgold\",\"soulsilver\"],\"generation\":4,\"grassMapsLocationIds\":[],\"maps\":[{\"dimensions\":[159,103,171,103,171,115,159,115],\"location_id\":0,\"name\":\"New Bark Town\"},{\"dimensions\":[119,103,139,103,139,115,119,115],\"location_id\":69,\"name\":\"Cherrygrove City\"},{\"dimensions\":[151,39,171,39,171,59,151,59],\"location_id\":65,\"name\":\"Blackthorn City\"},{\"dimensions\":[119,47,131,47,131,59,119,59],\"location_id\":230,\"name\":\"Mahogany Town\"},{\"dimensions\":[79,39,99,39,99,59,79,59],\"location_id\":75,\"name\":\"Ecruteak City\"},{\"dimensions\":[55,63,75,63,75,83,55,83],\"location_id\":85,\"name\":\"Olivine City\"},{\"dimensions\":[31,87,43,87,43,107,31,107],\"location_id\":70,\"name\":\"Cianwood City\"},{\"dimensions\":[63,87,91,87,91,107,63,107],\"location_id\":229,\"name\":\"Goldenrod City\"},{\"dimensions\":[88,119,107,119,107,131,88,131],\"location_id\":228,\"name\":\"Azalea Town\"},{\"dimensions\":[103,63,123,63,123,83,103,83],\"location_id\":153,\"name\":\"Violet City\"},{\"dimensions\":[247,95,259,95,259,107,247,107],\"location_id\":86,\"name\":\"Pallet Town\"},{\"dimensions\":[239,63,259,63,259,83,239,83],\"location_id\":154,\"name\":\"Viridian City\"},{\"dimensions\":[247,23,267,23,267,43,247,43],\"location_id\":231,\"name\":\"Pewter City\"},{\"dimensions\":[311,31,331,31,331,51,311,51],\"location_id\":68,\"name\":\"Cerulean City\"},{\"dimensions\":[343,63,355,63,355,74,343,74],\"location_id\":232,\"name\":\"Lavender Town\"},{\"dimensions\":[355,63,361,63,361,69,355,69],\"location_id\":160,\"name\":\"Pokémon Tower\"},{\"dimensions\":[287,63,307,63,307,83,287,83],\"location_id\":67,\"name\":\"Celadon City\"},{\"dimensions\":[311,79,331,79,331,99,311,99],\"location_id\":151,\"name\":\"Vermilion City\"},{\"dimensions\":[311,55,331,55,331,75,311,75],\"location_id\":234,\"name\":\"Saffron City\"},{\"dimensions\":[287,103,307,103,307,123,287,123],\"location_id\":76,\"name\":\"Fuchsia City\"},{\"dimensions\":[247,127,259,127,259,139,247,139],\"location_id\":71,\"name\":\"Cinnabar Island\"},{\"dimensions\":[9,73,25,73,25,89,9,89],\"location_id\":814,\"name\":\"Safari Zone\"},{\"dimensions\":[111,15,139,15,139,35,111,35],\"location_id\":79,\"name\":\"Lake of Rage\"},{\"dimensions\":[217,57,225,57,225,65,217,65],\"location_id\":233,\"name\":\"Indigo Plateau\"},{\"dimensions\":[225,81,217,81,217,73,225,73],\"location_id\":152,\"name\":\"Victory Road\"},{\"dimensions\":[193,73,201,73,201,81,193,81],\"location_id\":82,\"name\":\"Mt Silver\"},{\"dimensions\":[97,113,104,113,104,119,97,119],\"location_id\":137,\"name\":\"Slowpoke Well\"},{\"dimensions\":[105,113,113,113,113,121,105,121],\"location_id\":141,\"name\":\"Union Cave\"},{\"dimensions\":[129,81,129,73,145,73,145,57,161,57,161,65,153,65,153,97,145,97,145,81],\"location_id\":72,\"name\":\"Dark Cave\"},{\"dimensions\":[165,45,175,45,175,35,165,35],\"location_id\":77,\"name\":\"Ice Path3D\"},{\"dimensions\":[156,45,165,45,165,35,156,35],\"location_id\":74,\"name\":\"Dragon's Den\"},{\"dimensions\":[105,53,113,53,113,44,105,44],\"location_id\":81,\"name\":\"Mt Mortar\"},{\"dimensions\":[79,45,89,45,89,33,79,33],\"location_id\":66,\"name\":\"Burned Tower\"},{\"dimensions\":[99,45,89,45,89,33,99,33],\"location_id\":139,\"name\":\"Bell Tower\"},{\"dimensions\":[75,71,87,71,87,59,75,59],\"location_id\":83,\"name\":\"National Park\"},{\"dimensions\":[43,59,55,59,55,71,43,71],\"location_id\":245,\"name\":\"Battle Frontier\"},{\"dimensions\":[89,1,93,12,85,12],\"location_id\":247,\"name\":\"Sinjoh Ruins\"},{\"dimensions\":[69,77,79,77,79,87,69,87],\"location_id\":236,\"name\":\"Lighthouse\"},{\"dimensions\":[53,101,60,101,60,108,53,108],\"location_id\":156,\"name\":\"Whirl Islands\"},{\"dimensions\":[85,125,85,132,78,132,78,125],\"location_id\":78,\"name\":\"Ilex Forest\"},{\"dimensions\":[177,109,185,109,185,103,177,103],\"location_id\":140,\"name\":\"Tohjo Falls\"},{\"dimensions\":[107,71,107,91,95,91,95,71],\"location_id\":135,\"name\":\"Ruins of Alph\"},{\"dimensions\":[117,69,127,69,127,59,117,59],\"location_id\":138,\"name\":\"Sprout Tower\"},{\"dimensions\":[253,57,253,49,246,49,246,57],\"location_id\":155,\"name\":\"Viridian Forest\"},{\"dimensions\":[281,37,289,37,289,30,281,30],\"location_id\":80,\"name\":\"Mt Moon\"},{\"dimensions\":[317,37,307,37,307,27,317,27],\"location_id\":147,\"name\":\"Cerulean Cave\"},{\"dimensions\":[349,49,355,49,355,57,349,57],\"location_id\":158,\"name\":\"Power Plant\"},{\"dimensions\":[342,57,349,57,349,49,342,49],\"location_id\":87,\"name\":\"Rock Tunnel\"},{\"dimensions\":[330,85,337,85,337,78,330,78],\"location_id\":73,\"name\":\"Digglet's Cave\"},{\"dimensions\":[293,109,283,109,283,99,293,99],\"location_id\":162,\"name\":\"Kanto Safari Zone\"},{\"dimensions\":[273,133,281,133,281,127,273,127],\"location_id\":136,\"name\":\"Seafoam Islands\"},{\"dimensions\":[9,113,22,113,22,120,9,120],\"location_id\":248,\"name\":\"Embedded Tower\"},{\"dimensions\":[33,107,43,107,43,113,33,113],\"location_id\":250,\"name\":\"Cliff Edge Gate\"},{\"dimensions\":[33,113,33,120,22,120,22,113],\"location_id\":244,\"name\":\"Cliff Cave\"},{\"dimensions\":[249,95,257,95,257,83,249,83],\"location_id\":88,\"name\":\"Route 1\"},{\"dimensions\":[249,63,257,63,257,43,249,43],\"location_id\":99,\"name\":\"Route 2\"},{\"dimensions\":[267,33,285,33,285,41,267,41],\"location_id\":109,\"name\":\"Route 3\"},{\"dimensions\":[311,33,311,41,285,41,285,33],\"location_id\":120,\"name\":\"Route 4\"},{\"dimensions\":[313,51,321,51,321,55,313,55],\"location_id\":130,\"name\":\"Route 5\"},{\"dimensions\":[313,75,321,75,321,79,313,79],\"location_id\":131,\"name\":\"Route 6\"},{\"dimensions\":[307,65,311,65,311,73,307,73],\"location_id\":132,\"name\":\"Route 7\"},{\"dimensions\":[331,65,343,65,343,73,331,73],\"location_id\":133,\"name\":\"Route 8\"},{\"dimensions\":[331,41,353,41,353,49,331,49],\"location_id\":134,\"name\":\"Route 9\"},{\"dimensions\":[345,49,353,49,353,63,345,63],\"location_id\":89,\"name\":\"Route 10\"},{\"dimensions\":[331,81,345,81,345,89,331,89],\"location_id\":90,\"name\":\"Route 11\"},{\"dimensions\":[345,74,353,74,353,97,345,97],\"location_id\":91,\"name\":\"Route 12\"},{\"dimensions\":[329,97,353,97,353,105,329,105],\"location_id\":92,\"name\":\"Route 13\"},{\"dimensions\":[329,121,337,121,337,105,329,105],\"location_id\":93,\"name\":\"Route 14\"},{\"dimensions\":[307,113,329,113,329,121,307,121],\"location_id\":94,\"name\":\"Route 15\"},{\"dimensions\":[273,73,287,73,287,81,273,81],\"location_id\":95,\"name\":\"Route 16\"},{\"dimensions\":[281,113,273,113,273,81,281,81],\"location_id\":96,\"name\":\"Route 17\"},{\"dimensions\":[287,113,287,121,273,121,273,113],\"location_id\":97,\"name\":\"Route 18\"},{\"dimensions\":[289,123,297,123,297,137,289,137],\"location_id\":98,\"name\":\"Route 19\"},{\"dimensions\":[259,129,289,129,289,137,259,137],\"location_id\":100,\"name\":\"Route 20\"},{\"dimensions\":[249,107,257,107,257,127,249,127],\"location_id\":101,\"name\":\"Route 21\"},{\"dimensions\":[239,73,239,81,225,81,225,73],\"location_id\":102,\"name\":\"Route 22\"},{\"dimensions\":[217,65,225,65,225,73,217,73],\"location_id\":157,\"name\":\"Route 23\"},{\"dimensions\":[321,17,329,17,329,31,321,31],\"location_id\":103,\"name\":\"Route 24\"},{\"dimensions\":[353,17,353,25,329,25,329,17],\"location_id\":104,\"name\":\"Route 25\"},{\"dimensions\":[217,81,225,81,225,113,217,113],\"location_id\":105,\"name\":\"Route 26\"},{\"dimensions\":[171,105,217,105,217,113,171,113],\"location_id\":106,\"name\":\"Route 27\"},{\"dimensions\":[201,73,217,73,217,81,201,81],\"location_id\":107,\"name\":\"Route 28\"},{\"dimensions\":[139,105,159,105,159,113,139,113],\"location_id\":108,\"name\":\"Route 29\"},{\"dimensions\":[129,81,137,81,137,103,129,103],\"location_id\":110,\"name\":\"Route 30\"},{\"dimensions\":[123,73,129,73,129,81,123,81],\"location_id\":111,\"name\":\"Route 31\"},{\"dimensions\":[105,83,113,83,113,113,105,113],\"location_id\":112,\"name\":\"Route 32\"},{\"dimensions\":[107,121,113,121,113,129,107,129],\"location_id\":113,\"name\":\"Route 33\"},{\"dimensions\":[81,107,89,107,89,129,81,129],\"location_id\":114,\"name\":\"Route 34\"},{\"dimensions\":[81,87,89,87,89,73,81,73],\"location_id\":115,\"name\":\"Route 35\"},{\"dimensions\":[103,73,103,65,81,65,81,73],\"location_id\":116,\"name\":\"Route 36\"},{\"dimensions\":[89,59,97,59,97,65,89,65],\"location_id\":117,\"name\":\"Route 37\"},{\"dimensions\":[79,49,79,57,65,57,65,49],\"location_id\":118,\"name\":\"Route 38\"},{\"dimensions\":[57,49,65,49,65,63,57,63],\"location_id\":119,\"name\":\"Route 39\"},{\"dimensions\":[49,73,57,73,57,89,49,89],\"location_id\":121,\"name\":\"Route 40\"},{\"dimensions\":[57,105,57,89,43,89,43,105],\"location_id\":122,\"name\":\"Route 41\"},{\"dimensions\":[99,49,119,49,119,57,99,57],\"location_id\":123,\"name\":\"Route 42\"},{\"dimensions\":[121,35,129,35,129,47,121,47],\"location_id\":124,\"name\":\"Route 43\"},{\"dimensions\":[131,49,151,49,151,57,131,57],\"location_id\":125,\"name\":\"Route 44\"},{\"dimensions\":[153,59,161,59,161,97,153,97],\"location_id\":126,\"name\":\"Route 45\"},{\"dimensions\":[145,97,153,97,153,105,145,105],\"location_id\":127,\"name\":\"Route 46\"},{\"dimensions\":[33,97,33,113,9,113,9,97],\"location_id\":128,\"name\":\"Route 47\"},{\"dimensions\":[9,89,25,89,25,97,9,97],\"location_id\":129,\"name\":\"Route 48\"}],\"maxDexIx\":483,\"name\":\"Johto4\",\"region\":\"johto4\"}"
 selection_enabled = true
 
 [node name="LocationList" type="PanelContainer" parent="HBoxContainer"]
-margin_top = 652.0
-margin_right = 1308.0
-margin_bottom = 1300.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/LocationList"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 1301.0
-margin_bottom = 641.0
+layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/LocationList/HBoxContainer"]
-margin_right = 1294.0
-margin_bottom = 634.0
-focus_mode = 2
+layout_mode = 2
 size_flags_horizontal = 3
-text = "new-bark-town cherrygrove-city blackthorn-city mahogany-town ecruteak-city olivine-city cianwood-city goldenrod-city azalea-town violet-city pallet-town viridian-city pewter-city cerulean-city lavender-town pokemon-tower celadon-city vermilion-city saffron-city fuchsia-city cinnabar-island safari-zone lake-of-rage indigo-plateau victory-road mt-silver slowpoke-well union-cave dark-cave ice-path dragons-den mt-mortar burned-tower bell-tower national-park battle-frontier sinjoh-ruins lighthouse whirl-islands ilex-forest tohjo-falls ruins-of-alph sprout-tower viridian-forest mt-moon cerulean-cave power-plant rock-tunnel digglets-cave kanto-safari-zone seafoam-islands embedded-tower cliff-edge-gate cliff-cave route-1 route-2 route-3 route-4 route-5 route-6 route-7 route-8 route-9 route-10 route-11 route-12 route-13 route-14 route-15 route-16 route-17 route-18 route-19 route-20 route-21 route-22 route-23 route-24 route-25 route-26 route-27 route-28 route-29 route-30 route-31 route-32 route-33 route-34 route-35 route-36 route-37 route-38 route-39 route-40 route-41 route-42 route-43 route-44 route-45 route-46 route-47 route-48 "
+focus_mode = 2
+text = "new-bark-town cherrygrove-city blackthorn-city mahogany-town ecruteak-city olivine-city cianwood-city goldenrod-city azalea-town violet-city pallet-town viridian-city pewter-city cerulean-city lavender-town pokemon-tower celadon-city vermilion-city saffron-city fuchsia-city cinnabar-island safari-zone lake-of-rage indigo-plateau victory-road mt-silver slowpoke-well union-cave dark-cave ice-path3d dragons-den mt-mortar burned-tower bell-tower national-park battle-frontier sinjoh-ruins lighthouse whirl-islands ilex-forest tohjo-falls ruins-of-alph sprout-tower viridian-forest mt-moon cerulean-cave power-plant rock-tunnel digglets-cave kanto-safari-zone seafoam-islands embedded-tower cliff-edge-gate cliff-cave route-1 route-2 route-3 route-4 route-5 route-6 route-7 route-8 route-9 route-10 route-11 route-12 route-13 route-14 route-15 route-16 route-17 route-18 route-19 route-20 route-21 route-22 route-23 route-24 route-25 route-26 route-27 route-28 route-29 route-30 route-31 route-32 route-33 route-34 route-35 route-36 route-37 route-38 route-39 route-40 route-41 route-42 route-43 route-44 route-45 route-46 route-47 route-48 "
 selection_enabled = true
 
 [node name="Polygons" type="Node2D" parent="."]
@@ -64,7 +59,7 @@ z_index = 4
 
 [node name="SeviiIslands" type="Node2D" parent="Polygons"]
 visible = false
-script = ExtResource( 5 )
+script = ExtResource("5")
 location_ids = "526
 506
 505
@@ -78,96 +73,96 @@ location_ids = "526
 "
 
 [node name="One Island" type="Polygon2D" parent="Polygons/SeviiIslands"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 16, 80, 24, 80, 24, 88, 16, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(16, 80, 24, 80, 24, 88, 16, 88)
+script = ExtResource("4")
 location_id = 526
 is_grass = true
 
 [node name="Treasure Beach" type="Polygon2D" parent="Polygons/SeviiIslands"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 16, 104, 24, 104, 24, 88, 16, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(16, 104, 24, 104, 24, 88, 16, 88)
+script = ExtResource("4")
 location_id = 506
 is_grass = true
 
 [node name="Kindle Road" type="Polygon2D" parent="Polygons/SeviiIslands"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 24, 48, 32, 48, 32, 88, 24, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(24, 48, 32, 48, 32, 88, 24, 88)
+script = ExtResource("4")
 location_id = 505
 is_grass = true
 
 [node name="Mt Ember" type="Polygon2D" parent="Polygons/SeviiIslands"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 24, 40, 32, 40, 32, 48, 24, 48 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(24, 40, 32, 40, 32, 48, 24, 48)
+script = ExtResource("4")
 location_id = 500
 is_grass = true
 
 [node name="Two Island" type="Polygon2D" parent="Polygons/SeviiIslands"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 80, 88, 88, 88, 88, 96, 80, 96 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(80, 88, 88, 88, 88, 96, 80, 96)
+script = ExtResource("4")
 location_id = 805
 is_grass = true
 
 [node name="Cape Brink" type="Polygon2D" parent="Polygons/SeviiIslands"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 80, 72, 88, 72, 88, 88, 80, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(80, 72, 88, 72, 88, 88, 80, 88)
+script = ExtResource("4")
 location_id = 507
 is_grass = true
 
 [node name="Three Island" type="Polygon2D" parent="Polygons/SeviiIslands"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 152, 112, 160, 112, 160, 120, 152, 120 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(152, 112, 160, 112, 160, 120, 152, 120)
+script = ExtResource("4")
 location_id = 806
 is_grass = true
 
 [node name="Three Isle Port" type="Polygon2D" parent="Polygons/SeviiIslands"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 152, 128, 168, 128, 168, 120, 152, 120 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(152, 128, 168, 128, 168, 120, 152, 120)
+script = ExtResource("4")
 location_id = 509
 is_grass = true
 
 [node name="Bond Bridge" type="Polygon2D" parent="Polygons/SeviiIslands"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 128, 112, 152, 112, 152, 120, 128, 120 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(128, 112, 152, 112, 152, 120, 128, 120)
+script = ExtResource("4")
 location_id = 508
 is_grass = true
 
 [node name="Berry Forest" type="Polygon2D" parent="Polygons/SeviiIslands"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 120, 112, 128, 112, 128, 120, 120, 120 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(120, 112, 128, 112, 128, 120, 120, 120)
+script = ExtResource("4")
 location_id = 501
 is_grass = true
 
 [node name="Hoenn" type="Node2D" parent="Polygons"]
 visible = false
-script = ExtResource( 5 )
+script = ExtResource("5")
 internalName = "Hoenn"
 regionName = "hoenn"
-games = PoolStringArray( "ruby", "sapphire", "emerald" )
+games = PackedStringArray("ruby", "sapphire", "emerald")
 generation = 3
 maxDexIx = 384
 baseLocation = "roaming-hoenn"
 baseLocationID = 796
-map = ExtResource( 3 )
+map = ExtResource("3")
 location_ids = "567
 568
 429
@@ -248,617 +243,617 @@ location_ids = "567
 "
 
 [node name="Littleroot Town" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 40, 104, 48, 104, 48, 112, 40, 112 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(40, 104, 48, 104, 48, 112, 40, 112)
+script = ExtResource("4")
 location_id = 567
 is_grass = true
 
 [node name="Oldale Town" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 40, 96, 48, 96, 48, 88, 40, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(40, 96, 48, 96, 48, 88, 40, 88)
+script = ExtResource("4")
 location_id = 568
 is_grass = true
 
 [node name="Petalburg City" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 24, 88, 24, 96, 16, 96, 16, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(24, 88, 24, 96, 16, 96, 16, 88)
+script = ExtResource("4")
 location_id = 429
 is_grass = true
 
 [node name="Rustboro City" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 8, 56, 16, 56, 16, 72, 8, 72 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(8, 56, 16, 56, 16, 72, 8, 72)
+script = ExtResource("4")
 location_id = 573
 is_grass = true
 
 [node name="Fallarbor Town" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 32, 16, 40, 16, 40, 24, 32, 24 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(32, 16, 40, 16, 40, 24, 32, 24)
+script = ExtResource("4")
 location_id = 570
 is_grass = true
 
 [node name="Lavaridge Town" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 48, 40, 56, 40, 56, 48, 48, 48 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(48, 40, 56, 40, 56, 48, 48, 48)
+script = ExtResource("4")
 location_id = 569
 is_grass = true
 
 [node name="Mauville City" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 64, 88, 64, 88, 72, 72, 72 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 64, 88, 64, 88, 72, 72, 72)
+script = ExtResource("4")
 location_id = 572
 is_grass = true
 
 [node name="Slateport City" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 96, 80, 96, 80, 112, 72, 112 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 96, 80, 96, 80, 112, 72, 112)
+script = ExtResource("4")
 location_id = 430
 is_grass = true
 
 [node name="Dewford Town" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 24, 128, 32, 128, 32, 136, 24, 136 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(24, 128, 32, 128, 32, 136, 24, 136)
+script = ExtResource("4")
 location_id = 484
 is_grass = true
 
 [node name="Verdanturf Town" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 40, 64, 48, 64, 48, 72, 40, 72 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(40, 64, 48, 64, 48, 72, 40, 72)
+script = ExtResource("4")
 location_id = 571
 is_grass = true
 
 [node name="Fortree City" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 104, 16, 112, 16, 112, 24, 104, 24 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(104, 16, 112, 16, 112, 24, 104, 24)
+script = ExtResource("4")
 location_id = 574
 is_grass = true
 
 [node name="Lilycove City" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 152, 40, 168, 40, 168, 48, 152, 48 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(152, 40, 168, 40, 168, 48, 152, 48)
+script = ExtResource("4")
 location_id = 431
 is_grass = true
 
 [node name="Mossdeep City" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 200, 56, 216, 56, 216, 64, 200, 64 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(200, 56, 216, 56, 216, 64, 200, 64)
+script = ExtResource("4")
 location_id = 432
 is_grass = true
 
 [node name="Sootopolis City" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 176, 72, 184, 72, 184, 80, 176, 80 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(176, 72, 184, 72, 184, 80, 176, 80)
+script = ExtResource("4")
 location_id = 433
 is_grass = true
 
 [node name="Ever Grande City" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 224, 80, 232, 80, 232, 96, 224, 96 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(224, 80, 232, 80, 232, 96, 224, 96)
+script = ExtResource("4")
 location_id = 434
 is_grass = true
 
 [node name="Pacifidlog Town" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 144, 96, 152, 96, 152, 104, 144, 104 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(144, 96, 152, 96, 152, 104, 144, 104)
+script = ExtResource("4")
 location_id = 485
 is_grass = true
 
 [node name="Southern Island" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 104, 128, 112, 128, 112, 136, 104, 136 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(104, 128, 112, 128, 112, 136, 104, 136)
+script = ExtResource("4")
 location_id = 578
 is_grass = true
 
 [node name="Battle Frontier" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 188, 116, 188, 108, 180, 108, 180, 116 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(188, 116, 188, 108, 180, 108, 180, 116)
+script = ExtResource("4")
 location_id = 214
 is_grass = true
 
 [node name="Artisan Cave" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 196, 108, 188, 108, 188, 116, 196, 116 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(196, 108, 188, 108, 188, 116, 196, 116)
+script = ExtResource("4")
 location_id = 489
 is_grass = true
 
 [node name="Abandoned Ship" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 44, 132, 64, 132, 64, 124, 44, 124 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(44, 132, 64, 132, 64, 124, 44, 124)
+script = ExtResource("4")
 location_id = 447
 
 [node name="Island Cave" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 12, 104, 12, 112, 4, 112, 4, 104 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(12, 104, 12, 112, 4, 112, 4, 104)
+script = ExtResource("4")
 location_id = 581
 
 [node name="Petalburg Woods" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 12, 80, 12, 88, 4, 88, 4, 80 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(12, 80, 12, 88, 4, 88, 4, 80)
+script = ExtResource("4")
 location_id = 438
 is_grass = true
 
 [node name="Meteor Falls" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 12, 40, 12, 48, 4, 48, 4, 40 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(12, 40, 12, 48, 4, 48, 4, 40)
+script = ExtResource("4")
 location_id = 435
 
 [node name="Desert Underpass" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 32, 20, 32, 12, 24, 12, 24, 20 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(32, 20, 32, 12, 24, 12, 24, 20)
+script = ExtResource("4")
 location_id = 488
 
-[node name="Fiery Path" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+[node name="Fiery Path3D" type="Polygon2D" parent="Polygons/Hoenn"]
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 40, 72, 32, 60, 32, 60, 40 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 40, 72, 32, 60, 32, 60, 40)
+script = ExtResource("4")
 location_id = 440
 
 [node name="Jagged Pass" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 52, 40, 60, 40, 60, 32, 52, 32 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(52, 40, 60, 40, 60, 32, 52, 32)
+script = ExtResource("4")
 location_id = 439
 
 [node name="Mt Chimney" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 56, 32, 64, 32, 64, 24, 56, 24 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(56, 32, 64, 32, 64, 24, 56, 24)
+script = ExtResource("4")
 location_id = 576
 
 [node name="Magma Hideout" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 24, 72, 32, 64, 32, 64, 24 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 24, 72, 32, 64, 32, 64, 24)
+script = ExtResource("4")
 location_id = 486
 is_grass = true
 
 [node name="Desert Ruins" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 48, 72, 56, 64, 56, 64, 48 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 48, 72, 56, 64, 56, 64, 48)
+script = ExtResource("4")
 location_id = 582
 is_grass = true
 
 [node name="Rusturf Tunnel" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 52, 68, 68, 68, 68, 60, 52, 60 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(52, 68, 68, 68, 68, 60, 52, 60)
+script = ExtResource("4")
 location_id = 436
 
 [node name="Altering Cave" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 56, 84, 64, 84, 64, 76, 56, 76 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(56, 84, 64, 84, 64, 76, 56, 76)
+script = ExtResource("4")
 location_id = 490
 
 [node name="New Mauville" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 76, 72, 84, 72, 84, 80, 76, 80 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(76, 72, 84, 72, 84, 80, 76, 80)
+script = ExtResource("4")
 location_id = 446
 is_grass = true
 
 [node name="Sealed Chamber" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 92, 96, 100, 96, 100, 88, 92, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(92, 96, 100, 96, 100, 88, 92, 88)
+script = ExtResource("4")
 location_id = 579
 is_grass = true
 
 [node name="Mirage Island" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 176, 96, 176, 88, 168, 88, 168, 96 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(176, 96, 176, 88, 168, 88, 168, 96)
+script = ExtResource("4")
 location_id = 577
 is_grass = true
 
 [node name="Sky Pillar" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 160, 96, 168, 96, 168, 88, 160, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(160, 96, 168, 96, 168, 88, 160, 88)
+script = ExtResource("4")
 location_id = 448
 is_grass = true
 
 [node name="Victory Road" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 228, 92, 236, 92, 236, 84, 228, 84 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(228, 92, 236, 92, 236, 84, 228, 84)
+script = ExtResource("4")
 location_id = 444
 
 [node name="Shoal Cave" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 200, 56, 208, 56, 208, 48, 200, 48 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(200, 56, 208, 56, 208, 48, 200, 48)
+script = ExtResource("4")
 location_id = 445
 
 [node name="Team Aqua Hideout" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 164, 40, 172, 40, 172, 32, 164, 32 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(164, 40, 172, 40, 172, 32, 164, 32)
+script = ExtResource("4")
 location_id = 692
 
 [node name="Scorched Slab" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 112, 20, 120, 20, 120, 12, 112, 12 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(112, 20, 120, 20, 120, 12, 112, 12)
+script = ExtResource("4")
 location_id = 580
 
 [node name="Ancient Tomb" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 124, 40, 116, 40, 116, 32, 124, 32 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(124, 40, 116, 40, 116, 32, 124, 32)
+script = ExtResource("4")
 location_id = 583
 
 [node name="Mt Pyre" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 136, 52, 144, 52, 144, 60, 136, 60 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(136, 52, 144, 52, 144, 60, 136, 60)
+script = ExtResource("4")
 location_id = 441
 
 [node name="Safari Zone" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 132, 44, 148, 44, 148, 28, 132, 28 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(132, 44, 148, 44, 148, 28, 132, 28)
+script = ExtResource("4")
 location_id = 483
 is_grass = true
 
 [node name="Mirage Tower" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 80, 16, 88, 20, 88, 60, 80, 64 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(80, 16, 88, 20, 88, 60, 80, 64)
+script = ExtResource("4")
 location_id = 487
 is_grass = true
 
 [node name="Route 101" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 40, 96, 48, 96, 48, 104, 40, 104 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(40, 96, 48, 96, 48, 104, 40, 104)
+script = ExtResource("4")
 location_id = 449
 is_grass = true
 
 [node name="Route 102" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 24, 88, 40, 88, 40, 96, 24, 96 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(24, 88, 40, 88, 40, 96, 24, 96)
+script = ExtResource("4")
 location_id = 450
 is_grass = true
 
 [node name="Route 103" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 40, 80, 72, 80, 72, 88, 40, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(40, 80, 72, 80, 72, 88, 40, 88)
+script = ExtResource("4")
 location_id = 451
 is_grass = true
 
 [node name="Route 104" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 8, 72, 16, 72, 16, 96, 8, 96 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(8, 72, 16, 72, 16, 96, 8, 96)
+script = ExtResource("4")
 location_id = 452
 is_grass = true
 
 [node name="Route 105" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 8, 120, 16, 120, 16, 96, 8, 96 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(8, 120, 16, 120, 16, 96, 8, 96)
+script = ExtResource("4")
 location_id = 453
 is_grass = true
 
 [node name="Route 106" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 32, 128, 8, 128, 8, 120, 32, 120 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(32, 128, 8, 128, 8, 120, 32, 120)
+script = ExtResource("4")
 location_id = 454
 is_grass = true
 
 [node name="Route 107" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 32, 136, 32, 128, 56, 128, 56, 136 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(32, 136, 32, 128, 56, 128, 56, 136)
+script = ExtResource("4")
 location_id = 455
 is_grass = true
 
 [node name="Route 108" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 128, 72, 136, 56, 136, 56, 128 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 128, 72, 136, 56, 136, 56, 128)
+script = ExtResource("4")
 location_id = 456
 is_grass = true
 
 [node name="Route 109" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 112, 80, 112, 80, 136, 72, 136 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 112, 80, 112, 80, 136, 72, 136)
+script = ExtResource("4")
 location_id = 457
 is_grass = true
 
 [node name="Route 110" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 72, 80, 72, 80, 96, 72, 96 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 72, 80, 72, 80, 96, 72, 96)
+script = ExtResource("4")
 location_id = 458
 is_grass = true
 
 [node name="Route 111" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 16, 72, 64, 80, 64, 80, 16 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 16, 72, 64, 80, 64, 80, 16)
+script = ExtResource("4")
 location_id = 459
 is_grass = true
 
 [node name="Route 112" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 56, 40, 56, 48, 72, 48, 72, 40 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(56, 40, 56, 48, 72, 48, 72, 40)
+script = ExtResource("4")
 location_id = 460
 is_grass = true
 
 [node name="Route 113" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 16, 72, 24, 40, 24, 40, 16 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 16, 72, 24, 40, 24, 40, 16)
+script = ExtResource("4")
 location_id = 461
 is_grass = true
 
 [node name="Route 114" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 32, 16, 32, 24, 24, 24, 24, 40, 16, 40, 16, 16 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(32, 16, 32, 24, 24, 24, 24, 40, 16, 40, 16, 16)
+script = ExtResource("4")
 location_id = 462
 is_grass = true
 
 [node name="Route 115" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 8, 32, 16, 32, 16, 56, 8, 56 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(8, 32, 16, 32, 16, 56, 8, 56)
+script = ExtResource("4")
 location_id = 463
 is_grass = true
 
 [node name="Route 116" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 16, 64, 48, 64, 48, 56, 16, 56 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(16, 64, 48, 64, 48, 56, 16, 56)
+script = ExtResource("4")
 location_id = 464
 is_grass = true
 
 [node name="Route 117" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 48, 72, 72, 72, 72, 64, 48, 64 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(48, 72, 72, 72, 72, 64, 48, 64)
+script = ExtResource("4")
 location_id = 465
 is_grass = true
 
 [node name="Route 118" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 88, 72, 88, 64, 104, 64, 104, 72 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(88, 72, 88, 64, 104, 64, 104, 72)
+script = ExtResource("4")
 location_id = 466
 is_grass = true
 
 [node name="Route 119" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 96, 16, 104, 16, 104, 64, 96, 64 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(96, 16, 104, 16, 104, 64, 96, 64)
+script = ExtResource("4")
 location_id = 467
 is_grass = true
 
 [node name="Route 120" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 112, 16, 112, 48, 120, 48, 120, 16 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(112, 16, 112, 48, 120, 48, 120, 16)
+script = ExtResource("4")
 location_id = 468
 is_grass = true
 
 [node name="Route 121" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 152, 48, 152, 40, 120, 40, 120, 48 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(152, 48, 152, 40, 120, 40, 120, 48)
+script = ExtResource("4")
 location_id = 469
 is_grass = true
 
 [node name="Route 122" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 136, 64, 144, 64, 144, 48, 136, 48 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(136, 64, 144, 64, 144, 48, 136, 48)
+script = ExtResource("4")
 location_id = 470
 is_grass = true
 
 [node name="Route 123" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 104, 64, 144, 64, 144, 72, 104, 72 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(104, 64, 144, 64, 144, 72, 104, 72)
+script = ExtResource("4")
 location_id = 471
 is_grass = true
 
 [node name="Route 124" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 168, 40, 168, 64, 200, 64, 200, 40 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(168, 40, 168, 64, 200, 64, 200, 40)
+script = ExtResource("4")
 location_id = 472
 is_grass = true
 
 [node name="Route 125" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 216, 40, 216, 56, 200, 56, 200, 40 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(216, 40, 216, 56, 200, 56, 200, 40)
+script = ExtResource("4")
 location_id = 473
 is_grass = true
 
 [node name="Route 126" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 192, 88, 192, 64, 168, 64, 168, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(192, 88, 192, 64, 168, 64, 168, 88)
+script = ExtResource("4")
 location_id = 474
 is_grass = true
 
 [node name="Route 127" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 216, 64, 192, 64, 192, 88, 216, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(216, 64, 192, 64, 192, 88, 216, 88)
+script = ExtResource("4")
 location_id = 475
 is_grass = true
 
 [node name="Route 128" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 224, 96, 224, 88, 192, 88, 192, 96 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(224, 96, 224, 88, 192, 88, 192, 96)
+script = ExtResource("4")
 location_id = 476
 is_grass = true
 
 [node name="Route 129" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 216, 104, 216, 96, 200, 96, 200, 104 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(216, 104, 216, 96, 200, 96, 200, 104)
+script = ExtResource("4")
 location_id = 477
 is_grass = true
 
 [node name="Route 130" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 176, 96, 176, 104, 200, 104, 200, 96 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(176, 96, 176, 104, 200, 104, 200, 96)
+script = ExtResource("4")
 location_id = 478
 is_grass = true
 
 [node name="Route 131" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 152, 104, 152, 96, 176, 96, 176, 104 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(152, 104, 152, 96, 176, 96, 176, 104)
+script = ExtResource("4")
 location_id = 479
 is_grass = true
 
 [node name="Route 132" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 144, 104, 144, 96, 124, 96, 124, 104 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(144, 104, 144, 96, 124, 96, 124, 104)
+script = ExtResource("4")
 location_id = 480
 is_grass = true
 
 [node name="Route 133" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 104, 96, 124, 96, 124, 104, 104, 104 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(104, 96, 124, 96, 124, 104, 104, 104)
+script = ExtResource("4")
 location_id = 481
 is_grass = true
 
 [node name="Route 134" type="Polygon2D" parent="Polygons/Hoenn"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 80, 96, 80, 104, 104, 104, 104, 96 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(80, 96, 80, 104, 104, 104, 104, 96)
+script = ExtResource("4")
 location_id = 482
 is_grass = true
 
 [node name="Sinnoh" type="Node2D" parent="Polygons"]
 visible = false
-script = ExtResource( 5 )
+script = ExtResource("5")
 internalName = "Sinnoh"
 regionName = "sinnoh"
-games = PoolStringArray( "diamond", "pearl", "platinum" )
+games = PackedStringArray("diamond", "pearl", "platinum")
 generation = 4
 maxDexIx = 494
 baseLocation = "roaming-sinnoh"
 baseLocationID = 802
-map = ExtResource( 8 )
+map = ExtResource("8")
 location_ids = "0
 178
 15
@@ -939,562 +934,562 @@ location_ids = "0
 64
 "
 
-[node name="Ravaged Path" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+[node name="Ravaged Path3D" type="Polygon2D" parent="Polygons/Sinnoh"]
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 32, 109, 40, 109, 40, 122, 32, 122 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(32, 109, 40, 109, 40, 122, 32, 122)
+script = ExtResource("4")
 location_id = 0
 
 [node name="Sendoff Spring" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 163, 108, 177, 108, 177, 123, 163, 123 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(163, 108, 177, 108, 177, 123, 163, 123)
+script = ExtResource("4")
 location_id = 178
 
 [node name="Oreburgh Gate" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 57, 118, 57, 125, 48, 125, 48, 118 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(57, 118, 57, 125, 48, 125, 48, 118)
+script = ExtResource("4")
 location_id = 15
 
 [node name="Oreburgh Mine" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 64, 130, 57, 130, 57, 137, 64, 137 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(64, 130, 57, 130, 57, 137, 64, 137)
+script = ExtResource("4")
 location_id = 6
 
 [node name="Oreburgh Mining Museum" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 72, 130, 79, 130, 79, 137, 72, 137 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(72, 130, 79, 130, 79, 137, 72, 137)
+script = ExtResource("4")
 location_id = 197
 
 [node name="Trophy Garden" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 107, 134, 116, 134, 116, 143, 107, 143 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(107, 134, 116, 134, 116, 143, 107, 143)
+script = ExtResource("4")
 location_id = 23
 
 [node name="Stark Mountain" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 162, 19, 170, 19, 170, 10, 162, 10 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(162, 19, 170, 19, 170, 10, 162, 10)
+script = ExtResource("4")
 location_id = 16
 
 [node name="Battle Frontier" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 142, 45, 142, 52, 149, 52, 149, 45 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(142, 45, 142, 52, 149, 52, 149, 45)
+script = ExtResource("4")
 
 [node name="Victory Road" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 183, 88, 191, 88, 191, 94, 183, 94 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(183, 88, 191, 88, 191, 94, 183, 94)
+script = ExtResource("4")
 location_id = 13
 
 [node name="Fullmoon Island" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 8, 17, 16, 17, 16, 25, 8, 25 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(8, 17, 16, 17, 16, 25, 8, 25)
+script = ExtResource("4")
 location_id = 177
 
 [node name="Newmoon Island" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 29, 17, 37, 17, 37, 25, 29, 25 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(29, 17, 37, 17, 37, 25, 29, 25)
+script = ExtResource("4")
 location_id = 183
 
 [node name="Flower Paradise" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 197, 2, 205, 2, 205, 9, 197, 9 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(197, 2, 205, 2, 205, 9, 197, 9)
+script = ExtResource("4")
 location_id = 179
 
 [node name="Pal Park" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 64, 157, 72, 157, 72, 165, 64, 165 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(64, 157, 72, 157, 72, 165, 64, 165)
+script = ExtResource("4")
 location_id = 173
 
 [node name="Fuego Ironworks" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 36, 87, 43, 87, 43, 94, 36, 94 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(36, 87, 43, 87, 43, 94, 36, 94)
+script = ExtResource("4")
 location_id = 9
 
 [node name="Valley Windworks" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 51, 101, 58, 101, 58, 109, 51, 109 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(51, 101, 58, 101, 58, 109, 51, 109)
+script = ExtResource("4")
 location_id = 7
 
 [node name="Eterna Forest" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 43, 73, 58, 73, 58, 88, 43, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(43, 73, 58, 73, 58, 88, 43, 88)
+script = ExtResource("4")
 location_id = 8
 
 [node name="Old Chateau" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 39, 69, 48, 69, 48, 78, 39, 78 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(39, 69, 48, 69, 48, 78, 39, 78)
+script = ExtResource("4")
 location_id = 25
 
 [node name="Maniac Tunnel" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 150, 102, 155, 102, 155, 122, 150, 122 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(150, 102, 155, 102, 155, 122, 150, 122)
+script = ExtResource("4")
 location_id = 180
 
 [node name="Mt Coronet" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 85, 45, 85, 94, 78, 94, 78, 123, 86, 123, 86, 102, 93, 102, 93, 45 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(85, 45, 85, 94, 78, 94, 78, 123, 86, 123, 86, 102, 93, 102, 93, 45)
+script = ExtResource("4")
 location_id = 10
 
 [node name="Spear Pillar" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 86, 102, 93, 102, 93, 109, 86, 109 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(86, 102, 93, 102, 93, 109, 86, 109)
+script = ExtResource("4")
 location_id = 172
 
 [node name="Hall of Origin" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 93, 94, 101, 94, 101, 102, 93, 102 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(93, 94, 101, 94, 101, 102, 93, 102)
+script = ExtResource("4")
 location_id = 188
 
 [node name="Canalave City" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 8, 115, 16, 115, 16, 130, 8, 130 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(8, 115, 16, 115, 16, 130, 8, 130)
+script = ExtResource("4")
 location_id = 1
 
 [node name="Jubilife City" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 29, 122, 44, 122, 44, 129.898, 44, 137, 29, 137 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(29, 122, 44, 122, 44, 129.898, 44, 137, 29, 137)
+script = ExtResource("4")
 location_id = 167
 
 [node name="Sandgem Town" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 36, 143, 44, 143, 44, 151, 36, 151 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(36, 143, 44, 143, 44, 151, 36, 151)
+script = ExtResource("4")
 location_id = 163
 
 [node name="Twinleaf Town" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 22, 150, 30, 150, 30, 158, 22, 158 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(22, 150, 30, 150, 30, 158, 22, 158)
+script = ExtResource("4")
 location_id = 58
 
 [node name="Verity Lakefront" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 8, 136, 23, 136, 23, 151, 8, 151 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(8, 136, 23, 136, 23, 151, 8, 151)
+script = ExtResource("4")
 location_id = 26
 
 [node name="Oreburgh City" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 57, 122, 72, 122, 72, 137, 64, 137, 64, 130, 57, 130 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(57, 122, 72, 122, 72, 137, 64, 137, 64, 130, 57, 130)
+script = ExtResource("4")
 location_id = 168
 
 [node name="Floaroma Town" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 36, 94, 44, 94, 44, 109, 36, 109 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(36, 94, 44, 94, 44, 109, 36, 109)
+script = ExtResource("4")
 location_id = 164
 
 [node name="Eterna City" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 79, 81, 72, 81, 72, 88, 64, 88, 64, 73, 79, 73 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(79, 81, 72, 81, 72, 88, 64, 88, 64, 73, 79, 73)
+script = ExtResource("4")
 location_id = 2
 
-[node name="Seabreak Path" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+[node name="Seabreak Path3D" type="Polygon2D" parent="Polygons/Sinnoh"]
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 197, 9, 205, 9, 205, 66, 197, 66 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(197, 9, 205, 9, 205, 66, 197, 66)
+script = ExtResource("4")
 location_id = 187
 
 [node name="Celestic Town" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 100, 73, 108, 73, 108, 81, 100, 81 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(100, 73, 108, 73, 108, 81, 100, 81)
+script = ExtResource("4")
 location_id = 59
 
 [node name="Solaceon Town" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 120, 101, 135, 101, 135, 109, 120, 109 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(120, 101, 135, 101, 135, 109, 120, 109)
+script = ExtResource("4")
 location_id = 165
 
 [node name="Solaceon Ruins" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 128, 95, 135, 95, 135, 101, 128, 101 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(128, 95, 135, 95, 135, 101, 128, 101)
+script = ExtResource("4")
 location_id = 12
 
 [node name="Hearthome City" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 99, 108, 114, 108, 114, 123, 99, 123 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(99, 108, 114, 108, 114, 123, 99, 123)
+script = ExtResource("4")
 location_id = 169
 
 [node name="Pastoria City" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 127, 136, 142, 136, 142, 151, 127, 151 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(127, 136, 142, 136, 142, 151, 127, 151)
+script = ExtResource("4")
 location_id = 3
 
 [node name="Great Marsh" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 130, 142, 139, 142, 139, 131, 130, 131 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(130, 142, 139, 142, 139, 131, 130, 131)
+script = ExtResource("4")
 location_id = 11
 
 [node name="Valor Lakefront" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 148, 122, 163, 122, 163, 136, 148, 136 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(148, 122, 163, 122, 163, 136, 148, 136)
+script = ExtResource("4")
 location_id = 27
 
 [node name="Veilstone City" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 148, 87, 163, 87, 163, 102, 148, 102 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(148, 87, 163, 87, 163, 102, 148, 102)
+script = ExtResource("4")
 location_id = 170
 
 [node name="Sunyshore City" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 183, 122, 198, 122, 198, 137, 183, 137 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(183, 122, 198, 122, 198, 137, 183, 137)
+script = ExtResource("4")
 location_id = 4
 
 [node name="Pokémon League" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 183, 80, 191, 80, 191, 88, 183, 88 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(183, 80, 191, 80, 191, 88, 183, 88)
+script = ExtResource("4")
 location_id = 5
 
-[node name="Resort Area" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+[node name="Resort Area3D" type="Polygon2D" parent="Polygons/Sinnoh"]
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 176, 59, 184, 59, 184, 67, 176, 67 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(176, 59, 184, 59, 184, 67, 176, 67)
+script = ExtResource("4")
 location_id = 60
 
-[node name="Fight Area" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+[node name="Fight Area3D" type="Polygon2D" parent="Polygons/Sinnoh"]
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 134, 52, 149, 52, 149, 60, 134, 60 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(134, 52, 149, 52, 149, 60, 134, 60)
+script = ExtResource("4")
 location_id = 185
 
-[node name="Survival Area" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+[node name="Survival Area3D" type="Polygon2D" parent="Polygons/Sinnoh"]
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 141, 31, 149, 31, 149, 39, 141, 39 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(141, 31, 149, 31, 149, 39, 141, 39)
+script = ExtResource("4")
 location_id = 186
 
 [node name="Snowpoint City" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 78, 3, 86, 3, 86, 18, 78, 18 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(78, 3, 86, 3, 86, 18, 78, 18)
+script = ExtResource("4")
 location_id = 171
 
 [node name="Snowpoint Temple" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 86, 3, 91, 3, 91, 18, 86, 18 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(86, 3, 91, 3, 91, 18, 86, 18)
+script = ExtResource("4")
 location_id = 19
 
 [node name="Iron Island" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 22, 66, 30, 66, 30, 74, 22, 74 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(22, 66, 30, 66, 30, 74, 22, 74)
+script = ExtResource("4")
 location_id = 24
 
 [node name="Acuity Lakefront" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 64, 3, 78, 3, 78, 18, 64, 18 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(64, 3, 78, 3, 78, 18, 64, 18)
+script = ExtResource("4")
 location_id = 28
 
 [node name="Lost Tower" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 123, 118, 132, 118, 132, 127, 123, 127 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(123, 118, 132, 118, 132, 127, 123, 127)
+script = ExtResource("4")
 location_id = 40
 
 [node name="Route 201" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 36, 151, 23, 151, 23, 143, 36, 143 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(36, 151, 23, 151, 23, 143, 36, 143)
+script = ExtResource("4")
 location_id = 31
 
 [node name="Route 202" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 36, 137, 44, 137, 44, 143, 36, 143 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(36, 137, 44, 137, 44, 143, 36, 143)
+script = ExtResource("4")
 location_id = 32
 
 [node name="Route 203" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 57, 122, 57, 130, 44, 130, 44, 122 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(57, 122, 57, 130, 44, 130, 44, 122)
+script = ExtResource("4")
 location_id = 33
 
 [node name="Route 204" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 36, 109, 44, 109, 44, 122, 36, 122 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(36, 109, 44, 109, 44, 122, 36, 122)
+script = ExtResource("4")
 location_id = 34
 
 [node name="Route 205" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 43, 109, 51, 109, 51, 81, 64, 81, 64, 73, 43, 73 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(43, 109, 51, 109, 51, 81, 64, 81, 64, 73, 43, 73)
+script = ExtResource("4")
 location_id = 35
 
 [node name="Route 206" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 64, 88, 72, 88, 72, 115, 64, 115 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(64, 88, 72, 88, 72, 115, 64, 115)
+script = ExtResource("4")
 location_id = 36
 
 [node name="Route 207" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 64, 115, 78, 115, 78, 123, 64, 123 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(64, 115, 78, 115, 78, 123, 64, 123)
+script = ExtResource("4")
 location_id = 37
 
 [node name="Route 208" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 86, 115, 99, 115, 99, 123, 86, 123 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(86, 115, 99, 115, 99, 123, 86, 123)
+script = ExtResource("4")
 location_id = 38
 
 [node name="Route 209" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 120, 109, 128, 109, 128, 123, 114, 123, 114, 115, 120, 115 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(120, 109, 128, 109, 128, 123, 114, 123, 114, 115, 120, 115)
+script = ExtResource("4")
 location_id = 39
 
 [node name="Route 210" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 128, 101, 120, 101, 120, 81, 108, 81, 108, 73, 128, 73 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(128, 101, 120, 101, 120, 81, 108, 81, 108, 73, 128, 73)
+script = ExtResource("4")
 location_id = 41
 
 [node name="Route 211" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 64, 45, 85, 45, 85, 53, 64, 53 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(64, 45, 85, 45, 85, 53, 64, 53)
+script = ExtResource("4")
 location_id = 42
 
 [node name="Route 212" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 107, 123, 107, 143, 127, 143, 127, 151, 99, 151, 99, 123 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(107, 123, 107, 143, 127, 143, 127, 151, 99, 151, 99, 123)
+script = ExtResource("4")
 location_id = 43
 
 [node name="Route 213" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 142, 136, 163, 136, 163, 151, 142, 151 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(142, 136, 163, 136, 163, 151, 142, 151)
+script = ExtResource("4")
 location_id = 44
 
 [node name="Route 214" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 155, 102, 163, 102, 163, 122, 155, 122 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(155, 102, 163, 102, 163, 122, 155, 122)
+script = ExtResource("4")
 location_id = 45
 
 [node name="Route 215" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 148, 87, 148, 95, 128, 95, 128, 87 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(148, 87, 148, 95, 128, 95, 128, 87)
+script = ExtResource("4")
 location_id = 46
 
 [node name="Route 216" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 79, 73, 79, 81, 100, 81, 100, 73 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(79, 73, 79, 81, 100, 81, 100, 73)
+script = ExtResource("4")
 location_id = 47
 
 [node name="Route 217" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 64, 18, 72, 18, 72, 45, 64, 45 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(64, 18, 72, 18, 72, 45, 64, 45)
+script = ExtResource("4")
 location_id = 48
 
 [node name="Route 218" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 16, 122, 29, 122, 29, 130, 16, 130 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(16, 122, 29, 122, 29, 130, 16, 130)
+script = ExtResource("4")
 location_id = 49
 
 [node name="Route 219" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 44, 157, 36, 157, 36, 151, 44, 151 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(44, 157, 36, 157, 36, 151, 44, 151)
+script = ExtResource("4")
 location_id = 50
 
 [node name="Route 220" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 36, 165, 52, 165, 52, 157, 36, 157 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(36, 165, 52, 165, 52, 157, 36, 157)
+script = ExtResource("4")
 location_id = 61
 
 [node name="Route 221" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 64, 157, 64, 165, 52, 165, 52, 157 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(64, 157, 64, 165, 52, 165, 52, 157)
+script = ExtResource("4")
 location_id = 51
 
 [node name="Route 222" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 163, 129, 183, 129, 183, 137, 163, 137 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(163, 129, 183, 129, 183, 137, 163, 137)
+script = ExtResource("4")
 location_id = 52
 
 [node name="Route 223" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 183, 94, 191, 94, 191, 122, 183, 122 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(183, 94, 191, 94, 191, 122, 183, 122)
+script = ExtResource("4")
 location_id = 62
 
 [node name="Route 224" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 190, 88, 198, 88, 198, 81, 205, 81, 205, 66, 197, 66, 197, 73, 190, 73 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(190, 88, 198, 88, 198, 81, 205, 81, 205, 66, 197, 66, 197, 73, 190, 73)
+script = ExtResource("4")
 location_id = 53
 
 [node name="Route 225" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 134, 31, 142, 31, 142, 52, 134, 52 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(134, 31, 142, 31, 142, 52, 134, 52)
+script = ExtResource("4")
 location_id = 54
 
 [node name="Route 226" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 149, 31, 169, 31, 169, 39, 149, 39 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(149, 31, 169, 31, 169, 39, 149, 39)
+script = ExtResource("4")
 location_id = 63
 
 [node name="Route 227" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 162, 19, 170, 19, 170, 31, 162, 31 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(162, 19, 170, 19, 170, 31, 162, 31)
+script = ExtResource("4")
 location_id = 55
 
 [node name="Route 228" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 169, 31, 169, 52, 177, 52, 177, 31 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(169, 31, 169, 52, 177, 52, 177, 31)
+script = ExtResource("4")
 location_id = 56
 
 [node name="Route 229" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 184, 52, 169, 52, 169, 60, 184, 60 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(184, 52, 169, 52, 169, 60, 184, 60)
+script = ExtResource("4")
 location_id = 57
 
 [node name="Route 230" type="Polygon2D" parent="Polygons/Sinnoh"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 149, 52, 169, 52, 169, 60, 149, 60 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(149, 52, 169, 52, 169, 60, 149, 60)
+script = ExtResource("4")
 location_id = 64
 
 [node name="Johto4" type="Node2D" parent="Polygons"]
-script = ExtResource( 5 )
+script = ExtResource("5")
 internalName = "Johto4"
 regionName = "johto4"
-games = PoolStringArray( "heartgold", "soulsilver" )
+games = PackedStringArray("heartgold", "soulsilver")
 generation = 4
 maxDexIx = 483
 enableTimeHUD = true
 baseLocation = "roaming-johto"
 baseLocationID = 800
-map = ExtResource( 7 )
+map = ExtResource("7")
 location_ids = "0
 69
 65
@@ -1600,627 +1595,627 @@ location_ids = "0
 "
 
 [node name="New Bark Town" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 159, 103, 171, 103, 171, 115, 159, 115 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(159, 103, 171, 103, 171, 115, 159, 115)
+script = ExtResource("4")
 location_id = 0
 
 [node name="Cherrygrove City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 119, 103, 139, 103, 139, 115, 119, 115 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(119, 103, 139, 103, 139, 115, 119, 115)
+script = ExtResource("4")
 location_id = 69
 
 [node name="Blackthorn City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 151, 39, 171, 39, 171, 59, 151, 59 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(151, 39, 171, 39, 171, 59, 151, 59)
+script = ExtResource("4")
 location_id = 65
 
 [node name="Mahogany Town" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 119, 47, 131, 47, 131, 59, 119, 59 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(119, 47, 131, 47, 131, 59, 119, 59)
+script = ExtResource("4")
 location_id = 230
 
 [node name="Ecruteak City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 79, 39, 99, 39, 99, 59, 79, 59 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(79, 39, 99, 39, 99, 59, 79, 59)
+script = ExtResource("4")
 location_id = 75
 
 [node name="Olivine City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 55, 63, 75, 63, 75, 83, 55, 83 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(55, 63, 75, 63, 75, 83, 55, 83)
+script = ExtResource("4")
 location_id = 85
 
 [node name="Cianwood City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 31, 87, 43, 87, 43, 107, 31, 107 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(31, 87, 43, 87, 43, 107, 31, 107)
+script = ExtResource("4")
 location_id = 70
 
 [node name="Goldenrod City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 63, 87, 91, 87, 91, 107, 63, 107 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(63, 87, 91, 87, 91, 107, 63, 107)
+script = ExtResource("4")
 location_id = 229
 
 [node name="Azalea Town" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 88, 119, 107, 119, 107, 131, 88, 131 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(88, 119, 107, 119, 107, 131, 88, 131)
+script = ExtResource("4")
 location_id = 228
 
 [node name="Violet City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 103, 63, 123, 63, 123, 83, 103, 83 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(103, 63, 123, 63, 123, 83, 103, 83)
+script = ExtResource("4")
 location_id = 153
 
 [node name="Pallet Town" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 247, 95, 259, 95, 259, 107, 247, 107 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(247, 95, 259, 95, 259, 107, 247, 107)
+script = ExtResource("4")
 location_id = 86
 
 [node name="Viridian City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 239, 63, 259, 63, 259, 83, 239, 83 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(239, 63, 259, 63, 259, 83, 239, 83)
+script = ExtResource("4")
 location_id = 154
 
 [node name="Pewter City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 247, 23, 267, 23, 267, 43, 247, 43 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(247, 23, 267, 23, 267, 43, 247, 43)
+script = ExtResource("4")
 location_id = 231
 
 [node name="Cerulean City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 311, 31, 331, 31, 331, 51, 311, 51 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(311, 31, 331, 31, 331, 51, 311, 51)
+script = ExtResource("4")
 location_id = 68
 
 [node name="Lavender Town" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 343, 63, 355, 63, 355, 74, 343, 74 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(343, 63, 355, 63, 355, 74, 343, 74)
+script = ExtResource("4")
 location_id = 232
 
 [node name="Pokémon Tower" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 355, 63, 361, 63, 361, 69, 355, 69 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(355, 63, 361, 63, 361, 69, 355, 69)
+script = ExtResource("4")
 location_id = 160
 
 [node name="Celadon City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 287, 63, 307, 63, 307, 83, 287, 83 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(287, 63, 307, 63, 307, 83, 287, 83)
+script = ExtResource("4")
 location_id = 67
 
 [node name="Vermilion City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 311, 79, 331, 79, 331, 99, 311, 99 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(311, 79, 331, 79, 331, 99, 311, 99)
+script = ExtResource("4")
 location_id = 151
 
 [node name="Saffron City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 311, 55, 331, 55, 331, 75, 311, 75 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(311, 55, 331, 55, 331, 75, 311, 75)
+script = ExtResource("4")
 location_id = 234
 
 [node name="Fuchsia City" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 287, 103, 307, 103, 307, 123, 287, 123 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(287, 103, 307, 103, 307, 123, 287, 123)
+script = ExtResource("4")
 location_id = 76
 
 [node name="Cinnabar Island" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 247, 127, 259, 127, 259, 139, 247, 139 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(247, 127, 259, 127, 259, 139, 247, 139)
+script = ExtResource("4")
 location_id = 71
 
 [node name="Safari Zone" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 9, 73, 25, 73, 25, 89, 9, 89 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(9, 73, 25, 73, 25, 89, 9, 89)
+script = ExtResource("4")
 location_id = 814
 
 [node name="Lake of Rage" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 111, 15, 139, 15, 139, 35, 111, 35 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(111, 15, 139, 15, 139, 35, 111, 35)
+script = ExtResource("4")
 location_id = 79
 
 [node name="Indigo Plateau" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 217, 57, 225, 57, 225, 65, 217, 65 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(217, 57, 225, 57, 225, 65, 217, 65)
+script = ExtResource("4")
 location_id = 233
 
 [node name="Victory Road" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 225, 81, 217, 81, 217, 73, 225, 73 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(225, 81, 217, 81, 217, 73, 225, 73)
+script = ExtResource("4")
 location_id = 152
 
 [node name="Mt Silver" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 193, 73, 201, 73, 201, 81, 193, 81 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(193, 73, 201, 73, 201, 81, 193, 81)
+script = ExtResource("4")
 location_id = 82
 
 [node name="Slowpoke Well" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 97, 113, 104, 113, 104, 119, 97, 119 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(97, 113, 104, 113, 104, 119, 97, 119)
+script = ExtResource("4")
 location_id = 137
 
 [node name="Union Cave" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 105, 113, 113, 113, 113, 121, 105, 121 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(105, 113, 113, 113, 113, 121, 105, 121)
+script = ExtResource("4")
 location_id = 141
 
 [node name="Dark Cave" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 129, 81, 129, 73, 145, 73, 145, 57, 161, 57, 161, 65, 153, 65, 153, 97, 145, 97, 145, 81 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(129, 81, 129, 73, 145, 73, 145, 57, 161, 57, 161, 65, 153, 65, 153, 97, 145, 97, 145, 81)
+script = ExtResource("4")
 location_id = 72
 
-[node name="Ice Path" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 165, 45, 175, 45, 175, 35, 165, 35 )
-script = ExtResource( 4 )
+[node name="Ice Path3D" type="Polygon2D" parent="Polygons/Johto4"]
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(165, 45, 175, 45, 175, 35, 165, 35)
+script = ExtResource("4")
 location_id = 77
 
 [node name="Dragon\'s Den" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 156, 45, 165, 45, 165, 35, 156, 35 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(156, 45, 165, 45, 165, 35, 156, 35)
+script = ExtResource("4")
 location_id = 74
 
 [node name="Mt Mortar" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 105, 53, 113, 53, 113, 44, 105, 44 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(105, 53, 113, 53, 113, 44, 105, 44)
+script = ExtResource("4")
 location_id = 81
 
 [node name="Burned Tower" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 79, 45, 89, 45, 89, 33, 79, 33 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(79, 45, 89, 45, 89, 33, 79, 33)
+script = ExtResource("4")
 location_id = 66
 
 [node name="Bell Tower" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 99, 45, 89, 45, 89, 33, 99, 33 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(99, 45, 89, 45, 89, 33, 99, 33)
+script = ExtResource("4")
 location_id = 139
 
 [node name="National Park" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 75, 71, 87, 71, 87, 59, 75, 59 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(75, 71, 87, 71, 87, 59, 75, 59)
+script = ExtResource("4")
 location_id = 83
 
 [node name="Battle Frontier" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 43, 59, 55, 59, 55, 71, 43, 71 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(43, 59, 55, 59, 55, 71, 43, 71)
+script = ExtResource("4")
 location_id = 245
 
 [node name="Sinjoh Ruins" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 89, 1, 93, 12, 85, 12 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(89, 1, 93, 12, 85, 12)
+script = ExtResource("4")
 location_id = 247
 
 [node name="Lighthouse" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 69, 77, 79, 77, 79, 87, 69, 87 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(69, 77, 79, 77, 79, 87, 69, 87)
+script = ExtResource("4")
 location_id = 236
 
 [node name="Whirl Islands" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 53, 101, 60, 101, 60, 108, 53, 108 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(53, 101, 60, 101, 60, 108, 53, 108)
+script = ExtResource("4")
 location_id = 156
 
 [node name="Ilex Forest" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 85, 125, 85, 132, 78, 132, 78, 125 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(85, 125, 85, 132, 78, 132, 78, 125)
+script = ExtResource("4")
 location_id = 78
 
 [node name="Tohjo Falls" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 177, 109, 185, 109, 185, 103, 177, 103 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(177, 109, 185, 109, 185, 103, 177, 103)
+script = ExtResource("4")
 location_id = 140
 
 [node name="Ruins of Alph" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 107, 71, 107, 91, 95, 91, 95, 71 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(107, 71, 107, 91, 95, 91, 95, 71)
+script = ExtResource("4")
 location_id = 135
 
 [node name="Sprout Tower" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 117, 69, 127, 69, 127, 59, 117, 59 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(117, 69, 127, 69, 127, 59, 117, 59)
+script = ExtResource("4")
 location_id = 138
 
 [node name="Viridian Forest" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 253, 57, 253, 49, 246, 49, 246, 57 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(253, 57, 253, 49, 246, 49, 246, 57)
+script = ExtResource("4")
 location_id = 155
 
 [node name="Mt Moon" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 281, 37, 289, 37, 289, 30, 281, 30 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(281, 37, 289, 37, 289, 30, 281, 30)
+script = ExtResource("4")
 location_id = 80
 
 [node name="Cerulean Cave" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 317, 37, 307, 37, 307, 27, 317, 27 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(317, 37, 307, 37, 307, 27, 317, 27)
+script = ExtResource("4")
 location_id = 147
 
 [node name="Power Plant" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 349, 49, 355, 49, 355, 57, 349, 57 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(349, 49, 355, 49, 355, 57, 349, 57)
+script = ExtResource("4")
 location_id = 158
 
 [node name="Rock Tunnel" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 342, 57, 349, 57, 349, 49, 342, 49 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(342, 57, 349, 57, 349, 49, 342, 49)
+script = ExtResource("4")
 location_id = 87
 
 [node name="Digglet\'s Cave" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 330, 85, 337, 85, 337, 78, 330, 78 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(330, 85, 337, 85, 337, 78, 330, 78)
+script = ExtResource("4")
 location_id = 73
 
 [node name="Kanto Safari Zone" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 293, 109, 283, 109, 283, 99, 293, 99 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(293, 109, 283, 109, 283, 99, 293, 99)
+script = ExtResource("4")
 location_id = 162
 
 [node name="Seafoam Islands" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 273, 133, 281, 133, 281, 127, 273, 127 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(273, 133, 281, 133, 281, 127, 273, 127)
+script = ExtResource("4")
 location_id = 136
 
 [node name="Embedded Tower" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 9, 113, 22, 113, 22, 120, 9, 120 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(9, 113, 22, 113, 22, 120, 9, 120)
+script = ExtResource("4")
 location_id = 248
 
 [node name="Cliff Edge Gate" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 33, 107, 43, 107, 43, 113, 33, 113 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(33, 107, 43, 107, 43, 113, 33, 113)
+script = ExtResource("4")
 location_id = 250
 
 [node name="Cliff Cave" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 33, 113, 33, 120, 22, 120, 22, 113 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(33, 113, 33, 120, 22, 120, 22, 113)
+script = ExtResource("4")
 location_id = 244
 
 [node name="Route 1" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 249, 95, 257, 95, 257, 83, 249, 83 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(249, 95, 257, 95, 257, 83, 249, 83)
+script = ExtResource("4")
 location_id = 88
 
 [node name="Route 2" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 249, 63, 257, 63, 257, 43, 249, 43 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(249, 63, 257, 63, 257, 43, 249, 43)
+script = ExtResource("4")
 location_id = 99
 
 [node name="Route 3" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 267, 33, 285, 33, 285, 41, 267, 41 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(267, 33, 285, 33, 285, 41, 267, 41)
+script = ExtResource("4")
 location_id = 109
 
 [node name="Route 4" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 311, 33, 311, 41, 285, 41, 285, 33 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(311, 33, 311, 41, 285, 41, 285, 33)
+script = ExtResource("4")
 location_id = 120
 
 [node name="Route 5" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 313, 51, 321, 51, 321, 55, 313, 55 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(313, 51, 321, 51, 321, 55, 313, 55)
+script = ExtResource("4")
 location_id = 130
 
 [node name="Route 6" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 313, 75, 321, 75, 321, 79, 313, 79 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(313, 75, 321, 75, 321, 79, 313, 79)
+script = ExtResource("4")
 location_id = 131
 
 [node name="Route 7" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 307, 65, 311, 65, 311, 73, 307, 73 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(307, 65, 311, 65, 311, 73, 307, 73)
+script = ExtResource("4")
 location_id = 132
 
 [node name="Route 8" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 331, 65, 343, 65, 343, 73, 331, 73 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(331, 65, 343, 65, 343, 73, 331, 73)
+script = ExtResource("4")
 location_id = 133
 
 [node name="Route 9" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 331, 41, 353, 41, 353, 49, 331, 49 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(331, 41, 353, 41, 353, 49, 331, 49)
+script = ExtResource("4")
 location_id = 134
 
 [node name="Route 10" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 345, 49, 353, 49, 353, 63, 345, 63 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(345, 49, 353, 49, 353, 63, 345, 63)
+script = ExtResource("4")
 location_id = 89
 
 [node name="Route 11" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 331, 81, 345, 81, 345, 89, 331, 89 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(331, 81, 345, 81, 345, 89, 331, 89)
+script = ExtResource("4")
 location_id = 90
 
 [node name="Route 12" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 345, 74, 353, 74, 353, 97, 345, 97 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(345, 74, 353, 74, 353, 97, 345, 97)
+script = ExtResource("4")
 location_id = 91
 
 [node name="Route 13" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 329, 97, 353, 97, 353, 105, 329, 105 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(329, 97, 353, 97, 353, 105, 329, 105)
+script = ExtResource("4")
 location_id = 92
 
 [node name="Route 14" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 329, 121, 337, 121, 337, 105, 329, 105 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(329, 121, 337, 121, 337, 105, 329, 105)
+script = ExtResource("4")
 location_id = 93
 
 [node name="Route 15" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 307, 113, 329, 113, 329, 121, 307, 121 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(307, 113, 329, 113, 329, 121, 307, 121)
+script = ExtResource("4")
 location_id = 94
 
 [node name="Route 16" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 273, 73, 287, 73, 287, 81, 273, 81 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(273, 73, 287, 73, 287, 81, 273, 81)
+script = ExtResource("4")
 location_id = 95
 
 [node name="Route 17" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 281, 113, 273, 113, 273, 81, 281, 81 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(281, 113, 273, 113, 273, 81, 281, 81)
+script = ExtResource("4")
 location_id = 96
 
 [node name="Route 18" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 287, 113, 287, 121, 273, 121, 273, 113 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(287, 113, 287, 121, 273, 121, 273, 113)
+script = ExtResource("4")
 location_id = 97
 
 [node name="Route 19" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 289, 123, 297, 123, 297, 137, 289, 137 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(289, 123, 297, 123, 297, 137, 289, 137)
+script = ExtResource("4")
 location_id = 98
 
 [node name="Route 20" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 259, 129, 289, 129, 289, 137, 259, 137 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(259, 129, 289, 129, 289, 137, 259, 137)
+script = ExtResource("4")
 location_id = 100
 
 [node name="Route 21" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 249, 107, 257, 107, 257, 127, 249, 127 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(249, 107, 257, 107, 257, 127, 249, 127)
+script = ExtResource("4")
 location_id = 101
 
 [node name="Route 22" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 239, 73, 239, 81, 225, 81, 225, 73 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(239, 73, 239, 81, 225, 81, 225, 73)
+script = ExtResource("4")
 location_id = 102
 
 [node name="Route 23" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 217, 65, 225, 65, 225, 73, 217, 73 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(217, 65, 225, 65, 225, 73, 217, 73)
+script = ExtResource("4")
 location_id = 157
 
 [node name="Route 24" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 321, 17, 329, 17, 329, 31, 321, 31 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(321, 17, 329, 17, 329, 31, 321, 31)
+script = ExtResource("4")
 location_id = 103
 
 [node name="Route 25" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 353, 17, 353, 25, 329, 25, 329, 17 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(353, 17, 353, 25, 329, 25, 329, 17)
+script = ExtResource("4")
 location_id = 104
 
 [node name="Route 26" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 217, 81, 225, 81, 225, 113, 217, 113 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(217, 81, 225, 81, 225, 113, 217, 113)
+script = ExtResource("4")
 location_id = 105
 
 [node name="Route 27" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 171, 105, 217, 105, 217, 113, 171, 113 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(171, 105, 217, 105, 217, 113, 171, 113)
+script = ExtResource("4")
 location_id = 106
 
 [node name="Route 28" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 201, 73, 217, 73, 217, 81, 201, 81 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(201, 73, 217, 73, 217, 81, 201, 81)
+script = ExtResource("4")
 location_id = 107
 
 [node name="Route 29" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 139, 105, 159, 105, 159, 113, 139, 113 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(139, 105, 159, 105, 159, 113, 139, 113)
+script = ExtResource("4")
 location_id = 108
 
 [node name="Route 30" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 129, 81, 137, 81, 137, 103, 129, 103 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(129, 81, 137, 81, 137, 103, 129, 103)
+script = ExtResource("4")
 location_id = 110
 
 [node name="Route 31" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 123, 73, 129, 73, 129, 81, 123, 81 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(123, 73, 129, 73, 129, 81, 123, 81)
+script = ExtResource("4")
 location_id = 111
 
 [node name="Route 32" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 105, 83, 113, 83, 113, 113, 105, 113 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(105, 83, 113, 83, 113, 113, 105, 113)
+script = ExtResource("4")
 location_id = 112
 
 [node name="Route 33" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 107, 121, 113, 121, 113, 129, 107, 129 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(107, 121, 113, 121, 113, 129, 107, 129)
+script = ExtResource("4")
 location_id = 113
 
 [node name="Route 34" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 81, 107, 89, 107, 89, 129, 81, 129 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(81, 107, 89, 107, 89, 129, 81, 129)
+script = ExtResource("4")
 location_id = 114
 
 [node name="Route 35" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 81, 87, 89, 87, 89, 73, 81, 73 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(81, 87, 89, 87, 89, 73, 81, 73)
+script = ExtResource("4")
 location_id = 115
 
 [node name="Route 36" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 103, 73, 103, 65, 81, 65, 81, 73 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(103, 73, 103, 65, 81, 65, 81, 73)
+script = ExtResource("4")
 location_id = 116
 
 [node name="Route 37" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 89, 59, 97, 59, 97, 65, 89, 65 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(89, 59, 97, 59, 97, 65, 89, 65)
+script = ExtResource("4")
 location_id = 117
 
 [node name="Route 38" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 79, 49, 79, 57, 65, 57, 65, 49 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(79, 49, 79, 57, 65, 57, 65, 49)
+script = ExtResource("4")
 location_id = 118
 
 [node name="Route 39" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 57, 49, 65, 49, 65, 63, 57, 63 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(57, 49, 65, 49, 65, 63, 57, 63)
+script = ExtResource("4")
 location_id = 119
 
 [node name="Route 40" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 49, 73, 57, 73, 57, 89, 49, 89 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(49, 73, 57, 73, 57, 89, 49, 89)
+script = ExtResource("4")
 location_id = 121
 
 [node name="Route 41" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 57, 105, 57, 89, 43, 89, 43, 105 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(57, 105, 57, 89, 43, 89, 43, 105)
+script = ExtResource("4")
 location_id = 122
 
 [node name="Route 42" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 99, 49, 119, 49, 119, 57, 99, 57 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(99, 49, 119, 49, 119, 57, 99, 57)
+script = ExtResource("4")
 location_id = 123
 
 [node name="Route 43" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 121, 35, 129, 35, 129, 47, 121, 47 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(121, 35, 129, 35, 129, 47, 121, 47)
+script = ExtResource("4")
 location_id = 124
 
 [node name="Route 44" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 131, 49, 151, 49, 151, 57, 131, 57 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(131, 49, 151, 49, 151, 57, 131, 57)
+script = ExtResource("4")
 location_id = 125
 
 [node name="Route 45" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 153, 59, 161, 59, 161, 97, 153, 97 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(153, 59, 161, 59, 161, 97, 153, 97)
+script = ExtResource("4")
 location_id = 126
 
 [node name="Route 46" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 145, 97, 153, 97, 153, 105, 145, 105 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(145, 97, 153, 97, 153, 105, 145, 105)
+script = ExtResource("4")
 location_id = 127
 
 [node name="Route 47" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 33, 97, 33, 113, 9, 113, 9, 97 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(33, 97, 33, 113, 9, 113, 9, 97)
+script = ExtResource("4")
 location_id = 128
 
 [node name="Route 48" type="Polygon2D" parent="Polygons/Johto4"]
-color = Color( 0, 0, 0, 0.376471 )
-polygon = PoolVector2Array( 9, 89, 25, 89, 25, 97, 9, 97 )
-script = ExtResource( 4 )
+color = Color(0, 0, 0, 0.376471)
+polygon = PackedVector2Array(9, 89, 25, 89, 25, 97, 9, 97)
+script = ExtResource("4")
 location_id = 129
 
 [node name="UnovaBW" type="Node2D" parent="Polygons"]
 visible = false
-script = ExtResource( 5 )
+script = ExtResource("5")
 internalName = "Unova"
 regionName = "unova"
-games = PoolStringArray( "black", "white" )
+games = PackedStringArray("black", "white")
 generation = 5
 maxDexIx = 649
-baseLocation = "Roaming Unova"
-map = ExtResource( 6 )
+baseLocation = "roaming-unova"
+map = ExtResource("6")
 location_ids = "346
 347
 348
@@ -2286,492 +2281,492 @@ location_ids = "346
 "
 
 [node name="Nuvema Town" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 226, 152, 238, 152, 238, 164, 226, 164 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(226, 152, 238, 152, 238, 164, 226, 164)
+script = ExtResource("4")
 location_id = 346
 is_grass = true
 
 [node name="Accumula Town" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 226, 132, 238, 132, 238, 144, 226, 144 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(226, 132, 238, 132, 238, 144, 226, 144)
+script = ExtResource("4")
 location_id = 347
 is_grass = true
 
 [node name="Striaton City" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 222, 124, 234, 124, 234, 112, 222, 112 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(222, 124, 234, 124, 234, 112, 222, 112)
+script = ExtResource("4")
 location_id = 348
 is_grass = true
 
 [node name="Nacrene City" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 197, 124, 209, 124, 209, 112, 197, 112 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(197, 124, 209, 124, 209, 112, 197, 112)
+script = ExtResource("4")
 location_id = 349
 is_grass = true
 
 [node name="Castelia City" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 126, 124, 138, 124, 138, 136, 126, 136 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(126, 124, 138, 124, 138, 136, 126, 136)
+script = ExtResource("4")
 location_id = 350
 is_grass = true
 
 [node name="Nimbasa City" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 126, 85, 138, 85, 138, 97, 126, 97 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(126, 85, 138, 85, 138, 97, 126, 97)
+script = ExtResource("4")
 location_id = 351
 is_grass = true
 
 [node name="Driftveil City" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 68, 85, 80, 85, 80, 97, 68, 97 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(68, 85, 80, 85, 80, 97, 68, 97)
+script = ExtResource("4")
 location_id = 352
 is_grass = true
 
 [node name="Mistralton City" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 34, 61, 46, 61, 46, 73, 34, 73 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(34, 61, 46, 61, 46, 73, 34, 73)
+script = ExtResource("4")
 location_id = 353
 is_grass = true
 
 [node name="Icirrus City" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 68, 37, 80, 37, 80, 49, 68, 49 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(68, 37, 80, 37, 80, 49, 68, 49)
+script = ExtResource("4")
 location_id = 354
 is_grass = true
 
 [node name="Opelucid City" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 126, 37, 138, 37, 138, 49, 126, 49 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(126, 37, 138, 37, 138, 49, 126, 49)
+script = ExtResource("4")
 location_id = 355
 is_grass = true
 
 [node name="Lacunosa Town" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 184, 37, 196, 37, 196, 49, 184, 49 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(184, 37, 196, 37, 196, 49, 184, 49)
+script = ExtResource("4")
 location_id = 383
 is_grass = true
 
 [node name="Undella Town" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 218, 61, 230, 61, 230, 73, 218, 73 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(218, 61, 230, 61, 230, 73, 218, 73)
+script = ExtResource("4")
 location_id = 384
 is_grass = true
 
 [node name="Black City" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 196, 85, 196, 97, 184, 97 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(196, 85, 196, 97, 184, 97)
+script = ExtResource("4")
 location_id = 392
 
 [node name="White Forest" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 184, 85, 196, 85, 184, 97 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(184, 85, 196, 85, 184, 97)
+script = ExtResource("4")
 location_id = 393
 is_grass = true
 
 [node name="Victory Road" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 159, 20, 167, 20, 167, 28, 159, 28 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(159, 20, 167, 20, 167, 28, 159, 28)
+script = ExtResource("4")
 location_id = 382
 
 [node name="Pokémon League" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 164, 9, 176, 9, 176, 21, 164, 21 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(164, 9, 176, 9, 176, 21, 164, 21)
+script = ExtResource("4")
 location_id = 386
 
 [node name="Unity Tower" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 95, 153, 103, 153, 103, 161, 95, 161 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(95, 153, 103, 153, 103, 161, 95, 161)
+script = ExtResource("4")
 location_id = 394
 
 [node name="Liberty Garden" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 71, 142, 77, 142, 77, 148, 71, 148 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(71, 142, 77, 142, 77, 148, 71, 148)
+script = ExtResource("4")
 location_id = 404
 is_grass = true
 
 [node name="Relic Castle" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 112, 101, 118, 101, 118, 107, 112, 107 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(112, 101, 118, 101, 118, 107, 112, 107)
+script = ExtResource("4")
 location_id = 377
 
 [node name="Cold Storage" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 71, 100, 77, 100, 77, 106, 71, 106 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(71, 100, 77, 100, 77, 106, 71, 106)
+script = ExtResource("4")
 location_id = 378
 is_grass = true
 
 [node name="Chargestone Cave" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 39, 77, 45, 77, 45, 83, 39, 83 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(39, 77, 45, 77, 45, 83, 39, 83)
+script = ExtResource("4")
 location_id = 379
 
 [node name="Mistralton Cave" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 66, 71, 72, 71, 72, 77, 66, 77 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(66, 71, 72, 71, 72, 77, 66, 77)
+script = ExtResource("4")
 location_id = 396
 
 [node name="Anville Town" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 4, 27, 10, 27, 10, 33, 4, 33 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(4, 27, 10, 27, 10, 33, 4, 33)
+script = ExtResource("4")
 location_id = 385
 is_grass = true
 
 [node name="Celestial Tower" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 51, 47, 57, 47, 57, 53, 51, 53 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(51, 47, 57, 47, 57, 53, 51, 53)
+script = ExtResource("4")
 location_id = 398
 
 [node name="Twist Mountain" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 69, 52, 75, 52, 75, 58, 69, 58 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(69, 52, 75, 52, 75, 58, 69, 58)
+script = ExtResource("4")
 location_id = 380
 
 [node name="Dragonspiral Tower" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 63, 28, 69, 28, 69, 34, 63, 34 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(63, 28, 69, 28, 69, 34, 63, 34)
+script = ExtResource("4")
 location_id = 381
 
 [node name="Moor of Icirrus" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 85, 33, 91, 33, 91, 39, 85, 39 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(85, 33, 91, 33, 91, 39, 85, 39)
+script = ExtResource("4")
 location_id = 399
 is_grass = true
 
 [node name="Challenger\'s Cave" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 114, 46, 120, 46, 120, 52, 114, 52 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(114, 46, 120, 46, 120, 52, 114, 52)
+script = ExtResource("4")
 location_id = 401
 
 [node name="Entralink" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 129, 64, 135, 64, 135, 70, 129, 70 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(129, 64, 135, 64, 135, 70, 129, 70)
+script = ExtResource("4")
 location_id = 411
 is_grass = true
 
 [node name="Lostlorn Forest" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 143, 81, 149, 81, 149, 87, 143, 87 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(143, 81, 149, 81, 149, 87, 143, 87)
+script = ExtResource("4")
 location_id = 414
 is_grass = true
 
 [node name="Poké Transfer Lab" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 174, 81, 180, 81, 180, 87, 174, 87 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(174, 81, 180, 81, 180, 87, 174, 87)
+script = ExtResource("4")
 location_id = 402
 
 [node name="Abundant Shrine" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 194, 74, 200, 74, 200, 80, 194, 80 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(194, 74, 200, 74, 200, 80, 194, 80)
+script = ExtResource("4")
 location_id = 412
 is_grass = true
 
 [node name="Giant Chasm" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 195, 28, 201, 28, 201, 34, 195, 34 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(195, 28, 201, 28, 201, 34, 195, 34)
+script = ExtResource("4")
 location_id = 403
 
 [node name="Undella Bay" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 245, 65, 251, 65, 251, 71, 245, 71 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(245, 65, 251, 65, 251, 71, 245, 71)
+script = ExtResource("4")
 location_id = 413
 is_grass = true
 
 [node name="Wellspring Cave" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 212, 107, 218, 107, 218, 113, 212, 113 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(212, 107, 218, 107, 218, 113, 212, 113)
+script = ExtResource("4")
 location_id = 395
 
 [node name="Pinwheel Forest" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 191, 122, 197, 122, 197, 128, 191, 128 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(191, 122, 197, 122, 197, 128, 191, 128)
+script = ExtResource("4")
 location_id = 375
 is_grass = true
 
 [node name="P2 Laboratory" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 219, 148, 225, 148, 225, 154, 219, 154 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(219, 148, 225, 148, 225, 154, 219, 154)
+script = ExtResource("4")
 location_id = 405
 
 [node name="Dreamyard" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 236, 115, 242, 115, 242, 121, 236, 121 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(236, 115, 242, 115, 242, 121, 236, 121)
+script = ExtResource("4")
 location_id = 374
 is_grass = true
 
 [node name="Route 1" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 231, 144, 233, 144, 233, 152, 231, 152 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(231, 144, 233, 144, 233, 152, 231, 152)
+script = ExtResource("4")
 location_id = 356
 is_grass = true
 
 [node name="Route 2" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 230, 132, 232, 132, 231, 124, 229, 124 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(230, 132, 232, 132, 231, 124, 229, 124)
+script = ExtResource("4")
 location_id = 357
 is_grass = true
 
 [node name="Route 3" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 222, 117, 222, 119, 209, 119, 209, 117 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(222, 117, 222, 119, 209, 119, 209, 117)
+script = ExtResource("4")
 location_id = 358
 is_grass = true
 
 [node name="Route 4" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 131, 97, 133, 97, 133, 124, 131, 124 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(131, 97, 133, 97, 133, 124, 131, 124)
+script = ExtResource("4")
 location_id = 359
 is_grass = true
 
 [node name="Route 5" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 126, 90, 126, 92, 114, 92, 114, 90 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(126, 90, 126, 92, 114, 92, 114, 90)
+script = ExtResource("4")
 location_id = 360
 is_grass = true
 
 [node name="Route 6" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 46, 70, 46, 73, 68, 88, 68, 85 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(46, 70, 46, 73, 68, 88, 68, 85)
+script = ExtResource("4")
 location_id = 361
 is_grass = true
 
 [node name="Route 7" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 46, 64, 46, 61, 68, 45, 68, 48 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(46, 64, 46, 61, 68, 45, 68, 48)
+script = ExtResource("4")
 location_id = 362
 is_grass = true
 
 [node name="Route 8" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 94, 42, 94, 44, 80, 44, 80, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(94, 42, 94, 44, 80, 44, 80, 42)
+script = ExtResource("4")
 location_id = 363
 is_grass = true
 
 [node name="Route 9" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 114, 42, 114, 44, 126, 44, 126, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(114, 42, 114, 44, 126, 44, 126, 42)
+script = ExtResource("4")
 location_id = 364
 is_grass = true
 
 [node name="Route 10" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 135, 37, 133, 37, 135, 30, 157, 30, 159, 28, 162, 28, 158, 32, 137, 32 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(135, 37, 133, 37, 135, 30, 157, 30, 159, 28, 162, 28, 158, 32, 137, 32)
+script = ExtResource("4")
 location_id = 365
 is_grass = true
 
 [node name="Route 11" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 138, 42, 138, 44, 150, 44, 150, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(138, 42, 138, 44, 150, 44, 150, 42)
+script = ExtResource("4")
 location_id = 366
 is_grass = true
 
 [node name="Route 12" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 171, 42, 171, 44, 184, 44, 184, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(171, 42, 171, 44, 184, 44, 184, 42)
+script = ExtResource("4")
 location_id = 367
 is_grass = true
 
 [node name="Route 13" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 196, 46, 196, 49, 218, 64, 218, 61 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(196, 46, 196, 49, 218, 64, 218, 61)
+script = ExtResource("4")
 location_id = 368
 is_grass = true
 
 [node name="Route 14" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 218, 70, 218, 73, 196, 88, 196, 85 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(218, 70, 218, 73, 196, 88, 196, 85)
+script = ExtResource("4")
 location_id = 369
 is_grass = true
 
 [node name="Route 15" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 184, 90, 184, 92, 170, 92, 170, 90 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(184, 90, 184, 92, 170, 92, 170, 90)
+script = ExtResource("4")
 location_id = 370
 is_grass = true
 
 [node name="Route 16" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 138, 90, 138, 92, 150, 92, 150, 90 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(138, 90, 138, 92, 150, 92, 150, 90)
+script = ExtResource("4")
 location_id = 371
 is_grass = true
 
 [node name="Route 17" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 226, 157, 226, 159, 211, 159, 211, 157 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(226, 157, 226, 159, 211, 159, 211, 157)
+script = ExtResource("4")
 location_id = 372
 is_grass = true
 
 [node name="Route 18" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 202, 157, 202, 159, 211, 159, 211, 157 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(202, 157, 202, 159, 211, 159, 211, 157)
+script = ExtResource("4")
 location_id = 373
 is_grass = true
 
 [node name="Skyarrow Bridge" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 197, 117, 197, 119, 187, 119, 172, 123, 172, 121, 150, 125, 149, 128, 138, 130, 138, 128, 147, 126, 148, 123, 174, 118, 174, 120, 186, 117 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(197, 117, 197, 119, 187, 119, 172, 123, 172, 121, 150, 125, 149, 128, 138, 130, 138, 128, 147, 126, 148, 123, 174, 118, 174, 120, 186, 117)
+script = ExtResource("4")
 location_id = 406
 is_grass = true
 
 [node name="Desert Resort" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 118, 103, 118, 105, 131, 105, 131, 103 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(118, 103, 118, 105, 131, 105, 131, 103)
+script = ExtResource("4")
 location_id = 376
 is_grass = true
 
 [node name="Driftveil Drawbridge" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 114, 92, 114, 89, 113, 88, 95, 88, 94, 90, 80, 90, 80, 92, 95, 92, 96, 90, 112, 90 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(114, 92, 114, 89, 113, 88, 95, 88, 94, 90, 80, 90, 80, 92, 95, 92, 96, 90, 112, 90)
+script = ExtResource("4")
 location_id = 407
 
 [node name="Tubeline Bridge" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 94, 41, 94, 44, 96, 42, 111, 42, 114, 44, 114, 41, 112, 40, 95, 40 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(94, 41, 94, 44, 96, 42, 111, 42, 114, 44, 114, 41, 112, 40, 95, 40)
+script = ExtResource("4")
 location_id = 408
 
 [node name="Village Bridge" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 150, 44, 150, 42, 152, 40, 168, 40, 171, 42, 171, 44, 168, 42, 152, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(150, 44, 150, 42, 152, 40, 168, 40, 171, 42, 171, 44, 168, 42, 152, 42)
+script = ExtResource("4")
 location_id = 409
 
 [node name="Marvelous Bridge" type="Polygon2D" parent="Polygons/UnovaBW"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 150, 92, 152, 90, 168, 90, 170, 92, 170, 90, 168, 88, 152, 88, 150, 90 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(150, 92, 152, 90, 168, 90, 170, 92, 170, 90, 168, 88, 152, 88, 150, 90)
+script = ExtResource("4")
 location_id = 410
 
 [node name="UnovaBW2" type="Node2D" parent="Polygons"]
 visible = false
-script = ExtResource( 5 )
+script = ExtResource("5")
 internalName = "Unova"
 regionName = "unova2"
-games = PoolStringArray( "black-2", "white-2" )
+games = PackedStringArray("black-2", "white-2")
 generation = 5
 maxDexIx = 649
-baseLocation = "Roaming Unova"
-map = ExtResource( 9 )
+baseLocation = "roaming-unova"
+map = ExtResource("9")
 location_ids = "346
 347
 348
@@ -2862,707 +2857,705 @@ location_ids = "346
 "
 
 [node name="Nuvema Town" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 226, 152, 238, 152, 238, 164, 226, 164 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(226, 152, 238, 152, 238, 164, 226, 164)
+script = ExtResource("4")
 location_id = 346
 is_grass = true
 
 [node name="Accumula Town" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 226, 132, 238, 132, 238, 144, 226, 144 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(226, 132, 238, 132, 238, 144, 226, 144)
+script = ExtResource("4")
 location_id = 347
 is_grass = true
 
 [node name="Striaton City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 222, 124, 234, 124, 234, 112, 222, 112 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(222, 124, 234, 124, 234, 112, 222, 112)
+script = ExtResource("4")
 location_id = 348
 is_grass = true
 
 [node name="Nacrene City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 197, 124, 209, 124, 209, 112, 197, 112 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(197, 124, 209, 124, 209, 112, 197, 112)
+script = ExtResource("4")
 location_id = 349
 is_grass = true
 
 [node name="Castelia City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 126, 124, 138, 124, 138, 136, 126, 136 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(126, 124, 138, 124, 138, 136, 126, 136)
+script = ExtResource("4")
 location_id = 350
 is_grass = true
 
 [node name="Nimbasa City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 126, 85, 138, 85, 138, 97, 126, 97 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(126, 85, 138, 85, 138, 97, 126, 97)
+script = ExtResource("4")
 location_id = 351
 is_grass = true
 
 [node name="Driftveil City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 68, 85, 80, 85, 80, 97, 68, 97 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(68, 85, 80, 85, 80, 97, 68, 97)
+script = ExtResource("4")
 location_id = 352
 is_grass = true
 
 [node name="Mistralton City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 34, 61, 46, 61, 46, 73, 34, 73 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(34, 61, 46, 61, 46, 73, 34, 73)
+script = ExtResource("4")
 location_id = 353
 is_grass = true
 
 [node name="Icirrus City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 68, 37, 80, 37, 80, 49, 68, 49 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(68, 37, 80, 37, 80, 49, 68, 49)
+script = ExtResource("4")
 location_id = 354
 is_grass = true
 
 [node name="Opelucid City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 126, 37, 138, 37, 138, 49, 126, 49 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(126, 37, 138, 37, 138, 49, 126, 49)
+script = ExtResource("4")
 location_id = 355
 is_grass = true
 
 [node name="Lacunosa Town" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 184, 37, 196, 37, 196, 49, 184, 49 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(184, 37, 196, 37, 196, 49, 184, 49)
+script = ExtResource("4")
 location_id = 383
 is_grass = true
 
 [node name="Undella Town" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 218, 61, 230, 61, 230, 73, 218, 73 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(218, 61, 230, 61, 230, 73, 218, 73)
+script = ExtResource("4")
 location_id = 384
 is_grass = true
 
 [node name="Black Tower" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 196, 85, 196, 97, 184, 97 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(196, 85, 196, 97, 184, 97)
+script = ExtResource("4")
 location_id = 553
 
 [node name="White Treehollow" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 184, 85, 196, 85, 184, 97 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(184, 85, 196, 85, 184, 97)
+script = ExtResource("4")
 location_id = 552
 is_grass = true
 
 [node name="Humilau City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 229, 30, 241, 30, 241, 42, 229, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(229, 30, 241, 30, 241, 42, 229, 42)
+script = ExtResource("4")
 location_id = 533
 is_grass = true
 
 [node name="Lentimas Town" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 181, 61, 193, 61, 193, 73, 181, 73 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(181, 61, 193, 61, 193, 73, 181, 73)
+script = ExtResource("4")
 location_id = 537
 is_grass = true
 
 [node name="Aspertia City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 8, 147, 20, 147, 20, 159, 8, 159 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(8, 147, 20, 147, 20, 159, 8, 159)
+script = ExtResource("4")
 location_id = 531
 is_grass = true
 
 [node name="Floccesy Town" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 27, 121, 39, 121, 39, 133, 27, 133 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(27, 121, 39, 121, 39, 133, 27, 133)
+script = ExtResource("4")
 location_id = 536
 is_grass = true
 
 [node name="Virbank City" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 63, 121, 75, 121, 75, 133, 63, 133 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(63, 121, 75, 121, 75, 133, 63, 133)
+script = ExtResource("4")
 location_id = 532
 is_grass = true
 
 [node name="Victory Road" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 180, 12, 188, 12, 188, 20, 180, 20 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(180, 12, 188, 12, 188, 20, 180, 20)
+script = ExtResource("4")
 location_id = 382
 
 [node name="Ns Castle" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 179, 3, 185, 3, 185, 9, 179, 9 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(179, 3, 185, 3, 185, 9, 179, 9)
+script = ExtResource("4")
 location_id = 387
 
 [node name="Pokémon League" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 164, 9, 176, 9, 176, 21, 164, 21 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(164, 9, 176, 9, 176, 21, 164, 21)
+script = ExtResource("4")
 location_id = 386
 
 [node name="Unity Tower" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 95, 153, 103, 153, 103, 161, 95, 161 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(95, 153, 103, 153, 103, 161, 95, 161)
+script = ExtResource("4")
 location_id = 394
 
 [node name="Liberty Garden" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 71, 142, 77, 142, 77, 148, 71, 148 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(71, 142, 77, 142, 77, 148, 71, 148)
+script = ExtResource("4")
 location_id = 404
 is_grass = true
 
 [node name="Relic Castle" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 112, 101, 118, 101, 118, 107, 112, 107 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(112, 101, 118, 101, 118, 107, 112, 107)
+script = ExtResource("4")
 location_id = 377
 
 [node name="PWT" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 73, 99, 81, 99, 81, 107, 73, 107 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(73, 99, 81, 99, 81, 107, 73, 107)
+script = ExtResource("4")
 location_id = 0
 is_grass = true
 
 [node name="Chargestone Cave" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 39, 77, 45, 77, 45, 83, 39, 83 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(39, 77, 45, 77, 45, 83, 39, 83)
+script = ExtResource("4")
 location_id = 379
 
 [node name="Mistralton Cave" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 61, 68, 67, 68, 67, 74, 61, 74 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(61, 68, 67, 68, 67, 74, 61, 74)
+script = ExtResource("4")
 location_id = 396
 
 [node name="Anville Town" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 4, 27, 10, 27, 10, 33, 4, 33 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(4, 27, 10, 27, 10, 33, 4, 33)
+script = ExtResource("4")
 location_id = 385
 is_grass = true
 
 [node name="Celestial Tower" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 51, 47, 57, 47, 57, 53, 51, 53 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(51, 47, 57, 47, 57, 53, 51, 53)
+script = ExtResource("4")
 location_id = 398
 
 [node name="Twist Mountain" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 69, 52, 75, 52, 75, 58, 69, 58 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(69, 52, 75, 52, 75, 58, 69, 58)
+script = ExtResource("4")
 location_id = 380
 
 [node name="Dragonspiral Tower" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 63, 28, 69, 28, 69, 34, 63, 34 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(63, 28, 69, 28, 69, 34, 63, 34)
+script = ExtResource("4")
 location_id = 381
 
 [node name="Moor of Icirrus" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 85, 33, 91, 33, 91, 39, 85, 39 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(85, 33, 91, 33, 91, 39, 85, 39)
+script = ExtResource("4")
 location_id = 399
 is_grass = true
 
 [node name="Challenger\'s Cave" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 114, 46, 120, 46, 120, 52, 114, 52 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(114, 46, 120, 46, 120, 52, 114, 52)
+script = ExtResource("4")
 location_id = 401
 
 [node name="Entralink" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 129, 64, 135, 64, 135, 70, 129, 70 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(129, 64, 135, 64, 135, 70, 129, 70)
+script = ExtResource("4")
 location_id = 411
 is_grass = true
 
 [node name="Lostlorn Forest" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 143, 81, 149, 81, 149, 87, 143, 87 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(143, 81, 149, 81, 149, 87, 143, 87)
+script = ExtResource("4")
 location_id = 414
 is_grass = true
 
 [node name="Poké Transfer Lab" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 174, 81, 180, 81, 180, 87, 174, 87 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(174, 81, 180, 81, 180, 87, 174, 87)
+script = ExtResource("4")
 location_id = 402
 
 [node name="Abundant Shrine" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 194, 74, 200, 74, 200, 80, 194, 80 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(194, 74, 200, 74, 200, 80, 194, 80)
+script = ExtResource("4")
 location_id = 412
 is_grass = true
 
 [node name="Giant Chasm" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 205, 33, 211, 33, 211, 39, 205, 39 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(205, 33, 211, 33, 211, 39, 205, 39)
+script = ExtResource("4")
 location_id = 403
 
 [node name="Wellspring Cave" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 212, 107, 218, 107, 218, 113, 212, 113 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(212, 107, 218, 107, 218, 113, 212, 113)
+script = ExtResource("4")
 location_id = 395
 
 [node name="Pinwheel Forest" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 191, 122, 197, 122, 197, 128, 191, 128 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(191, 122, 197, 122, 197, 128, 191, 128)
+script = ExtResource("4")
 location_id = 375
 is_grass = true
 
 [node name="P2 Laboratory" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 211, 148, 217, 148, 217, 154, 211, 154 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(211, 148, 217, 148, 217, 154, 211, 154)
+script = ExtResource("4")
 location_id = 405
 
 [node name="Plasma Frigate" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 219, 154, 225, 154, 225, 148, 219, 148 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(219, 154, 225, 154, 225, 148, 219, 148)
+script = ExtResource("4")
 location_id = 549
 
 [node name="Dreamyard" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 236, 115, 242, 115, 242, 121, 236, 121 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(236, 115, 242, 115, 242, 121, 236, 121)
+script = ExtResource("4")
 location_id = 374
 is_grass = true
 
 [node name="Join Avenue" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 128, 100, 136, 100, 136, 108, 128, 108 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(128, 100, 136, 100, 136, 108, 128, 108)
+script = ExtResource("4")
 location_id = 535
 is_grass = true
 
 [node name="Reversal Mountain" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 193, 66, 203, 66, 203, 64, 209, 64, 209, 66, 218, 66, 218, 68, 209, 68, 209, 70, 203, 70, 203, 68, 193, 68 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(193, 66, 203, 66, 203, 64, 209, 64, 209, 66, 218, 66, 218, 68, 209, 68, 209, 70, 203, 70, 203, 68, 193, 68)
+script = ExtResource("4")
 location_id = 546
 is_grass = true
 
 [node name="Strange House" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 195, 56, 201, 56, 201, 62, 195, 62 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(195, 56, 201, 56, 201, 62, 195, 62)
+script = ExtResource("4")
 location_id = 547
 is_grass = true
 
 [node name="Undella Bay" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 230, 63, 230, 61, 229, 61, 234, 56, 237, 56 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(230, 63, 230, 61, 229, 61, 234, 56, 237, 56)
+script = ExtResource("4")
 location_id = 413
 is_grass = true
 
 [node name="Seaside Cave" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 232, 50, 238, 50, 238, 56, 232, 56 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(232, 50, 238, 50, 238, 56, 232, 56)
+script = ExtResource("4")
 location_id = 554
 is_grass = true
 
 [node name="Marine Tube" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 241, 35, 241, 37, 244, 39, 250, 39, 251, 40, 251, 67, 250, 68, 235, 68, 233, 66, 230, 66, 230, 68, 232, 68, 234, 70, 251, 70, 253, 68, 253, 39, 251, 37, 245, 37, 243, 35 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(241, 35, 241, 37, 244, 39, 250, 39, 251, 40, 251, 67, 250, 68, 235, 68, 233, 66, 230, 66, 230, 68, 232, 68, 234, 70, 251, 70, 253, 68, 253, 39, 251, 37, 245, 37, 243, 35)
+script = ExtResource("4")
 location_id = 557
 is_grass = true
 
 [node name="Relic Passage" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 102, 115, 108, 115, 108, 121, 102, 121 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(102, 115, 108, 115, 108, 121, 102, 121)
+script = ExtResource("4")
 location_id = 550
 is_grass = true
 
 [node name="Clay Tunnel" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 69, 74, 75, 74, 75, 80, 69, 80 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(69, 74, 75, 74, 75, 80, 69, 80)
+script = ExtResource("4")
 location_id = 551
 is_grass = true
 
 [node name="Castelia Sewers" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 153, 140, 159, 140, 159, 146, 153, 146 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(153, 140, 159, 140, 159, 146, 153, 146)
+script = ExtResource("4")
 location_id = 543
 is_grass = true
 
 [node name="Pokéstar Studios" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 60, 111, 68, 111, 68, 119, 60, 119 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(60, 111, 68, 111, 68, 119, 60, 119)
+script = ExtResource("4")
 location_id = 534
 is_grass = true
 
 [node name="Virbank Complex" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 61, 135, 67, 135, 67, 141, 61, 141 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(61, 135, 67, 135, 67, 141, 61, 141)
+script = ExtResource("4")
 location_id = 545
 is_grass = true
 
 [node name="Cave of Being" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 38, 141, 44, 141, 44, 135, 38, 135 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(38, 141, 44, 141, 44, 135, 38, 135)
+script = ExtResource("4")
 location_id = 555
 is_grass = true
 
 [node name="Floccesy Ranch" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 38, 115, 44, 115, 44, 121, 38, 121 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(38, 115, 44, 115, 44, 121, 38, 121)
+script = ExtResource("4")
 location_id = 544
 is_grass = true
 
 [node name="Abyssal Ruins" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 239, 60, 245, 60, 245, 66, 239, 66 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(239, 60, 245, 60, 245, 66, 239, 66)
+script = ExtResource("4")
 location_id = 428
 is_grass = true
 
 [node name="Route 1" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 231, 144, 233, 144, 233, 152, 231, 152 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(231, 144, 233, 144, 233, 152, 231, 152)
+script = ExtResource("4")
 location_id = 356
 is_grass = true
 
 [node name="Route 2" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 230, 132, 232, 132, 231, 124, 229, 124 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(230, 132, 232, 132, 231, 124, 229, 124)
+script = ExtResource("4")
 location_id = 357
 is_grass = true
 
 [node name="Route 3" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 222, 117, 222, 119, 209, 119, 209, 117 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(222, 117, 222, 119, 209, 119, 209, 117)
+script = ExtResource("4")
 location_id = 358
 is_grass = true
 
 [node name="Route 4" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 131, 97, 133, 97, 133, 124, 131, 124 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(131, 97, 133, 97, 133, 124, 131, 124)
+script = ExtResource("4")
 location_id = 359
 is_grass = true
 
 [node name="Route 5" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 126, 90, 126, 92, 114, 92, 114, 90 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(126, 90, 126, 92, 114, 92, 114, 90)
+script = ExtResource("4")
 location_id = 360
 is_grass = true
 
 [node name="Route 6" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 46, 70, 46, 73, 68, 88, 68, 85 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(46, 70, 46, 73, 68, 88, 68, 85)
+script = ExtResource("4")
 location_id = 361
 is_grass = true
 
 [node name="Route 7" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 46, 64, 46, 61, 68, 45, 68, 48 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(46, 64, 46, 61, 68, 45, 68, 48)
+script = ExtResource("4")
 location_id = 362
 is_grass = true
 
 [node name="Route 8" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 94, 42, 94, 44, 80, 44, 80, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(94, 42, 94, 44, 80, 44, 80, 42)
+script = ExtResource("4")
 location_id = 363
 is_grass = true
 
 [node name="Route 9" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 114, 42, 114, 44, 126, 44, 126, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(114, 42, 114, 44, 126, 44, 126, 42)
+script = ExtResource("4")
 location_id = 364
 is_grass = true
 
 [node name="Route 11" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 138, 42, 138, 44, 150, 44, 150, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(138, 42, 138, 44, 150, 44, 150, 42)
+script = ExtResource("4")
 location_id = 366
 is_grass = true
 
 [node name="Route 12" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 171, 42, 171, 44, 184, 44, 184, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(171, 42, 171, 44, 184, 44, 184, 42)
+script = ExtResource("4")
 location_id = 367
 is_grass = true
 
 [node name="Route 13" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 196, 46, 196, 49, 218, 64, 218, 61 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(196, 46, 196, 49, 218, 64, 218, 61)
+script = ExtResource("4")
 location_id = 368
 is_grass = true
 
 [node name="Route 14" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 218, 70, 218, 73, 196, 88, 196, 85 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(218, 70, 218, 73, 196, 88, 196, 85)
+script = ExtResource("4")
 location_id = 369
 is_grass = true
 
 [node name="Route 15" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 184, 90, 184, 92, 170, 92, 170, 90 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(184, 90, 184, 92, 170, 92, 170, 90)
+script = ExtResource("4")
 location_id = 370
 is_grass = true
 
 [node name="Route 16" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 138, 90, 138, 92, 150, 92, 150, 90 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(138, 90, 138, 92, 150, 92, 150, 90)
+script = ExtResource("4")
 location_id = 371
 is_grass = true
 
 [node name="Route 17" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 226, 157, 226, 159, 211, 159, 211, 157 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(226, 157, 226, 159, 211, 159, 211, 157)
+script = ExtResource("4")
 location_id = 372
 is_grass = true
 
 [node name="Route 18" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 202, 157, 202, 159, 211, 159, 211, 157 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(202, 157, 202, 159, 211, 159, 211, 157)
+script = ExtResource("4")
 location_id = 373
 is_grass = true
 
 [node name="Route 19" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 13, 147, 15, 147, 15, 133, 27, 129, 27, 126, 13, 131 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(13, 147, 15, 147, 15, 133, 27, 129, 27, 126, 13, 131)
+script = ExtResource("4")
 location_id = 538
 is_grass = true
 
 [node name="Route 20" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 39, 126, 39, 128, 63, 128, 63, 126 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(39, 126, 39, 128, 63, 128, 63, 126)
+script = ExtResource("4")
 location_id = 539
 is_grass = true
 
 [node name="Route 21" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 234, 50, 236, 50, 236, 42, 234, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(234, 50, 236, 50, 236, 42, 234, 42)
+script = ExtResource("4")
 location_id = 540
 is_grass = true
 
 [node name="Route 22" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 211, 35, 211, 37, 229, 37, 229, 35 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(211, 35, 211, 37, 229, 37, 229, 35)
+script = ExtResource("4")
 location_id = 541
 is_grass = true
 
 [node name="Route 23" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 188, 15, 195, 15, 197, 17, 197, 34, 198, 35, 205, 35, 205, 37, 197, 37, 195, 35, 195, 18, 194, 17, 188, 17 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(188, 15, 195, 15, 197, 17, 197, 34, 198, 35, 205, 35, 205, 37, 197, 37, 195, 35, 195, 18, 194, 17, 188, 17)
+script = ExtResource("4")
 location_id = 542
 is_grass = true
 
 [node name="Skyarrow Bridge" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 197, 117, 197, 119, 187, 119, 172, 123, 172, 121, 150, 125, 149, 128, 138, 130, 138, 128, 147, 126, 148, 123, 174, 118, 174, 120, 186, 117 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(197, 117, 197, 119, 187, 119, 172, 123, 172, 121, 150, 125, 149, 128, 138, 130, 138, 128, 147, 126, 148, 123, 174, 118, 174, 120, 186, 117)
+script = ExtResource("4")
 location_id = 406
 is_grass = true
 
 [node name="Desert Resort" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 118, 103, 118, 105, 128, 105, 128, 103 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(118, 103, 118, 105, 128, 105, 128, 103)
+script = ExtResource("4")
 location_id = 376
 is_grass = true
 
 [node name="Driftveil Drawbridge" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 114, 92, 114, 89, 113, 88, 95, 88, 94, 90, 80, 90, 80, 92, 95, 92, 96, 90, 112, 90 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(114, 92, 114, 89, 113, 88, 95, 88, 94, 90, 80, 90, 80, 92, 95, 92, 96, 90, 112, 90)
+script = ExtResource("4")
 location_id = 407
 
 [node name="Tubeline Bridge" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 94, 41, 94, 44, 96, 42, 111, 42, 114, 44, 114, 41, 112, 40, 95, 40 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(94, 41, 94, 44, 96, 42, 111, 42, 114, 44, 114, 41, 112, 40, 95, 40)
+script = ExtResource("4")
 location_id = 408
 
 [node name="Village Bridge" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 150, 44, 150, 42, 152, 40, 168, 40, 171, 42, 171, 44, 168, 42, 152, 42 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(150, 44, 150, 42, 152, 40, 168, 40, 171, 42, 171, 44, 168, 42, 152, 42)
+script = ExtResource("4")
 location_id = 409
 
 [node name="Marvelous Bridge" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 150, 92, 152, 90, 168, 90, 170, 92, 170, 90, 168, 88, 152, 88, 150, 90 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(150, 92, 152, 90, 168, 90, 170, 92, 170, 90, 168, 88, 152, 88, 150, 90)
+script = ExtResource("4")
 location_id = 410
 
 [node name="Nature Preserve" type="Polygon2D" parent="Polygons/UnovaBW2"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 168, 159, 168, 162, 171, 161, 176, 153, 185, 152, 188, 144, 181, 138, 175, 138, 176, 142, 183, 145, 182, 148, 174, 149 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(168, 159, 168, 162, 171, 161, 176, 153, 185, 152, 188, 144, 181, 138, 175, 138, 176, 142, 183, 145, 182, 148, 174, 149)
+script = ExtResource("4")
 location_id = 560
 
 [node name="Kalos" type="Node2D" parent="Polygons"]
 visible = false
-script = ExtResource( 5 )
+script = ExtResource("5")
 internalName = "Unova"
 regionName = "unova2"
-games = PoolStringArray( "x", "y" )
+games = PackedStringArray("x", "y")
 generation = 5
 maxDexIx = 649
-baseLocation = "Roaming Unova"
-map = ExtResource( 10 )
+baseLocation = "roaming-kalos"
+map = ExtResource("10")
 location_ids = "346
 "
 
 [node name="Nuvema Town" type="Polygon2D" parent="Polygons/Kalos"]
-color = Color( 0, 0, 0, 0.376471 )
+color = Color(0, 0, 0, 0.376471)
 invert_border = 1.0
-polygon = PoolVector2Array( 160, 92, 171, 92, 179, 85, 179, 72, 171, 65, 160, 65, 152, 72, 152, 85 )
-script = ExtResource( 4 )
+polygon = PackedVector2Array(160, 92, 171, 92, 179, 85, 179, 72, 171, 65, 160, 65, 152, 72, 152, 85)
+script = ExtResource("4")
 location_id = 346
 is_grass = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 362.0
-margin_bottom = 145.0
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
+layout_mode = 0
+offset_right = 362.0
+offset_bottom = 145.0
+texture = ExtResource("7")
 
 [connection signal="visibility_changed" from="Polygons" to="." method="_on_Polygons_visibility_changed"]
 [connection signal="visibility_changed" from="Polygons/SeviiIslands" to="." method="_on_map_vis"]

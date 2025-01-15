@@ -78,7 +78,7 @@ def geticonPokeConstantsAPI():
             'form': ''
         },
         'tapu-bulu': {
-            'name': 'Tpu-Bulu',
+            'name': 'Tapu-Bulu',
             'form': ''
         },
         'porygon-z': {

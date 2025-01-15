@@ -1,13 +1,13 @@
-tool
+@tool
 extends Node2D
 
-export var title = ''
-export var region = ''
-export var malePos = 0
-export var url = ''
-export(String, MULTILINE) var declaration_CSS = ''
-export(String, MULTILINE) var CSS = ''
-export(String, MULTILINE) var special_CSS = ''
+@export var title = ''
+@export var region = ''
+@export var malePos = 0
+@export var url = ''
+@export_multiline var declaration_CSS = ''
+@export_multiline var CSS = ''
+@export_multiline var special_CSS = ''
 
 
 func _on_IconeerRegion_visibility_changed():
@@ -25,7 +25,7 @@ func reposition_children():
 		child.region_rect.position.y = 0 # Expand region rect to top
 		child.position = child.region_rect.position
 		
-		var counterpart = Sprite.new()
+		var counterpart = Sprite2D.new()
 		counterpart.name = 'counterpart'
 		counterpart.centered = false
 		counterpart.texture = child.texture

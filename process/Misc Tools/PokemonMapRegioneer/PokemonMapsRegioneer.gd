@@ -1,4 +1,4 @@
-tool
+@tool
 extends Control
 
 func getCurrentRegion():
@@ -48,7 +48,7 @@ func calculateFinalJSON():
 		if polygon.is_grass:
 			r['grassMapsLocationIds'].append(polygon.location_id)
 	
-	return JSON.print(r)
+	return JSON.stringify(r)
 
 
 func calculateLocationList():

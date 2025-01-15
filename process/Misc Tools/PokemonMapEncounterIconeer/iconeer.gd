@@ -1,7 +1,7 @@
-tool
+@tool
 extends Node2D
 
-export(String, MULTILINE) var result = ''
+@export_multiline var result = ''
 
 
 func _on_Iconeer_visibility_changed():

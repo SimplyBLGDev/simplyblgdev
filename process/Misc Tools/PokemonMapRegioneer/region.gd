@@ -1,17 +1,17 @@
-tool
+@tool
 extends Node2D
 
-export var internalName = ''
-export var regionName = ''
-export var games = PoolStringArray()
-export var generation = 0
-export var maxDexIx = 0
-export var enableTimeHUD = false
-export var baseLocation = ''
-export var baseLocationID = 0
-export var offset = Vector2(0, 0)
-export var map = preload("res://PokemonMapRegioneer/Map/Kanto3_1.png")
-export(String, MULTILINE) var location_ids setget set_loc, get_loc
+@export var internalName = ''
+@export var regionName = ''
+@export var games = PackedStringArray()
+@export var generation = 0
+@export var maxDexIx = 0
+@export var enableTimeHUD = false
+@export var baseLocation = ''
+@export var baseLocationID = 0
+@export var offset = Vector2(0, 0)
+@export var map = preload("res://PokemonMapRegioneer/Map/Kanto3_1.png")
+@export_multiline var location_ids : String : get = get_loc, set = set_loc # (String, MULTILINE)
 
 func getCurrentLocations():
 	return get_children()
