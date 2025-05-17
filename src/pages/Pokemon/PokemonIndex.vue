@@ -38,7 +38,7 @@ export default {
 			{
 				name: "Kanto",
 				address: 'kanto',
-				preview: require('../../assets/pokemon/maps/previews/KantoPreview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/KantoPreview.png'),
 				class:"kanto",
 				games:[
 					{
@@ -58,7 +58,7 @@ export default {
 			{
 				name: "Johto",
 				address: 'johto',
-				preview: require('../../assets/pokemon/maps/previews/JohtoPreview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/JohtoPreview.png'),
 				class:"johto",
 				games:[
 					{
@@ -78,7 +78,7 @@ export default {
 			{
 				name: "Hoenn",
 				address: 'hoenn',
-				preview: require('../../assets/pokemon/maps/previews/HoennPreview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/HoennPreview.png'),
 				class:"hoenn",
 				games:[
 					{
@@ -98,7 +98,7 @@ export default {
 			{
 				name: "Kanto Remakes",
 				address: 'kanto3',
-				preview: require('../../assets/pokemon/maps/previews/Kanto3Preview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/Kanto3Preview.png'),
 				class: "kanto3",
 				games:[
 					{
@@ -114,7 +114,7 @@ export default {
 			{
 				name: "Sinnoh",
 				address: 'sinnoh',
-				preview: require('../../assets/pokemon/maps/previews/SinnohPreview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/SinnohPreview.png'),
 				class: "sinnoh",
 				games:[
 					{
@@ -134,7 +134,7 @@ export default {
 			{
 				name: "Johto Remakes",
 				address: 'johto4',
-				preview: require('../../assets/pokemon/maps/previews/Johto4Preview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/Johto4Preview.png'),
 				class: "johto",
 				games:[
 					{
@@ -150,7 +150,7 @@ export default {
 			{
 				name: "Unova",
 				address: 'unova',
-				preview: require('../../assets/pokemon/maps/previews/UnovaPreview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/UnovaPreview.png'),
 				class: "unova",
 				games:[
 					{
@@ -166,7 +166,7 @@ export default {
 			{
 				name: "Unova Again",
 				address: 'unova2',
-				preview: require('../../assets/pokemon/maps/previews/Unova2Preview.png'),
+				preview: require('../../assets/Pokemon/Maps/previews/Unova2Preview.png'),
 				class: "unova2",
 				games:[
 					{

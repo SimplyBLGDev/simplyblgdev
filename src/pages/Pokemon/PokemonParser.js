@@ -1,4 +1,4 @@
-import pokeConstants from '../../assets/pokemon/pokeConstants.json'
+import pokeConstants from '../../assets/Pokemon/pokeConstants.json'
 var encounterTable = {};
 var generation;
 var baseLocationIds;

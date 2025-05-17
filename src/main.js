@@ -35,200 +35,200 @@ const routes = [
   },
   { path: '/pokemon',
     name: 'Pokemon',
-    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/pokemon/PokemonIndex.vue'),
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/PokemonIndex.vue'),
     meta: {
       title: 'Pokémon interactive maps'
     }
   },
   { path: '/pokemon/kanto',
     name: 'Kanto',
-    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/pokemon/Pokemon.vue'),
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/Pokemon.vue'),
     meta: {
       title: 'Kanto interactive map for RBY'
     },
     props: {
-      'mapJSON': require('@/assets/pokemon/maps/data/KantoMaps.json'),
-      'encountersJSON': require('@/assets/pokemon/maps/data/KantoEncounters.json'),
-      'mapIMGsrc': [ require('@/assets/pokemon/maps/regions/Kanto.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/KantoMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/KantoEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Kanto.png') ]
     }
   },
   { path: '/pokemon/Johto',
     name: 'Johto',
-    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/pokemon/Pokemon.vue'),
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/Pokemon.vue'),
     meta: {
       title: 'Johto interactive map for GSC'
     },
     props: {
-      'mapJSON': require('@/assets/pokemon/maps/data/JohtoMaps.json'),
-      'encountersJSON': require('@/assets/pokemon/maps/data/JohtoEncounters.json'),
-      'mapIMGsrc': [ require('@/assets/pokemon/maps/regions/Johto.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/JohtoMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/JohtoEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Johto.png') ]
     }
   },
   { path: '/pokemon/kanto3',
     name: 'Kanto Gen 3',
-    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/pokemon/Pokemon.vue'),
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/Pokemon.vue'),
     meta: {
       title: 'Kanto interactive map for FRLG'
     },
     props: {
-      'mapJSON': require('@/assets/pokemon/maps/data/Kanto3Maps.json'),
-      'encountersJSON': require('@/assets/pokemon/maps/data/Kanto3Encounters.json'),
+      'mapJSON': require('@/assets/Pokemon/Maps/data/Kanto3Maps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/Kanto3Encounters.json'),
       'mapIMGsrc': [
-        require('@/assets/pokemon/maps/regions/Kanto3.png'),
-        require('@/assets/pokemon/maps/regions/Kanto3_1.png'),
-        require('@/assets/pokemon/maps/regions/Kanto3_2.png'),
-        require('@/assets/pokemon/maps/regions/Kanto3_3.png')
+        require('@/assets/Pokemon/Maps/regions/Kanto3.png'),
+        require('@/assets/Pokemon/Maps/regions/Kanto3_1.png'),
+        require('@/assets/Pokemon/Maps/regions/Kanto3_2.png'),
+        require('@/assets/Pokemon/Maps/regions/Kanto3_3.png')
       ]
     }
   },
   { path: '/pokemon/hoenn',
     name: 'Hoenn',
-    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/pokemon/Pokemon.vue'),
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/Pokemon.vue'),
     meta: {
       title: 'Hoenn interactive map for RSE'
     },
     props: {
-      'mapJSON': require('@/assets/pokemon/maps/data/HoennMaps.json'),
-      'encountersJSON': require('@/assets/pokemon/maps/data/HoennEncounters.json'),
-      'mapIMGsrc': [ require('@/assets/pokemon/maps/regions/Hoenn.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/HoennMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/HoennEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Hoenn.png') ]
     }
   },
   { path: '/pokemon/sinnoh',
     name: 'Sinnoh',
-    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/pokemon/Pokemon.vue'),
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/Pokemon.vue'),
     meta: {
       title: 'Sinnoh interactive map for DPPt'
     },
     props: {
-      'mapJSON': require('@/assets/pokemon/maps/data/SinnohMaps.json'),
-      'encountersJSON': require('@/assets/pokemon/maps/data/SinnohEncounters.json'),
-      'mapIMGsrc': [ require('@/assets/pokemon/maps/regions/Sinnoh.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/SinnohMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/SinnohEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Sinnoh.png') ]
     }
   },
   { path: '/pokemon/johto4',
     name: 'Johto4',
-    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/pokemon/Pokemon.vue'),
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/Pokemon.vue'),
     meta: {
       title: 'Johto interactive map for HGSS'
     },
     props: {
-      'mapJSON': require('@/assets/pokemon/maps/data/Johto4Maps.json'),
-      'encountersJSON': require('@/assets/pokemon/maps/data/Johto4Encounters.json'),
-      'mapIMGsrc': [ require('@/assets/pokemon/maps/regions/Johto4.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/Johto4Maps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/Johto4Encounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Johto4.png') ]
     }
   },
   { path: '/pokemon/unova',
     name: 'Unova',
-    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/pokemon/Pokemon.vue'),
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/Pokemon.vue'),
     meta: {
       title: 'Unova interactive map for BW'
     },
     props: {
-      'mapJSON': require('@/assets/pokemon/maps/data/UnovaMaps.json'),
-      'encountersJSON': require('@/assets/pokemon/maps/data/UnovaEncounters.json'),
-      'mapIMGsrc': [ require('@/assets/pokemon/maps/regions/Unova.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/UnovaMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/UnovaEncounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Unova.png') ]
     }
   },
   { path: '/pokemon/unova2',
     name: 'Unova2',
-    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/pokemon/Pokemon.vue'),
+    component: () => import(/* webpackChunkName: "Pokemon" */'./pages/Pokemon/Pokemon.vue'),
     meta: {
       title: 'Unova interactive map for B2W2'
     },
     props: {
-      'mapJSON': require('@/assets/pokemon/maps/data/Unova2Maps.json'),
-      'encountersJSON': require('@/assets/pokemon/maps/data/Unova2Encounters.json'),
-      'mapIMGsrc': [ require('@/assets/pokemon/maps/regions/Unova2.png') ]
+      'mapJSON': require('@/assets/Pokemon/Maps/data/Unova2Maps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/Unova2Encounters.json'),
+      'mapIMGsrc': [ require('@/assets/Pokemon/Maps/regions/Unova2.png') ]
     }
   },
   { path: '/pokemon/googletranslatedemerald',
     name: 'Google Translated Pokémon Emerald',
-    component: () => import(/* webpackChunkName: "GoogleTranslate" */'./pages/pokemon/GoogleTranslate.vue'),
+    component: () => import(/* webpackChunkName: "GoogleTranslate" */'./pages/Pokemon/GoogleTranslate.vue'),
     meta: {
       title: 'Google Translated Pokémon Emerald'
     }
   },
   { path: '/pokemon/rowe',
     name: 'HoennROWE',
-    component: () => import(/* webpackChunkName: "PokemonRH" */'./pages/pokemon/Pokemon.vue'),
+    component: () => import(/* webpackChunkName: "PokemonRH" */'./pages/Pokemon/Pokemon.vue'),
     meta: {
       title: 'Hoenn interactive map for ROWE'
     },
     props: {
-      'mapJSON': require('@/assets/pokemon/maps/data/ROWEMaps.json'),
-      'encountersJSON': require('@/assets/pokemon/maps/data/ROWEEncounters.json'),
+      'mapJSON': require('@/assets/Pokemon/Maps/data/ROWEMaps.json'),
+      'encountersJSON': require('@/assets/Pokemon/Maps/data/ROWEEncounters.json'),
       'mapIMGsrc': [
-        require('@/assets/pokemon/maps/regions/Hoenn.png'),
-        require('@/assets/pokemon/maps/regions/Kanto3_1.png')
+        require('@/assets/Pokemon/Maps/regions/Hoenn.png'),
+        require('@/assets/Pokemon/Maps/regions/Kanto3_1.png')
       ]
     }
   },
-  { path: '/science/graficadora',
+  { path: '/Science/graficadora',
     name: 'Graficadora',
-    component: () => import(/* webpackChunkName: "Encodings" */'./pages/science/Encodings.vue'),
+    component: () => import(/* webpackChunkName: "Encodings" */'./pages/Science/Encodings.vue'),
     meta: {
       title: 'Graficadora para señales'
     }
   },
-  { path: '/science/graficadora/informacion',
+  { path: '/Science/graficadora/informacion',
     name: 'Información/Contacto',
-    component: () => import(/* webpackChunkName: "Encodings" */'./pages/science/EncodingsInformation.vue'),
+    component: () => import(/* webpackChunkName: "Encodings" */'./pages/Science/EncodingsInformation.vue'),
     meta: {
       title: 'Información'
     }
   },
-  { path: '/science/sim/pseudorandom',
+  { path: '/Science/sim/pseudorandom',
     name: 'Pseudoaleatorio',
-    component: () => import(/* webpackChunkName: "SIM" */'./pages/science/SIM/pseudoaleatorio.vue'),
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/pseudoaleatorio.vue'),
     meta: {
       title: 'Generador de Números pseudo-aleatorios'
     }
   },
-  { path: '/science/sim/jisquare',
+  { path: '/Science/sim/jisquare',
     name: 'JiSquare',
-    component: () => import(/* webpackChunkName: "SIM" */'./pages/science/SIM/chi.vue'),
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/chi.vue'),
     meta: {
       title: 'Prueba Ji-Cuadrado'
     }
   },
-  { path: '/science/sim/tp3',
+  { path: '/Science/sim/tp3',
     name: 'TP3',
-    component: () => import(/* webpackChunkName: "SIM" */'./pages/science/SIM/TP3.vue'),
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/TP3.vue'),
     meta: {
       title: 'TP3'
     }
   },
-  { path: '/science/sim/tp4',
+  { path: '/Science/sim/tp4',
     name: 'TP4',
-    component: () => import(/* webpackChunkName: "SIM" */'./pages/science/SIM/TP4.vue'),
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/TP4.vue'),
     meta: {
       title: 'TP4'
     }
   },
-  { path: '/science/sim/tp5',
+  { path: '/Science/sim/tp5',
     name: 'TP5',
-    component: () => import(/* webpackChunkName: "SIM" */'./pages/science/SIM/TP5.vue'),
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/TP5.vue'),
     meta: {
       title: 'TP5'
     }
   },
-  { path: '/science/sim/tp6',
+  { path: '/Science/sim/tp6',
     name: 'TP6',
-    component: () => import(/* webpackChunkName: "SIM" */'./pages/science/SIM/TP6.vue'),
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/TP6.vue'),
     meta: {
       title: 'TP6'
     }
   },
-  { path: '/science/sim/tpf',
+  { path: '/Science/sim/tpf',
     name: 'TPF',
-    component: () => import(/* webpackChunkName: "SIM" */'./pages/science/SIM/TPF.vue'),
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/TPF.vue'),
     meta: {
       title: 'TPF'
     }
   },
-  { path: '/science/sim/tpf2',
+  { path: '/Science/sim/tpf2',
     name: 'TPF2',
-    component: () => import(/* webpackChunkName: "SIM" */'./pages/science/SIM/TPF2.vue'),
+    component: () => import(/* webpackChunkName: "SIM" */'./pages/Science/SIM/TPF2.vue'),
     meta: {
       title: 'TPF2'
     }
