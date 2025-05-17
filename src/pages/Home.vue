@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="homeDiv"><span>Home</span></div>
-    <p class="homeText" style="--delay: 5s">There's nothing in the Home page dood</p>
+    <p class="homeText" style="--delay: 5s">There's nothing in the Home page</p>
     <p class="homeText" style="--delay: 10s">Navigate using the navbar or something, there's nothing here</p>
     <p class="homeText" style="--delay: 25s">what are you doing</p>
     <p class="homeText" style="--delay: 50s">go away</p>
